@@ -1,0 +1,1375 @@
+/* ========================================================
+   Lego Familiar - Estilos CSS3
+   Diseño alegre, accesible e intuitivo para niños escolares
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap');
+
+:root {
+  --lego-red: #E3000B;
+  --lego-red-dark: #b70008;
+  --lego-blue: #0055BF;
+  --lego-blue-dark: #003e8c;
+  --lego-yellow: #FED700;
+  --lego-yellow-dark: #d4b300;
+  --lego-green: #00852B;
+  --lego-green-dark: #00601f;
+  --lego-orange: #FE8A18;
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --text-main: #2c3e50;
+  --text-muted: #64748b;
+  --border-radius: 16px;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: 'Fredoka', 'Comic Sans MS', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ========================================================
+   Cabecera Principal (Estilo Placa Lego con Logo Escolar)
+   ======================================================== */
+.app-header {
+  background: linear-gradient(135deg, var(--lego-red), #ff3b30);
+  color: white;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 12px rgba(227, 0, 11, 0.3);
+  position: relative;
+  z-index: 10;
+  border-bottom: 5px solid var(--lego-red-dark);
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo de la escuela en la cabecera */
+.school-logo-badge {
+  background: white;
+  padding: 4px 12px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+}
+
+.school-logo-badge img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.brand-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-print-gift {
+  background: linear-gradient(180deg, #42a5f5, #1976d2);
+  color: white;
+  border: 3px solid #0d47a1;
+  border-radius: 30px;
+  padding: 9px 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 0 #0d47a1, 0 10px 15px rgba(0,0,0,0.15);
+  transition: all 0.15s ease;
+}
+
+.btn-print-gift:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #64b5f6, #1e88e5);
+}
+
+.btn-print-gift:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #0d47a1;
+}
+
+.btn-export-gift {
+  background: linear-gradient(180deg, #ffd700, #ffb300);
+  color: #5d4037;
+  border: 3px solid #ff8f00;
+  border-radius: 30px;
+  padding: 10px 24px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 0 #e65100, 0 10px 15px rgba(0,0,0,0.2);
+  transition: all 0.15s ease;
+}
+
+.btn-export-gift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #e65100, 0 12px 20px rgba(0,0,0,0.25);
+  background: linear-gradient(180deg, #ffe082, #ffca28);
+}
+
+.btn-export-gift:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #e65100;
+}
+
+/* ========================================================
+   Contenedor Principal de la Aplicación
+   ======================================================== */
+.app-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 78px);
+  overflow: hidden;
+}
+
+/* ========================================================
+   Barra Lateral de Opciones
+   ======================================================== */
+.sidebar {
+  width: 380px;
+  background-color: var(--card-bg);
+  border-right: 4px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+  z-index: 5;
+}
+
+/* Pestañas de navegación */
+.sidebar-tabs {
+  display: flex;
+  background-color: #e2e8f0;
+  padding: 6px 6px 0 6px;
+  gap: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: #cbd5e1;
+  padding: 10px 6px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #475569;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tab-btn .tab-icon {
+  font-size: 1.3rem;
+}
+
+.tab-btn.active {
+  background: var(--card-bg);
+  color: var(--lego-blue);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar-content {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.tab-panel {
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tab-panel.active {
+  display: flex;
+}
+
+.panel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px dashed #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* Paleta de colores */
+.color-picker-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.color-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.color-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.color-swatch:hover {
+  transform: scale(1.15);
+}
+
+.color-swatch.active {
+  transform: scale(1.15);
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px #2196f3, 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.color-swatch.active::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Selector de Piezas Lego */
+.blocks-grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.block-palette-item {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: all 0.2s ease;
+  min-height: 105px;
+}
+
+.block-palette-item:hover {
+  background: #ffffff;
+  border-color: var(--lego-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 85, 191, 0.15);
+}
+
+.block-palette-item:active {
+  cursor: grabbing;
+}
+
+.block-palette-item.dragging {
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.block-preview-wrapper {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.block-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.helper-tip {
+  font-size: 0.85rem;
+  color: #0288d1;
+  background-color: #e1f5fe;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Galería de Fondos */
+.bg-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bg-card {
+  border: 3px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.bg-card:hover {
+  border-color: var(--lego-green);
+  transform: translateX(4px);
+}
+
+.bg-card.active {
+  border-color: var(--lego-green);
+  background-color: #f1f8e9;
+  box-shadow: 0 4px 10px rgba(0, 133, 43, 0.2);
+}
+
+.bg-thumb {
+  width: 90px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-thumb svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Sección de Foto Familiar */
+.photo-uploader-box {
+  background: #f8fafc;
+  border: 3px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.upload-icon {
+  font-size: 3.5rem;
+}
+
+.btn-upload-photo {
+  background: linear-gradient(180deg, var(--lego-blue), var(--lego-blue-dark));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #002d66, 0 6px 10px rgba(0,0,0,0.15);
+  transition: all 0.15s;
+}
+
+.btn-upload-photo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #002d66, 0 8px 14px rgba(0,0,0,0.2);
+}
+
+.photo-loaded-badge {
+  background: #e8f5e9;
+  border: 2px solid #81c784;
+  border-radius: 12px;
+  padding: 10px;
+  color: #2e7d32;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.photo-controls-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn-secondary {
+  flex: 1;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.btn-danger {
+  color: var(--lego-red);
+  border-color: #ffcdd2;
+  background: #ffebee;
+}
+
+.btn-danger:hover {
+  background: #ffcdd2;
+}
+
+/* ========================================================
+   Área de Trabajo Central (Workspace & Canvas)
+   ======================================================== */
+.workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at center, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow: auto;
+}
+
+/* Barra de herramientas flotante sobre el canvas */
+.canvas-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 16px;
+  border: 2px solid #e2e8f0;
+}
+
+.tool-btn {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.tool-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  transform: translateY(-1px);
+}
+
+.tool-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.tool-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tool-btn.active {
+  background: #e1f5fe;
+  border-color: #03a9f4;
+  color: #0288d1;
+}
+
+.tool-separator {
+  width: 2px;
+  height: 24px;
+  background: #e2e8f0;
+  margin: 0 4px;
+}
+
+/* Lienzo de construcción (Konva Stage) */
+.canvas-card {
+  position: relative;
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18), 0 5px 15px rgba(0,0,0,0.1);
+  border: 6px solid #fed700; /* Marco amarillo LEGO */
+}
+
+#canvas-container {
+  width: 900px;
+  height: 650px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+/* Placa con botones Lego decorativa en la parte inferior */
+.canvas-footer-tip {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: #475569;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========================================================
+   Modal de Felicitación y Descarga
+   ======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-card {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 24px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 6px solid var(--lego-yellow);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+  font-size: 2rem;
+  color: var(--lego-red);
+}
+
+.modal-text {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.modal-preview-box {
+  width: 100%;
+  max-height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 3px solid #e2e8f0;
+}
+
+.modal-preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.btn-modal-close {
+  background: linear-gradient(180deg, var(--lego-green), var(--lego-green-dark));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #004516;
+  transition: all 0.15s;
+}
+
+.btn-modal-close:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #004516;
+}
+
+/* ========================================================
+   Animación de Confeti
+   ======================================================== */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  border-radius: 3px;
+  top: -20px;
+  animation: fall 3.5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+}
+
+/* ========================================================
+   Estilos de Minifiguras y Herramienta de Texto (Fase 2)
+   ======================================================== */
+.minifigs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.minifig-item {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  transition: all 0.2s ease;
+  min-height: 145px;
+}
+
+.minifig-item:hover {
+  background: #ffffff;
+  border-color: var(--lego-red);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(227, 0, 11, 0.15);
+}
+
+.minifig-item:active {
+  cursor: grabbing;
+}
+
+.minifig-item.dragging {
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.minifig-preview-wrapper {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.minifig-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Panel de Texto Dinámico */
+.text-tool-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.text-input-field {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1.15rem;
+  font-family: inherit;
+  border: 3px solid #cbd5e1;
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.text-input-field:focus {
+  border-color: var(--lego-blue);
+  box-shadow: 0 0 0 3px rgba(0, 85, 191, 0.15);
+}
+
+.text-preset-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preset-tag {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #475569;
+  transition: all 0.15s;
+}
+
+.preset-tag:hover {
+  background: #e2e8f0;
+  color: var(--lego-blue);
+  border-color: var(--lego-blue);
+}
+
+.font-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.font-option-btn {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.font-option-btn:hover {
+  border-color: #94a3b8;
+}
+
+.font-option-btn.active {
+  border-color: var(--lego-blue);
+  background: #e1f5fe;
+  color: var(--lego-blue);
+  font-weight: bold;
+}
+
+.btn-add-text {
+  background: linear-gradient(180deg, var(--lego-green), var(--lego-green-dark));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #004d1a;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-add-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #004d1a;
+}
+
+.btn-add-text:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #004d1a;
+}
+
+/* ========================================================
+   Fase 5: Estilos de Recorte de Rostros (Face Cropper)
+   y Paleta de Cuerpos / Stickers
+   ======================================================== */
+
+/* Botón de Recortar Caras en el Panel de Foto */
+.btn-cropper-trigger {
+  background: linear-gradient(180deg, #ff9800, #f57c00);
+  color: white;
+  border: 2px solid #e65100;
+  border-radius: 24px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 #b23c00, 0 6px 12px rgba(245, 124, 0, 0.25);
+  transition: all 0.15s ease;
+  flex: 1;
+}
+
+.btn-cropper-trigger:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #ffa726, #fb8c00);
+  box-shadow: 0 6px 0 #b23c00, 0 8px 14px rgba(245, 124, 0, 0.3);
+}
+
+.btn-cropper-trigger:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #b23c00;
+}
+
+/* Sub-secciones de la paleta de Figuras */
+.palette-subgroup {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.subgroup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.subgroup-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-subgroup-action {
+  background: #fff3e0;
+  color: #e65100;
+  border: 1.5px solid #ffb74d;
+  border-radius: 14px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s;
+}
+
+.btn-subgroup-action:hover {
+  background: #ffe0b2;
+  transform: scale(1.04);
+}
+
+/* Grid de Caras Recortadas */
+.cropped-faces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 10px;
+  min-height: 70px;
+}
+
+.empty-faces-hint {
+  grid-column: 1 / -1;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  background: #ffffff;
+}
+
+.empty-faces-hint span {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cropped-face-item {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #fed700;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  overflow: visible;
+}
+
+.cropped-face-item:hover {
+  transform: translateY(-3px) scale(1.06);
+  border-color: #f57c00;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cropped-face-item.dragging {
+  opacity: 0.45;
+  transform: scale(0.95);
+}
+
+.cropped-face-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-delete-face {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e53935;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  opacity: 0.85;
+  transition: all 0.1s;
+}
+
+.btn-delete-face:hover {
+  opacity: 1;
+  transform: scale(1.15);
+  background: #c62828;
+}
+
+/* ========================================================
+   Modal de Recorte de Caras (Face Cropper Modal)
+   ======================================================== */
+.cropper-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+
+.cropper-modal-overlay.visible {
+  display: flex;
+}
+
+.cropper-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 940px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border: 4px solid #fed700;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease;
+}
+
+.cropper-modal-header {
+  background: linear-gradient(135deg, #e3000b, #d32f2f);
+  color: white;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #b70008;
+}
+
+.cropper-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cropper-header-icon {
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.cropper-header-title h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cropper-header-title p {
+  font-size: 0.88rem;
+  margin: 2px 0 0 0;
+  opacity: 0.92;
+}
+
+.btn-cropper-close-x {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-cropper-close-x:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: rotate(90deg);
+}
+
+.cropper-modal-body {
+  display: flex;
+  flex-direction: row;
+  padding: 18px;
+  gap: 20px;
+  background: #f1f5f9;
+}
+
+/* Área del Lienzo interactivo del recorte */
+.cropper-canvas-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cropper-canvas-container {
+  position: relative;
+  background: #1e293b;
+  border-radius: 14px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+  border: 3px solid #cbd5e1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cropper-canvas {
+  display: block;
+  cursor: grab;
+  max-width: 100%;
+  height: auto;
+}
+
+#cropper-canvas:active {
+  cursor: grabbing;
+}
+
+.cropper-canvas-badge {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fed700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Panel Lateral de Controles del Recorte */
+.cropper-side-controls {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.cropper-control-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cropper-slider-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cropper-val-badge {
+  background: #e2e8f0;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.cropper-range-input {
+  width: 100%;
+  accent-color: #e3000b;
+  cursor: pointer;
+  height: 6px;
+}
+
+.cropper-shape-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-shape-opt {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-shape-opt.active {
+  background: #fff8e1;
+  border-color: #fed700;
+  color: #b78103;
+  font-weight: 700;
+}
+
+/* Vista previa en vivo con stud Lego */
+.cropper-preview-card {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.cropper-preview-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.cropper-live-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lego-neck-stud {
+  width: 32px;
+  height: 7px;
+  background: #fed700;
+  border: 1.5px solid #c5a300;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  margin-bottom: -1px;
+  z-index: 2;
+}
+
+#cropper-live-preview {
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 3px solid #fed700;
+}
+
+.cropper-preview-caption {
+  font-size: 0.75rem;
+  color: #475569;
+  text-align: center;
+}
+
+/* Botones de Acción de Recorte */
+.cropper-actions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.btn-confirm-crop {
+  background: linear-gradient(180deg, #00852b, #00591d);
+  color: white;
+  border: 2px solid #004d1a;
+  border-radius: 22px;
+  padding: 11px 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 #003813, 0 6px 12px rgba(0, 133, 43, 0.25);
+  transition: all 0.15s ease;
+}
+
+.btn-confirm-crop:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #009e33, #006b23);
+}
+
+.btn-confirm-crop:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #003813;
+}
+
+.btn-cancel-cropper {
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-cancel-cropper:hover {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+@media (max-width: 860px) {
+  .cropper-modal-body {
+    flex-direction: column;
+  }
+  .cropper-side-controls {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Familiar - Regalo Día de la Familia</title>
+  
+  <!-- Estilos y fuentes -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/minigame.css">
+  <link rel="stylesheet" href="css/coding.css">
+  
+  <!-- Librería Konva.js para el área de dibujo interactivo -->
+  <script src="https://unpkg.com/konva@9.3.16/konva.min.js"></script>
+</head>
+<body>
+
+  <!-- Cabecera Principal con Logo Oficial de la Escuela -->
+  <header class="app-header">
+    <div class="brand-wrapper">
+      <!-- Logo institucional de la escuela -->
+      <div class="school-logo-badge" title="Logo Institucional de la Escuela">
+        <img src="img/logo.png" alt="Logo de la Escuela" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <h1 class="brand-title">Lego Familiar</h1>
+        <span class="brand-subtitle">🎁 Especial Día de la Familia</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Botón para volver al Menú Principal -->
+      <button id="btn-home-from-editor" class="btn-secondary" style="border-radius: 20px; font-weight: 700; background: white; border: 2px solid #ffca28; padding: 8px 16px; cursor: pointer;" title="Volver al menú de inicio">
+        <span>🏠</span> Menú Inicio
+      </button>
+
+      <!-- Botón de Impresión Directa -->
+      <button id="btn-print-gift" class="btn-print-gift" title="Imprime tu regalo directamente">
+        <span>🖨️</span> Imprimir
+      </button>
+
+      <!-- Botón de Descarga de Imagen -->
+      <button id="btn-export-gift" class="btn-export-gift" title="Descarga tu regalo listo para imprimir o compartir">
+        <span>🎁</span> ¡Descargar mi Regalo!
+      </button>
+    </div>
+  </header>
+
+  <!-- PANTALLA 1: Menú Inicial con Banners de Elección (Fase 3) -->
+  <section id="screen-home" class="screen active">
+    <div class="home-screen-wrapper">
+      
+      <div class="home-hero-header">
+        <h2 class="home-main-title">¡Bienvenidos a Lego Familiar!</h2>
+        <p class="home-subtitle">Elige una de las tres opciones para comenzar tu experiencia:</p>
+      </div>
+
+      <div class="home-banners-grid">
+        <!-- Banner 1 (Opción A): Jugar y Aprender Matemática -->
+        <article id="banner-play" class="home-banner-card banner-game">
+          <span class="banner-badge">🎮 Misión Escolar • 5 Desafíos</span>
+          <div class="banner-icon-box">⛏️ 🧱 👾</div>
+          <h3 class="banner-title">¡Jugar y Aprender!</h3>
+          <p class="banner-desc">
+            Supera desafíos divertidos: esquiva slimes en movimiento, resuelve acertijos de lógica y responde preguntas matemáticas para conseguir los bloques mágicos.
+          </p>
+          <button id="btn-home-play" class="btn-banner-action" type="button">
+            <span>🚀</span> ¡Comenzar la Aventura!
+          </button>
+        </article>
+
+        <!-- Banner 2 (Opción B): Módulo de Programación -->
+        <article id="banner-coding" class="home-banner-card banner-coding">
+          <span class="banner-badge">💻 Pensamiento Computacional • 1° a 5°</span>
+          <div class="banner-icon-box">🤖 💡 🚀</div>
+          <h3 class="banner-title">Módulo de Programación</h3>
+          <p class="banner-desc">
+            Aprende cómo piensan las computadoras junto a Byte el robot. Descubre qué son las instrucciones, ordena acciones cotidianas y supera divertidos desafíos interactivos.
+          </p>
+          <button id="btn-home-coding" class="btn-banner-action" type="button">
+            <span>💻</span> ¡Aprender a Programar!
+          </button>
+        </article>
+
+        <!-- Banner 3 (Opción C): Armar Regalo Directo -->
+        <article id="banner-editor" class="home-banner-card banner-editor">
+          <span class="banner-badge">🎁 Modo Creativo • Directo</span>
+          <div class="banner-icon-box">🖼️ 👨‍👩‍👧‍👦 ✨</div>
+          <h3 class="banner-title">Armar mi regalo familiar</h3>
+          <p class="banner-desc">
+            Pasa directamente al taller: sube la foto de tu familia, decórala con bloques y minifiguras Lego, escribe una dedicatoria y descárgala con el logo de tu escuela.
+          </p>
+          <button id="btn-home-editor" class="btn-banner-action" type="button">
+            <span>🎨</span> ¡Ir al Taller de Diseño!
+          </button>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA DE SELECCIÓN DE GRADO (1° a 5° Grado) - Fase 4 -->
+  <section id="screen-grades" class="screen">
+    <div class="grades-screen-wrapper">
+      
+      <div class="grades-header-box">
+        <h2 class="grades-main-title">¿En qué grado estás? 🎒</h2>
+        <p class="grades-subtitle">Selecciona tu nivel para cargar los 5 desafíos matemáticos correspondientes:</p>
+      </div>
+
+      <div class="grades-grid">
+        <!-- 1° Grado -->
+        <article class="grade-card grade-1" data-grade="1">
+          <span class="grade-badge-level">1° Grado</span>
+          <div class="grade-icon">🐣</div>
+          <h3 class="grade-title">Exploradores</h3>
+          <p class="grade-desc">Sumas y restas hasta 20, números pares e impares y saltos con slimes.</p>
+          <button class="btn-select-grade" type="button">¡Jugar 1°!</button>
+        </article>
+
+        <!-- 2° Grado -->
+        <article class="grade-card grade-2" data-grade="2">
+          <span class="grade-badge-level">2° Grado</span>
+          <div class="grade-icon">🧱</div>
+          <h3 class="grade-title">Constructores</h3>
+          <p class="grade-desc">Operaciones hasta 100, tablas de multiplicar básicas y lluvia tormentosa.</p>
+          <button class="btn-select-grade" type="button">¡Jugar 2°!</button>
+        </article>
+
+        <!-- 3° Grado -->
+        <article class="grade-card grade-3" data-grade="3">
+          <span class="grade-badge-level">3° Grado</span>
+          <div class="grade-icon">🏹</div>
+          <h3 class="grade-title">Aventureros</h3>
+          <p class="grade-desc">Múltiplos, división exacta y comprensión de fracciones visuales (1/2, 1/4).</p>
+          <button class="btn-select-grade" type="button">¡Jugar 3°!</button>
+        </article>
+
+        <!-- 4° Grado -->
+        <article class="grade-card grade-4" data-grade="4">
+          <span class="grade-badge-level">4° Grado</span>
+          <div class="grade-icon">🧪</div>
+          <h3 class="grade-title">Científicos</h3>
+          <p class="grade-desc">Operaciones con decimales simples, números primos y divisores exactos.</p>
+          <button class="btn-select-grade" type="button">¡Jugar 4°!</button>
+        </article>
+
+        <!-- 5° Grado -->
+        <article class="grade-card grade-5" data-grade="5">
+          <span class="grade-badge-level">5° Grado</span>
+          <div class="grade-icon">🔮</div>
+          <h3 class="grade-title">Maestros</h3>
+          <p class="grade-desc">Introducción a números negativos bajo cero y multiplicación de fracciones.</p>
+          <button class="btn-select-grade" type="button">¡Jugar 5°!</button>
+        </article>
+      </div>
+
+      <button id="btn-back-to-home-from-grades" class="btn-back-to-home" type="button">
+        ⬅️ Volver al Menú Principal
+      </button>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA: SELECCIÓN DE GRADOS DE PROGRAMACIÓN (1° a 5° Grado) -->
+  <section id="screen-coding-grades" class="screen">
+    <div class="coding-screen-wrapper">
+      
+      <div class="coding-header-box">
+        <h2 class="coding-main-title">💻 Módulo de Programación: Elige tu Grado 🎒</h2>
+        <p class="coding-subtitle">Aprende Pensamiento Computacional junto a Byte el robot. Selecciona tu grado escolar:</p>
+      </div>
+
+      <div class="coding-grades-grid">
+        <!-- 1° Grado -->
+        <article class="coding-grade-card coding-g-1" data-cgrade="1">
+          <span class="coding-grade-badge">1.º Grado</span>
+          <div class="coding-grade-icon">🤖</div>
+          <h3 class="coding-grade-title">Exploradores</h3>
+          <p class="coding-grade-desc">Actividades muy visuales, 3 pasos simples, seguir y ordenar acciones cotidianas.</p>
+          <button class="btn-select-coding-grade" type="button">¡Programar 1°!</button>
+        </article>
+
+        <!-- 2° Grado -->
+        <article class="coding-grade-card coding-g-2" data-cgrade="2">
+          <span class="coding-grade-badge">2.º Grado</span>
+          <div class="coding-grade-icon">🧩</div>
+          <h3 class="coding-grade-title">Constructores</h3>
+          <p class="coding-grade-desc">Más pasos, instrucciones claras vs dudosas y detección de distractores.</p>
+          <button class="btn-select-coding-grade" type="button">¡Programar 2°!</button>
+        </article>
+
+        <!-- 3° Grado -->
+        <article class="coding-grade-card coding-g-3" data-cgrade="3">
+          <span class="coding-grade-badge">3.º Grado</span>
+          <div class="coding-grade-icon">🏹</div>
+          <h3 class="coding-grade-title">Aventureros</h3>
+          <p class="coding-grade-desc">Secuencias lógicas, cuadrículas interactivas y caminos espaciales con flechas.</p>
+          <button class="btn-select-coding-grade" type="button">¡Programar 3°!</button>
+        </article>
+
+        <!-- 4° Grado -->
+        <article class="coding-grade-card coding-g-4" data-cgrade="4">
+          <span class="coding-grade-badge">4.º Grado</span>
+          <div class="coding-grade-icon">🔍</div>
+          <h3 class="coding-grade-title">Detectives</h3>
+          <p class="coding-grade-desc">Detección de errores (debugging), ambigüedades e instrucciones faltantes.</p>
+          <button class="btn-select-coding-grade" type="button">¡Programar 4°!</button>
+        </article>
+
+        <!-- 5° Grado -->
+        <article class="coding-grade-card coding-g-5" data-cgrade="5">
+          <span class="coding-grade-badge">5.º Grado</span>
+          <div class="coding-grade-icon">💻</div>
+          <h3 class="coding-grade-title">Maestros</h3>
+          <p class="coding-grade-desc">Misiones multi-objetivo, algoritmos completos y resolución de problemas.</p>
+          <button class="btn-select-coding-grade" type="button">¡Programar 5°!</button>
+        </article>
+      </div>
+
+      <button id="btn-back-to-home-from-coding" class="btn-back-to-home" type="button">
+        ⬅️ Volver al Menú Principal
+      </button>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA: TEMARIO / SYLLABUS DEL GRADO SELECCIONADO -->
+  <section id="screen-coding-syllabus" class="screen">
+    <div class="coding-screen-wrapper">
+      
+      <div class="syllabus-container">
+        <!-- Barra de estado del grado -->
+        <div class="syllabus-top-info">
+          <span id="syllabus-grade-badge" class="syllabus-grade-badge">1.º Grado 🐣</span>
+          <span id="syllabus-score-badge" class="syllabus-score-badge">⭐ 0 pts</span>
+          <button id="btn-back-to-coding-grades" class="btn-hud-back" type="button">
+            ⬅️ Cambiar Grado
+          </button>
+        </div>
+
+        <h3 style="font-size: 1.6rem; color: #1e293b; margin-bottom: 6px;">📚 Ruta de Pensamiento Computacional</h3>
+        <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 20px;">Supera cada tema para desbloquear tu insignia de programador:</p>
+
+        <!-- Grilla de Temas (Instrucciones activo, demás temas previstos) -->
+        <div class="topics-grid">
+          <!-- Tema 1: INSTRUCCIONES (Activo) -->
+          <article class="topic-card active">
+            <div class="topic-card-header">
+              <span class="topic-icon">📋</span>
+              <span class="topic-status-tag status-active">🟢 Disponible</span>
+            </div>
+            <h4 class="topic-title">1. Instrucciones</h4>
+            <p class="topic-desc">
+              Descubre qué es una instrucción, por qué debe ser clara y ordenada, y resuelve desafíos con Byte.
+            </p>
+            <div class="topic-progress-box">
+              <div class="topic-progress-label">
+                <span>INSTRUCCIONES</span>
+                <span id="syllabus-instructions-pct">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="syllabus-instructions-progress" class="progress-bar-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+            <button id="btn-start-instructions-topic" class="btn-start-topic" type="button">
+              <span>🚀</span> ¡Comenzar Instrucciones!
+            </button>
+          </article>
+
+          <!-- Tema 2: Algoritmos (Futuro) -->
+          <article class="topic-card locked">
+            <div class="topic-card-header">
+              <span class="topic-icon">🧩</span>
+              <span class="topic-status-tag status-locked">🔒 Próximamente</span>
+            </div>
+            <h4 class="topic-title">2. Algoritmos</h4>
+            <p class="topic-desc">Conjuntos de pasos ordenados para resolver problemas paso a paso.</p>
+          </article>
+
+          <!-- Tema 3: Secuencias (Futuro) -->
+          <article class="topic-card locked">
+            <div class="topic-card-header">
+              <span class="topic-icon">➡️</span>
+              <span class="topic-status-tag status-locked">🔒 Próximamente</span>
+            </div>
+            <h4 class="topic-title">3. Secuencias</h4>
+            <p class="topic-desc">El flujo continuo de órdenes sin saltear momentos clave.</p>
+          </article>
+
+          <!-- Tema 4: Decisiones (Futuro) -->
+          <article class="topic-card locked">
+            <div class="topic-card-header">
+              <span class="topic-icon">🔀</span>
+              <span class="topic-status-tag status-locked">🔒 Próximamente</span>
+            </div>
+            <h4 class="topic-title">4. Decisiones</h4>
+            <p class="topic-desc">Condiciones lógicas: Si se cumple una condición, hacemos una acción distinta.</p>
+          </article>
+
+          <!-- Tema 5: Repeticiones (Futuro) -->
+          <article class="topic-card locked">
+            <div class="topic-card-header">
+              <span class="topic-icon">🔁</span>
+              <span class="topic-status-tag status-locked">🔒 Próximamente</span>
+            </div>
+            <h4 class="topic-title">5. Repeticiones</h4>
+            <p class="topic-desc">Bucles y patrones para no escribir la misma orden muchas veces.</p>
+          </article>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA: APRENDIZAJE INTERACTIVO DE "INSTRUCCIONES" -->
+  <section id="screen-coding-topic" class="screen">
+    <div class="coding-screen-wrapper">
+      
+      <div class="coding-app-container">
+        <!-- HUD Superior -->
+        <div class="coding-hud-bar">
+          <div class="hud-nav-group">
+            <button id="btn-hud-back-syllabus" class="btn-hud-back" type="button">
+              ⬅️ Temario
+            </button>
+            <span id="hud-coding-stage-badge" class="hud-stage-badge">📖 1/6: Pequeña Teoría</span>
+          </div>
+
+          <div class="hud-stats-group">
+            <span id="hud-coding-score" class="hud-score-pill">⭐ 0 pts</span>
+            <div class="hud-progress-wrap">
+              <span>Progreso:</span>
+              <div class="hud-progress-bar">
+                <div id="hud-coding-progress-fill" class="hud-progress-fill" style="width: 0%;"></div>
+              </div>
+              <span id="hud-coding-progress-pct">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Robot Byte Guía -->
+        <div class="byte-guide-box">
+          <div id="byte-avatar-box" class="byte-avatar">
+            <!-- Renderizado dinámicamente -->
+          </div>
+          <div class="byte-bubble">
+            <div class="byte-name-tag">
+              <span>🤖</span> Robot Byte (Tu compañero de código)
+            </div>
+            <div id="byte-speech-text" class="byte-speech-text">
+              ¡Cargando misión de programación!
+            </div>
+            <button id="btn-byte-audio" class="btn-byte-audio" type="button" title="Escuchar la explicación de Byte">
+              <span>🔊</span> Escuchar a Byte
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenedor dinámico de la etapa activa -->
+        <div id="coding-stage-container" class="stage-content-area">
+          <!-- Renderizado dinámicamente por codingModule.js -->
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA 2: Mini-Juego de 3 Niveles (Estilo Minecraft) -->
+  <section id="screen-game" class="screen">
+    <div class="game-screen-wrapper">
+      
+      <!-- Barra superior de la misión -->
+      <div class="game-header-bar">
+        <div class="game-title-group">
+          <div id="game-level-title" class="game-title-badge">⛏️ Nivel 1 de 3: ¡Esquiva y Recolecta!</div>
+          <div id="game-mission-desc" class="game-mission-desc">¡Salta sobre las plataformas, esquiva a los slimes y junta las 3 piezas Lego!</div>
+        </div>
+
+        <div class="game-mission-hud">
+          <span class="hud-label" id="game-level-counter">0 / 3 🧱</span>
+          <div class="hud-bricks">
+            <div id="slot-brick-1" class="hud-brick-slot brick-red">🧱</div>
+            <div id="slot-brick-2" class="hud-brick-slot brick-blue">🧱</div>
+            <div id="slot-brick-3" class="hud-brick-slot brick-gold">🧱</div>
+          </div>
+        </div>
+
+        <div class="game-nav-actions">
+          <button id="btn-home-from-game" class="btn-game-nav btn-home-from-game" type="button" title="Volver al menú inicial">
+            🏠 Inicio
+          </button>
+          <button id="btn-skip-mission" class="btn-game-nav btn-skip-mission" type="button" title="Ir directo al taller sin jugar">
+            Saltar al Taller ⏩
+          </button>
+        </div>
+      </div>
+
+      <!-- Canvas del juego con overlay de victoria -->
+      <div class="game-canvas-container">
+        <canvas id="minigame-canvas" width="900" height="500"></canvas>
+
+        <!-- Cartel de Misión Cumplida -->
+        <div id="victory-overlay" class="victory-overlay">
+          <div class="victory-box">
+            <h2 class="victory-title">🎉 ¡DESAFÍO COMPLETADO! 🎉</h2>
+            <p class="victory-desc">¡Felicitaciones! Superaste los desafíos de obstáculos, lógica y matemáticas. ¡Tus bloques están listos para tu familia!</p>
+            <button id="btn-start-workshop" class="btn-start-workshop" type="button">
+              🎁 ¡Entrar al Taller de Regalos!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles y ayuda táctil para pantallas escolares -->
+      <div class="game-controls-help">
+        <span>🎮 Controles: Usa las flechas ⬅️ ➡️ o A/D para moverte, y ⬆️ / ESPACIO para saltar.</span>
+
+        <div class="touch-controls-bar">
+          <button id="touch-left" class="touch-btn" type="button" title="Izquierda">⬅️</button>
+          <button id="touch-right" class="touch-btn" type="button" title="Derecha">➡️</button>
+          <button id="touch-jump" class="touch-btn jump-btn" type="button" title="Saltar">⬆️ SALTAR</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA 2: Editor y Taller del Regalo Familiar -->
+  <section id="screen-editor" class="screen">
+    <div class="app-container" style="width: 100%;">
+
+      <!-- Barra Lateral de Opciones y Herramientas -->
+      <aside class="sidebar">
+        
+        <!-- Pestañas de navegación amigables -->
+        <nav class="sidebar-tabs">
+          <button class="tab-btn active" data-tab="blocks" title="Bloques de construcción">
+            <span class="tab-icon">🧱</span>
+            <span>Bloques</span>
+          </button>
+          <button class="tab-btn" data-tab="minifigs" title="Personajes y minifiguras Lego">
+            <span class="tab-icon">🧍</span>
+            <span>Figuras</span>
+          </button>
+          <button class="tab-btn" data-tab="text" title="Escribir un mensaje o dedicatoria">
+            <span class="tab-icon">✏️</span>
+            <span>Texto</span>
+          </button>
+          <button class="tab-btn" data-tab="backgrounds" title="Fondos de paisajes">
+            <span class="tab-icon">🌄</span>
+            <span>Fondos</span>
+          </button>
+          <button class="tab-btn" data-tab="photo" title="Cargar foto familiar">
+            <span class="tab-icon">📸</span>
+            <span>Mi Foto</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-content">
+
+          <!-- Panel 1: Bloques Lego -->
+          <section id="panel-blocks" class="tab-panel active">
+            <h2 class="panel-title">🧱 Piezas de Construcción</h2>
+
+            <div class="color-picker-section">
+              <span class="section-label">1. Elige un color:</span>
+              <div id="color-picker" class="color-swatches-grid">
+                <!-- Renderizado dinámicamente -->
+              </div>
+            </div>
+
+            <div class="blocks-grid-section">
+              <span class="section-label">2. Elige tu bloque (arrastra o toca):</span>
+              <div id="blocks-grid" class="blocks-grid">
+                <!-- Renderizado dinámicamente -->
+              </div>
+            </div>
+
+            <div class="helper-tip">
+              <span>💡</span>
+              <span>Arrastra los bloques al dibujo o haz clic para colocarlos.</span>
+            </div>
+          </section>
+
+          <!-- Panel 2: Figuras y Personajes Lego (Fase 5) -->
+          <section id="panel-minifigs" class="tab-panel">
+            <h2 class="panel-title">🧍 Figuras y Personajes</h2>
+
+            <!-- Sección: Mis Caras Recortadas (Fase 5) -->
+            <div class="palette-subgroup">
+              <div class="subgroup-header">
+                <span class="subgroup-title">🎭 Mis Caras Recortadas</span>
+                <button id="btn-quick-crop-shortcut" class="btn-subgroup-action" type="button" title="Abrir herramienta de recorte">
+                  <span>✂️</span> Recortar
+                </button>
+              </div>
+              <div id="cropped-faces-palette" class="cropped-faces-grid">
+                <div class="empty-faces-hint">
+                  <span>✂️</span>
+                  <p>Aún no recortaste caras. Sube tu foto familiar y pulsa <strong>Recortar</strong> para crear stickers de tu familia.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sección: Cuerpos Lego sin cabeza (Fase 5) -->
+            <div class="palette-subgroup">
+              <div class="subgroup-header">
+                <span class="subgroup-title">👔 Cuerpos Lego (Coloca tu cara)</span>
+              </div>
+              <div id="headless-bodies-grid" class="minifigs-grid">
+                <!-- Renderizado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Sección: Mascotas y Pecera (Fase 5) -->
+            <div class="palette-subgroup">
+              <div class="subgroup-header">
+                <span class="subgroup-title">🫧 Mascotas y Acuario</span>
+              </div>
+              <div id="pet-items-grid" class="minifigs-grid">
+                <!-- Renderizado dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Sección: Minifiguras Clásicas Completas -->
+            <div class="palette-subgroup">
+              <div class="subgroup-header">
+                <span class="subgroup-title">🧍 Minifiguras Clásicas</span>
+              </div>
+              <div id="minifigs-grid" class="minifigs-grid">
+                <!-- Renderizado dinámicamente -->
+              </div>
+            </div>
+
+            <div class="helper-tip">
+              <span>💡</span>
+              <span>¡Arrastra un cuerpo Lego y luego arrastra tu cara recortada sobre el cuello!</span>
+            </div>
+          </section>
+
+          <!-- Panel 3: Herramienta de Texto (Fase 2) -->
+          <section id="panel-text" class="tab-panel">
+            <h2 class="panel-title">✏️ Dedicatoria Familiar</h2>
+
+            <div class="text-tool-form">
+              <div>
+                <span class="section-label">1. Escribe tu mensaje:</span>
+                <input type="text" id="text-message-input" class="text-input-field" placeholder="¡Feliz Día Familia! ❤️" value="¡Feliz Día Familia! ❤️" maxlength="40">
+              </div>
+
+              <!-- Mensajes rápidos sugeridos -->
+              <div>
+                <span class="section-label" style="font-size: 0.85rem;">Frases rápidas con 1 clic:</span>
+                <div class="text-preset-tags">
+                  <button type="button" class="preset-tag" data-text="¡Feliz Día Familia! ❤️">❤️ Feliz Día</button>
+                  <button type="button" class="preset-tag" data-text="¡Los quiero mucho! ⭐">⭐ Los quiero</button>
+                  <button type="button" class="preset-tag" data-text="Mi Familia Genial 👨‍👩‍👧‍👦">👨‍👩‍👧‍👦 Mi Familia</button>
+                  <button type="button" class="preset-tag" data-text="¡Gracias por todo! 🎁">🎁 Gracias</button>
+                </div>
+              </div>
+
+              <!-- Selector de fuentes infantiles/divertidas -->
+              <div>
+                <span class="section-label">2. Elige el estilo de letra:</span>
+                <div class="font-selector-grid">
+                  <button type="button" class="font-option-btn active" data-font="Fredoka" style="font-family: 'Fredoka', sans-serif;">
+                    Fredoka (Alegre)
+                  </button>
+                  <button type="button" class="font-option-btn" data-font="Comic Neue" style="font-family: 'Comic Neue', cursive;">
+                    Comic (Escolar)
+                  </button>
+                  <button type="button" class="font-option-btn" data-font="Bangers" style="font-family: 'Bangers', cursive; letter-spacing: 1px;">
+                    Bangers (Cómic)
+                  </button>
+                  <button type="button" class="font-option-btn" data-font="Pacifico" style="font-family: 'Pacifico', cursive;">
+                    Pacifico (Fiesta)
+                  </button>
+                </div>
+              </div>
+
+              <!-- Selector de color para el texto -->
+              <div>
+                <span class="section-label">3. Color de las letras:</span>
+                <div id="text-color-picker" class="color-swatches-grid">
+                  <!-- Renderizado dinámicamente -->
+                </div>
+              </div>
+
+              <button id="btn-add-text" class="btn-add-text" type="button">
+                <span>➕</span> Añadir Texto al Dibujo
+              </button>
+            </div>
+          </section>
+
+          <!-- Panel 4: Fondos Temáticos (Incluye Minecraft) -->
+          <section id="panel-backgrounds" class="tab-panel">
+            <h2 class="panel-title">🌄 Escenarios para tu Foto</h2>
+            <span class="section-label">Elige dónde colocar a tu familia:</span>
+            
+            <div id="bg-gallery" class="bg-gallery">
+              <!-- Renderizado dinámicamente -->
+            </div>
+          </section>
+
+          <!-- Panel 5: Foto Familiar -->
+          <section id="panel-photo" class="tab-panel">
+            <h2 class="panel-title">📸 Foto de la Familia</h2>
+
+            <div class="photo-uploader-box">
+              <div class="upload-icon">🖼️</div>
+              <p>Sube una foto divertida con tu mamá, papá, abuelos o hermanos para hacer tu regalo.</p>
+
+              <input type="file" id="photo-input" accept="image/*" style="display: none;">
+              <button id="upload-btn-trigger" class="btn-upload-photo" type="button">
+                📁 Elegir Foto desde la PC
+              </button>
+
+              <div id="photo-status">
+                <span class="no-photo-text">Aún no has subido tu foto</span>
+              </div>
+
+              <div class="photo-controls-row">
+                <button id="btn-open-cropper" class="btn-cropper-trigger" type="button" title="Recortar las caras de tu familia para ponerlas en cuerpos Lego">
+                  <span>✂️</span> Recortar Caras de la Foto
+                </button>
+                <button id="btn-remove-photo" class="btn-secondary btn-danger" type="button">
+                  🗑️ Quitar Foto
+                </button>
+              </div>
+            </div>
+
+            <div class="helper-tip">
+              <span>🔒</span>
+              <span>Tu foto es 100% privada. Se procesa solo en tu navegador y no viaja por internet.</span>
+            </div>
+          </section>
+
+        </div>
+      </aside>
+
+      <!-- Área de Trabajo Central (Lienzo / Canvas) -->
+      <section class="workspace">
+
+        <!-- Barra de herramientas flotante de acciones rápidas -->
+        <div class="canvas-toolbar">
+          <button id="btn-rotate" class="tool-btn" disabled title="Girar pieza seleccionada">
+            <span>🔄</span> Girar
+          </button>
+          <button id="btn-duplicate" class="tool-btn" disabled title="Duplicar bloque">
+            <span>📋</span> Duplicar
+          </button>
+          <div class="tool-separator"></div>
+          <button id="btn-layer-up" class="tool-btn" disabled title="Traer bloque al frente">
+            <span>⬆️</span> Adelante
+          </button>
+          <button id="btn-layer-down" class="tool-btn" disabled title="Enviar bloque atrás">
+            <span>⬇️</span> Atrás
+          </button>
+          <div class="tool-separator"></div>
+          <button id="btn-toggle-snap" class="tool-btn" title="Activar/desactivar imán de bloques">
+            <span>🧲</span> Imán: <span class="snap-status">Libre 🖐️</span>
+          </button>
+          <div class="tool-separator"></div>
+          <button id="btn-delete" class="tool-btn btn-danger" disabled title="Eliminar pieza seleccionada">
+            <span>🗑️</span> Borrar
+          </button>
+          <button id="btn-clear-all" class="tool-btn" title="Limpiar todos los bloques">
+            <span>🧹</span> Limpiar todo
+          </button>
+        </div>
+
+        <!-- Marco del Lienzo Konva -->
+        <div class="canvas-card">
+          <div id="canvas-container"></div>
+        </div>
+
+        <div class="canvas-footer-tip">
+          <span>🧩</span>
+          <span>¡Pon los bloques y minifiguras alrededor de la foto para armar tu regalo!</span>
+        </div>
+
+      </section>
+
+    </div>
+  </section>
+
+  <!-- Modal de Recorte de Rostros (Face Cropper) - Fase 5 -->
+  <div id="face-cropper-modal" class="cropper-modal-overlay">
+    <div class="cropper-modal-card">
+      
+      <div class="cropper-modal-header">
+        <div class="cropper-header-title">
+          <span class="cropper-header-icon">✂️</span>
+          <div>
+            <h3>Taller de Recorte de Caras Lego</h3>
+            <p>Acomoda el marco amarillo sobre el rostro para convertirlo en sticker.</p>
+          </div>
+        </div>
+        <button id="btn-close-cropper" class="btn-cropper-close-x" type="button" title="Cerrar">&times;</button>
+      </div>
+
+      <div class="cropper-modal-body">
+        <!-- Lienzo de encuadre interactivo -->
+        <div class="cropper-canvas-pane">
+          <div class="cropper-canvas-container">
+            <canvas id="cropper-canvas" width="600" height="420"></canvas>
+            <div class="cropper-canvas-badge">Arrastra el círculo amarillo sobre la cara</div>
+          </div>
+        </div>
+
+        <!-- Panel de control de recorte lateral -->
+        <div class="cropper-side-controls">
+          
+          <div class="cropper-control-box">
+            <label for="cropper-size-slider" class="cropper-slider-label">
+              <span>📏 Tamaño del corte:</span>
+              <span id="cropper-size-display" class="cropper-val-badge">120px</span>
+            </label>
+            <input type="range" id="cropper-size-slider" min="40" max="220" value="120" class="cropper-range-input">
+          </div>
+
+          <div class="cropper-control-box">
+            <span class="cropper-slider-label">🎯 Forma de la Cabeza:</span>
+            <div class="cropper-shape-btn-group">
+              <button type="button" id="btn-shape-circle" class="btn-shape-opt active" data-shape="circle">🟡 Redonda</button>
+              <button type="button" id="btn-shape-oval" class="btn-shape-opt" data-shape="oval">🥚 Óvalo Lego</button>
+            </div>
+          </div>
+
+          <!-- Previsualización en vivo estilo minifigura -->
+          <div class="cropper-preview-card">
+            <span class="cropper-preview-title">👀 Vista Previa:</span>
+            <div class="cropper-live-frame">
+              <div class="lego-neck-stud"></div>
+              <canvas id="cropper-live-preview" width="90" height="90"></canvas>
+            </div>
+            <span class="cropper-preview-caption">¡Listo para poner sobre el cuerpo Lego!</span>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="cropper-actions-group">
+            <button id="btn-confirm-crop" class="btn-confirm-crop" type="button">
+              <span>✂️</span> ¡Recortar y Guardar Cara!
+            </button>
+            <button id="btn-cancel-cropper" class="btn-cancel-cropper" type="button">
+              Volver al Taller
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal de Celebración de Descarga -->
+  <div id="celebration-modal" class="modal-overlay">
+    <div class="modal-card">
+      <h2 class="modal-title">🎉 ¡Felicitaciones! 🎉</h2>
+      <p class="modal-text">Tu regalo para el <strong>Día de la Familia</strong> se ha descargado con éxito con el sello de la escuela.</p>
+      
+      <div class="modal-preview-box">
+        <img id="modal-preview-img" alt="Vista previa del regalo">
+      </div>
+
+      <button id="modal-close-btn" class="btn-modal-close" type="button">
+        ✨ ¡Seguir Jugando!
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenedor para lluvia de confeti animado -->
+  <div id="confetti-container" class="confetti-container"></div>
+
+  <!-- Scripts de la Aplicación -->
+  <script src="js/backgrounds.js"></script>
+  <script src="js/legoBricks.js"></script>
+  <script src="js/canvasManager.js"></script>
+  <script src="js/miniGame.js"></script>
+  <script src="js/codingModule.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
