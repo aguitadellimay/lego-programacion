@@ -198,11 +198,11 @@ const CODING_DATA = {
             ]
           },
 
-          // 5. DESAFÍO FINAL — ¿CÓMO PLANTAMOS UNA SEMILLA?
+          // 5. ACTIVIDAD 5 — ¿CÓMO PLANTAMOS UNA SEMILLA?
           {
             id: 'g1_inst_seed_final',
             type: 'seed_interactive',
-            title: '🌱 DESAFÍO FINAL: ¿CÓMO PLANTAMOS UNA SEMILLA?',
+            title: '🌱 ACTIVIDAD 5: ¿CÓMO PLANTAMOS UNA SEMILLA?',
             instruction: 'TOCÁ LAS 4 INSTRUCCIONES EN EL ORDEN EXACTO PARA QUE LA PLANTA CREZCA:',
             steps: [
               { id: 'seed_1', icon: '🟫', label: '1. HACER UN POQUITO DE TIERRA' },
@@ -215,6 +215,45 @@ const CODING_DATA = {
               'PISTA 1: PRIMERO PREPARAMOS LA TIERRA FÉRTIL.',
               'PISTA 2: LUEGO COLOCAMOS LA SEMILLA Y LA TAPAMOS.',
               'PISTA 3: AL FINAL REGAMOS CON AGUA PARA QUE CREZCA LA PLANTA.'
+            ]
+          },
+
+          // 6. MISIÓN FINAL INTERACTIVA — ¡LLEGÁ A LA META! (MARIO)
+          {
+            id: 'g1_inst_mario_mission',
+            type: 'mario_mission',
+            title: '🎮 MISIÓN FINAL: ¡LLEGÁ A LA META!',
+            instruction: '¡AYUDÁ A MARIO A LLEGAR A SU CASA! USÁ LAS INSTRUCCIONES PARA GUIARLO POR EL CAMINO.',
+            characterName: 'MARIO',
+            characterIcon: '🧑‍🔧',
+            goalName: 'CASA DE MARIO',
+            goalIcon: '🏠',
+            gridCols: 6,
+            gridRows: 2,
+            startPos: { x: 0, y: 0 },
+            targetPos: { x: 5, y: 0 },
+            obstacles: [
+              { x: 3, y: 0, icon: '🪨', name: 'PIEDRA' }
+            ],
+            scenery: [
+              { x: 0, y: 1, icon: '🌳' },
+              { x: 1, y: 1, icon: '🌻' },
+              { x: 2, y: 1, icon: '🍄' },
+              { x: 3, y: 1, icon: '🌳' },
+              { x: 4, y: 1, icon: '🌻' },
+              { x: 5, y: 1, icon: '🌳' }
+            ],
+            availableCommands: ['right', 'jump', 'up', 'left'],
+            commandLabels: {
+              right: '➡️ DERECHA',
+              jump: '🦘 SALTAR',
+              up: '⬆️ SUBIR',
+              left: '⬅️ IZQUIERDA'
+            },
+            hints: [
+              'PISTA 1: MIRÁ EL CAMINO EN LÍNEA RECTA HACIA LA CASA.',
+              'PISTA 2: EN EL MEDIO HAY UNA PIEDRA. USÁ «SALTAR» PARA PASARLA.',
+              'PISTA 3: LA SECUENCIA ES: DERECHA, DERECHA, SALTAR, DERECHA.'
             ]
           }
         ]
@@ -1027,11 +1066,11 @@ const CODING_DATA = {
             ]
           },
 
-          // 6. DESAFÍO FINAL — EL ORDEN PERFECTO DE BYTE
+          // 6. ACTIVIDAD 6 — EL DESAYUNO SALUDABLE DE BYTE
           {
             id: 'final_challenge',
             type: 'final_challenge',
-            title: '🏆 Desafío Final: El Desayuno Saludable de Byte',
+            title: '🥪 Actividad 6: El Desayuno Saludable de Byte',
             instruction: 'Selecciona y ordena las 4 instrucciones indispensables (descarta los 2 distractores):',
             pool: [
               { id: 'bowl', icon: '🥣', text: 'Buscar el bol limpio', isRequired: true, correctPos: 1 },
@@ -1046,6 +1085,43 @@ const CODING_DATA = {
               '💡 Descartá las acciones que no tienen que ver con desayunar (fútbol y guitarra).',
               '💡 Primero va el bol, después el cereal y luego la leche.',
               '💡 Secuencia: 1. Bol ➡️ 2. Cereal ➡️ 3. Leche ➡️ 4. Comer.'
+            ]
+          },
+
+          // 7. MISIÓN FINAL INTERACTIVA — ¡LLEGÁ A LA META! (MARIO)
+          {
+            id: 'g2_inst_mario_mission',
+            type: 'mario_mission',
+            title: '🎮 Misión Final: ¡Llegá a la Meta!',
+            instruction: '¡Ayudá a Mario a llegar a su casa! Usá las instrucciones para guiarlo por el camino evitando los obstáculos.',
+            characterName: 'Mario',
+            characterIcon: '🧑‍🔧',
+            goalName: 'Casa de Mario',
+            goalIcon: '🏠',
+            gridCols: 5,
+            gridRows: 4,
+            startPos: { x: 0, y: 3 },
+            targetPos: { x: 3, y: 1 },
+            obstacles: [
+              { x: 3, y: 3, icon: '🕳️', name: 'pozo de agua' }
+            ],
+            scenery: [
+              { x: 0, y: 0, icon: '🌲' }, { x: 1, y: 0, icon: '🌲' }, { x: 2, y: 0, icon: '🌸' }, { x: 3, y: 0, icon: '🌲' }, { x: 4, y: 0, icon: '🌲' },
+              { x: 0, y: 1, icon: '🌲' }, { x: 1, y: 1, icon: '🌸' }, { x: 2, y: 1, icon: '🍄' },
+              { x: 0, y: 2, icon: '🌲' }, { x: 1, y: 2, icon: '🍄' }, { x: 2, y: 2, icon: '🌸' }, { x: 3, y: 2, icon: '🌲' }
+            ],
+            availableCommands: ['right', 'jump', 'up', 'left', 'down'],
+            commandLabels: {
+              right: '➡️ Derecha',
+              jump: '🦘 Saltar',
+              up: '⬆️ Subir',
+              left: '⬅️ Izquierda',
+              down: '⬇️ Bajar'
+            },
+            hints: [
+              '💡 Observá el camino: primero avanzá hacia la derecha.',
+              '💡 Hay un pozo en el camino. Usá SALTAR después del segundo paso para no caerte.',
+              '💡 Después del salto, subí hacia arriba y girá hacia la casa.'
             ]
           }
         ]
@@ -1658,11 +1734,11 @@ const CODING_DATA = {
             ]
           },
 
-          // 6. DESAFÍO FINAL — LA GRAN BÚSQUEDA DEL TESORO
+          // 6. ACTIVIDAD 6 — LA GRAN BÚSQUEDA DEL TESORO
           {
             id: 'final_challenge',
             type: 'final_challenge',
-            title: '🏆 Desafío Final: La Gran Búsqueda del Tesoro',
+            title: '🗺️ Actividad 6: La Gran Búsqueda del Tesoro',
             instruction: 'Selecciona y ordena las 5 instrucciones indispensables descartando los 2 distractores:',
             pool: [
               { id: 'map', icon: '🗺️', text: 'Consultar el mapa del tesoro', isRequired: true, correctPos: 1 },
@@ -1678,6 +1754,46 @@ const CODING_DATA = {
               '💡 Guitarra y bailar son distractores.',
               '💡 Primero mapa y linterna, luego caminar hacia el cofre.',
               '💡 Secuencia: 1. Mapa ➡️ 2. Linterna ➡️ 3. Caminar ➡️ 4. Llave ➡️ 5. Corona.'
+            ]
+          },
+
+          // 7. MISIÓN FINAL INTERACTIVA — ¡LLEGÁ A LA META! (MARIO)
+          {
+            id: 'g3_inst_mario_mission',
+            type: 'mario_mission',
+            title: '🎮 Misión Final: ¡Llegá a la Meta!',
+            instruction: '¡Ayudá a Mario a llegar a su casa! Planificá sus movimientos y usá el salto para superar los dos obstáculos del camino.',
+            characterName: 'Mario',
+            characterIcon: '🧑‍🔧',
+            goalName: 'Casa de Mario',
+            goalIcon: '🏠',
+            gridCols: 6,
+            gridRows: 5,
+            startPos: { x: 0, y: 4 },
+            targetPos: { x: 5, y: 1 },
+            obstacles: [
+              { x: 3, y: 4, icon: '🕳️', name: 'pozo de agua' },
+              { x: 4, y: 1, icon: '🪨', name: 'gran roca' }
+            ],
+            scenery: [
+              { x: 0, y: 0, icon: '🌲' }, { x: 1, y: 0, icon: '🌲' }, { x: 2, y: 0, icon: '🌲' }, { x: 3, y: 0, icon: '🌸' },
+              { x: 0, y: 1, icon: '🌲' }, { x: 1, y: 1, icon: '🌸' }, { x: 2, y: 1, icon: '🍄' }, { x: 3, y: 1, icon: '🌲' },
+              { x: 0, y: 2, icon: '🌲' }, { x: 1, y: 2, icon: '🌲' }, { x: 2, y: 2, icon: '🌲' }, { x: 5, y: 2, icon: '🌲' },
+              { x: 0, y: 3, icon: '🌲' }, { x: 1, y: 3, icon: '🍄' }, { x: 2, y: 3, icon: '🌸' }, { x: 5, y: 3, icon: '🌸' },
+              { x: 5, y: 4, icon: '🌲' }
+            ],
+            availableCommands: ['right', 'jump', 'up', 'down', 'left'],
+            commandLabels: {
+              right: '➡️ Derecha',
+              jump: '🦘 Saltar',
+              up: '⬆️ Subir',
+              down: '⬇️ Bajar',
+              left: '⬅️ Izquierda'
+            },
+            hints: [
+              '💡 El recorrido tiene 2 obstáculos: un pozo en la fila inferior y una roca en la columna de subida.',
+              '💡 Avanzá a la derecha y saltá el pozo para llegar a la esquina.',
+              '💡 Subí dos casilleros y saltá hacia arriba para superar la roca antes de doblar a la casa.'
             ]
           }
         ]
@@ -2329,6 +2445,47 @@ const CODING_DATA = {
               '💡 Recordá que una instrucción indica qué acción ejecutar paso a paso.',
               '💡 Las computadoras no adivinan; necesitan instrucciones exactas y sin ambigüedades.',
               '💡 Cambiar el orden de los pasos cambia el resultado del programa.'
+            ]
+          },
+
+          // 8. MISIÓN FINAL INTERACTIVA — ¡LLEGÁ A LA META! (MARIO)
+          {
+            id: 'g4_inst_mario_mission',
+            type: 'mario_mission',
+            title: '🎮 Misión Final: ¡Llegá a la Meta!',
+            instruction: '¡Misión de Planificación! Programá la secuencia completa de movimientos y saltos para guiar a Mario a través del laberinto hasta su destino.',
+            characterName: 'Mario',
+            characterIcon: '🧑‍🔧',
+            goalName: 'Casa de Mario',
+            goalIcon: '🏠',
+            gridCols: 7,
+            gridRows: 6,
+            startPos: { x: 0, y: 5 },
+            targetPos: { x: 5, y: 3 },
+            obstacles: [
+              { x: 3, y: 3, icon: '🪨', name: 'roca gigante' },
+              { x: 4, y: 1, icon: '🧱', name: 'bloque de ladrillos' },
+              { x: 6, y: 2, icon: '🕳️', name: 'pozo profundo' }
+            ],
+            scenery: [
+              { x: 1, y: 0, icon: '🌲' }, { x: 2, y: 0, icon: '🌲' }, { x: 3, y: 0, icon: '🌲' },
+              { x: 1, y: 1, icon: '🌲' }, { x: 2, y: 1, icon: '🌸' }, { x: 3, y: 1, icon: '🌲' },
+              { x: 1, y: 2, icon: '🌲' }, { x: 2, y: 2, icon: '🌲' }, { x: 3, y: 2, icon: '🌲' },
+              { x: 1, y: 4, icon: '🌲' }, { x: 2, y: 4, icon: '🌲' }, { x: 3, y: 4, icon: '🌲' },
+              { x: 1, y: 5, icon: '🌲' }, { x: 2, y: 5, icon: '🌲' }, { x: 3, y: 5, icon: '🌲' }
+            ],
+            availableCommands: ['up', 'jump', 'right', 'down', 'left'],
+            commandLabels: {
+              up: '⬆️ Subir',
+              jump: '🦘 Saltar',
+              right: '➡️ Derecha',
+              down: '⬇️ Bajar',
+              left: '⬅️ Izquierda'
+            },
+            hints: [
+              '💡 Planificá el recorrido observando los tres obstáculos: roca en la fila 3, ladrillos en la subida y pozo en la bajada.',
+              '💡 Subí dos casilleros y doblá a la derecha para saltar la roca.',
+              '💡 Subí y saltá los ladrillos hacia la fila superior, avanzá hacia la derecha, bajá y saltá el pozo para entrar a la casa.'
             ]
           }
         ]
@@ -3003,6 +3160,48 @@ const CODING_DATA = {
               '💡 Recordá que las computadoras son deterministas y no corrigen errores por sí solas.',
               '💡 Una precondición es el estado necesario para que una instrucción pueda ejecutarse.',
               '💡 El trazado secuencial evalúa cómo cambian las variables paso a paso.'
+            ]
+          },
+
+          // 8. MISIÓN FINAL INTERACTIVA — ¡LLEGÁ A LA META! (MARIO)
+          {
+            id: 'g5_inst_mario_mission',
+            type: 'mario_mission',
+            title: '🎮 Misión Final: ¡Llegá a la Meta!',
+            instruction: '¡Desafío Algorítmico Avanzado! Planificá y optimizá la secuencia lógica de instrucciones para conducir a Mario hasta la meta superando todos los obstáculos del terreno.',
+            characterName: 'Mario',
+            characterIcon: '🧑‍🔧',
+            goalName: 'Castillo de Mario',
+            goalIcon: '🏰',
+            gridCols: 8,
+            gridRows: 6,
+            startPos: { x: 0, y: 0 },
+            targetPos: { x: 7, y: 4 },
+            obstacles: [
+              { x: 3, y: 0, icon: '🪨', name: 'roca volcánica' },
+              { x: 6, y: 2, icon: '🕳️', name: 'foso de lava' },
+              { x: 6, y: 5, icon: '🧱', name: 'muro del castillo' }
+            ],
+            scenery: [
+              { x: 0, y: 1, icon: '🌲' }, { x: 1, y: 1, icon: '🌲' }, { x: 2, y: 1, icon: '🌲' }, { x: 3, y: 1, icon: '🌲' },
+              { x: 0, y: 2, icon: '🌲' }, { x: 1, y: 2, icon: '🌸' }, { x: 2, y: 2, icon: '🍄' }, { x: 3, y: 2, icon: '🌲' },
+              { x: 0, y: 3, icon: '🌲' }, { x: 1, y: 3, icon: '🌲' }, { x: 2, y: 3, icon: '🌲' }, { x: 3, y: 3, icon: '🌲' },
+              { x: 0, y: 4, icon: '🌲' }, { x: 1, y: 4, icon: '🌲' }, { x: 2, y: 4, icon: '🌲' }, { x: 3, y: 4, icon: '🌲' },
+              { x: 0, y: 5, icon: '🌲' }, { x: 1, y: 5, icon: '🌲' }, { x: 2, y: 5, icon: '🌲' }, { x: 3, y: 5, icon: '🌲' }
+            ],
+            availableCommands: ['right', 'jump', 'down', 'up', 'left', 'repeat3'],
+            commandLabels: {
+              right: '➡️ Derecha',
+              jump: '🦘 Saltar',
+              down: '⬇️ Bajar',
+              up: '⬆️ Subir',
+              left: '⬅️ Izquierda',
+              repeat3: '🔁 Repetir 3x'
+            },
+            hints: [
+              '💡 Identificá los 3 obstáculos: roca en la fila superior, foso en la bajada y muro antes del castillo.',
+              '💡 Podés usar «🔁 Repetir 3x» para avanzar 3 pasos seguidos en la misma dirección.',
+              '💡 Planificá el trazado: derecha con salto de roca, descenso saltando el foso, rodeo por la fila inferior con salto del muro, y subida al castillo.'
             ]
           }
         ]
@@ -4165,6 +4364,9 @@ class CodingModuleManager {
       case 'theory_quiz':
         this.renderTheoryQuizChallenge(container, act);
         break;
+      case 'mario_mission':
+        this.renderMarioMission(container, act);
+        break;
       default:
         this.renderTheory(container, act);
     }
@@ -4931,7 +5133,7 @@ class CodingModuleManager {
             </div>
 
             <button type="button" id="btn-finish-quiz-summary" class="btn-stage-next" style="margin-top:10px; padding:14px 32px; font-size:1.15rem;">
-              <span>🏆 ¡Finalizar Tema y Ver Mi Insignia!</span> ➡️
+              <span>🎮 ¡Ir a la Gran Misión Final de Mario!</span> ➡️
             </button>
           </div>
 
@@ -4948,6 +5150,556 @@ class CodingModuleManager {
     };
 
     drawQuizQuestion(qIdx);
+  }
+
+  // ========================================================
+  // 🎮 MINIJUEGO INTERACTIVO: MISIÓN FINAL DE MARIO (1.° A 5.°)
+  // ========================================================
+  renderMarioMission(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    this.updateByte(act.instruction, 'normal', `${act.title}. ${act.instruction}`);
+
+    let playerPos = { ...act.startPos };
+    let playerFacing = 'right';
+    let commands = [];
+    let isRunning = false;
+    let abortToken = { isAborted: false };
+    let currentHintIndex = 0;
+    let marioAnim = '';
+    let isMissionWon = false;
+
+    const cols = act.gridCols || 6;
+    const rows = act.gridRows || 2;
+    const cellSize = cols >= 7 ? 50 : (cols >= 5 ? 56 : 64);
+
+    const cmdMeta = {
+      right: { icon: '➡️', label: isGradeOne ? 'DERECHA' : 'Derecha', cls: 'cmd-right' },
+      left: { icon: '⬅️', label: isGradeOne ? 'IZQUIERDA' : 'Izquierda', cls: 'cmd-left' },
+      up: { icon: '⬆️', label: isGradeOne ? 'SUBIR' : 'Subir', cls: 'cmd-up' },
+      down: { icon: '⬇️', label: isGradeOne ? 'BAJAR' : 'Bajar', cls: 'cmd-down' },
+      jump: { icon: '🦘', label: isGradeOne ? 'SALTAR' : 'Saltar', cls: 'cmd-jump' },
+      repeat3: { icon: '🔁', label: isGradeOne ? 'REPETIR 3X' : 'Repetir 3x', cls: 'cmd-repeat' }
+    };
+
+    container.innerHTML = `
+      <div class="mario-mission-wrapper">
+        ${this.createActivityHeader(act, false)}
+
+        <div class="pattern-instruction-title" style="margin-bottom:6px;">
+          ${isGradeOne ? '🎯 OBJETIVO: ¡LLEVAR A MARIO A SU CASA!' : '🎯 Objetivo: Guiar a Mario hasta su destino superando los obstáculos.'}
+        </div>
+        <p style="font-size:1.15rem; color:#334155; margin-bottom:14px; font-weight:700; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
+          ${act.instruction}
+        </p>
+
+        <div class="mario-game-layout">
+          <!-- Columna izquierda: Tablero interactivo de Mario -->
+          <div class="mario-stage-box">
+            <div class="mario-grid-board" id="mario-grid-board"></div>
+            <div style="font-size:0.9rem; color:#64748b; font-weight:700; text-align:center;">
+              ${isGradeOne ? '🏁 INICIO: MARIO • 🏠 DESTINO: CASA' : '🏁 Inicio: Mario • 🏠 Destino: Casa'}
+            </div>
+          </div>
+
+          <!-- Columna derecha: Panel de programación y secuencia -->
+          <div class="mario-programming-panel">
+            <div class="mario-panel-section-title">
+              <span>🎮</span> ${isGradeOne ? '1. INSTRUCCIONES DISPONIBLES (TOCÁ PARA AGREGAR):' : '1. Instrucciones disponibles (tocá para agregar):'}
+            </div>
+            <div class="mario-cmd-palette" id="mario-cmd-palette">
+              ${(act.availableCommands || ['right', 'jump', 'up', 'down', 'left']).map(cmdKey => {
+                const meta = cmdMeta[cmdKey] || { icon: '👉', label: cmdKey, cls: '' };
+                return `
+                  <button type="button" class="btn-mario-cmd ${meta.cls}" data-cmd="${cmdKey}">
+                    <span>${meta.icon}</span> ${meta.label}
+                  </button>
+                `;
+              }).join('')}
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
+              <div class="mario-panel-section-title">
+                <span>📝</span> ${isGradeOne ? '2. TU SECUENCIA DE INSTRUCCIONES:' : '2. Tu secuencia de instrucciones:'}
+              </div>
+              <div style="display:flex; gap:6px;">
+                <button type="button" id="btn-mario-undo" class="btn-mario-tool" title="${isGradeOne ? 'BORRAR ÚLTIMA' : 'Borrar última'}">
+                  ${isGradeOne ? '⌫ BORRAR ÚLTIMO' : '⌫ Deshacer'}
+                </button>
+                <button type="button" id="btn-mario-clear-all" class="btn-mario-tool" style="color:#b91c1c;" title="${isGradeOne ? 'BORRAR TODO' : 'Borrar todo'}">
+                  ${isGradeOne ? '🗑️ VACIAR' : '🗑️ Vaciar'}
+                </button>
+              </div>
+            </div>
+
+            <div class="mario-sequence-tray" id="mario-sequence-tray"></div>
+
+            <div class="mario-actions-bar">
+              <button type="button" id="btn-mario-run" class="btn-mario-run">
+                <span>▶️</span> ${isGradeOne ? '¡EJECUTAR INSTRUCCIONES!' : '¡Ejecutar Instrucciones!'}
+              </button>
+              <button type="button" id="btn-mario-reset-pos" class="btn-mario-tool">
+                <span>🔄</span> ${isGradeOne ? 'REINICIAR POSICIÓN' : 'Reiniciar Posición'}
+              </button>
+              <button type="button" id="btn-mario-hint" class="btn-mario-tool" style="color:#0369a1;">
+                <span>💡</span> ${isGradeOne ? 'NECESITO UNA PISTA' : 'Necesito una Pista'}
+              </button>
+            </div>
+
+            <!-- Banner festivo de celebración al ganar la misión -->
+            <div id="mario-celebration-container" style="display:none;"></div>
+          </div>
+        </div>
+
+        ${this.createActivityFooter()}
+      </div>
+    `;
+
+    const boardEl = document.getElementById('mario-grid-board');
+    const trayEl = document.getElementById('mario-sequence-tray');
+    const btnRun = document.getElementById('btn-mario-run');
+    const btnUndo = document.getElementById('btn-mario-undo');
+    const btnClearAll = document.getElementById('btn-mario-clear-all');
+    const btnResetPos = document.getElementById('btn-mario-reset-pos');
+    const btnHint = document.getElementById('btn-mario-hint');
+    const celebrationEl = document.getElementById('mario-celebration-container');
+
+    // Renderizado del tablero de casillas de Mario
+    const renderBoard = () => {
+      if (!boardEl) return;
+      boardEl.style.gridTemplateColumns = `repeat(${cols}, ${cellSize}px)`;
+      boardEl.innerHTML = '';
+
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const cell = document.createElement('div');
+          cell.style.width = `${cellSize}px`;
+          cell.style.height = `${cellSize}px`;
+
+          const isGoal = (act.targetPos && act.targetPos.x === x && act.targetPos.y === y);
+          const isObstacle = (act.obstacles || []).find(o => o.x === x && o.y === y);
+          const isScenery = (act.scenery || []).find(s => s.x === x && s.y === y);
+          const isPlayer = (playerPos.x === x && playerPos.y === y);
+
+          if (isGoal) {
+            cell.className = 'mario-cell goal-cell';
+            cell.innerHTML = `<span title="${act.goalName || 'Meta'}">${act.goalIcon || '🏠'}</span>`;
+          } else if (isObstacle) {
+            cell.className = 'mario-cell obstacle-cell';
+            cell.innerHTML = `<span title="${isObstacle.name}">${isObstacle.icon}</span>`;
+          } else if (isScenery) {
+            cell.className = 'mario-cell scenery-cell';
+            cell.innerHTML = `<span>${isScenery.icon}</span>`;
+          } else {
+            cell.className = 'mario-cell road-cell';
+          }
+
+          if (isPlayer) {
+            cell.innerHTML = `
+              <div class="mario-actor face-${playerFacing} ${marioAnim}" title="${act.characterName || 'Mario'}">
+                ${act.characterIcon || '🧑‍🔧'}
+              </div>
+            `;
+          }
+
+          boardEl.appendChild(cell);
+        }
+      }
+    };
+
+    // Actualiza el visor de comandos de la secuencia
+    const updateTray = () => {
+      if (!trayEl) return;
+      if (commands.length === 0) {
+        trayEl.innerHTML = `
+          <div class="mario-sequence-empty-hint">
+            ${isGradeOne ? 'TOCÁ LAS FLECHAS Y EL SALTO PARA ARMAR EL CAMINO DE MARIO...' : 'Seleccioná las instrucciones para guiar a Mario hacia su casa...'}
+          </div>
+        `;
+      } else {
+        trayEl.innerHTML = commands.map((c, i) => {
+          const meta = cmdMeta[c] || { icon: '👉', label: c };
+          return `
+            <div class="mario-step-chip" id="mario-chip-${i}">
+              <span>${i + 1}.</span>
+              <span>${meta.icon} ${meta.label}</span>
+              <button type="button" class="btn-chip-delete" data-idx="${i}" title="${isGradeOne ? 'BORRAR ESTE PASO' : 'Borrar este paso'}">✕</button>
+            </div>
+          `;
+        }).join('');
+
+        trayEl.querySelectorAll('.btn-chip-delete').forEach(delBtn => {
+          delBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (isRunning || isMissionWon) return;
+            const idx = parseInt(delBtn.getAttribute('data-idx'));
+            if (!isNaN(idx)) {
+              this.onPlaySound('trash');
+              commands.splice(idx, 1);
+              updateTray();
+            }
+          };
+        });
+      }
+    };
+
+    renderBoard();
+    updateTray();
+
+    // Eventos: Paleta de botones para agregar comandos
+    container.querySelectorAll('.btn-mario-cmd').forEach(cmdBtn => {
+      cmdBtn.onclick = () => {
+        if (isRunning || isMissionWon) return;
+        const cmdKey = cmdBtn.getAttribute('data-cmd');
+        if (!cmdKey) return;
+        this.onPlaySound('click');
+        commands.push(cmdKey);
+        updateTray();
+      };
+    });
+
+    if (btnUndo) {
+      btnUndo.onclick = () => {
+        if (isRunning || isMissionWon) return;
+        this.onPlaySound('trash');
+        commands.pop();
+        updateTray();
+      };
+    }
+
+    if (btnClearAll) {
+      btnClearAll.onclick = () => {
+        if (isRunning || isMissionWon) return;
+        this.onPlaySound('trash');
+        commands = [];
+        playerPos = { ...act.startPos };
+        playerFacing = 'right';
+        marioAnim = '';
+        renderBoard();
+        updateTray();
+      };
+    }
+
+    if (btnResetPos) {
+      btnResetPos.onclick = () => {
+        if (isRunning) return;
+        this.onPlaySound('click');
+        playerPos = { ...act.startPos };
+        playerFacing = 'right';
+        marioAnim = '';
+        renderBoard();
+        container.querySelectorAll('.mario-step-chip').forEach(c => c.className = 'mario-step-chip');
+        const resetMsg = isGradeOne
+          ? '¡MARIO VOLVIÓ AL INICIO! PODÉS EDITAR TUS INSTRUCCIONES.'
+          : 'Mario volvió a la posición inicial. Podés corregir tu secuencia e intentar de nuevo.';
+        this.updateByte(resetMsg, 'normal');
+      };
+    }
+
+    if (btnHint) {
+      btnHint.onclick = () => {
+        if (isRunning) return;
+        this.onPlaySound('click');
+        const hintsArr = act.hints || [];
+        if (hintsArr.length === 0) return;
+        const currentHint = hintsArr[currentHintIndex];
+        currentHintIndex = (currentHintIndex + 1) % hintsArr.length;
+        this.updateByte(currentHint, 'thinking', currentHint);
+      };
+    }
+
+    // ========================================================
+    // EJECUCIÓN PASO A PASO DE LAS INSTRUCCIONES
+    // ========================================================
+    if (btnRun) {
+      btnRun.onclick = async () => {
+        if (isRunning || isMissionWon) return;
+
+        if (commands.length === 0) {
+          const emptyMsg = isGradeOne
+            ? '¡AGREGÁ AL MENOS UNA INSTRUCCIÓN ANTES DE EJECUTAR!'
+            : '¡Agregá al menos una instrucción antes de ejecutar!';
+          this.updateByte(emptyMsg, 'worried');
+          return;
+        }
+
+        isRunning = true;
+        btnRun.disabled = true;
+        btnRun.innerHTML = `<span>⏳</span> ${isGradeOne ? 'EJECUTANDO...' : 'Ejecutando...'}`;
+
+        abortToken = { isAborted: false };
+        this.marioAbortToken = abortToken;
+
+        playerPos = { ...act.startPos };
+        playerFacing = 'right';
+        marioAnim = '';
+        renderBoard();
+
+        // Limpiar estilos previos en chips
+        container.querySelectorAll('.mario-step-chip').forEach(c => c.className = 'mario-step-chip');
+
+        let crashed = false;
+
+        for (let i = 0; i < commands.length; i++) {
+          if (abortToken.isAborted) return;
+
+          const chipEl = document.getElementById(`mario-chip-${i}`);
+          if (chipEl) chipEl.className = 'mario-step-chip running';
+
+          await new Promise(r => setTimeout(r, 400));
+          if (abortToken.isAborted) return;
+
+          const cmd = commands[i];
+
+          // 1. MANEJO DE COMANDO: SALTAR
+          if (cmd === 'jump') {
+            let jx = 0;
+            let jy = 0;
+            if (playerFacing === 'right') jx = 2;
+            else if (playerFacing === 'left') jx = -2;
+            else if (playerFacing === 'up') jy = -2;
+            else if (playerFacing === 'down') jy = 2;
+
+            const landX = playerPos.x + jx;
+            const landY = playerPos.y + jy;
+
+            marioAnim = 'jumping';
+            this.onPlaySound('snap');
+            renderBoard();
+
+            await new Promise(r => setTimeout(r, 350));
+            if (abortToken.isAborted) return;
+
+            // Verificación aterrizaje dentro de límites
+            if (landX < 0 || landX >= cols || landY < 0 || landY >= rows) {
+              crashed = true;
+              if (chipEl) chipEl.className = 'mario-step-chip failed';
+              marioAnim = 'crashed';
+              this.onPlaySound('hit');
+              renderBoard();
+              const msg = isGradeOne
+                ? `¡CUIDADO! MARIO SE SALDRÍA DEL MAPA CON ESE SALTO EN EL PASO ${i + 1}.`
+                : `¡Cuidado! Mario se saldría del mapa con ese salto en el paso ${i + 1}.`;
+              this.recordAttemptError(msg);
+              break;
+            }
+
+            // Verificación si aterriza sobre un obstáculo
+            const hitLandingObs = (act.obstacles || []).find(o => o.x === landX && o.y === landY);
+            if (hitLandingObs) {
+              crashed = true;
+              if (chipEl) chipEl.className = 'mario-step-chip failed';
+              marioAnim = 'crashed';
+              this.onPlaySound('hit');
+              renderBoard();
+              const msg = isGradeOne
+                ? `¡CASI! NO HAY SUELO SEGURO PARA ATERRIZAR TRAS EL SALTO EN EL PASO ${i + 1}.`
+                : `¡Casi! No hay suelo seguro para aterrizar tras el salto en el paso ${i + 1}.`;
+              this.recordAttemptError(msg);
+              break;
+            }
+
+            // Aterrizaje exitoso del salto
+            playerPos = { x: landX, y: landY };
+            marioAnim = '';
+            this.onPlaySound('coin');
+            renderBoard();
+
+            await new Promise(r => setTimeout(r, 200));
+            if (chipEl) chipEl.className = 'mario-step-chip';
+            continue;
+          }
+
+          // 2. MANEJO DE COMANDO: REPETICIÓN (5.° GRADO)
+          if (cmd === 'repeat3') {
+            // Repite el movimiento en la dirección que mira 3 pasos
+            for (let rep = 0; rep < 3; rep++) {
+              let rx = playerPos.x;
+              let ry = playerPos.y;
+              if (playerFacing === 'right') rx++;
+              else if (playerFacing === 'left') rx--;
+              else if (playerFacing === 'up') ry--;
+              else if (playerFacing === 'down') ry++;
+
+              if (rx < 0 || rx >= cols || ry < 0 || ry >= rows) {
+                crashed = true;
+                break;
+              }
+              const hitObs = (act.obstacles || []).find(o => o.x === rx && o.y === ry);
+              if (hitObs) {
+                crashed = true;
+                break;
+              }
+              playerPos = { x: rx, y: ry };
+              marioAnim = 'walking';
+              this.onPlaySound('pop');
+              renderBoard();
+              await new Promise(r => setTimeout(r, 260));
+              marioAnim = '';
+            }
+
+            if (crashed) {
+              if (chipEl) chipEl.className = 'mario-step-chip failed';
+              marioAnim = 'crashed';
+              this.onPlaySound('hit');
+              renderBoard();
+              this.recordAttemptError(`¡Atención en el bucle del paso ${i + 1}! El avance repetido encontró un obstáculo o límite.`);
+              break;
+            }
+
+            renderBoard();
+            if (chipEl) chipEl.className = 'mario-step-chip';
+            continue;
+          }
+
+          // 3. MANEJO DE COMANDOS DIRECCIONALES: SUBIR, BAJAR, IZQUIERDA, DERECHA
+          let nextX = playerPos.x;
+          let nextY = playerPos.y;
+
+          if (cmd === 'right') { playerFacing = 'right'; nextX++; }
+          else if (cmd === 'left') { playerFacing = 'left'; nextX--; }
+          else if (cmd === 'up') { playerFacing = 'up'; nextY--; }
+          else if (cmd === 'down') { playerFacing = 'down'; nextY++; }
+
+          // Verificación límites
+          if (nextX < 0 || nextX >= cols || nextY < 0 || nextY >= rows) {
+            crashed = true;
+            if (chipEl) chipEl.className = 'mario-step-chip failed';
+            marioAnim = 'crashed';
+            this.onPlaySound('hit');
+            renderBoard();
+            const msg = isGradeOne
+              ? `¡CUIDADO! MARIO SE SALIÓ DEL CAMINO EN EL PASO ${i + 1}. ¡REVISÁ LA DIRECCIÓN!`
+              : `¡Cuidado! Mario se salió del recorrido en el paso ${i + 1}. Revisá la dirección de esa flecha.`;
+            this.recordAttemptError(msg);
+            break;
+          }
+
+          // Verificación colisión con obstáculo
+          const hitObstacle = (act.obstacles || []).find(o => o.x === nextX && o.y === nextY);
+          if (hitObstacle) {
+            crashed = true;
+            if (chipEl) chipEl.className = 'mario-step-chip failed';
+            marioAnim = 'crashed';
+            this.onPlaySound('hit');
+            renderBoard();
+            const msg = isGradeOne
+              ? `¡CASI! EN EL PASO ${i + 1} HAY UN OBSTÁCULO (${hitObstacle.name}). ¡USÁ «SALTAR» PARA SUPERARLO!`
+              : `¡Casi! En el paso ${i + 1} Mario chocó contra ${hitObstacle.name}. ¿Qué instrucción necesitás para superarlo? ¡Probá con SALTAR!`;
+            this.recordAttemptError(msg);
+            break;
+          }
+
+          // Verificación colisión con escenografía bloqueante
+          const hitScenery = (act.scenery || []).find(s => s.x === nextX && s.y === nextY);
+          if (hitScenery) {
+            crashed = true;
+            if (chipEl) chipEl.className = 'mario-step-chip failed';
+            marioAnim = 'crashed';
+            this.onPlaySound('hit');
+            renderBoard();
+            const msg = isGradeOne
+              ? `¡CUIDADO! EN EL PASO ${i + 1} MARIO CHOCÓ CON UN ELEMENTO DEL PAISAJE.`
+              : `¡Cuidado! En el paso ${i + 1} Mario se desvió hacia el paisaje. Mantenete sobre el camino.`;
+            this.recordAttemptError(msg);
+            break;
+          }
+
+          // Movimiento válido
+          playerPos = { x: nextX, y: nextY };
+          marioAnim = 'walking';
+          this.onPlaySound('pop');
+          renderBoard();
+
+          await new Promise(r => setTimeout(r, 260));
+          marioAnim = '';
+          renderBoard();
+          if (chipEl) chipEl.className = 'mario-step-chip';
+        }
+
+        isRunning = false;
+        btnRun.disabled = false;
+        btnRun.innerHTML = `<span>▶️</span> ${isGradeOne ? '¡EJECUTAR INSTRUCCIONES!' : '¡Ejecutar Instrucciones!'}`;
+
+        // ========================================================
+        // COMPROBACIÓN DE LLEGADA A LA META
+        // ========================================================
+        if (!crashed) {
+          const reachedGoal = (playerPos.x === act.targetPos.x && playerPos.y === act.targetPos.y);
+
+          if (reachedGoal) {
+            isMissionWon = true;
+            marioAnim = 'celebrating';
+            renderBoard();
+
+            this.onPlaySound('fanfare');
+            this.onLaunchConfetti();
+            this.recordActivitySuccess(act.id, 25);
+
+            btnRun.style.display = 'none';
+            if (btnResetPos) btnResetPos.style.display = 'none';
+
+            const victoryHeading = isGradeOne
+              ? '🎉 ¡LO LOGRASTE! ¡AYUDASTE A MARIO A LLEGAR A SU CASA!'
+              : '🎉 ¡MISIÓN COMPLETADA! ¡PROGRAMASTE LAS INSTRUCCIONES CORRECTAS!';
+
+            const victorySub = isGradeOne
+              ? '¡MARIO LLEGÓ A SU HOGAR SANO Y SALVO GRACIAS A TUS INSTRUCCIONES EXACTAS!'
+              : '¡Excelente trabajo de programación! Guiaste al personaje por el camino correcto superando todos los obstáculos.';
+
+            this.updateByte(victoryHeading, 'happy', victoryHeading);
+
+            if (celebrationEl) {
+              celebrationEl.className = 'mario-celebration-banner';
+              celebrationEl.innerHTML = `
+                <div style="font-size:3.5rem;">⭐ 🏆 ⭐</div>
+                <h3 class="mario-celebration-title">${victoryHeading}</h3>
+                <p class="mario-celebration-text">${victorySub}</p>
+                <div style="background:#ecfdf5; border:2px solid #86efac; border-radius:14px; padding:10px 18px; font-weight:800; color:#166534;">
+                  +25 ${isGradeOne ? 'PUNTOS' : 'puntos'} • ⭐⭐⭐ ${isGradeOne ? '¡MISIÓN FINAL SUPERADA!' : '¡Misión final superada!'}
+                </div>
+                <button type="button" id="btn-mario-finish-all" class="btn-stage-next" style="padding:14px 28px; font-size:1.15rem; margin-top:8px;">
+                  <span>${isGradeOne ? '✨ ¡FINALIZAR TEMA! ➡️' : '✨ ¡Completar y Ver Resultados! ➡️'}</span>
+                </button>
+              `;
+              celebrationEl.style.display = 'flex';
+
+              const btnFinishAll = document.getElementById('btn-mario-finish-all');
+              if (btnFinishAll) {
+                btnFinishAll.onclick = () => {
+                  this.nextActivity();
+                };
+              }
+            }
+          } else {
+            // Completó las instrucciones pero no llegó a la meta
+            const missingMsg = isGradeOne
+              ? '¡CASI! MARIO SIGUIÓ TODAS LAS INSTRUCCIONES PERO TODAVÍA NO LLEGÓ A SU CASA. ¡AGREGÁ MÁS PASOS!'
+              : '¡Buen avance! Mario completó la secuencia pero todavía no llegó a la meta. ¡Agregá más instrucciones para continuar!';
+            this.updateByte(missingMsg, 'thinking');
+          }
+        }
+      };
+    }
+
+    this.wireResetButton(() => {
+      commands = [];
+      playerPos = { ...act.startPos };
+      playerFacing = 'right';
+      marioAnim = '';
+      isMissionWon = false;
+      if (btnRun) {
+        btnRun.style.display = 'inline-flex';
+        btnRun.disabled = false;
+        btnRun.innerHTML = `<span>▶️</span> ${isGradeOne ? '¡EJECUTAR INSTRUCCIONES!' : '¡Ejecutar Instrucciones!'}`;
+      }
+      if (btnResetPos) btnResetPos.style.display = 'inline-flex';
+      if (celebrationEl) celebrationEl.style.display = 'none';
+      renderBoard();
+      updateTray();
+    });
+
+    const btnNext = document.getElementById('btn-activity-next');
+    if (btnNext) btnNext.onclick = () => this.nextActivity();
   }
 
   // 2. ¿QUÉ ES UNA INSTRUCCIÓN?
