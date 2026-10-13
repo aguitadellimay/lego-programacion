@@ -31,6 +31,34 @@ const CODING_DATA = {
       instructions: {
         title: 'INSTRUCCIONES',
         activities: [
+          // TEORÍA INICIAL — ¿QUÉ ES UNA INSTRUCCIÓN?
+          {
+            id: 'g1_inst_theory',
+            type: 'theory',
+            title: '📖 ¿QUÉ ES UNA INSTRUCCIÓN?',
+            intro: '¡HOLA! SOY BYTE 🤖. UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ HACER. ¡PROBÁ DARME UNA ORDEN!',
+            quote: 'UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ HACER. ¡UN ROBOT SOLO HACE LO QUE LE INDICAMOS!',
+            pillars: [
+              {
+                icon: '👉',
+                title: 'DICE QUÉ HACER',
+                desc: 'UNA INSTRUCCIÓN LE INDICA A UNA PERSONA O A UN ROBOT QUÉ ACCIÓN DEBE REALIZAR.'
+              },
+              {
+                icon: '🤖',
+                title: 'EL ROBOT OBEDECE',
+                desc: 'BYTE Y LAS COMPUTADORAS NO ADIVINAN: NECESITAN QUE LES DIGAMOS CADA PASO.'
+              },
+              {
+                icon: '🎯',
+                title: 'TIENE QUE SER CLARA',
+                desc: 'LAS INDICACIONES CLARAS NOS AYUDAN A HACER LAS COSAS BIEN Y EN ORDEN.'
+              }
+            ],
+            demoType: 'robot_commands_g1',
+            buttonText: '¡AHORA VAMOS A PRACTICAR!'
+          },
+
           // 1. ACTIVIDAD 1 — ¿QUÉ VA PRIMERO?
           {
             id: 'g1_inst_first',
@@ -843,6 +871,34 @@ const CODING_DATA = {
       instructions: {
         title: 'Instrucciones',
         activities: [
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES?
+          {
+            id: 'g2_inst_theory',
+            type: 'theory',
+            title: '📖 ¿Qué son las Instrucciones?',
+            intro: '¡Hola, constructor! En programación, una instrucción es una indicación concreta que le dice a una computadora o robot qué hacer.',
+            quote: 'Una instrucción indica una acción concreta. Las computadoras necesitan órdenes claras y ordenadas.',
+            pillars: [
+              {
+                icon: '🎯',
+                title: 'Acciones Concretas',
+                desc: 'Una instrucción dice qué hacer exactamente: avanzar, doblar o agarrar un objeto.'
+              },
+              {
+                icon: '🤖',
+                title: 'Robots y Computadoras',
+                desc: 'Las máquinas no piensan solas: esperan nuestras indicaciones paso a paso.'
+              },
+              {
+                icon: '🔢',
+                title: 'Secuencias de Pasos',
+                desc: 'Una secuencia es una serie de instrucciones organizadas en orden, una tras otra.'
+              }
+            ],
+            demoType: 'sequence_demo_g2',
+            buttonText: '¡PONGAMOS A PRUEBA LO QUE APRENDIMOS!'
+          },
+
           // 1. ACTIVIDAD 1 — ORDENÁ LOS PASOS
           {
             id: 'g2_inst_order',
@@ -1435,6 +1491,34 @@ const CODING_DATA = {
       instructions: {
         title: 'Instrucciones',
         activities: [
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
+          {
+            id: 'g3_inst_theory',
+            type: 'theory',
+            title: '📖 ¿Qué son las Instrucciones en Programación?',
+            intro: '¡Hola, explorador! En programación, las instrucciones le indican a un robot o computadora cómo resolver un problema. ¡El orden de las instrucciones puede cambiar el resultado!',
+            quote: 'Las instrucciones deben ser claras y ordenadas. Si cambiamos el orden, ¡el resultado puede cambiar por completo!',
+            pillars: [
+              {
+                icon: '💻',
+                title: 'Comandos Precisos',
+                desc: 'Son órdenes de programación que le indican a una máquina qué acción ejecutar.'
+              },
+              {
+                icon: '🎯',
+                title: 'Claridad Total',
+                desc: 'Deben ser exactas: no es lo mismo decir "avanzá un poco" que "avanzá 2 pasos hacia adelante".'
+              },
+              {
+                icon: '🔀',
+                title: '¡El Orden Importa!',
+                desc: 'Las instrucciones se ejecutan en secuencia. Cambiar el orden altera el resultado final.'
+              }
+            ],
+            demoType: 'order_matters_g3',
+            buttonText: '¡PONGAMOS A PRUEBA LO QUE APRENDIMOS!'
+          },
+
           // 1. ACTIVIDAD 1 — ORDENÁ LAS INSTRUCCIONES
           {
             id: 'g3_inst_order_arrows',
@@ -2024,6 +2108,39 @@ const CODING_DATA = {
       instructions: {
         title: 'Instrucciones',
         activities: [
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
+          {
+            id: 'g4_inst_theory',
+            type: 'theory',
+            title: '📖 ¿Qué son las Instrucciones en Programación?',
+            intro: '¡Hola, detective! En programación, las instrucciones son los bloques fundamentales de un algoritmo. Conocer su orden, secuencia y cómo evitar errores te convertirá en un gran programador.',
+            quote: 'Un programa es una secuencia ordenada de instrucciones. Cada orden debe ser clara y precisa para que la computadora produzca el resultado esperado.',
+            pillars: [
+              {
+                icon: '🧩',
+                title: 'Bloques del Algoritmo',
+                desc: 'Una instrucción es una orden unívoca. Al conectar varias instrucciones en orden creamos un programa.'
+              },
+              {
+                icon: '🔢',
+                title: 'Secuencia y Resultado',
+                desc: 'La secuencia define el orden de ejecución. Si se altera el orden, el resultado cambia o falla.'
+              },
+              {
+                icon: '🎯',
+                title: 'Precisión vs Ambigüedad',
+                desc: 'Las computadoras no adivinan. Órdenes vagas causan fallos; requieren parámetros exactos.'
+              },
+              {
+                icon: '🔍',
+                title: 'Depuración (Debugging)',
+                desc: 'Cuando una instrucción está fuera de lugar o mal redactada, produce un error (bug) que debemos corregir.'
+              }
+            ],
+            demoType: 'clarity_params_g4',
+            buttonText: '¡PONGAMOS A PRUEBA LO QUE APRENDIMOS!'
+          },
+
           // 1. ACTIVIDAD 1 — ORDENÁ LOS PASOS
           {
             id: 'g4_inst_order',
@@ -2127,11 +2244,11 @@ const CODING_DATA = {
             ]
           },
 
-          // 6. DESAFÍO FINAL — DETECTIVE DE ALGORITMOS
+          // 6. ACTIVIDAD 6 — DETECTIVE DE ALGORITMOS
           {
             id: 'final_challenge',
             type: 'final_challenge',
-            title: '🏆 Desafío Final: Detective de Algoritmos',
+            title: '📬 Actividad 6: Detective de Algoritmos - Envío Postal',
             instruction: 'Selecciona y ordena las 5 fases indispensables para enviar una carta certificada (descarta los 2 distractores):',
             pool: [
               { id: 'write', icon: '✍️', text: 'Redactar el texto de la carta', isRequired: true, correctPos: 1 },
@@ -2147,6 +2264,71 @@ const CODING_DATA = {
               '💡 Piano y barrilete son distractores.',
               '💡 La carta se redacta antes de doblarla adentro del sobre.',
               '💡 Secuencia: 1. Redactar ➡️ 2. Sobre ➡️ 3. Estampilla ➡️ 4. Buzón ➡️ 5. Entrega.'
+            ]
+          },
+
+          // 7. DESAFÍO FINAL TEÓRICO: ¿CUÁNTO APRENDISTE SOBRE LAS INSTRUCCIONES?
+          {
+            id: 'g4_inst_quiz_final',
+            type: 'theory_quiz',
+            title: '🏆 Desafío Final: ¿Cuánto Aprendiste sobre las Instrucciones?',
+            instruction: 'Demostrá lo que aprendiste sobre las instrucciones respondiendo estas 5 preguntas conceptuales:',
+            questions: [
+              {
+                id: 'q1',
+                question: '¿Qué es una instrucción en el mundo de la programación?',
+                options: [
+                  { id: 'opt1', text: 'Una indicación o comando claro que le dice a la computadora o al robot qué acción realizar.', isCorrect: true },
+                  { id: 'opt2', text: 'Un dibujo decorativo que se coloca en la pantalla para que el programa se vea más colorido.', isCorrect: false },
+                  { id: 'opt3', text: 'Una sugerencia que la máquina puede elegir libremente si desea cumplir o ignorar.', isCorrect: false }
+                ],
+                explanation: 'Una instrucción es una orden precisa: le indica a la computadora o al robot la acción exacta que debe ejecutar.'
+              },
+              {
+                id: 'q2',
+                question: '¿Para qué le damos instrucciones a un personaje o a un robot como Byte?',
+                options: [
+                  { id: 'opt1', text: 'Para que pueda resolver un problema o completar una misión paso a paso.', isCorrect: true },
+                  { id: 'opt2', text: 'Para que el robot invente acciones mágicas por su cuenta sin necesidad de programación.', isCorrect: false },
+                  { id: 'opt3', text: 'Para que la computadora intente adivinar lo que estamos pensando.', isCorrect: false }
+                ],
+                explanation: 'Las computadoras y robots no adivinan nuestros pensamientos: necesitan instrucciones claras para cumplir sus metas.'
+              },
+              {
+                id: 'q3',
+                question: '¿Por qué es fundamental respetar el orden de las instrucciones?',
+                options: [
+                  { id: 'opt1', text: 'Porque cambiar el orden altera el resultado final o puede hacer que el programa falle.', isCorrect: true },
+                  { id: 'opt2', text: 'Porque da lo mismo el orden; el resultado final siempre es idéntico.', isCorrect: false },
+                  { id: 'opt3', text: 'Porque el orden solo es importante en programas que tienen más de 100 instrucciones.', isCorrect: false }
+                ],
+                explanation: 'El orden de ejecución determina el resultado: por ejemplo, no podemos "Secarnos las manos" antes de "Mojarnos las manos".'
+              },
+              {
+                id: 'q4',
+                question: 'Si a un robot le decimos: "¡Caminá un poco y agarrá eso!", ¿qué problema ocurre?',
+                options: [
+                  { id: 'opt1', text: 'La instrucción es confusa y ambigua: el robot no sabe cuántos pasos dar ni qué objeto agarrar.', isCorrect: true },
+                  { id: 'opt2', text: 'El robot camina a la velocidad de la luz y agarra todos los objetos que encuentra.', isCorrect: false },
+                  { id: 'opt3', text: 'No hay problema, porque las computadoras comprenden palabras como "un poco" o "eso".', isCorrect: false }
+                ],
+                explanation: 'Las instrucciones deben ser precisas y claras, especificando parámetros exactos como distancia y qué objeto manipular.'
+              },
+              {
+                id: 'q5',
+                question: 'Si Byte sigue este programa: [1. Avanzar 2 pasos] ➡️ [2. Girar a la derecha] ➡️ [3. Avanzar 1 paso], ¿qué resultado produce?',
+                options: [
+                  { id: 'opt1', text: 'Byte llega a una posición diferente a si primero hubiera girado y después avanzado los 2 pasos.', isCorrect: true },
+                  { id: 'opt2', text: 'Byte vuelve automáticamente al inicio porque los giros borran los pasos anteriores.', isCorrect: false },
+                  { id: 'opt3', text: 'El robot se apaga porque no se pueden combinar pasos rectos con giros.', isCorrect: false }
+                ],
+                explanation: 'Cada paso modifica el estado y posición del robot: la secuencia completa determina el resultado final alcanzado.'
+              }
+            ],
+            hints: [
+              '💡 Recordá que una instrucción indica qué acción ejecutar paso a paso.',
+              '💡 Las computadoras no adivinan; necesitan instrucciones exactas y sin ambigüedades.',
+              '💡 Cambiar el orden de los pasos cambia el resultado del programa.'
             ]
           }
         ]
@@ -2545,6 +2727,39 @@ const CODING_DATA = {
       instructions: {
         title: 'Instrucciones',
         activities: [
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
+          {
+            id: 'g5_inst_theory',
+            type: 'theory',
+            title: '📖 ¿Qué son las Instrucciones en Programación?',
+            intro: '¡Hola, maestro del código! Las computadoras son máquinas deterministas: ejecutan estrictamente las instrucciones recibidas. Comprender la secuencia, precisión y ejecución es la base de todo software.',
+            quote: 'Una computadora ejecuta fielmente las instrucciones que recibe. Una orden incorrecta, ambigua o a destiempo altera el estado del sistema y produce un resultado inesperado.',
+            pillars: [
+              {
+                icon: '⚙️',
+                title: 'Determinismo y Ejecución',
+                desc: 'La computadora no interpreta intenciones ni corrige errores automáticamente; ejecuta exactamente el código.'
+              },
+              {
+                icon: '📋',
+                title: 'Secuencia y Precondiciones',
+                desc: 'Cada instrucción altera el estado del sistema y requiere que la etapa previa sea válida (precondición).'
+              },
+              {
+                icon: '🎯',
+                title: 'Precisión y Parámetros',
+                desc: 'Cada comando debe especificar acción, objeto y parámetros precisos (distancia, rotación, condiciones).'
+              },
+              {
+                icon: '⚡',
+                title: 'Lógica y Optimización',
+                desc: 'Una instrucción puede ser válida pero estar mal ubicada o ser innecesaria. El buen código es claro y eficiente.'
+              }
+            ],
+            demoType: 'state_tracer_g5',
+            buttonText: '¡PONGAMOS A PRUEBA LO QUE APRENDIMOS!'
+          },
+
           // 1. ACTIVIDAD 1 — LLEGÁ AL OBJETIVO
           {
             id: 'grid_byte_g5',
@@ -2682,11 +2897,11 @@ const CODING_DATA = {
             ]
           },
 
-          // 6. DESAFÍO FINAL — GRAN MISIÓN ALGORÍTMICA
+          // 6. ACTIVIDAD 6 — GRAN MISIÓN ALGORÍTMICA
           {
             id: 'grid_byte_g5_final',
             type: 'grid_multi_goal',
-            title: '🏆 Desafío Final: Gran Misión Algorítmica Multi-Objetivo',
+            title: '🤖 Actividad 6: Gran Misión Algorítmica Multi-Objetivo',
             instruction: 'Programá a Byte para cumplir los 3 objetivos en orden estricto: 💻 PC ➡️ 💾 Pendrive ➡️ 🚪 Puerta:',
             gridSize: 5,
             startPos: { x: 0, y: 0 },
@@ -2705,6 +2920,89 @@ const CODING_DATA = {
               '💡 Planificá el recorrido por tramos: Tramo 1 (de 0,0 a 2,1), Tramo 2 (de 2,1 a 4,3), Tramo 3 (de 4,3 a 0,4).',
               '💡 Para llegar a la PC: ➡️ ➡️ ⬇️ (llegás a 2,1).',
               '💡 Para llegar al pendrive: ➡️ ➡️ ⬇️ ⬇️ (llegás a 4,3). Luego bajá y ve a la izquierda hacia la puerta (0,4).'
+            ]
+          },
+
+          // 7. DESAFÍO FINAL TEÓRICO: ¿CUÁNTO APRENDISTE SOBRE LAS INSTRUCCIONES?
+          {
+            id: 'g5_inst_quiz_final',
+            type: 'theory_quiz',
+            title: '🏆 Desafío Final: ¿Cuánto Aprendiste sobre las Instrucciones?',
+            instruction: 'Demostrá tu comprensión respondiendo estas 6 preguntas de razonamiento algorítmico:',
+            questions: [
+              {
+                id: 'q1',
+                question: 'En ciencias de la computación, ¿cómo procesa una computadora las instrucciones que recibe?',
+                options: [
+                  { id: 'opt1', text: 'Ejecuta estrictamente las instrucciones programadas, sin interpretar intenciones ni corregir errores automáticamente.', isCorrect: true },
+                  { id: 'opt2', text: 'Corrige de forma automática los errores del programador cuando nota una instrucción equivocada.', isCorrect: false },
+                  { id: 'opt3', text: 'Elige libremente cuáles instrucciones ejecutar y cuáles ignorar según su estado de ánimo.', isCorrect: false },
+                  { id: 'opt4', text: 'Solo ejecuta instrucciones si el usuario presiona botones sin parar.', isCorrect: false }
+                ],
+                explanation: 'Las computadoras son deterministas: procesan fielmente las instrucciones que reciben sin deducir intenciones humanas.'
+              },
+              {
+                id: 'q2',
+                question: '¿Cuál de las siguientes instrucciones está formulada con la precisión adecuada para un algoritmo de robótica?',
+                options: [
+                  { id: 'opt1', text: 'Robot.avanzar(distancia: 3 metros, velocidad: 1.5 m/s);', isCorrect: true },
+                  { id: 'opt2', text: 'Robot.caminar(hacia adelante bastante rápido);', isCorrect: false },
+                  { id: 'opt3', text: 'Robot.ir(a donde esté el objetivo);', isCorrect: false },
+                  { id: 'opt4', text: 'Robot.moverse(un ratito);', isCorrect: false }
+                ],
+                explanation: 'Las instrucciones en programación requieren parámetros precisos (números, medidas, direcciones) para no generar ambigüedad.'
+              },
+              {
+                id: 'q3',
+                question: 'Un robot tiene este programa: [1. Pintar la pared] ➡️ [2. Mezclar la pintura] ➡️ [3. Destapar la lata]. ¿Por qué falla este algoritmo?',
+                options: [
+                  { id: 'opt1', text: 'Viola las precondiciones: no se puede pintar con una lata que todavía está cerrada y sin mezclar.', isCorrect: true },
+                  { id: 'opt2', text: 'Porque las computadoras no tienen permitido usar pintura.', isCorrect: false },
+                  { id: 'opt3', text: 'Porque un programa nunca puede tener exactamente tres pasos.', isCorrect: false },
+                  { id: 'opt4', text: 'El algoritmo no falla; el orden de los tres pasos es indistinto.', isCorrect: false }
+                ],
+                explanation: 'Cada instrucción exige un estado previo válido (precondición). Destapar y mezclar deben realizarse antes de aplicar la pintura.'
+              },
+              {
+                id: 'q4',
+                question: 'Observá la ejecución secuencial de este código:\n• Paso 1: Puntos = 10\n• Paso 2: Puntos = Puntos + 5\n• Paso 3: Puntos = Puntos * 2\n¿Cuál es el valor final de la variable Puntos?',
+                snippet: '1. Puntos = 10\n2. Puntos = Puntos + 5\n3. Puntos = Puntos * 2',
+                options: [
+                  { id: 'opt1', text: '30 (Primero 10 + 5 = 15, luego 15 * 2 = 30)', isCorrect: true },
+                  { id: 'opt2', text: '25 (Porque se suman 10 + 5 + 10)', isCorrect: false },
+                  { id: 'opt3', text: '20 (Solo se toma la multiplicación inicial)', isCorrect: false },
+                  { id: 'opt4', text: '10 (Las variables no cambian durante el programa)', isCorrect: false }
+                ],
+                explanation: 'En una secuencia de instrucciones, cada paso actualiza el estado en memoria: 10 pasa a 15, y luego 15 * 2 resulta en 30.'
+              },
+              {
+                id: 'q5',
+                question: 'Un dron autónomo debe despegar, tomar una foto aérea y aterrizar. Su secuencia escrita es:\n1. Despegar(altura: 10 m)\n2. Aterrizar()\n3. TomarFotografia()\n¿Qué error lógico presenta esta secuencia?',
+                snippet: '1. Despegar(altura: 10 m)\n2. Aterrizar()\n3. TomarFotografia()',
+                options: [
+                  { id: 'opt1', text: 'La instrucción TomarFotografia está fuera de lugar: se ejecutará en el suelo tras el aterrizaje.', isCorrect: true },
+                  { id: 'opt2', text: 'La instrucción Despegar tiene un error de sintaxis y los motores no encenderán.', isCorrect: false },
+                  { id: 'opt3', text: 'Falta una orden para apagar la cámara antes del vuelo.', isCorrect: false },
+                  { id: 'opt4', text: 'El programa no tiene error; las fotos aéreas se toman en el suelo.', isCorrect: false }
+                ],
+                explanation: 'La instrucción es válida en sí misma, pero está mal ubicada en la secuencia; para ser una foto aérea debía ejecutarse antes de Aterrizar.'
+              },
+              {
+                id: 'q6',
+                question: 'Si Byte necesita avanzar 5 casilleros seguidos en línea recta, ¿cuál es la mejor práctica algorítmica para programarlo?',
+                options: [
+                  { id: 'opt1', text: 'Usar una estructura de repetición: Repetir 5 veces { Avanzar 1 paso }', isCorrect: true },
+                  { id: 'opt2', text: 'Escribir 50 instrucciones al azar esperando que el robot se detenga solo.', isCorrect: false },
+                  { id: 'opt3', text: 'Crear un bucle infinito que nunca termine para que no se quede quieto.', isCorrect: false },
+                  { id: 'opt4', text: 'Apagar y encender el robot 5 veces consecutivas.', isCorrect: false }
+                ],
+                explanation: 'Las estructuras de repetición (bucles) permiten condensar instrucciones reiteradas de forma limpia, eficiente y sin redundancia.'
+              }
+            ],
+            hints: [
+              '💡 Recordá que las computadoras son deterministas y no corrigen errores por sí solas.',
+              '💡 Una precondición es el estado necesario para que una instrucción pueda ejecutarse.',
+              '💡 El trazado secuencial evalúa cómo cambian las variables paso a paso.'
             ]
           }
         ]
@@ -3341,9 +3639,10 @@ class CodingModuleManager {
     const totalActivities = gConfig.instructions.activities.length;
     const completedCount = progress.activitiesCompleted ? progress.activitiesCompleted.length : 0;
     const pct = Math.min(100, Math.round((completedCount / totalActivities) * 100));
+    const isGradeOne = this.currentGrade === 1;
 
     if (gradeBadgeEl) {
-      gradeBadgeEl.textContent = `${gConfig.badge} - ${gConfig.name}`;
+      gradeBadgeEl.textContent = isGradeOne ? `${gConfig.badge} - ${gConfig.name}`.toUpperCase() : `${gConfig.badge} - ${gConfig.name}`;
       gradeBadgeEl.style.backgroundColor = gConfig.accentColor + '20';
       gradeBadgeEl.style.color = gConfig.accentColor;
     }
@@ -3354,18 +3653,49 @@ class CodingModuleManager {
         const patProg = this.storage.getGradeProgress(this.currentGrade, 'patterns');
         totalGradePts += (patProg.score || 0);
       }
-      scoreBadgeEl.innerHTML = `⭐ ${totalGradePts} pts`;
+      scoreBadgeEl.innerHTML = isGradeOne ? `⭐ ${totalGradePts} PTS` : `⭐ ${totalGradePts} pts`;
+    }
+
+    const sylHeaderTitle = document.querySelector('.syllabus-container h3');
+    const sylHeaderDesc = document.querySelector('.syllabus-container p');
+    if (sylHeaderTitle) {
+      sylHeaderTitle.textContent = isGradeOne ? '📚 RUTA DE PENSAMIENTO COMPUTACIONAL' : '📚 Ruta de Pensamiento Computacional';
+    }
+    if (sylHeaderDesc) {
+      sylHeaderDesc.textContent = isGradeOne
+        ? 'SUPERA CADA TEMA PARA DESBLOQUEAR TU INSIGNIA DE PROGRAMADOR:'
+        : 'Supera cada tema para desbloquear tu insignia de programador:';
+    }
+
+    const instCard = document.querySelector('.topic-card.active:not(#topic-card-patterns)');
+    if (instCard) {
+      const instTitle = instCard.querySelector('.topic-title');
+      const instDesc = instCard.querySelector('.topic-desc');
+      const instTag = instCard.querySelector('.topic-status-tag');
+      const instProgLabel = instCard.querySelector('.topic-progress-label span:first-child');
+      if (instTitle) instTitle.textContent = isGradeOne ? '1. INSTRUCCIONES' : '1. Instrucciones';
+      if (instDesc) instDesc.textContent = isGradeOne
+        ? 'DESCUBRE QUÉ ES UNA INSTRUCCIÓN, POR QUÉ DEBE SER CLARA Y ORDENADA, Y RESUELVE DESAFÍOS CON BYTE.'
+        : 'Descubre qué es una instrucción, por qué debe ser clara y ordenada, y resuelve desafíos con Byte.';
+      if (instTag) instTag.textContent = isGradeOne ? '🟢 DISPONIBLE' : '🟢 Disponible';
+      if (instProgLabel) instProgLabel.textContent = isGradeOne ? 'INSTRUCCIONES' : 'INSTRUCCIONES';
     }
 
     if (progressFillEl) progressFillEl.style.width = `${pct}%`;
     if (progressTextEl) {
-      progressTextEl.textContent = progress.completed ? '🎉 ¡100% Completado!' : `${pct}%`;
+      progressTextEl.textContent = progress.completed ? (isGradeOne ? '🎉 ¡100% COMPLETADO!' : '🎉 ¡100% Completado!') : `${pct}%`;
     }
 
     if (btnStartInst) {
-      btnStartInst.innerHTML = progress.completed ?
-        '<span>🔄</span> ¡Repasar Instrucciones!' :
-        (completedCount > 0 ? '<span>▶️</span> ¡Continuar Instrucciones!' : '<span>🚀</span> ¡Comenzar Instrucciones!');
+      if (isGradeOne) {
+        btnStartInst.innerHTML = progress.completed ?
+          '<span>🔄</span> ¡REPASAR INSTRUCCIONES!' :
+          (completedCount > 0 ? '<span>▶️</span> ¡CONTINUAR INSTRUCCIONES!' : '<span>🚀</span> ¡COMENZAR INSTRUCCIONES!');
+      } else {
+        btnStartInst.innerHTML = progress.completed ?
+          '<span>🔄</span> ¡Repasar Instrucciones!' :
+          (completedCount > 0 ? '<span>▶️</span> ¡Continuar Instrucciones!' : '<span>🚀</span> ¡Comenzar Instrucciones!');
+      }
       btnStartInst.onclick = () => {
         this.onPlaySound('pop');
         this.startInstructionsTopic();
@@ -3384,7 +3714,6 @@ class CodingModuleManager {
       if (patCard) patCard.style.display = 'flex';
       if (algoCard) algoCard.style.display = 'none';
 
-      const isGradeOne = this.currentGrade === 1;
       if (patBadgeEl) {
         patBadgeEl.textContent = isGradeOne ? '🟢 ¡NUEVO! 1.º GRADO' : `🟢 ¡NUEVO! ${this.currentGrade}.º GRADO`;
       }
@@ -3432,6 +3761,7 @@ class CodingModuleManager {
     // Botón volver a selección de grados
     const btnBack = document.getElementById('btn-back-to-coding-grades');
     if (btnBack) {
+      btnBack.innerHTML = isGradeOne ? '⬅️ CAMBIAR GRADO' : '⬅️ Cambiar Grado';
       btnBack.onclick = () => {
         this.onPlaySound('click');
         const screens = [
@@ -3454,7 +3784,8 @@ class CodingModuleManager {
    * Actualiza el HUD superior del módulo
    */
   updateHud() {
-    const isPatterns = (this.currentGrade === 1) || (this.currentTopic === 'patterns');
+    const isGradeOne = this.currentGrade === 1;
+    const isPatterns = isGradeOne || (this.currentTopic === 'patterns');
     const progress = this.storage.getGradeProgress(this.currentGrade, this.currentTopic);
     const acts = this.getCurrentTopicActivities();
     const totalActivities = acts.length;
@@ -3465,14 +3796,22 @@ class CodingModuleManager {
     const hudFill = document.getElementById('hud-coding-progress-fill');
     const hudPct = document.getElementById('hud-coding-progress-pct');
     const hudStageBadge = document.getElementById('hud-coding-stage-badge');
+    const hudProgWrap = document.querySelector('.hud-progress-wrap');
+    if (hudProgWrap) {
+      const labelSpan = hudProgWrap.querySelector('span:first-child');
+      if (labelSpan) labelSpan.textContent = isGradeOne ? 'PROGRESO:' : 'Progreso:';
+    }
 
-    if (hudScore) hudScore.textContent = isPatterns ? `⭐ ${progress.score || 0} PTS` : `⭐ ${progress.score || 0} pts`;
+    if (hudScore) hudScore.textContent = isGradeOne ? `⭐ ${progress.score || 0} PTS` : `⭐ ${progress.score || 0} pts`;
     if (hudFill) hudFill.style.width = `${pct}%`;
     if (hudPct) hudPct.textContent = `${pct}%`;
 
     const currentAct = acts[this.currentActivityIndex];
     if (hudStageBadge && currentAct) {
-      if (isPatterns) {
+      if (isGradeOne) {
+        const cleanTitle = currentAct.title.replace(/[🎯🔍👀✋🎨🏆📖👉⏩🔢🧩🌱🎒☕🪥🚦📦🗺️🧭🚫🤖🍪🧪💻🔄⚡📬]/g, '').trim().toUpperCase();
+        hudStageBadge.textContent = `${this.currentActivityIndex + 1}/${totalActivities}: ${cleanTitle}`;
+      } else if (isPatterns) {
         const cleanTitle = currentAct.title.replace(/[🎯🔍👀✋🎨🏆📖]/g, '').trim().toUpperCase();
         hudStageBadge.textContent = `🧩 ${this.currentActivityIndex + 1}/${totalActivities}: ${cleanTitle}`;
       } else {
@@ -3482,7 +3821,7 @@ class CodingModuleManager {
 
     const btnBackSyllabus = document.getElementById('btn-hud-back-syllabus');
     if (btnBackSyllabus) {
-      btnBackSyllabus.innerHTML = isPatterns ? '⬅️ TEMARIO' : '⬅️ Temario';
+      btnBackSyllabus.innerHTML = isGradeOne ? '⬅️ TEMARIO' : '⬅️ Temario';
       btnBackSyllabus.onclick = () => {
         this.cleanupCurrentActivity();
         this.onPlaySound('click');
@@ -3498,11 +3837,22 @@ class CodingModuleManager {
     const avatarEl = document.getElementById('byte-avatar-box');
     const textEl = document.getElementById('byte-speech-text');
     const btnAudio = document.getElementById('btn-byte-audio');
+    const isGradeOne = this.currentGrade === 1;
+
+    const displayText = (isGradeOne && typeof text === 'string') ? text.toUpperCase() : text;
 
     if (avatarEl) avatarEl.innerHTML = getByteAvatarSvg(expression);
-    if (textEl) textEl.textContent = text;
+    if (textEl) textEl.textContent = displayText;
+
+    const nameTag = document.querySelector('.byte-name-tag');
+    if (nameTag) {
+      nameTag.innerHTML = isGradeOne
+        ? '<span>🤖</span> ROBOT BYTE (TU COMPAÑERO DE CÓDIGO)'
+        : '<span>🤖</span> Robot Byte (Tu compañero de código)';
+    }
 
     if (btnAudio) {
+      btnAudio.innerHTML = isGradeOne ? '<span>🔊</span> ESCUCHAR A BYTE' : '<span>🔊</span> Escuchar a Byte';
       const speechContent = audioText || text;
       btnAudio.onclick = () => {
         this.speak(speechContent, btnAudio);
@@ -3578,22 +3928,28 @@ class CodingModuleManager {
 
     this.updateHintsUI();
 
+    const isGradeOne = this.currentGrade === 1;
+
     if (unlockedNewHint) {
       const hintNumber = this.activityState.hintsUnlocked;
       const hintText = this.activityState.hints[hintNumber - 1];
-      this.updateByte(
-        `Veo que estás teniendo un poquito de dificultad. Te voy a dar una pista. 💡 Pista ${hintNumber}`,
-        'thinking',
-        `Veo que estás teniendo un poquito de dificultad. Te voy a dar una pista. ${hintText}`
-      );
+      const speech = isGradeOne
+        ? `¡TE DOY UNA PISTA! 💡 PISTA ${hintNumber}`
+        : `Veo que estás teniendo un poquito de dificultad. Te voy a dar una pista. 💡 Pista ${hintNumber}`;
+      const aria = isGradeOne
+        ? `¡TE DOY UNA PISTA! ${hintText}`
+        : `Veo que estás teniendo un poquito de dificultad. Te voy a dar una pista. ${hintText}`;
+      this.updateByte(speech, 'thinking', aria);
     } else {
       if (attCount % 3 === 1) {
-        this.updateByte(customWrongMsg || "¡Casi! Pensá un poquito más.", 'thinking');
+        const defaultMsg = isGradeOne ? "¡CASI! PENSÁ UN POQUITO MÁS." : "¡Casi! Pensá un poquito más.";
+        const msg = customWrongMsg ? (isGradeOne ? customWrongMsg.toUpperCase() : customWrongMsg) : defaultMsg;
+        this.updateByte(msg, 'thinking');
       } else if (attCount % 3 === 2) {
-        this.updateByte("Revisá nuevamente el orden.", 'thinking');
+        this.updateByte(isGradeOne ? "REVISÁ NUEVAMENTE EL ORDEN." : "Revisá nuevamente el orden.", 'thinking');
       } else {
         // Más de 3 pistas: se permite seguir intentando sin bloquear
-        this.updateByte("¡Seguí intentando! Pensá con calma en cada instrucción.", 'normal');
+        this.updateByte(isGradeOne ? "¡SEGUÍ INTENTANDO! PENSÁ CON CALMA EN CADA INSTRUCCIÓN." : "¡Seguí intentando! Pensá con calma en cada instrucción.", 'normal');
       }
     }
   }
@@ -3652,7 +4008,7 @@ class CodingModuleManager {
     if (this.activityState.isCompleted) return;
     this.activityState.isCompleted = true;
 
-    const isPatterns = this.currentGrade === 1 && this.currentTopic === 'patterns';
+    const isGradeOne = this.currentGrade === 1;
     let stars = 3;
     let earnedPoints = basePoints;
 
@@ -3682,16 +4038,16 @@ class CodingModuleManager {
       feedbackBox.innerHTML = `
         <span>🎉</span>
         <div>
-          <strong>${isPatterns ? '¡EXCELENTE TRABAJO! ¡ACTIVIDAD COMPLETADA!' : '¡Excelente trabajo! Actividad completada.'}</strong><br>
+          <strong>${isGradeOne ? '¡EXCELENTE TRABAJO! ¡ACTIVIDAD COMPLETADA!' : '¡Excelente trabajo! Actividad completada.'}</strong><br>
           <div class="stars-rating-box">${starIcons}</div>
-          <span style="font-size:0.95rem; color:#15803d;">+${earnedPoints} ${isPatterns ? 'PUNTOS' : 'puntos'} • ${this.activityState.hintsUnlocked === 0 ? (isPatterns ? '¡SIN PISTAS UTILIZADAS!' : '¡Sin pistas utilizadas!') : this.activityState.hintsUnlocked + (isPatterns ? ' PISTA(S) UTILIZADA(S)' : ' pista(s) utilizada(s)')}</span>
+          <span style="font-size:0.95rem; color:#15803d;">+${earnedPoints} ${isGradeOne ? 'PUNTOS' : 'puntos'} • ${this.activityState.hintsUnlocked === 0 ? (isGradeOne ? '¡SIN PISTAS UTILIZADAS!' : '¡Sin pistas utilizadas!') : this.activityState.hintsUnlocked + (isGradeOne ? ' PISTA(S) UTILIZADA(S)' : ' pista(s) utilizada(s)')}</span>
         </div>
       `;
       feedbackBox.style.display = 'flex';
     }
 
     if (btnNext) {
-      btnNext.innerHTML = isPatterns ? '<span>¡EXCELENTE! SIGUIENTE ACTIVIDAD</span> ➡️' : '<span>¡Excelente! Siguiente Actividad</span> ➡️';
+      btnNext.innerHTML = isGradeOne ? '<span>¡EXCELENTE! SIGUIENTE ACTIVIDAD</span> ➡️' : '<span>¡Excelente! Siguiente Actividad</span> ➡️';
       btnNext.style.display = 'inline-flex';
       if (typeof btnNext.scrollIntoView === 'function') {
         btnNext.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -3806,6 +4162,9 @@ class CodingModuleManager {
       case 'final_challenge':
         this.renderFinalChallenge(container, act);
         break;
+      case 'theory_quiz':
+        this.renderTheoryQuizChallenge(container, act);
+        break;
       default:
         this.renderTheory(container, act);
     }
@@ -3833,15 +4192,16 @@ class CodingModuleManager {
    * Plantilla común con Barra de Reintento, Pistas y Feedback
    */
   createActivityHeader(act, showReset = true) {
-    const isPatterns = this.currentGrade === 1 && this.currentTopic === 'patterns';
+    const isGradeOne = this.currentGrade === 1;
+    const titleText = isGradeOne ? act.title.toUpperCase() : act.title;
     return `
       <div class="activity-top-bar">
         <div style="display:flex; align-items:center; gap:8px;">
-          <h3 style="font-size:1.35rem; color:#1e293b; margin:0; ${isPatterns ? 'text-transform:uppercase;' : ''}">${act.title}</h3>
+          <h3 style="font-size:1.35rem; color:#1e293b; margin:0; ${isGradeOne ? 'text-transform:uppercase;' : ''}">${titleText}</h3>
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
-          <span id="attempts-counter-pill" class="attempts-pill"><span>🎯</span> ${isPatterns ? 'INTENTOS: 0' : 'Intentos: 0'}</span>
-          ${showReset ? `<button type="button" id="btn-reset-current-activity" class="btn-activity-reset">${isPatterns ? '🔄 REINICIAR' : '🔄 Reiniciar'}</button>` : ''}
+          <span id="attempts-counter-pill" class="attempts-pill"><span>🎯</span> ${isGradeOne ? 'INTENTOS: 0' : 'Intentos: 0'}</span>
+          ${showReset ? `<button type="button" id="btn-reset-current-activity" class="btn-activity-reset">${isGradeOne ? '🔄 REINICIAR' : '🔄 Reiniciar'}</button>` : ''}
         </div>
       </div>
       <div id="activity-hints-box" class="activity-hints-box"></div>
@@ -3849,85 +4209,105 @@ class CodingModuleManager {
   }
 
   createActivityFooter() {
-    const isPatterns = this.currentGrade === 1 && this.currentTopic === 'patterns';
+    const isGradeOne = this.currentGrade === 1;
     return `
       <div id="activity-feedback-box" style="display:none; margin-top:14px;"></div>
       <div class="stage-actions-bar" id="activity-actions-bar">
         <button type="button" id="btn-activity-next" class="btn-stage-next" style="display:none;">
-          <span>${isPatterns ? '¡EXCELENTE! SIGUIENTE ACTIVIDAD' : '¡Excelente! Siguiente Actividad'}</span> ➡️
+          <span>${isGradeOne ? '¡EXCELENTE! SIGUIENTE ACTIVIDAD' : '¡Excelente! Siguiente Actividad'}</span> ➡️
         </button>
       </div>
     `;
   }
 
-  // 1. TEORÍA INTERACTIVA
+  // 1. TEORÍA INTERACTIVA (1.º A 5.º GRADO)
   renderTheory(container, act) {
-    this.updateByte(act.intro, 'normal', `${act.intro} ${act.quote}`);
+    const isGradeOne = this.currentGrade === 1;
+    const introText = isGradeOne ? act.intro.toUpperCase() : act.intro;
+    const quoteText = isGradeOne ? act.quote.toUpperCase() : act.quote;
+    this.updateByte(introText, 'normal', `${introText} ${quoteText}`);
+
+    const defaultBtn = isGradeOne ? '¡AHORA VAMOS A PRACTICAR!' : '¡Pongamos a prueba lo que aprendimos!';
+    const buttonLabel = isGradeOne ? (act.buttonText || defaultBtn).toUpperCase() : (act.buttonText || defaultBtn);
 
     container.innerHTML = `
       <div class="theory-wrapper">
         <div style="background: #e0f2fe; border-left: 5px solid #0284c7; padding: 12px 18px; border-radius: 12px; margin-bottom: 16px;">
-          <strong style="color: #0369a1; font-size: 1.15rem;">${act.quote}</strong>
+          <strong style="color: #0369a1; font-size: 1.15rem;">${quoteText}</strong>
         </div>
 
-        <h4 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 10px;">🌟 3 Conceptos Fundamentales:</h4>
-        <div class="theory-cards-grid">
-          ${act.pillars.map((p, idx) => `
-            <div class="theory-concept-card pillar-${idx + 1}">
+        <h4 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 10px; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
+          🌟 ${isGradeOne ? 'CONCEPTOS FUNDAMENTALES:' : 'Conceptos Fundamentales:'}
+        </h4>
+        <div class="theory-cards-grid" style="${act.pillars && act.pillars.length === 4 ? 'grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));' : ''}">
+          ${(act.pillars || []).map((p, idx) => `
+            <div class="theory-concept-card pillar-${(idx % 3) + 1}">
               <div class="concept-icon">${p.icon}</div>
-              <h5 class="concept-title">${p.title}</h5>
-              <p class="concept-desc">${p.desc}</p>
+              <h5 class="concept-title" style="${isGradeOne ? 'text-transform:uppercase;' : ''}">${isGradeOne ? p.title.toUpperCase() : p.title}</h5>
+              <p class="concept-desc" style="${isGradeOne ? 'text-transform:uppercase;' : ''}">${isGradeOne ? p.desc.toUpperCase() : p.desc}</p>
             </div>
           `).join('')}
         </div>
 
-        <h4 style="font-size: 1.25rem; color: #1e293b; margin: 18px 0 10px 0;">🧸 Ejemplos Cotidianos (Hacé clic para ver los pasos):</h4>
-        <div class="daily-examples-row">
-          ${act.examples.map((ex, idx) => `
-            <button type="button" class="btn-example-tab ${idx === 0 ? 'active' : ''}" data-ex="${ex.id}">
-              <span>${ex.icon}</span> ${ex.name}
-            </button>
-          `).join('')}
-        </div>
+        <div id="theory-interactive-demo-area"></div>
 
-        <div id="example-viewer-box" class="example-steps-viewer"></div>
+        ${act.examples && act.examples.length > 0 ? `
+          <h4 style="font-size: 1.25rem; color: #1e293b; margin: 18px 0 10px 0; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
+            🧸 ${isGradeOne ? 'EJEMPLOS COTIDIANOS:' : 'Ejemplos Cotidianos (Hacé clic para ver los pasos):'}
+          </h4>
+          <div class="daily-examples-row">
+            ${act.examples.map((ex, idx) => `
+              <button type="button" class="btn-example-tab ${idx === 0 ? 'active' : ''}" data-ex="${ex.id}">
+                <span>${ex.icon}</span> ${isGradeOne ? ex.name.toUpperCase() : ex.name}
+              </button>
+            `).join('')}
+          </div>
+          <div id="example-viewer-box" class="example-steps-viewer"></div>
+        ` : ''}
 
-        <div class="stage-actions-bar">
-          <button type="button" id="btn-next-theory" class="btn-stage-next">
-            <span>¡Entendido! Vamos a practicar</span> ➡️
+        <div class="stage-actions-bar" style="margin-top:20px;">
+          <button type="button" id="btn-next-theory" class="btn-stage-next" style="padding:14px 28px; font-size:1.15rem;">
+            <span>${buttonLabel}</span> ➡️
           </button>
         </div>
       </div>
     `;
 
-    const renderExampleSteps = (exId) => {
-      const ex = act.examples.find(e => e.id === exId) || act.examples[0];
-      const viewer = document.getElementById('example-viewer-box');
-      if (!viewer) return;
-      viewer.innerHTML = `
-        <div style="font-weight:700; color:#0369a1; margin-bottom:10px;">${ex.icon} Pasos para ${ex.name}:</div>
-        <div class="steps-list-horizontal">
-          ${ex.steps.map((s, i) => `
-            <div class="step-card-visual">
-              <span class="step-num-badge">Paso ${i + 1}</span>
-              <div class="step-visual-icon">${s.icon}</div>
-              <span class="step-card-text">${s.text}</span>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    };
+    // Renderizar demo interactiva según el grado
+    const demoArea = document.getElementById('theory-interactive-demo-area');
+    if (demoArea && act.demoType) {
+      this.renderTheoryDemo(demoArea, act.demoType);
+    }
 
-    renderExampleSteps(act.examples[0].id);
-
-    container.querySelectorAll('.btn-example-tab').forEach(btn => {
-      btn.onclick = () => {
-        container.querySelectorAll('.btn-example-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        this.onPlaySound('click');
-        renderExampleSteps(btn.getAttribute('data-ex'));
+    if (act.examples && act.examples.length > 0) {
+      const renderExampleSteps = (exId) => {
+        const ex = act.examples.find(e => e.id === exId) || act.examples[0];
+        const viewer = document.getElementById('example-viewer-box');
+        if (!viewer) return;
+        viewer.innerHTML = `
+          <div style="font-weight:700; color:#0369a1; margin-bottom:10px;">${ex.icon} ${isGradeOne ? `PASOS PARA ${ex.name.toUpperCase()}:` : `Pasos para ${ex.name}:`}</div>
+          <div class="steps-list-horizontal">
+            ${ex.steps.map((s, i) => `
+              <div class="step-card-visual">
+                <span class="step-num-badge">${isGradeOne ? `PASO ${i + 1}` : `Paso ${i + 1}`}</span>
+                <div class="step-visual-icon">${s.icon}</div>
+                <span class="step-card-text">${isGradeOne ? s.text.toUpperCase() : s.text}</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
       };
-    });
+      renderExampleSteps(act.examples[0].id);
+
+      container.querySelectorAll('.btn-example-tab').forEach(btn => {
+        btn.onclick = () => {
+          container.querySelectorAll('.btn-example-tab').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          this.onPlaySound('click');
+          renderExampleSteps(btn.getAttribute('data-ex'));
+        };
+      });
+    }
 
     const btnNext = document.getElementById('btn-next-theory');
     if (btnNext) {
@@ -3937,6 +4317,637 @@ class CodingModuleManager {
         this.nextActivity();
       };
     }
+  }
+
+  /**
+   * Renderiza demostraciones interactivas dentro de la teoría según el grado
+   */
+  renderTheoryDemo(container, demoType) {
+    const isGradeOne = this.currentGrade === 1;
+
+    switch (demoType) {
+      case 'robot_commands_g1': {
+        container.innerHTML = `
+          <div class="theory-demo-container">
+            <div class="theory-demo-title">🕹️ ¡PROBÁ DARLE UNA INSTRUCCIÓN A BYTE!</div>
+            <p class="theory-demo-subtitle">TOCÁ UN BOTÓN PARA VER CÓMO BYTE CUMPLE TU INDICACIÓN:</p>
+
+            <div class="theory-demo-stage-g1">
+              <div id="demo-byte-actor-g1" class="demo-byte-actor">
+                ${getByteAvatarSvg('normal')}
+              </div>
+              <div id="demo-byte-speech-g1" class="demo-speech-bubble-g1">
+                ¡ESTOY LISTO PARA TUS INSTRUCCIONES!
+              </div>
+            </div>
+
+            <div class="theory-demo-buttons-g1">
+              <button type="button" class="btn-demo-action" data-act="advance">
+                <span>🚶</span> AVANZAR UN PASO
+              </button>
+              <button type="button" class="btn-demo-action" data-act="turn">
+                <span>🔄</span> GIRAR A LA DERECHA
+              </button>
+              <button type="button" class="btn-demo-action" data-act="jump">
+                <span>⭐</span> SALTAR BIEN ALTO
+              </button>
+            </div>
+
+            <div class="theory-demo-footer-note">
+              💡 ¡UN ROBOT O UNA COMPUTADORA SOLO HACE LO QUE LE INDICAMOS!
+            </div>
+          </div>
+        `;
+
+        const actor = document.getElementById('demo-byte-actor-g1');
+        const speech = document.getElementById('demo-byte-speech-g1');
+        const buttons = container.querySelectorAll('.btn-demo-action');
+
+        buttons.forEach(btn => {
+          btn.onclick = () => {
+            const actType = btn.dataset.act;
+            if (actor) {
+              actor.classList.remove('anim-advance', 'anim-turn', 'anim-jump');
+              void actor.offsetWidth; // trigger reflow
+            }
+
+            if (actType === 'advance') {
+              if (actor) {
+                actor.innerHTML = getByteAvatarSvg('happy');
+                actor.classList.add('anim-advance');
+              }
+              if (speech) speech.textContent = '¡AVANCÉ UN PASO! ¡LAS INSTRUCCIONES ME DICEN QUÉ HACER!';
+              this.onPlaySound('pop');
+              this.updateByte("¡AVANCÉ UN PASO! ¡LAS INSTRUCCIONES ME DICEN QUÉ HACER!", 'happy');
+            } else if (actType === 'turn') {
+              if (actor) {
+                actor.innerHTML = getByteAvatarSvg('happy');
+                actor.classList.add('anim-turn');
+              }
+              if (speech) speech.textContent = '¡GIRÉ! ¡SEGUÍ TU INDICACIÓN!';
+              this.onPlaySound('coin');
+              this.updateByte("¡GIRÉ! ¡SEGUÍ TU INDICACIÓN!", 'happy');
+            } else if (actType === 'jump') {
+              if (actor) {
+                actor.innerHTML = getByteAvatarSvg('happy');
+                actor.classList.add('anim-jump');
+              }
+              if (speech) speech.textContent = '¡SALTÉ MUY ALTO! ¡HICE LO QUE ME PEDISTE!';
+              this.onPlaySound('coin');
+              this.updateByte("¡SALTÉ MUY ALTO! ¡HICE LO QUE ME PEDISTE!", 'happy');
+            }
+          };
+        });
+        break;
+      }
+
+      case 'sequence_demo_g2': {
+        container.innerHTML = `
+          <div class="theory-demo-container">
+            <div class="theory-demo-title">📋 Secuencia de Instrucciones para Byte</div>
+            <p class="theory-demo-subtitle">Misión cotidiana: Guardar el juguete en la caja. Hacé clic para ver a Byte ejecutar cada paso en orden:</p>
+
+            <div class="sequence-steps-demo-grid">
+              <div class="seq-demo-step-card" id="seq-step-1">
+                <span class="step-num-badge">Paso 1</span>
+                <span class="step-icon">🚶</span>
+                <span class="step-text">Caminar hacia el juguete</span>
+                <span class="step-status">⏳</span>
+              </div>
+              <div class="seq-demo-step-card" id="seq-step-2">
+                <span class="step-num-badge">Paso 2</span>
+                <span class="step-icon">🧸</span>
+                <span class="step-text">Agarrar el juguete</span>
+                <span class="step-status">⏳</span>
+              </div>
+              <div class="seq-demo-step-card" id="seq-step-3">
+                <span class="step-num-badge">Paso 3</span>
+                <span class="step-icon">📦</span>
+                <span class="step-text">Guardarlo en la caja</span>
+                <span class="step-status">⏳</span>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:center; margin-top:14px;">
+              <button type="button" id="btn-run-seq-g2" class="btn-demo-run">
+                <span>▶️</span> Probar Secuencia de Byte
+              </button>
+            </div>
+            <div id="seq-demo-result-g2" class="theory-demo-footer-note" style="display:none;"></div>
+          </div>
+        `;
+
+        const btnRun = document.getElementById('btn-run-seq-g2');
+        const resultNote = document.getElementById('seq-demo-result-g2');
+        let isRunning = false;
+
+        if (btnRun) {
+          btnRun.onclick = () => {
+            if (isRunning) return;
+            isRunning = true;
+            btnRun.disabled = true;
+
+            [1, 2, 3].forEach(i => {
+              const el = document.getElementById(`seq-step-${i}`);
+              if (el) {
+                el.classList.remove('active-step');
+                const st = el.querySelector('.step-status');
+                if (st) st.textContent = '⏳';
+              }
+            });
+            if (resultNote) resultNote.style.display = 'none';
+
+            setTimeout(() => {
+              const el1 = document.getElementById('seq-step-1');
+              if (el1) {
+                el1.classList.add('active-step');
+                const st = el1.querySelector('.step-status');
+                if (st) st.textContent = '✅';
+              }
+              this.onPlaySound('click');
+              this.updateByte("Paso 1: Caminando hacia el juguete...", 'normal');
+
+              setTimeout(() => {
+                const el2 = document.getElementById('seq-step-2');
+                if (el2) {
+                  el2.classList.add('active-step');
+                  const st = el2.querySelector('.step-status');
+                  if (st) st.textContent = '✅';
+                }
+                this.onPlaySound('click');
+                this.updateByte("Paso 2: Agarrando el juguete...", 'normal');
+
+                setTimeout(() => {
+                  const el3 = document.getElementById('seq-step-3');
+                  if (el3) {
+                    el3.classList.add('active-step');
+                    const st = el3.querySelector('.step-status');
+                    if (st) st.textContent = '✅';
+                  }
+                  this.onPlaySound('fanfare');
+                  this.updateByte("¡Paso 3 completado! Guardamos el juguete. ¡Las secuencias ordenadas funcionan!", 'happy');
+                  if (resultNote) {
+                    resultNote.innerHTML = '🎉 ¡Secuencia completada con éxito! Cada paso se ejecutó en su turno para lograr el objetivo.';
+                    resultNote.style.display = 'block';
+                  }
+                  isRunning = false;
+                  btnRun.disabled = false;
+                }, 700);
+              }, 700);
+            }, 300);
+          };
+        }
+        break;
+      }
+
+      case 'order_matters_g3': {
+        container.innerHTML = `
+          <div class="theory-demo-container">
+            <div class="theory-demo-title">🔀 ¿Qué sucede cuando cambiamos el orden?</div>
+            <p class="theory-demo-subtitle">Hacé clic en cada pestaña para comparar qué sucede al alterar el orden de las instrucciones:</p>
+
+            <div class="order-comparison-tabs">
+              <button type="button" class="btn-order-tab active" data-tab="correct">
+                <span>🟢</span> Orden Correcto
+              </button>
+              <button type="button" class="btn-order-tab" data-tab="wrong">
+                <span>🔴</span> Orden Cambiado (Incorrecto)
+              </button>
+            </div>
+
+            <div id="order-comparison-view" class="order-comparison-view"></div>
+          </div>
+        `;
+
+        const view = document.getElementById('order-comparison-view');
+        const tabs = container.querySelectorAll('.btn-order-tab');
+
+        const renderTab = (tab) => {
+          if (tab === 'correct') {
+            view.innerHTML = `
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="font-weight:800; color:#15803d; font-size:1.05rem;">
+                  Secuencia A: 1. Abrir la puerta 🚪 ➡️ 2. Salir de la habitación 🚶
+                </div>
+                <div class="steps-list-horizontal">
+                  <div class="step-card-visual" style="border-color:#86efac; background:#f0fdf4;">
+                    <span class="step-num-badge" style="background:#16a34a;">Paso 1</span>
+                    <div class="step-visual-icon">🚪</div>
+                    <span class="step-card-text">Abrir la puerta</span>
+                  </div>
+                  <div class="step-card-visual" style="border-color:#86efac; background:#f0fdf4;">
+                    <span class="step-num-badge" style="background:#16a34a;">Paso 2</span>
+                    <div class="step-visual-icon">🚶</div>
+                    <span class="step-card-text">Salir de la habitación</span>
+                  </div>
+                </div>
+                <div style="background:#dcfce7; border:2px solid #86efac; border-radius:12px; padding:12px; color:#166534; font-weight:700;">
+                  🎉 <strong>¡Resultado Exitoso!</strong> Byte abre la puerta y cruza sin problemas. Cada instrucción preparó el estado para la siguiente.
+                </div>
+              </div>
+            `;
+            this.updateByte("¡En el orden correcto, la puerta está abierta cuando salimos y todo funciona!", 'happy');
+          } else {
+            view.innerHTML = `
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div style="font-weight:800; color:#b91c1c; font-size:1.05rem;">
+                  Secuencia B: 1. Salir de la habitación 🚶 ➡️ 2. Abrir la puerta 🚪
+                </div>
+                <div class="steps-list-horizontal">
+                  <div class="step-card-visual" style="border-color:#fca5a5; background:#fff5f5;">
+                    <span class="step-num-badge" style="background:#dc2626;">Paso 1</span>
+                    <div class="step-visual-icon">🚶💥</div>
+                    <span class="step-card-text">Salir de la habitación</span>
+                  </div>
+                  <div class="step-card-visual" style="border-color:#fca5a5; background:#fff5f5;">
+                    <span class="step-num-badge" style="background:#dc2626;">Paso 2</span>
+                    <div class="step-visual-icon">🚪</div>
+                    <span class="step-card-text">Abrir la puerta</span>
+                  </div>
+                </div>
+                <div style="background:#fee2e2; border:2px solid #fca5a5; border-radius:12px; padding:12px; color:#991b1b; font-weight:700;">
+                  💥 <strong>¡Error de Ejecución!</strong> Byte intentó salir con la puerta todavía cerrada... ¡Pum! Chocó. ¡El orden de las instrucciones cambia el resultado!
+                </div>
+              </div>
+            `;
+            this.updateByte("¡Cuidado! Si cambiamos el orden, chocamos con la puerta cerrada. ¡El orden es clave!", 'worried');
+          }
+        };
+
+        renderTab('correct');
+
+        tabs.forEach(t => {
+          t.onclick = () => {
+            tabs.forEach(btn => btn.classList.remove('active'));
+            t.classList.add('active');
+            this.onPlaySound('click');
+            renderTab(t.dataset.tab);
+          };
+        });
+        break;
+      }
+
+      case 'clarity_params_g4': {
+        container.innerHTML = `
+          <div class="theory-demo-container">
+            <div class="theory-demo-title">🎯 Instrucciones Claras vs Órdenes Confusas</div>
+            <p class="theory-demo-subtitle">Las computadoras no adivinan intenciones: necesitan parámetros y datos concretos.</p>
+
+            <div class="params-comparison-grid">
+              <div class="params-card bad">
+                <div class="params-card-header">
+                  <span>⚠️</span> Orden Ambigua (Confusa)
+                </div>
+                <div class="code-preview-box">
+                  <code>Robot.mover();<br>Robot.agarrar();</code>
+                </div>
+                <p class="params-desc">¿Hacia dónde moverse? ¿Cuántos pasos dar? ¿Qué objeto agarrar? No tiene parámetros definidos.</p>
+                <button type="button" class="btn-test-param bad" id="btn-test-param-bad">
+                  <span>❓</span> Simular Orden Ambigua
+                </button>
+                <div id="param-bad-result" class="param-result-box" style="display:none; background:#fee2e2; color:#991b1b; border:1px solid #f87171;"></div>
+              </div>
+
+              <div class="params-card good">
+                <div class="params-card-header">
+                  <span>✅</span> Orden Precisa (Con Parámetros)
+                </div>
+                <div class="code-preview-box">
+                  <code>Robot.avanzar(pasos: 3);<br>Robot.agarrar("llave_dorada");</code>
+                </div>
+                <p class="params-desc">Especifica acción exacta, número de pasos (3) y objeto concreto ("llave_dorada").</p>
+                <button type="button" class="btn-test-param good" id="btn-test-param-good">
+                  <span>🚀</span> Simular Orden Precisa
+                </button>
+                <div id="param-good-result" class="param-result-box" style="display:none; background:#dcfce7; color:#166534; border:1px solid #4ade80;"></div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const btnBad = document.getElementById('btn-test-param-bad');
+        const btnGood = document.getElementById('btn-test-param-good');
+        const resBad = document.getElementById('param-bad-result');
+        const resGood = document.getElementById('param-good-result');
+
+        if (btnBad) {
+          btnBad.onclick = () => {
+            this.onPlaySound('wrong');
+            if (resBad) {
+              resBad.innerHTML = '❌ <strong>Error de ambigüedad:</strong> La computadora se detiene porque faltan parámetros numéricos y de objeto.';
+              resBad.style.display = 'block';
+            }
+            this.updateByte("¡Error! La orden 'mover()' no especifica cuántos pasos ni hacia dónde.", 'thinking');
+          };
+        }
+
+        if (btnGood) {
+          btnGood.onclick = () => {
+            this.onPlaySound('coin');
+            if (resGood) {
+              resGood.innerHTML = '⭐ <strong>¡Ejecución Exitosa!</strong> Byte avanzó exactamente 3 pasos y recogió la llave dorada.';
+              resGood.style.display = 'block';
+            }
+            this.updateByte("¡Excelente! Con parámetros exactos, el programa se ejecuta a la perfección.", 'happy');
+          };
+        }
+        break;
+      }
+
+      case 'state_tracer_g5': {
+        container.innerHTML = `
+          <div class="theory-demo-container">
+            <div class="theory-demo-title">⚙️ Trazador de Ejecución: Cómo una Computadora Cambia su Estado</div>
+            <p class="theory-demo-subtitle">Una computadora es determinista: cada instrucción modifica el estado del sistema en memoria en forma predecible.</p>
+
+            <div class="state-tracer-grid">
+              <div class="tracer-code-column">
+                <div class="tracer-title">Programa a Ejecutar:</div>
+                <div class="tracer-code-list" id="tracer-code-list">
+                  <div class="tracer-code-line active" data-step="0">
+                    <span class="line-num">1</span> <code>IniciarSistema()</code>
+                  </div>
+                  <div class="tracer-code-line" data-step="1">
+                    <span class="line-num">2</span> <code>Avanzar(distancia: 2)</code>
+                  </div>
+                  <div class="tracer-code-line" data-step="2">
+                    <span class="line-num">3</span> <code>ConectarServidor("central")</code>
+                  </div>
+                  <div class="tracer-code-line" data-step="3">
+                    <span class="line-num">4</span> <code>DescargarReporte()</code>
+                  </div>
+                </div>
+                <button type="button" id="btn-tracer-step" class="btn-demo-run" style="margin-top:12px; width:100%; justify-content:center;">
+                  <span>▶️</span> Ejecutar Siguiente Paso
+                </button>
+              </div>
+
+              <div class="tracer-state-column">
+                <div class="tracer-title">Estado de Variables en Memoria:</div>
+                <div class="tracer-vars-box">
+                  <div class="var-item">
+                    <span class="var-name">Batería:</span>
+                    <span class="var-val" id="var-battery">100%</span>
+                  </div>
+                  <div class="var-item">
+                    <span class="var-name">Posición (X,Y):</span>
+                    <span class="var-val" id="var-pos">(0, 0)</span>
+                  </div>
+                  <div class="var-item">
+                    <span class="var-name">Red:</span>
+                    <span class="var-val" id="var-net">Desconectado</span>
+                  </div>
+                  <div class="var-item">
+                    <span class="var-name">Datos:</span>
+                    <span class="var-val" id="var-data">0 KB</span>
+                  </div>
+                </div>
+                <div id="tracer-step-explanation" class="tracer-expl-box">
+                  Listo para iniciar. Hacé clic en "Ejecutar Siguiente Paso".
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        const codeLines = container.querySelectorAll('.tracer-code-line');
+        const btnStep = document.getElementById('btn-tracer-step');
+        const varBat = document.getElementById('var-battery');
+        const varPos = document.getElementById('var-pos');
+        const varNet = document.getElementById('var-net');
+        const varData = document.getElementById('var-data');
+        const explBox = document.getElementById('tracer-step-explanation');
+
+        let stepIndex = 0;
+
+        const flashVar = (el) => {
+          if (!el) return;
+          el.classList.add('highlight-var');
+          setTimeout(() => el.classList.remove('highlight-var'), 600);
+        };
+
+        if (btnStep) {
+          btnStep.onclick = () => {
+            stepIndex = (stepIndex + 1) % 4;
+
+            codeLines.forEach((l, idx) => {
+              l.classList.toggle('active', idx === stepIndex);
+            });
+
+            if (stepIndex === 0) {
+              if (varBat) varBat.textContent = '100%';
+              if (varPos) varPos.textContent = '(0, 0)';
+              if (varNet) varNet.textContent = 'Desconectado';
+              if (varData) varData.textContent = '0 KB';
+              if (explBox) explBox.textContent = 'Paso 1: Sistema reiniciado. Batería al 100%, posición inicial.';
+              this.onPlaySound('click');
+              this.updateByte("Paso 1: IniciarSistema() establece las condiciones iniciales del entorno.", 'normal');
+            } else if (stepIndex === 1) {
+              if (varBat) varBat.textContent = '90%';
+              if (varPos) varPos.textContent = '(2, 0)';
+              flashVar(varPos);
+              flashVar(varBat);
+              if (explBox) explBox.textContent = 'Paso 2: La orden Avanzar(2) modificó la posición a (2,0) y consumió 10% de batería.';
+              this.onPlaySound('click');
+              this.updateByte("Paso 2: Cada comando de movimiento altera la posición física y gasta energía.", 'normal');
+            } else if (stepIndex === 2) {
+              if (varBat) varBat.textContent = '80%';
+              if (varNet) varNet.textContent = 'Conectado ✅';
+              flashVar(varNet);
+              flashVar(varBat);
+              if (explBox) explBox.textContent = 'Paso 3: Conexión establecida con el servidor central. Estado de red: Conectado.';
+              this.onPlaySound('click');
+              this.updateByte("Paso 3: Cumplimos la precondición de conectividad para poder transferir datos.", 'normal');
+            } else if (stepIndex === 3) {
+              if (varBat) varBat.textContent = '70%';
+              if (varData) varData.textContent = '500 KB (Completado)';
+              flashVar(varData);
+              flashVar(varBat);
+              if (explBox) explBox.textContent = 'Paso 4: ¡Datos descargados con éxito! El estado final del sistema completó el algoritmo.';
+              this.onPlaySound('fanfare');
+              this.updateByte("¡Misión algorítmica completa! La secuencia modificó el estado de variables de principio a fin.", 'happy');
+            }
+          };
+        }
+        break;
+      }
+
+      default:
+        break;
+    }
+  }
+
+  /**
+   * Desafío Final Teórico para 4.° y 5.° Grado
+   * Preguntas conceptuales e interactivas con retroalimentación inmediata
+   */
+  renderTheoryQuizChallenge(container, act) {
+    let qIdx = 0;
+    const questions = act.questions;
+    let isQuestionResolved = false;
+
+    const drawQuizQuestion = (idx) => {
+      const q = questions[idx];
+      isQuestionResolved = false;
+      this.updateByte(q.question, 'thinking', q.question);
+
+      container.innerHTML = `
+        <div class="theory-quiz-container">
+          ${this.createActivityHeader(act)}
+
+          <div class="quiz-progress-dots">
+            ${questions.map((_, i) => `
+              <div class="quiz-dot ${i === idx ? 'active' : ''} ${i < idx ? 'completed' : ''}" title="Pregunta ${i + 1}"></div>
+            `).join('')}
+          </div>
+
+          <div class="quiz-question-box">
+            <div style="font-size:0.9rem; font-weight:800; color:#0284c7; text-transform:uppercase; margin-bottom:6px;">
+              Pregunta ${idx + 1} de ${questions.length}
+            </div>
+            <h4 style="font-size:1.3rem; color:#1e293b; margin:0 0 10px 0; line-height:1.35;">
+              ${q.question}
+            </h4>
+            ${q.snippet ? `
+              <div class="quiz-code-snippet">
+                ${q.snippet.split('\n').map(line => `<div>${line}</div>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+
+          <div class="quiz-options-grid" id="theory-quiz-options">
+            ${q.options.map((opt, i) => `
+              <button type="button" class="quiz-opt-btn" data-id="${opt.id}" data-correct="${opt.isCorrect}">
+                <span class="quiz-opt-badge">${['A', 'B', 'C', 'D'][i] || '👉'}</span>
+                <span style="flex:1;">${opt.text}</span>
+              </button>
+            `).join('')}
+          </div>
+
+          <div id="quiz-feedback-area" style="display:none; margin-top:10px;"></div>
+
+          <div class="stage-actions-bar" id="quiz-actions-bar" style="display:none; margin-top:16px;">
+            <button type="button" id="btn-next-quiz-q" class="btn-stage-next">
+              <span>${idx < questions.length - 1 ? 'Siguiente Pregunta' : 'Ver Resultado del Desafío'}</span> ➡️
+            </button>
+          </div>
+
+          ${this.createActivityFooter()}
+        </div>
+      `;
+
+      const optBtns = container.querySelectorAll('.quiz-opt-btn');
+      const feedbackArea = document.getElementById('quiz-feedback-area');
+      const actionsBar = document.getElementById('quiz-actions-bar');
+      const btnNextQ = document.getElementById('btn-next-quiz-q');
+
+      optBtns.forEach(btn => {
+        btn.onclick = () => {
+          if (isQuestionResolved) return;
+          const isCorrect = btn.dataset.correct === 'true';
+
+          if (isCorrect) {
+            isQuestionResolved = true;
+            btn.classList.add('correct');
+            optBtns.forEach(b => {
+              if (b !== btn) b.disabled = true;
+            });
+            this.onPlaySound('coin');
+            this.updateByte("¡Excelente respuesta! Comprendiste muy bien el concepto.", 'happy');
+
+            feedbackArea.className = 'quiz-feedback-box correct';
+            feedbackArea.innerHTML = `
+              <span>🎉</span>
+              <div>
+                <strong>¡Respuesta Correcta!</strong><br>
+                <span>${q.explanation}</span>
+              </div>
+            `;
+            feedbackArea.style.display = 'flex';
+            if (actionsBar) actionsBar.style.display = 'flex';
+            if (btnNextQ && typeof btnNextQ.scrollIntoView === 'function') {
+              btnNextQ.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          } else {
+            btn.classList.add('wrong');
+            btn.style.animation = 'shakePattern 0.5s ease';
+            setTimeout(() => { btn.style.animation = ''; btn.classList.remove('wrong'); }, 600);
+            this.onPlaySound('wrong');
+            this.updateByte("¡Casi! Revisemos el concepto para elegir la opción correcta.", 'thinking');
+            this.recordAttemptError("Respuesta incorrecta en el desafío conceptual.");
+
+            feedbackArea.className = 'quiz-feedback-box wrong';
+            feedbackArea.innerHTML = `
+              <span>💡</span>
+              <div>
+                <strong>¡Casi! Pista para pensar:</strong><br>
+                <span>${q.explanation}</span>
+              </div>
+            `;
+            feedbackArea.style.display = 'flex';
+          }
+        };
+      });
+
+      if (btnNextQ) {
+        btnNextQ.onclick = () => {
+          this.onPlaySound('pop');
+          if (idx < questions.length - 1) {
+            qIdx++;
+            drawQuizQuestion(qIdx);
+          } else {
+            showQuizSummary();
+          }
+        };
+      }
+
+      this.wireResetButton(() => {
+        qIdx = 0;
+        drawQuizQuestion(0);
+      });
+    };
+
+    const showQuizSummary = () => {
+      this.onPlaySound('fanfare');
+      this.onLaunchConfetti();
+      this.recordActivitySuccess(act.id, 30);
+      this.updateByte("¡FELICITACIONES! Demostraste que comprendés qué son las instrucciones y cómo piensa un verdadero programador.", 'happy');
+
+      container.innerHTML = `
+        <div class="theory-quiz-container">
+          ${this.createActivityHeader(act, false)}
+
+          <div class="quiz-summary-card">
+            <div style="font-size:4.5rem;">🏆</div>
+            <h3 style="font-size:1.8rem; color:#15803d; margin:0;">
+              ¡Desafío Conceptual Superado!
+            </h3>
+            <p style="font-size:1.15rem; color:#334155; max-width:550px; line-height:1.5; margin:0;">
+              Respondiste correctamente las <strong>${questions.length} preguntas</strong> sobre el funcionamiento, orden, claridad y ejecución de las instrucciones.
+            </p>
+
+            <div style="background:#ecfdf5; border:2px solid #86efac; border-radius:14px; padding:14px 20px; color:#166534; font-weight:700; font-size:1.05rem;">
+              ⭐ ¡Obtuviste la máxima puntuación en comprensión teórica!
+            </div>
+
+            <button type="button" id="btn-finish-quiz-summary" class="btn-stage-next" style="margin-top:10px; padding:14px 32px; font-size:1.15rem;">
+              <span>🏆 ¡Finalizar Tema y Ver Mi Insignia!</span> ➡️
+            </button>
+          </div>
+
+          ${this.createActivityFooter()}
+        </div>
+      `;
+
+      const btnFinish = document.getElementById('btn-finish-quiz-summary');
+      if (btnFinish) {
+        btnFinish.onclick = () => {
+          this.nextActivity();
+        };
+      }
+    };
+
+    drawQuizQuestion(qIdx);
   }
 
   // 2. ¿QUÉ ES UNA INSTRUCCIÓN?
@@ -3984,6 +4995,7 @@ class CodingModuleManager {
 
   // 3. ¿QUÉ PASO FALTA?
   renderMissingStep(container, act) {
+    const isGradeOne = this.currentGrade === 1;
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
 
     container.innerHTML = `
@@ -4004,7 +5016,7 @@ class CodingModuleManager {
           </div>
         </div>
 
-        <div style="font-weight:700; color:#0369a1; margin-bottom:8px;">Elegí el paso que completa la secuencia:</div>
+        <div style="font-weight:700; color:#0369a1; margin-bottom:8px;">${isGradeOne ? 'ELEGÍ EL PASO QUE COMPLETA LA SECUENCIA:' : 'Elegí el paso que completa la secuencia:'}</div>
         <div class="quiz-options-grid">
           ${act.options.map(opt => `
             <button type="button" class="quiz-opt-btn" data-opt="${opt.id}">
@@ -4027,11 +5039,17 @@ class CodingModuleManager {
 
         if (opt && opt.isCorrect) {
           btn.classList.add('correct');
-          this.updateByte("¡Perfecto! Ese es exactamente el paso que faltaba en el procedimiento.", 'happy');
+          const successMsg = isGradeOne
+            ? "¡PERFECTO! ESE ES EXACTAMENTE EL PASO QUE FALTABA EN LA SECUENCIA."
+            : "¡Perfecto! Ese es exactamente el paso que faltaba en el procedimiento.";
+          this.updateByte(successMsg, 'happy');
           this.recordActivitySuccess(act.id, 15);
         } else {
           btn.classList.add('wrong');
-          this.recordAttemptError("Ese paso no encaja lógicamente en ese punto de la secuencia.");
+          const errorMsg = isGradeOne
+            ? "ESE PASO NO ENCAJA EN ESTE MOMENTO DE LA SECUENCIA."
+            : "Ese paso no encaja lógicamente en ese punto de la secuencia.";
+          this.recordAttemptError(errorMsg);
         }
       };
     });
@@ -4042,6 +5060,7 @@ class CodingModuleManager {
 
   // 4. PLANTAR UNA SEMILLA (INTERACTIVA)
   renderSeedInteractive(container, act) {
+    const isGradeOne = this.currentGrade === 1;
     this.updateByte(act.instruction, 'normal', `${act.title}. ${act.instruction}`);
     let selectedOrder = [];
     const shuffled = [...act.steps].sort(() => Math.random() - 0.5);
@@ -4059,7 +5078,7 @@ class CodingModuleManager {
         </div>
 
         <div style="width:100%;">
-          <div style="font-weight:700; color:#0369a1; margin-bottom:8px;">1. Banco de Instrucciones (Tocalas en orden):</div>
+          <div style="font-weight:700; color:#0369a1; margin-bottom:8px;">${isGradeOne ? '1. BANCO DE INSTRUCCIONES (TOCALAS EN ORDEN):' : '1. Banco de Instrucciones (Tocalas en orden):'}</div>
           <div class="cards-pool-grid" id="seed-cards-pool">
             ${shuffled.map(s => `
               <button type="button" class="pool-card-btn" data-step="${s.id}">
@@ -4071,9 +5090,9 @@ class CodingModuleManager {
         </div>
 
         <div style="width:100%;">
-          <div style="font-weight:700; color:#059669; margin-bottom:8px;">2. Tu Secuencia Armada:</div>
+          <div style="font-weight:700; color:#059669; margin-bottom:8px;">${isGradeOne ? '2. TU SECUENCIA ARMADA:' : '2. Tu Secuencia Armada:'}</div>
           <div id="seed-sequence-box" style="display:flex; flex-wrap:wrap; gap:8px; min-height:50px; background:#f0fdf4; border:2px dashed #86efac; border-radius:14px; padding:10px;">
-            <span style="color:#94a3b8; font-style:italic;">Toca las tarjetas en orden...</span>
+            <span style="color:#94a3b8; font-style:italic;">${isGradeOne ? 'TOCÁ LAS TARJETAS EN ORDEN...' : 'Toca las tarjetas en orden...'}</span>
           </div>
         </div>
 
@@ -4087,7 +5106,7 @@ class CodingModuleManager {
 
     const updateUI = () => {
       if (selectedOrder.length === 0) {
-        seqBox.innerHTML = '<span style="color:#94a3b8; font-style:italic;">Toca las tarjetas en orden...</span>';
+        seqBox.innerHTML = `<span style="color:#94a3b8; font-style:italic;">${isGradeOne ? 'TOCÁ LAS TARJETAS EN ORDEN...' : 'Toca las tarjetas en orden...'}</span>`;
         if (sproutIcon) sproutIcon.textContent = '';
       } else {
         seqBox.innerHTML = selectedOrder.map((sId, idx) => {
@@ -4110,10 +5129,16 @@ class CodingModuleManager {
         const isCorrect = selectedOrder.every((id, idx) => id === act.correctOrder[idx]);
         if (isCorrect) {
           if (sproutIcon) sproutIcon.textContent = '🌸';
-          this.updateByte("¡Hermoso! La secuencia estuvo perfecta y la semillita floreció.", 'happy');
+          const successMsg = isGradeOne
+            ? "¡HERMOSO! LA SECUENCIA ESTUVO PERFECTA Y LA SEMILLITA FLORECIÓ."
+            : "¡Hermoso! La secuencia estuvo perfecta y la semillita floreció.";
+          this.updateByte(successMsg, 'happy');
           this.recordActivitySuccess(act.id, 15);
         } else {
-          this.recordAttemptError("El orden de las instrucciones no permitió crecer a la planta. Presioná Reiniciar e intentá de nuevo.");
+          const errorMsg = isGradeOne
+            ? "EL ORDEN DE LAS INSTRUCCIONES NO PERMITIÓ CRECER A LA PLANTA. TOCÁ REINICIAR E INTENTÁ DE NUEVO."
+            : "El orden de las instrucciones no permitió crecer a la planta. Presioná Reiniciar e intentá de nuevo.";
+          this.recordAttemptError(errorMsg);
         }
       }
     };
@@ -4286,17 +5311,18 @@ class CodingModuleManager {
 
   // 7. ORDENÁ LOS PASOS (DRAG & DROP + TÁCTIL)
   renderOrderSteps(container, act) {
+    const isGradeOne = this.currentGrade === 1;
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
     let currentItems = [...act.items];
 
     container.innerHTML = `
       <div class="order-task-wrapper">
         ${this.createActivityHeader(act)}
-        <p style="color:#64748b; font-size:1.05rem;">Usa los botones ▲ ▼ o arrastrá las tarjetas para ordenar:</p>
+        <p style="color:#64748b; font-size:1.05rem;">${isGradeOne ? 'USÁ LOS BOTONES ▲ ▼ O ARRASTRÁ LAS TARJETAS PARA ORDENAR:' : 'Usa los botones ▲ ▼ o arrastrá las tarjetas para ordenar:'}</p>
         <ul class="order-items-list" id="order-sortable-list"></ul>
         <div class="stage-actions-bar">
           <button type="button" id="btn-check-order" class="btn-run-code" style="padding:12px 24px;">
-            <span>✅</span> Verificar Orden
+            <span>✅</span> ${isGradeOne ? 'VERIFICAR ORDEN' : 'Verificar Orden'}
           </button>
         </div>
         ${this.createActivityFooter()}
@@ -4312,7 +5338,7 @@ class CodingModuleManager {
           <div class="order-left-group">
             <span class="order-step-badge">${idx + 1}</span>
             <span class="order-card-icon">${item.icon}</span>
-            <span class="order-card-label">${item.text}</span>
+            <span class="order-card-label" style="${isGradeOne ? 'text-transform:uppercase;' : ''}">${item.text}</span>
           </div>
           <div class="order-controls-group">
             <button type="button" class="btn-order-move btn-move-up" data-idx="${idx}" ${idx === 0 ? 'disabled style="opacity:0.3"' : ''}>▲</button>
@@ -4387,11 +5413,17 @@ class CodingModuleManager {
         if (this.activityState.isCompleted) return;
         const isCorrect = currentItems.every((it, i) => it.id === act.correctOrder[i]);
         if (isCorrect) {
-          this.updateByte("¡Excelente! Organizaste las instrucciones en el orden perfecto.", 'happy');
+          const successMsg = isGradeOne
+            ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO."
+            : "¡Excelente! Organizaste las instrucciones en el orden perfecto.";
+          this.updateByte(successMsg, 'happy');
           btnCheck.style.display = 'none';
           this.recordActivitySuccess(act.id, 15);
         } else {
-          this.recordAttemptError("Revisá el orden: alguna acción se está realizando antes de tiempo.");
+          const errorMsg = isGradeOne
+            ? "REVISÁ EL ORDEN: ALGUNA ACCIÓN SE ESTÁ REALIZANDO ANTES DE TIEMPO."
+            : "Revisá el orden: alguna acción se está realizando antes de tiempo.";
+          this.recordAttemptError(errorMsg);
         }
       };
     }
@@ -7010,18 +8042,21 @@ class CodingModuleManager {
       return;
     }
 
+    const isGradeOne = this.currentGrade === 1;
     container.innerHTML = `
       <div style="display:flex; justify-content:center; align-items:center; padding:20px 0;">
         <div class="coding-victory-card">
           <div class="victory-badge-icon">🏆</div>
-          <h2 class="victory-title">🎉 ¡Sección Completada! 🎉</h2>
+          <h2 class="victory-title">${isGradeOne ? '🎉 ¡SECCIÓN COMPLETADA! 🎉' : '🎉 ¡Sección Completada! 🎉'}</h2>
           <p class="victory-desc">
-            ¡Felicitaciones! Has completado con éxito todas las misiones de <strong>INSTRUCCIONES</strong> para <strong>${gConfig.badge}</strong>.
+            ${isGradeOne
+              ? `¡FELICITACIONES! HAS COMPLETADO CON ÉXITO TODAS LAS MISIONES DE <strong>INSTRUCCIONES</strong> PARA <strong>${gConfig.badge}</strong>.`
+              : `¡Felicitaciones! Has completado con éxito todas las misiones de <strong>INSTRUCCIONES</strong> para <strong>${gConfig.badge}</strong>.`}
           </p>
 
           <div class="victory-points-box">
-            ⭐ ${progress.score || 0} Puntos Totales • ${progress.starsTotal || 0} Estrellas Obtenidas<br>
-            <span style="font-size:1.15rem; color:#15803d; font-weight:700;">Insignia: «Maestro de las Instrucciones» 🏅</span>
+            ⭐ ${progress.score || 0} ${isGradeOne ? 'PUNTOS TOTALES' : 'Puntos Totales'} • ${progress.starsTotal || 0} ${isGradeOne ? 'ESTRELLAS OBTENIDAS' : 'Estrellas Obtenidas'}<br>
+            <span style="font-size:1.15rem; color:#15803d; font-weight:700;">${isGradeOne ? 'INSIGNIA: «MAESTRO DE LAS INSTRUCCIONES» 🏅' : 'Insignia: «Maestro de las Instrucciones» 🏅'}</span>
           </div>
 
           <div style="margin-bottom:20px; font-size:1.1rem; color:#334155;">
@@ -7030,7 +8065,7 @@ class CodingModuleManager {
           </div>
 
           <button type="button" id="btn-victory-back-syllabus" class="btn-stage-next" style="width:100%; justify-content:center;">
-            <span>✨ Volver al Temario del Grado</span>
+            <span>${isGradeOne ? '✨ VOLVER AL TEMARIO DEL GRADO' : '✨ Volver al Temario del Grado'}</span>
           </button>
         </div>
       </div>
