@@ -2837,10 +2837,11 @@
 }
 
 /* ======================================================== */
-/* 🎮 MINIJUEGO INTERACTIVO: MISIÓN FINAL MARIO (1.º A 5.º) */
-/* ======================================================== */
+/* ========================================================
+   🎮 MINIJUEGO INTERACTIVO: MISIÓN FINAL DE BYTE (1.º A 5.º)
+   ======================================================== */
 
-.mario-mission-wrapper {
+.byte-mission-wrapper, .mario-mission-wrapper {
   background: white;
   border-radius: 24px;
   border: 3px solid #e2e8f0;
@@ -2853,7 +2854,170 @@
   overflow: hidden;
 }
 
-.mario-game-layout {
+/* Pantalla de Bienvenida de la Misión Final */
+.byte-welcome-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fdf4ff 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.15);
+  animation: popIn 0.35s ease;
+}
+
+.byte-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0284c7;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 6px 18px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.byte-welcome-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0369a1;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.byte-welcome-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: white;
+  border: 2px solid #bae6fd;
+  border-radius: 22px;
+  padding: 20px 28px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.byte-hero-avatar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.byte-hero-avatar {
+  font-size: 4.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 6px 12px rgba(2, 132, 199, 0.35));
+  animation: byteHoverAnim 2.4s infinite ease-in-out;
+}
+
+@keyframes byteHoverAnim {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.06); }
+}
+
+.byte-hero-name {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #0284c7;
+  letter-spacing: 1px;
+}
+
+.byte-welcome-path-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+}
+
+.byte-dest-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.byte-dest-icon {
+  font-size: 3.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 6px 12px rgba(234, 179, 8, 0.35));
+  animation: pulseGoal 2s infinite ease-in-out;
+}
+
+@keyframes pulseGoal {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.byte-dest-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.byte-speech-bubble {
+  background: white;
+  border: 2px solid #38bdf8;
+  border-radius: 20px;
+  padding: 18px 24px;
+  max-width: 600px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.byte-speech-bubble p {
+  margin: 0;
+}
+
+.byte-speech-bubble .bubble-main {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.byte-speech-bubble .bubble-sub {
+  font-size: 1.05rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.btn-byte-start-mission {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 36px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.38);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  letter-spacing: 0.5px;
+}
+
+.btn-byte-start-mission:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.5);
+}
+
+.btn-byte-start-mission:active {
+  transform: translateY(1px);
+}
+
+/* Escenario y Tablero del Juego */
+.byte-game-layout, .mario-game-layout {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 24px;
@@ -2861,20 +3025,19 @@
 }
 
 @media (max-width: 960px) {
-  .mario-game-layout {
+  .byte-game-layout, .mario-game-layout {
     grid-template-columns: 1fr;
   }
 }
 
-/* Tablero de Cuadrícula de Mario */
-.mario-stage-box {
+.byte-stage-box, .mario-stage-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
 
-.mario-grid-board {
+.byte-grid-board, .mario-grid-board {
   display: grid;
   background: #bbf7d0;
   border: 4px solid #16a34a;
@@ -2886,7 +3049,7 @@
   user-select: none;
 }
 
-.mario-cell {
+.byte-cell, .mario-cell {
   position: relative;
   background: #dcfce7;
   border: 1.5px solid #86efac;
@@ -2899,13 +3062,13 @@
   user-select: none;
 }
 
-.mario-cell.road-cell {
+.byte-cell.road-cell, .mario-cell.road-cell {
   background: #fed7aa;
   border-color: #f97316;
   box-shadow: inset 0 2px 4px rgba(249, 115, 22, 0.15);
 }
 
-.mario-cell.obstacle-cell {
+.byte-cell.obstacle-cell, .mario-cell.obstacle-cell {
   background: #fef08a;
   border-color: #ca8a04;
   animation: pulseObstacle 2.5s infinite ease-in-out;
@@ -2916,13 +3079,13 @@
   50% { transform: scale(1.04); }
 }
 
-.mario-cell.scenery-cell {
+.byte-cell.scenery-cell, .mario-cell.scenery-cell {
   background: #bbf7d0;
   border-color: #4ade80;
   opacity: 0.85;
 }
 
-.mario-cell.goal-cell {
+.byte-cell.goal-cell, .mario-cell.goal-cell {
   background: #fef9c3;
   border: 2px dashed #eab308;
   animation: glowGoal 2s infinite ease-in-out;
@@ -2933,8 +3096,8 @@
   50% { box-shadow: 0 0 20px rgba(234, 179, 8, 0.8); }
 }
 
-/* Personaje de Mario */
-.mario-actor {
+/* Personaje en el Tablero */
+.byte-actor, .mario-actor {
   width: 90%;
   height: 90%;
   display: flex;
@@ -2946,52 +3109,52 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
 }
 
-.mario-actor.face-right { transform: scaleX(1); }
-.mario-actor.face-left { transform: scaleX(-1); }
-.mario-actor.face-up { transform: translateY(-3px) scale(1.05); }
-.mario-actor.face-down { transform: translateY(3px) scale(1.05); }
+.byte-actor.face-right, .mario-actor.face-right { transform: scaleX(1); }
+.byte-actor.face-left, .mario-actor.face-left { transform: scaleX(-1); }
+.byte-actor.face-up, .mario-actor.face-up { transform: translateY(-3px) scale(1.05); }
+.byte-actor.face-down, .mario-actor.face-down { transform: translateY(3px) scale(1.05); }
 
-.mario-actor.jumping {
-  animation: marioJumpAnim 0.5s ease;
+.byte-actor.jumping, .mario-actor.jumping {
+  animation: byteJumpAnim 0.5s ease;
 }
 
-@keyframes marioJumpAnim {
+@keyframes byteJumpAnim {
   0% { transform: translateY(0) scale(1); }
-  45% { transform: translateY(-32px) scale(1.25) rotate(-10deg); }
+  45% { transform: translateY(-34px) scale(1.3) rotate(-8deg); }
   100% { transform: translateY(0) scale(1); }
 }
 
-.mario-actor.walking {
-  animation: marioWalkStepAnim 0.35s ease;
+.byte-actor.walking, .mario-actor.walking {
+  animation: byteWalkStepAnim 0.35s ease;
 }
 
-@keyframes marioWalkStepAnim {
+@keyframes byteWalkStepAnim {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px) scale(1.1); }
 }
 
-.mario-actor.crashed {
-  animation: marioCrashAnim 0.6s ease;
+.byte-actor.crashed, .mario-actor.crashed {
+  animation: byteCrashAnim 0.6s ease;
 }
 
-@keyframes marioCrashAnim {
+@keyframes byteCrashAnim {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-8px) rotate(-12deg); }
   40%, 80% { transform: translateX(8px) rotate(12deg); }
 }
 
-.mario-actor.celebrating {
-  animation: marioVictoryDanceAnim 1s infinite ease-in-out;
+.byte-actor.celebrating, .mario-actor.celebrating {
+  animation: byteVictoryDanceAnim 1s infinite ease-in-out;
 }
 
-@keyframes marioVictoryDanceAnim {
+@keyframes byteVictoryDanceAnim {
   0%, 100% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-20px) scale(1.3) rotate(-15deg); }
-  75% { transform: translateY(-24px) scale(1.3) rotate(15deg); }
+  25% { transform: translateY(-22px) scale(1.3) rotate(-12deg); }
+  75% { transform: translateY(-24px) scale(1.3) rotate(12deg); }
 }
 
 /* Panel de Programación */
-.mario-programming-panel {
+.byte-programming-panel, .mario-programming-panel {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -3001,7 +3164,7 @@
   padding: 18px;
 }
 
-.mario-panel-section-title {
+.byte-panel-section-title, .mario-panel-section-title {
   font-size: 1rem;
   font-weight: 800;
   color: #0369a1;
@@ -3011,13 +3174,13 @@
 }
 
 /* Paleta de Comandos Disponibles */
-.mario-cmd-palette {
+.byte-cmd-palette, .mario-cmd-palette {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.btn-mario-cmd {
+.btn-byte-cmd, .btn-mario-cmd {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -3033,54 +3196,54 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.btn-mario-cmd:hover {
+.btn-byte-cmd:hover, .btn-mario-cmd:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.btn-mario-cmd:active {
+.btn-byte-cmd:active, .btn-mario-cmd:active {
   transform: translateY(1px);
 }
 
-.btn-mario-cmd.cmd-right {
+.btn-byte-cmd.cmd-right, .btn-mario-cmd.cmd-right {
   background: #e0f2fe;
   color: #0284c7;
   border-color: #38bdf8;
 }
 
-.btn-mario-cmd.cmd-left {
+.btn-byte-cmd.cmd-left, .btn-mario-cmd.cmd-left {
   background: #f1f5f9;
   color: #475569;
   border-color: #94a3b8;
 }
 
-.btn-mario-cmd.cmd-up {
+.btn-byte-cmd.cmd-up, .btn-mario-cmd.cmd-up {
   background: #dbeafe;
   color: #2563eb;
   border-color: #60a5fa;
 }
 
-.btn-mario-cmd.cmd-down {
+.btn-byte-cmd.cmd-down, .btn-mario-cmd.cmd-down {
   background: #ede9fe;
   color: #7c3aed;
   border-color: #a78bfa;
 }
 
-.btn-mario-cmd.cmd-jump {
+.btn-byte-cmd.cmd-jump, .btn-mario-cmd.cmd-jump {
   background: #fef08a;
   color: #a16207;
   border-color: #eab308;
   font-size: 1.1rem;
 }
 
-.btn-mario-cmd.cmd-repeat {
+.btn-byte-cmd.cmd-repeat, .btn-mario-cmd.cmd-repeat {
   background: #fae8ff;
   color: #a21caf;
   border-color: #e879f9;
 }
 
 /* Espacio de la Secuencia / Programa */
-.mario-sequence-tray {
+.byte-sequence-tray, .mario-sequence-tray {
   background: white;
   border: 2px dashed #cbd5e1;
   border-radius: 16px;
@@ -3093,7 +3256,7 @@
   position: relative;
 }
 
-.mario-sequence-empty-hint {
+.byte-sequence-empty-hint, .mario-sequence-empty-hint {
   color: #94a3b8;
   font-style: italic;
   font-size: 0.95rem;
@@ -3104,7 +3267,7 @@
 }
 
 /* Tarjeta individual de paso */
-.mario-step-chip {
+.byte-step-chip, .mario-step-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -3118,9 +3281,15 @@
   transition: all 0.2s ease;
   user-select: none;
   animation: popIn 0.2s ease;
+  cursor: pointer;
 }
 
-.mario-step-chip.running {
+.byte-step-chip:hover, .mario-step-chip:hover {
+  border-color: #94a3b8;
+  background: #e2e8f0;
+}
+
+.byte-step-chip.running, .mario-step-chip.running {
   background: #fef08a;
   border-color: #eab308;
   color: #854d0e;
@@ -3128,7 +3297,7 @@
   box-shadow: 0 0 12px rgba(234, 179, 8, 0.6);
 }
 
-.mario-step-chip.failed {
+.byte-step-chip.failed, .mario-step-chip.failed {
   background: #fee2e2;
   border-color: #ef4444;
   color: #b91c1c;
@@ -3153,15 +3322,15 @@
   background: rgba(239, 68, 68, 0.1);
 }
 
-/* Barra de Acciones de Mario */
-.mario-actions-bar {
+/* Barra de Acciones */
+.byte-actions-bar, .mario-actions-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
 
-.btn-mario-run {
+.btn-byte-run, .btn-mario-run {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   border: none;
@@ -3179,17 +3348,17 @@
   user-select: none;
 }
 
-.btn-mario-run:hover:not(:disabled) {
+.btn-byte-run:hover:not(:disabled), .btn-mario-run:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(16, 185, 129, 0.4);
 }
 
-.btn-mario-run:disabled {
+.btn-byte-run:disabled, .btn-mario-run:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.btn-mario-tool {
+.btn-byte-tool, .btn-mario-tool {
   background: white;
   border: 2px solid #cbd5e1;
   border-radius: 12px;
@@ -3205,14 +3374,14 @@
   transition: all 0.15s ease;
 }
 
-.btn-mario-tool:hover {
+.btn-byte-tool:hover, .btn-mario-tool:hover {
   background: #f1f5f9;
   border-color: #94a3b8;
   color: #1e293b;
 }
 
-/* Celebración de Mario Overlay */
-.mario-celebration-banner {
+/* Celebración Overlay */
+.byte-celebration-banner, .mario-celebration-banner {
   background: linear-gradient(135deg, #fef3c7 0%, #dcfce7 100%);
   border: 3px solid #16a34a;
   border-radius: 20px;
@@ -3227,14 +3396,14 @@
   margin-top: 14px;
 }
 
-.mario-celebration-title {
+.byte-celebration-title, .mario-celebration-title {
   font-size: 1.8rem;
   font-weight: 900;
   color: #15803d;
   margin: 0;
 }
 
-.mario-celebration-text {
+.byte-celebration-text, .mario-celebration-text {
   font-size: 1.15rem;
   font-weight: 700;
   color: #1e293b;
