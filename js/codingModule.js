@@ -263,6 +263,271 @@ const CODING_DATA = {
           }
         ]
       },
+            // TEMA NUEVO: TAREA (1.° A 5.° GRADO)
+      homework: {
+        "id": "homework",
+        "title": "TAREA",
+        "name": "TAREA",
+        "badge": "⭐ NUEVO BLOQUE",
+        "icon": "📝",
+        "description": "PREGUNTAS CONCEPTUALES Y 3 DESAFÍOS ESPECIALES PARA PRACTICAR EN CASA O EN EL AULA.",
+        "activities": [
+                {
+                        "id": "g1_hw_q1_inst",
+                        "type": "concept_question",
+                        "title": "¿QUÉ ES UNA INSTRUCCIÓN?",
+                        "concept": "UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE NOS DICE QUÉ ACCIÓN DEBEMOS REALIZAR. UNA COMPUTADORA NECESITA INSTRUCCIONES CLARAS PARA SABER QUÉ HACER.",
+                        "objective": "APRENDER QUÉ ES UNA INSTRUCCIÓN Y RECONOCER CUÁNDO UNA ORDEN ES CLARA Y ÚTIL.",
+                        "whatToObserve": "LEÉ LA DEFINICIÓN DEL CARTEL VIOLETA Y LAS TRES OPCIONES DE LA SITUACIÓN DE BYTE.",
+                        "howToPlay": "TOCÁ LA TARJETA QUE TIENE LA INSTRUCCIÓN CLARA Y EXACTA PARA AYUDAR A BYTE.",
+                        "howToSubmit": "AL TOCAR LA OPCIÓN SE COMPRUEBA EN EL MOMENTO CON ESTRELLAS Y SONIDO.",
+                        "resultMeaning": "SI ESTÁ BIEN, VERÁS ESTRELLAS DORADAS. SI TE EQUIVOCÁS, RECIBIRÁS UNA PISTA PARA INTENTAR OTRA VEZ.",
+                        "situation": "BYTE ESTÁ LISTO PARA SALIR A JUGAR AL PATIO. ¿CUÁL DE ESTAS ES UNA INSTRUCCIÓN CLARA QUE BYTE PUEDE SEGUIR?",
+                        "question": "¿CUÁL ES LA INSTRUCCIÓN CLARA?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❓",
+                                        "text": "HACÉ ALGO LINDO POR AHÍ",
+                                        "isCorrect": false,
+                                        "feedback": "ESA ORDEN ES MUY CONFUSA. BYTE NO SABE QUÉ TIENE QUE HACER."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🚪",
+                                        "text": "AVANZÁ 2 PASOS HACIA LA PUERTA",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "💭",
+                                        "text": "PENSÁ MUCHO",
+                                        "isCorrect": false,
+                                        "feedback": "PENSAR NO LE DICE A BYTE QUÉ ACCIÓN O MOVIMIENTO DEBE REALIZAR."
+                                }
+                        ],
+                        "hints": [
+                                "PISTA 1: RECORDÁ QUE UNA INSTRUCCIÓN LE DICE A LA COMPUTADORA EXACTAMENTE QUÉ ACCIÓN REALIZAR.",
+                                "PISTA 2: BUSCÁ LA OPCIÓN QUE DICE QUÉ TIENE QUE HACER BYTE (AVANZAR) Y HACIA DÓNDE (LA PUERTA).",
+                                "PISTA 3: LA RESPUESTA CORRECTA ES LA QUE DA UNA ORDEN CONCRETA Y PASO A PASO: AVANZÁ 2 PASOS HACIA LA PUERTA."
+                        ]
+                },
+                {
+                        "id": "g1_hw_q2_prog",
+                        "type": "concept_question",
+                        "title": "¿QUÉ ES PROGRAMAR?",
+                        "concept": "PROGRAMAR ES DARLE INSTRUCCIONES A UNA COMPUTADORA, DE MANERA ORDENADA, PARA REALIZAR ALGO.",
+                        "objective": "COMPRENDER QUE PROGRAMAR ES PREPARAR Y ORDENAR INSTRUCCIONES PARA QUE UN PERSONAJE ACTÚE.",
+                        "whatToObserve": "OBSERVÁ EL CARTEL CON LA IDEA PRINCIPAL Y PENSÁ CÓMO TRABAJA UN PROGRAMADOR CON BYTE.",
+                        "howToPlay": "TOCÁ LA OPCIÓN QUE EXPLICA LO QUE DEBE HACER UN CHICO O CHICA PARA GUIAR A BYTE.",
+                        "howToSubmit": "TOCÁ LA TARJETA SELECCIONADA PARA VERIFICAR TU RESPUESTA.",
+                        "resultMeaning": "SI LA RESPUESTA ES CORRECTA, PASARÁS A LA SIGUIENTE PREGUNTA CON PUNTOS Y ESTRELLAS.",
+                        "situation": "QUEREMOS QUE BYTE CRUCE UN LABERINTO EN LA PANTALLA. ¿QUÉ DEBEMOS HACER NOSOTROS?",
+                        "question": "¿QUÉ SIGNIFICA PROGRAMAR EN ESTA SITUACIÓN?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🙈",
+                                        "text": "ESPERAR A QUE BYTE ADIVINE EL CAMINO SOLO",
+                                        "isCorrect": false,
+                                        "feedback": "LAS COMPUTADORAS NO ADIVINAN. NECESITAN QUE LES DEMOS ÓRDENES."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "📝",
+                                        "text": "ELEGIR Y ORDENAR LAS INSTRUCCIONES QUE BYTE DEBE SEGUIR",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "🔌",
+                                        "text": "DESENCHUFAR LA PANTALLA Y ENCHUFARLA DE NUEVO",
+                                        "isCorrect": false,
+                                        "feedback": "DESCONECTAR EL EQUIPO NO LE ENSEÑA A BYTE QUÉ CAMINO TOMAR."
+                                }
+                        ],
+                        "hints": [
+                                "PISTA 1: PROGRAMAR REQUIERE PENSAR LAS ACCIONES DE ANTEMANO Y PONERLAS EN ORDEN.",
+                                "PISTA 2: BYTE NECESITA QUE VOS SEAS SU GUÍA Y LE INDIQUES CADA PASO DE SU RECORRIDO.",
+                                "PISTA 3: ELEGÍ LA OPCIÓN QUE HABLA DE ELEGIR Y ORDENAR LAS INSTRUCCIONES."
+                        ]
+                },
+                {
+                        "id": "g1_hw_q3_algo",
+                        "type": "concept_question",
+                        "title": "¿QUÉ ES UN ALGORITMO?",
+                        "concept": "UN ALGORITMO ES UNA SERIE DE PASOS ORDENADOS QUE SEGUIMOS PARA RESOLVER UN PROBLEMA O REALIZAR UNA TAREA.",
+                        "objective": "RECONOCER QUE UN ALGORITMO DEBE TENER PASOS LÓGICOS Y ORDENADOS PARA ALCANZAR UN OBJETIVO.",
+                        "whatToObserve": "LEÉ LOS TRES ALGORITMOS PROPUESTOS PARA QUE BYTE ENCIENDA SU LINTERNA.",
+                        "howToPlay": "TOCÁ LA SECUENCIA QUE ESTÁ ORDENADA CORRECTAMENTE DE PRINCIPIO A FIN.",
+                        "howToSubmit": "SELECCIONÁ LA TARJETA Y COMPROBÁ EL RESULTADO.",
+                        "resultMeaning": "SI EL ALGORITMO TIENE SENTIDO LÓGICO Y CUMPLE LA META, ¡COMPLETASTE LA PREGUNTA CON ÉXITO!",
+                        "situation": "BYTE NECESITA LUZ EN LA OSCURIDAD. ¿CUÁL ES EL ALGORITMO CORRECTO PARA ENCENDER SU LINTERNA?",
+                        "question": "¿CUÁL DE ESTOS ES UN ALGORITMO VÁLIDO?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❌",
+                                        "text": "1. PRENDER ➡️ 2. APAGAR ➡️ 3. BUSCAR LA PILA",
+                                        "isCorrect": false,
+                                        "feedback": "¡NO SE PUEDE PRENDER ANTES DE TENER LA PILA COLOCADA!"
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🔦",
+                                        "text": "1. ABRIR LINTERNA ➡️ 2. PONER LA PILA ➡️ 3. APRETAR EL BOTÓN DE ENCENDER",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "❌",
+                                        "text": "1. APRETAR EL BOTÓN ➡️ 2. GUARDAR LA LINTERNA",
+                                        "isCorrect": false,
+                                        "feedback": "ESTE ALGORITMO ESTÁ INCOMPLETO Y NO COLOCA LA PILA."
+                                }
+                        ],
+                        "hints": [
+                                "PISTA 1: UN BUEN ALGORITMO NO SE SALTEA PASOS Y TIENE UN ORDEN QUE FUNCIONA EN LA REALIDAD.",
+                                "PISTA 2: ¿QUÉ SE HACE PRIMERO PARA QUE UNA LINTERNA ANDE? ¡HAY QUE PONERLE LA PILA ANTES DE ENCENDERLA!",
+                                "PISTA 3: LA RESPUESTA ES: 1. ABRIR LINTERNA ➡️ 2. PONER LA PILA ➡️ 3. APRETAR EL BOTÓN."
+                        ]
+                },
+                {
+                        "id": "g1_hw_desafio1",
+                        "type": "byte_mission",
+                        "title": "DESAFÍO 1: PROGRAMÁ EL RECORRIDO DE BYTE",
+                        "instruction": "OBSERVÁ EL MAPA Y CREÁ LA SECUENCIA DE INSTRUCCIONES PARA QUE BYTE LLEGUE A SU CASA SIN CHOCAR CON EL CHARCO.",
+                        "objective": "GUIAR A BYTE DESDE EL INICIO HASTA SU CASA EVITANDO EL CHARCO DE AGUA CON UN SALTO O RODEO.",
+                        "whatToObserve": "BYTE ESTÁ EN LA CASILLA INICIAL, EL CHARCO EN EL MEDIO Y LA CASA AL FINAL.",
+                        "howToPlay": "TOCÁ LOS BOTONES DE COMANDOS (AVANZAR, SALTAR) PARA ARMAR LA LISTA DE PASOS. SI TE EQUIVOCÁS, TOCÁ ✕ EN EL PASO.",
+                        "howToSubmit": "CUANDO TU PROGRAMA ESTÉ LISTO, TOCÁ «▶️ ¡EJECUTAR INSTRUCCIONES!».",
+                        "resultMeaning": "SI BYTE LLEGA A LA CASA, RECIBIRÁS 25 PUNTOS Y ESTRELLAS. SI CAE EN EL CHARCO, CORREGÍ TUS PASOS.",
+                        "gridCols": 4,
+                        "gridRows": 3,
+                        "startPos": {
+                                "x": 0,
+                                "y": 1
+                        },
+                        "targetPos": {
+                                "x": 3,
+                                "y": 1
+                        },
+                        "goalIcon": "🏡",
+                        "goalName": "CASA DE BYTE",
+                        "obstacles": [
+                                {
+                                        "x": 2,
+                                        "y": 1,
+                                        "icon": "🌊",
+                                        "name": "CHARCO DE AGUA"
+                                }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "jump",
+                                "up",
+                                "down"
+                        ],
+                        "hints": [
+                                "PISTA 1: OBSERVÁ LA FILA DONDE ESTÁ BYTE: PARA LLEGAR A LA META TIENE QUE AVANZAR HACIA LA DERECHA.",
+                                "PISTA 2: EN LA TERCERA CASILLA HAY UN CHARCO: ¡USÁ LA INSTRUCCIÓN «SALTAR» JUSTO ANTES DE CAER EN ÉL!",
+                                "PISTA 3: UNA SECUENCIA GANADORA ES: AVANZAR A LA DERECHA ➡️ SALTAR EL CHARCO (ATERRIZA EN LA CASA)."
+                        ]
+                },
+                {
+                        "id": "g1_hw_desafio2",
+                        "type": "byte_mission",
+                        "title": "DESAFÍO 2: DETECTÁ Y CORREGÍ EL ERROR",
+                        "instruction": "ESTA SECUENCIA TIENE UN ERROR: BYTE CHOCA CON UNA ROCA. ¡TOCÁ EL PASO EQUIVOCADO CON ✕, CORREGILO Y EJECUTÁ!",
+                        "objective": "ENCONTRAR LA INSTRUCCIÓN ERRÓNEA QUE HACE CHOCAR A BYTE, CAMBIARLA Y LLEVARLO A LA BANDERA.",
+                        "whatToObserve": "OBSERVÁ EL MAPA Y LA LISTA DE PASOS YA CARGADA EN EL PANEL.",
+                        "howToPlay": "TOCÁ «EJECUTAR» PARA OBSERVAR DÓNDE FALLA BYTE. LUEGO TOCÁ ✕ EN EL PASO EQUIVOCADO Y AGREGÁ EL CORRECTO.",
+                        "howToSubmit": "PRESIONÁ «▶️ ¡EJECUTAR INSTRUCCIONES!» PARA COMPROBAR TU CORRECCIÓN.",
+                        "resultMeaning": "CUANDO EL ERROR ESTÉ CORREGIDO Y BYTE ALCANCE LA BANDERA, HABRÁS SUPERADO EL DESAFÍO DE DEPURACIÓN.",
+                        "gridCols": 4,
+                        "gridRows": 3,
+                        "startPos": {
+                                "x": 0,
+                                "y": 0
+                        },
+                        "targetPos": {
+                                "x": 3,
+                                "y": 0
+                        },
+                        "goalIcon": "🚩",
+                        "goalName": "BANDERA DE LLEGADA",
+                        "obstacles": [
+                                {
+                                        "x": 1,
+                                        "y": 1,
+                                        "icon": "🪨",
+                                        "name": "ROCA"
+                                }
+                        ],
+                        "initialCommands": [
+                                "right",
+                                "down",
+                                "right"
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "jump",
+                                "up",
+                                "down"
+                        ],
+                        "hints": [
+                                "PISTA 1: PROBÁ LA SECUENCIA ACTUAL PRESIONANDO EJECUTAR PARA VER EN QUÉ PASO BYTE CHOCA CON LA ROCA.",
+                                "PISTA 2: EL PASO 2 («ABAJO») HACE QUE BYTE SALGA DEL CAMINO RECTO Y VAYA HACIA LA ROCA.",
+                                "PISTA 3: BORRÁ EL PASO 2 TOCANDO SU ✕ Y COLOCÁ AVANZAR A LA DERECHA. LA SECUENCIA CORRECTA ES TRES AVANCES RECTOS."
+                        ]
+                },
+                {
+                        "id": "g1_hw_desafio3",
+                        "type": "build_sequence",
+                        "title": "DESAFÍO 3: CONSTRUÍ LA SECUENCIA CORRECTA",
+                        "instruction": "BYTE NECESITA RECARGAR SU BATERÍA SOLAR. ELEGÍ Y ORDENÁ LAS 3 TARJETAS CORRECTAS Y DESCARTÁ LA EQUIVOCADA.",
+                        "objective": "CONSTRUIR LA SECUENCIA LÓGICA PARA RECARGAR A BYTE CON ENERGÍA SOLAR DESCARTANDO EL DISTRACTOR.",
+                        "whatToObserve": "MIRÁ LAS 4 TARJETAS DEL BANCO DE ACCIONES: HAY UNA QUE PUEDE DAÑAR A BYTE.",
+                        "howToPlay": "TOCÁ LAS TARJETAS EN EL ORDEN QUE DEBEN EJECUTARSE. DESCARTÁ LA QUE TIENE AGUA.",
+                        "howToSubmit": "CUANDO LA SECUENCIA TENGA LOS 3 PASOS EN ORDEN, TOCÁ «🚀 ¡COMPROBAR SECUENCIA!».",
+                        "resultMeaning": "SI LA SECUENCIA DE RECARGA ES EXACTA, ¡COMPLETASTE TODA LA TAREA CON ÉXITO Y CELEBRACIÓN!",
+                        "pool": [
+                                {
+                                        "id": "b_panel",
+                                        "icon": "☀️",
+                                        "text": "ABRIR EL PANEL SOLAR"
+                                },
+                                {
+                                        "id": "b_cable",
+                                        "icon": "🔌",
+                                        "text": "CONECTAR EL CABLE A BYTE"
+                                },
+                                {
+                                        "id": "b_charge",
+                                        "icon": "🔋",
+                                        "text": "CARGAR LA BATERÍA AL 100%"
+                                },
+                                {
+                                        "id": "b_water",
+                                        "icon": "💧",
+                                        "text": "ECHARLE AGUA AL ENCHUFE"
+                                }
+                        ],
+                        "validSequences": [
+                                [
+                                        "b_panel",
+                                        "b_cable",
+                                        "b_charge"
+                                ]
+                        ],
+                        "hints": [
+                                "PISTA 1: ¡CUIDADO! EL AGUA Y LA ELECTRICIDAD NO SE LLEVAN BIEN: DESCARTÁ LA TARJETA DE ECHAR AGUA.",
+                                "PISTA 2: PRIMERO SE ABRE EL PANEL AL SOL, LUEGO SE CONECTA EL CABLE Y FINALMENTE SE CARGA LA BATERÍA.",
+                                "PISTA 3: EL ORDEN ES: 1. ABRIR PANEL SOLAR ➡️ 2. CONECTAR CABLE ➡️ 3. CARGAR BATERÍA."
+                        ]
+                }
+        ]
+},
       // TEMA 2: PATRONES (EXCLUSIVO 1.° GRADO - TODO EN MAYÚSCULAS)
       patterns: {
         title: 'PATRONES',
@@ -1133,6 +1398,280 @@ const CODING_DATA = {
           }
         ]
       },
+      // TEMA NUEVO: TAREA (2.° GRADO)
+      homework: {
+        "id": "homework",
+        "title": "Tarea",
+        "name": "Tarea",
+        "badge": "⭐ Nuevo Bloque",
+        "icon": "📝",
+        "description": "Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.",
+        "activities": [
+                {
+                        "id": "g2_hw_q1_inst",
+                        "type": "concept_question",
+                        "title": "¿Qué es una instrucción?",
+                        "concept": "Una instrucción es una indicación que nos dice qué acción debemos realizar. Una computadora necesita instrucciones claras para saber qué hacer.",
+                        "objective": "Identificar instrucciones claras, unívocas y útiles frente a órdenes confusas o incompletas.",
+                        "whatToObserve": "Leé el concepto clave y analizá qué indicación le permite a un robot cocinero actuar sin equivocarse.",
+                        "howToPlay": "Hacé clic sobre la opción que representa una instrucción clara y ejecutable.",
+                        "howToSubmit": "Al seleccionar la tarjeta se comprueba de forma inmediata con retroalimentación.",
+                        "resultMeaning": "Si acertás, ganarás puntos y avanzarás a la siguiente pregunta conceptual.",
+                        "situation": "En la escuela están programando a un robot para que prepare la merienda. ¿Cuál de estas es una instrucción clara?",
+                        "question": "¿Cuál es la instrucción adecuada para el robot?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🥛",
+                                        "text": "Servir 1 taza de leche tibia en el tazón",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🤷",
+                                        "text": "Hacé algo rico cuando tengas ganas",
+                                        "isCorrect": false,
+                                        "feedback": "Es demasiado vaga: no dice qué ingrediente usar ni qué acción concreta hacer."
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "🥣",
+                                        "text": "La mesa es grande y de madera",
+                                        "isCorrect": false,
+                                        "feedback": "Eso es una descripción del mueble, no una indicación para actuar."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Las computadoras y robots necesitan saber exactamente qué acción hacer y con qué elementos.",
+                                "Pista 2: Buscá la indicación que tiene un verbo de acción claro y cantidades precisas.",
+                                "Pista 3: La opción correcta es: «Servir 1 taza de leche tibia en el tazón»."
+                        ]
+                },
+                {
+                        "id": "g2_hw_q2_prog",
+                        "type": "concept_question",
+                        "title": "¿Qué es programar?",
+                        "concept": "Programar es darle instrucciones a una computadora, de manera ordenada, para realizar algo.",
+                        "objective": "Comprender que programar implica planificar y secuenciar órdenes antes de ejecutarlas.",
+                        "whatToObserve": "Leé el concepto en el recuadro superior y analizá la situación del videojuego de carreras.",
+                        "howToPlay": "Seleccioná la respuesta que mejor explica qué hace una persona al programar.",
+                        "howToSubmit": "Hacé clic en la tarjeta correspondiente para verificar tu respuesta.",
+                        "resultMeaning": "Comprobarás tu comprensión sobre el rol del programador frente a la máquina.",
+                        "situation": "Querés que un autito virtual complete una pista de carreras con curvas. ¿Qué significa programarlo?",
+                        "question": "¿Qué tiene que hacer el programador?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "✨",
+                                        "text": "Confiar en que el autito sabe magia y llegará a la meta solo",
+                                        "isCorrect": false,
+                                        "feedback": "Los programas no funcionan por magia: dependen de las órdenes que escribamos."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🏎️",
+                                        "text": "Escribir la lista ordenada de giros y avances antes de que el autito arranque",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "🎮",
+                                        "text": "Gritarle a la pantalla para que doble más rápido",
+                                        "isCorrect": false,
+                                        "feedback": "La computadora solo responde a las instrucciones ingresadas en su programa."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Programar consiste en ordenar las acciones con anticipación.",
+                                "Pista 2: Para que el autito doble en cada curva, debemos indicarle cada paso en orden.",
+                                "Pista 3: Elegí la opción que habla de escribir la lista ordenada de giros y avances."
+                        ]
+                },
+                {
+                        "id": "g2_hw_q3_algo",
+                        "type": "concept_question",
+                        "title": "¿Qué es un algoritmo?",
+                        "concept": "Un algoritmo es una serie de pasos ordenados que seguimos para resolver un problema o realizar una tarea.",
+                        "objective": "Reconocer que un algoritmo debe seguir una secuencia lógica temporal sin saltear pasos críticos.",
+                        "whatToObserve": "Compará las tres secuencias propuestas para la misión de un dron escolar.",
+                        "howToPlay": "Elegí la secuencia que cumple el objetivo de forma coherente de principio a fin.",
+                        "howToSubmit": "Hacé clic sobre el algoritmo que consideres válido.",
+                        "resultMeaning": "Si el orden es correcto, confirmarás tu dominio sobre la lógica secuencial.",
+                        "situation": "Queremos programar un dron para que despegue, tome una foto del patio y aterrice en su base. ¿Cuál es el algoritmo correcto?",
+                        "question": "¿Cuál de estas secuencias es un algoritmo válido?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❌",
+                                        "text": "1. Aterrizar ➡️ 2. Tomar foto ➡️ 3. Despegar del suelo",
+                                        "isCorrect": false,
+                                        "feedback": "El dron no puede aterrizar antes de despegar."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🚁",
+                                        "text": "1. Despegar a 3 metros ➡️ 2. Tomar fotografía ➡️ 3. Regresar y aterrizar",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "❌",
+                                        "text": "1. Tomar fotografía en la caja ➡️ 2. Guardar el dron",
+                                        "isCorrect": false,
+                                        "feedback": "No despegó para ver el patio escolar."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Pensá en la secuencia temporal física: ¿qué debe suceder primero?",
+                                "Pista 2: Para fotografiar el patio desde el aire, el dron debe elevarse antes de disparar la cámara.",
+                                "Pista 3: La opción válida es: 1. Despegar ➡️ 2. Tomar foto ➡️ 3. Regresar y aterrizar."
+                        ]
+                },
+                {
+                        "id": "g2_hw_desafio1",
+                        "type": "byte_mission",
+                        "title": "Desafío 1: Programá el recorrido de Byte",
+                        "instruction": "Guiá a Byte hasta la Estación de Recarga sorteando el árbol y la roca con giros precisos.",
+                        "objective": "Construir una secuencia de 5 pasos con giros direccionales para alcanzar la meta en (3, 2).",
+                        "whatToObserve": "Observá la ubicación del árbol en (1, 0) y el charco en (2, 1). Buscá el camino despejado.",
+                        "howToPlay": "Seleccioná los comandos de dirección (Avanzar, Abajo, Derecha) para armar tu ruta.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para ver a Byte recorrer la cuadrícula.",
+                        "resultMeaning": "Si Byte llega a la estación sin colisiones, obtendrás 25 puntos y estrellas de recompensa.",
+                        "gridCols": 4,
+                        "gridRows": 4,
+                        "startPos": {
+                                "x": 0,
+                                "y": 0
+                        },
+                        "targetPos": {
+                                "x": 3,
+                                "y": 2
+                        },
+                        "goalIcon": "⚡",
+                        "goalName": "Estación de Recarga",
+                        "obstacles": [
+                                {
+                                        "x": 1,
+                                        "y": 0,
+                                        "icon": "🌳",
+                                        "name": "Árbol"
+                                },
+                                {
+                                        "x": 2,
+                                        "y": 1,
+                                        "icon": "🌊",
+                                        "name": "Charco"
+                                }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
+                        ],
+                        "hints": [
+                                "Pista 1: El camino recto por arriba está bloqueado por el árbol en (1, 0). Tenés que bajar primero.",
+                                "Pista 2: Podés bajar a (0, 1), avanzar a (1, 1), bajar a (1, 2) y avanzar hasta la meta en (3, 2).",
+                                "Pista 3: Una ruta segura es: [Abajo] ➡️ [Derecha] ➡️ [Abajo] ➡️ [Derecha] ➡️ [Derecha]."
+                        ]
+                },
+                {
+                        "id": "g2_hw_desafio2",
+                        "type": "byte_mission",
+                        "title": "Desafío 2: Detectá y corregí el error",
+                        "instruction": "La secuencia actual hace que Byte doble hacia arriba y choque. ¡Cambiá ese paso y guialo a la meta!",
+                        "objective": "Identificar el paso con giro equivocado en la secuencia, corregirlo con ✕ y validar.",
+                        "whatToObserve": "Ejecutá la secuencia actual para ver exactamente dónde choca Byte.",
+                        "howToPlay": "Hacé clic en el botón ✕ del paso erróneo para eliminarlo y agregá la dirección correcta.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para verificar que Byte logre el recorrido.",
+                        "resultMeaning": "Al corregir el error, desarrollarás habilidades de depuración (debugging).",
+                        "gridCols": 4,
+                        "gridRows": 4,
+                        "startPos": {
+                                "x": 0,
+                                "y": 1
+                        },
+                        "targetPos": {
+                                "x": 2,
+                                "y": 3
+                        },
+                        "goalIcon": "🎯",
+                        "goalName": "Centro de Comando",
+                        "obstacles": [
+                                {
+                                        "x": 1,
+                                        "y": 0,
+                                        "icon": "🪨",
+                                        "name": "Roca Grande"
+                                }
+                        ],
+                        "initialCommands": [
+                                "right",
+                                "up",
+                                "down",
+                                "down"
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left"
+                        ],
+                        "hints": [
+                                "Pista 1: Al ejecutar, notarás que en el paso 2 Byte sube hacia la roca en (1, 0).",
+                                "Pista 2: En lugar de subir, Byte debe avanzar hacia abajo para acercarse a la fila 3.",
+                                "Pista 3: Reemplazá el paso 2 («Arriba») por «Abajo». La ruta final será: [Derecha] ➡️ [Abajo] ➡️ [Abajo] ➡️ [Derecha]."
+                        ]
+                },
+                {
+                        "id": "g2_hw_desafio3",
+                        "type": "build_sequence",
+                        "title": "Desafío 3: Construí la secuencia correcta",
+                        "instruction": "Misión «Rescate de Datos»: elegí y ordená las 3 tarjetas para recuperar la información del robot.",
+                        "objective": "Construir el procedimiento lógico correcto para rescatar datos descartando la acción peligrosa.",
+                        "whatToObserve": "Revisá las 4 tarjetas del banco: una de ellas destruye los datos en lugar de guardarlos.",
+                        "howToPlay": "Hacé clic en las tarjetas en el orden adecuado para armar la secuencia.",
+                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para validar.",
+                        "resultMeaning": "Si los datos se transfieren y guardan con éxito, completarás todo el bloque Tarea.",
+                        "pool": [
+                                {
+                                        "id": "b_sensor",
+                                        "icon": "📡",
+                                        "text": "Desplegar sensor de escaneo"
+                                },
+                                {
+                                        "id": "b_crystal",
+                                        "icon": "💎",
+                                        "text": "Recolectar cristal de datos"
+                                },
+                                {
+                                        "id": "b_save",
+                                        "icon": "💾",
+                                        "text": "Guardar copia de seguridad"
+                                },
+                                {
+                                        "id": "b_delete",
+                                        "icon": "🗑️",
+                                        "text": "Borrar disco duro"
+                                }
+                        ],
+                        "validSequences": [
+                                [
+                                        "b_sensor",
+                                        "b_crystal",
+                                        "b_save"
+                                ]
+                        ],
+                        "hints": [
+                                "Pista 1: ¡Cuidado con el distractor! La tarjeta de borrar el disco destruye la información.",
+                                "Pista 2: Primero se escanea el entorno, luego se toma el cristal y finalmente se realiza la copia.",
+                                "Pista 3: La secuencia correcta es: 1. Desplegar sensor ➡️ 2. Recolectar cristal ➡️ 3. Guardar copia."
+                        ]
+                }
+        ]
+},
+
 
       // ====================================================
       // TEMA 2: PATRONES (2.° GRADO)
@@ -1901,6 +2440,288 @@ const CODING_DATA = {
           }
         ]
       },
+      // TEMA NUEVO: TAREA (3.° GRADO)
+      homework: {
+        "id": "homework",
+        "title": "Tarea",
+        "name": "Tarea",
+        "badge": "⭐ Nuevo Bloque",
+        "icon": "📝",
+        "description": "Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.",
+        "activities": [
+                {
+                        "id": "g3_hw_q1_inst",
+                        "type": "concept_question",
+                        "title": "¿Qué es una instrucción?",
+                        "concept": "Una instrucción es una indicación que nos dice qué acción debemos realizar. Una computadora necesita instrucciones claras para saber qué hacer.",
+                        "objective": "Reconocer la diferencia entre órdenes operables exactas y comentarios ambiguos en navegación.",
+                        "whatToObserve": "Analizá las especificaciones necesarias para que un vehículo autónomo doble en una esquina.",
+                        "howToPlay": "Elegí la opción que contiene los parámetros concretos de dirección y magnitud.",
+                        "howToSubmit": "Hacé clic en la tarjeta seleccionada para comprobar.",
+                        "resultMeaning": "Comprenderás cómo la especificidad evita desviaciones en sistemas robóticos.",
+                        "situation": "Un vehículo autónomo llega a una intersección en la ciudad. ¿Cuál de estas representa una instrucción ejecutable por su procesador?",
+                        "question": "¿Qué comando debe recibir el vehículo?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🧭",
+                                        "text": "Girar 90 grados a la derecha y avanzar 15 metros",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🚗",
+                                        "text": "Fijate si doblás un poquito hacia allá",
+                                        "isCorrect": false,
+                                        "feedback": "«Un poquito» y «hacia allá» son ambiguos para un procesador."
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "🚦",
+                                        "text": "El semáforo tiene tres luces de colores",
+                                        "isCorrect": false,
+                                        "feedback": "Es un dato descriptivo del entorno, no una orden de movimiento."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Los procesadores necesitan magnitudes numéricas y direcciones precisas.",
+                                "Pista 2: Buscá la instrucción que especifica el ángulo de giro y la distancia a recorrer.",
+                                "Pista 3: La opción correcta es: «Girar 90 grados a la derecha y avanzar 15 metros»."
+                        ]
+                },
+                {
+                        "id": "g3_hw_q2_prog",
+                        "type": "concept_question",
+                        "title": "¿Qué es programar?",
+                        "concept": "Programar es darle instrucciones a una computadora, de manera ordenada, para realizar algo.",
+                        "objective": "Comprender que la computadora ejecuta las órdenes de manera estricta y determinista.",
+                        "whatToObserve": "Leé el concepto central y analizá el comportamiento de un brazo robótico clasificador.",
+                        "howToPlay": "Seleccioná la respuesta que describe con exactitud el rol del programador.",
+                        "howToSubmit": "Hacé clic sobre la opción para verificar el razonamiento.",
+                        "resultMeaning": "Reforzarás la idea de que los robots no improvisan: siguen únicamente su código.",
+                        "situation": "Se instala un brazo robótico en una fábrica para ordenar cajas rojas y azules. ¿Qué debe hacer el programador?",
+                        "question": "¿Cómo logra el programador que el robot funcione?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🤖",
+                                        "text": "Esperar a que el robot aprenda mirando a las personas sin ningún código",
+                                        "isCorrect": false,
+                                        "feedback": "Los robots requieren programación explícita para saber cómo actuar."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "💻",
+                                        "text": "Diseñar la secuencia ordenada de instrucciones que el brazo ejecutará para cada color",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "📦",
+                                        "text": "Pintar todas las cajas del mismo color para no programar nada",
+                                        "isCorrect": false,
+                                        "feedback": "Eso evade el problema en lugar de resolverlo mediante programación."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Las máquinas no tienen intuición: ejecutan instrucciones ordenadas de principio a fin.",
+                                "Pista 2: El programador planifica cada movimiento que el sensor y el motor deben realizar.",
+                                "Pista 3: La opción correcta destaca el diseño de la secuencia ordenada de instrucciones."
+                        ]
+                },
+                {
+                        "id": "g3_hw_q3_algo",
+                        "type": "concept_question",
+                        "title": "¿Qué es un algoritmo?",
+                        "concept": "Un algoritmo es una serie de pasos ordenados que seguimos para resolver un problema o realizar una tarea.",
+                        "objective": "Analizar algoritmos deterministas con entradas, procesos en secuencia y salidas claras.",
+                        "whatToObserve": "Revisá los pasos requeridos para que Byte guarde sus archivos ante una alarma de tormenta.",
+                        "howToPlay": "Elegí el algoritmo que asegura la protección de los datos sin omisiones.",
+                        "howToSubmit": "Hacé clic en la tarjeta correspondiente para comprobar.",
+                        "resultMeaning": "Comprobarás tu comprensión de algoritmos seguros y lógicamente estructurados.",
+                        "situation": "Byte recibe una alerta de tormenta eléctrica y debe proteger su sistema. ¿Cuál de estos es un algoritmo válido?",
+                        "question": "¿Qué algoritmo garantiza que los datos se salven?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❌",
+                                        "text": "1. Desconectar la corriente ➡️ 2. Guardar archivos en el disco ➡️ 3. Apagar pantalla",
+                                        "isCorrect": false,
+                                        "feedback": "Al cortar la corriente primero, los archivos no guardados se pierden."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🛡️",
+                                        "text": "1. Guardar archivos abiertos ➡️ 2. Cerrar programas ➡️ 3. Apagar sistema de forma segura",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "❌",
+                                        "text": "1. Mirar los relámpagos por la ventana ➡️ 2. Salir a correr",
+                                        "isCorrect": false,
+                                        "feedback": "No realiza ninguna acción para resguardar los datos del equipo."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Pensá en la dependencia de tareas: no se puede guardar después de desconectar la energía.",
+                                "Pista 2: Primero se resguardan los datos, luego se cierran las aplicaciones y al final se apaga.",
+                                "Pista 3: La secuencia segura es: 1. Guardar archivos ➡️ 2. Cerrar programas ➡️ 3. Apagar sistema."
+                        ]
+                },
+                {
+                        "id": "g3_hw_desafio1",
+                        "type": "byte_mission",
+                        "title": "Desafío 1: Programá el recorrido de Byte",
+                        "instruction": "Navegá por la cuadrícula espacial esquivando asteroides para alcanzar el Satélite de Comunicaciones.",
+                        "objective": "Crear una secuencia de navegación con giros alternados en una cuadrícula de 5x4.",
+                        "whatToObserve": "Localizá los dos asteroides en (2, 1) y (3, 2). Encontrá el pasillo seguro.",
+                        "howToPlay": "Ingresá los comandos de dirección requeridos y comprobá tu recorrido.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para iniciar la marcha.",
+                        "resultMeaning": "Completarás una navegación autónoma compleja con recompensa de 25 puntos.",
+                        "gridCols": 5,
+                        "gridRows": 4,
+                        "startPos": {
+                                "x": 0,
+                                "y": 1
+                        },
+                        "targetPos": {
+                                "x": 4,
+                                "y": 2
+                        },
+                        "goalIcon": "🛰️",
+                        "goalName": "Satélite de Comunicaciones",
+                        "obstacles": [
+                                {
+                                        "x": 2,
+                                        "y": 1,
+                                        "icon": "☄️",
+                                        "name": "Asteroide Alfa"
+                                },
+                                {
+                                        "x": 3,
+                                        "y": 2,
+                                        "icon": "☄️",
+                                        "name": "Asteroide Beta"
+                                }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
+                        ],
+                        "hints": [
+                                "Pista 1: El asteroide en (2, 1) bloquea el avance recto. Podés subir a la fila 0 o bajar a la fila 2.",
+                                "Pista 2: Si subís a fila 0: [Arriba] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Abajo] ➡️ [Abajo] ➡️ [Derecha].",
+                                "Pista 3: También podés saltar el asteroide Alfa con la instrucción «Saltar» en el momento justo."
+                        ]
+                },
+                {
+                        "id": "g3_hw_desafio2",
+                        "type": "byte_mission",
+                        "title": "Desafío 2: Detectá y corregí el error",
+                        "instruction": "La secuencia tiene una instrucción de más que hace que Byte se pase de largo. ¡Detectala y arreglala!",
+                        "objective": "Depurar una secuencia detectando instrucciones redundantes o desalineadas.",
+                        "whatToObserve": "Mirá la meta en (3, 2). Observá cuántos avances hacia la derecha realmente se necesitan.",
+                        "howToPlay": "Eliminá el paso sobrante con el botón ✕ y ajustá el giro final.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para validar la solución.",
+                        "resultMeaning": "Aprenderás a evitar el desbordamiento de límites y optimizar secuencias.",
+                        "gridCols": 5,
+                        "gridRows": 4,
+                        "startPos": {
+                                "x": 0,
+                                "y": 0
+                        },
+                        "targetPos": {
+                                "x": 3,
+                                "y": 2
+                        },
+                        "goalIcon": "🏁",
+                        "goalName": "Base de Operaciones",
+                        "obstacles": [
+                                {
+                                        "x": 4,
+                                        "y": 1,
+                                        "icon": "🚧",
+                                        "name": "Barrera de Seguridad"
+                                }
+                        ],
+                        "initialCommands": [
+                                "right",
+                                "right",
+                                "right",
+                                "right",
+                                "down",
+                                "down"
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left"
+                        ],
+                        "hints": [
+                                "Pista 1: Al ejecutar, Byte avanza 4 veces a la derecha y queda alineado con la columna 4 en vez de la 3.",
+                                "Pista 2: Contá las casillas desde X=0 hasta X=3: ¡solo se necesitan 3 avances hacia la derecha!",
+                                "Pista 3: Quitá uno de los comandos «Derecha». La secuencia correcta es: 3 a la derecha y 2 hacia abajo."
+                        ]
+                },
+                {
+                        "id": "g3_hw_desafio3",
+                        "type": "build_sequence",
+                        "title": "Desafío 3: Construí la secuencia correcta",
+                        "instruction": "Misión «Faro Cibernético»: ordená los 4 pasos para encender la señal luminosa descartando la falla.",
+                        "objective": "Construir un procedimiento técnico de 4 fases lógicas descartando la opción contraproducente.",
+                        "whatToObserve": "Revisá las tarjetas del generador, la fibra óptica, la calibración y la señal de radio.",
+                        "howToPlay": "Ordená las tarjetas cronológicamente para que la energía fluya de forma segura.",
+                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para emitir la señal.",
+                        "resultMeaning": "Alcanzarás la insignia de programador de 3.° grado con felicitaciones.",
+                        "pool": [
+                                {
+                                        "id": "b_gen",
+                                        "icon": "🔋",
+                                        "text": "Encender generador principal"
+                                },
+                                {
+                                        "id": "b_fiber",
+                                        "icon": "🔌",
+                                        "text": "Conectar cable de fibra óptica"
+                                },
+                                {
+                                        "id": "b_beam",
+                                        "icon": "🔦",
+                                        "text": "Calibrar haz del faro láser"
+                                },
+                                {
+                                        "id": "b_signal",
+                                        "icon": "📡",
+                                        "text": "Emitir señal a la flota"
+                                },
+                                {
+                                        "id": "b_fog",
+                                        "icon": "🌫️",
+                                        "text": "Apagar ventilación y llenar de humo"
+                                }
+                        ],
+                        "validSequences": [
+                                [
+                                        "b_gen",
+                                        "b_fiber",
+                                        "b_beam",
+                                        "b_signal"
+                                ]
+                        ],
+                        "hints": [
+                                "Pista 1: Descartá la tarjeta de llenar de humo: bloquea la visión del faro.",
+                                "Pista 2: El orden lógico es: primero encender generador, luego conectar fibra, calibrar y emitir.",
+                                "Pista 3: Secuencia final: 1. Generador ➡️ 2. Fibra óptica ➡️ 3. Calibrar láser ➡️ 4. Emitir señal."
+                        ]
+                }
+        ]
+},
+
 
       // ====================================================
       // TEMA 2: PATRONES (3.° GRADO)
@@ -2593,6 +3414,287 @@ const CODING_DATA = {
           }
         ]
       },
+      // TEMA NUEVO: TAREA (4.° GRADO)
+      homework: {
+        "id": "homework",
+        "title": "Tarea",
+        "name": "Tarea",
+        "badge": "⭐ Nuevo Bloque",
+        "icon": "📝",
+        "description": "Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.",
+        "activities": [
+                {
+                        "id": "g4_hw_q1_inst",
+                        "type": "concept_question",
+                        "title": "¿Qué es una instrucción?",
+                        "concept": "Una instrucción es una indicación que nos dice qué acción debemos realizar. Una computadora necesita instrucciones claras para saber qué hacer.",
+                        "objective": "Comprender la sintaxis formal y el uso de parámetros en instrucciones de código.",
+                        "whatToObserve": "Compará cómo se expresa una orden en lenguaje natural frente a un lenguaje de programación.",
+                        "howToPlay": "Elegí la instrucción sintácticamente correcta que especifica parámetros unívocos.",
+                        "howToSubmit": "Hacé clic en la tarjeta para verificar.",
+                        "resultMeaning": "Asimilarás la precisión requerida en lenguajes algorítmicos profesionales.",
+                        "situation": "En un entorno de desarrollo queremos programar el movimiento de un dron de inspección. ¿Cuál de estas representa una instrucción válida en código?",
+                        "question": "¿Qué instrucción tiene sintaxis y parámetros precisos?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "💻",
+                                        "text": "Mover(direccion: \"NORTE\", velocidad: 5, metros: 10)",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🗣️",
+                                        "text": "Andá rápido para arriba un ratito",
+                                        "isCorrect": false,
+                                        "feedback": "«Rápido» y «un ratito» son subjetivos e indefinibles para el compilador."
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "📊",
+                                        "text": "La altitud actual del dron es de 12 metros",
+                                        "isCorrect": false,
+                                        "feedback": "Es una lectura de sensor o variable, no una orden de ejecución."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Las funciones en programación reciben parámetros con nombre y valores medibles.",
+                                "Pista 2: Observá cuál opción define dirección, velocidad y distancia de manera exacta.",
+                                "Pista 3: La opción correcta es: «Mover(direccion: \"NORTE\", velocidad: 5, metros: 10)»."
+                        ]
+                },
+                {
+                        "id": "g4_hw_q2_prog",
+                        "type": "concept_question",
+                        "title": "¿Qué es programar?",
+                        "concept": "Programar es darle instrucciones a una computadora, de manera ordenada, para realizar algo.",
+                        "objective": "Comprender la programación como proceso de abstracción, diseño algorítmico y control de flujo.",
+                        "whatToObserve": "Leé el concepto y analizá qué implica desarrollar el software de un rover espacial.",
+                        "howToPlay": "Seleccioná la definición más completa del proceso de programación.",
+                        "howToSubmit": "Hacé clic para validar tu respuesta.",
+                        "resultMeaning": "Comprenderás que programar trasciende el tipeo: es diseñar soluciones estructuradas.",
+                        "situation": "Un equipo de ingenieros diseña el sistema de un rover para explorar Marte. ¿En qué consiste programar ese vehículo?",
+                        "question": "¿Cuál es el significado de programar en esta misión?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🤖",
+                                        "text": "Dejar que el rover decida por su cuenta qué hacer sin ninguna regla previa",
+                                        "isCorrect": false,
+                                        "feedback": "Sin reglas ni algoritmos programados, el rover no puede operar."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🛰️",
+                                        "text": "Escribir algoritmos ordenados que le indican cómo sensar, decidir y moverse ante cada situación",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "📸",
+                                        "text": "Limpiar el lente de la cámara antes del despegue",
+                                        "isCorrect": false,
+                                        "feedback": "Eso es mantenimiento físico, no programación computacional."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Programar consiste en dotar al sistema de lógica para resolver problemas.",
+                                "Pista 2: Buscá la opción que menciona escribir algoritmos ordenados para sensar y decidir.",
+                                "Pista 3: La respuesta correcta aborda la creación de algoritmos ordenados para el rover."
+                        ]
+                },
+                {
+                        "id": "g4_hw_q3_algo",
+                        "type": "concept_question",
+                        "title": "¿Qué es un algoritmo?",
+                        "concept": "Un algoritmo es una serie de pasos ordenados que seguimos para resolver un problema o realizar una tarea.",
+                        "objective": "Identificar las propiedades fundamentales de un algoritmo: precisión, orden y finitud.",
+                        "whatToObserve": "Analizá las opciones para resolver el problema de compresión y transmisión de datos.",
+                        "howToPlay": "Elegí el algoritmo que presenta pasos finitos, ordenados y sin ambigüedad.",
+                        "howToSubmit": "Hacé clic en la tarjeta para verificar.",
+                        "resultMeaning": "Consolidarás la definición formal de algoritmos computacionales.",
+                        "situation": "Byte debe comprimir un informe y transmitirlo a la estación terrena. ¿Cuál de estas opciones describe un algoritmo válido?",
+                        "question": "¿Cuál es el algoritmo que cumple los requisitos?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❌",
+                                        "text": "1. Transmitir informe ➡️ 2. Comprimir datos ➡️ 3. Repetir infinitamente sin parar",
+                                        "isCorrect": false,
+                                        "feedback": "No puede transmitir antes de comprimir, y un bucle infinito viola la finitud."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "📦",
+                                        "text": "1. Leer archivo ➡️ 2. Comprimir paquetes ➡️ 3. Verificar integridad ➡️ 4. Enviar reporte",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "❌",
+                                        "text": "1. Guardar informe en un cajón con candado",
+                                        "isCorrect": false,
+                                        "feedback": "No resuelve la compresión ni la transmisión digital requerida."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Un algoritmo debe ser finito (terminar) y respetar la dependencia de datos.",
+                                "Pista 2: Primero se lee el archivo, luego se comprime, se verifica y finalmente se envía.",
+                                "Pista 3: La opción correcta es: Leer ➡️ Comprimir ➡️ Verificar ➡️ Enviar reporte."
+                        ]
+                },
+                {
+                        "id": "g4_hw_desafio1",
+                        "type": "byte_mission",
+                        "title": "Desafío 1: Programá el recorrido de Byte",
+                        "instruction": "Guiá a Byte a través del laboratorio de chips para recolectar el procesador y llegar a la Antena.",
+                        "objective": "Diseñar una trayectoria en cuadrícula 5x5 recolectando un ítem clave antes de la meta.",
+                        "whatToObserve": "Observá la ubicación del chip en (2, 2) y la antena de comunicaciones en (4, 4).",
+                        "howToPlay": "Ingresá los comandos de dirección cuidando de no chocar con los disipadores térmicos.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para poner en marcha el programa.",
+                        "resultMeaning": "Verificarás tu capacidad para resolver recorridos multi-etapa con 25 puntos.",
+                        "gridCols": 5,
+                        "gridRows": 5,
+                        "startPos": {
+                                "x": 0,
+                                "y": 0
+                        },
+                        "targetPos": {
+                                "x": 4,
+                                "y": 4
+                        },
+                        "goalIcon": "📡",
+                        "goalName": "Antena de Transmisión",
+                        "obstacles": [
+                                {
+                                        "x": 1,
+                                        "y": 1,
+                                        "icon": "🔥",
+                                        "name": "Disipador Térmico"
+                                },
+                                {
+                                        "x": 3,
+                                        "y": 3,
+                                        "icon": "🔥",
+                                        "name": "Transformador"
+                                }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
+                        ],
+                        "hints": [
+                                "Pista 1: Los disipadores en (1, 1) y (3, 3) bloquean la diagonal directa. Tenés que bordearlos.",
+                                "Pista 2: Podés avanzar por la fila 0 hasta X=2, bajar a (2, 2) y continuar hacia la meta.",
+                                "Pista 3: Ruta sugerida: [Derecha] x2 ➡️ [Abajo] x2 ➡️ [Derecha] x2 ➡️ [Abajo] x2."
+                        ]
+                },
+                {
+                        "id": "g4_hw_desafio2",
+                        "type": "byte_mission",
+                        "title": "Desafío 2: Detectá y corregí el error",
+                        "instruction": "El programa salta en el paso 3 y choca con un transformador. ¡Cambiá el salto por el comando correcto!",
+                        "objective": "Depurar un error de tipo de comando (salto inadecuado vs avance regular).",
+                        "whatToObserve": "Mirá la cuadrícula: en el paso 3 hay suelo despejado y no un obstáculo para saltar.",
+                        "howToPlay": "Eliminá la instrucción «Saltar» del paso 3 y colocá la dirección correcta de avance.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para validar la corrección.",
+                        "resultMeaning": "Comprobarás cómo la selección de comandos adecuados evita fallas mecánicas.",
+                        "gridCols": 5,
+                        "gridRows": 5,
+                        "startPos": {
+                                "x": 0,
+                                "y": 2
+                        },
+                        "targetPos": {
+                                "x": 4,
+                                "y": 2
+                        },
+                        "goalIcon": "🏆",
+                        "goalName": "Terminal Central",
+                        "obstacles": [
+                                {
+                                        "x": 2,
+                                        "y": 0,
+                                        "icon": "⚡",
+                                        "name": "Bobina Tesla"
+                                }
+                        ],
+                        "initialCommands": [
+                                "right",
+                                "right",
+                                "jump",
+                                "right"
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
+                        ],
+                        "hints": [
+                                "Pista 1: El comando «Saltar» en el paso 3 hace que Byte salte 2 casillas y se desvíe del camino.",
+                                "Pista 2: La fila 2 está completamente despejada: no se requiere ningún salto.",
+                                "Pista 3: Reemplazá «Saltar» por «Avanzar a la derecha». La secuencia son 4 avances rectos."
+                        ]
+                },
+                {
+                        "id": "g4_hw_desafio3",
+                        "type": "build_sequence",
+                        "title": "Desafío 3: Construí la secuencia correcta",
+                        "instruction": "Misión «Rover Planetario»: ordená las 4 instrucciones de arranque del vehículo descartando el error.",
+                        "objective": "Secuenciar un protocolo de inicialización robótica con precondiciones claras.",
+                        "whatToObserve": "Revisá los componentes del rover: calibración, motricidad, telemetría y sensores térmicos.",
+                        "howToPlay": "Arrastrá o seleccioná las 4 tarjetas en orden secuencial.",
+                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para iniciar la misión.",
+                        "resultMeaning": "Completarás con éxito los desafíos del bloque Tarea de 4.° grado.",
+                        "pool": [
+                                {
+                                        "id": "b_gyro",
+                                        "icon": "🧭",
+                                        "text": "Calibrar giroscopio y brújula"
+                                },
+                                {
+                                        "id": "b_wheels",
+                                        "icon": "⚙️",
+                                        "text": "Desplegar ruedas motrices"
+                                },
+                                {
+                                        "id": "b_cam",
+                                        "icon": "📷",
+                                        "text": "Encender cámara térmica"
+                                },
+                                {
+                                        "id": "b_explore",
+                                        "icon": "🚀",
+                                        "text": "Iniciar exploración de terreno"
+                                },
+                                {
+                                        "id": "b_sleep",
+                                        "icon": "💤",
+                                        "text": "Desactivar batería y suspender sistema"
+                                }
+                        ],
+                        "validSequences": [
+                                [
+                                        "b_gyro",
+                                        "b_wheels",
+                                        "b_cam",
+                                        "b_explore"
+                                ]
+                        ],
+                        "hints": [
+                                "Pista 1: La tarjeta de suspender el sistema apaga el rover antes de explorar: ¡descartala!",
+                                "Pista 2: Primero se calibra la orientación, luego se despliegan ruedas, se enciende cámara y se inicia.",
+                                "Pista 3: Secuencia correcta: 1. Giroscopio ➡️ 2. Ruedas ➡️ 3. Cámara térmica ➡️ 4. Explorar."
+                        ]
+                }
+        ]
+},
+
 
       // ====================================================
       // TEMA 2: PATRONES (4.° GRADO - PATRONES NUMÉRICOS Y REGLAS)
@@ -3309,6 +4411,283 @@ const CODING_DATA = {
           }
         ]
       },
+      // TEMA NUEVO: TAREA (5.° GRADO)
+      homework: {
+        "id": "homework",
+        "title": "Tarea",
+        "name": "Tarea",
+        "badge": "⭐ Nuevo Bloque",
+        "icon": "📝",
+        "description": "Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.",
+        "activities": [
+                {
+                        "id": "g5_hw_q1_inst",
+                        "type": "concept_question",
+                        "title": "¿Qué es una instrucción?",
+                        "concept": "Una instrucción es una indicación que nos dice qué acción debemos realizar. Una computadora necesita instrucciones claras para saber qué hacer.",
+                        "objective": "Comprender el concepto de instrucción formal determinista y mutación de estado en memoria.",
+                        "whatToObserve": "Analizá cómo una instrucción modifica variables de estado (batería, registros, coordenadas).",
+                        "howToPlay": "Seleccioná la afirmación que describe con rigor técnico el efecto de una instrucción.",
+                        "howToSubmit": "Hacé clic para validar tu respuesta.",
+                        "resultMeaning": "Adquirirás bases sólidas de arquitectura de software y determinismo computacional.",
+                        "situation": "En la memoria de un robot, cada instrucción altera variables internas. ¿Qué ocurre cuando el procesador ejecuta una instrucción válida?",
+                        "question": "¿Cuál es el efecto computacional de una instrucción?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🧠",
+                                        "text": "El procesador cambia el estado del sistema de manera determinista según las reglas del comando",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🎲",
+                                        "text": "El sistema produce un resultado al azar que depende del clima exterior",
+                                        "isCorrect": false,
+                                        "feedback": "Las computadoras son máquinas deterministas: no dependen del azar para órdenes fijas."
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "📜",
+                                        "text": "La instrucción queda escrita en pantalla pero nunca altera la memoria interna",
+                                        "isCorrect": false,
+                                        "feedback": "Toda instrucción ejecutable modifica registros, contadores o actuadores."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Las computadoras son máquinas deterministas: ante las mismas entradas y orden, producen el mismo resultado.",
+                                "Pista 2: Cada orden altera el estado de las variables (coordenadas, registros o memoria).",
+                                "Pista 3: La opción correcta menciona el cambio de estado determinista según las reglas del comando."
+                        ]
+                },
+                {
+                        "id": "g5_hw_q2_prog",
+                        "type": "concept_question",
+                        "title": "¿Qué es programar?",
+                        "concept": "Programar es darle instrucciones a una computadora, de manera ordenada, para realizar algo.",
+                        "objective": "Comprender la programación como formalización algorítmica para automatizar procesos complejos.",
+                        "whatToObserve": "Leé el concepto y analizá qué diferencia a un programador de un simple usuario de software.",
+                        "howToPlay": "Elegí la opción que destaca la creación de estructuras de control y algoritmos.",
+                        "howToSubmit": "Hacé clic en la tarjeta seleccionada.",
+                        "resultMeaning": "Consolidarás el pensamiento computacional como herramienta de resolución de problemas.",
+                        "situation": "Una ciudad inteligente desea regular el tráfico en tiempo real mediante semáforos inteligentes. ¿En qué consiste programar ese sistema?",
+                        "question": "¿Qué hace el equipo de desarrollo al programar el sistema?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "🚦",
+                                        "text": "Cambiar las luces manualmente apretando botones todo el día",
+                                        "isCorrect": false,
+                                        "feedback": "Eso es operación manual, lo opuesto a la automatización mediante software."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "💻",
+                                        "text": "Diseñar algoritmos que analizan el flujo vehicular y ordenan automáticamente los tiempos de luz verde",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "📢",
+                                        "text": "Colocar carteles para pedirle a los conductores que no se apuren",
+                                        "isCorrect": false,
+                                        "feedback": "No implementa ninguna solución informática ni algorítmica."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: Programar implica automatizar la toma de decisiones basada en datos.",
+                                "Pista 2: Buscá la respuesta que menciona diseñar algoritmos para controlar los tiempos de luz.",
+                                "Pista 3: La opción correcta destaca el diseño de algoritmos para automatizar el tráfico."
+                        ]
+                },
+                {
+                        "id": "g5_hw_q3_algo",
+                        "type": "concept_question",
+                        "title": "¿Qué es un algoritmo?",
+                        "concept": "Un algoritmo es una serie de pasos ordenados que seguimos para resolver un problema o realizar una tarea.",
+                        "objective": "Evaluar la eficiencia, precondiciones y validez lógica en algoritmos de redes.",
+                        "whatToObserve": "Analizá el protocolo de autenticación y enrutamiento seguro de paquetes.",
+                        "howToPlay": "Seleccioná el algoritmo que garantiza seguridad respetando las precondiciones.",
+                        "howToSubmit": "Hacé clic en la opción adecuada.",
+                        "resultMeaning": "Comprobarás tu preparación para conceptos avanzados de informática y ciberseguridad.",
+                        "situation": "Un servidor de base de datos debe autenticar a un usuario antes de entregarle información confidencial. ¿Cuál de estos es el algoritmo correcto?",
+                        "question": "¿Cuál es el algoritmo de autenticación seguro?",
+                        "options": [
+                                {
+                                        "id": "opt_a",
+                                        "icon": "❌",
+                                        "text": "1. Entregar archivos confidenciales ➡️ 2. Pedir contraseña ➡️ 3. Bloquear al usuario",
+                                        "isCorrect": false,
+                                        "feedback": "Entregar los datos antes de validar la clave es una vulnerabilidad crítica."
+                                },
+                                {
+                                        "id": "opt_b",
+                                        "icon": "🔐",
+                                        "text": "1. Solicitar credenciales ➡️ 2. Validar firma criptográfica ➡️ 3. Autorizar acceso a los datos",
+                                        "isCorrect": true
+                                },
+                                {
+                                        "id": "opt_c",
+                                        "icon": "❌",
+                                        "text": "1. Cambiar la contraseña a 1234 ➡️ 2. Abrir todos los puertos",
+                                        "isCorrect": false,
+                                        "feedback": "Compromete completamente la seguridad del sistema."
+                                }
+                        ],
+                        "hints": [
+                                "Pista 1: La precondición obligatoria es validar la identidad antes de liberar cualquier dato.",
+                                "Pista 2: La secuencia debe ser: solicitar credenciales, validar firma y autorizar acceso.",
+                                "Pista 3: Elegí la opción con el candado que realiza la validación criptográfica previa."
+                        ]
+                },
+                {
+                        "id": "g5_hw_desafio1",
+                        "type": "byte_mission",
+                        "title": "Desafío 1: Programá el recorrido de Byte",
+                        "instruction": "Superá la barrera láser de seguridad con un salto de precisión y conectate a la Terminal Central.",
+                        "objective": "Construir una secuencia de 6 instrucciones con salto de obstáculo de 2 casillas en (3, 2).",
+                        "whatToObserve": "Observá la barrera láser en (3, 2) y el muro perimetral. Planificá el salto exacto.",
+                        "howToPlay": "Utilizá las instrucciones direccionales y el comando «Saltar» en la posición adecuada.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para iniciar la prueba.",
+                        "resultMeaning": "Demostrarás dominio en navegación de alta precisión con 25 puntos y trofeo.",
+                        "gridCols": 6,
+                        "gridRows": 5,
+                        "startPos": {
+                                "x": 0,
+                                "y": 2
+                        },
+                        "targetPos": {
+                                "x": 5,
+                                "y": 2
+                        },
+                        "goalIcon": "🖥️",
+                        "goalName": "Terminal Central",
+                        "obstacles": [
+                                {
+                                        "x": 3,
+                                        "y": 2,
+                                        "icon": "⚡",
+                                        "name": "Barrera Láser"
+                                }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "jump",
+                                "down",
+                                "up",
+                                "left"
+                        ],
+                        "hints": [
+                                "Pista 1: Byte avanza por la fila 2 hacia la derecha. La barrera láser está en X=3.",
+                                "Pista 2: Desde X=2, la instrucción «Saltar» salta 2 posiciones y aterriza a salvo en X=4.",
+                                "Pista 3: Secuencia completa: [Derecha] x2 (llega a X=2) ➡️ [Saltar] (llega a X=4) ➡️ [Derecha] (llega a X=5)."
+                        ]
+                },
+                {
+                        "id": "g5_hw_desafio2",
+                        "type": "byte_mission",
+                        "title": "Desafío 2: Detectá y corregí el error",
+                        "instruction": "El programa tiene un giro prematuro en el paso 3 que desvía a Byte hacia una zona de sobrecarga.",
+                        "objective": "Depurar un desvío algorítmico prematuro y restaurar la trayectoria al servidor seguro.",
+                        "whatToObserve": "Ejecutá para observar cómo el paso 3 («Abajo») desvía a Byte hacia la trampa.",
+                        "howToPlay": "Eliminá el paso 3 con ✕ y reemplazalo por «Derecha» para mantener la línea.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para validar la solución depurada.",
+                        "resultMeaning": "Alcanzarás nivel avanzado de depuración y optimización de código.",
+                        "gridCols": 6,
+                        "gridRows": 5,
+                        "startPos": {
+                                "x": 0,
+                                "y": 1
+                        },
+                        "targetPos": {
+                                "x": 4,
+                                "y": 3
+                        },
+                        "goalIcon": "📡",
+                        "goalName": "Receptor Cuántico",
+                        "obstacles": [
+                                {
+                                        "x": 2,
+                                        "y": 2,
+                                        "icon": "💥",
+                                        "name": "Zona de Sobrecarga"
+                                }
+                        ],
+                        "initialCommands": [
+                                "right",
+                                "right",
+                                "down",
+                                "down",
+                                "right",
+                                "right"
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
+                        ],
+                        "hints": [
+                                "Pista 1: En X=2, bajar inmediatamente a Y=2 hace que Byte caiga en la Zona de Sobrecarga.",
+                                "Pista 2: Para esquivarla, Byte debe seguir por la fila 1 hasta X=4 antes de bajar a la fila 3.",
+                                "Pista 3: Modificá los primeros pasos a: [Derecha] x4 ➡️ [Abajo] x2."
+                        ]
+                },
+                {
+                        "id": "g5_hw_desafio3",
+                        "type": "build_sequence",
+                        "title": "Desafío 3: Construí la secuencia correcta",
+                        "instruction": "Misión «Seguridad de Servidor»: armá el protocolo criptográfico de 4 pasos descartando la vulnerabilidad.",
+                        "objective": "Secuenciar un protocolo formal de autenticación y seguridad informática.",
+                        "whatToObserve": "Revisá las fases: firewall, credenciales, certificados y habilitación de puerto seguro.",
+                        "howToPlay": "Ordená las tarjetas en estricta secuencia de seguridad.",
+                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para autorizar la conexión.",
+                        "resultMeaning": "Completarás con honores el temario de Programación de 5.° grado.",
+                        "pool": [
+                                {
+                                        "id": "b_firewall",
+                                        "icon": "🛡️",
+                                        "text": "Inicializar cortafuegos (Firewall)"
+                                },
+                                {
+                                        "id": "b_auth",
+                                        "icon": "🔑",
+                                        "text": "Validar credenciales criptográficas"
+                                },
+                                {
+                                        "id": "b_certs",
+                                        "icon": "📜",
+                                        "text": "Verificar certificados SSL"
+                                },
+                                {
+                                        "id": "b_port",
+                                        "icon": "🔓",
+                                        "text": "Desbloquear puerto seguro de datos"
+                                },
+                                {
+                                        "id": "b_disable",
+                                        "icon": "⚠️",
+                                        "text": "Desactivar contraseñas de todos los usuarios"
+                                }
+                        ],
+                        "validSequences": [
+                                [
+                                        "b_firewall",
+                                        "b_auth",
+                                        "b_certs",
+                                        "b_port"
+                                ]
+                        ],
+                        "hints": [
+                                "Pista 1: ¡Alerta de seguridad! Desactivar contraseñas es una brecha crítica: descartá esa tarjeta.",
+                                "Pista 2: El orden de seguridad es: 1. Firewall ➡️ 2. Credenciales ➡️ 3. Certificados ➡️ 4. Desbloqueo.",
+                                "Pista 3: Secuencia correcta: Firewall ➡️ Validar credenciales ➡️ Verificar SSL ➡️ Desbloquear puerto."
+                        ]
+                }
+        ]
+},
+
 
       // ====================================================
       // TEMA 2: PATRONES (5.° GRADO - REGLAS COMPUESTAS Y PENSAMIENTO COMPUTACIONAL)
@@ -3653,6 +5032,33 @@ const CODING_DATA = {
 // SISTEMA DE ALMACENAMIENTO DE PROGRESO
 // ========================================================
 class CodingProgressStorage {
+  
+  resetGradeProgress(grade) {
+    const data = this.load();
+    if (data.grades) {
+      data.grades[grade] = {
+        instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 },
+        homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }
+      };
+    }
+    this.save(data);
+  }
+
+  resetAllProgress() {
+    const data = {
+      grades: {
+        1: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        2: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        3: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        4: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        5: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } }
+      },
+      totalScore: 0,
+      badges: []
+    };
+    this.save(data);
+  }
+
   constructor() {
     this.storageKey = 'lego_coding_progress_v2';
     this._memoryFallback = null;
@@ -3838,7 +5244,7 @@ class ByteBgmEngine {
       146.83, 0, 146.83, 0, 196.00, 0, 246.94, 0
     ];
 
-    this.tempoMs = 135; // ~111 BPM
+    this.tempoMs = 135; // ~111 BPM alegre
   }
 
   ensureContext() {
@@ -3848,9 +5254,6 @@ class ByteBgmEngine {
         this.audioCtx = new AudioCtxClass();
       }
     }
-    if (this.audioCtx && this.audioCtx.state === 'suspended') {
-      this.audioCtx.resume();
-    }
   }
 
   start() {
@@ -3858,12 +5261,16 @@ class ByteBgmEngine {
     this.ensureContext();
     if (!this.audioCtx) return;
 
+    if (this.audioCtx.state === 'suspended') {
+      this.audioCtx.resume().catch(e => console.warn("AudioContext resume error:", e));
+    }
+
     this.isPlaying = true;
     this.stepIndex = 0;
 
-    // Ganancia master suave para no saturar ni tapar los efectos
+    // Ganancia master agradable y claramente audible en computadoras y móviles (0.22)
     this.masterGain = this.audioCtx.createGain();
-    this.masterGain.gain.setValueAtTime(0.065, this.audioCtx.currentTime);
+    this.masterGain.gain.setValueAtTime(0.22, this.audioCtx.currentTime);
     this.masterGain.connect(this.audioCtx.destination);
 
     this.scheduleNextStep();
@@ -3893,14 +5300,14 @@ class ByteBgmEngine {
     const leadFreq = this.melody[this.stepIndex];
     const bassFreq = this.bass[this.stepIndex];
 
-    // Melodía principal: onda cuadrada clásica retro con envolvente staccato
+    // Melodía principal: onda cuadrada clásica retro con envolvente staccato alegre
     if (leadFreq > 0) {
       const osc = this.audioCtx.createOscillator();
       const gain = this.audioCtx.createGain();
       osc.type = 'square';
       osc.frequency.setValueAtTime(leadFreq, now);
 
-      gain.gain.setValueAtTime(0.18, now);
+      gain.gain.setValueAtTime(0.28, now);
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
 
       osc.connect(gain);
@@ -3917,7 +5324,7 @@ class ByteBgmEngine {
       bassOsc.type = 'triangle';
       bassOsc.frequency.setValueAtTime(bassFreq, now);
 
-      bassGain.gain.setValueAtTime(0.24, now);
+      bassGain.gain.setValueAtTime(0.32, now);
       bassGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
 
       bassOsc.connect(bassGain);
@@ -3927,10 +5334,40 @@ class ByteBgmEngine {
       bassOsc.stop(now + 0.13);
     }
 
+    // Percusión retro suave (noise burst) en tiempos impares para ritmo de 8-bits
+    if (this.stepIndex % 4 === 2) {
+      this.playRetroNoise(now);
+    }
+
     this.stepIndex = (this.stepIndex + 1) % this.melody.length;
     this.timerId = setTimeout(() => {
       this.scheduleNextStep();
     }, this.tempoMs);
+  }
+
+  playRetroNoise(time) {
+    if (!this.audioCtx || !this.masterGain) return;
+    try {
+      const bufferSize = Math.floor(this.audioCtx.sampleRate * 0.035);
+      const buffer = this.audioCtx.createBuffer(1, bufferSize, this.audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+      }
+      const noise = this.audioCtx.createBufferSource();
+      noise.buffer = buffer;
+      const noiseFilter = this.audioCtx.createBiquadFilter();
+      noiseFilter.type = 'highpass';
+      noiseFilter.frequency.value = 1200;
+      const noiseGain = this.audioCtx.createGain();
+      noiseGain.gain.setValueAtTime(0.12, time);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, time + 0.03);
+      noise.connect(noiseFilter);
+      noiseFilter.connect(noiseGain);
+      noiseGain.connect(this.masterGain);
+      noise.start(time);
+      noise.stop(time + 0.035);
+    } catch (e) {}
   }
 }
 
@@ -3967,10 +5404,24 @@ class CodingModuleManager {
   getCurrentTopicActivities() {
     const gConfig = CODING_DATA.grades[this.currentGrade];
     if (!gConfig) return [];
+    if (this.currentTopic === 'homework' && gConfig.homework) {
+      return gConfig.homework.activities;
+    }
     if (this.currentTopic === 'patterns' && gConfig.patterns) {
       return gConfig.patterns.activities;
     }
     return gConfig.instructions ? gConfig.instructions.activities : [];
+  }
+
+  /**
+   * Inicia el nuevo bloque "Tarea" en el grado actual
+   */
+  startHomeworkTopic() {
+    this.cleanupCurrentActivity();
+    this.currentTopic = 'homework';
+    this.currentActivityIndex = 0;
+    this.showCodingAppScreen();
+    this.renderCurrentActivity();
   }
 
   /**
@@ -3997,11 +5448,9 @@ class CodingModuleManager {
    * Inicia el tema "Patrones" (Exclusivo 1.° Grado)
    */
   startPatternsTopic() {
+    // Bloqueado según requerimiento de 1.° a 5.° Grado: no permitir acceso
     this.cleanupCurrentActivity();
-    this.currentTopic = 'patterns';
-    this.currentActivityIndex = 0;
-    this.showCodingAppScreen();
-    this.renderCurrentActivity();
+    this.renderSyllabus();
   }
 
   /**
@@ -4056,6 +5505,76 @@ class CodingModuleManager {
   /**
    * Renderiza el temario (Syllabus) del grado
    */
+
+  /**
+   * Muestra recompensas visuales breves de estrellas flotantes (sustituye el confeti continuo)
+   */
+  showStarReward(type = 'success') {
+    const old = document.getElementById('star-reward-overlay');
+    if (old) old.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'star-reward-overlay';
+    overlay.className = 'star-reward-overlay';
+
+    const starCount = type === 'final' ? 12 : 7;
+    const icons = ['⭐', '🌟', '✨', '💫', '🎉'];
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'reward-star-particle';
+      star.textContent = icons[i % icons.length];
+      
+      const angle = (i / starCount) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
+      const distance = 70 + Math.random() * 110;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+
+      star.style.setProperty('--dx', `${x}px`);
+      star.style.setProperty('--dy', `${y}px`);
+      star.style.animationDelay = `${(i * 0.05).toFixed(2)}s`;
+      overlay.appendChild(star);
+    }
+
+    document.body.appendChild(overlay);
+
+    setTimeout(() => {
+      if (overlay && overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
+      }
+    }, 1500);
+  }
+
+  showSessionNotification(msg) {
+    const old = document.getElementById('session-toast-msg');
+    if (old) old.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'session-toast-msg';
+    toast.style.cssText = 'position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#0f172a; color:#f8fafc; padding:12px 24px; border-radius:999px; font-weight:800; font-size:1rem; box-shadow:0 10px 25px rgba(0,0,0,0.3); z-index:999999; animation:fadeIn 0.25s ease;';
+    toast.textContent = msg;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      if (toast && toast.parentNode) toast.parentNode.removeChild(toast);
+    }, 2800);
+  }
+
+  resetGroupSession(grade = null) {
+    this.cleanupCurrentActivity();
+    if (grade) {
+      this.storage.resetGradeProgress(grade);
+    } else {
+      this.storage.resetAllProgress();
+    }
+    this.renderSyllabus();
+    this.showSessionNotification(
+      this.currentGrade === 1
+        ? '¡SESIÓN FINALIZADA! EL NUEVO GRUPO COMIENZA CON 0% DE AVANCE.'
+        : '¡Sesión finalizada! El nuevo grupo comienza con 0% de avance.'
+    );
+  }
+
   renderSyllabus() {
     this.cleanupCurrentActivity();
     this.showSyllabusScreen();
@@ -4135,61 +5654,119 @@ class CodingModuleManager {
       };
     }
 
-    // Configuración de PATRONES para todos los grados que lo incluyan (1.° a 5.°)
-    const patCard = document.getElementById('topic-card-patterns');
-    const algoCard = document.getElementById('topic-card-algorithms');
-    const btnStartPat = document.getElementById('btn-start-patterns-topic');
-    const patBadgeEl = patCard ? patCard.querySelector('.topic-status-tag') : null;
-    const patTitleEl = patCard ? patCard.querySelector('.topic-title') : null;
-    const patDescEl = patCard ? patCard.querySelector('.topic-desc') : null;
+        // ========================================================
+    // TEMA 2: TAREA (NUEVO BLOQUE PARA 1.° A 5.° GRADO)
+    // ========================================================
+    const hwCard = document.getElementById('topic-card-homework');
+    const btnStartHw = document.getElementById('btn-start-homework-topic');
+    const hwFillEl = document.getElementById('syllabus-homework-progress');
+    const hwTextEl = document.getElementById('syllabus-homework-pct');
+    const hwLabelEl = document.getElementById('syllabus-homework-label');
+    const hwTitleEl = document.getElementById('syllabus-homework-title');
+    const hwDescEl = document.getElementById('syllabus-homework-desc');
 
-    if (gConfig.patterns) {
-      if (patCard) patCard.style.display = 'flex';
-      if (algoCard) algoCard.style.display = 'none';
+    if (gConfig.homework) {
+      if (hwCard) hwCard.style.display = 'flex';
+      const hwProgress = this.storage.getGradeProgress(this.currentGrade, 'homework');
+      const hwTotalActivities = gConfig.homework.activities.length;
+      const hwCompletedCount = hwProgress.activitiesCompleted ? hwProgress.activitiesCompleted.length : 0;
+      const hwPct = Math.min(100, Math.round((hwCompletedCount / hwTotalActivities) * 100));
 
-      if (patBadgeEl) {
-        patBadgeEl.textContent = isGradeOne ? '🟢 ¡NUEVO! 1.º GRADO' : `🟢 ¡NUEVO! ${this.currentGrade}.º GRADO`;
+      if (hwFillEl) hwFillEl.style.width = `${hwPct}%`;
+      if (hwTextEl) {
+        hwTextEl.textContent = hwProgress.completed ? (isGradeOne ? '🎉 ¡100% COMPLETADO!' : '🎉 ¡100% Completado!') : `${hwPct}%`;
       }
-      if (patTitleEl) {
-        patTitleEl.textContent = isGradeOne ? '2. PATRONES' : '2. Patrones';
-      }
-      if (patDescEl) {
-        patDescEl.textContent = isGradeOne
-          ? 'DESCUBRE QUÉ SE REPITE, COMPLETA SECUENCIAS DIVERTIDAS Y CREA TUS PROPIOS PATRONES CON IMÁGENES.'
-          : (gConfig.patterns.description || 'Descubre reglas que se repiten, completa secuencias y resuelve desafíos lógicos.');
-      }
-
-      const patProgress = this.storage.getGradeProgress(this.currentGrade, 'patterns');
-      const patTotalActivities = gConfig.patterns.activities.length;
-      const patCompletedCount = patProgress.activitiesCompleted ? patProgress.activitiesCompleted.length : 0;
-      const patPct = Math.min(100, Math.round((patCompletedCount / patTotalActivities) * 100));
-
-      const patFillEl = document.getElementById('syllabus-patterns-progress');
-      const patTextEl = document.getElementById('syllabus-patterns-pct');
-      if (patFillEl) patFillEl.style.width = `${patPct}%`;
-      if (patTextEl) {
-        patTextEl.textContent = patProgress.completed ? (isGradeOne ? '🎉 ¡100% COMPLETADO!' : '🎉 ¡100% Completado!') : `${patPct}%`;
+      if (hwTitleEl) hwTitleEl.textContent = isGradeOne ? '2. TAREA' : '2. Tarea';
+      if (hwLabelEl) hwLabelEl.textContent = isGradeOne ? 'TAREA' : 'Tarea';
+      if (hwDescEl) {
+        hwDescEl.textContent = isGradeOne
+          ? 'PREGUNTAS CONCEPTUALES Y 3 DESAFÍOS INTERACTIVOS DE PROGRAMACIÓN.'
+          : 'Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.';
       }
 
-      if (btnStartPat) {
+      if (btnStartHw) {
         if (isGradeOne) {
-          btnStartPat.innerHTML = patProgress.completed ?
-            '<span>🔄</span> ¡REPASAR PATRONES!' :
-            (patCompletedCount > 0 ? '<span>▶️</span> ¡CONTINUAR PATRONES!' : '<span>🚀</span> ¡COMENZAR PATRONES!');
+          btnStartHw.innerHTML = hwProgress.completed
+            ? '<span>🔄</span> ¡REPASAR TAREA!'
+            : (hwCompletedCount > 0 ? '<span>▶️</span> ¡CONTINUAR TAREA!' : '<span>🚀</span> ¡COMENZAR TAREA!');
         } else {
-          btnStartPat.innerHTML = patProgress.completed ?
-            '<span>🔄</span> ¡Repasar Patrones!' :
-            (patCompletedCount > 0 ? '<span>▶️</span> ¡Continuar Patrones!' : '<span>🚀</span> ¡Comenzar Patrones!');
+          btnStartHw.innerHTML = hwProgress.completed
+            ? '<span>🔄</span> ¡Repasar Tarea!'
+            : (hwCompletedCount > 0 ? '<span>▶️</span> ¡Continuar Tarea!' : '<span>🚀</span> ¡Comenzar Tarea!');
         }
-        btnStartPat.onclick = () => {
+        btnStartHw.onclick = () => {
           this.onPlaySound('pop');
-          this.startPatternsTopic();
+          this.startHomeworkTopic();
         };
       }
     } else {
-      if (patCard) patCard.style.display = 'none';
-      if (algoCard) algoCard.style.display = 'flex';
+      if (hwCard) hwCard.style.display = 'none';
     }
+
+    // ========================================================
+    // TEMA 3: PATRONES (BLOQUEADO SEGÚN REQUERIMIENTO)
+    // ========================================================
+    const patCard = document.getElementById('topic-card-patterns');
+    const btnStartPat = document.getElementById('btn-start-patterns-topic');
+    if (patCard) {
+      patCard.style.display = 'flex';
+      patCard.className = 'topic-card locked';
+      const patBadge = patCard.querySelector('.topic-status-tag');
+      if (patBadge) {
+        patBadge.className = 'topic-status-tag status-locked';
+        patBadge.textContent = isGradeOne ? '🔒 NO DISPONIBLE' : '🔒 No disponible';
+      }
+      const patTitle = patCard.querySelector('.topic-title');
+      if (patTitle) patTitle.textContent = isGradeOne ? '3. PATRONES' : '3. Patrones';
+      const patDesc = patCard.querySelector('.topic-desc');
+      if (patDesc) {
+        patDesc.textContent = isGradeOne
+          ? 'SECUENCIAS Y PATRONES LÓGICOS. (EN PREPARACIÓN).'
+          : 'Descubre reglas que se repiten y secuencias lógicas. (Actividad en preparación).';
+      }
+      if (btnStartPat) btnStartPat.style.display = 'none';
+
+      patCard.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.onPlaySound('hit');
+        alert(isGradeOne ? '🔒 ESTE BLOQUE TODAVÍA NO ESTÁ DISPONIBLE.' : '🔒 Este bloque todavía no está disponible.');
+      };
+    }
+
+    // Vinculación de Botones de Reinicio de Sesión Escolar
+    const setupResetModal = (triggerBtn, gradeTarget) => {
+      if (!triggerBtn) return;
+      triggerBtn.onclick = () => {
+        const modal = document.getElementById('modal-confirm-session-reset');
+        if (!modal) {
+          if (confirm('¿Finalizar sesión del grupo actual? El progreso de programación se reiniciará a 0%.')) {
+            this.resetGroupSession(gradeTarget);
+          }
+          return;
+        }
+        modal.style.display = 'flex';
+
+        const btnCancel = document.getElementById('btn-modal-cancel-reset');
+        const btnConfirm = document.getElementById('btn-modal-confirm-reset');
+
+        if (btnCancel) {
+          btnCancel.onclick = () => {
+            modal.style.display = 'none';
+          };
+        }
+
+        if (btnConfirm) {
+          btnConfirm.onclick = () => {
+            modal.style.display = 'none';
+            this.resetGroupSession(gradeTarget);
+          };
+        }
+      };
+    };
+
+    setupResetModal(document.getElementById('btn-session-reset-syllabus'), this.currentGrade);
+    setupResetModal(document.getElementById('btn-session-reset-grades'), null);
 
     // Botón volver a selección de grados
     const btnBack = document.getElementById('btn-back-to-coding-grades');
@@ -4522,11 +6099,11 @@ class CodingModuleManager {
     const isPlaying = this.bgmEngine && this.bgmEngine.isPlaying;
     const isGradeOne = this.currentGrade === 1;
     const label = isGradeOne
-      ? (isPlaying ? '🎵 MÚSICA: SÍ' : '🎵 MÚSICA: NO')
-      : (isPlaying ? '🎵 Música: SÍ' : '🎵 Música: NO');
+      ? (isPlaying ? 'MÚSICA: ACTIVADA' : 'MÚSICA: DESACTIVADA')
+      : (isPlaying ? 'Música: Activada' : 'Música: Desactivada');
     return `
-      <button type="button" class="btn-byte-bgm-toggle ${isPlaying ? 'is-playing' : ''}" id="btn-byte-bgm" title="${isGradeOne ? 'ACTIVAR O DESACTIVAR MÚSICA DE 8 BITS' : 'Activar o desactivar música retro de 8 bits'}">
-        <span class="bgm-icon">${isPlaying ? '🔊' : '🔇'}</span>
+      <button type="button" class="btn-byte-bgm-toggle ${isPlaying ? 'is-playing' : ''}" id="btn-byte-bgm" title="${isGradeOne ? 'ACTIVAR O DESACTIVAR MÚSICA RETRO DE 8 BITS' : 'Activar o desactivar música retro de 8 bits'}">
+        <span class="bgm-icon">${isPlaying ? '🔊' : '🔈'}</span>
         <span class="bgm-label">${label}</span>
       </button>
     `;
@@ -4550,11 +6127,11 @@ class CodingModuleManager {
       btn.classList.toggle('is-playing', isPlaying);
       const icon = btn.querySelector('.bgm-icon');
       const label = btn.querySelector('.bgm-label');
-      if (icon) icon.textContent = isPlaying ? '🔊' : '🔇';
+      if (icon) icon.textContent = isPlaying ? '🔊' : '🔈';
       if (label) {
         label.textContent = isGradeOne
-          ? (isPlaying ? '🎵 MÚSICA: SÍ' : '🎵 MÚSICA: NO')
-          : (isPlaying ? '🎵 Música: SÍ' : '🎵 Música: NO');
+          ? (isPlaying ? 'MÚSICA: ACTIVADA' : 'MÚSICA: DESACTIVADA')
+          : (isPlaying ? 'Música: Activada' : 'Música: Desactivada');
       }
     });
   }
@@ -4626,6 +6203,9 @@ class CodingModuleManager {
       case 'theory':
         this.renderTheory(container, act);
         break;
+      case 'concept_question':
+        this.renderConceptQuestion(container, act);
+        break;
       case 'identify_instruction':
         this.renderIdentifyInstruction(container, act);
         break;
@@ -4673,6 +6253,9 @@ class CodingModuleManager {
       default:
         this.renderTheory(container, act);
     }
+
+    // Vincular siempre el botón de música si la actividad lo incluye
+    this.bindBgmToggle(container);
   }
 
   /**
@@ -5422,7 +7005,7 @@ class CodingModuleManager {
 
     const showQuizSummary = () => {
       this.onPlaySound('fanfare');
-      this.onLaunchConfetti();
+      this.showStarReward('success');
       this.recordActivitySuccess(act.id, 30);
       this.updateByte("¡FELICITACIONES! Demostraste que comprendés qué son las instrucciones y cómo piensa un verdadero programador.", 'happy');
 
@@ -6060,7 +7643,7 @@ class CodingModuleManager {
             renderBoard();
 
             this.onPlaySound('fanfare');
-            this.onLaunchConfetti();
+            this.showStarReward('success');
             this.recordActivitySuccess(act.id, 25);
 
             btnRun.style.display = 'none';
@@ -6136,6 +7719,104 @@ class CodingModuleManager {
   }
 
   // 2. ¿QUÉ ES UNA INSTRUCCIÓN?
+
+  // ========================================================
+  // RENDERIZADOR PARA PREGUNTAS CONCEPTUALES DEL BLOQUE TAREA
+  // ========================================================
+  renderConceptQuestion(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    this.updateByte(act.speechText || act.concept, 'thinking', `${act.title}. ${act.concept}`);
+
+    container.innerHTML = `
+      <div class="concept-question-wrapper ${isGradeOne ? 'g1-uppercase' : ''}">
+        ${this.createActivityHeader(act, true)}
+
+        <!-- Tarjeta Principal del Concepto a Aprender -->
+        <div class="concept-banner-card">
+          <div class="concept-banner-header">
+            <span class="concept-bulb">💡</span>
+            <strong class="concept-header-label">${isGradeOne ? 'CONCEPTO CLAVE' : 'Concepto Clave'}</strong>
+          </div>
+          <p class="concept-quote-text">${isGradeOne ? act.concept.toUpperCase() : act.concept}</p>
+        </div>
+
+        <!-- Guía de 5 Puntos de la Consigna -->
+        <div class="consigna-five-points-box">
+          <div class="consigna-point-item">
+            <strong>🎯 ${isGradeOne ? 'QUÉ TENÉS QUE HACER:' : 'Qué tenés que hacer:'}</strong>
+            <span>${isGradeOne ? act.objective.toUpperCase() : act.objective}</span>
+          </div>
+          <div class="consigna-point-item">
+            <strong>👀 ${isGradeOne ? 'QUÉ TENÉS QUE OBSERVAR:' : 'Qué tenés que observar:'}</strong>
+            <span>${isGradeOne ? act.whatToObserve.toUpperCase() : act.whatToObserve}</span>
+          </div>
+          <div class="consigna-point-item">
+            <strong>👆 ${isGradeOne ? 'CÓMO RESOLVERLO:' : 'Cómo resolverlo:'}</strong>
+            <span>${isGradeOne ? act.howToPlay.toUpperCase() : act.howToPlay}</span>
+          </div>
+          <div class="consigna-point-item">
+            <strong>✅ ${isGradeOne ? 'CÓMO COMPROBAR:' : 'Cómo comprobar:'}</strong>
+            <span>${isGradeOne ? act.howToSubmit.toUpperCase() : act.howToSubmit}</span>
+          </div>
+          <div class="consigna-point-item">
+            <strong>🔍 ${isGradeOne ? 'QUÉ SIGNIFICA EL RESULTADO:' : 'Qué significa el resultado:'}</strong>
+            <span>${isGradeOne ? act.resultMeaning.toUpperCase() : act.resultMeaning}</span>
+          </div>
+        </div>
+
+        <!-- Situación de la Pregunta -->
+        <div class="concept-situation-box">
+          <div class="situation-badge"><span>📖</span> ${isGradeOne ? 'SITUACIÓN PARA ANALIZAR' : 'Situación para analizar'}</div>
+          <h4 class="situation-title">${isGradeOne ? act.situation.toUpperCase() : act.situation}</h4>
+          <p class="situation-question">${isGradeOne ? act.question.toUpperCase() : act.question}</p>
+        </div>
+
+        <!-- Opciones de Respuesta -->
+        <div class="concept-options-grid">
+          ${act.options.map(opt => `
+            <button type="button" class="concept-opt-btn" data-opt="${opt.id}">
+              <span class="opt-icon">${opt.icon || '👉'}</span>
+              <span class="opt-text">${isGradeOne ? opt.text.toUpperCase() : opt.text}</span>
+            </button>
+          `).join('')}
+        </div>
+
+        ${this.createActivityFooter()}
+      </div>
+    `;
+
+    this.wireResetButton(() => this.renderConceptQuestion(container, act));
+
+    container.querySelectorAll('.concept-opt-btn').forEach(btn => {
+      btn.onclick = () => {
+        if (this.activityState.isCompleted) return;
+        const optId = btn.getAttribute('data-opt');
+        const opt = act.options.find(o => o.id === optId);
+
+        if (opt && opt.isCorrect) {
+          btn.classList.add('correct');
+          this.onPlaySound('fanfare');
+          this.showStarReward('success');
+          const successMsg = isGradeOne
+            ? (act.successFeedback || '¡EXCELENTE! COMPRENDISTE PERFECTAMENTE EL CONCEPTO.').toUpperCase()
+            : (act.successFeedback || '¡Excelente! Comprendiste perfectamente el concepto.');
+          this.updateByte(successMsg, 'happy');
+          this.recordActivitySuccess(act.id, 20);
+        } else {
+          btn.classList.add('wrong');
+          this.onPlaySound('wrong');
+          const errorMsg = isGradeOne
+            ? (opt.feedback || 'ESA OPCIÓN NO ES LA ADECUADA. REVISÁ EL CONCEPTO Y VOLVÉ A INTENTAR.').toUpperCase()
+            : (opt.feedback || 'Esa opción no es la adecuada. Revisá el concepto y volvé a intentar.');
+          this.recordAttemptError(errorMsg);
+        }
+      };
+    });
+
+    const btnNext = document.getElementById('btn-activity-next');
+    if (btnNext) btnNext.onclick = () => this.nextActivity();
+  }
+
   renderIdentifyInstruction(container, act) {
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
 
@@ -6228,7 +7909,7 @@ class CodingModuleManager {
         if (opt && opt.isCorrect) {
           btn.classList.add('correct');
           this.onPlaySound('fanfare');
-          this.onLaunchConfetti();
+          this.showStarReward('success');
           const successMsg = isGradeOne
             ? "¡PERFECTO! ESE ES EXACTAMENTE EL PASO QUE FALTABA EN LA SECUENCIA."
             : "¡Perfecto! Ese es exactamente el paso que completa el recorrido en el mapa.";
@@ -6767,7 +8448,7 @@ class CodingModuleManager {
 
             if (reachedTarget) {
               this.onPlaySound('fanfare');
-              this.onLaunchConfetti();
+              this.showStarReward('success');
               const successMsg = isGradeOne
                 ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO Y LLEGUÉ A DESTINO."
                 : "¡Excelente! Organizaste las instrucciones en el orden perfecto y Byte llegó a la escuela 🏫.";
@@ -6791,7 +8472,7 @@ class CodingModuleManager {
             const isCorrect = currentItems.every((it, i) => it.id === act.correctOrder[i]);
             if (isCorrect) {
               this.onPlaySound('fanfare');
-              this.onLaunchConfetti();
+              this.showStarReward('success');
               const successMsg = isGradeOne
                 ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO."
                 : "¡Excelente! Organizaste las instrucciones en el orden perfecto.";
@@ -6855,7 +8536,7 @@ class CodingModuleManager {
         if (s && s.isError) {
           b.classList.add('correct');
           this.onPlaySound('fanfare');
-          this.onLaunchConfetti();
+          this.showStarReward('success');
           this.updateByte(`¡Encontraste el bug! ${act.explanation}`, 'happy');
           this.recordActivitySuccess(act.id, 15);
         } else {
@@ -7460,7 +9141,7 @@ class CodingModuleManager {
 
         if (isOrderCorrect) {
           this.onPlaySound('fanfare');
-          this.onLaunchConfetti();
+          this.showStarReward('success');
           this.updateByte("¡DESAFÍO SUPERADO! ¡Completaste toda la aventura de las instrucciones!", 'happy');
           btnValidate.style.display = 'none';
           this.recordActivitySuccess(act.id, 25);
@@ -7554,7 +9235,7 @@ class CodingModuleManager {
             strip.querySelectorAll('.pattern-card-item').forEach(c => c.classList.add('highlight'));
           }
           this.onPlaySound('fanfare');
-          this.onLaunchConfetti();
+          this.showStarReward('success');
           this.updateByte("¡MUY BIEN! ¡DESCUBRISTE EL PATRÓN!", 'happy', "Muy bien. Descubriste el patrón.");
           this.recordActivitySuccess(act.id, 10);
         } else {
@@ -7650,7 +9331,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 850);
@@ -7748,7 +9429,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 850);
@@ -7837,7 +9518,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 900);
@@ -7958,7 +9639,7 @@ class CodingModuleManager {
               drawChallenge(chIdx);
             } else {
               this.onPlaySound('fanfare');
-              this.onLaunchConfetti();
+              this.showStarReward('success');
               this.recordActivitySuccess(act.id, 20);
             }
           }, 850);
@@ -8092,7 +9773,7 @@ class CodingModuleManager {
           stripEl.querySelectorAll('.pattern-card-item').forEach(c => c.classList.add('highlight'));
         }
         this.onPlaySound('fanfare');
-        this.onLaunchConfetti();
+        this.showStarReward('success');
         this.updateByte(
           `¡CREASTE UN PATRÓN! SE REPITE: ${rhythmDesc}`,
           'happy',
@@ -8330,7 +10011,7 @@ class CodingModuleManager {
                 if (isMatch) {
                   completedStars[4] = true;
                   this.onPlaySound('fanfare');
-                  this.onLaunchConfetti();
+                  this.showStarReward('success');
                   this.updateByte("¡FELICITACIONES! ¡SOS UN DETECTIVE DE PATRONES!", 'happy', "Felicitaciones. Sos un detective de patrones.");
                   this.recordActivitySuccess(act.id, 30);
                 } else {
@@ -8474,7 +10155,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 15);
               }
             }, 950);
@@ -8573,7 +10254,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 1100);
@@ -8675,7 +10356,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 950);
@@ -8778,7 +10459,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 950);
@@ -8884,7 +10565,7 @@ class CodingModuleManager {
                     drawChallenge(chIdx);
                   } else {
                     this.onPlaySound('fanfare');
-                    this.onLaunchConfetti();
+                    this.showStarReward('success');
                     this.recordActivitySuccess(act.id, 20);
                   }
                 }, 950);
@@ -8989,7 +10670,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 950);
@@ -9095,7 +10776,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 25);
               }
             }, 950);
@@ -9233,7 +10914,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 1100);
@@ -9333,7 +11014,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 950);
@@ -9421,7 +11102,7 @@ class CodingModuleManager {
                 drawChallenge(chIdx);
               } else {
                 this.onPlaySound('fanfare');
-                this.onLaunchConfetti();
+                this.showStarReward('success');
                 this.recordActivitySuccess(act.id, 20);
               }
             }, 1200);
@@ -9454,7 +11135,7 @@ class CodingModuleManager {
   renderVictoryModal() {
     this.cleanupCurrentActivity();
     this.onPlaySound('fanfare');
-    this.onLaunchConfetti();
+    this.showStarReward('success');
 
     const gConfig = CODING_DATA.grades[this.currentGrade];
     const progress = this.storage.getGradeProgress(this.currentGrade, this.currentTopic);

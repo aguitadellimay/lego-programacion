@@ -171,6 +171,20 @@
         <p class="coding-subtitle">Aprende Pensamiento Computacional junto a Byte el robot. Selecciona tu grado escolar:</p>
       </div>
 
+      <!-- Barra de Sesión de Grupo Escolar -->
+      <div class="session-management-bar">
+        <div class="session-management-info">
+          <span class="session-icon">👥</span>
+          <div>
+            <strong class="session-title">Control de Sesión de Grupo Escolar</strong>
+            <p class="session-desc">Al terminar la clase con un grupo, podés reiniciar el progreso para que el siguiente grupo comience desde 0%.</p>
+          </div>
+        </div>
+        <button id="btn-session-reset-grades" class="btn-session-reset" type="button" title="Reiniciar progreso para un nuevo grupo">
+          <span>🔄</span> Finalizar Sesión / Nuevo Grupo
+        </button>
+      </div>
+
       <div class="coding-grades-grid">
         <!-- 1° Grado -->
         <article class="coding-grade-card coding-g-1" data-cgrade="1">
@@ -239,10 +253,24 @@
           </button>
         </div>
 
+        <!-- Barra de Control de Sesión Escolar (Syllabus) -->
+        <div class="session-management-bar syllabus-session-bar">
+          <div class="session-management-info">
+            <span class="session-icon">👥</span>
+            <div>
+              <strong class="session-title">Sesión del Grupo Actual</strong>
+              <p class="session-desc">Reinicia el porcentaje y avance de este grado para el nuevo turno de alumnos.</p>
+            </div>
+          </div>
+          <button id="btn-session-reset-syllabus" class="btn-session-reset" type="button" title="Reiniciar este grado para un nuevo grupo">
+            <span>🔄</span> Finalizar Sesión del Grado
+          </button>
+        </div>
+
         <h3 style="font-size: 1.6rem; color: #1e293b; margin-bottom: 6px;">📚 Ruta de Pensamiento Computacional</h3>
         <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 20px;">Supera cada tema para desbloquear tu insignia de programador:</p>
 
-        <!-- Grilla de Temas (Instrucciones activo, demás temas previstos) -->
+        <!-- Grilla de Temas -->
         <div class="topics-grid">
           <!-- Tema 1: INSTRUCCIONES (Activo) -->
           <article class="topic-card active">
@@ -268,28 +296,40 @@
             </button>
           </article>
 
-          <!-- Tema 2: PATRONES (Activo para 1.° Grado) -->
-          <article id="topic-card-patterns" class="topic-card active" style="border-color: #f59e0b; display: none;">
+          <!-- Tema 2: TAREA (Activo para 1.° a 5.° Grado) -->
+          <article id="topic-card-homework" class="topic-card active" style="border-color: #8b5cf6;">
             <div class="topic-card-header">
-              <span class="topic-icon">🧩</span>
-              <span class="topic-status-tag status-active" style="background: #fef3c7; color: #b45309;">🟢 ¡NUEVO! 1.º GRADO</span>
+              <span class="topic-icon">📝</span>
+              <span class="topic-status-tag status-active" style="background: #ede9fe; color: #6d28d9;">🟢 ¡NUEVO BLOQUE!</span>
             </div>
-            <h4 class="topic-title">2. PATRONES</h4>
-            <p class="topic-desc">
-              DESCUBRE QUÉ SE REPITE, COMPLETA SECUENCIAS DIVERTIDAS Y CREA TUS PROPIOS PATRONES CON IMÁGENES.
+            <h4 class="topic-title" id="syllabus-homework-title">2. Tarea</h4>
+            <p class="topic-desc" id="syllabus-homework-desc">
+              Preguntas conceptuales y 3 desafíos interactivos para poner a prueba tu lógica.
             </p>
             <div class="topic-progress-box">
               <div class="topic-progress-label">
-                <span>PATRONES</span>
-                <span id="syllabus-patterns-pct">0%</span>
+                <span id="syllabus-homework-label">TAREA</span>
+                <span id="syllabus-homework-pct">0%</span>
               </div>
               <div class="progress-bar-bg">
-                <div id="syllabus-patterns-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #f59e0b, #eab308);"></div>
+                <div id="syllabus-homework-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #8b5cf6, #a855f7);"></div>
               </div>
             </div>
-            <button id="btn-start-patterns-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #f59e0b, #d97706); box-shadow: 0 4px 0 #b45309;">
-              <span>🚀</span> ¡COMENZAR PATRONES!
+            <button id="btn-start-homework-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 0 #5b21b6;">
+              <span>🚀</span> ¡Comenzar Tarea!
             </button>
+          </article>
+
+          <!-- Tema 3: PATRONES (Bloqueado según requerimiento de 1.° a 5.° Grado) -->
+          <article id="topic-card-patterns" class="topic-card locked" style="border-color: #cbd5e1;">
+            <div class="topic-card-header">
+              <span class="topic-icon">🧩</span>
+              <span class="topic-status-tag status-locked">🔒 No disponible</span>
+            </div>
+            <h4 class="topic-title">3. Patrones</h4>
+            <p class="topic-desc">
+              Descubre reglas que se repiten y secuencias lógicas. (Actividad en preparación).
+            </p>
           </article>
 
           <!-- Tema 2: Algoritmos (Futuro para otros grados) -->
@@ -796,7 +836,27 @@
     </div>
   </div>
 
-  <!-- Contenedor para lluvia de confeti animado -->
+  <!-- Modal de Confirmación para Finalizar Sesión de Grupo Escolar -->
+  <div id="modal-confirm-session-reset" class="coding-modal-overlay" style="display: none;">
+    <div class="coding-modal-card">
+      <div class="coding-modal-icon">👥 🔄</div>
+      <h3 class="coding-modal-title">¿Finalizar sesión del grupo actual?</h3>
+      <p class="coding-modal-text">
+        El progreso, las estrellas y las actividades completadas del módulo de programación se reiniciarán para que el nuevo grupo de alumnos comience desde <strong>0%</strong>.<br>
+        <span style="font-size:0.9rem; color:#64748b; margin-top:6px; display:inline-block;">(Las creaciones y fotos del taller familiar no se modificarán).</span>
+      </p>
+      <div class="coding-modal-actions">
+        <button type="button" id="btn-modal-cancel-reset" class="btn-modal-secondary">
+          Cancelar
+        </button>
+        <button type="button" id="btn-modal-confirm-reset" class="btn-modal-primary">
+          ✅ Sí, Iniciar Nuevo Grupo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor para lluvia de confeti animado (Desactivado) -->
   <div id="confetti-container" class="confetti-container"></div>
 
   <!-- Scripts de la Aplicación -->

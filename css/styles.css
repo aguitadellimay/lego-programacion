@@ -104,6 +104,16 @@ body {
   gap: 12px;
 }
 
+.btn-print-gift,
+.btn-export-gift {
+  display: none;
+}
+
+body.editor-mode .btn-print-gift,
+body.editor-mode .btn-export-gift {
+  display: flex;
+}
+
 .btn-print-gift {
   background: linear-gradient(180deg, #42a5f5, #1976d2);
   color: white;
@@ -114,7 +124,6 @@ body {
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  display: flex;
   align-items: center;
   gap: 8px;
   box-shadow: 0 6px 0 #0d47a1, 0 10px 15px rgba(0,0,0,0.15);
@@ -141,7 +150,6 @@ body {
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  display: flex;
   align-items: center;
   gap: 10px;
   box-shadow: 0 6px 0 #e65100, 0 10px 15px rgba(0,0,0,0.2);
@@ -698,31 +706,17 @@ body {
 }
 
 /* ========================================================
-   Animación de Confeti
+   Animación de Confeti (Desactivada permanentemente a favor de estrellas breves)
    ======================================================== */
 .confetti-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1001;
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .confetti-piece {
-  position: absolute;
-  width: 12px;
-  height: 16px;
-  border-radius: 3px;
-  top: -20px;
-  animation: fall 3.5s linear infinite;
-}
-
-@keyframes fall {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+  display: none !important;
+  animation: none !important;
 }
 
 /* ========================================================

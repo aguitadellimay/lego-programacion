@@ -100,11 +100,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (codingManager && codingManager.stopSpeaking) {
         codingManager.stopSpeaking();
       }
+      if (codingManager && codingManager.stopBgm) {
+        codingManager.stopBgm();
+      }
       [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic].forEach(s => {
         if (s) s.classList.remove('active');
       });
       if (targetScreen) targetScreen.classList.add('active');
+
+      // Control estricto de visibilidad de botones del editor de regalos
+      const isEditor = (targetScreen === screenEditor);
+      document.body.classList.toggle('editor-mode', isEditor);
+      const printBtn = document.getElementById('btn-print-gift');
+      const exportBtn = document.getElementById('btn-export-gift');
+      const homeFromEditor = document.getElementById('btn-home-from-editor');
+      if (printBtn) printBtn.style.display = isEditor ? 'flex' : 'none';
+      if (exportBtn) exportBtn.style.display = isEditor ? 'flex' : 'none';
+      if (homeFromEditor) homeFromEditor.style.display = isEditor ? 'inline-flex' : 'none';
     };
+
+    // Inicializar estado del encabezado en la pantalla de inicio
+    showScreen(screenHome);
 
     // Inicializar el motor del juego matemático con diferenciación de grados y clima
     const game = new MinecraftLegoGame('minigame-canvas', {
@@ -1176,22 +1192,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /**
-   * Animación de confeti visual cuando descargan su regalo
+   * Recompensa visual (el confeti continuo fue eliminado según requerimiento)
    */
   function launchConfetti() {
     const container = document.getElementById('confetti-container');
-    if (!container) return;
-    container.innerHTML = '';
-
-    const colors = ['#E3000B', '#0055BF', '#FED700', '#00852B', '#FE8A18', '#8E24AA', '#FF4081'];
-    for (let i = 0; i < 70; i++) {
-      const piece = document.createElement('div');
-      piece.className = 'confetti-piece';
-      piece.style.left = Math.random() * 100 + '%';
-      piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      piece.style.animationDelay = Math.random() * 2 + 's';
-      piece.style.transform = `rotate(${Math.random() * 360}deg)`;
-      container.appendChild(piece);
-    }
+    if (container) container.innerHTML = '';
   }
 });

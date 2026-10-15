@@ -3841,3 +3841,386 @@
   display: none;
   animation: fadeIn 0.25s ease;
 }
+
+/* ========================================================
+   CONTROL DE SESIÓN ESCOLAR (CAMBIO DE GRUPO)
+   ======================================================== */
+.session-management-bar {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.session-management-bar.syllabus-session-bar {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.session-management-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.session-management-info .session-icon {
+  font-size: 2rem;
+  background: #e2e8f0;
+  border-radius: 12px;
+  padding: 8px;
+  line-height: 1;
+}
+
+.session-title {
+  display: block;
+  font-size: 1.05rem;
+  color: #1e293b;
+  font-weight: 800;
+}
+
+.session-desc {
+  margin: 2px 0 0 0;
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.btn-session-reset {
+  background: #ffffff;
+  border: 2px solid #94a3b8;
+  color: #334155;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+.btn-session-reset:hover {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.btn-session-reset:active {
+  transform: translateY(1px);
+}
+
+/* Modal de Confirmación para Finalizar Sesión */
+.coding-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.coding-modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 480px;
+  width: 100%;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  border: 3px solid #e2e8f0;
+  animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.coding-modal-icon {
+  font-size: 3.2rem;
+  margin-bottom: 12px;
+}
+
+.coding-modal-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+}
+
+.coding-modal-text {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+.coding-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-modal-secondary {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #475569;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-secondary:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-modal-primary {
+  background: linear-gradient(180deg, #ef4444, #dc2626);
+  border: 2px solid #b91c1c;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.3);
+}
+
+.btn-modal-primary:hover {
+  background: linear-gradient(180deg, #dc2626, #b91c1c);
+  transform: translateY(-1px);
+}
+
+/* ========================================================
+   RECOMPENSAS VISUALES BREVES: ESTRELLAS FLOTANTES
+   ======================================================== */
+.star-reward-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 999999;
+}
+
+.reward-star-particle {
+  position: absolute;
+  font-size: 2.4rem;
+  user-select: none;
+  animation: starBurstFloat 1.4s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+  filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.4));
+}
+
+@keyframes starBurstFloat {
+  0% {
+    transform: translate(0, 0) scale(0.2) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(calc(var(--dx) * 0.5), calc(var(--dy) * 0.5)) scale(1.4) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(var(--dx), var(--dy)) scale(1) rotate(90deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(var(--dx), calc(var(--dy) - 50px)) scale(0.4) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* ========================================================
+   ESTILOS PARA PREGUNTAS CONCEPTUALES DEL BLOQUE TAREA
+   ======================================================== */
+.concept-question-wrapper {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.concept-question-wrapper.g1-uppercase {
+  text-transform: uppercase;
+}
+
+.concept-banner-card {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border: 2px solid #a78bfa;
+  border-left: 6px solid #7c3aed;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.1);
+}
+
+.concept-banner-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.concept-bulb {
+  font-size: 1.3rem;
+}
+
+.concept-header-label {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #6d28d9;
+  letter-spacing: 0.5px;
+}
+
+.concept-quote-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #4c1d95;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.consigna-five-points-box {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.consigna-point-item {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.consigna-point-item strong {
+  color: #0f172a;
+}
+
+.concept-situation-box {
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+}
+
+.situation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.situation-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #78350f;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.situation-question {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #92400e;
+  margin: 0;
+}
+
+.concept-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.concept-opt-btn {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.concept-opt-btn:hover {
+  background: #f8fafc;
+  border-color: #7c3aed;
+  transform: translateX(4px);
+}
+
+.concept-opt-btn .opt-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.concept-opt-btn .opt-text {
+  flex: 1;
+  line-height: 1.35;
+}
+
+.concept-opt-btn.correct {
+  background: #dcfce7 !important;
+  border-color: #16a34a !important;
+  color: #166534 !important;
+  box-shadow: 0 0 12px rgba(22, 163, 74, 0.3) !important;
+}
+
+.concept-opt-btn.wrong {
+  background: #fee2e2 !important;
+  border-color: #dc2626 !important;
+  color: #991b1b !important;
+}
+
+/* Ocultar botones de regalo de familia en pantallas de programación */
+body:has(#screen-coding-grades.active) #btn-print-gift,
+body:has(#screen-coding-grades.active) #btn-export-gift,
+body:has(#screen-coding-syllabus.active) #btn-print-gift,
+body:has(#screen-coding-syllabus.active) #btn-export-gift,
+body:has(#screen-coding-topic.active) #btn-print-gift,
+body:has(#screen-coding-topic.active) #btn-export-gift {
+  display: none !important;
+}
