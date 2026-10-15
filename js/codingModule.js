@@ -28,7 +28,7 @@ const CODING_DATA = {
       colorClass: 'coding-g-1',
       accentColor: '#4caf50',
       description: 'Actividades muy visuales, imágenes grandes, 2 a 4 pasos simples y órdenes concretas.',
-      instructions: {
+            instructions: {
         title: 'INSTRUCCIONES',
         activities: [
           // TEORÍA INICIAL — ¿QUÉ ES UNA INSTRUCCIÓN?
@@ -36,23 +36,28 @@ const CODING_DATA = {
             id: 'g1_inst_theory',
             type: 'theory',
             title: '📖 ¿QUÉ ES UNA INSTRUCCIÓN?',
-            intro: '¡HOLA! SOY BYTE 🤖. UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ HACER. ¡PROBÁ DARME UNA ORDEN!',
-            quote: 'UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ HACER. ¡UN ROBOT SOLO HACE LO QUE LE INDICAMOS!',
+            intro: '¡HOLA! SOY BYTE 🤖. UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ ACCIÓN DEBEMOS REALIZAR. LAS PERSONAS USAMOS INSTRUCCIONES TODOS LOS DÍAS COMO «GUARDÁ LOS JUGUETES» O «ABRÍ LA PUERTA». ¡LAS COMPUTADORAS NO ADIVINAN: NECESITAN INSTRUCCIONES CLARAS!',
+            quote: 'UNA INSTRUCCIÓN ES UNA INDICACIÓN QUE DICE QUÉ ACCIÓN DEBEMOS REALIZAR. ¡UN ROBOT O COMPUTADORA SOLO HACE LO QUE LE INDICAMOS!',
             pillars: [
               {
                 icon: '👉',
                 title: 'DICE QUÉ HACER',
-                desc: 'UNA INSTRUCCIÓN LE INDICA A UNA PERSONA O A UN ROBOT QUÉ ACCIÓN DEBE REALIZAR.'
+                desc: 'UNA INSTRUCCIÓN INDICA UNA ACCIÓN CONCRETA: AVANZAR, GIRAR O SALTAR UN OBSTÁCULO.'
               },
               {
                 icon: '🤖',
                 title: 'EL ROBOT OBEDECE',
-                desc: 'BYTE Y LAS COMPUTADORAS NO ADIVINAN: NECESITAN QUE LES DIGAMOS CADA PASO.'
+                desc: 'BYTE Y LAS COMPUTADORAS NO ADIVINAN NADA: HACEN EXACTAMENTE LO QUE LES INDICAMOS.'
               },
               {
-                icon: '🎯',
-                title: 'TIENE QUE SER CLARA',
-                desc: 'LAS INDICACIONES CLARAS NOS AYUDAN A HACER LAS COSAS BIEN Y EN ORDEN.'
+                icon: '🔀',
+                title: 'EL ORDEN IMPORTA',
+                desc: 'SI CAMBIAMOS EL ORDEN DE LAS INSTRUCCIONES, BYTE PUEDE TERMINAR EN OTRO LUGAR O CHOCAR.'
+              },
+              {
+                icon: '🔧',
+                title: 'PODEMOS CORREGIR',
+                desc: 'SI ALGO NO SALE COMO ESPERÁBAMOS, REVISAMOS LAS INSTRUCCIONES Y VOLVEMOS A PROBAR.'
               }
             ],
             demoType: 'robot_commands_g1',
@@ -64,7 +69,7 @@ const CODING_DATA = {
             id: 'g1_inst_first',
             type: 'which_first_or_after',
             title: '👉 ACTIVIDAD 1: ¿QUÉ VA PRIMERO?',
-            instruction: 'TOCÁ LA ACCIÓN QUE DEBEMOS HACER PRIMERO:',
+            instruction: '¡VAMOS A DESCUBRIR QUÉ ACCIÓN DEBEMOS HACER AL INICIO!\n1. OBSERVÁ CON ATENCIÓN LAS ACCIONES DE CADA TAREA COTIDIANA.\n2. PENSÁ CUÁL ES EL PRIMER PASO INDISPENSABLE PARA PODER EMPEZAR.\n3. TOCÁ LA TARJETA QUE DEBEMOS HACER PRIMERO PARA AVANZAR.',
             mode: 'first',
             challenges: [
               {
@@ -101,9 +106,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              'PISTA 1: PENSÁ QUÉ HACEMOS AL PRINCIPIO DE LA TAREA.',
-              'PISTA 2: NO PODEMOS SECARNOS SI TODAVÍA NO NOS MOJAMOS.',
-              'PISTA 3: LA PRIMERA ACCIÓN PREPARA TODO LO DEMÁS.'
+              'PISTA 1: PENSÁ QUÉ HACEMOS AL PRINCIPIO DE LA TAREA ANTES DE CONTINUAR.',
+              'PISTA 2: POR EJEMPLO, NO PODEMOS SECARNOS SI TODAVÍA NO NOS MOJAMOS LAS MANOS.',
+              'PISTA 3: LA ACCIÓN CORRECTA ES LA QUE PREPARA TODO PARA PODER HACER EL RESTO.'
             ]
           },
 
@@ -112,7 +117,7 @@ const CODING_DATA = {
             id: 'g1_inst_after',
             type: 'which_first_or_after',
             title: '⏩ ACTIVIDAD 2: ¿QUÉ VA DESPUÉS?',
-            instruction: 'TOCÁ LA ACCIÓN QUE CONTINÚA LA SECUENCIA:',
+            instruction: '¡BYTE YA HIZO EL PRIMER PASO! AHORA NECESITA CONTINUAR LA SECUENCIA.\n1. MIRÁ LA ACCIÓN QUE YA ESTÁ REALIZADA.\n2. OBSERVÁ LAS DOS OPCIONES Y PENSÁ CUÁL ES EL PASO SIGUIENTE LÓGICO.\n3. TOCÁ LA TARJETA QUE VA DESPUÉS PARA COMPLETAR EL PROCEDIMIENTO.',
             mode: 'after',
             challenges: [
               {
@@ -149,9 +154,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              'PISTA 1: MIRÁ QUÉ ACCIÓN TIENE SENTIDO CON LA TAREA.',
-              'PISTA 2: DESCARTÁ LAS ACCIONES QUE NO TIENEN NADA QUE VER.',
-              'PISTA 3: LA ACCIÓN CORRECTA COMPLETA EL SIGUIENTE PASO.'
+              'PISTA 1: OBSERVÁ QUÉ ACCIÓN TIENE RELACIÓN DIRECTA CON LA TAREA QUE ESTAMOS HACIENDO.',
+              'PISTA 2: DESCARTÁ LA ACCIÓN QUE NO TIENE NADA QUE VER CON LA ACTIVIDAD.',
+              'PISTA 3: LA RESPUESTA CORRECTA COMPLETA EL PASO INMEDIATO SIGUIENTE.'
             ]
           },
 
@@ -160,7 +165,7 @@ const CODING_DATA = {
             id: 'g1_inst_order',
             type: 'order_steps',
             title: '🔢 ACTIVIDAD 3: ORDENÁ LOS PASOS',
-            instruction: 'ORDENÁ LAS ACCIONES DE ARRIBA HACIA ABAJO:',
+            instruction: '¡ARMEMOS LA SECUENCIA COMPLETA PARA PREPARAR UN RICO SÁNDWICH!\n1. OBSERVÁ LAS ACCIONES QUE APARECEN DESORDENADAS.\n2. TOCÁ LAS FLECHAS ▲ Y ▼ DE CADA TARJETA PARA MOVERLAS HACIA ARRIBA O HACIA ABAJO.\n3. UBICÁ EL PRIMER PASO ARRIBA Y EL ÚLTIMO ABAJO.\n4. CUANDO LA SECUENCIA ESTÉ LISTA, TOCÁ «¡COMPROBAR ORDEN!» PARA VALIDAR.',
             items: [
               { id: 'sw_bread1', icon: '🍞', text: 'TOMAR EL PAN' },
               { id: 'sw_filling', icon: '🧀', text: 'PONER EL QUESO Y JAMÓN' },
@@ -169,9 +174,9 @@ const CODING_DATA = {
             ],
             correctOrder: ['sw_bread1', 'sw_filling', 'sw_bread2', 'sw_eat'],
             hints: [
-              'PISTA 1: PRIMERO SIEMPRE APOYAMOS LA PRIMERA REBANADA DE PAN.',
-              'PISTA 2: EN EL MEDIO COLOCAMOS EL RELLENO DE JAMÓN Y QUESO.',
-              'PISTA 3: LO ÚLTIMO DE TODO ES COMER EL SÁNDWICH TERMINADO.'
+              'PISTA 1: PRIMERO SIEMPRE APOYAMOS LA PRIMERA REBANADA DE PAN SOBRE EL PLATO.',
+              'PISTA 2: EN EL MEDIO COLOCAMOS EL RELLENO DE JAMÓN Y QUESO, Y LUEGO TAPAMOS CON OTRO PAN.',
+              'PISTA 3: LO ÚLTIMO DE TODO ES DISFRUTAR Y COMER EL SÁNDWICH TERMINADO.'
             ]
           },
 
@@ -180,7 +185,7 @@ const CODING_DATA = {
             id: 'g1_inst_missing',
             type: 'missing_step',
             title: '🧩 ACTIVIDAD 4: ¿QUÉ PASO FALTA?',
-            instruction: 'A ESTA SECUENCIA PARA LAVARSE LAS MANOS LE FALTA UN PASO:',
+            instruction: '¡A ESTA SECUENCIA PARA LAVARSE LAS MANOS LE FALTA UN PASO INDISPENSABLE!\n1. LEÉ LOS PASOS Y BUSCÁ EL CASILLERO CON EL SIGNO DE PREGUNTA ❓.\n2. PENSÁ QUÉ PASO DE HIGIENE ES OBLIGATORIO ENTRE MOJARSE Y SECARSE.\n3. TOCÁ LA OPCIÓN CORRECTA ENTRE LAS 3 DISPONIBLES PARA COMPLETAR LA SECUENCIA.',
             sequence: [
               { num: 1, icon: '🚰', text: 'MOJARSE LAS MANOS CON AGUA' },
               { num: 2, icon: '❓', text: '____________________', isMissing: true },
@@ -192,8 +197,8 @@ const CODING_DATA = {
               { id: 'm_opt3', text: 'COMER UNA MANZANA', isCorrect: false, icon: '🍎' }
             ],
             hints: [
-              'PISTA 1: PENSÁ QUÉ PRODUCTO DE HIGIENE NECESITÁS USAR ENTRE MOJARTE Y SECARTE.',
-              'PISTA 2: PARA QUE LAS MANOS QUEDEN LIMPIAS HACE FALTA JABÓN.',
+              'PISTA 1: PENSÁ QUÉ PRODUCTO DE HIGIENE NECESITÁS PARA SACAR LA SUCIEDAD.',
+              'PISTA 2: PARA QUE LAS MANOS QUEDEN LIMPIAS HACE FALTA ENJABONARSE BIEN.',
               'PISTA 3: LA RESPUESTA CORRECTA ES «ENJABONARSE BIEN CON JABÓN».'
             ]
           },
@@ -203,18 +208,18 @@ const CODING_DATA = {
             id: 'g1_inst_seed_final',
             type: 'seed_interactive',
             title: '🌱 ACTIVIDAD 5: ¿CÓMO PLANTAMOS UNA SEMILLA?',
-            instruction: 'TOCÁ LAS 4 INSTRUCCIONES EN EL ORDEN EXACTO PARA QUE LA PLANTA CREZCA:',
+            instruction: '¡VAMOS A CULTIVAR UNA HERMOSA PLANTA DÁNDOLE INSTRUCCIONES CLARAS!\n1. MIRÁ LAS 4 INSTRUCCIONES DISPONIBLES EN EL BANCO INFERIOR.\n2. TOCALAS EN EL ORDEN NATURAL QUE NECESITA LA PLANTA: TIERRA, SEMILLA, TAPAR Y REGAR.\n3. CADA VEZ QUE TOCÁS UNA INSTRUCCIÓN, SE SUMA A TU SECUENCIA Y LA PLANTA CRECE.\n4. SI TE EQUIVOCÁS EN EL ORDEN, TOCÁ «REINICIAR» PARA PROBAR OTRA VEZ.',
             steps: [
-              { id: 'seed_1', icon: '🟫', label: '1. HACER UN POQUITO DE TIERRA' },
-              { id: 'seed_2', icon: '🌱', label: '2. PONER LA SEMILLA' },
-              { id: 'seed_3', icon: '🪴', label: '3. TAPAR LA SEMILLA CON TIERRA' },
-              { id: 'seed_4', icon: '💧', label: '4. REGAR CON AGUA' }
+              { id: 'seed_1', icon: '🟫', label: 'PREPARAR LA TIERRA FÉRTIL' },
+              { id: 'seed_2', icon: '🌱', label: 'COLOCAR LA SEMILLA' },
+              { id: 'seed_3', icon: '🪴', label: 'TAPAR LA SEMILLA CON TIERRA' },
+              { id: 'seed_4', icon: '💧', label: 'REGAR CON AGUA' }
             ],
             correctOrder: ['seed_1', 'seed_2', 'seed_3', 'seed_4'],
             hints: [
-              'PISTA 1: PRIMERO PREPARAMOS LA TIERRA FÉRTIL.',
-              'PISTA 2: LUEGO COLOCAMOS LA SEMILLA Y LA TAPAMOS.',
-              'PISTA 3: AL FINAL REGAMOS CON AGUA PARA QUE CREZCA LA PLANTA.'
+              'PISTA 1: PRIMERO PREPARAMOS LA TIERRA FÉRTIL EN LA MACETA.',
+              'PISTA 2: LUEGO COLOCAMOS LA SEMILLA Y LA TAPAMOS CON UN POCO DE TIERRA.',
+              'PISTA 3: AL FINAL REGAMOS CON AGUA PARA QUE RECIBA HUMEDAD Y FLOREZCA.'
             ]
           },
 
@@ -223,7 +228,7 @@ const CODING_DATA = {
             id: 'g1_inst_byte_mission',
             type: 'byte_mission',
             title: '🎮 MISIÓN FINAL: ¡LLEGÁ A LA META!',
-            instruction: '¡AYUDÁ A BYTE A LLEGAR A SU CASA! PROGRAMÁ SUS MOVIMIENTOS PARA QUE SIGA EL CAMINO.',
+            instruction: '¡AYUDÁ A BYTE A LLEGAR A SU CASA SIGUIENDO EL CAMINO!\n1. OBSERVÁ EL MAPA: FIJATE DÓNDE EMPIEZA BYTE Y DÓNDE ESTÁ SU CASA 🏠.\n2. MIRÁ EL CAMINO RECTO Y LA PIEDRA 🪨 QUE DEBE SALTAR EN EL MEDIO.\n3. TOCÁ LOS BOTONES DE MOVIMIENTO Y SALTO PARA SUMAR INSTRUCCIONES AL PANEL EN EL ORDEN CORRECTO.\n4. CUANDO LA SECUENCIA ESTÉ LISTA, PRESIONÁ «▶️ EJECUTAR» PARA VER A BYTE AVANZAR.\n5. ¡PODÉS ACTIVAR LA MÚSICA RETRO DE 8 BITS CON EL BOTÓN 🎵!',
             characterName: 'BYTE',
             characterIcon: '🤖',
             goalName: 'CASA DE BYTE',
@@ -252,16 +257,13 @@ const CODING_DATA = {
             },
             hints: [
               'PISTA 1: MIRÁ EL CAMINO EN LÍNEA RECTA HACIA LA CASA DE BYTE.',
-              'PISTA 2: EN EL MEDIO HAY UNA PIEDRA. USÁ «SALTAR» PARA PASARLA.',
-              'PISTA 3: LA SECUENCIA ES: AVANZAR, SALTAR, AVANZAR.'
+              'PISTA 2: EN EL MEDIO HAY UNA PIEDRA: USÁ «SALTAR» JUSTO CUANDO ESTÉS FRENTE A ELLA.',
+              'PISTA 3: LA SECUENCIA DE PASOS ES: AVANZAR, SALTAR LA PIEDRA Y AVANZAR HASTA LA CASA.'
             ]
           }
         ]
       },
-
-      // ====================================================
       // TEMA 2: PATRONES (EXCLUSIVO 1.° GRADO - TODO EN MAYÚSCULAS)
-      // ====================================================
       patterns: {
         title: 'PATRONES',
         activities: [
@@ -907,31 +909,36 @@ const CODING_DATA = {
       colorClass: 'coding-g-2',
       accentColor: '#0288d1',
       description: 'Aprender que el orden de los pasos importa y detectar errores en secuencias.',
-      instructions: {
+            instructions: {
         title: 'Instrucciones',
         activities: [
-          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES?
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES Y LAS SECUENCIAS?
           {
             id: 'g2_inst_theory',
             type: 'theory',
-            title: '📖 ¿Qué son las Instrucciones?',
-            intro: '¡Hola, constructor! En programación, una instrucción es una indicación concreta que le dice a una computadora o robot qué hacer.',
-            quote: 'Una instrucción indica una acción concreta. Las computadoras necesitan órdenes claras y ordenadas.',
+            title: '📖 ¿Qué son las Instrucciones y las Secuencias?',
+            intro: '¡Hola, constructor de código! En programación, una instrucción es una indicación concreta que le dice a una computadora o robot qué hacer. Las personas usamos instrucciones todo el tiempo: «abrí la puerta», «guardá los juguetes» o «dibujá un círculo». Las máquinas no adivinan intenciones: ¡necesitan indicaciones paso a paso!',
+            quote: 'Una instrucción es una indicación que nos dice qué acción debemos realizar. Varias instrucciones ordenadas forman una secuencia que permite alcanzar un objetivo.',
             pillars: [
               {
                 icon: '🎯',
-                title: 'Acciones Concretas',
-                desc: 'Una instrucción dice qué hacer exactamente: avanzar, doblar o agarrar un objeto.'
+                title: 'Indicación Concreta',
+                desc: 'Una instrucción dice exactamente qué acción realizar: caminar, doblar, saltar o agarrar un objeto.'
               },
               {
                 icon: '🤖',
-                title: 'Robots y Computadoras',
-                desc: 'Las máquinas no piensan solas: esperan nuestras indicaciones paso a paso.'
+                title: 'Computadoras y Robots',
+                desc: 'Una máquina no adivina lo que queremos. Necesita indicaciones que pueda interpretar y ejecutar.'
               },
               {
                 icon: '🔢',
-                title: 'Secuencias de Pasos',
-                desc: 'Una secuencia es una serie de instrucciones organizadas en orden, una tras otra.'
+                title: 'Secuencia Ordenada',
+                desc: 'Al juntar varias instrucciones en un orden determinado, formamos una secuencia para lograr un objetivo.'
+              },
+              {
+                icon: '🔀',
+                title: 'El Orden Importa',
+                desc: 'El orden de los pasos cambia el resultado: ¡no podés guardar los cuadernos si la mochila todavía está cerrada!'
               }
             ],
             demoType: 'sequence_demo_g2',
@@ -943,7 +950,7 @@ const CODING_DATA = {
             id: 'g2_inst_order',
             type: 'order_steps',
             title: '🎒 Actividad 1: Ordená los Pasos de la Mochila',
-            instruction: 'Ordená las 4 instrucciones para preparar la mochila antes de salir a la escuela:',
+            instruction: '¡Preparar la mochila para la escuela requiere una secuencia ordenada!\n1. Leé atentamente las 4 instrucciones que aparecen desordenadas.\n2. Usá los botones ▲ y ▼ para mover cada tarjeta hacia arriba o hacia abajo.\n3. Organizá los pasos desde el inicio (abrir la mochila) hasta el final (cerrarla).\n4. Cuando consideres que la secuencia está lista, hacé clic en «¡Comprobar Orden!».\n5. Si algo no encaja, revisá el orden y volvé a intentarlo.',
             items: [
               { id: 'bp_open', icon: '🔓', text: 'Abrir el cierre de la mochila' },
               { id: 'bp_books', icon: '📚', text: 'Guardar los cuadernos escolares' },
@@ -952,9 +959,9 @@ const CODING_DATA = {
             ],
             correctOrder: ['bp_open', 'bp_books', 'bp_pencil', 'bp_close'],
             hints: [
-              '💡 ¿Podés guardar los cuadernos si la mochila todavía está cerrada?',
-              '💡 Lo primero es abrirla y lo último es cerrarla.',
-              '💡 El orden es: 1. Abrir ➡️ 2. Guardar cuadernos ➡️ 3. Guardar cartuchera ➡️ 4. Cerrar.'
+              '💡 ¿Podés guardar los cuadernos si la mochila todavía está cerrada? Pensá qué acción debe ser la primera.',
+              '💡 Abrir la mochila siempre va primero, y cerrar la mochila con el cierre va al final.',
+              '💡 Organizá: abrir la mochila, guardar los cuadernos y cartuchera, y finalmente cerrar la mochila.'
             ]
           },
 
@@ -963,7 +970,7 @@ const CODING_DATA = {
             id: 'g2_inst_missing',
             type: 'missing_step',
             title: '☕ Actividad 2: ¿Qué Paso Falta en el Té?',
-            instruction: 'A esta secuencia para preparar un té le falta un paso importante:',
+            instruction: '¡A esta secuencia para preparar un té le falta un paso indispensable!\n1. Leé los pasos en orden y localizá el hueco con el signo ❓.\n2. Pensá qué acción se necesita para que el saquito de té infusione en la taza.\n3. Hacé clic sobre la instrucción correcta entre las 3 opciones disponibles.\n4. El sistema verificará tu respuesta al instante y te explicará el resultado.',
             sequence: [
               { num: 1, icon: '🔥', text: 'Calentar el agua en la pava' },
               { num: 2, icon: '☕', text: 'Poner el saquito de té en la taza' },
@@ -976,9 +983,9 @@ const CODING_DATA = {
               { id: 't_opt3', text: 'Atarse los cordones', isCorrect: false, icon: '👟' }
             ],
             hints: [
-              '💡 Pensá: ¿cómo se prepara el té si el saquito está seco en la taza?',
-              '💡 Necesitamos verter el agua caliente sobre el saquito.',
-              '💡 La respuesta correcta es «Servir el agua caliente en la taza».'
+              '💡 Pensá: ¿cómo se prepara el té si el saquito está seco en la taza? Falta un líquido caliente.',
+              '💡 Necesitamos verter el agua caliente sobre el saquito para que tome color y sabor.',
+              '💡 La instrucción correcta para completar el paso 3 es «Servir el agua caliente en la taza».'
             ]
           },
 
@@ -987,7 +994,7 @@ const CODING_DATA = {
             id: 'g2_inst_error',
             type: 'find_error',
             title: '🪥 Actividad 3: ¿Qué Paso Está Mal?',
-            instruction: 'Mirá esta secuencia. ¿Cuál de estos pasos está en el momento EQUIVOCADO?',
+            instruction: '¡Detectá la instrucción que está en el momento equivocado!\n1. Observá la secuencia de pasos para cepillarse los dientes.\n2. Analizá cada acción y detectá qué paso se está realizando antes de tiempo o de forma incoherente.\n3. Tocá la tarjeta que contiene el error para depurar el procedimiento.\n4. Descubrí por qué esa instrucción no puede ejecutarse en ese momento.',
             steps: [
               { id: 't1', num: 1, text: 'Guardar el cepillo en el vaso del baño', isError: true, icon: '🚪' },
               { id: 't2', num: 2, text: 'Poner pasta dental en el cepillo', isError: false, icon: '🧴' },
@@ -996,9 +1003,9 @@ const CODING_DATA = {
             ],
             explanation: '¡No podemos guardar el cepillo antes de haberlo usado para cepillarnos los dientes!',
             hints: [
-              '💡 Fijate en qué momento se guarda el cepillo de dientes.',
-              '💡 Si guardás el cepillo en el paso 1, ¿con qué te vas a cepillar en el paso 3?',
-              '💡 El error está en el Paso 1: guardar el cepillo antes de lavarse.'
+              '💡 Fijate en qué momento se guarda el cepillo de dientes en el vaso.',
+              '💡 Si guardás el cepillo en el paso 1, ¿con qué te vas a cepillar los dientes en el paso 3?',
+              '💡 El error está en el Paso 1: guardar el cepillo antes de haberse cepillado y enjuagado.'
             ]
           },
 
@@ -1007,7 +1014,7 @@ const CODING_DATA = {
             id: 'g2_inst_first',
             type: 'which_first_or_after',
             title: '🚦 Actividad 4: ¿Qué Debemos Hacer Primero?',
-            instruction: 'Elegí la acción que debe realizarse antes por seguridad o lógica:',
+            instruction: '¡En muchas situaciones cotidianas, realizar una acción previa es obligatorio por seguridad o lógica!\n1. Analizá con atención la situación planteada (cruzar la calle).\n2. Compará las alternativas y determiná cuál debe ejecutarse siempre en primer lugar.\n3. Tocá la opción correcta para avanzar al siguiente desafío.',
             mode: 'first',
             challenges: [
               {
@@ -1028,9 +1035,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              '💡 Pensá qué acción es indispensable para empezar con seguridad.',
-              '💡 Mirar hacia ambos lados evita accidentes.',
-              '💡 La primera opción es la condición correcta.'
+              '💡 Pensá qué acción es indispensable para empezar cualquier actividad con total seguridad.',
+              '💡 Mirar hacia ambos lados antes de cruzar la calle evita accidentes y peligros.',
+              '💡 La primera opción («Mirar para ambos lados») es la precondición obligatoria.'
             ]
           },
 
@@ -1039,7 +1046,7 @@ const CODING_DATA = {
             id: 'g2_inst_last',
             type: 'which_first_or_after',
             title: '📦 Actividad 5: ¿Qué Debemos Hacer al Final?',
-            instruction: 'Elegí la acción que corresponde al cierre de cada tarea:',
+            instruction: '¡Toda secuencia completa tiene una instrucción clara de cierre y orden!\n1. Leé la tarea cotidiana y las acciones posibles.\n2. Identificá qué acción concluye la actividad y deja todo en orden al terminar.\n3. Tocá la opción que representa el paso final correcto.',
             mode: 'last',
             challenges: [
               {
@@ -1060,9 +1067,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              '💡 Pensá en cómo se concluye una rutina de forma responsable.',
-              '💡 Guardar las cosas en su lugar es la última etapa.',
-              '💡 Elegí la acción que concluye la tarea.'
+              '💡 Pensá en cómo se concluye una rutina responsable en el aula o en el hogar.',
+              '💡 Dejar las cosas guardadas en su lugar correspondiente es la última etapa de todo trabajo.',
+              '💡 Elegí la acción que cierra y deja limpio el espacio de juego o estudio.'
             ]
           },
 
@@ -1071,7 +1078,7 @@ const CODING_DATA = {
             id: 'final_challenge',
             type: 'final_challenge',
             title: '🥪 Actividad 6: El Desayuno Saludable de Byte',
-            instruction: 'Selecciona y ordena las 4 instrucciones indispensables (descarta los 2 distractores):',
+            instruction: '¡Byte necesita tu ayuda para preparar su desayuno saludable sin equivocarse!\n1. Observá las tarjetas del banco de instrucciones.\n2. Tocá las 4 instrucciones indispensables para armar el desayuno y agregalas al panel (descartá los 2 distractores que no tienen nada que ver).\n3. Usá los botones ▲ y ▼ para ordenar los pasos de arriba hacia abajo.\n4. Cuando tu secuencia esté lista, presioná «🚀 COMPROBAR SECUENCIA».\n5. ¡Podés encender la música retro 🎵 para acompañar el desafío!',
             pool: [
               { id: 'bowl', icon: '🥣', text: 'Buscar el bol limpio', isRequired: true, correctPos: 1 },
               { id: 'cereal', icon: '🌾', text: 'Servir los cereales crocantes', isRequired: true, correctPos: 2 },
@@ -1082,9 +1089,9 @@ const CODING_DATA = {
             ],
             requiredCount: 4,
             hints: [
-              '💡 Descartá las acciones que no tienen que ver con desayunar (fútbol y guitarra).',
-              '💡 Primero va el bol, después el cereal y luego la leche.',
-              '💡 Secuencia: 1. Bol ➡️ 2. Cereal ➡️ 3. Leche ➡️ 4. Comer.'
+              '💡 Descartá las acciones distractoras que no pertenecen a la cocina (fútbol y guitarra).',
+              '💡 En el desayuno: primero buscás el bol, después servís el cereal y luego agregás la leche.',
+              '💡 Al final de todo usás la cuchara para comer. Ordená: Bol ➡️ Cereal ➡️ Leche ➡️ Comer.'
             ]
           },
 
@@ -1093,7 +1100,7 @@ const CODING_DATA = {
             id: 'g2_inst_byte_mission',
             type: 'byte_mission',
             title: '🎮 Misión Final: ¡Llegá a la Meta!',
-            instruction: '¡Ayudá a Byte a llegar a su casa! Usá las instrucciones para guiarlo por el camino evitando los obstáculos.',
+            instruction: '¡Guiá a Byte hasta su casa esquivando el pozo de agua!\n1. Observá el mapa, el punto de inicio de Byte y la ubicación de su casa 🏠.\n2. Trazá mentalmente el camino libre y notá dónde está el pozo 🕳️.\n3. Agregá al panel de comandos las instrucciones necesarias (avanzar, girar, saltar) en el orden correcto.\n4. Presioná «▶️ EJECUTAR» para ver a Byte moverse paso a paso.\n5. Si Byte choca o cae, observá en qué paso ocurrió, corregí las flechas y volvé a intentarlo.\n6. ¡Activá la música de 8 bits con el botón 🎵 para sumergirte en la aventura retro!',
             characterName: 'Byte',
             characterIcon: '🤖',
             goalName: 'Casa de Byte',
@@ -1119,9 +1126,9 @@ const CODING_DATA = {
               down: '⬇️ Bajar'
             },
             hints: [
-              '💡 Observá el camino: primero avanzá hacia la derecha.',
-              '💡 Hay un pozo en el camino. Usá SALTAR después del segundo paso para no caerte.',
-              '💡 Después del salto, subí hacia arriba y avanzá hacia la casa de Byte.'
+              '💡 Observá el camino: primero avanzá hacia la derecha por la fila inferior.',
+              '💡 Hay un pozo en el camino: usá SALTAR después del segundo paso para no caerte.',
+              '💡 Después del salto, subí hacia arriba y avanzá directamente hacia la casa de Byte.'
             ]
           }
         ]
@@ -1564,7 +1571,7 @@ const CODING_DATA = {
       colorClass: 'coding-g-3',
       accentColor: '#eab308',
       description: 'Seguir instrucciones para resolver caminos en mapas y descubrir la regla de patrones.',
-      instructions: {
+            instructions: {
         title: 'Instrucciones',
         activities: [
           // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
@@ -1572,23 +1579,28 @@ const CODING_DATA = {
             id: 'g3_inst_theory',
             type: 'theory',
             title: '📖 ¿Qué son las Instrucciones en Programación?',
-            intro: '¡Hola, explorador! En programación, las instrucciones le indican a un robot o computadora cómo resolver un problema. ¡El orden de las instrucciones puede cambiar el resultado!',
-            quote: 'Las instrucciones deben ser claras y ordenadas. Si cambiamos el orden, ¡el resultado puede cambiar por completo!',
+            intro: '¡Hola, explorador de caminos! En programación, las instrucciones le indican a un robot o computadora cómo recorrer un mapa y resolver un problema paso a paso. Las computadoras no adivinan intenciones: ejecutan cada orden en una secuencia estricta. ¡El orden de las instrucciones puede cambiar el resultado por completo!',
+            quote: 'Las instrucciones deben ser claras, precisas y ordenadas. Si una instrucción falta o se ejecuta antes de tiempo, el resultado no será el esperado.',
             pillars: [
               {
                 icon: '💻',
-                title: 'Comandos Precisos',
-                desc: 'Son órdenes de programación que le indican a una máquina qué acción ejecutar.'
+                title: 'Instrucciones y Mapas',
+                desc: 'En programación, las instrucciones indican movimientos concretos para guiar a un personaje por un laberinto.'
               },
               {
-                icon: '🎯',
-                title: 'Claridad Total',
-                desc: 'Deben ser exactas: no es lo mismo decir "avanzá un poco" que "avanzá 2 pasos hacia adelante".'
+                icon: '🗺️',
+                title: 'Planificar el Recorrido',
+                desc: 'Observá el punto de partida, los giros y los obstáculos antes de programar para no chocar.'
               },
               {
                 icon: '🔀',
-                title: '¡El Orden Importa!',
-                desc: 'Las instrucciones se ejecutan en secuencia. Cambiar el orden altera el resultado final.'
+                title: '¡El Orden es Clave!',
+                desc: 'Si Byte gira antes de tiempo o avanza cuando debe doblar, terminará en un lugar equivocado.'
+              },
+              {
+                icon: '🔧',
+                title: 'Depurar y Corregir',
+                desc: 'Si el programa falla, revisamos qué paso falló o cuál faltó para corregir la secuencia.'
               }
             ],
             demoType: 'order_matters_g3',
@@ -1600,7 +1612,7 @@ const CODING_DATA = {
             id: 'g3_inst_order_arrows',
             type: 'order_steps',
             title: '🗺️ Actividad 1: Ordená las Instrucciones del Camino',
-            instruction: 'Ayudá a Byte a llegar a la escuela 🏫 siguiendo el camino de baldosas. Observá el mapa y ordená las 4 instrucciones:',
+            instruction: '¡Ayudá a Byte a llegar a la escuela 🏫 siguiendo el camino del mapa!\n1. Observá el mapa visual: fijate dónde inicia Byte 🤖 y dónde está la escuela 🏫.\n2. Mirá las 4 instrucciones de movimiento (flechas) que aparecen desordenadas.\n3. Usá los botones ▲ y ▼ para ordenar las flechas de modo que sigan las baldosas libres sin chocar contra las rocas.\n4. Presioná «¡Comprobar Orden!» para ver a Byte avanzar paso a paso por el mapa.\n5. ¡Podés activar la música de 8 bits con el botón 🎵!',
             map: {
               cols: 3,
               rows: 3,
@@ -1626,18 +1638,18 @@ const CODING_DATA = {
             correctOrder: ['ar_r1', 'ar_r2', 'ar_d1', 'ar_d2'],
             expectedDirs: ['right', 'right', 'down', 'down'],
             hints: [
-              '💡 Observá el mapa: Byte camina por el sendero superior hacia la derecha.',
-              '💡 Al llegar a la esquina, dobla hacia abajo para entrar a la escuela.',
-              '💡 Secuencia necesaria: ➡️ ➡️ ⬇️ ⬇️.'
+              '💡 Observá el mapa: Byte debe caminar por el sendero superior hacia la derecha.',
+              '💡 Al llegar a la esquina superior derecha, debe doblar hacia abajo para entrar a la escuela.',
+              '💡 Ordená las flechas para que primero avance dos veces a la derecha y luego baje dos veces.'
             ]
           },
 
-          // 2. ACTIVIDAD 2 — ELEGÍ EL CAMINO CORRECTO (Con Mapa Visual y sin spoilers)
+          // 2. ACTIVIDAD 2 — ELEGÍ EL CAMINO CORRECTO (Con Mapa Visual)
           {
             id: 'g3_inst_choose_path',
             type: 'choose_path',
             title: '🧭 Actividad 2: Elegí el Camino Correcto',
-            instruction: 'Mirá el mapa del recorrido y elegí cuál de los dos caminos lleva a Byte seguro a la meta sin chocar contra los obstáculos:',
+            instruction: '¡Hay dos caminos posibles, pero solo uno conduce a la meta sin chocar contra los obstáculos!\n1. Observá atentamente el mapa y dónde están las rocas o pozos de agua.\n2. Leé cada una de las opciones de flechas y seguilas mentalmente sobre el mapa.\n3. Tocá la opción que describe el camino seguro hacia la gema o corona.\n4. El sistema verificará tu elección y te mostrará la simulación paso a paso.',
             challenges: [
               {
                 question: 'Byte quiere llegar a la corona 👑 pero una gran roca 🪨 bloquea el paso hacia abajo. ¿Cuál de los dos caminos es seguro?',
@@ -1718,9 +1730,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              '💡 Observá atentamente dónde están los obstáculos en el mapa.',
+              '💡 Observá atentamente dónde están los obstáculos de piedra en el mapa.',
               '💡 Seguí con la mirada las flechas de cada opción sobre el mapa antes de elegir.',
-              '💡 Elegí el camino que camina por las baldosas libres sin chocar.'
+              '💡 Elegí el camino que camina exclusivamente por las baldosas libres sin chocar.'
             ]
           },
 
@@ -1729,7 +1741,7 @@ const CODING_DATA = {
             id: 'g3_inst_wrong_step',
             type: 'find_error',
             title: '🚫 Actividad 3: Encontrá el Paso Incorrecto',
-            instruction: 'Byte quiere llegar a la gema 💎 pero una instrucción del recorrido es errónea. Mirá el mapa y tocá la instrucción equivocada:',
+            instruction: '¡Una de las instrucciones de esta ruta está equivocada y provocará un choque!\n1. Observá el mapa y la secuencia de pasos programados en la lista.\n2. Seguí paso a paso el recorrido de Byte sobre las baldosas libres.\n3. Identificá cuál es la instrucción que se desvía del sendero hacia una pared o roca.\n4. Hacé clic sobre el paso defectuoso para corregir el programa y salvar a Byte.',
             map: {
               cols: 3,
               rows: 3,
@@ -1758,8 +1770,8 @@ const CODING_DATA = {
             explanation: '¡El Paso 3 es el error! La flecha ⬆️ choca contra el muro de piedra 🧱. Para llegar a la gema 💎, Byte debe bajar.',
             hints: [
               '💡 Fijate hacia dónde debe moverse Byte en el mapa para no chocar.',
-              '💡 La gema está abajo, por lo tanto subir choca contra el muro de piedra.',
-              '💡 El paso incorrecto es el Paso 3 (⬆️ Subir).'
+              '💡 La gema está abajo; por lo tanto, una orden de subir choca contra el muro de piedra.',
+              '💡 Buscá el paso que tiene la dirección invertida o que choca contra el obstáculo.'
             ]
           },
 
@@ -1768,7 +1780,7 @@ const CODING_DATA = {
             id: 'g3_inst_missing_step',
             type: 'missing_step',
             title: '🧩 Actividad 4: Completá el Paso que Falta',
-            instruction: 'Observá el mapa. Falta una instrucción para que Byte complete el camino y llegue a la estrella ⭐:',
+            instruction: '¡El programa de Byte está casi listo, pero le falta una instrucción en una esquina clave!\n1. Observá el mapa y notá dónde se detiene la secuencia antes de llegar a la estrella ⭐.\n2. Determiná qué movimiento necesita hacer Byte para continuar por el sendero.\n3. Tocá la flecha correcta entre las opciones disponibles para completar la instrucción faltante.',
             map: {
               cols: 3,
               rows: 3,
@@ -1797,18 +1809,18 @@ const CODING_DATA = {
               { id: 'opt_up', text: '⬆️ Subir hacia el pasto', isCorrect: false, icon: '⬆️' }
             ],
             hints: [
-              '💡 Mirá el mapa: en la esquina superior, Byte necesita doblar hacia abajo.',
-              '💡 Volver hacia atrás alejaría a Byte de la estrella.',
-              '💡 La instrucción que completa el giro es ⬇️ Bajar.'
+              '💡 Mirá el mapa: en la esquina superior, Byte necesita doblar hacia abajo para continuar.',
+              '💡 Volver hacia atrás o subir hacia el pasto alejaría a Byte de la estrella.',
+              '💡 La instrucción que completa el giro hacia el sendero inferior es ⬇️ Bajar.'
             ]
           },
-          
+
           // 5. ACTIVIDAD 5 — LLEVÁ AL PERSONAJE HASTA EL OBJETIVO
           {
             id: 'grid_byte_g3',
             type: 'grid_movement',
             title: '🤖 Actividad 5: Llevá al Personaje hasta el Objetivo',
-            instruction: 'Programá a Byte con las flechas para llegar hasta la corona 👑 esquivando las rocas 🪨:',
+            instruction: '¡Programá a Byte directamente en el mapa para alcanzar la corona 👑 esquivando las rocas!\n1. Observá el tablero con la posición de Byte y la ubicación de la corona.\n2. Mirá dónde están las rocas 🪨 para trazar un camino despejado.\n3. Tocá las flechas de dirección (⬆️, ⬇️, ⬅️, ➡️) para armar tu programa. Si te equivocás, usá ⌫ Borrar.\n4. Cuando tu secuencia esté lista, presioná «▶️ EJECUTAR PROGRAMA» para ver a Byte avanzar.\n5. ¡Podés activar la música de 8 bits con el botón 🎵!',
             gridSize: 4,
             startPos: { x: 0, y: 0 },
             targetPos: { x: 3, y: 3 },
@@ -1819,9 +1831,9 @@ const CODING_DATA = {
               { x: 1, y: 3 }
             ],
             hints: [
-              '💡 Podés avanzar por la fila superior hacia la derecha y luego bajar.',
-              '💡 Ruta recomendada: ➡️ ➡️ ➡️ (llegás a la esquina) y luego ⬇️ ⬇️ ⬇️ (llegás a la corona).',
-              '💡 Programá: ➡️ ➡️ ➡️ ⬇️ ⬇️ ⬇️.'
+              '💡 Podés avanzar por la fila superior hacia la derecha y luego bajar directamente.',
+              '💡 Ruta recomendada: 3 pasos a la derecha hasta la esquina, y luego 3 pasos hacia abajo.',
+              '💡 Ingresá los movimientos en orden y verificá que no toquen ningún casillero con rocas.'
             ]
           },
 
@@ -1830,7 +1842,7 @@ const CODING_DATA = {
             id: 'final_challenge',
             type: 'final_challenge',
             title: '🗺️ Actividad 6: La Gran Búsqueda del Tesoro',
-            instruction: 'Selecciona y ordena las 5 instrucciones indispensables descartando los 2 distractores:',
+            instruction: '¡Planificá la expedición de Byte para abrir el cofre del tesoro!\n1. Observá las tarjetas del banco de instrucciones disponibles.\n2. Seleccioná las 5 instrucciones indispensables para la misión y descartá los 2 distractores.\n3. Reordená las tarjetas con los botones ▲ y ▼ en el orden lógico de la aventura: mapa, linterna, caminar, llave y abrir el cofre.\n4. Presioná «🚀 COMPROBAR SECUENCIA» para verificar tu expedición.\n5. ¡Activá la música retro 🎵 para ambientar la búsqueda!',
             pool: [
               { id: 'map', icon: '🗺️', text: 'Consultar el mapa del tesoro', isRequired: true, correctPos: 1 },
               { id: 'torch', icon: '🔦', text: 'Encender la linterna de exploración', isRequired: true, correctPos: 2 },
@@ -1842,9 +1854,9 @@ const CODING_DATA = {
             ],
             requiredCount: 5,
             hints: [
-              '💡 Guitarra y bailar son distractores.',
-              '💡 Primero mapa y linterna, luego caminar hacia el cofre.',
-              '💡 Secuencia: 1. Mapa ➡️ 2. Linterna ➡️ 3. Caminar ➡️ 4. Llave ➡️ 5. Corona.'
+              '💡 Guitarra y bailar son acciones distractoras que no ayudan a explorar la cueva.',
+              '💡 Primero consultás el mapa y encendés la linterna, luego caminás hacia el cofre.',
+              '💡 Al llegar al cofre, insertás la llave para abrirlo y tomar la corona dorada.'
             ]
           },
 
@@ -1853,7 +1865,7 @@ const CODING_DATA = {
             id: 'g3_inst_byte_mission',
             type: 'byte_mission',
             title: '🎮 Misión Final: ¡Llegá a la Meta!',
-            instruction: '¡Ayudá a Byte a llegar a su laboratorio! Planificá sus movimientos y usá el salto para superar los dos obstáculos del camino.',
+            instruction: '¡El gran desafío final de 3.º grado! Llevá a Byte a su laboratorio esquivando dos obstáculos.\n1. Inspeccioná el mapa: identificá a Byte, el pozo en la fila inferior, la roca superior y la entrada al laboratorio 🔬.\n2. Planificá la combinación de movimientos y saltos necesarios para superar cada peligro.\n3. Agregá los comandos en orden al panel de programación.\n4. Presioná «▶️ EJECUTAR» para comprobar si tu programa guía a Byte a destino.\n5. ¡Podés activar la música retro 🎵 para una experiencia de videojuego total!',
             characterName: 'Byte',
             characterIcon: '🤖',
             goalName: 'Laboratorio de Byte',
@@ -1883,7 +1895,7 @@ const CODING_DATA = {
             },
             hints: [
               '💡 El recorrido tiene 2 obstáculos: un pozo en la fila inferior y una roca antes del laboratorio.',
-              '💡 Avanzá a la derecha y saltá el pozo para llegar a la esquina.',
+              '💡 Avanzá a la derecha y usá SALTAR justo frente al pozo para llegar a la esquina.',
               '💡 Subí dos casilleros y saltá hacia arriba para superar la roca antes de entrar al laboratorio.'
             ]
           }
@@ -2312,36 +2324,36 @@ const CODING_DATA = {
       colorClass: 'coding-g-4',
       accentColor: '#ff9800',
       description: 'Crear secuencias para resolver problemas, debugging y patrones numéricos.',
-      instructions: {
+            instructions: {
         title: 'Instrucciones',
         activities: [
-          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
+          // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES Y LOS ALGORITMOS?
           {
             id: 'g4_inst_theory',
             type: 'theory',
-            title: '📖 ¿Qué son las Instrucciones en Programación?',
-            intro: '¡Hola, detective! En programación, las instrucciones son los bloques fundamentales de un algoritmo. Conocer su orden, secuencia y cómo evitar errores te convertirá en un gran programador.',
-            quote: 'Un programa es una secuencia ordenada de instrucciones. Cada orden debe ser clara y precisa para que la computadora produzca el resultado esperado.',
+            title: '📖 Algoritmos: Instrucciones Ordenadas para Resolver Problemas',
+            intro: '¡Hola, detective del código! En programación, las instrucciones son los bloques fundamentales de un algoritmo. Un algoritmo es un conjunto ordenado y finito de pasos claros para resolver un problema o cumplir una tarea (como una receta de cocina, las reglas de un juego o un programa informático). ¡Las computadoras no adivinan: necesitan parámetros exactos!',
+            quote: 'Un programa es una secuencia ordenada de instrucciones claras y precisas. Cuando una instrucción falla o está en el orden equivocado, detectamos el error (bug) y lo corregimos.',
             pillars: [
               {
-                icon: '🧩',
-                title: 'Bloques del Algoritmo',
-                desc: 'Una instrucción es una orden unívoca. Al conectar varias instrucciones en orden creamos un programa.'
-              },
-              {
-                icon: '🔢',
-                title: 'Secuencia y Resultado',
-                desc: 'La secuencia define el orden de ejecución. Si se altera el orden, el resultado cambia o falla.'
+                icon: '📋',
+                title: '¿Qué es un Algoritmo?',
+                desc: 'Un algoritmo es un conjunto ordenado de instrucciones que resuelve un problema paso a paso.'
               },
               {
                 icon: '🎯',
-                title: 'Precisión vs Ambigüedad',
-                desc: 'Las computadoras no adivinan. Órdenes vagas causan fallos; requieren parámetros exactos.'
+                title: 'Precisión y Parámetros',
+                desc: 'Las computadoras no adivinan. Órdenes vagas causan fallos; requieren parámetros exactos como distancia y dirección.'
               },
               {
                 icon: '🔍',
                 title: 'Depuración (Debugging)',
-                desc: 'Cuando una instrucción está fuera de lugar o mal redactada, produce un error (bug) que debemos corregir.'
+                desc: 'Cuando una instrucción falla o está fuera de lugar, produce un error (bug) que debemos identificar y corregir.'
+              },
+              {
+                icon: '🚀',
+                title: 'Planificar antes de Ejecutar',
+                desc: 'El programador anticipa mentalmente el resultado de cada instrucción antes de ejecutar su programa.'
               }
             ],
             demoType: 'clarity_params_g4',
@@ -2353,7 +2365,7 @@ const CODING_DATA = {
             id: 'g4_inst_order',
             type: 'order_steps',
             title: '🍪 Actividad 1: Algoritmo para Hornear Galletitas',
-            instruction: 'Ordená cronológicamente las 5 instrucciones del algoritmo de cocina:',
+            instruction: '¡Un algoritmo de cocina requiere seguir los pasos en un orden estricto!\n1. Leé atentamente las 5 instrucciones desordenadas de la receta.\n2. Usá los botones ▲ y ▼ para mover cada paso hasta la posición correcta.\n3. Pensá qué ingredientes se mezclan primero, cuándo se cortan las formas, cuándo se colocan en la bandeja, cuándo se hornea y cuándo se deja enfriar.\n4. Hacé clic en «¡Comprobar Algoritmo!» para verificar tu solución.',
             items: [
               { id: 'bk_mix', icon: '🥣', text: 'Mezclar harina, manteca y azúcar en el bol' },
               { id: 'bk_shape', icon: '🍪', text: 'Cortar las formas de las galletitas' },
@@ -2363,9 +2375,9 @@ const CODING_DATA = {
             ],
             correctOrder: ['bk_mix', 'bk_shape', 'bk_tray', 'bk_bake', 'bk_cool'],
             hints: [
-              '💡 Pensá en las etapas de una receta: masa ➡️ formas ➡️ bandeja ➡️ horno ➡️ enfriar.',
-              '💡 No se puede hornear antes de cortar las formas.',
-              '💡 El orden es: 1. Mezclar ➡️ 2. Formas ➡️ 3. Bandeja ➡️ 4. Hornear ➡️ 5. Enfriar.'
+              '💡 Pensá en las etapas lógicas de una receta: preparación de masa ➡️ formas ➡️ bandeja ➡️ cocción ➡️ enfriamiento.',
+              '💡 No se puede hornear antes de haber cortado las formas y colocado la masa en la bandeja.',
+              '💡 El orden secuencial es: mezclar masa, cortar formas, colocar en bandeja, hornear y dejar enfriar.'
             ]
           },
 
@@ -2374,7 +2386,7 @@ const CODING_DATA = {
             id: 'g4_inst_debug',
             type: 'find_error',
             title: '🔍 Actividad 2: Encontrá el Error (Debugging)',
-            instruction: 'Un «bug» es un error que rompe un programa. Tocá la instrucción que traba este algoritmo:',
+            instruction: '¡Un «bug» es un error que rompe la ejecución de un programa!\n1. Leé la secuencia de pasos paso a paso para servir un vaso de agua.\n2. Detectá qué acción absurda o fuera de lugar fue insertada en el algoritmo y bloquea la meta.\n3. Tocá la instrucción defectuosa para depurar (debuggear) el programa.',
             steps: [
               { id: 'w1', num: 1, text: 'Tomar el vaso limpio de la alacena', isError: false, icon: '🥛' },
               { id: 'w2', num: 2, text: 'Llenar el vaso con agua fresca', isError: false, icon: '💧' },
@@ -2383,9 +2395,9 @@ const CODING_DATA = {
             ],
             explanation: '¡Si guardás el vaso bajo llave en el ropero en el paso 3, es imposible beber de él en el paso 4!',
             hints: [
-              '💡 Buscá el paso que impide cumplir el objetivo final.',
-              '💡 Bloquear el vaso con llave es un bug crítico.',
-              '💡 El paso con error es el Paso 3.'
+              '💡 Buscá el paso que impide cumplir el objetivo final de beber el agua fresca.',
+              '💡 Guardar el vaso bajo llave en un ropero después de llenarlo bloquea el uso del vaso.',
+              '💡 El paso con el error crítico es el Paso 3 («Guardar el vaso con llave»).'
             ]
           },
 
@@ -2394,15 +2406,15 @@ const CODING_DATA = {
             id: 'g4_inst_complete',
             type: 'identify_instruction',
             title: '🎯 Actividad 3: Parámetros Claros vs Órdenes Confusas',
-            instruction: '¿Cuál de estas dos instrucciones contiene los parámetros precisos para que un robot la ejecute sin fallar?',
+            instruction: '¡Las computadoras necesitan órdenes precisas con parámetros numéricos claros!\n1. Leé las dos alternativas de instrucción para controlar un robot.\n2. Analizá cuál de ellas especifica distancia exacta y orientación, y cuál es ambigua.\n3. Tocá la instrucción que contiene parámetros concretos para que el robot la ejecute sin fallar.',
             options: [
               { id: 'p1', text: '«Avanzá 5 metros en línea recta hacia el norte y frená.»', isInstruction: true, icon: '🧭' },
               { id: 'p2', text: '«Caminá un poco por ahí.»', isInstruction: false, icon: '❓' }
             ],
             hints: [
-              '💡 Los robots necesitan distancia exacta y dirección para saber cuándo detenerse.',
-              '💡 «Un poco por ahí» es una orden ambigua y confusa.',
-              '💡 La instrucción correcta especifica 5 metros y orientación norte.'
+              '💡 Los robots necesitan saber la distancia exacta en metros y la dirección cardinal para saber cuándo detenerse.',
+              '💡 Decir «caminá un poco por ahí» es una orden ambigua que una máquina no puede calcular.',
+              '💡 La instrucción correcta especifica parámetros numéricos claros (5 metros y orientación norte).'
             ]
           },
 
@@ -2411,7 +2423,7 @@ const CODING_DATA = {
             id: 'build_seq_g4',
             type: 'build_sequence',
             title: '🧪 Actividad 4: Creá la Secuencia del Experimento',
-            instruction: 'Selecciona y ordena del banco los 5 pasos lógicos para el experimento de ciencias (descarta el distractor):',
+            instruction: '¡Construí el algoritmo paso a paso para realizar el experimento científico de ciencias!\n1. Observá las acciones disponibles en la bandeja de comandos.\n2. Seleccioná y ordená los 5 pasos indispensables: antiparras, medir probeta, agregar sal, revolver y anotar resultados.\n3. Descartá el distractor que no pertenece a un laboratorio.\n4. Presioná «Verificar Experimento» para comprobar si tu procedimiento es seguro y efectivo.',
             pool: [
               { id: 'sq1', icon: '🥽', text: 'Ponerse antiparras de seguridad', correctPos: 1 },
               { id: 'sq2', icon: '🧪', text: 'Medir el agua en la probeta graduada', correctPos: 2 },
@@ -2422,9 +2434,9 @@ const CODING_DATA = {
             ],
             requiredCount: 5,
             hints: [
-              '💡 Descartá el distractor de nadar.',
-              '💡 La seguridad (antiparras) siempre va primero.',
-              '💡 Orden: 1. Antiparras ➡️ 2. Probeta ➡️ 3. Sal ➡️ 4. Revolver ➡️ 5. Anotar.'
+              '💡 Descartá el distractor de nadar en la pileta, que no tiene nada que ver con un laboratorio.',
+              '💡 Las normas de seguridad de laboratorio indican que las antiparras se colocan siempre antes de manipular sustancias.',
+              '💡 La secuencia de laboratorio es: antiparras, medir en probeta, sal, revolver y anotar en el cuaderno.'
             ]
           },
 
@@ -2433,7 +2445,7 @@ const CODING_DATA = {
             id: 'grid_byte_g4',
             type: 'grid_movement',
             title: '🤖 Actividad 5: Resolvé el Camino hacia la Bandera',
-            instruction: 'Guía a Byte hasta la bandera 🚩 esquivando la pared de rocas 🪨:',
+            instruction: '¡Diseñá un algoritmo de navegación en la cuadrícula para alcanzar la bandera evitando la muralla!\n1. Observá la posición inicial de Byte, los bloques de muralla de roca 🪨 y la bandera 🚩.\n2. Utilizá los controles de flechas para ingresar la secuencia de comandos.\n3. Presioná «▶️ EJECUTAR PROGRAMA» para correr tu código en tiempo real.\n4. Si encontrás un error, depuralo quitando pasos con ⌫ y volvé a probar.\n5. ¡Activá la música de 8 bits con el botón 🎵!',
             gridSize: 5,
             startPos: { x: 0, y: 0 },
             targetPos: { x: 4, y: 4 },
@@ -2445,9 +2457,9 @@ const CODING_DATA = {
               { x: 2, y: 3 }
             ],
             hints: [
-              '💡 Mirá el muro de rocas: abajo de todo hay un camino libre para cruzar.',
-              '💡 Bajá por la izquierda hasta el final del sendero y luego avanzá hacia la derecha.',
-              '💡 Secuencia recomendada: ⬇️ ⬇️ ⬇️ ⬇️ ➡️ ➡️ ➡️ ➡️.'
+              '💡 Mirá el muro de rocas: abajo de todo hay un pasaje despejado para cruzar hacia el otro lado.',
+              '💡 Bajá por la columna izquierda hasta el final del sendero y luego avanzá hacia la derecha hacia la bandera.',
+              '💡 Programá la ruta de descenso libre y luego el avance horizontal hacia la meta.'
             ]
           },
 
@@ -2456,7 +2468,7 @@ const CODING_DATA = {
             id: 'final_challenge',
             type: 'final_challenge',
             title: '📬 Actividad 6: Detective de Algoritmos - Envío Postal',
-            instruction: 'Selecciona y ordena las 5 fases indispensables para enviar una carta certificada (descarta los 2 distractores):',
+            instruction: '¡Elaborá el algoritmo logístico para enviar una encomienda postal certificada!\n1. Observá las tarjetas del banco de instrucciones.\n2. Seleccioná las 5 instrucciones indispensables y descartá los 2 distractores.\n3. Ordenalas con ▲ y ▼ en una secuencia coherente: redactar carta, colocar en sobre, estampilla, buzón y entrega.\n4. Presioná «🚀 COMPROBAR SECUENCIA» para verificar tu algoritmo.\n5. ¡Acompañá tu desafío con la música retro 🎵!',
             pool: [
               { id: 'write', icon: '✍️', text: 'Redactar el texto de la carta', isRequired: true, correctPos: 1 },
               { id: 'fold', icon: '📄', text: 'Doblar la hoja y colocarla en el sobre', isRequired: true, correctPos: 2 },
@@ -2468,9 +2480,9 @@ const CODING_DATA = {
             ],
             requiredCount: 5,
             hints: [
-              '💡 Piano y barrilete son distractores.',
-              '💡 La carta se redacta antes de doblarla adentro del sobre.',
-              '💡 Secuencia: 1. Redactar ➡️ 2. Sobre ➡️ 3. Estampilla ➡️ 4. Buzón ➡️ 5. Entrega.'
+              '💡 Tocar piano y remontar barrilete son acciones distractoras que no forman parte del correo postal.',
+              '💡 La carta se redacta antes de doblarla adentro del sobre y pegar la estampilla.',
+              '💡 Secuencia: 1. Redactar ➡️ 2. Sobre ➡️ 3. Estampilla ➡️ 4. Buzón ➡️ 5. Entrega postal.'
             ]
           },
 
@@ -2478,8 +2490,8 @@ const CODING_DATA = {
           {
             id: 'g4_inst_quiz_final',
             type: 'theory_quiz',
-            title: '🏆 Desafío Final: ¿Cuánto Aprendiste sobre las Instrucciones?',
-            instruction: 'Demostrá lo que aprendiste sobre las instrucciones respondiendo estas 5 preguntas conceptuales:',
+            title: '🏆 Desafío Final: ¿Cuánto Aprendiste sobre las Instrucciones y Algoritmos?',
+            instruction: '¡Demostrá tus conocimientos respondiendo las preguntas clave sobre algoritmos, secuencias y depuración!\n1. Leé cada pregunta con detenimiento.\n2. Elegí la respuesta que mejor define el concepto de programación.\n3. Completá las 5 preguntas para obtener tu puntaje de detective.',
             questions: [
               {
                 id: 'q1',
@@ -2544,7 +2556,7 @@ const CODING_DATA = {
             id: 'g4_inst_byte_mission',
             type: 'byte_mission',
             title: '🎮 Misión Final: ¡Llegá a la Meta!',
-            instruction: '¡Misión de Planificación! Programá la secuencia completa de movimientos y saltos para guiar a Byte a través del laberinto hasta la Central de Datos.',
+            instruction: '¡Misión de Planificación Avanzada! Guiá a Byte a través del laberinto hasta la Central de Datos 💻.\n1. Observá la cuadrícula con múltiples curvas y tres obstáculos: roca, bloque de datos y pozo.\n2. Planificá cada giro y salto antes de agregar las instrucciones al panel.\n3. Presioná «▶️ EJECUTAR» para observar la ejecución en tiempo real y validar tu algoritmo.\n4. Si Byte se desvía, corregí los pasos y volvé a intentar.\n5. ¡Pulsá el botón 🎵 para activar la música de 8 bits y vivir una auténtica aventura retro!',
             characterName: 'Byte',
             characterIcon: '🤖',
             goalName: 'Central de Datos',
@@ -2576,7 +2588,7 @@ const CODING_DATA = {
             hints: [
               '💡 Planificá el recorrido observando los tres obstáculos: roca en la fila 3, bloque en la subida y pozo en la bajada.',
               '💡 Subí dos casilleros y doblá a la derecha para saltar la roca.',
-              '💡 Subí y superá los obstáculos para conectar a Byte con la Central de Datos.'
+              '💡 Continuá subiendo y superá los obstáculos para conectar a Byte con la Central de Datos.'
             ]
           }
         ]
@@ -2972,36 +2984,36 @@ const CODING_DATA = {
       colorClass: 'coding-g-5',
       accentColor: '#9c27b0',
       description: 'Programación estructurada, repeticiones (bucles), debugging, optimización y reglas compuestas.',
-      instructions: {
+            instructions: {
         title: 'Instrucciones',
         activities: [
           // TEORÍA INICIAL — ¿QUÉ SON LAS INSTRUCCIONES EN PROGRAMACIÓN?
           {
             id: 'g5_inst_theory',
             type: 'theory',
-            title: '📖 ¿Qué son las Instrucciones en Programación?',
-            intro: '¡Hola, maestro del código! Las computadoras son máquinas deterministas: ejecutan estrictamente las instrucciones recibidas. Comprender la secuencia, precisión y ejecución es la base de todo software.',
+            title: '📖 Programación Avanzada: Secuencias, Estados y Determinismo',
+            intro: '¡Hola, maestro del código! Las computadoras son sistemas deterministas: ejecutan estrictamente las instrucciones programadas sin improvisar ni deducir intenciones humanas. Cada instrucción modifica variables en memoria (posición, batería, estado). Comprender la secuencia, las precondiciones, los bucles y la optimización es la base de todo software profesional.',
             quote: 'Una computadora ejecuta fielmente las instrucciones que recibe. Una orden incorrecta, ambigua o a destiempo altera el estado del sistema y produce un resultado inesperado.',
             pillars: [
               {
                 icon: '⚙️',
-                title: 'Determinismo y Ejecución',
-                desc: 'La computadora no interpreta intenciones ni corrige errores automáticamente; ejecuta exactamente el código.'
+                title: 'Determinismo Estricto',
+                desc: 'Las computadoras no interpretan intenciones ni corrigen errores solas: ejecutan exactamente el código escrito.'
               },
               {
-                icon: '📋',
-                title: 'Secuencia y Precondiciones',
+                icon: '📊',
+                title: 'Estado y Precondiciones',
                 desc: 'Cada instrucción altera el estado del sistema y requiere que la etapa previa sea válida (precondición).'
               },
               {
-                icon: '🎯',
-                title: 'Precisión y Parámetros',
-                desc: 'Cada comando debe especificar acción, objeto y parámetros precisos (distancia, rotación, condiciones).'
+                icon: '🔄',
+                title: 'Bucles y Repetición',
+                desc: 'Los bucles permiten ejecutar un grupo de instrucciones varias veces sin duplicar líneas de código redundantes.'
               },
               {
                 icon: '⚡',
                 title: 'Lógica y Optimización',
-                desc: 'Una instrucción puede ser válida pero estar mal ubicada o ser innecesaria. El buen código es claro y eficiente.'
+                desc: 'Entre varios algoritmos que resuelven un problema, el mejor es el más claro, robusto y eficiente en pasos.'
               }
             ],
             demoType: 'state_tracer_g5',
@@ -3013,7 +3025,7 @@ const CODING_DATA = {
             id: 'grid_byte_g5',
             type: 'grid_movement',
             title: '💻 Actividad 1: Llegá al Servidor Central',
-            instruction: 'Programá a Byte para llegar hasta el Servidor Central 💻 esquivando el firewall 🔥:',
+            instruction: '¡Programá a Byte para llegar hasta el Servidor Central 💻 esquivando el firewall 🔥!\n1. Analizá el mapa de red, los puntos bloqueados por el cortafuegos y el servidor de destino.\n2. Ingresá la secuencia de comandos de movimiento con las flechas de dirección.\n3. Hacé clic en «▶️ EJECUTAR PROGRAMA» para verificar la ejecución en memoria.\n4. Si hay fallos, revisá en qué paso se desvía la ruta y depurá tu código.\n5. ¡Pulsá el botón 🎵 para activar la música de 8 bits!',
             gridSize: 5,
             startPos: { x: 0, y: 0 },
             targetPos: { x: 4, y: 3 },
@@ -3027,7 +3039,7 @@ const CODING_DATA = {
             hints: [
               '💡 Mirá el cortafuegos 🔥: hay un espacio libre para pasar sin quemarse.',
               '💡 Bajá por la columna izquierda hasta el paso libre y luego avanzá hacia la derecha.',
-              '💡 Secuencia recomendada: ⬇️ ⬇️ ⬇️ ➡️ ➡️ ➡️ ➡️.'
+              '💡 Planificá el recorrido de modo que Byte no toque ningún casillero con fuego.'
             ]
           },
 
@@ -3036,7 +3048,7 @@ const CODING_DATA = {
             id: 'g5_inst_debug',
             type: 'find_error',
             title: '🔍 Actividad 2: Depuración de Flujo de Datos',
-            instruction: 'Un paso en este algoritmo viola la seguridad y provoca un fallo en el sistema. ¡Tocalo!',
+            instruction: '¡Detectá el error de precondición o secuencia en el flujo de ejecución!\n1. Analizá las instrucciones del programa y el estado de seguridad que generan.\n2. Encontrá la instrucción que viola la privacidad o que opera sobre un recurso sin inicializar.\n3. Seleccioná el paso defectuoso para corregir el bug.',
             steps: [
               { id: 'f1', num: 1, text: 'Seleccionar el paquete de datos en el sistema', isError: false, icon: '📁' },
               { id: 'f2', num: 2, text: 'Publicar la clave secreta en internet público', isError: true, icon: '⚠️' },
@@ -3045,9 +3057,9 @@ const CODING_DATA = {
             ],
             explanation: '¡Publicar la clave secreta en internet en el paso 2 destruye la seguridad del sistema!',
             hints: [
-              '💡 Buscá el paso que contradice el principio de privacidad y seguridad.',
-              '💡 Las claves nunca deben compartirse en público.',
-              '💡 El error está en el Paso 2.'
+              '💡 Buscá el paso que contradice el principio fundamental de privacidad y seguridad digital.',
+              '💡 Las claves secretas y contraseñas nunca deben compartirse en internet público.',
+              '💡 El error crítico está en el Paso 2 («Publicar la clave secreta en internet público»).'
             ]
           },
 
@@ -3056,7 +3068,7 @@ const CODING_DATA = {
             id: 'g5_inst_loops',
             type: 'loop_concept',
             title: '🔄 Actividad 3: Repetí un Paso (Bucles / Loops)',
-            instruction: 'En programación, en vez de escribir la misma orden muchas veces, usamos un BUCLE: ⬆️ × 4 significa repetir 4 veces.',
+            instruction: '¡Los bucles permiten repetir instrucciones idénticas sin escribir código duplicado!\n1. Observá la secuencia de pasos repetitivos que debe realizar Byte.\n2. Identificá qué comando se repite y cuántas veces debe iterar el bucle.\n3. Elegí la estructura de repetición óptima para simplificar el programa.',
             challenges: [
               {
                 question: '¿Cómo escribirías la secuencia ➡️ ➡️ ➡️ de forma más corta y eficiente?',
@@ -3080,9 +3092,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              '💡 Contá cuántas flechas iguales hay en la fila.',
-              '💡 La flecha indica la dirección y el número indica las repeticiones.',
-              '💡 3 flechas a la derecha se resumen en ➡️ × 3.'
+              '💡 Contá cuántas flechas idénticas consecutivas hay en la fila.',
+              '💡 El símbolo de flecha indica la dirección y el número tras la «×» indica las repeticiones.',
+              '💡 Por ejemplo, 3 flechas hacia la derecha se resumen de forma óptima en ➡️ × 3.'
             ]
           },
 
@@ -3091,7 +3103,7 @@ const CODING_DATA = {
             id: 'g5_inst_optimize',
             type: 'optimize_steps',
             title: '⚡ Actividad 4: Resolvé con Menos Pasos (Optimización)',
-            instruction: 'Dos programadores resolvieron el mismo problema. ¿Cuál de los dos algoritmos es más eficiente y usa menos instrucciones?',
+            instruction: '¡Optimizar significa lograr el mismo objetivo con la menor cantidad de instrucciones y recursos!\n1. Observá las alternativas de solución para la tarea planteada.\n2. Compará la cantidad de pasos de cada programa y su claridad lógica.\n3. Elegí la solución más eficiente y directa.',
             challenges: [
               {
                 problem: 'Llevar el dron desde la base hasta la antena repetidora.',
@@ -3117,9 +3129,9 @@ const CODING_DATA = {
               }
             ],
             hints: [
-              '💡 En informática, el código más corto y claro suele ser el más eficiente.',
-              '💡 Compará la cantidad de líneas e instrucciones de cada opción.',
-              '💡 El Algoritmo A comprime los pasos repetidos en bucles.'
+              '💡 En informática, el código más limpio, conciso y directo suele ser el más eficiente.',
+              '💡 Compará la cantidad de líneas e instrucciones de cada opción presentada.',
+              '💡 El algoritmo óptimo comprime los pasos repetidos en bucles y ahorra memoria.'
             ]
           },
 
@@ -3128,7 +3140,7 @@ const CODING_DATA = {
             id: 'build_seq_g5',
             type: 'build_sequence',
             title: '🧩 Actividad 5: Planificación de Algoritmo de Laboratorio',
-            instruction: 'Construye el procedimiento de laboratorio seleccionando y ordenando las 5 fases en orden estricto:',
+            instruction: '¡Diseñá un algoritmo completo con validación de precondiciones y control de procedimientos!\n1. Analizá las etapas requeridas para el proceso científico de laboratorio.\n2. Ordená las instrucciones asegurando que cada una prepare las condiciones para la siguiente: esterilizar, medir, temperatura, microscopio y bitácora.\n3. Descartá el distractor que no pertenece a un laboratorio.\n4. Presioná «Verificar Algoritmo» para validar la lógica del sistema.',
             pool: [
               { id: 'sq1', icon: '🧪', text: 'Esterilizar los tubos de ensayo', correctPos: 1 },
               { id: 'sq2', icon: '💧', text: 'Medir la solución en la probeta graduada', correctPos: 2 },
@@ -3139,9 +3151,9 @@ const CODING_DATA = {
             ],
             requiredCount: 5,
             hints: [
-              '💡 Descartá la patineta que no pertenece a un laboratorio.',
-              '💡 La esterilización siempre es la primera precondición.',
-              '💡 Orden: 1. Esterilizar ➡️ 2. Medir solución ➡️ 3. Temperatura ➡️ 4. Microscopio ➡️ 5. Bitácora.'
+              '💡 Descartá la patineta, que no pertenece al entorno seguro de un laboratorio.',
+              '💡 La esterilización de los instrumentos siempre es la primera precondición necesaria.',
+              '💡 Secuencia: 1. Esterilizar ➡️ 2. Medir solución ➡️ 3. Temperatura ➡️ 4. Microscopio ➡️ 5. Bitácora.'
             ]
           },
 
@@ -3150,7 +3162,7 @@ const CODING_DATA = {
             id: 'grid_byte_g5_final',
             type: 'grid_multi_goal',
             title: '🤖 Actividad 6: Gran Misión Algorítmica Multi-Objetivo',
-            instruction: 'Programá a Byte para cumplir los 3 objetivos en orden estricto: 💻 PC ➡️ 💾 Pendrive ➡️ 🚪 Puerta:',
+            instruction: '¡Misión avanzada: recolectá todos los objetivos en orden estricto antes de cruzar la puerta!\n1. Observá el mapa con las 3 metas consecutivas: Computadora 💻 ➡️ Pendrive 💾 ➡️ Puerta 🚪.\n2. Planificá una ruta completa que visite cada punto de control en el orden indicado sin quedar atrapado.\n3. Programá los movimientos con los controles de dirección y presioná «▶️ EJECUTAR PROGRAMA».\n4. ¡Activá la música retro 🎵 para acompañar esta gran misión final!',
             gridSize: 5,
             startPos: { x: 0, y: 0 },
             goals: [
@@ -3176,7 +3188,7 @@ const CODING_DATA = {
             id: 'g5_inst_quiz_final',
             type: 'theory_quiz',
             title: '🏆 Desafío Final: ¿Cuánto Aprendiste sobre las Instrucciones?',
-            instruction: 'Demostrá tu comprensión respondiendo estas 6 preguntas de razonamiento algorítmico:',
+            instruction: '¡Evaluá tu comprensión profunda sobre determinismo, algoritmos, loops y optimización de software!\n1. Leé cada desafío teórico con criterio de programador.\n2. Elegí la respuesta que mejor fundamenta la lógica computacional.\n3. Completá las 6 preguntas para graduarte como Maestro del Código.',
             questions: [
               {
                 id: 'q1',
@@ -3250,7 +3262,7 @@ const CODING_DATA = {
             hints: [
               '💡 Recordá que las computadoras son deterministas y no corrigen errores por sí solas.',
               '💡 Una precondición es el estado necesario para que una instrucción pueda ejecutarse.',
-              '💡 El trazado secuencial evalúa cómo cambian las variables paso a paso.'
+              '💡 El trazado secuencial evalúa cómo cambian las variables paso a paso en memoria.'
             ]
           },
 
@@ -3259,7 +3271,7 @@ const CODING_DATA = {
             id: 'g5_inst_byte_mission',
             type: 'byte_mission',
             title: '🎮 Misión Final: ¡Llegá a la Meta!',
-            instruction: '¡Desafío Algorítmico Avanzado! Planificá y optimizá la secuencia lógica de instrucciones para conducir a Byte hasta el portal mágico superando todos los obstáculos.',
+            instruction: '¡El desafío definitivo de programación para 5.º grado!\n1. Analizá el mapa maestro con obstáculos dinámicos (roca, barrera de energía, muro) y el portal mágico 🌀.\n2. Podés usar «🔁 Repetir 3 Pasos» para avanzar 3 pasos seguidos en tramos rectos.\n3. Planificá y optimizá la secuencia lógica de instrucciones para conducir a Byte al portal.\n4. Presioná «▶️ EJECUTAR» para ver tu código en acción.\n5. ¡Disfrutá de la música de 8 bits activándola con el botón 🎵!',
             characterName: 'Byte',
             characterIcon: '🤖',
             goalName: 'Portal Mágico',
@@ -3291,7 +3303,7 @@ const CODING_DATA = {
             },
             hints: [
               '💡 Identificá los 3 obstáculos: roca en la fila superior, barrera de energía en la bajada y muro antes del portal.',
-              '💡 Podés usar «🔁 Repetir 3 Pasos» para avanzar 3 pasos seguidos en tramos rectos.',
+              '💡 Podés usar «🔁 Repetir 3 Pasos» para avanzar 3 pasos seguidos en tramos rectos sin duplicar flechas.',
               '💡 Planificá el trazado con saltos precisos para alcanzar el portal mágico de Byte.'
             ]
           }
@@ -3797,6 +3809,131 @@ function getByteAvatarSvg(expression = 'normal') {
 // ========================================================
 // CONTROLADOR GENERAL DEL MÓDULO DE PROGRAMACIÓN
 // ========================================================
+
+// ========================================================
+// SINTETIZADOR DE MÚSICA RETRO DE 8 BITS (BYTE ADVENTURES)
+// Composición original y ligera usando Web Audio API puro
+// ========================================================
+class ByteBgmEngine {
+  constructor() {
+    this.audioCtx = null;
+    this.isPlaying = false;
+    this.timerId = null;
+    this.stepIndex = 0;
+    this.masterGain = null;
+
+    // Melodía original de aventuras estilo 8-bits alegre y retro (32 pasos = 2 compases)
+    this.melody = [
+      659.25, 0, 783.99, 0, 880.00, 987.77, 0, 880.00,
+      783.99, 0, 659.25, 0, 587.33, 659.25, 783.99, 0,
+      523.25, 0, 659.25, 0, 783.99, 880.00, 0, 783.99,
+      587.33, 0, 659.25, 0, 783.99, 0, 987.77, 0
+    ];
+
+    // Línea de bajo retro (onda triangular acompasada)
+    this.bass = [
+      164.81, 0, 164.81, 0, 196.00, 0, 220.00, 0,
+      130.81, 0, 130.81, 0, 146.83, 0, 164.81, 0,
+      130.81, 0, 130.81, 0, 164.81, 0, 196.00, 0,
+      146.83, 0, 146.83, 0, 196.00, 0, 246.94, 0
+    ];
+
+    this.tempoMs = 135; // ~111 BPM
+  }
+
+  ensureContext() {
+    if (!this.audioCtx) {
+      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtxClass) {
+        this.audioCtx = new AudioCtxClass();
+      }
+    }
+    if (this.audioCtx && this.audioCtx.state === 'suspended') {
+      this.audioCtx.resume();
+    }
+  }
+
+  start() {
+    this.stop();
+    this.ensureContext();
+    if (!this.audioCtx) return;
+
+    this.isPlaying = true;
+    this.stepIndex = 0;
+
+    // Ganancia master suave para no saturar ni tapar los efectos
+    this.masterGain = this.audioCtx.createGain();
+    this.masterGain.gain.setValueAtTime(0.065, this.audioCtx.currentTime);
+    this.masterGain.connect(this.audioCtx.destination);
+
+    this.scheduleNextStep();
+  }
+
+  stop() {
+    this.isPlaying = false;
+    if (this.timerId) {
+      clearTimeout(this.timerId);
+      this.timerId = null;
+    }
+    if (this.masterGain) {
+      try {
+        if (this.audioCtx) {
+          this.masterGain.gain.setValueAtTime(0, this.audioCtx.currentTime);
+        }
+        this.masterGain.disconnect();
+      } catch (e) {}
+      this.masterGain = null;
+    }
+  }
+
+  scheduleNextStep() {
+    if (!this.isPlaying || !this.audioCtx) return;
+
+    const now = this.audioCtx.currentTime;
+    const leadFreq = this.melody[this.stepIndex];
+    const bassFreq = this.bass[this.stepIndex];
+
+    // Melodía principal: onda cuadrada clásica retro con envolvente staccato
+    if (leadFreq > 0) {
+      const osc = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(leadFreq, now);
+
+      gain.gain.setValueAtTime(0.18, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.11);
+
+      osc.connect(gain);
+      gain.connect(this.masterGain);
+
+      osc.start(now);
+      osc.stop(now + 0.12);
+    }
+
+    // Acompañamiento de bajo: onda triangular suave
+    if (bassFreq > 0) {
+      const bassOsc = this.audioCtx.createOscillator();
+      const bassGain = this.audioCtx.createGain();
+      bassOsc.type = 'triangle';
+      bassOsc.frequency.setValueAtTime(bassFreq, now);
+
+      bassGain.gain.setValueAtTime(0.24, now);
+      bassGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+      bassOsc.connect(bassGain);
+      bassGain.connect(this.masterGain);
+
+      bassOsc.start(now);
+      bassOsc.stop(now + 0.13);
+    }
+
+    this.stepIndex = (this.stepIndex + 1) % this.melody.length;
+    this.timerId = setTimeout(() => {
+      this.scheduleNextStep();
+    }, this.tempoMs);
+  }
+}
+
 class CodingModuleManager {
   constructor(options = {}) {
     this.storage = new CodingProgressStorage();
@@ -3821,6 +3958,7 @@ class CodingModuleManager {
     this.gridCommands = [];
     this.gridPlayerPos = { x: 0, y: 0 };
     this.gridIsRunning = false;
+    this.bgmEngine = new ByteBgmEngine();
   }
 
   /**
@@ -3871,6 +4009,7 @@ class CodingModuleManager {
    */
   cleanupCurrentActivity() {
     this.stopSpeaking();
+    this.stopBgm();
     if (this.gridAnimationAbort) {
       this.gridAnimationAbort.isAborted = true;
       this.gridAnimationAbort = null;
@@ -4352,6 +4491,74 @@ class CodingModuleManager {
   /**
    * Renderiza la actividad activa en la pantalla
    */
+  
+  // ========================================================
+  // CONTROL DE MÚSICA RETRO DE 8 BITS (BYTE ADVENTURES)
+  // ========================================================
+  initBgmEngine() {
+    if (!this.bgmEngine) {
+      this.bgmEngine = new ByteBgmEngine();
+    }
+  }
+
+  toggleBgm() {
+    this.initBgmEngine();
+    if (this.bgmEngine.isPlaying) {
+      this.bgmEngine.stop();
+    } else {
+      this.bgmEngine.start();
+    }
+    this.updateBgmUi();
+  }
+
+  stopBgm() {
+    if (this.bgmEngine && this.bgmEngine.isPlaying) {
+      this.bgmEngine.stop();
+      this.updateBgmUi();
+    }
+  }
+
+  getBgmToggleHtml() {
+    const isPlaying = this.bgmEngine && this.bgmEngine.isPlaying;
+    const isGradeOne = this.currentGrade === 1;
+    const label = isGradeOne
+      ? (isPlaying ? '🎵 MÚSICA: SÍ' : '🎵 MÚSICA: NO')
+      : (isPlaying ? '🎵 Música: SÍ' : '🎵 Música: NO');
+    return `
+      <button type="button" class="btn-byte-bgm-toggle ${isPlaying ? 'is-playing' : ''}" id="btn-byte-bgm" title="${isGradeOne ? 'ACTIVAR O DESACTIVAR MÚSICA DE 8 BITS' : 'Activar o desactivar música retro de 8 bits'}">
+        <span class="bgm-icon">${isPlaying ? '🔊' : '🔇'}</span>
+        <span class="bgm-label">${label}</span>
+      </button>
+    `;
+  }
+
+  bindBgmToggle(container) {
+    const btn = (container ? container.querySelector('#btn-byte-bgm') : null) || document.getElementById('btn-byte-bgm');
+    if (btn) {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        this.toggleBgm();
+      };
+    }
+  }
+
+  updateBgmUi() {
+    const isPlaying = this.bgmEngine && this.bgmEngine.isPlaying;
+    const isGradeOne = this.currentGrade === 1;
+    const btns = document.querySelectorAll('.btn-byte-bgm-toggle');
+    btns.forEach(btn => {
+      btn.classList.toggle('is-playing', isPlaying);
+      const icon = btn.querySelector('.bgm-icon');
+      const label = btn.querySelector('.bgm-label');
+      if (icon) icon.textContent = isPlaying ? '🔊' : '🔇';
+      if (label) {
+        label.textContent = isGradeOne
+          ? (isPlaying ? '🎵 MÚSICA: SÍ' : '🎵 MÚSICA: NO')
+          : (isPlaying ? '🎵 Música: SÍ' : '🎵 Música: NO');
+      }
+    });
+  }
+
   renderCurrentActivity() {
     this.cleanupCurrentActivity();
     this.updateHud();
@@ -4492,16 +4699,55 @@ class CodingModuleManager {
   createActivityHeader(act, showReset = true) {
     const isGradeOne = this.currentGrade === 1;
     const titleText = isGradeOne ? act.title.toUpperCase() : act.title;
+    const isAdventure = ['byte_mission', 'grid_movement', 'grid_multi_goal', 'seed_interactive', 'final_challenge'].includes(act.type) || !!act.map;
+
+    let guideText = '';
+    if (act.type === 'order_steps') {
+      guideText = isGradeOne
+        ? '💡 TOCÁ LAS FLECHAS ▲ Y ▼ PARA CAMBIAR EL ORDEN. CUANDO EL PRIMER PASO ESTÉ ARRIBA Y EL ÚLTIMO ABAJO, TOCÁ «¡COMPROBAR ORDEN!». SI ALGO ESTÁ MAL, PODÉS CORREGIRLO.'
+        : '💡 Usá los botones ▲ y ▼ para mover cada tarjeta hacia arriba o hacia abajo. Cuando la secuencia esté en orden de principio a fin, presioná «¡Comprobar Orden!».';
+    } else if (act.type === 'grid_movement' || act.type === 'grid_multi_goal') {
+      guideText = isGradeOne
+        ? '💡 TOCÁ LAS FLECHAS DE DIRECCIÓN PARA ARMAR TU PROGRAMA. USÁ ⌫ BORRAR PARA CORREGIR. LUEGO PRESIONÁ «▶️ EJECUTAR PROGRAMA» PARA VER A BYTE MOVERSE.'
+        : '💡 Tocá las flechas de dirección (⬆️, ⬇️, ⬅️, ➡️) para ingresar los movimientos de Byte. Podés borrar pasos con ⌫. Cuando tu ruta esté lista, presioná «▶️ EJECUTAR PROGRAMA».';
+    } else if (act.type === 'byte_mission') {
+      guideText = isGradeOne
+        ? '💡 TOCÁ LAS FLECHAS DE MOVIMIENTO Y SALTO PARA AGREGAR PASOS AL PANEL. PODÉS BORRAR CON ⌫. LUEGO PRESIONÁ «▶️ EJECUTAR» PARA QUE BYTE SIGA TU PROGRAMA.'
+        : '💡 Agregá los comandos de movimiento y salto al panel en el orden correcto. Podés borrar o vaciar si te equivocás. Presioná «▶️ EJECUTAR» para que Byte realice el recorrido.';
+    } else if (act.type === 'final_challenge') {
+      guideText = isGradeOne
+        ? '💡 TOCÁ UNA TARJETA DEL BANCO PARA AGREGARLA A TU SECUENCIA (O PARA QUITARLA). REORDENÁ CON ▲ Y ▼. DESCARTÁ LOS DISTRACTORES Y TOCÁ «🚀 COMPROBAR SECUENCIA».'
+        : '💡 Tocá una instrucción del banco para agregarla a tu secuencia (o para devolverla). Reordená con ▲ y ▼. Descartá los distractores y presioná «🚀 COMPROBAR SECUENCIA».';
+    } else if (act.type === 'seed_interactive') {
+      guideText = isGradeOne
+        ? '💡 TOCÁ LAS 4 INSTRUCCIONES EN EL ORDEN NATURAL: PREPARAR TIERRA ➡️ SEMILLA ➡️ TAPAR ➡️ REGAR. SI TE EQUIVOCÁS, TOCÁ «REINICIAR».'
+        : '💡 Tocá las 4 instrucciones en orden: preparar tierra, colocar semilla, tapar y regar con agua. Si te equivocás, tocá «Reiniciar».';
+    } else if (act.type === 'which_first_or_after') {
+      guideText = isGradeOne
+        ? '💡 OBSERVÁ LAS OPCIONES Y PENSÁ CUÁL ES EL PASO CORRECTO. TOCÁ LA TARJETA ELEGIDA PARA AVANZAR.'
+        : '💡 Leé atentamente las opciones y elegí la acción que corresponde a la etapa indicada.';
+    } else if (act.type === 'find_error') {
+      guideText = isGradeOne
+        ? '💡 REVISÁ LA SECUENCIA PASO A PASO. TOCÁ LA TARJETA QUE TIENE EL PASO EQUIVOCADO O QUE NO PERMITE TERMINAR LA TAREA.'
+        : '💡 Analizá la secuencia paso a paso. Hacé clic sobre la instrucción que está en el momento equivocado o que traba el procedimiento.';
+    } else if (act.type === 'missing_step') {
+      guideText = isGradeOne
+        ? '💡 MIRÁ EL HUECO CON SIGNO ❓ Y LEÉ LAS OPCIONES. TOCÁ LA INSTRUCCIÓN QUE FALTA PARA COMPLETAR EL PROCEDIMIENTO.'
+        : '💡 Leé la secuencia y localizá el hueco ❓. Hacé clic sobre la instrucción que falta para que el procedimiento quede completo.';
+    }
+
     return `
       <div class="activity-top-bar">
-        <div style="display:flex; align-items:center; gap:8px;">
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
           <h3 style="font-size:1.35rem; color:#1e293b; margin:0; ${isGradeOne ? 'text-transform:uppercase;' : ''}">${titleText}</h3>
+          ${isAdventure ? this.getBgmToggleHtml() : ''}
         </div>
         <div style="display:flex; align-items:center; gap:10px;">
           <span id="attempts-counter-pill" class="attempts-pill"><span>🎯</span> ${isGradeOne ? 'INTENTOS: 0' : 'Intentos: 0'}</span>
           ${showReset ? `<button type="button" id="btn-reset-current-activity" class="btn-activity-reset">${isGradeOne ? '🔄 REINICIAR' : '🔄 Reiniciar'}</button>` : ''}
         </div>
       </div>
+      ${guideText ? `<div class="interaction-guide-callout ${isGradeOne ? 'g1-uppercase' : ''}"><span class="guide-icon">💡</span><span>${guideText}</span></div>` : ''}
       <div id="activity-hints-box" class="activity-hints-box"></div>
     `;
   }
@@ -4530,11 +4776,11 @@ class CodingModuleManager {
 
     container.innerHTML = `
       <div class="theory-wrapper">
-        <div style="background: #e0f2fe; border-left: 5px solid #0284c7; padding: 12px 18px; border-radius: 12px; margin-bottom: 16px;">
-          <strong style="color: #0369a1; font-size: 1.15rem;">${quoteText}</strong>
+        <div style="background: #e0f2fe; border-left: 5px solid #0284c7; padding: 14px 18px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);">
+          <strong style="color: #0369a1; font-size: 1.15rem; line-height: 1.4; display: block;">${quoteText}</strong>
         </div>
 
-        <h4 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 10px; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
+        <h4 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 12px; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
           🌟 ${isGradeOne ? 'CONCEPTOS FUNDAMENTALES:' : 'Conceptos Fundamentales:'}
         </h4>
         <div class="theory-cards-grid" style="${act.pillars && act.pillars.length === 4 ? 'grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));' : ''}">
@@ -4549,22 +4795,8 @@ class CodingModuleManager {
 
         <div id="theory-interactive-demo-area"></div>
 
-        ${act.examples && act.examples.length > 0 ? `
-          <h4 style="font-size: 1.25rem; color: #1e293b; margin: 18px 0 10px 0; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
-            🧸 ${isGradeOne ? 'EJEMPLOS COTIDIANOS:' : 'Ejemplos Cotidianos (Hacé clic para ver los pasos):'}
-          </h4>
-          <div class="daily-examples-row">
-            ${act.examples.map((ex, idx) => `
-              <button type="button" class="btn-example-tab ${idx === 0 ? 'active' : ''}" data-ex="${ex.id}">
-                <span>${ex.icon}</span> ${isGradeOne ? ex.name.toUpperCase() : ex.name}
-              </button>
-            `).join('')}
-          </div>
-          <div id="example-viewer-box" class="example-steps-viewer"></div>
-        ` : ''}
-
-        <div class="stage-actions-bar" style="margin-top:20px;">
-          <button type="button" id="btn-next-theory" class="btn-stage-next" style="padding:14px 28px; font-size:1.15rem;">
+        <div class="stage-actions-bar" style="margin-top:24px;">
+          <button type="button" id="btn-next-theory" class="btn-stage-next" style="padding:14px 32px; font-size:1.15rem;">
             <span>${buttonLabel}</span> ➡️
           </button>
         </div>
@@ -4577,35 +4809,8 @@ class CodingModuleManager {
       this.renderTheoryDemo(demoArea, act.demoType);
     }
 
-    if (act.examples && act.examples.length > 0) {
-      const renderExampleSteps = (exId) => {
-        const ex = act.examples.find(e => e.id === exId) || act.examples[0];
-        const viewer = document.getElementById('example-viewer-box');
-        if (!viewer) return;
-        viewer.innerHTML = `
-          <div style="font-weight:700; color:#0369a1; margin-bottom:10px;">${ex.icon} ${isGradeOne ? `PASOS PARA ${ex.name.toUpperCase()}:` : `Pasos para ${ex.name}:`}</div>
-          <div class="steps-list-horizontal">
-            ${ex.steps.map((s, i) => `
-              <div class="step-card-visual">
-                <span class="step-num-badge">${isGradeOne ? `PASO ${i + 1}` : `Paso ${i + 1}`}</span>
-                <div class="step-visual-icon">${s.icon}</div>
-                <span class="step-card-text">${isGradeOne ? s.text.toUpperCase() : s.text}</span>
-              </div>
-            `).join('')}
-          </div>
-        `;
-      };
-      renderExampleSteps(act.examples[0].id);
-
-      container.querySelectorAll('.btn-example-tab').forEach(btn => {
-        btn.onclick = () => {
-          container.querySelectorAll('.btn-example-tab').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          this.onPlaySound('click');
-          renderExampleSteps(btn.getAttribute('data-ex'));
-        };
-      });
-    }
+    // Configurar mini-comprobación interactiva en la teoría
+    this.setupTheoryComprehensionCheck(container);
 
     const btnNext = document.getElementById('btn-next-theory');
     if (btnNext) {
@@ -4618,6 +4823,48 @@ class CodingModuleManager {
   }
 
   /**
+   * Configura la interactividad de la mini-comprobación de teoría
+   */
+  setupTheoryComprehensionCheck(container) {
+    const isGradeOne = this.currentGrade === 1;
+    const options = container.querySelectorAll('.btn-theory-check-opt');
+    const feedback = container.querySelector('.theory-check-feedback');
+
+    options.forEach(opt => {
+      opt.onclick = () => {
+        options.forEach(b => {
+          b.classList.remove('correct', 'wrong');
+        });
+
+        const isCorrect = opt.dataset.correct === 'true';
+        if (isCorrect) {
+          opt.classList.add('correct');
+          this.onPlaySound('coin');
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.style.color = '#15803d';
+            feedback.innerHTML = isGradeOne
+              ? '⭐ ¡EXCELENTE! COMPRENDISTE MUY BIEN EL CONCEPTO.'
+              : '⭐ ¡Excelente! Comprendiste muy bien el concepto: una computadora necesita instrucciones claras para cada acción.';
+          }
+          this.updateByte(isGradeOne ? '¡EXCELENTE! COMPRENDISTE MUY BIEN EL CONCEPTO.' : '¡Excelente! Comprendiste muy bien el concepto.', 'happy');
+        } else {
+          opt.classList.add('wrong');
+          this.onPlaySound('wrong');
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.style.color = '#b91c1c';
+            feedback.innerHTML = isGradeOne
+              ? '💡 ¡CASI! RECORDÁ QUE LAS MÁQUINAS NO ADIVINAN: NECESITAN INSTRUCCIONES CLARAS.'
+              : '💡 ¡Casi! Recordá que las computadoras y robots no adivinan nuestros pensamientos: necesitan indicaciones paso a paso.';
+          }
+          this.updateByte(isGradeOne ? '¡CASI! LAS MÁQUINAS NO ADIVINAN.' : '¡Casi! Las máquinas no adivinan intenciones.', 'thinking');
+        }
+      };
+    });
+  }
+
+  /**
    * Renderiza demostraciones interactivas dentro de la teoría según el grado
    */
   renderTheoryDemo(container, demoType) {
@@ -4626,73 +4873,104 @@ class CodingModuleManager {
     switch (demoType) {
       case 'robot_commands_g1': {
         container.innerHTML = `
-          <div class="theory-demo-container">
-            <div class="theory-demo-title">🕹️ ¡PROBÁ DARLE UNA INSTRUCCIÓN A BYTE!</div>
-            <p class="theory-demo-subtitle">TOCÁ UN BOTÓN PARA VER CÓMO BYTE CUMPLE TU INDICACIÓN:</p>
-
-            <div class="theory-demo-stage-g1">
-              <div id="demo-byte-actor-g1" class="demo-byte-actor">
-                ${getByteAvatarSvg('normal')}
-              </div>
-              <div id="demo-byte-speech-g1" class="demo-speech-bubble-g1">
-                ¡ESTOY LISTO PARA TUS INSTRUCCIONES!
-              </div>
+          <div class="theory-simulator-box">
+            <div class="theory-simulator-header">
+              <span>🏠</span> ¿QUÉ NECESITA HACER BYTE PARA LLEGAR A SU CASA?
+            </div>
+            <div class="theory-simulator-desc">
+              TOCÁ CADA INSTRUCCIÓN PARA VER CÓMO SE MUEVE BYTE POR EL CAMINO:
             </div>
 
-            <div class="theory-demo-buttons-g1">
-              <button type="button" class="btn-demo-action" data-act="advance">
-                <span>🚶</span> AVANZAR UN PASO
+            <div class="theory-mini-stage" id="mini-stage-g1">
+              <div class="theory-mini-cell cell-byte-active" id="g1-cell-0" title="BYTE">🤖</div>
+              <div class="theory-mini-cell" id="g1-cell-1" title="CAMINO">➡️</div>
+              <div class="theory-mini-cell" id="g1-cell-2" title="PIEDRA">🪨</div>
+              <div class="theory-mini-cell" id="g1-cell-3" title="ESQUINA">🔄</div>
+              <div class="theory-mini-cell cell-target-active" id="g1-cell-4" title="CASA">🏠</div>
+            </div>
+
+            <div class="theory-sim-controls">
+              <button type="button" class="btn-theory-sim-action" data-act="walk">
+                <span>🚶</span> 1. AVANZAR POR EL CAMINO
               </button>
-              <button type="button" class="btn-demo-action" data-act="turn">
-                <span>🔄</span> GIRAR A LA DERECHA
+              <button type="button" class="btn-theory-sim-action" data-act="jump">
+                <span>🦘</span> 2. SALTAR LA PIEDRA
               </button>
-              <button type="button" class="btn-demo-action" data-act="jump">
-                <span>⭐</span> SALTAR BIEN ALTO
+              <button type="button" class="btn-theory-sim-action" data-act="turn">
+                <span>🔄</span> 3. GIRAR HACIA LA CASA
+              </button>
+              <button type="button" class="btn-theory-sim-action wrong-test" data-act="wrong_order">
+                <span>💥</span> ¿QUÉ PASA SI EL ORDEN ESTÁ MAL?
               </button>
             </div>
 
-            <div class="theory-demo-footer-note">
-              💡 ¡UN ROBOT O UNA COMPUTADORA SOLO HACE LO QUE LE INDICAMOS!
+            <div id="theory-sim-feedback-g1" class="theory-sim-feedback">
+              💡 TOCÁ UN BOTÓN PARA ENVIARLE UNA INSTRUCCIÓN A BYTE.
+            </div>
+
+            <!-- Mini-Comprobación Interactiva 1.° Grado -->
+            <div class="theory-check-box">
+              <div class="theory-check-title">
+                <span>🤔</span> ¿UNA COMPUTADORA ADIVINA LO QUE QUEREMOS O NECESITA INSTRUCCIONES?
+              </div>
+              <div class="theory-check-options">
+                <button type="button" class="btn-theory-check-opt" data-correct="false">
+                  <span>🔮</span> ADIVINA SOLA SIN QUE LE DIGAMOS NADA
+                </button>
+                <button type="button" class="btn-theory-check-opt" data-correct="true">
+                  <span>🎯</span> NECESITA INSTRUCCIONES CLARAS PARA CADA ACCIÓN
+                </button>
+              </div>
+              <div class="theory-check-feedback"></div>
             </div>
           </div>
         `;
 
-        const actor = document.getElementById('demo-byte-actor-g1');
-        const speech = document.getElementById('demo-byte-speech-g1');
-        const buttons = container.querySelectorAll('.btn-demo-action');
+        const feedback = container.querySelector('#theory-sim-feedback-g1');
+        const cells = [0, 1, 2, 3, 4].map(i => container.querySelector(`#g1-cell-${i}`));
 
-        buttons.forEach(btn => {
+        container.querySelectorAll('.btn-theory-sim-action').forEach(btn => {
           btn.onclick = () => {
             const actType = btn.dataset.act;
-            if (actor) {
-              actor.classList.remove('anim-advance', 'anim-turn', 'anim-jump');
-              void actor.offsetWidth; // trigger reflow
-            }
+            cells.forEach((c, idx) => {
+              if (c) {
+                c.className = 'theory-mini-cell' + (idx === 4 ? ' cell-target-active' : '');
+                c.textContent = idx === 0 ? '🤖' : (idx === 1 ? '➡️' : (idx === 2 ? '🪨' : (idx === 3 ? '🔄' : '🏠')));
+              }
+            });
 
-            if (actType === 'advance') {
-              if (actor) {
-                actor.innerHTML = getByteAvatarSvg('happy');
-                actor.classList.add('anim-advance');
-              }
-              if (speech) speech.textContent = '¡AVANCÉ UN PASO! ¡LAS INSTRUCCIONES ME DICEN QUÉ HACER!';
+            if (actType === 'walk') {
               this.onPlaySound('pop');
-              this.updateByte("¡AVANCÉ UN PASO! ¡LAS INSTRUCCIONES ME DICEN QUÉ HACER!", 'happy');
-            } else if (actType === 'turn') {
-              if (actor) {
-                actor.innerHTML = getByteAvatarSvg('happy');
-                actor.classList.add('anim-turn');
+              if (cells[1]) {
+                cells[1].className = 'theory-mini-cell cell-byte-active';
+                cells[1].textContent = '🤖';
               }
-              if (speech) speech.textContent = '¡GIRÉ! ¡SEGUÍ TU INDICACIÓN!';
-              this.onPlaySound('coin');
-              this.updateByte("¡GIRÉ! ¡SEGUÍ TU INDICACIÓN!", 'happy');
+              feedback.innerHTML = '🚶 <strong>¡AVANCÉ!</strong> UNA INSTRUCCIÓN INDICA UNA ACCIÓN CONCRETA.';
+              this.updateByte('¡AVANCÉ! UNA INSTRUCCIÓN ME INDICA QUÉ ACCIÓN REALIZAR.', 'happy');
             } else if (actType === 'jump') {
-              if (actor) {
-                actor.innerHTML = getByteAvatarSvg('happy');
-                actor.classList.add('anim-jump');
-              }
-              if (speech) speech.textContent = '¡SALTÉ MUY ALTO! ¡HICE LO QUE ME PEDISTE!';
               this.onPlaySound('coin');
-              this.updateByte("¡SALTÉ MUY ALTO! ¡HICE LO QUE ME PEDISTE!", 'happy');
+              if (cells[2]) {
+                cells[2].className = 'theory-mini-cell cell-byte-active';
+                cells[2].textContent = '🤖🦘';
+              }
+              feedback.innerHTML = '🦘 <strong>¡SALTÉ LA PIEDRA!</strong> SUPERÉ EL OBSTÁCULO CON LA INSTRUCCIÓN APROPIADA.';
+              this.updateByte('¡SALTÉ! SUPERÉ EL OBSTÁCULO CON LA INSTRUCCIÓN APROPIADA.', 'happy');
+            } else if (actType === 'turn') {
+              this.onPlaySound('coin');
+              if (cells[3]) {
+                cells[3].className = 'theory-mini-cell cell-byte-active';
+                cells[3].textContent = '🤖⬇️';
+              }
+              feedback.innerHTML = '🔄 <strong>¡GIRÉ HACIA LA CASA!</strong> CAMBIÉ DE DIRECCIÓN SIGUIENDO TU INDICACIÓN.';
+              this.updateByte('¡GIRÉ! AHORA ESTOY MIRANDO HACIA LA CASA.', 'happy');
+            } else if (actType === 'wrong_order') {
+              this.onPlaySound('wrong');
+              if (cells[1]) {
+                cells[1].className = 'theory-mini-cell cell-crash';
+                cells[1].textContent = '💥';
+              }
+              feedback.innerHTML = '💥 <strong>¡PUM! CHOCAMOS.</strong> EL ORDEN ES FUNDAMENTAL: SI GIRAMOS ANTES DE TIEMPO, NO LLEGAMOS.';
+              this.updateByte('¡PUM! EL ORDEN IMPORTA: SI GIRAMOS ANTES DE TIEMPO, NO LLEGAMOS.', 'worried');
             }
           };
         });
@@ -4701,185 +4979,137 @@ class CodingModuleManager {
 
       case 'sequence_demo_g2': {
         container.innerHTML = `
-          <div class="theory-demo-container">
-            <div class="theory-demo-title">📋 Secuencia de Instrucciones para Byte</div>
-            <p class="theory-demo-subtitle">Misión cotidiana: Guardar el juguete en la caja. Hacé clic para ver a Byte ejecutar cada paso en orden:</p>
-
-            <div class="sequence-steps-demo-grid">
-              <div class="seq-demo-step-card" id="seq-step-1">
-                <span class="step-num-badge">Paso 1</span>
-                <span class="step-icon">🚶</span>
-                <span class="step-text">Caminar hacia el juguete</span>
-                <span class="step-status">⏳</span>
-              </div>
-              <div class="seq-demo-step-card" id="seq-step-2">
-                <span class="step-num-badge">Paso 2</span>
-                <span class="step-icon">🧸</span>
-                <span class="step-text">Agarrar el juguete</span>
-                <span class="step-status">⏳</span>
-              </div>
-              <div class="seq-demo-step-card" id="seq-step-3">
-                <span class="step-num-badge">Paso 3</span>
-                <span class="step-icon">📦</span>
-                <span class="step-text">Guardarlo en la caja</span>
-                <span class="step-status">⏳</span>
-              </div>
+          <div class="theory-simulator-box">
+            <div class="theory-simulator-header">
+              <span>📋</span> Secuencia de Instrucciones: Ayudar a Byte a Entrar a su Casa
+            </div>
+            <div class="theory-simulator-desc">
+              Una secuencia organiza varias instrucciones en orden. Comprobá qué ocurre al ejecutarlas en orden lógico versus orden cambiado:
             </div>
 
-            <div style="display:flex; justify-content:center; margin-top:14px;">
-              <button type="button" id="btn-run-seq-g2" class="btn-demo-run">
-                <span>▶️</span> Probar Secuencia de Byte
+            <div class="theory-mini-stage" id="mini-stage-g2">
+              <div class="theory-mini-cell cell-byte-active" id="g2-cell-0" title="Byte">🤖</div>
+              <div class="theory-mini-cell" id="g2-cell-1" title="Sendero">🚶</div>
+              <div class="theory-mini-cell" id="g2-cell-2" title="Puerta Cerrada">🚪</div>
+              <div class="theory-mini-cell cell-target-active" id="g2-cell-3" title="Casa">🏠</div>
+            </div>
+
+            <div class="theory-sim-controls">
+              <button type="button" class="btn-theory-sim-action" data-g2="correct">
+                <span>🟢</span> Probar Secuencia Lógica (Caminar ➡️ Abrir Puerta ➡️ Entrar)
+              </button>
+              <button type="button" class="btn-theory-sim-action wrong-test" data-g2="wrong">
+                <span>🔴</span> Probar Orden Cambiado (Entrar a la Casa ➡️ Abrir Puerta)
               </button>
             </div>
-            <div id="seq-demo-result-g2" class="theory-demo-footer-note" style="display:none;"></div>
+
+            <div id="theory-sim-feedback-g2" class="theory-sim-feedback">
+              💡 Elegí una de las opciones para observar la importancia del orden en la ejecución.
+            </div>
+
+            <!-- Mini-Comprobación Interactiva 2.° Grado -->
+            <div class="theory-check-box">
+              <div class="theory-check-title">
+                <span>🤔</span> ¿Qué es una secuencia de instrucciones en programación?
+              </div>
+              <div class="theory-check-options">
+                <button type="button" class="btn-theory-check-opt" data-correct="true">
+                  <span>✅</span> Una serie de pasos organizados en orden para cumplir un objetivo determinado.
+                </button>
+                <button type="button" class="btn-theory-check-opt" data-correct="false">
+                  <span>❌</span> Órdenes mezcladas que se ejecutan sin ningún orden fijo.
+                </button>
+              </div>
+              <div class="theory-check-feedback"></div>
+            </div>
           </div>
         `;
 
-        const btnRun = document.getElementById('btn-run-seq-g2');
-        const resultNote = document.getElementById('seq-demo-result-g2');
-        let isRunning = false;
+        const feedback = container.querySelector('#theory-sim-feedback-g2');
+        const cDoor = container.querySelector('#g2-cell-2');
+        const cHouse = container.querySelector('#g2-cell-3');
 
-        if (btnRun) {
-          btnRun.onclick = () => {
-            if (isRunning) return;
-            isRunning = true;
-            btnRun.disabled = true;
-
-            [1, 2, 3].forEach(i => {
-              const el = document.getElementById(`seq-step-${i}`);
-              if (el) {
-                el.classList.remove('active-step');
-                const st = el.querySelector('.step-status');
-                if (st) st.textContent = '⏳';
-              }
-            });
-            if (resultNote) resultNote.style.display = 'none';
-
-            setTimeout(() => {
-              const el1 = document.getElementById('seq-step-1');
-              if (el1) {
-                el1.classList.add('active-step');
-                const st = el1.querySelector('.step-status');
-                if (st) st.textContent = '✅';
-              }
-              this.onPlaySound('click');
-              this.updateByte("Paso 1: Caminando hacia el juguete...", 'normal');
-
-              setTimeout(() => {
-                const el2 = document.getElementById('seq-step-2');
-                if (el2) {
-                  el2.classList.add('active-step');
-                  const st = el2.querySelector('.step-status');
-                  if (st) st.textContent = '✅';
-                }
-                this.onPlaySound('click');
-                this.updateByte("Paso 2: Agarrando el juguete...", 'normal');
-
-                setTimeout(() => {
-                  const el3 = document.getElementById('seq-step-3');
-                  if (el3) {
-                    el3.classList.add('active-step');
-                    const st = el3.querySelector('.step-status');
-                    if (st) st.textContent = '✅';
-                  }
-                  this.onPlaySound('fanfare');
-                  this.updateByte("¡Paso 3 completado! Guardamos el juguete. ¡Las secuencias ordenadas funcionan!", 'happy');
-                  if (resultNote) {
-                    resultNote.innerHTML = '🎉 ¡Secuencia completada con éxito! Cada paso se ejecutó en su turno para lograr el objetivo.';
-                    resultNote.style.display = 'block';
-                  }
-                  isRunning = false;
-                  btnRun.disabled = false;
-                }, 700);
-              }, 700);
-            }, 300);
+        container.querySelectorAll('.btn-theory-sim-action').forEach(btn => {
+          btn.onclick = () => {
+            const mode = btn.dataset.g2;
+            if (mode === 'correct') {
+              this.onPlaySound('fanfare');
+              if (cDoor) { cDoor.textContent = '🔓'; cDoor.className = 'theory-mini-cell'; }
+              if (cHouse) { cHouse.textContent = '🤖🏠'; cHouse.className = 'theory-mini-cell cell-byte-active'; }
+              feedback.innerHTML = '🎉 <strong>¡Secuencia Exitosa!</strong> Byte caminó, abrió la puerta y entró. Cada paso preparó el estado para el siguiente.';
+              this.updateByte('¡Excelente! Con las instrucciones en el orden correcto, la puerta está abierta cuando entramos.', 'happy');
+            } else {
+              this.onPlaySound('wrong');
+              if (cDoor) { cDoor.textContent = '💥🚪'; cDoor.className = 'theory-mini-cell cell-crash'; }
+              feedback.innerHTML = '💥 <strong>¡Error de Secuencia!</strong> Byte intentó entrar con la puerta cerrada... ¡Pum! El orden altera el resultado.';
+              this.updateByte('¡Cuidado! Si no abrimos la puerta primero, chocamos contra ella.', 'worried');
+            }
           };
-        }
+        });
         break;
       }
 
       case 'order_matters_g3': {
         container.innerHTML = `
-          <div class="theory-demo-container">
-            <div class="theory-demo-title">🔀 ¿Qué sucede cuando cambiamos el orden?</div>
-            <p class="theory-demo-subtitle">Hacé clic en cada pestaña para comparar qué sucede al alterar el orden de las instrucciones:</p>
+          <div class="theory-simulator-box">
+            <div class="theory-simulator-header">
+              <span>🗺️</span> Planificar Recorridos en un Mapa antes de Ejecutar
+            </div>
+            <div class="theory-simulator-desc">
+              En los mapas de programación, Byte debe esquivar rocas y doblar en el momento exacto. Compará las tres situaciones:
+            </div>
 
-            <div class="order-comparison-tabs">
-              <button type="button" class="btn-order-tab active" data-tab="correct">
-                <span>🟢</span> Orden Correcto
+            <div class="theory-sim-controls">
+              <button type="button" class="btn-theory-sim-action" data-g3="planned">
+                <span>🟢</span> 1. Ruta Planificada (Avanzar ➡️ Doblar ➡️ Llegar)
               </button>
-              <button type="button" class="btn-order-tab" data-tab="wrong">
-                <span>🔴</span> Orden Cambiado (Incorrecto)
+              <button type="button" class="btn-theory-sim-action wrong-test" data-g3="early_turn">
+                <span>🔴</span> 2. Doblar Antes de Tiempo (¡Choque con la roca!)
+              </button>
+              <button type="button" class="btn-theory-sim-action" data-g3="missing">
+                <span>🟡</span> 3. Falta una Instrucción (Se queda a mitad de camino)
               </button>
             </div>
 
-            <div id="order-comparison-view" class="order-comparison-view"></div>
+            <div id="theory-sim-feedback-g3" class="theory-sim-feedback">
+              💡 Hacé clic en cada situación para entender por qué la planificación previa evita errores.
+            </div>
+
+            <!-- Mini-Comprobación Interactiva 3.° Grado -->
+            <div class="theory-check-box">
+              <div class="theory-check-title">
+                <span>🤔</span> ¿Por qué es fundamental planificar el recorrido en el mapa antes de programar?
+              </div>
+              <div class="theory-check-options">
+                <button type="button" class="btn-theory-check-opt" data-correct="true">
+                  <span>✅</span> Para anticipar las curvas y los obstáculos, asegurando que la secuencia lleve a la meta.
+                </button>
+                <button type="button" class="btn-theory-check-opt" data-correct="false">
+                  <span>❌</span> Porque en los mapas no importa hacia dónde doble el robot.
+                </button>
+              </div>
+              <div class="theory-check-feedback"></div>
+            </div>
           </div>
         `;
 
-        const view = document.getElementById('order-comparison-view');
-        const tabs = container.querySelectorAll('.btn-order-tab');
-
-        const renderTab = (tab) => {
-          if (tab === 'correct') {
-            view.innerHTML = `
-              <div style="display:flex; flex-direction:column; gap:10px;">
-                <div style="font-weight:800; color:#15803d; font-size:1.05rem;">
-                  Secuencia A: 1. Abrir la puerta 🚪 ➡️ 2. Salir de la habitación 🚶
-                </div>
-                <div class="steps-list-horizontal">
-                  <div class="step-card-visual" style="border-color:#86efac; background:#f0fdf4;">
-                    <span class="step-num-badge" style="background:#16a34a;">Paso 1</span>
-                    <div class="step-visual-icon">🚪</div>
-                    <span class="step-card-text">Abrir la puerta</span>
-                  </div>
-                  <div class="step-card-visual" style="border-color:#86efac; background:#f0fdf4;">
-                    <span class="step-num-badge" style="background:#16a34a;">Paso 2</span>
-                    <div class="step-visual-icon">🚶</div>
-                    <span class="step-card-text">Salir de la habitación</span>
-                  </div>
-                </div>
-                <div style="background:#dcfce7; border:2px solid #86efac; border-radius:12px; padding:12px; color:#166534; font-weight:700;">
-                  🎉 <strong>¡Resultado Exitoso!</strong> Byte abre la puerta y cruza sin problemas. Cada instrucción preparó el estado para la siguiente.
-                </div>
-              </div>
-            `;
-            this.updateByte("¡En el orden correcto, la puerta está abierta cuando salimos y todo funciona!", 'happy');
-          } else {
-            view.innerHTML = `
-              <div style="display:flex; flex-direction:column; gap:10px;">
-                <div style="font-weight:800; color:#b91c1c; font-size:1.05rem;">
-                  Secuencia B: 1. Salir de la habitación 🚶 ➡️ 2. Abrir la puerta 🚪
-                </div>
-                <div class="steps-list-horizontal">
-                  <div class="step-card-visual" style="border-color:#fca5a5; background:#fff5f5;">
-                    <span class="step-num-badge" style="background:#dc2626;">Paso 1</span>
-                    <div class="step-visual-icon">🚶💥</div>
-                    <span class="step-card-text">Salir de la habitación</span>
-                  </div>
-                  <div class="step-card-visual" style="border-color:#fca5a5; background:#fff5f5;">
-                    <span class="step-num-badge" style="background:#dc2626;">Paso 2</span>
-                    <div class="step-visual-icon">🚪</div>
-                    <span class="step-card-text">Abrir la puerta</span>
-                  </div>
-                </div>
-                <div style="background:#fee2e2; border:2px solid #fca5a5; border-radius:12px; padding:12px; color:#991b1b; font-weight:700;">
-                  💥 <strong>¡Error de Ejecución!</strong> Byte intentó salir con la puerta todavía cerrada... ¡Pum! Chocó. ¡El orden de las instrucciones cambia el resultado!
-                </div>
-              </div>
-            `;
-            this.updateByte("¡Cuidado! Si cambiamos el orden, chocamos con la puerta cerrada. ¡El orden es clave!", 'worried');
-          }
-        };
-
-        renderTab('correct');
-
-        tabs.forEach(t => {
-          t.onclick = () => {
-            tabs.forEach(btn => btn.classList.remove('active'));
-            t.classList.add('active');
-            this.onPlaySound('click');
-            renderTab(t.dataset.tab);
+        const feedback = container.querySelector('#theory-sim-feedback-g3');
+        container.querySelectorAll('.btn-theory-sim-action').forEach(btn => {
+          btn.onclick = () => {
+            const mode = btn.dataset.g3;
+            if (mode === 'planned') {
+              this.onPlaySound('fanfare');
+              feedback.innerHTML = '💎 <strong>¡Objetivo Cumplido!</strong> Byte avanzó por el sendero libre, dobló en la esquina y llegó directo a la gema dorada.';
+              this.updateByte('¡Ruta planificada con éxito! Avanzó y dobló en el momento justo.', 'happy');
+            } else if (mode === 'early_turn') {
+              this.onPlaySound('wrong');
+              feedback.innerHTML = '💥 <strong>¡Giro Anticipado!</strong> Byte dobló antes de tiempo y chocó contra el muro de piedra. El orden de las instrucciones es crucial.';
+              this.updateByte('¡Cuidado! Doblar un paso antes produce un choque.', 'worried');
+            } else if (mode === 'missing') {
+              this.onPlaySound('pop');
+              feedback.innerHTML = '⏳ <strong>¡Secuencia Incompleta!</strong> Faltó la última flecha: Byte se detuvo a un casillero de la meta. Faltó una instrucción.';
+              this.updateByte('¡Falta un paso! Sin esa instrucción, Byte no puede completar el recorrido.', 'thinking');
+            }
           };
         });
         break;
@@ -4887,93 +5117,81 @@ class CodingModuleManager {
 
       case 'clarity_params_g4': {
         container.innerHTML = `
-          <div class="theory-demo-container">
-            <div class="theory-demo-title">🎯 Instrucciones Claras vs Órdenes Confusas</div>
-            <p class="theory-demo-subtitle">Las computadoras no adivinan intenciones: necesitan parámetros y datos concretos.</p>
+          <div class="theory-simulator-box">
+            <div class="theory-simulator-header">
+              <span>🧩</span> Algoritmos: Parámetros Precisos vs Órdenes Confusas
+            </div>
+            <div class="theory-simulator-desc">
+              Un algoritmo no deja lugar a dudas. Las máquinas necesitan parámetros exactos (distancia, dirección y objetos concretos):
+            </div>
 
-            <div class="params-comparison-grid">
-              <div class="params-card bad">
-                <div class="params-card-header">
-                  <span>⚠️</span> Orden Ambigua (Confusa)
-                </div>
-                <div class="code-preview-box">
-                  <code>Robot.mover();<br>Robot.agarrar();</code>
-                </div>
-                <p class="params-desc">¿Hacia dónde moverse? ¿Cuántos pasos dar? ¿Qué objeto agarrar? No tiene parámetros definidos.</p>
-                <button type="button" class="btn-test-param bad" id="btn-test-param-bad">
-                  <span>❓</span> Simular Orden Ambigua
-                </button>
-                <div id="param-bad-result" class="param-result-box" style="display:none; background:#fee2e2; color:#991b1b; border:1px solid #f87171;"></div>
-              </div>
+            <div class="theory-sim-controls">
+              <button type="button" class="btn-theory-sim-action wrong-test" data-g4="ambiguous">
+                <span>❓</span> Simular Orden Ambigua: Robot.mover(); Robot.agarrar();
+              </button>
+              <button type="button" class="btn-theory-sim-action" data-g4="precise">
+                <span>🚀</span> Simular Orden Precisa: Robot.avanzar(pasos: 3); Robot.agarrar("llave");
+              </button>
+            </div>
 
-              <div class="params-card good">
-                <div class="params-card-header">
-                  <span>✅</span> Orden Precisa (Con Parámetros)
-                </div>
-                <div class="code-preview-box">
-                  <code>Robot.avanzar(pasos: 3);<br>Robot.agarrar("llave_dorada");</code>
-                </div>
-                <p class="params-desc">Especifica acción exacta, número de pasos (3) y objeto concreto ("llave_dorada").</p>
-                <button type="button" class="btn-test-param good" id="btn-test-param-good">
-                  <span>🚀</span> Simular Orden Precisa
-                </button>
-                <div id="param-good-result" class="param-result-box" style="display:none; background:#dcfce7; color:#166534; border:1px solid #4ade80;"></div>
+            <div id="theory-sim-feedback-g4" class="theory-sim-feedback">
+              💡 Probá ambos tipos de órdenes para ver cómo reacciona el sistema computacional.
+            </div>
+
+            <!-- Mini-Comprobación Interactiva 4.° Grado -->
+            <div class="theory-check-box">
+              <div class="theory-check-title">
+                <span>🤔</span> ¿Qué es un algoritmo en informática?
               </div>
+              <div class="theory-check-options">
+                <button type="button" class="btn-theory-check-opt" data-correct="true">
+                  <span>✅</span> Un conjunto ordenado y finito de instrucciones claras para resolver un problema paso a paso.
+                </button>
+                <button type="button" class="btn-theory-check-opt" data-correct="false">
+                  <span>❌</span> Un texto largo con órdenes desordenadas sin ningún objetivo.
+                </button>
+              </div>
+              <div class="theory-check-feedback"></div>
             </div>
           </div>
         `;
 
-        const btnBad = document.getElementById('btn-test-param-bad');
-        const btnGood = document.getElementById('btn-test-param-good');
-        const resBad = document.getElementById('param-bad-result');
-        const resGood = document.getElementById('param-good-result');
-
-        if (btnBad) {
-          btnBad.onclick = () => {
-            this.onPlaySound('wrong');
-            if (resBad) {
-              resBad.innerHTML = '❌ <strong>Error de ambigüedad:</strong> La computadora se detiene porque faltan parámetros numéricos y de objeto.';
-              resBad.style.display = 'block';
+        const feedback = container.querySelector('#theory-sim-feedback-g4');
+        container.querySelectorAll('.btn-theory-sim-action').forEach(btn => {
+          btn.onclick = () => {
+            const mode = btn.dataset.g4;
+            if (mode === 'ambiguous') {
+              this.onPlaySound('wrong');
+              feedback.innerHTML = '❌ <strong>Error de Ambigüedad:</strong> El robot se detiene. No sabe cuántos pasos dar ni qué objeto agarrar.';
+              this.updateByte("¡Error! La orden 'mover()' no especifica cuántos pasos ni hacia dónde.", 'thinking');
+            } else {
+              this.onPlaySound('coin');
+              feedback.innerHTML = '⭐ <strong>¡Ejecución Perfecta!</strong> El robot avanzó exactamente 3 pasos y recogió la llave dorada sin vacilar.';
+              this.updateByte('¡Excelente! Con parámetros exactos, el programa se ejecuta a la perfección.', 'happy');
             }
-            this.updateByte("¡Error! La orden 'mover()' no especifica cuántos pasos ni hacia dónde.", 'thinking');
           };
-        }
-
-        if (btnGood) {
-          btnGood.onclick = () => {
-            this.onPlaySound('coin');
-            if (resGood) {
-              resGood.innerHTML = '⭐ <strong>¡Ejecución Exitosa!</strong> Byte avanzó exactamente 3 pasos y recogió la llave dorada.';
-              resGood.style.display = 'block';
-            }
-            this.updateByte("¡Excelente! Con parámetros exactos, el programa se ejecuta a la perfección.", 'happy');
-          };
-        }
+        });
         break;
       }
 
       case 'state_tracer_g5': {
         container.innerHTML = `
-          <div class="theory-demo-container">
-            <div class="theory-demo-title">⚙️ Trazador de Ejecución: Cómo una Computadora Cambia su Estado</div>
-            <p class="theory-demo-subtitle">Una computadora es determinista: cada instrucción modifica el estado del sistema en memoria en forma predecible.</p>
+          <div class="theory-simulator-box">
+            <div class="theory-simulator-header">
+              <span>⚙️</span> Trazador de Ejecución: Determinismo y Estado en Memoria
+            </div>
+            <div class="theory-simulator-desc">
+              Una computadora es determinista: cada instrucción altera variables de memoria en forma predecible y estricta:
+            </div>
 
             <div class="state-tracer-grid">
               <div class="tracer-code-column">
                 <div class="tracer-title">Programa a Ejecutar:</div>
                 <div class="tracer-code-list" id="tracer-code-list">
-                  <div class="tracer-code-line active" data-step="0">
-                    <span class="line-num">1</span> <code>IniciarSistema()</code>
-                  </div>
-                  <div class="tracer-code-line" data-step="1">
-                    <span class="line-num">2</span> <code>Avanzar(distancia: 2)</code>
-                  </div>
-                  <div class="tracer-code-line" data-step="2">
-                    <span class="line-num">3</span> <code>ConectarServidor("central")</code>
-                  </div>
-                  <div class="tracer-code-line" data-step="3">
-                    <span class="line-num">4</span> <code>DescargarReporte()</code>
-                  </div>
+                  <div class="tracer-code-line active" data-step="0"><span class="line-num">1</span> <code>IniciarSistema()</code></div>
+                  <div class="tracer-code-line" data-step="1"><span class="line-num">2</span> <code>Avanzar(distancia: 2)</code></div>
+                  <div class="tracer-code-line" data-step="2"><span class="line-num">3</span> <code>ConectarServidor("central")</code></div>
+                  <div class="tracer-code-line" data-step="3"><span class="line-num">4</span> <code>DescargarReporte()</code></div>
                 </div>
                 <button type="button" id="btn-tracer-step" class="btn-demo-run" style="margin-top:12px; width:100%; justify-content:center;">
                   <span>▶️</span> Ejecutar Siguiente Paso
@@ -4983,27 +5201,31 @@ class CodingModuleManager {
               <div class="tracer-state-column">
                 <div class="tracer-title">Estado de Variables en Memoria:</div>
                 <div class="tracer-vars-box">
-                  <div class="var-item">
-                    <span class="var-name">Batería:</span>
-                    <span class="var-val" id="var-battery">100%</span>
-                  </div>
-                  <div class="var-item">
-                    <span class="var-name">Posición (X,Y):</span>
-                    <span class="var-val" id="var-pos">(0, 0)</span>
-                  </div>
-                  <div class="var-item">
-                    <span class="var-name">Red:</span>
-                    <span class="var-val" id="var-net">Desconectado</span>
-                  </div>
-                  <div class="var-item">
-                    <span class="var-name">Datos:</span>
-                    <span class="var-val" id="var-data">0 KB</span>
-                  </div>
+                  <div class="var-item"><span class="var-name">Batería:</span><span class="var-val" id="var-battery">100%</span></div>
+                  <div class="var-item"><span class="var-name">Posición (X,Y):</span><span class="var-val" id="var-pos">(0, 0)</span></div>
+                  <div class="var-item"><span class="var-name">Red:</span><span class="var-val" id="var-net">Desconectado</span></div>
+                  <div class="var-item"><span class="var-name">Datos:</span><span class="var-val" id="var-data">0 KB</span></div>
                 </div>
                 <div id="tracer-step-explanation" class="tracer-expl-box">
                   Listo para iniciar. Hacé clic en "Ejecutar Siguiente Paso".
                 </div>
               </div>
+            </div>
+
+            <!-- Mini-Comprobación Interactiva 5.° Grado -->
+            <div class="theory-check-box" style="margin-top:16px;">
+              <div class="theory-check-title">
+                <span>🤔</span> ¿Por qué se dice que las computadoras son máquinas deterministas?
+              </div>
+              <div class="theory-check-options">
+                <button type="button" class="btn-theory-check-opt" data-correct="true">
+                  <span>✅</span> Porque ante las mismas instrucciones y en el mismo orden, producen siempre exactamente el mismo resultado.
+                </button>
+                <button type="button" class="btn-theory-check-opt" data-correct="false">
+                  <span>❌</span> Porque adivinan lo que el programador quería hacer y lo corrigen solas.
+                </button>
+              </div>
+              <div class="theory-check-feedback"></div>
             </div>
           </div>
         `;
@@ -5018,60 +5240,53 @@ class CodingModuleManager {
 
         let stepIndex = 0;
 
-        const flashVar = (el) => {
-          if (!el) return;
-          el.classList.add('highlight-var');
-          setTimeout(() => el.classList.remove('highlight-var'), 600);
-        };
-
         if (btnStep) {
           btnStep.onclick = () => {
-            stepIndex = (stepIndex + 1) % 4;
-
-            codeLines.forEach((l, idx) => {
-              l.classList.toggle('active', idx === stepIndex);
-            });
+            codeLines.forEach(l => l.classList.remove('active'));
 
             if (stepIndex === 0) {
+              codeLines[0].classList.add('active');
+              if (varBat) varBat.textContent = '98%';
+              if (explBox) explBox.innerHTML = '✅ <strong>Paso 1:</strong> Se inicializaron los registros y se verificó el sistema.';
+              this.onPlaySound('click');
+              stepIndex++;
+            } else if (stepIndex === 1) {
+              codeLines[1].classList.add('active');
+              if (varPos) varPos.textContent = '(2, 0)';
+              if (varBat) varBat.textContent = '90%';
+              if (explBox) explBox.innerHTML = '✅ <strong>Paso 2:</strong> Byte avanzó 2 posiciones hacia adelante en el entorno.';
+              this.onPlaySound('click');
+              stepIndex++;
+            } else if (stepIndex === 2) {
+              codeLines[2].classList.add('active');
+              if (varNet) { varNet.textContent = 'Conectado a Central'; varNet.style.color = '#16a34a'; }
+              if (varBat) varBat.textContent = '85%';
+              if (explBox) explBox.innerHTML = '✅ <strong>Paso 3:</strong> Se estableció el enlace de red con el servidor.';
+              this.onPlaySound('click');
+              stepIndex++;
+            } else if (stepIndex === 3) {
+              codeLines[3].classList.add('active');
+              if (varData) { varData.textContent = '256 KB'; varData.style.color = '#16a34a'; }
+              if (varBat) varBat.textContent = '80%';
+              if (explBox) explBox.innerHTML = '🎉 <strong>Paso 4:</strong> Descarga exitosa de paquetes completada en memoria.';
+              this.onPlaySound('fanfare');
+              btnStep.innerHTML = '<span>🔄</span> Reiniciar Trazador';
+              stepIndex++;
+            } else {
+              stepIndex = 0;
+              codeLines[0].classList.add('active');
               if (varBat) varBat.textContent = '100%';
               if (varPos) varPos.textContent = '(0, 0)';
-              if (varNet) varNet.textContent = 'Desconectado';
-              if (varData) varData.textContent = '0 KB';
-              if (explBox) explBox.textContent = 'Paso 1: Sistema reiniciado. Batería al 100%, posición inicial.';
+              if (varNet) { varNet.textContent = 'Desconectado'; varNet.style.color = ''; }
+              if (varData) { varData.textContent = '0 KB'; varData.style.color = ''; }
+              if (explBox) explBox.innerHTML = 'Reiniciado. Hacé clic para ejecutar el Paso 1.';
+              btnStep.innerHTML = '<span>▶️</span> Ejecutar Siguiente Paso';
               this.onPlaySound('click');
-              this.updateByte("Paso 1: IniciarSistema() establece las condiciones iniciales del entorno.", 'normal');
-            } else if (stepIndex === 1) {
-              if (varBat) varBat.textContent = '90%';
-              if (varPos) varPos.textContent = '(2, 0)';
-              flashVar(varPos);
-              flashVar(varBat);
-              if (explBox) explBox.textContent = 'Paso 2: La orden Avanzar(2) modificó la posición a (2,0) y consumió 10% de batería.';
-              this.onPlaySound('click');
-              this.updateByte("Paso 2: Cada comando de movimiento altera la posición física y gasta energía.", 'normal');
-            } else if (stepIndex === 2) {
-              if (varBat) varBat.textContent = '80%';
-              if (varNet) varNet.textContent = 'Conectado ✅';
-              flashVar(varNet);
-              flashVar(varBat);
-              if (explBox) explBox.textContent = 'Paso 3: Conexión establecida con el servidor central. Estado de red: Conectado.';
-              this.onPlaySound('click');
-              this.updateByte("Paso 3: Cumplimos la precondición de conectividad para poder transferir datos.", 'normal');
-            } else if (stepIndex === 3) {
-              if (varBat) varBat.textContent = '70%';
-              if (varData) varData.textContent = '500 KB (Completado)';
-              flashVar(varData);
-              flashVar(varBat);
-              if (explBox) explBox.textContent = 'Paso 4: ¡Datos descargados con éxito! El estado final del sistema completó el algoritmo.';
-              this.onPlaySound('fanfare');
-              this.updateByte("¡Misión algorítmica completa! La secuencia modificó el estado de variables de principio a fin.", 'happy');
             }
           };
         }
         break;
       }
-
-      default:
-        break;
     }
   }
 

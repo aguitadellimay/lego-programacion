@@ -3544,3 +3544,300 @@
     text-align: center;
   }
 }
+
+/* ========================================================
+   CONTROL DE MÚSICA RETRO DE 8 BITS (BYTE ADVENTURES)
+   ======================================================== */
+.btn-byte-bgm-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #334155;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  user-select: none;
+  vertical-align: middle;
+}
+
+.btn-byte-bgm-toggle:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.btn-byte-bgm-toggle:active {
+  transform: translateY(1px);
+}
+
+.btn-byte-bgm-toggle .bgm-icon {
+  font-size: 1.15rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.btn-byte-bgm-toggle .bgm-status {
+  font-weight: 900;
+}
+
+.btn-byte-bgm-toggle.is-playing {
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-color: #047857;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+  animation: bgmPulse 2s infinite ease-in-out;
+}
+
+.btn-byte-bgm-toggle.is-playing .bgm-icon {
+  animation: bgmBounce 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes bgmPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.7);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes bgmBounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2px); }
+}
+
+/* ========================================================
+   GUÍA DE INTERACCIÓN Y CONSIGNAS AUTÓNOMAS
+   ======================================================== */
+.interaction-guide-callout {
+  background: #f0f9ff;
+  border: 2px solid #7dd3fc;
+  border-left: 5px solid #0284c7;
+  border-radius: 14px;
+  padding: 10px 14px;
+  margin: 10px 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: #0369a1;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+}
+
+.interaction-guide-callout .guide-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.interaction-guide-callout.g1-uppercase {
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   SIMULADOR VISUAL DE TEORÍA: BYTE FRENTE A SU CASA
+   ======================================================== */
+.theory-simulator-box {
+  background: #f8fafc;
+  border: 3px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 18px;
+  margin: 18px 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.theory-simulator-header {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theory-simulator-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.theory-mini-stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e2e8f0;
+  border: 2px dashed #94a3b8;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 90px;
+}
+
+.theory-mini-cell {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.theory-mini-cell.cell-byte-active {
+  background: #38bdf8;
+  border-color: #0284c7;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+  z-index: 2;
+}
+
+.theory-mini-cell.cell-target-active {
+  background: #fef08a;
+  border-color: #eab308;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.4);
+}
+
+.theory-sim-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn-theory-sim-action {
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.btn-theory-sim-action:hover {
+  background: #f1f5f9;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.btn-theory-sim-action.wrong-test {
+  border-color: #fca5a5;
+  color: #991b1b;
+}
+
+.btn-theory-sim-action.wrong-test:hover {
+  background: #fff5f5;
+  border-color: #ef4444;
+}
+
+.theory-sim-feedback {
+  background: #e0f2fe;
+  border: 2px solid #7dd3fc;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0369a1;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.25s ease;
+}
+
+/* ========================================================
+   MINI-COMPROBACIÓN CONCEPTUAL EN TEORÍA
+   ======================================================== */
+.theory-check-box {
+  background: #fffbeb;
+  border: 2px solid #fde68a;
+  border-left: 5px solid #f59e0b;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin: 18px 0;
+}
+
+.theory-check-title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #b45309;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theory-check-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-theory-check-opt {
+  background: #ffffff;
+  border: 2px solid #fcd34d;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #78350f;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-theory-check-opt:hover {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  transform: translateX(3px);
+}
+
+.btn-theory-check-opt.correct {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.btn-theory-check-opt.wrong {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.theory-check-feedback {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
