@@ -943,12 +943,12 @@ const CODING_DATA = {
             id: 'g2_inst_order',
             type: 'order_steps',
             title: '🎒 Actividad 1: Ordená los Pasos de la Mochila',
-            instruction: 'Ordená las tarjetas cronológicamente de arriba hacia abajo:',
+            instruction: 'Ordená las 4 instrucciones para preparar la mochila antes de salir a la escuela:',
             items: [
-              { id: 'bp_open', icon: '🔓', text: '1. Abrir el cierre de la mochila' },
-              { id: 'bp_books', icon: '📚', text: '2. Guardar los cuadernos escolares' },
-              { id: 'bp_pencil', icon: '✏️', text: '3. Guardar la cartuchera' },
-              { id: 'bp_close', icon: '🔒', text: '4. Cerrar la mochila con el cierre' }
+              { id: 'bp_open', icon: '🔓', text: 'Abrir el cierre de la mochila' },
+              { id: 'bp_books', icon: '📚', text: 'Guardar los cuadernos escolares' },
+              { id: 'bp_pencil', icon: '✏️', text: 'Guardar la cartuchera con lápices' },
+              { id: 'bp_close', icon: '🔒', text: 'Cerrar la mochila con el cierre' }
             ],
             correctOrder: ['bp_open', 'bp_books', 'bp_pencil', 'bp_close'],
             hints: [
@@ -1595,105 +1595,196 @@ const CODING_DATA = {
             buttonText: '¡PONGAMOS A PRUEBA LO QUE APRENDIMOS!'
           },
 
-          // 1. ACTIVIDAD 1 — ORDENÁ LAS INSTRUCCIONES
+          // 1. ACTIVIDAD 1 — ORDENÁ LAS INSTRUCCIONES DEL CAMINO (Con Mapa Visual)
           {
             id: 'g3_inst_order_arrows',
             type: 'order_steps',
             title: '🗺️ Actividad 1: Ordená las Instrucciones del Camino',
-            instruction: 'Ordená las 4 flechas para que Byte avance 2 casilleros a la derecha y 2 abajo:',
+            instruction: 'Ayudá a Byte a llegar a la escuela 🏫 siguiendo el camino de baldosas. Observá el mapa y ordená las 4 instrucciones:',
+            map: {
+              cols: 3,
+              rows: 3,
+              start: { x: 0, y: 0 },
+              target: { x: 2, y: 2, icon: '🏫', label: 'Escuela' },
+              pathTiles: [
+                { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 2, y: 0 },
+                { x: 2, y: 1 }, { x: 2, y: 2 }
+              ],
+              scenery: [
+                { x: 0, y: 1, icon: '🌲' },
+                { x: 1, y: 1, icon: '🌸' },
+                { x: 0, y: 2, icon: '🌲' },
+                { x: 1, y: 2, icon: '🌲' }
+              ]
+            },
             items: [
-              { id: 'ar_r1', icon: '➡️', text: '1. Avanzar a la Derecha' },
-              { id: 'ar_r2', icon: '➡️', text: '2. Avanzar a la Derecha' },
-              { id: 'ar_d1', icon: '⬇️', text: '3. Bajar hacia el Sur' },
-              { id: 'ar_d2', icon: '⬇️', text: '4. Bajar hacia el Sur' }
+              { id: 'ar_r1', icon: '➡️', text: 'Avanzar a la Derecha', dir: 'right' },
+              { id: 'ar_r2', icon: '➡️', text: 'Avanzar a la Derecha', dir: 'right' },
+              { id: 'ar_d1', icon: '⬇️', text: 'Bajar hacia el Sur', dir: 'down' },
+              { id: 'ar_d2', icon: '⬇️', text: 'Bajar hacia la Escuela', dir: 'down' }
             ],
             correctOrder: ['ar_r1', 'ar_r2', 'ar_d1', 'ar_d2'],
+            expectedDirs: ['right', 'right', 'down', 'down'],
             hints: [
-              '💡 Primero Byte camina por la fila superior hacia la derecha.',
-              '💡 Luego dobla hacia abajo para llegar a la gema.',
-              '💡 Secuencia: ➡️ ➡️ ⬇️ ⬇️.'
+              '💡 Observá el mapa: Byte camina por el sendero superior hacia la derecha.',
+              '💡 Al llegar a la esquina, dobla hacia abajo para entrar a la escuela.',
+              '💡 Secuencia necesaria: ➡️ ➡️ ⬇️ ⬇️.'
             ]
           },
 
-          // 2. ACTIVIDAD 2 — ELEGÍ EL CAMINO CORRECTO
+          // 2. ACTIVIDAD 2 — ELEGÍ EL CAMINO CORRECTO (Con Mapa Visual y sin spoilers)
           {
             id: 'g3_inst_choose_path',
             type: 'choose_path',
             title: '🧭 Actividad 2: Elegí el Camino Correcto',
-            instruction: 'Analiza el mapa y elegí cuál de los dos caminos lleva a Byte directo al tesoro 👑 evitando las rocas 🪨:',
+            instruction: 'Mirá el mapa del recorrido y elegí cuál de los dos caminos lleva a Byte seguro a la meta sin chocar contra los obstáculos:',
             challenges: [
               {
-                question: 'Byte está en (0,0) y el tesoro está en (2,1). La roca 🪨 está en (0,1).',
+                question: 'Byte quiere llegar a la corona 👑 pero una gran roca 🪨 bloquea el paso hacia abajo. ¿Cuál de los dos caminos es seguro?',
+                map: {
+                  cols: 3,
+                  rows: 2,
+                  start: { x: 0, y: 0 },
+                  target: { x: 2, y: 1, icon: '👑', label: 'Corona' },
+                  obstacles: [
+                    { x: 0, y: 1, icon: '🪨', label: 'Roca' }
+                  ],
+                  pathTiles: [
+                    { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 2, y: 0 },
+                    { x: 2, y: 1 }
+                  ],
+                  scenery: [
+                    { x: 1, y: 1, icon: '🌲' }
+                  ]
+                },
                 paths: [
                   {
                     id: 'p1',
                     name: 'Camino A: ➡️ ➡️ ⬇️',
                     arrows: ['➡️', '➡️', '⬇️'],
                     isCorrect: true,
-                    reason: '¡Excelente! Avanza 2 casilleros a la derecha y baja 1 directo al tesoro sin tocar rocas.'
+                    successMsg: '¡Excelente! El Camino A avanza por terreno despejado y llega directo a la corona 👑 sin chocar.',
+                    failMsg: ''
                   },
                   {
                     id: 'p2',
                     name: 'Camino B: ⬇️ ➡️ ➡️',
                     arrows: ['⬇️', '➡️', '➡️'],
                     isCorrect: false,
-                    reason: '¡Cuidado! Si baja en el primer paso, choca directo contra la roca 🪨 en (0,1).'
+                    successMsg: '',
+                    failMsg: '¡Cuidado! Si Byte baja primero, choca contra la gran roca 🪨. Observá bien el mapa y probá el otro camino.'
                   }
                 ]
               },
               {
-                question: 'Byte está en (0,0) y el tesoro está en (1,2). Hay un pozo 🕳️ en (1,0).',
+                question: 'Byte debe llegar a la estrella ⭐. Hacia la derecha hay un pozo de agua 🕳️. ¿Qué camino debe tomar para no caerse?',
+                map: {
+                  cols: 3,
+                  rows: 3,
+                  start: { x: 0, y: 0 },
+                  target: { x: 1, y: 2, icon: '⭐', label: 'Estrella' },
+                  obstacles: [
+                    { x: 1, y: 0, icon: '🕳️', label: 'Pozo de agua' }
+                  ],
+                  pathTiles: [
+                    { x: 0, y: 0 }, { x: 0, y: 1 }, { x: 0, y: 2 },
+                    { x: 1, y: 2 }
+                  ],
+                  scenery: [
+                    { x: 2, y: 0, icon: '🌲' },
+                    { x: 1, y: 1, icon: '🌲' },
+                    { x: 2, y: 1, icon: '🌲' },
+                    { x: 2, y: 2, icon: '🌲' }
+                  ]
+                },
                 paths: [
                   {
                     id: 'p1',
                     name: 'Camino A: ⬇️ ⬇️ ➡️',
                     arrows: ['⬇️', '⬇️', '➡️'],
                     isCorrect: true,
-                    reason: '¡Muy bien! Baja 2 casilleros y luego dobla a la derecha esquivando el pozo.'
+                    successMsg: '¡Muy bien! El Camino A baja primero esquivando el pozo y llega a salvo a la estrella ⭐.',
+                    failMsg: ''
                   },
                   {
                     id: 'p2',
                     name: 'Camino B: ➡️ ⬇️ ⬇️',
                     arrows: ['➡️', '⬇️', '⬇️'],
                     isCorrect: false,
-                    reason: '¡Alerta! Si va a la derecha primero cae en el pozo 🕳️.'
+                    successMsg: '',
+                    failMsg: '¡Alerta! Si avanza a la derecha en el primer paso, cae en el pozo de agua 🕳️. ¡Probá el otro camino!'
                   }
                 ]
               }
             ],
             hints: [
-              '💡 Mirá las coordenadas donde están las rocas y obstáculos.',
-              '💡 El Camino A esquiva el obstáculo caminando por terreno libre.',
-              '💡 Elegí el camino que no choca con ningún obstáculo.'
+              '💡 Observá atentamente dónde están los obstáculos en el mapa.',
+              '💡 Seguí con la mirada las flechas de cada opción sobre el mapa antes de elegir.',
+              '💡 Elegí el camino que camina por las baldosas libres sin chocar.'
             ]
           },
 
-          // 3. ACTIVIDAD 3 — ENCONTRÁ EL PASO INCORRECTO
+          // 3. ACTIVIDAD 3 — ENCONTRÁ EL PASO INCORRECTO (Con Mapa Visual)
           {
             id: 'g3_inst_wrong_step',
             type: 'find_error',
             title: '🚫 Actividad 3: Encontrá el Paso Incorrecto',
-            instruction: 'Byte tiene un programa para llegar a la gema pero una flecha choca contra la pared. ¡Tocala!',
+            instruction: 'Byte quiere llegar a la gema 💎 pero una instrucción del recorrido es errónea. Mirá el mapa y tocá la instrucción equivocada:',
+            map: {
+              cols: 3,
+              rows: 3,
+              start: { x: 0, y: 1 },
+              target: { x: 2, y: 2, icon: '💎', label: 'Gema' },
+              obstacles: [
+                { x: 2, y: 0, icon: '🧱', label: 'Muro de piedra' }
+              ],
+              pathTiles: [
+                { x: 0, y: 1 }, { x: 1, y: 1 }, { x: 2, y: 1 },
+                { x: 2, y: 2 }
+              ],
+              scenery: [
+                { x: 0, y: 0, icon: '🌲' },
+                { x: 1, y: 0, icon: '🌲' },
+                { x: 0, y: 2, icon: '🌲' },
+                { x: 1, y: 2, icon: '🌲' }
+              ]
+            },
             steps: [
               { id: 'w1', num: 1, text: '➡️ Avanzar a la derecha', isError: false, icon: '➡️' },
               { id: 'w2', num: 2, text: '➡️ Avanzar a la derecha', isError: false, icon: '➡️' },
-              { id: 'w3', num: 3, text: '⬆️ Subir contra el muro de piedra', isError: true, icon: '⬆️' },
+              { id: 'w3', num: 3, text: '⬆️ Subir hacia el muro', isError: true, icon: '⬆️' },
               { id: 'w4', num: 4, text: '⬇️ Bajar hacia la gema', isError: false, icon: '⬇️' }
             ],
-            explanation: '¡La flecha ⬆️ choca contra el borde del mapa y no ayuda a bajar hacia la gema!',
+            explanation: '¡El Paso 3 es el error! La flecha ⬆️ choca contra el muro de piedra 🧱. Para llegar a la gema 💎, Byte debe bajar.',
             hints: [
-              '💡 Fijate hacia dónde debe moverse Byte para no chocar.',
-              '💡 La meta está abajo, por lo tanto subir es un error.',
+              '💡 Fijate hacia dónde debe moverse Byte en el mapa para no chocar.',
+              '💡 La gema está abajo, por lo tanto subir choca contra el muro de piedra.',
               '💡 El paso incorrecto es el Paso 3 (⬆️ Subir).'
             ]
           },
 
-          // 4. ACTIVIDAD 4 — COMPLETÁ EL PASO QUE FALTA
+          // 4. ACTIVIDAD 4 — COMPLETÁ EL PASO QUE FALTA (Con Mapa Visual)
           {
             id: 'g3_inst_missing_step',
             type: 'missing_step',
             title: '🧩 Actividad 4: Completá el Paso que Falta',
-            instruction: 'Falta una flecha para que el camino hacia la estrella ⭐ esté completo:',
+            instruction: 'Observá el mapa. Falta una instrucción para que Byte complete el camino y llegue a la estrella ⭐:',
+            map: {
+              cols: 3,
+              rows: 3,
+              start: { x: 0, y: 0 },
+              target: { x: 2, y: 2, icon: '⭐', label: 'Estrella' },
+              pathTiles: [
+                { x: 0, y: 0 }, { x: 1, y: 0 }, { x: 2, y: 0 },
+                { x: 2, y: 1 }, { x: 2, y: 2 }
+              ],
+              scenery: [
+                { x: 0, y: 1, icon: '🌲' },
+                { x: 1, y: 1, icon: '🌸' },
+                { x: 0, y: 2, icon: '🌲' },
+                { x: 1, y: 2, icon: '🌲' }
+              ]
+            },
             sequence: [
               { num: 1, icon: '➡️', text: 'Avanzar a la derecha' },
               { num: 2, icon: '➡️', text: 'Avanzar a la derecha' },
@@ -1701,17 +1792,17 @@ const CODING_DATA = {
               { num: 4, icon: '⬇️', text: 'Bajar hacia la meta' }
             ],
             options: [
-              { id: 'opt_down', text: '⬇️ Bajar hacia el Sur', isCorrect: true, icon: '⬇️' },
+              { id: 'opt_down', text: '⬇️ Bajar por el camino', isCorrect: true, icon: '⬇️' },
               { id: 'opt_left', text: '⬅️ Volver hacia atrás', isCorrect: false, icon: '⬅️' },
-              { id: 'opt_up', text: '⬆️ Subir hacia arriba', isCorrect: false, icon: '⬆️' }
+              { id: 'opt_up', text: '⬆️ Subir hacia el pasto', isCorrect: false, icon: '⬆️' }
             ],
             hints: [
-              '💡 Para llegar a la esquina antes de bajar, se necesita continuar el descenso.',
-              '💡 Volver hacia atrás alejaría a Byte de la meta.',
-              '💡 La flecha que completa la esquina es ⬇️ Bajar.'
+              '💡 Mirá el mapa: en la esquina superior, Byte necesita doblar hacia abajo.',
+              '💡 Volver hacia atrás alejaría a Byte de la estrella.',
+              '💡 La instrucción que completa el giro es ⬇️ Bajar.'
             ]
           },
-
+          
           // 5. ACTIVIDAD 5 — LLEVÁ AL PERSONAJE HASTA EL OBJETIVO
           {
             id: 'grid_byte_g3',
@@ -2264,11 +2355,11 @@ const CODING_DATA = {
             title: '🍪 Actividad 1: Algoritmo para Hornear Galletitas',
             instruction: 'Ordená cronológicamente las 5 instrucciones del algoritmo de cocina:',
             items: [
-              { id: 'bk_mix', icon: '🥣', text: '1. Mezclar harina, manteca y azúcar en el bol' },
-              { id: 'bk_shape', icon: '🍪', text: '2. Cortar las formas de las galletitas' },
-              { id: 'bk_tray', icon: '🍽️', text: '3. Colocarlas en la bandeja para horno' },
-              { id: 'bk_bake', icon: '🔥', text: '4. Hornear a 180° durante 15 minutos' },
-              { id: 'bk_cool', icon: '😋', text: '5. Dejar enfriar antes de servir y comer' }
+              { id: 'bk_mix', icon: '🥣', text: 'Mezclar harina, manteca y azúcar en el bol' },
+              { id: 'bk_shape', icon: '🍪', text: 'Cortar las formas de las galletitas' },
+              { id: 'bk_tray', icon: '🍽️', text: 'Colocarlas en la bandeja para horno' },
+              { id: 'bk_bake', icon: '🔥', text: 'Hornear a 180° durante 15 minutos' },
+              { id: 'bk_cool', icon: '😋', text: 'Dejar enfriar antes de servir y comer' }
             ],
             correctOrder: ['bk_mix', 'bk_shape', 'bk_tray', 'bk_bake', 'bk_cool'],
             hints: [
@@ -2354,9 +2445,9 @@ const CODING_DATA = {
               { x: 2, y: 3 }
             ],
             hints: [
-              '💡 Hay un muro vertical de rocas en x=2 que cubre hasta y=3. Pero hay paso libre en y=4!',
-              '💡 Bajá por la columna izquierda hasta la fila inferior (y=4) y luego avanzá a la derecha.',
-              '💡 Secuencia: ⬇️ ⬇️ ⬇️ ⬇️ (llegás a 0,4) y luego ➡️ ➡️ ➡️ ➡️ (llegás a 4,4).'
+              '💡 Mirá el muro de rocas: abajo de todo hay un camino libre para cruzar.',
+              '💡 Bajá por la izquierda hasta el final del sendero y luego avanzá hacia la derecha.',
+              '💡 Secuencia recomendada: ⬇️ ⬇️ ⬇️ ⬇️ ➡️ ➡️ ➡️ ➡️.'
             ]
           },
 
@@ -2934,9 +3025,9 @@ const CODING_DATA = {
               { x: 2, y: 4 }
             ],
             hints: [
-              '💡 Hay un cortafuegos en x=2 pero hay una brecha libre en y=3!',
-              '💡 Bajá hasta y=3 (⬇️ ⬇️ ⬇️) y luego cruzá hacia la derecha (➡️ ➡️ ➡️ ➡️).',
-              '💡 Secuencia: ⬇️ ⬇️ ⬇️ ➡️ ➡️ ➡️ ➡️.'
+              '💡 Mirá el cortafuegos 🔥: hay un espacio libre para pasar sin quemarse.',
+              '💡 Bajá por la columna izquierda hasta el paso libre y luego avanzá hacia la derecha.',
+              '💡 Secuencia recomendada: ⬇️ ⬇️ ⬇️ ➡️ ➡️ ➡️ ➡️.'
             ]
           },
 
@@ -3074,9 +3165,9 @@ const CODING_DATA = {
               { x: 3, y: 3 }
             ],
             hints: [
-              '💡 Planificá el recorrido por tramos: Tramo 1 (de 0,0 a 2,1), Tramo 2 (de 2,1 a 4,3), Tramo 3 (de 4,3 a 0,4).',
-              '💡 Para llegar a la PC: ➡️ ➡️ ⬇️ (llegás a 2,1).',
-              '💡 Para llegar al pendrive: ➡️ ➡️ ⬇️ ⬇️ (llegás a 4,3). Luego bajá y ve a la izquierda hacia la puerta (0,4).'
+              '💡 Planificá el recorrido observando el orden estricto de las 3 metas: Computadora ➡️ Pendrive ➡️ Puerta.',
+              '💡 Para llegar a la computadora: avanzá dos pasos a la derecha y uno abajo.',
+              '💡 Luego bajá hacia el pendrive esquivando los obstáculos, y finalmente doblá hacia la puerta.'
             ]
           },
 
@@ -5877,10 +5968,13 @@ class CodingModuleManager {
     const isGradeOne = this.currentGrade === 1;
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
 
+    const mapHtml = act.map ? this.createVisualMapHtml(act.map) : '';
+
     container.innerHTML = `
       <div class="quiz-box">
         ${this.createActivityHeader(act)}
-        <p style="font-size:1.15rem; color:#334155; margin-bottom:12px;">${act.instruction}</p>
+        <p style="font-size:1.15rem; color:#334155; margin-bottom:12px; text-align:center;">${act.instruction}</p>
+        ${mapHtml}
 
         <!-- Secuencia incompleta con tarjeta faltante destacada -->
         <div style="background:#f0f9ff; border:2px solid #bae6fd; border-radius:16px; padding:16px; margin-bottom:16px;">
@@ -5895,7 +5989,7 @@ class CodingModuleManager {
           </div>
         </div>
 
-        <div style="font-weight:700; color:#0369a1; margin-bottom:8px;">${isGradeOne ? 'ELEGÍ EL PASO QUE COMPLETA LA SECUENCIA:' : 'Elegí el paso que completa la secuencia:'}</div>
+        <div style="font-weight:700; color:#0369a1; margin-bottom:8px; text-align:center;">${isGradeOne ? 'ELEGÍ EL PASO QUE COMPLETA LA SECUENCIA:' : 'Elegí el paso que completa la secuencia:'}</div>
         <div class="quiz-options-grid">
           ${act.options.map(opt => `
             <button type="button" class="quiz-opt-btn" data-opt="${opt.id}">
@@ -5918,16 +6012,19 @@ class CodingModuleManager {
 
         if (opt && opt.isCorrect) {
           btn.classList.add('correct');
+          this.onPlaySound('fanfare');
+          this.onLaunchConfetti();
           const successMsg = isGradeOne
             ? "¡PERFECTO! ESE ES EXACTAMENTE EL PASO QUE FALTABA EN LA SECUENCIA."
-            : "¡Perfecto! Ese es exactamente el paso que faltaba en el procedimiento.";
+            : "¡Perfecto! Ese es exactamente el paso que completa el recorrido en el mapa.";
           this.updateByte(successMsg, 'happy');
           this.recordActivitySuccess(act.id, 15);
         } else {
           btn.classList.add('wrong');
+          this.onPlaySound('wrong');
           const errorMsg = isGradeOne
             ? "ESE PASO NO ENCAJA EN ESTE MOMENTO DE LA SECUENCIA."
-            : "Ese paso no encaja lógicamente en ese punto de la secuencia.";
+            : "Ese paso no conduce a la meta en ese punto del camino.";
           this.recordAttemptError(errorMsg);
         }
       };
@@ -6188,143 +6285,342 @@ class CodingModuleManager {
     if (btnNext) btnNext.onclick = () => this.nextActivity();
   }
 
+  /**
+   * Genera el HTML de un mapa visual de recorrido para niños (sin coordenadas)
+   */
+  createVisualMapHtml(mapConfig, currentBytePos = null, trails = []) {
+    if (!mapConfig) return '';
+    const cols = mapConfig.cols || 3;
+    const rows = mapConfig.rows || 3;
+    const bytePos = currentBytePos || mapConfig.start;
+    const cellSize = cols >= 5 ? 50 : 58;
+
+    let cellsHtml = '';
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const isByte = bytePos && bytePos.x === x && bytePos.y === y;
+        const isTarget = mapConfig.target && mapConfig.target.x === x && mapConfig.target.y === y;
+        const obstacle = (mapConfig.obstacles || []).find(o => o.x === x && o.y === y);
+        const scenery = (mapConfig.scenery || []).find(s => s.x === x && s.y === y);
+        const isPath = (mapConfig.pathTiles || []).some(p => p.x === x && p.y === y);
+        const isTrail = trails.some(t => t.x === x && t.y === y);
+
+        let cellClass = 'byte-map-cell';
+        let cellContent = '';
+
+        if (isByte) {
+          cellClass += ' cell-byte';
+          cellContent = '🤖';
+        } else if (isTarget) {
+          cellClass += ' cell-target';
+          cellContent = mapConfig.target.icon || '⭐';
+        } else if (obstacle) {
+          cellClass += ' cell-obstacle';
+          cellContent = obstacle.icon || '🪨';
+        } else if (isTrail) {
+          cellClass += ' cell-trail';
+          cellContent = '👣';
+        } else if (scenery) {
+          cellClass += ' cell-scenery';
+          cellContent = scenery.icon || '🌲';
+        } else if (isPath) {
+          cellClass += ' cell-path';
+          cellContent = '🟫';
+        } else {
+          cellClass += ' cell-scenery';
+          cellContent = '';
+        }
+
+        cellsHtml += `<div class="${cellClass}" id="map-cell-${x}-${y}" data-x="${x}" data-y="${y}" style="width:${cellSize}px; height:${cellSize}px;">${cellContent}</div>`;
+      }
+    }
+
+    const targetLabel = mapConfig.target ? (mapConfig.target.label || 'Destino') : 'Meta';
+    const targetIcon = mapConfig.target ? (mapConfig.target.icon || '⭐') : '⭐';
+
+    return `
+      <div class="byte-map-container" id="byte-active-visual-map">
+        <div class="byte-map-header">
+          <span class="byte-map-badge">🗺️ MAPA DEL RECORRIDO</span>
+          <span class="byte-map-legend">🤖 Salida ➔ ${targetIcon} ${targetLabel}</span>
+        </div>
+        <div class="byte-map-grid" style="grid-template-columns: repeat(${cols}, ${cellSize}px);">
+          ${cellsHtml}
+        </div>
+      </div>
+    `;
+  }
+
   // 7. ORDENÁ LOS PASOS (DRAG & DROP + TÁCTIL)
   renderOrderSteps(container, act) {
     const isGradeOne = this.currentGrade === 1;
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
+
+    // Asegurar que las tarjetas comiencen desordenadas (nunca en la solución final)
     let currentItems = [...act.items];
-
-    container.innerHTML = `
-      <div class="order-task-wrapper">
-        ${this.createActivityHeader(act)}
-        <p style="color:#64748b; font-size:1.05rem;">${isGradeOne ? 'USÁ LOS BOTONES ▲ ▼ O ARRASTRÁ LAS TARJETAS PARA ORDENAR:' : 'Usa los botones ▲ ▼ o arrastrá las tarjetas para ordenar:'}</p>
-        <ul class="order-items-list" id="order-sortable-list"></ul>
-        <div class="stage-actions-bar">
-          <button type="button" id="btn-check-order" class="btn-run-code" style="padding:12px 24px;">
-            <span>✅</span> ${isGradeOne ? 'VERIFICAR ORDEN' : 'Verificar Orden'}
-          </button>
-        </div>
-        ${this.createActivityFooter()}
-      </div>
-    `;
-
-    const listEl = document.getElementById('order-sortable-list');
-    const btnCheck = document.getElementById('btn-check-order');
-
-    const renderList = () => {
-      listEl.innerHTML = currentItems.map((item, idx) => `
-        <li class="order-card-item" draggable="true" data-idx="${idx}">
-          <div class="order-left-group">
-            <span class="order-step-badge">${idx + 1}</span>
-            <span class="order-card-icon">${item.icon}</span>
-            <span class="order-card-label" style="${isGradeOne ? 'text-transform:uppercase;' : ''}">${item.text}</span>
-          </div>
-          <div class="order-controls-group">
-            <button type="button" class="btn-order-move btn-move-up" data-idx="${idx}" ${idx === 0 ? 'disabled style="opacity:0.3"' : ''}>▲</button>
-            <button type="button" class="btn-order-move btn-move-down" data-idx="${idx}" ${idx === currentItems.length - 1 ? 'disabled style="opacity:0.3"' : ''}>▼</button>
-          </div>
-        </li>
-      `).join('');
-
-      listEl.querySelectorAll('.btn-move-up').forEach(b => {
-        b.onclick = (e) => {
-          e.stopPropagation();
-          const i = parseInt(b.getAttribute('data-idx'));
-          if (i > 0) {
-            const temp = currentItems[i];
-            currentItems[i] = currentItems[i - 1];
-            currentItems[i - 1] = temp;
-            this.onPlaySound('click');
-            renderList();
-          }
-        };
-      });
-
-      listEl.querySelectorAll('.btn-move-down').forEach(b => {
-        b.onclick = (e) => {
-          e.stopPropagation();
-          const i = parseInt(b.getAttribute('data-idx'));
-          if (i < currentItems.length - 1) {
-            const temp = currentItems[i];
-            currentItems[i] = currentItems[i + 1];
-            currentItems[i + 1] = temp;
-            this.onPlaySound('click');
-            renderList();
-          }
-        };
-      });
-
-      // Drag and Drop seguro con closest()
-      let draggedIndex = null;
-      listEl.querySelectorAll('.order-card-item').forEach(itemEl => {
-        itemEl.addEventListener('dragstart', (e) => {
-          draggedIndex = parseInt(itemEl.getAttribute('data-idx'));
-          itemEl.classList.add('dragging');
-          e.dataTransfer.effectAllowed = 'move';
-        });
-
-        itemEl.addEventListener('dragend', () => itemEl.classList.remove('dragging'));
-        itemEl.addEventListener('dragover', (e) => e.preventDefault());
-        itemEl.addEventListener('drop', (e) => {
-          e.preventDefault();
-          const dropTarget = e.target.closest('.order-card-item');
-          if (!dropTarget) return;
-          const targetIndex = parseInt(dropTarget.getAttribute('data-idx'));
-          if (draggedIndex !== null && !isNaN(targetIndex) && draggedIndex !== targetIndex) {
-            const moved = currentItems.splice(draggedIndex, 1)[0];
-            currentItems.splice(targetIndex, 0, moved);
-            this.onPlaySound('snap');
-            renderList();
-          }
-        });
-      });
+    let shuffleTries = 0;
+    const isWinning = (arr) => {
+      if (act.expectedDirs) {
+        return arr.every((it, i) => it.dir === act.expectedDirs[i]);
+      }
+      return arr.every((it, i) => it.id === act.correctOrder[i]);
     };
 
-    renderList();
-
-    this.wireResetButton(() => {
-      currentItems = [...act.items];
-      renderList();
-    });
-
-    if (btnCheck) {
-      btnCheck.onclick = () => {
-        if (this.activityState.isCompleted) return;
-        const isCorrect = currentItems.every((it, i) => it.id === act.correctOrder[i]);
-        if (isCorrect) {
-          const successMsg = isGradeOne
-            ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO."
-            : "¡Excelente! Organizaste las instrucciones en el orden perfecto.";
-          this.updateByte(successMsg, 'happy');
-          btnCheck.style.display = 'none';
-          this.recordActivitySuccess(act.id, 15);
-        } else {
-          const errorMsg = isGradeOne
-            ? "REVISÁ EL ORDEN: ALGUNA ACCIÓN SE ESTÁ REALIZANDO ANTES DE TIEMPO."
-            : "Revisá el orden: alguna acción se está realizando antes de tiempo.";
-          this.recordAttemptError(errorMsg);
-        }
-      };
+    while (shuffleTries < 15 && isWinning(currentItems)) {
+      currentItems.sort(() => Math.random() - 0.5);
+      shuffleTries++;
+    }
+    if (currentItems.length > 1 && isWinning(currentItems)) {
+      currentItems.reverse();
     }
 
-    const btnNext = document.getElementById('btn-activity-next');
-    if (btnNext) btnNext.onclick = () => this.nextActivity();
+    let isSimulating = false;
+    let byteSimPos = act.map ? { ...act.map.start } : null;
+    let trails = [];
+
+    const drawView = () => {
+      const mapHtml = act.map ? this.createVisualMapHtml(act.map, byteSimPos, trails) : '';
+
+      container.innerHTML = `
+        <div class="order-task-wrapper">
+          ${this.createActivityHeader(act)}
+          ${mapHtml}
+          <p style="color:#64748b; font-size:1.05rem; text-align:center;">
+            ${isGradeOne ? 'USÁ LOS BOTONES ▲ ▼ O ARRASTRÁ LAS TARJETAS PARA ORDENAR:' : 'Usa los botones ▲ ▼ o arrastrá las tarjetas para ordenar:'}
+          </p>
+          <ul class="order-items-list" id="order-sortable-list"></ul>
+          <div class="stage-actions-bar">
+            <button type="button" id="btn-check-order" class="btn-run-code" style="padding:12px 24px;">
+              <span>✅</span> ${isGradeOne ? 'VERIFICAR ORDEN' : 'Verificar Orden'}
+            </button>
+          </div>
+          ${this.createActivityFooter()}
+        </div>
+      `;
+
+      const listEl = document.getElementById('order-sortable-list');
+      const btnCheck = document.getElementById('btn-check-order');
+
+      const renderList = () => {
+        listEl.innerHTML = currentItems.map((item, idx) => `
+          <li class="order-card-item" draggable="${!isSimulating}" data-idx="${idx}">
+            <div class="order-left-group">
+              <span class="order-step-badge">${idx + 1}</span>
+              <span class="order-card-icon">${item.icon}</span>
+              <span class="order-card-label" style="${isGradeOne ? 'text-transform:uppercase;' : ''}">${item.text}</span>
+            </div>
+            <div class="order-controls-group">
+              <button type="button" class="btn-order-move btn-move-up" data-idx="${idx}" ${idx === 0 || isSimulating ? 'disabled style="opacity:0.3"' : ''}>▲</button>
+              <button type="button" class="btn-order-move btn-move-down" data-idx="${idx}" ${idx === currentItems.length - 1 || isSimulating ? 'disabled style="opacity:0.3"' : ''}>▼</button>
+            </div>
+          </li>
+        `).join('');
+
+        listEl.querySelectorAll('.btn-move-up').forEach(b => {
+          b.onclick = (e) => {
+            if (isSimulating) return;
+            e.stopPropagation();
+            const i = parseInt(b.getAttribute('data-idx'));
+            if (i > 0) {
+              const temp = currentItems[i];
+              currentItems[i] = currentItems[i - 1];
+              currentItems[i - 1] = temp;
+              this.onPlaySound('click');
+              renderList();
+            }
+          };
+        });
+
+        listEl.querySelectorAll('.btn-move-down').forEach(b => {
+          b.onclick = (e) => {
+            if (isSimulating) return;
+            e.stopPropagation();
+            const i = parseInt(b.getAttribute('data-idx'));
+            if (i < currentItems.length - 1) {
+              const temp = currentItems[i];
+              currentItems[i] = currentItems[i + 1];
+              currentItems[i + 1] = temp;
+              this.onPlaySound('click');
+              renderList();
+            }
+          };
+        });
+
+        // Drag and drop
+        let draggedIndex = null;
+        listEl.querySelectorAll('.order-card-item').forEach(itemEl => {
+          itemEl.addEventListener('dragstart', (e) => {
+            if (isSimulating) { e.preventDefault(); return; }
+            draggedIndex = parseInt(itemEl.getAttribute('data-idx'));
+            itemEl.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+          });
+          itemEl.addEventListener('dragend', () => itemEl.classList.remove('dragging'));
+          itemEl.addEventListener('dragover', (e) => e.preventDefault());
+          itemEl.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (isSimulating) return;
+            const dropTarget = e.target.closest('.order-card-item');
+            if (!dropTarget) return;
+            const targetIndex = parseInt(dropTarget.getAttribute('data-idx'));
+            if (draggedIndex !== null && !isNaN(targetIndex) && draggedIndex !== targetIndex) {
+              const moved = currentItems.splice(draggedIndex, 1)[0];
+              currentItems.splice(targetIndex, 0, moved);
+              this.onPlaySound('snap');
+              renderList();
+            }
+          });
+        });
+      };
+
+      renderList();
+
+      this.wireResetButton(() => {
+        isSimulating = false;
+        byteSimPos = act.map ? { ...act.map.start } : null;
+        trails = [];
+        // Re-desordenar
+        currentItems.sort(() => Math.random() - 0.5);
+        drawView();
+      });
+
+      if (btnCheck) {
+        btnCheck.onclick = async () => {
+          if (this.activityState.isCompleted || isSimulating) return;
+
+          // Si hay mapa, simular movimiento paso a paso en el mapa
+          if (act.map) {
+            isSimulating = true;
+            btnCheck.disabled = true;
+            btnCheck.style.opacity = '0.5';
+
+            byteSimPos = { ...act.map.start };
+            trails = [];
+            const mapContainer = document.getElementById('byte-active-visual-map');
+
+            const refreshMap = () => {
+              if (mapContainer) {
+                mapContainer.outerHTML = this.createVisualMapHtml(act.map, byteSimPos, trails);
+              }
+            };
+            refreshMap();
+
+            let crashed = false;
+            let crashReason = '';
+
+            for (let s = 0; s < currentItems.length; s++) {
+              await new Promise(r => setTimeout(r, 400));
+              const item = currentItems[s];
+              trails.push({ ...byteSimPos });
+
+              let nextX = byteSimPos.x;
+              let nextY = byteSimPos.y;
+
+              const dir = item.dir || (item.icon === '➡️' ? 'right' : (item.icon === '⬇️' ? 'down' : (item.icon === '⬆️' ? 'up' : 'left')));
+              if (dir === 'right') nextX++;
+              else if (dir === 'left') nextX--;
+              else if (dir === 'down') nextY++;
+              else if (dir === 'up') nextY--;
+
+              // Límites del mapa
+              if (nextX < 0 || nextX >= act.map.cols || nextY < 0 || nextY >= act.map.rows) {
+                crashed = true;
+                crashReason = `En el paso ${s + 1} me salí del mapa. Revisá el orden de las flechas.`;
+                break;
+              }
+
+              // Verificar si pisa un camino o si choca con escenario/obstáculo
+              const isPath = (act.map.pathTiles || []).some(p => p.x === nextX && p.y === nextY);
+              const isTarget = act.map.target && act.map.target.x === nextX && act.map.target.y === nextY;
+              const isObs = (act.map.obstacles || []).some(o => o.x === nextX && o.y === nextY);
+
+              if (isObs || (!isPath && !isTarget)) {
+                crashed = true;
+                crashReason = `En el paso ${s + 1} me salí del camino y choqué. Mirá bien los giros del mapa.`;
+                byteSimPos = { x: nextX, y: nextY };
+                refreshMap();
+                break;
+              }
+
+              byteSimPos = { x: nextX, y: nextY };
+              this.onPlaySound('pop');
+              refreshMap();
+            }
+
+            await new Promise(r => setTimeout(r, 300));
+            const reachedTarget = !crashed && byteSimPos.x === act.map.target.x && byteSimPos.y === act.map.target.y;
+
+            if (reachedTarget) {
+              this.onPlaySound('fanfare');
+              this.onLaunchConfetti();
+              const successMsg = isGradeOne
+                ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO Y LLEGUÉ A DESTINO."
+                : "¡Excelente! Organizaste las instrucciones en el orden perfecto y Byte llegó a la escuela 🏫.";
+              this.updateByte(successMsg, 'happy');
+              btnCheck.style.display = 'none';
+              this.recordActivitySuccess(act.id, 15);
+            } else {
+              this.onPlaySound('wrong');
+              this.recordAttemptError(crashReason || "Con ese orden no llego a la escuela. Probá reorganizar las flechas.");
+              setTimeout(() => {
+                byteSimPos = { ...act.map.start };
+                trails = [];
+                isSimulating = false;
+                btnCheck.disabled = false;
+                btnCheck.style.opacity = '1';
+                drawView();
+              }, 1200);
+            }
+          } else {
+            // Actividad sin mapa (cocina, mochila, sándwich)
+            const isCorrect = currentItems.every((it, i) => it.id === act.correctOrder[i]);
+            if (isCorrect) {
+              this.onPlaySound('fanfare');
+              this.onLaunchConfetti();
+              const successMsg = isGradeOne
+                ? "¡EXCELENTE! ORGANIZASTE LAS INSTRUCCIONES EN EL ORDEN PERFECTO."
+                : "¡Excelente! Organizaste las instrucciones en el orden perfecto.";
+              this.updateByte(successMsg, 'happy');
+              btnCheck.style.display = 'none';
+              this.recordActivitySuccess(act.id, 15);
+            } else {
+              this.onPlaySound('wrong');
+              const errorMsg = isGradeOne
+                ? "REVISÁ EL ORDEN: ALGUNA ACCIÓN SE ESTÁ REALIZANDO ANTES DE TIEMPO."
+                : "Revisá el orden: alguna acción se está realizando antes de tiempo.";
+              this.recordAttemptError(errorMsg);
+            }
+          }
+        };
+      }
+
+      const btnNext = document.getElementById('btn-activity-next');
+      if (btnNext) btnNext.onclick = () => this.nextActivity();
+    };
+
+    drawView();
   }
 
   // 8. ENCONTRÁ EL ERROR
   renderFindError(container, act) {
     this.updateByte(act.instruction, 'thinking', `${act.title}. ${act.instruction}`);
 
+    const mapHtml = act.map ? this.createVisualMapHtml(act.map) : '';
+
     container.innerHTML = `
       <div class="quiz-box">
         ${this.createActivityHeader(act)}
-        <p style="font-size:1.15rem; color:#334155; margin-bottom:12px;">${act.instruction}</p>
+        <p style="font-size:1.15rem; color:#334155; margin-bottom:12px; text-align:center;">${act.instruction}</p>
+        ${mapHtml}
+        <div style="font-weight:700; color:#0369a1; text-align:center; margin:8px 0;">
+          Tocá la instrucción que contiene el error («bug»):
+        </div>
         <div style="display:flex; flex-direction:column; gap:10px;">
           ${act.steps.map(s => `
             <button type="button" class="quiz-opt-btn" data-sid="${s.id}">
               <span class="order-step-badge">${s.num}</span>
               <span style="font-size:1.8rem;">${s.icon}</span>
-              <span style="flex:1;">${s.text}</span>
+              <span style="flex:1; text-align:left;">${s.text}</span>
               <span>🔍</span>
             </button>
           `).join('')}
@@ -6343,10 +6639,13 @@ class CodingModuleManager {
 
         if (s && s.isError) {
           b.classList.add('correct');
+          this.onPlaySound('fanfare');
+          this.onLaunchConfetti();
           this.updateByte(`¡Encontraste el bug! ${act.explanation}`, 'happy');
           this.recordActivitySuccess(act.id, 15);
         } else {
           b.classList.add('wrong');
+          this.onPlaySound('wrong');
           this.recordAttemptError("Ese paso está en un momento lógico. Buscá cuál está fuera de lugar.");
         }
       };
@@ -8616,24 +8915,35 @@ class CodingModuleManager {
 
     const drawChallenge = (idx) => {
       const ch = act.challenges[idx];
-      this.updateByte("Analiza el mapa y elegí el camino seguro hacia la corona evitando rocas:", 'thinking');
+      this.updateByte(ch.instruction || "Observá el mapa y elegí el camino seguro hacia la corona sin chocar:", 'thinking');
+
+      let currentBytePos = { ...ch.map.start };
+      let trails = [];
+      let isSimulating = false;
+
+      const mapHtml = this.createVisualMapHtml(ch.map, currentBytePos, trails);
 
       container.innerHTML = `
         <div class="quiz-box">
           ${this.createActivityHeader(act)}
           <div class="pattern-instruction-title">Desafío ${idx + 1} de ${act.challenges.length}</div>
-          <p style="font-size:1.2rem; color:#1e293b; font-weight:800; margin:12px 0; text-align:center;">
+          <p style="font-size:1.15rem; color:#1e293b; font-weight:800; margin:10px 0; text-align:center;">
             ${ch.question}
           </p>
+
+          ${mapHtml}
+
+          <div style="font-weight:700; color:#0369a1; text-align:center; margin:10px 0 6px 0;">
+            Elegí el camino que debe ejecutar Byte:
+          </div>
 
           <div class="choose-path-grid">
             ${ch.paths.map(p => `
               <button type="button" class="choose-path-card" data-id="${p.id}" data-correct="${p.isCorrect}">
-                <strong style="font-size:1.15rem; color:#0369a1;">${p.name}</strong>
-                <div class="path-arrows-strip">
+                <strong style="font-size:1.2rem; color:#0369a1;">${p.name}</strong>
+                <div class="path-arrows-strip" style="font-size:1.5rem; letter-spacing:4px; margin-top:4px;">
                   ${p.arrows.join(' ')}
                 </div>
-                <span style="font-size:0.95rem; color:#64748b;">${p.reason}</span>
               </button>
             `).join('')}
           </div>
@@ -8643,16 +8953,64 @@ class CodingModuleManager {
       `;
 
       const cards = container.querySelectorAll('.choose-path-card');
-      cards.forEach(card => {
-        card.onclick = () => {
-          if (this.activityState.isCompleted) return;
-          const isCorrect = card.dataset.correct === 'true';
 
-          if (isCorrect) {
+      const refreshMap = () => {
+        const activeMap = document.getElementById('byte-active-visual-map');
+        if (activeMap) {
+          activeMap.outerHTML = this.createVisualMapHtml(ch.map, currentBytePos, trails);
+        }
+      };
+
+      cards.forEach(card => {
+        card.onclick = async () => {
+          if (this.activityState.isCompleted || isSimulating) return;
+          const pid = card.dataset.id;
+          const p = ch.paths.find(path => path.id === pid);
+          if (!p) return;
+
+          isSimulating = true;
+          cards.forEach(c => c.disabled = true);
+
+          // Simular el movimiento paso a paso de Byte en el mapa
+          currentBytePos = { ...ch.map.start };
+          trails = [];
+          refreshMap();
+
+          let crashed = false;
+          for (let step = 0; step < p.arrows.length; step++) {
+            await new Promise(r => setTimeout(r, 420));
+            trails.push({ ...currentBytePos });
+            const arrow = p.arrows[step];
+
+            let nextX = currentBytePos.x;
+            let nextY = currentBytePos.y;
+            if (arrow === '➡️') nextX++;
+            else if (arrow === '⬅️') nextX--;
+            else if (arrow === '⬇️') nextY++;
+            else if (arrow === '⬆️') nextY--;
+
+            const hitObs = (ch.map.obstacles || []).find(o => o.x === nextX && o.y === nextY);
+            if (hitObs) {
+              crashed = true;
+              currentBytePos = { x: nextX, y: nextY };
+              refreshMap();
+              const hitCell = document.getElementById(`map-cell-${nextX}-${nextY}`);
+              if (hitCell) hitCell.className += ' cell-crash';
+              this.onPlaySound('hit');
+              break;
+            }
+
+            currentBytePos = { x: nextX, y: nextY };
+            this.onPlaySound('pop');
+            refreshMap();
+          }
+
+          await new Promise(r => setTimeout(r, 350));
+
+          if (p.isCorrect && !crashed) {
             card.classList.add('correct');
-            cards.forEach(c => { if (c !== card) c.disabled = true; });
             this.onPlaySound('coin');
-            this.updateByte("¡Excelente! Ese camino llega a salvo a la corona 👑 sin chocar.", 'happy');
+            this.updateByte(p.successMsg || "¡Excelente! Llegaste a salvo a la meta.", 'happy');
 
             setTimeout(() => {
               if (idx < act.challenges.length - 1) {
@@ -8663,14 +9021,23 @@ class CodingModuleManager {
                 this.onLaunchConfetti();
                 this.recordActivitySuccess(act.id, 20);
               }
-            }, 950);
+            }, 1100);
           } else {
             card.classList.add('wrong');
             card.style.animation = 'shakePattern 0.5s ease';
-            setTimeout(() => { card.style.animation = ''; card.classList.remove('wrong'); }, 600);
             this.onPlaySound('wrong');
-            this.updateByte("¡Cuidado! Ese camino choca contra un obstáculo. Revisá el otro.", 'thinking');
-            this.recordAttemptError("Ese camino choca contra un obstáculo en el mapa.");
+            this.updateByte(p.failMsg || "¡Cuidado! Ese camino choca contra un obstáculo.", 'worried');
+            this.recordAttemptError(p.failMsg || "Ese camino choca contra un obstáculo.");
+
+            setTimeout(() => {
+              card.style.animation = '';
+              card.classList.remove('wrong');
+              currentBytePos = { ...ch.map.start };
+              trails = [];
+              refreshMap();
+              cards.forEach(c => c.disabled = false);
+              isSimulating = false;
+            }, 1200);
           }
         };
       });
@@ -8797,14 +9164,16 @@ class CodingModuleManager {
           </p>
 
           <div class="optimize-grid">
-            ${ch.algorithms.map(alg => `
+            ${ch.algorithms.map((alg, aIdx) => `
               <button type="button" class="optimize-card" data-id="${alg.id}" data-optimal="${alg.isOptimal}">
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                   <strong style="font-size:1.2rem; color:#0369a1;">${alg.title}</strong>
-                  <span class="optimize-steps-badge">${alg.stepsCount} pasos</span>
+                  <span class="optimize-steps-badge" style="background:#e0f2fe; color:#0369a1;">Opción ${aIdx === 0 ? 'A' : 'B'}</span>
                 </div>
-                <pre style="background:#f1f5f9; padding:12px; border-radius:12px; font-family:monospace; font-size:1.05rem; text-align:left; margin:0; line-height:1.4;">${alg.codeText}</pre>
-                <span style="font-size:0.95rem; color:#64748b; text-align:left;">${alg.desc}</span>
+                <pre style="background:#f1f5f9; padding:12px; border-radius:12px; font-family:monospace; font-size:1.05rem; text-align:left; margin:8px 0; line-height:1.4;">${alg.codeText}</pre>
+                <div class="optimize-reveal-feedback" style="display:none; font-size:0.95rem; color:#1e293b; text-align:left; font-weight:600; margin-top:6px;">
+                  ${alg.desc} (${alg.stepsCount} pasos)
+                </div>
               </button>
             `).join('')}
           </div>
@@ -8818,6 +9187,11 @@ class CodingModuleManager {
         card.onclick = () => {
           if (this.activityState.isCompleted) return;
           const isOptimal = card.dataset.optimal === 'true';
+
+          // Revelar descripciones y conteos de pasos en ambos algoritmos
+          container.querySelectorAll('.optimize-reveal-feedback').forEach(el => {
+            el.style.display = 'block';
+          });
 
           if (isOptimal) {
             card.classList.add('correct');
@@ -8835,7 +9209,7 @@ class CodingModuleManager {
                 this.onLaunchConfetti();
                 this.recordActivitySuccess(act.id, 20);
               }
-            }, 950);
+            }, 1200);
           } else {
             card.classList.add('wrong');
             card.style.animation = 'shakePattern 0.5s ease';

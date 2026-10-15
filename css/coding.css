@@ -3412,3 +3412,135 @@
 
 
 
+
+
+/* ========================================================
+   MAPAS VISUALES DE RECORRIDOS PARA BYTE (TODOS LOS GRADOS)
+   ======================================================== */
+.byte-map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #f0fdf4 0%, #e0f2fe 100%);
+  border: 3px solid #7dd3fc;
+  border-radius: 20px;
+  padding: 14px 18px;
+  margin: 12px auto;
+  max-width: 440px;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+  animation: popIn 0.3s ease;
+}
+
+.byte-map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.byte-map-badge {
+  background: #0284c7;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.byte-map-legend {
+  color: #0369a1;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.byte-map-grid {
+  display: grid;
+  gap: 6px;
+  background: #cbd5e1;
+  padding: 8px;
+  border-radius: 14px;
+  border: 2px solid #94a3b8;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.byte-map-cell {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.byte-map-cell.cell-path {
+  background: #f8fafc;
+  border: 1px dashed #94a3b8;
+  color: #94a3b8;
+}
+
+.byte-map-cell.cell-scenery {
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+.byte-map-cell.cell-obstacle {
+  background: #fed7aa;
+  border: 2px solid #f97316;
+  box-shadow: inset 0 0 6px rgba(249, 115, 22, 0.3);
+}
+
+.byte-map-cell.cell-target {
+  background: #fef08a;
+  border: 2px solid #eab308;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.5);
+  animation: targetPulse 2s infinite ease-in-out;
+}
+
+.byte-map-cell.cell-byte {
+  background: #38bdf8;
+  border: 2px solid #0284c7;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.6);
+  z-index: 2;
+  transform: scale(1.05);
+}
+
+.byte-map-cell.cell-trail {
+  background: #bae6fd;
+  border: 1px solid #7dd3fc;
+  font-size: 1.1rem;
+}
+
+.byte-map-cell.cell-crash {
+  background: #fecaca !important;
+  border: 2px solid #ef4444 !important;
+  animation: shakePattern 0.5s ease;
+}
+
+@keyframes targetPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 8px rgba(234, 179, 8, 0.4); }
+  50% { transform: scale(1.06); box-shadow: 0 0 16px rgba(234, 179, 8, 0.7); }
+}
+
+@media (max-width: 600px) {
+  .byte-map-cell {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+  .byte-map-header {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}
