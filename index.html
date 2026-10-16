@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="header-actions">
+    <div class="header-actions" id="header-gift-actions" style="display: none;">
       <!-- Botón para volver al Menú Principal -->
       <button id="btn-home-from-editor" class="btn-secondary" style="border-radius: 20px; font-weight: 700; background: white; border: 2px solid #ffca28; padding: 8px 16px; cursor: pointer;" title="Volver al menú de inicio">
         <span>🏠</span> Menú Inicio
@@ -273,7 +273,7 @@
         <!-- Grilla de Temas -->
         <div class="topics-grid">
           <!-- Tema 1: INSTRUCCIONES (Activo) -->
-          <article class="topic-card active">
+          <article id="topic-card-instructions" class="topic-card active" style="cursor: pointer;">
             <div class="topic-card-header">
               <span class="topic-icon">📋</span>
               <span class="topic-status-tag status-active">🟢 Disponible</span>
@@ -297,7 +297,7 @@
           </article>
 
           <!-- Tema 2: TAREA (Activo para 1.° a 5.° Grado) -->
-          <article id="topic-card-homework" class="topic-card active" style="border-color: #8b5cf6;">
+          <article id="topic-card-homework" class="topic-card active" style="border-color: #8b5cf6; cursor: pointer;">
             <div class="topic-card-header">
               <span class="topic-icon">📝</span>
               <span class="topic-status-tag status-active" style="background: #ede9fe; color: #6d28d9;">🟢 ¡NUEVO BLOQUE!</span>
@@ -321,7 +321,7 @@
           </article>
 
           <!-- Tema 3: PATRONES (Bloqueado según requerimiento de 1.° a 5.° Grado) -->
-          <article id="topic-card-patterns" class="topic-card locked" style="border-color: #cbd5e1;">
+          <article id="topic-card-patterns" class="topic-card locked" style="border-color: #cbd5e1; cursor: not-allowed;">
             <div class="topic-card-header">
               <span class="topic-icon">🧩</span>
               <span class="topic-status-tag status-locked">🔒 No disponible</span>

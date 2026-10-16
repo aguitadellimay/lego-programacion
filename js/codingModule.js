@@ -69,46 +69,46 @@ const CODING_DATA = {
             id: 'g1_inst_first',
             type: 'which_first_or_after',
             title: '👉 ACTIVIDAD 1: ¿QUÉ VA PRIMERO?',
-            instruction: '¡VAMOS A DESCUBRIR QUÉ ACCIÓN DEBEMOS HACER AL INICIO!\n1. OBSERVÁ CON ATENCIÓN LAS ACCIONES DE CADA TAREA COTIDIANA.\n2. PENSÁ CUÁL ES EL PRIMER PASO INDISPENSABLE PARA PODER EMPEZAR.\n3. TOCÁ LA TARJETA QUE DEBEMOS HACER PRIMERO PARA AVANZAR.',
+            instruction: '¡VAMOS A DESCUBRIR QUÉ ACCIÓN DEBEMOS HACER AL INICIO!\n1. OBSERVÁ CON ATENCIÓN LAS ACCIONES DEL ROBOT Y DE CADA MÁQUINA.\n2. PENSÁ CUÁL ES EL PRIMER PASO INDISPENSABLE PARA PODER EMPEZAR.\n3. TOCÁ LA TARJETA QUE DEBEMOS HACER PRIMERO PARA AVANZAR.',
             mode: 'first',
             challenges: [
               {
-                question: '¿QUÉ VA PRIMERO AL LAVARSE LAS MANOS?',
+                question: '¿QUÉ VA PRIMERO AL ENCENDER EL ROBOT BYTE?',
                 options: [
-                  { id: 'opt1', icon: '💧', label: 'MOJARSE LAS MANOS', isCorrect: true },
-                  { id: 'opt2', icon: '🧺', label: 'SECARSE CON LA TOALLA', isCorrect: false }
+                  { id: 'opt1', icon: '🔘', label: 'APRETAR EL BOTÓN DE ENCENDIDO', isCorrect: true },
+                  { id: 'opt2', icon: '🏃', label: 'ENVIARLO A CORRER POR LA SALA', isCorrect: false }
                 ],
-                explanation: '¡PRIMERO NOS MOJAMOS LAS MANOS Y LUEGO NOS SECAMOS!'
+                explanation: '¡PRIMERO ENCENDEMOS EL ROBOT ANTES DE QUE PUEDA MOVERSE!'
               },
               {
-                question: '¿QUÉ VA PRIMERO AL CEPILLARSE LOS DIENTES?',
+                question: '¿QUÉ VA PRIMERO AL LANZAR UN COHETE ESPACIAL?',
                 options: [
-                  { id: 'opt1', icon: '🧴', label: 'PONER PASTA EN EL CEPILLO', isCorrect: true },
-                  { id: 'opt2', icon: '🪥', label: 'GUARDAR EL CEPILLO LIMPIO', isCorrect: false }
+                  { id: 'opt1', icon: '🚀', label: 'INICIAR LA CUENTA REGRESIVA', isCorrect: true },
+                  { id: 'opt2', icon: '🌌', label: 'VOLAR ENTRE LAS ESTRELLAS', isCorrect: false }
                 ],
-                explanation: '¡PRIMERO PONEMOS LA PASTA DENTAL ANTES DE USAR EL CEPILLO!'
+                explanation: '¡PRIMERO SE HACE LA CUENTA REGRESIVA ANTES DE VOLAR!'
               },
               {
-                question: '¿QUÉ VA PRIMERO AL VESTIRSE?',
+                question: '¿QUÉ VA PRIMERO AL PROGRAMAR A BYTE?',
                 options: [
-                  { id: 'opt1', icon: '🧦', label: 'PONERSE LAS MEDIAS', isCorrect: true },
-                  { id: 'opt2', icon: '👟', label: 'PONERSE LAS ZAPATILLAS', isCorrect: false }
+                  { id: 'opt1', icon: '📝', label: 'ESCRIBIR LAS INSTRUCCIONES', isCorrect: true },
+                  { id: 'opt2', icon: '🏆', label: 'FESTEJAR QUE LLEGÓ A LA META', isCorrect: false }
                 ],
-                explanation: '¡PRIMERO VAN LAS MEDIAS Y DESPUÉS LAS ZAPATILLAS!'
+                explanation: '¡PRIMERO ESCRIBIMOS EL PROGRAMA PARA QUE BYTE SEPA QUÉ HACER!'
               },
               {
-                question: '¿QUÉ VA PRIMERO AL PREPARAR UN SÁNDWICH?',
+                question: '¿QUÉ VA PRIMERO AL CARGAR LA BATERÍA DEL ROBOT?',
                 options: [
-                  { id: 'opt1', icon: '🍞', label: 'TOMAR EL PAN', isCorrect: true },
-                  { id: 'opt2', icon: '😋', label: 'COMER EL SÁNDWICH', isCorrect: false }
+                  { id: 'opt1', icon: '🔌', label: 'CONECTAR EL CABLE DE ENERGÍA', isCorrect: true },
+                  { id: 'opt2', icon: '🔋', label: 'DESCONECTAR LA BATERÍA LLENA', isCorrect: false }
                 ],
-                explanation: '¡PRIMERO BUSCAMOS EL PAN PARA PODER ARMAR EL SÁNDWICH!'
+                explanation: '¡PRIMERO CONECTAMOS EL CABLE PARA QUE LA BATERÍA RECIBA ENERGÍA!'
               }
             ],
             hints: [
-              'PISTA 1: PENSÁ QUÉ HACEMOS AL PRINCIPIO DE LA TAREA ANTES DE CONTINUAR.',
-              'PISTA 2: POR EJEMPLO, NO PODEMOS SECARNOS SI TODAVÍA NO NOS MOJAMOS LAS MANOS.',
-              'PISTA 3: LA ACCIÓN CORRECTA ES LA QUE PREPARA TODO PARA PODER HACER EL RESTO.'
+              'PISTA 1: PENSÁ QUÉ HACEMOS AL PRINCIPIO ANTES DE QUE EL ROBOT FUNCIONE.',
+              'PISTA 2: POR EJEMPLO, BYTE NO PUEDE CORRER SI SU SISTEMA ESTÁ APAGADO.',
+              'PISTA 3: LA ACCIÓN CORRECTA ES LA QUE PREPARA TODO PARA QUE EL ROBOT INICIE.'
             ]
           },
 
@@ -121,41 +121,41 @@ const CODING_DATA = {
             mode: 'after',
             challenges: [
               {
-                question: 'SI YA PUSISTE TIERRA EN LA MACETA, ¿QUÉ VA DESPUÉS?',
+                question: 'SI BYTE YA ENCENDIÓ SU MOTOR, ¿QUÉ VA DESPUÉS?',
                 options: [
-                  { id: 'opt1', icon: '🌱', label: 'PONER LA SEMILLA', isCorrect: true },
-                  { id: 'opt2', icon: '🍎', label: 'COMER UNA MANZANA', isCorrect: false }
+                  { id: 'opt1', icon: '➡️', label: 'AVANZAR HACIA ADELANTE', isCorrect: true },
+                  { id: 'opt2', icon: '🔌', label: 'DESCONECTAR LA ENERGÍA', isCorrect: false }
                 ],
-                explanation: '¡DESPUÉS DE LA TIERRA PONEMOS LA SEMILLA!'
+                explanation: '¡DESPUÉS DE ENCENDER EL MOTOR, EL ROBOT AVANZA POR EL CAMINO!'
               },
               {
-                question: 'SI YA PUSISTE PASTA EN EL CEPILLO, ¿QUÉ VA DESPUÉS?',
+                question: 'SI EL ROBOT YA DETECTÓ UN OBSTÁCULO CON SU SENSOR, ¿QUÉ VA DESPUÉS?',
                 options: [
-                  { id: 'opt1', icon: '🪥', label: 'CEPILLARSE LOS DIENTES', isCorrect: true },
-                  { id: 'opt2', icon: '😴', label: 'DORMIR LA SIESTA', isCorrect: false }
+                  { id: 'opt1', icon: '🦘', label: 'SALTAR O ESQUIVAR EL OBSTÁCULO', isCorrect: true },
+                  { id: 'opt2', icon: '💥', label: 'CHOCAR CONTRA LA PARED', isCorrect: false }
                 ],
-                explanation: '¡DESPUÉS DE PONER PASTA NOS CEPILLAMOS BIEN LOS DIENTES!'
+                explanation: '¡EL SENSOR SIRVE PARA DETECTAR Y SALTAR EL OBSTÁCULO A TIEMPO!'
               },
               {
-                question: 'SI YA ENJABONASTE TUS MANOS, ¿QUÉ VA DESPUÉS?',
+                question: 'SI YA ESCRIBISTE LAS INSTRUCCIONES EN PANTALLA, ¿QUÉ VA DESPUÉS?',
                 options: [
-                  { id: 'opt1', icon: '💧', label: 'ENJUAGARSE CON AGUA', isCorrect: true },
-                  { id: 'opt2', icon: '🧤', label: 'PONERSE GUANTES', isCorrect: false }
+                  { id: 'opt1', icon: '▶️', label: 'TOCAR EL BOTÓN «EJECUTAR»', isCorrect: true },
+                  { id: 'opt2', icon: '🔌', label: 'APAGAR LA COMPUTADORA', isCorrect: false }
                 ],
-                explanation: '¡DESPUÉS DEL JABÓN NOS ENJUAGAMOS CON AGUA LIMPIA!'
+                explanation: '¡DESPUÉS DE ESCRIBIR LAS INSTRUCCIONES, TOCAMOS «EJECUTAR» PARA PROBAR EL PROGRAMA!'
               },
               {
-                question: 'SI YA ABRISTE LA MOCHILA, ¿QUÉ VA DESPUÉS?',
+                question: 'SI BYTE YA LLEGÓ A LA BASE ESPACIAL, ¿QUÉ VA DESPUÉS?',
                 options: [
-                  { id: 'opt1', icon: '📚', label: 'GUARDAR LOS CUADERNOS', isCorrect: true },
+                  { id: 'opt1', icon: '💎', label: 'GUARDAR LAS MUESTRAS MINERALES', isCorrect: true },
                   { id: 'opt2', icon: '⚽', label: 'PATEAR UNA PELOTA', isCorrect: false }
                 ],
-                explanation: '¡DESPUÉS DE ABRIR LA MOCHILA GUARDAMOS LOS CUADERNOS!'
+                explanation: '¡AL LLEGAR A LA BASE, BYTE GUARDA EL MINERAL QUE RECOLECTÓ!'
               }
             ],
             hints: [
-              'PISTA 1: OBSERVÁ QUÉ ACCIÓN TIENE RELACIÓN DIRECTA CON LA TAREA QUE ESTAMOS HACIENDO.',
-              'PISTA 2: DESCARTÁ LA ACCIÓN QUE NO TIENE NADA QUE VER CON LA ACTIVIDAD.',
+              'PISTA 1: OBSERVÁ QUÉ ACCIÓN TIENE RELACIÓN DIRECTA CON LA MISIÓN DE BYTE.',
+              'PISTA 2: DESCARTÁ LA ACCIÓN QUE NO TIENE NADA QUE VER CON PROGRAMAR O EXPLORAR.',
               'PISTA 3: LA RESPUESTA CORRECTA COMPLETA EL PASO INMEDIATO SIGUIENTE.'
             ]
           },
@@ -164,19 +164,19 @@ const CODING_DATA = {
           {
             id: 'g1_inst_order',
             type: 'order_steps',
-            title: '🔢 ACTIVIDAD 3: ORDENÁ LOS PASOS',
-            instruction: '¡ARMEMOS LA SECUENCIA COMPLETA PARA PREPARAR UN RICO SÁNDWICH!\n1. OBSERVÁ LAS ACCIONES QUE APARECEN DESORDENADAS.\n2. TOCÁ LAS FLECHAS ▲ Y ▼ DE CADA TARJETA PARA MOVERLAS HACIA ARRIBA O HACIA ABAJO.\n3. UBICÁ EL PRIMER PASO ARRIBA Y EL ÚLTIMO ABAJO.\n4. CUANDO LA SECUENCIA ESTÉ LISTA, TOCÁ «¡COMPROBAR ORDEN!» PARA VALIDAR.',
+            title: '🔢 ACTIVIDAD 3: ORDENÁ LAS INSTRUCCIONES DEL ROBOT',
+            instruction: '¡ARMEMOS LA SECUENCIA PARA QUE EL ROBOT RECOLECTE UNA MUESTRA ESPACIAL!\n1. OBSERVÁ LAS 4 INSTRUCCIONES QUE APARECEN DESORDENADAS.\n2. TOCÁ LAS FLECHAS ▲ Y ▼ DE CADA TARJETA PARA MOVERLAS HACIA ARRIBA O HACIA ABAJO.\n3. UBICÁ EL PRIMER PASO ARRIBA Y EL ÚLTIMO ABAJO.\n4. CUANDO LA SECUENCIA ESTÉ LISTA, TOCÁ «¡COMPROBAR ORDEN!» PARA VALIDAR.',
             items: [
-              { id: 'sw_bread1', icon: '🍞', text: 'TOMAR EL PAN' },
-              { id: 'sw_filling', icon: '🧀', text: 'PONER EL QUESO Y JAMÓN' },
-              { id: 'sw_bread2', icon: '🍞', text: 'TAPAR CON OTRO PAN' },
-              { id: 'sw_eat', icon: '😋', text: 'COMER EL RICO SÁNDWICH' }
+              { id: 'rb_power', icon: '🔘', text: 'ENCENDER EL ROBOT' },
+              { id: 'rb_move', icon: '➡️', text: 'AVANZAR HACIA EL CRISTAL' },
+              { id: 'rb_grab', icon: '🦾', text: 'TOMAR EL CRISTAL ESPACIAL' },
+              { id: 'rb_save', icon: '📦', text: 'GUARDARLO EN LA BASE' }
             ],
-            correctOrder: ['sw_bread1', 'sw_filling', 'sw_bread2', 'sw_eat'],
+            correctOrder: ['rb_power', 'rb_move', 'rb_grab', 'rb_save'],
             hints: [
-              'PISTA 1: PRIMERO SIEMPRE APOYAMOS LA PRIMERA REBANADA DE PAN SOBRE EL PLATO.',
-              'PISTA 2: EN EL MEDIO COLOCAMOS EL RELLENO DE JAMÓN Y QUESO, Y LUEGO TAPAMOS CON OTRO PAN.',
-              'PISTA 3: LO ÚLTIMO DE TODO ES DISFRUTAR Y COMER EL SÁNDWICH TERMINADO.'
+              'PISTA 1: PRIMERO SIEMPRE ENCENDEMOS EL ROBOT CON SU BOTÓN DE ENERGÍA.',
+              'PISTA 2: LUEGO AVANZA HACIA EL CRISTAL Y LO SOSTIENE CON SU BRAZO MECÁNICO.',
+              'PISTA 3: AL FINAL GUARDA LA MUESTRA RECOLECTADA DENTRO DE LA BASE ESPACIAL.'
             ]
           },
 
@@ -184,22 +184,22 @@ const CODING_DATA = {
           {
             id: 'g1_inst_missing',
             type: 'missing_step',
-            title: '🧩 ACTIVIDAD 4: ¿QUÉ PASO FALTA?',
-            instruction: '¡A ESTA SECUENCIA PARA LAVARSE LAS MANOS LE FALTA UN PASO INDISPENSABLE!\n1. LEÉ LOS PASOS Y BUSCÁ EL CASILLERO CON EL SIGNO DE PREGUNTA ❓.\n2. PENSÁ QUÉ PASO DE HIGIENE ES OBLIGATORIO ENTRE MOJARSE Y SECARSE.\n3. TOCÁ LA OPCIÓN CORRECTA ENTRE LAS 3 DISPONIBLES PARA COMPLETAR LA SECUENCIA.',
+            title: '🧩 ACTIVIDAD 4: ¿QUÉ PASO FALTA EN EL PROGRAMA?',
+            instruction: '¡A ESTA SECUENCIA DEL ROBOT LE FALTA UNA INSTRUCCIÓN PARA ENCENDER SU PANTALLA!\n1. LEÉ LOS PASOS Y BUSCÁ EL CASILLERO CON EL SIGNO DE PREGUNTA ❓.\n2. PENSÁ QUÉ PASO ES OBLIGATORIO ENTRE ENCHUFAR LA BATERÍA Y VER LA PANTALLA.\n3. TOCÁ LA OPCIÓN CORRECTA ENTRE LAS 3 DISPONIBLES PARA COMPLETAR LA SECUENCIA.',
             sequence: [
-              { num: 1, icon: '🚰', text: 'MOJARSE LAS MANOS CON AGUA' },
+              { num: 1, icon: '🔌', text: 'CONECTAR LA BATERÍA AL ROBOT' },
               { num: 2, icon: '❓', text: '____________________', isMissing: true },
-              { num: 3, icon: '🧺', text: 'SECARSE LAS MANOS CON LA TOALLA' }
+              { num: 3, icon: '🖥️', text: 'MOSTRAR EL MENSAJE EN PANTALLA' }
             ],
             options: [
-              { id: 'm_opt1', text: 'ENJABONARSE BIEN CON JABÓN', isCorrect: true, icon: '🧼' },
+              { id: 'm_opt1', text: 'PRESIONAR EL BOTÓN DE ENCENDIDO', isCorrect: true, icon: '🔘' },
               { id: 'm_opt2', text: 'PONERSE LOS ZAPATOS', isCorrect: false, icon: '👟' },
               { id: 'm_opt3', text: 'COMER UNA MANZANA', isCorrect: false, icon: '🍎' }
             ],
             hints: [
-              'PISTA 1: PENSÁ QUÉ PRODUCTO DE HIGIENE NECESITÁS PARA SACAR LA SUCIEDAD.',
-              'PISTA 2: PARA QUE LAS MANOS QUEDEN LIMPIAS HACE FALTA ENJABONARSE BIEN.',
-              'PISTA 3: LA RESPUESTA CORRECTA ES «ENJABONARSE BIEN CON JABÓN».'
+              'PISTA 1: PENSÁ CÓMO SE ENCIENDE UN EQUIPO ELECTRÓNICO CUANDO YA TIENE BATERÍA.',
+              'PISTA 2: PARA QUE LA PANTALLA ANDE HAY QUE APRETAR EL BOTÓN DE ENCENDIDO.',
+              'PISTA 3: LA RESPUESTA CORRECTA ES «PRESIONAR EL BOTÓN DE ENCENDIDO».'
             ]
           },
 
@@ -483,47 +483,42 @@ const CODING_DATA = {
                 },
                 {
                         "id": "g1_hw_desafio3",
-                        "type": "build_sequence",
-                        "title": "DESAFÍO 3: CONSTRUÍ LA SECUENCIA CORRECTA",
-                        "instruction": "BYTE NECESITA RECARGAR SU BATERÍA SOLAR. ELEGÍ Y ORDENÁ LAS 3 TARJETAS CORRECTAS Y DESCARTÁ LA EQUIVOCADA.",
-                        "objective": "CONSTRUIR LA SECUENCIA LÓGICA PARA RECARGAR A BYTE CON ENERGÍA SOLAR DESCARTANDO EL DISTRACTOR.",
-                        "whatToObserve": "MIRÁ LAS 4 TARJETAS DEL BANCO DE ACCIONES: HAY UNA QUE PUEDE DAÑAR A BYTE.",
-                        "howToPlay": "TOCÁ LAS TARJETAS EN EL ORDEN QUE DEBEN EJECUTARSE. DESCARTÁ LA QUE TIENE AGUA.",
-                        "howToSubmit": "CUANDO LA SECUENCIA TENGA LOS 3 PASOS EN ORDEN, TOCÁ «🚀 ¡COMPROBAR SECUENCIA!».",
-                        "resultMeaning": "SI LA SECUENCIA DE RECARGA ES EXACTA, ¡COMPLETASTE TODA LA TAREA CON ÉXITO Y CELEBRACIÓN!",
-                        "pool": [
-                                {
-                                        "id": "b_panel",
-                                        "icon": "☀️",
-                                        "text": "ABRIR EL PANEL SOLAR"
-                                },
-                                {
-                                        "id": "b_cable",
-                                        "icon": "🔌",
-                                        "text": "CONECTAR EL CABLE A BYTE"
-                                },
-                                {
-                                        "id": "b_charge",
-                                        "icon": "🔋",
-                                        "text": "CARGAR LA BATERÍA AL 100%"
-                                },
-                                {
-                                        "id": "b_water",
-                                        "icon": "💧",
-                                        "text": "ECHARLE AGUA AL ENCHUFE"
-                                }
+                        "type": "byte_mission",
+                        "title": "DESAFÍO 3: MISIÓN CONTRARRELOJ EN EL ESPACIO",
+                        "instruction": "¡MISIÓN RÁPIDA! AYUDÁ A BYTE A LLEGAR A LA BASE ESPACIAL 🚀 ESQUIVANDO EL METEORITO ☄️ ANTES DE QUE SE ACABE EL TIEMPO.",
+                        "objective": "PROGRAMAR LA RUTA ESPACIAL CON SALTO SOBRE EL METEORITO PARA GANAR EL BONUS DE VELOCIDAD.",
+                        "whatToObserve": "OBSERVÁ EL MAPA ESPACIAL: BYTE INICIA EN (0,0), EL METEORITO ESTÁ EN (2,0) Y LA BASE ESPACIAL EN (4,0).",
+                        "howToPlay": "TOCÁ LOS COMANDOS (AVANZAR Y SALTAR). PODÉS BORRAR CON ✕ O DESHACER SI TE EQUIVOCÁS.",
+                        "howToSubmit": "PRESIONÁ «▶️ ¡EJECUTAR INSTRUCCIONES!» PARA QUE BYTE COMIENCE SU RECORRIDO.",
+                        "resultMeaning": "SI LLEGÁS A TIEMPO SUMARÁS 10 PUNTOS EXTRA DE BONUS Y ESTRELLAS DORADAS.",
+                        "hasTimer": true,
+                        "timerSeconds": 45,
+                        "gridCols": 5,
+                        "gridRows": 2,
+                        "startPos": { "x": 0, "y": 0 },
+                        "targetPos": { "x": 4, "y": 0 },
+                        "goalIcon": "🚀",
+                        "goalName": "BASE ESPACIAL",
+                        "obstacles": [
+                                { "x": 2, "y": 0, "icon": "☄️", "name": "METEORITO" }
                         ],
-                        "validSequences": [
-                                [
-                                        "b_panel",
-                                        "b_cable",
-                                        "b_charge"
-                                ]
+                        "scenery": [
+                                { "x": 0, "y": 1, "icon": "⭐" },
+                                { "x": 1, "y": 1, "icon": "🪐" },
+                                { "x": 2, "y": 1, "icon": "✨" },
+                                { "x": 3, "y": 1, "icon": "🛸" },
+                                { "x": 4, "y": 1, "icon": "⭐" }
+                        ],
+                        "availableCommands": [
+                                "right",
+                                "jump",
+                                "up",
+                                "down"
                         ],
                         "hints": [
-                                "PISTA 1: ¡CUIDADO! EL AGUA Y LA ELECTRICIDAD NO SE LLEVAN BIEN: DESCARTÁ LA TARJETA DE ECHAR AGUA.",
-                                "PISTA 2: PRIMERO SE ABRE EL PANEL AL SOL, LUEGO SE CONECTA EL CABLE Y FINALMENTE SE CARGA LA BATERÍA.",
-                                "PISTA 3: EL ORDEN ES: 1. ABRIR PANEL SOLAR ➡️ 2. CONECTAR CABLE ➡️ 3. CARGAR BATERÍA."
+                                "PISTA 1: BYTE DEBE AVANZAR EN LÍNEA RECTA HACIA LA DERECHA.",
+                                "PISTA 2: EN EL PASO 2 ESTÁ JUSTO DELANTE DEL METEORITO: ¡USÁ LA ORDEN SALTAR!",
+                                "PISTA 3: LA SECUENCIA EXACTA ES: AVANZAR ➡️ SALTAR ➡️ AVANZAR."
                         ]
                 }
         ]
@@ -1203,7 +1198,7 @@ const CODING_DATA = {
               {
                 icon: '🔀',
                 title: 'El Orden Importa',
-                desc: 'El orden de los pasos cambia el resultado: ¡no podés guardar los cuadernos si la mochila todavía está cerrada!'
+                desc: 'El orden de los pasos cambia el resultado: ¡no podés encender los motores si las compuertas de seguridad siguen cerradas!'
               }
             ],
             demoType: 'sequence_demo_g2',
@@ -1214,19 +1209,19 @@ const CODING_DATA = {
           {
             id: 'g2_inst_order',
             type: 'order_steps',
-            title: '🎒 Actividad 1: Ordená los Pasos de la Mochila',
-            instruction: '¡Preparar la mochila para la escuela requiere una secuencia ordenada!\n1. Leé atentamente las 4 instrucciones que aparecen desordenadas.\n2. Usá los botones ▲ y ▼ para mover cada tarjeta hacia arriba o hacia abajo.\n3. Organizá los pasos desde el inicio (abrir la mochila) hasta el final (cerrarla).\n4. Cuando consideres que la secuencia está lista, hacé clic en «¡Comprobar Orden!».\n5. Si algo no encaja, revisá el orden y volvé a intentarlo.',
+            title: '🚁 Actividad 1: Algoritmo de Despegue del Dron Explorador',
+            instruction: '¡El despegue seguro de un dron requiere una secuencia estricta de instrucciones!\n1. Leé atentamente las 4 instrucciones que aparecen desordenadas.\n2. Usá los botones ▲ y ▼ para mover cada tarjeta hacia arriba o hacia abajo.\n3. Organizá los pasos desde la verificación inicial de energía hasta la captura de fotos.\n4. Cuando consideres que la secuencia está lista, hacé clic en «¡Comprobar Orden!».\n5. Si algo no encaja, revisá el orden y volvé a intentarlo.',
             items: [
-              { id: 'bp_open', icon: '🔓', text: 'Abrir el cierre de la mochila' },
-              { id: 'bp_books', icon: '📚', text: 'Guardar los cuadernos escolares' },
-              { id: 'bp_pencil', icon: '✏️', text: 'Guardar la cartuchera con lápices' },
-              { id: 'bp_close', icon: '🔒', text: 'Cerrar la mochila con el cierre' }
+              { id: 'dr_check', icon: '🔋', text: 'Verificar batería cargada al 100%' },
+              { id: 'dr_motor', icon: '🌀', text: 'Encender los cuatro rotores' },
+              { id: 'dr_fly', icon: '⬆️', text: 'Elevar el dron a 2 metros de altura' },
+              { id: 'dr_scan', icon: '📷', text: 'Activar la cámara de exploración' }
             ],
-            correctOrder: ['bp_open', 'bp_books', 'bp_pencil', 'bp_close'],
+            correctOrder: ['dr_check', 'dr_motor', 'dr_fly', 'dr_scan'],
             hints: [
-              '💡 ¿Podés guardar los cuadernos si la mochila todavía está cerrada? Pensá qué acción debe ser la primera.',
-              '💡 Abrir la mochila siempre va primero, y cerrar la mochila con el cierre va al final.',
-              '💡 Organizá: abrir la mochila, guardar los cuadernos y cartuchera, y finalmente cerrar la mochila.'
+              '💡 Antes de hacer volar un dron, siempre se debe comprobar que la batería tenga carga suficiente.',
+              '💡 Con la batería lista, se activan los rotores para que el equipo pueda elevarse en el aire.',
+              '💡 Al alcanzar la altura de vuelo estable, se enciende la cámara para tomar fotografías.'
             ]
           },
 
@@ -1234,23 +1229,23 @@ const CODING_DATA = {
           {
             id: 'g2_inst_missing',
             type: 'missing_step',
-            title: '☕ Actividad 2: ¿Qué Paso Falta en el Té?',
-            instruction: '¡A esta secuencia para preparar un té le falta un paso indispensable!\n1. Leé los pasos en orden y localizá el hueco con el signo ❓.\n2. Pensá qué acción se necesita para que el saquito de té infusione en la taza.\n3. Hacé clic sobre la instrucción correcta entre las 3 opciones disponibles.\n4. El sistema verificará tu respuesta al instante y te explicará el resultado.',
+            title: '🛰️ Actividad 2: ¿Qué Paso Falta en el Rover Espacial?',
+            instruction: '¡A este algoritmo de navegación del vehículo explorador le falta un paso indispensable!\n1. Leé los pasos en orden y localizá el hueco con el signo ❓.\n2. Pensá qué acción de desplazamiento necesita el rover después de orientar sus ruedas.\n3. Hacé clic sobre la instrucción correcta entre las 3 opciones disponibles.\n4. El sistema verificará tu respuesta al instante y te explicará el resultado.',
             sequence: [
-              { num: 1, icon: '🔥', text: 'Calentar el agua en la pava' },
-              { num: 2, icon: '☕', text: 'Poner el saquito de té en la taza' },
+              { num: 1, icon: '🛰️', text: 'Recibir las coordenadas desde el satélite' },
+              { num: 2, icon: '🧭', text: 'Girar las ruedas hacia la dirección indicada' },
               { num: 3, icon: '❓', text: '____________________', isMissing: true },
-              { num: 4, icon: '🍯', text: 'Endulzar con una cucharadita de miel' }
+              { num: 4, icon: '🛑', text: 'Frenar el motor al llegar a la estación' }
             ],
             options: [
-              { id: 't_opt1', text: 'Servir el agua caliente en la taza', isCorrect: true, icon: '🫖' },
-              { id: 't_opt2', text: 'Ponerse el pijama', isCorrect: false, icon: '🥼' },
-              { id: 't_opt3', text: 'Atarse los cordones', isCorrect: false, icon: '👟' }
+              { id: 't_opt1', text: 'Avanzar 5 metros sobre la pista', isCorrect: true, icon: '🏎️' },
+              { id: 't_opt2', text: 'Desconectar la antena de comunicación', isCorrect: false, icon: '📡' },
+              { id: 't_opt3', text: 'Apagar el procesador central', isCorrect: false, icon: '🔌' }
             ],
             hints: [
-              '💡 Pensá: ¿cómo se prepara el té si el saquito está seco en la taza? Falta un líquido caliente.',
-              '💡 Necesitamos verter el agua caliente sobre el saquito para que tome color y sabor.',
-              '💡 La instrucción correcta para completar el paso 3 es «Servir el agua caliente en la taza».'
+              '💡 El rover necesita recorrer la distancia física hasta el destino marcado por las coordenadas.',
+              '💡 Descartá las opciones que no pertenecen al funcionamiento de un robot explorador.',
+              '💡 La instrucción correcta para completar el paso 3 es «Avanzar 5 metros sobre la pista».'
             ]
           },
 
@@ -1258,19 +1253,19 @@ const CODING_DATA = {
           {
             id: 'g2_inst_error',
             type: 'find_error',
-            title: '🪥 Actividad 3: ¿Qué Paso Está Mal?',
-            instruction: '¡Detectá la instrucción que está en el momento equivocado!\n1. Observá la secuencia de pasos para cepillarse los dientes.\n2. Analizá cada acción y detectá qué paso se está realizando antes de tiempo o de forma incoherente.\n3. Tocá la tarjeta que contiene el error para depurar el procedimiento.\n4. Descubrí por qué esa instrucción no puede ejecutarse en ese momento.',
+            title: '❄️ Actividad 3: Detectá la Instrucción Fuera de Lugar',
+            instruction: '¡Detectá la instrucción que interrumpe el enfriamiento del procesador!\n1. Observá la secuencia de pasos programados para proteger el procesador de Byte.\n2. Analizá cada acción y detectá qué paso encierra el calor o daña el equipo.\n3. Tocá la tarjeta que contiene el error para depurar el procedimiento.\n4. Descubrí por qué esa instrucción no puede ejecutarse en ese momento.',
             steps: [
-              { id: 't1', num: 1, text: 'Guardar el cepillo en el vaso del baño', isError: true, icon: '🚪' },
-              { id: 't2', num: 2, text: 'Poner pasta dental en el cepillo', isError: false, icon: '🧴' },
-              { id: 't3', num: 3, text: 'Cepillarse los dientes durante 2 minutos', isError: false, icon: '🪥' },
-              { id: 't4', num: 4, text: 'Enjuagarse la boca con agua', isError: false, icon: '💧' }
+              { id: 't1', num: 1, text: 'El sensor detecta temperatura elevada en el chip', isError: false, icon: '🌡️' },
+              { id: 't2', num: 2, text: 'Guardar el procesador en una caja cerrada', isError: true, icon: '📦' },
+              { id: 't3', num: 3, text: 'Encender el ventilador de enfriamiento', isError: false, icon: '❄️' },
+              { id: 't4', num: 4, text: 'Bajar la temperatura a nivel seguro', isError: false, icon: '✅' }
             ],
-            explanation: '¡No podemos guardar el cepillo antes de haberlo usado para cepillarnos los dientes!',
+            explanation: '¡No podemos guardar el equipo en una caja cerrada cuando el procesador está sobrecalentado! Primero debemos encender el ventilador para enfriarlo.',
             hints: [
-              '💡 Fijate en qué momento se guarda el cepillo de dientes en el vaso.',
-              '💡 Si guardás el cepillo en el paso 1, ¿con qué te vas a cepillar los dientes en el paso 3?',
-              '💡 El error está en el Paso 1: guardar el cepillo antes de haberse cepillado y enjuagado.'
+              '💡 Si guardás un procesador caliente en una caja cerrada, el calor se concentra y puede quemar los circuitos.',
+              '💡 Para bajar la temperatura se necesita ventilación activa con el ventilador encendido.',
+              '💡 El error está en el Paso 2: guardar el equipo en una caja antes de enfriarlo.'
             ]
           },
 
@@ -1278,31 +1273,31 @@ const CODING_DATA = {
           {
             id: 'g2_inst_first',
             type: 'which_first_or_after',
-            title: '🚦 Actividad 4: ¿Qué Debemos Hacer Primero?',
-            instruction: '¡En muchas situaciones cotidianas, realizar una acción previa es obligatorio por seguridad o lógica!\n1. Analizá con atención la situación planteada (cruzar la calle).\n2. Compará las alternativas y determiná cuál debe ejecutarse siempre en primer lugar.\n3. Tocá la opción correcta para avanzar al siguiente desafío.',
+            title: '🤖 Actividad 4: ¿Qué Debemos Hacer Primero en el Robot?',
+            instruction: '¡En robótica y programación, realizar una acción previa es obligatorio por seguridad y lógica!\n1. Analizá con atención la misión planteada.\n2. Compará las alternativas y determiná cuál debe ejecutarse siempre en primer lugar.\n3. Tocá la opción correcta para avanzar al siguiente desafío.',
             mode: 'first',
             challenges: [
               {
-                question: 'Antes de cruzar la calle, ¿qué debemos hacer primero?',
+                question: 'Antes de enviar al robot Byte a recorrer la pista, ¿qué debemos hacer primero?',
                 options: [
-                  { id: 'c1', icon: '👀', label: 'Mirar para ambos lados', isCorrect: true },
-                  { id: 'c2', icon: '🏃', label: 'Cruzar corriendo sin mirar', isCorrect: false }
+                  { id: 'c1', icon: '🔋', label: 'Revisar la batería y los sensores', isCorrect: true },
+                  { id: 'c2', icon: '🚀', label: 'Lanzarlo a ciegas a máxima velocidad', isCorrect: false }
                 ],
-                explanation: '¡Siempre debemos mirar hacia ambos lados antes de cruzar!'
+                explanation: '¡Siempre debemos verificar la energía y los sensores antes del movimiento!'
               },
               {
-                question: 'Antes de pintar una hoja en blanco, ¿qué debemos hacer primero?',
+                question: 'Antes de que la computadora ejecute un programa, ¿qué debemos hacer primero?',
                 options: [
-                  { id: 'c1', icon: '🎨', label: 'Buscar témperas y pinceles', isCorrect: true },
-                  { id: 'c2', icon: '🖼️', label: 'Colgar la hoja vacía en la pared', isCorrect: false }
+                  { id: 'c1', icon: '📝', label: 'Escribir las instrucciones en orden', isCorrect: true },
+                  { id: 'c2', icon: '🔌', label: 'Desenchufar el cable de la pared', isCorrect: false }
                 ],
-                explanation: '¡Primero conseguimos los materiales de pintura!'
+                explanation: '¡Primero programamos la secuencia paso a paso para que la máquina sepa qué hacer!'
               }
             ],
             hints: [
-              '💡 Pensá qué acción es indispensable para empezar cualquier actividad con total seguridad.',
-              '💡 Mirar hacia ambos lados antes de cruzar la calle evita accidentes y peligros.',
-              '💡 La primera opción («Mirar para ambos lados») es la precondición obligatoria.'
+              '💡 Pensá qué acción es indispensable para que un sistema robótico funcione sin fallas.',
+              '💡 Comprobar los sensores y la energía evita colisiones y fallos en la misión.',
+              '💡 La primera opción («Revisar la batería y los sensores») es el paso inicial indispensable.'
             ]
           },
 
@@ -1310,53 +1305,53 @@ const CODING_DATA = {
           {
             id: 'g2_inst_last',
             type: 'which_first_or_after',
-            title: '📦 Actividad 5: ¿Qué Debemos Hacer al Final?',
-            instruction: '¡Toda secuencia completa tiene una instrucción clara de cierre y orden!\n1. Leé la tarea cotidiana y las acciones posibles.\n2. Identificá qué acción concluye la actividad y deja todo en orden al terminar.\n3. Tocá la opción que representa el paso final correcto.',
+            title: '💾 Actividad 5: ¿Qué Debemos Hacer al Final de la Misión?',
+            instruction: '¡Toda secuencia algorítmica completa tiene una instrucción de cierre y resguardo!\n1. Leé la misión tecnológica y las acciones posibles.\n2. Identificá qué acción concluye la actividad y resguarda los datos al terminar.\n3. Tocá la opción que representa el paso final correcto.',
             mode: 'last',
             challenges: [
               {
-                question: 'Al terminar de jugar con tus juguetes, ¿qué debemos hacer al final?',
+                question: 'Al terminar una misión de patrullaje con el robot explorador, ¿qué debemos hacer al final?',
                 options: [
-                  { id: 'c1', icon: '📦', label: 'Guardar los juguetes en el cajón', isCorrect: true },
-                  { id: 'c2', icon: '🔨', label: 'Dejarlos tirados en el suelo', isCorrect: false }
+                  { id: 'c1', icon: '🔌', label: 'Estacionar en la base de carga y guardar los datos', isCorrect: true },
+                  { id: 'c2', icon: '💥', label: 'Dejar el motor acelerando contra una pared', isCorrect: false }
                 ],
-                explanation: '¡Al terminar de jugar dejamos la habitación ordenada!'
+                explanation: '¡Al terminar, el robot debe guardar sus datos y recargar sus baterías!'
               },
               {
-                question: 'Al terminar de comer el almuerzo, ¿qué debemos hacer al final?',
+                question: 'Al terminar de transferir los datos del satélite a la base central, ¿qué debemos hacer al final?',
                 options: [
-                  { id: 'c1', icon: '🍽️', label: 'Llevar los platos a la cocina', isCorrect: true },
-                  { id: 'c2', icon: '🛋️', label: 'Tirar la comida al sillón', isCorrect: false }
+                  { id: 'c1', icon: '🔒', label: 'Cerrar la conexión segura y guardar el registro', isCorrect: true },
+                  { id: 'c2', icon: '📡', label: 'Desconectar la antena en mitad del envío', isCorrect: false }
                 ],
-                explanation: '¡Llevar los platos limpios a la bacha completa el almuerzo!'
+                explanation: '¡Cerrar la conexión de forma segura asegura que ningún archivo se dañe o pierda!'
               }
             ],
             hints: [
-              '💡 Pensá en cómo se concluye una rutina responsable en el aula o en el hogar.',
-              '💡 Dejar las cosas guardadas en su lugar correspondiente es la última etapa de todo trabajo.',
-              '💡 Elegí la acción que cierra y deja limpio el espacio de juego o estudio.'
+              '💡 Pensá en cómo se concluye una rutina tecnológica de manera segura.',
+              '💡 Guardar la información y apagar o estacionar los motores protege los equipos.',
+              '💡 Elegí la acción que resguarda los datos y deja el robot listo para la próxima misión.'
             ]
           },
 
-          // 6. ACTIVIDAD 6 — EL DESAYUNO SALUDABLE DE BYTE
+          // 6. ACTIVIDAD 6 — MISIÓN ROBOT: RECARGA Y ENLACE DE DATOS
           {
             id: 'final_challenge',
             type: 'final_challenge',
-            title: '🥪 Actividad 6: El Desayuno Saludable de Byte',
-            instruction: '¡Byte necesita tu ayuda para preparar su desayuno saludable sin equivocarse!\n1. Observá las tarjetas del banco de instrucciones.\n2. Tocá las 4 instrucciones indispensables para armar el desayuno y agregalas al panel (descartá los 2 distractores que no tienen nada que ver).\n3. Usá los botones ▲ y ▼ para ordenar los pasos de arriba hacia abajo.\n4. Cuando tu secuencia esté lista, presioná «🚀 COMPROBAR SECUENCIA».\n5. ¡Podés encender la música retro 🎵 para acompañar el desafío!',
+            title: '⚡ Actividad 6: Misión Robot: Recarga y Enlace de Datos',
+            instruction: '¡Byte completó su patrullaje y necesita recargar sus baterías y enviar su informe!\n1. Observá las tarjetas del banco de instrucciones.\n2. Tocá las 4 instrucciones indispensables para recargar a Byte y transmitir los datos (descartá los 2 distractores que pueden dañarlo o no corresponden).\n3. Usá los botones ▲ y ▼ para ordenar los pasos de arriba hacia abajo.\n4. Cuando tu secuencia esté lista, presioná «🚀 COMPROBAR SECUENCIA».\n5. ¡Podés encender la música retro 🎵 para acompañar el desafío!',
             pool: [
-              { id: 'bowl', icon: '🥣', text: 'Buscar el bol limpio', isRequired: true, correctPos: 1 },
-              { id: 'cereal', icon: '🌾', text: 'Servir los cereales crocantes', isRequired: true, correctPos: 2 },
-              { id: 'football', icon: '⚽', text: 'Patear una pelota de fútbol', isRequired: false, distractor: true },
-              { id: 'milk', icon: '🥛', text: 'Agregar la leche fresca', isRequired: true, correctPos: 3 },
-              { id: 'guitar', icon: '🎸', text: 'Tocar la guitarra eléctrica', isRequired: false, distractor: true },
-              { id: 'spoon', icon: '🥄', text: 'Comer con la cuchara', isRequired: true, correctPos: 4 }
+              { id: 'dock', icon: '🔌', text: 'Conectar el robot a la estación de energía', isRequired: true, correctPos: 1 },
+              { id: 'charge', icon: '🔋', text: 'Esperar a que la batería alcance el 100%', isRequired: true, correctPos: 2 },
+              { id: 'water', icon: '🚿', text: 'Bañar al robot con agua y jabón', isRequired: false, distractor: true },
+              { id: 'antenna', icon: '📡', text: 'Conectar la antena con la computadora central', isRequired: true, correctPos: 3 },
+              { id: 'football', icon: '⚽', text: 'Salir a jugar un partido de fútbol', isRequired: false, distractor: true },
+              { id: 'send', icon: '📤', text: 'Transmitir el informe de la misión', isRequired: true, correctPos: 4 }
             ],
             requiredCount: 4,
             hints: [
-              '💡 Descartá las acciones distractoras que no pertenecen a la cocina (fútbol y guitarra).',
-              '💡 En el desayuno: primero buscás el bol, después servís el cereal y luego agregás la leche.',
-              '💡 Al final de todo usás la cuchara para comer. Ordená: Bol ➡️ Cereal ➡️ Leche ➡️ Comer.'
+              '💡 Descartá las acciones distractoras que dañan al robot o no tienen que ver con la recarga (bañar con agua y jugar al fútbol).',
+              '💡 Para recargar: primero se conecta a la estación, luego se completa la batería al 100%.',
+              '💡 Una vez recargado, se conecta la antena y se transmite el informe. Ordená: Conectar ➡️ Cargar ➡️ Antena ➡️ Transmitir.'
             ]
           },
 
@@ -1417,34 +1412,34 @@ const CODING_DATA = {
                         "howToPlay": "Hacé clic sobre la opción que representa una instrucción clara y ejecutable.",
                         "howToSubmit": "Al seleccionar la tarjeta se comprueba de forma inmediata con retroalimentación.",
                         "resultMeaning": "Si acertás, ganarás puntos y avanzarás a la siguiente pregunta conceptual.",
-                        "situation": "En la escuela están programando a un robot para que prepare la merienda. ¿Cuál de estas es una instrucción clara?",
+                        "situation": "En el laboratorio escolar están configurando a Byte para su misión en la estación espacial. ¿Cuál de estas es una instrucción clara?",
                         "question": "¿Cuál es la instrucción adecuada para el robot?",
                         "options": [
                                 {
                                         "id": "opt_a",
-                                        "icon": "🥛",
-                                        "text": "Servir 1 taza de leche tibia en el tazón",
+                                        "icon": "🤖",
+                                        "text": "Girar a la derecha y encender el sensor frontal",
                                         "isCorrect": true
                                 },
                                 {
                                         "id": "opt_b",
                                         "icon": "🤷",
-                                        "text": "Hacé algo rico cuando tengas ganas",
+                                        "text": "Hacé algo lindo cuando tengas ganas",
                                         "isCorrect": false,
-                                        "feedback": "Es demasiado vaga: no dice qué ingrediente usar ni qué acción concreta hacer."
+                                        "feedback": "Es demasiado vaga: no dice qué sensor activar ni qué movimiento concreto realizar."
                                 },
                                 {
                                         "id": "opt_c",
-                                        "icon": "🥣",
-                                        "text": "La mesa es grande y de madera",
+                                        "icon": "🪑",
+                                        "text": "La mesa del laboratorio es grande y gris",
                                         "isCorrect": false,
                                         "feedback": "Eso es una descripción del mueble, no una indicación para actuar."
                                 }
                         ],
                         "hints": [
-                                "Pista 1: Las computadoras y robots necesitan saber exactamente qué acción hacer y con qué elementos.",
-                                "Pista 2: Buscá la indicación que tiene un verbo de acción claro y cantidades precisas.",
-                                "Pista 3: La opción correcta es: «Servir 1 taza de leche tibia en el tazón»."
+                                "Pista 1: Las computadoras y robots necesitan saber exactamente qué acción hacer y hacia qué dirección.",
+                                "Pista 2: Buscá la indicación que tiene un verbo de acción claro y una dirección precisa.",
+                                "Pista 3: La opción correcta es: «Girar a la derecha y encender el sensor frontal»."
                         ]
                 },
                 {
@@ -1626,47 +1621,36 @@ const CODING_DATA = {
                 },
                 {
                         "id": "g2_hw_desafio3",
-                        "type": "build_sequence",
-                        "title": "Desafío 3: Construí la secuencia correcta",
-                        "instruction": "Misión «Rescate de Datos»: elegí y ordená las 3 tarjetas para recuperar la información del robot.",
-                        "objective": "Construir el procedimiento lógico correcto para rescatar datos descartando la acción peligrosa.",
-                        "whatToObserve": "Revisá las 4 tarjetas del banco: una de ellas destruye los datos en lugar de guardarlos.",
-                        "howToPlay": "Hacé clic en las tarjetas en el orden adecuado para armar la secuencia.",
-                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para validar.",
-                        "resultMeaning": "Si los datos se transfieren y guardan con éxito, completarás todo el bloque Tarea.",
-                        "pool": [
-                                {
-                                        "id": "b_sensor",
-                                        "icon": "📡",
-                                        "text": "Desplegar sensor de escaneo"
-                                },
-                                {
-                                        "id": "b_crystal",
-                                        "icon": "💎",
-                                        "text": "Recolectar cristal de datos"
-                                },
-                                {
-                                        "id": "b_save",
-                                        "icon": "💾",
-                                        "text": "Guardar copia de seguridad"
-                                },
-                                {
-                                        "id": "b_delete",
-                                        "icon": "🗑️",
-                                        "text": "Borrar disco duro"
-                                }
+                        "type": "byte_mission",
+                        "title": "Desafío 3: Misión Contrarreloj del Robot",
+                        "instruction": "¡Misión de rescate rápido! Programá a Byte para alcanzar la Base de Datos 💾 antes de que se termine el tiempo de bonus.",
+                        "objective": "Programar la ruta directa esquivando los obstáculos en la cuadrícula para conseguir el bonus de velocidad.",
+                        "whatToObserve": "Observá la cuadrícula 4x4: Byte inicia en (0, 0), hay una roca en (1, 0) y un charco en (2, 2). La base está en (3, 3).",
+                        "howToPlay": "Elegí las instrucciones direccionales (Abajo, Derecha) para armar tu ruta sin colisiones.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para poner en marcha a Byte.",
+                        "resultMeaning": "Si llegás a la meta dentro del tiempo, recibirás una bonificación de 10 puntos de velocidad.",
+                        "hasTimer": true,
+                        "timerSeconds": 50,
+                        "gridCols": 4,
+                        "gridRows": 4,
+                        "startPos": { "x": 0, "y": 0 },
+                        "targetPos": { "x": 3, "y": 3 },
+                        "goalIcon": "💾",
+                        "goalName": "Base de Datos",
+                        "obstacles": [
+                                { "x": 1, "y": 0, "icon": "🪨", "name": "Roca" },
+                                { "x": 2, "y": 2, "icon": "🌊", "name": "Charco" }
                         ],
-                        "validSequences": [
-                                [
-                                        "b_sensor",
-                                        "b_crystal",
-                                        "b_save"
-                                ]
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left"
                         ],
                         "hints": [
-                                "Pista 1: ¡Cuidado con el distractor! La tarjeta de borrar el disco destruye la información.",
-                                "Pista 2: Primero se escanea el entorno, luego se toma el cristal y finalmente se realiza la copia.",
-                                "Pista 3: La secuencia correcta es: 1. Desplegar sensor ➡️ 2. Recolectar cristal ➡️ 3. Guardar copia."
+                                "Pista 1: Hacia la derecha hay una roca; conviene descender por la columna 0 primero.",
+                                "Pista 2: Bajá a (0, 1) y avanzá hacia la derecha evitando el charco en (2, 2).",
+                                "Pista 3: Una ruta ganadora es: [Abajo] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Abajo] ➡️ [Abajo] ➡️ [Derecha]."
                         ]
                 }
         ]
@@ -2670,53 +2654,37 @@ const CODING_DATA = {
                 },
                 {
                         "id": "g3_hw_desafio3",
-                        "type": "build_sequence",
-                        "title": "Desafío 3: Construí la secuencia correcta",
-                        "instruction": "Misión «Faro Cibernético»: ordená los 4 pasos para encender la señal luminosa descartando la falla.",
-                        "objective": "Construir un procedimiento técnico de 4 fases lógicas descartando la opción contraproducente.",
-                        "whatToObserve": "Revisá las tarjetas del generador, la fibra óptica, la calibración y la señal de radio.",
-                        "howToPlay": "Ordená las tarjetas cronológicamente para que la energía fluya de forma segura.",
-                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para emitir la señal.",
-                        "resultMeaning": "Alcanzarás la insignia de programador de 3.° grado con felicitaciones.",
-                        "pool": [
-                                {
-                                        "id": "b_gen",
-                                        "icon": "🔋",
-                                        "text": "Encender generador principal"
-                                },
-                                {
-                                        "id": "b_fiber",
-                                        "icon": "🔌",
-                                        "text": "Conectar cable de fibra óptica"
-                                },
-                                {
-                                        "id": "b_beam",
-                                        "icon": "🔦",
-                                        "text": "Calibrar haz del faro láser"
-                                },
-                                {
-                                        "id": "b_signal",
-                                        "icon": "📡",
-                                        "text": "Emitir señal a la flota"
-                                },
-                                {
-                                        "id": "b_fog",
-                                        "icon": "🌫️",
-                                        "text": "Apagar ventilación y llenar de humo"
-                                }
+                        "type": "byte_mission",
+                        "title": "Desafío 3: Misión Contrarreloj en la Ciudad Digital",
+                        "instruction": "¡Alerta en la red! Guiá a Byte hasta la Supercomputadora 🖥️ sorteando los cortafuegos antes de que el temporizador llegue a cero.",
+                        "objective": "Construir una ruta precisa en la cuadrícula 5x3 esquivando los bloqueos para conseguir el bonus de tiempo.",
+                        "whatToObserve": "Observá el mapa: Byte parte de (0, 1), hay un cortafuegos en (2, 1) y una roca en (1, 0). La meta está en (4, 1).",
+                        "howToPlay": "Seleccioná las instrucciones direccionales (Abajo, Derecha, Arriba) o Saltar para superar los obstáculos.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para ejecutar tu código.",
+                        "resultMeaning": "Completar la misión dentro del tiempo otorga +10 puntos bonus de velocidad.",
+                        "hasTimer": true,
+                        "timerSeconds": 60,
+                        "gridCols": 5,
+                        "gridRows": 3,
+                        "startPos": { "x": 0, "y": 1 },
+                        "targetPos": { "x": 4, "y": 1 },
+                        "goalIcon": "🖥️",
+                        "goalName": "Supercomputadora",
+                        "obstacles": [
+                                { "x": 2, "y": 1, "icon": "🔥", "name": "Cortafuegos" },
+                                { "x": 1, "y": 0, "icon": "🪨", "name": "Roca de Datos" }
                         ],
-                        "validSequences": [
-                                [
-                                        "b_gen",
-                                        "b_fiber",
-                                        "b_beam",
-                                        "b_signal"
-                                ]
+                        "availableCommands": [
+                                "right",
+                                "jump",
+                                "up",
+                                "down",
+                                "left"
                         ],
                         "hints": [
-                                "Pista 1: Descartá la tarjeta de llenar de humo: bloquea la visión del faro.",
-                                "Pista 2: El orden lógico es: primero encender generador, luego conectar fibra, calibrar y emitir.",
-                                "Pista 3: Secuencia final: 1. Generador ➡️ 2. Fibra óptica ➡️ 3. Calibrar láser ➡️ 4. Emitir señal."
+                                "Pista 1: En (2, 1) hay fuego bloqueando el paso recto. Podés rodear por abajo en la fila 2.",
+                                "Pista 2: Bajá a (0, 2), avanzá hacia la derecha hasta (4, 2) y subí a la meta en (4, 1).",
+                                "Pista 3: Una ruta segura es: [Abajo] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Arriba]."
                         ]
                 }
         ]
@@ -3185,20 +3153,20 @@ const CODING_DATA = {
           {
             id: 'g4_inst_order',
             type: 'order_steps',
-            title: '🍪 Actividad 1: Algoritmo para Hornear Galletitas',
-            instruction: '¡Un algoritmo de cocina requiere seguir los pasos en un orden estricto!\n1. Leé atentamente las 5 instrucciones desordenadas de la receta.\n2. Usá los botones ▲ y ▼ para mover cada paso hasta la posición correcta.\n3. Pensá qué ingredientes se mezclan primero, cuándo se cortan las formas, cuándo se colocan en la bandeja, cuándo se hornea y cuándo se deja enfriar.\n4. Hacé clic en «¡Comprobar Algoritmo!» para verificar tu solución.',
+            title: '📡 Actividad 1: Algoritmo de Transmisión Satelital',
+            instruction: '¡Un algoritmo de telecomunicaciones requiere seguir los pasos en un orden estricto!\n1. Leé atentamente las 5 instrucciones desordenadas del protocolo de enlace.\n2. Usá los botones ▲ y ▼ para mover cada paso hasta la posición correcta.\n3. Pensá qué datos se capturan primero, cuándo se comprimen, cuándo se encriptan, cuándo se emite la señal y cuándo se confirma la llegada.\n4. Hacé clic en «¡Comprobar Algoritmo!» para verificar tu solución.',
             items: [
-              { id: 'bk_mix', icon: '🥣', text: 'Mezclar harina, manteca y azúcar en el bol' },
-              { id: 'bk_shape', icon: '🍪', text: 'Cortar las formas de las galletitas' },
-              { id: 'bk_tray', icon: '🍽️', text: 'Colocarlas en la bandeja para horno' },
-              { id: 'bk_bake', icon: '🔥', text: 'Hornear a 180° durante 15 minutos' },
-              { id: 'bk_cool', icon: '😋', text: 'Dejar enfriar antes de servir y comer' }
+              { id: 'sat_capture', icon: '🛰️', text: 'Capturar la imagen satelital del terreno' },
+              { id: 'sat_compress', icon: '📦', text: 'Comprimir los datos en un archivo digital' },
+              { id: 'sat_encrypt', icon: '🔐', text: 'Encriptar el paquete con clave de seguridad' },
+              { id: 'sat_send', icon: '📡', text: 'Emitir la señal hacia la estación terrestre' },
+              { id: 'sat_confirm', icon: '✅', text: 'Esperar la confirmación de recepción (ACK)' }
             ],
-            correctOrder: ['bk_mix', 'bk_shape', 'bk_tray', 'bk_bake', 'bk_cool'],
+            correctOrder: ['sat_capture', 'sat_compress', 'sat_encrypt', 'sat_send', 'sat_confirm'],
             hints: [
-              '💡 Pensá en las etapas lógicas de una receta: preparación de masa ➡️ formas ➡️ bandeja ➡️ cocción ➡️ enfriamiento.',
-              '💡 No se puede hornear antes de haber cortado las formas y colocado la masa en la bandeja.',
-              '💡 El orden secuencial es: mezclar masa, cortar formas, colocar en bandeja, hornear y dejar enfriar.'
+              '💡 Primero se captura la información visual antes de poder procesarla o comprimirla.',
+              '💡 Luego se comprime y se encripta para transmitirla de forma segura por las ondas de radio.',
+              '💡 Al final se emite la señal y se espera el acuse de recibo de la base terrestre.'
             ]
           },
 
@@ -3206,19 +3174,19 @@ const CODING_DATA = {
           {
             id: 'g4_inst_debug',
             type: 'find_error',
-            title: '🔍 Actividad 2: Encontrá el Error (Debugging)',
-            instruction: '¡Un «bug» es un error que rompe la ejecución de un programa!\n1. Leé la secuencia de pasos paso a paso para servir un vaso de agua.\n2. Detectá qué acción absurda o fuera de lugar fue insertada en el algoritmo y bloquea la meta.\n3. Tocá la instrucción defectuosa para depurar (debuggear) el programa.',
+            title: '🖨️ Actividad 2: Depuración del Algoritmo de Impresión',
+            instruction: '¡Un «bug» es un error que rompe la ejecución de un programa!\n1. Leé la secuencia de pasos paso a paso para imprimir un informe en el laboratorio.\n2. Detectá qué acción absurda o destructiva fue insertada en el algoritmo y bloquea la meta.\n3. Tocá la instrucción defectuosa para depurar (debuggear) el programa.',
             steps: [
-              { id: 'w1', num: 1, text: 'Tomar el vaso limpio de la alacena', isError: false, icon: '🥛' },
-              { id: 'w2', num: 2, text: 'Llenar el vaso con agua fresca', isError: false, icon: '💧' },
-              { id: 'w3', num: 3, text: 'Guardar el vaso con llave adentro del ropero', isError: true, icon: '🔐' },
-              { id: 'w4', num: 4, text: 'Beber el agua fresca del vaso', isError: false, icon: '🥤' }
+              { id: 'w1', num: 1, text: 'Enviar el archivo a la cola de impresión', isError: false, icon: '📄' },
+              { id: 'w2', num: 2, text: 'Inicializar los cabezales y calentar el fusor', isError: false, icon: '⚙️' },
+              { id: 'w3', num: 3, text: 'Cortar el cable de corriente con una tijera', isError: true, icon: '✂️' },
+              { id: 'w4', num: 4, text: 'Imprimir las páginas del documento con tinta', isError: false, icon: '📑' }
             ],
-            explanation: '¡Si guardás el vaso bajo llave en el ropero en el paso 3, es imposible beber de él en el paso 4!',
+            explanation: '¡Cortar el cable de corriente en el paso 3 deja sin energía al equipo e interrumpe la impresión!',
             hints: [
-              '💡 Buscá el paso que impide cumplir el objetivo final de beber el agua fresca.',
-              '💡 Guardar el vaso bajo llave en un ropero después de llenarlo bloquea el uso del vaso.',
-              '💡 El paso con el error crítico es el Paso 3 («Guardar el vaso con llave»).'
+              '💡 Buscá el paso que interrumpe el suministro de energía o daña físicamente el hardware.',
+              '💡 Cortar el cable con una tijera es peligroso y desconecta por completo la impresora.',
+              '💡 El paso con el error crítico es el Paso 3 («Cortar el cable de corriente»).'
             ]
           },
 
@@ -3643,53 +3611,38 @@ const CODING_DATA = {
                 },
                 {
                         "id": "g4_hw_desafio3",
-                        "type": "build_sequence",
-                        "title": "Desafío 3: Construí la secuencia correcta",
-                        "instruction": "Misión «Rover Planetario»: ordená las 4 instrucciones de arranque del vehículo descartando el error.",
-                        "objective": "Secuenciar un protocolo de inicialización robótica con precondiciones claras.",
-                        "whatToObserve": "Revisá los componentes del rover: calibración, motricidad, telemetría y sensores térmicos.",
-                        "howToPlay": "Arrastrá o seleccioná las 4 tarjetas en orden secuencial.",
-                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para iniciar la misión.",
-                        "resultMeaning": "Completarás con éxito los desafíos del bloque Tarea de 4.° grado.",
-                        "pool": [
-                                {
-                                        "id": "b_gyro",
-                                        "icon": "🧭",
-                                        "text": "Calibrar giroscopio y brújula"
-                                },
-                                {
-                                        "id": "b_wheels",
-                                        "icon": "⚙️",
-                                        "text": "Desplegar ruedas motrices"
-                                },
-                                {
-                                        "id": "b_cam",
-                                        "icon": "📷",
-                                        "text": "Encender cámara térmica"
-                                },
-                                {
-                                        "id": "b_explore",
-                                        "icon": "🚀",
-                                        "text": "Iniciar exploración de terreno"
-                                },
-                                {
-                                        "id": "b_sleep",
-                                        "icon": "💤",
-                                        "text": "Desactivar batería y suspender sistema"
-                                }
+                        "type": "byte_mission",
+                        "title": "Desafío 3: Misión Contrarreloj en el Ciberespacio",
+                        "instruction": "¡Infiltración de alta velocidad! Guiá a Byte hasta el Servidor Blindado 🛡️ antes de que el firewall cierre los puertos.",
+                        "objective": "Trazar una ruta óptima esquivando los bloqueos en la cuadrícula 5x4 dentro del tiempo límite.",
+                        "whatToObserve": "Observá el mapa cibernético: Byte empieza en (0, 0), hay bloqueos en (1, 1), (3, 1) y (2, 2). El servidor está en (4, 3).",
+                        "howToPlay": "Ingresá los comandos de avance, giro y salto para sortear los cortafuegos.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para iniciar la carrera contra el tiempo.",
+                        "resultMeaning": "Completar la misión antes del límite otorgará +10 puntos de velocidad a tu puntuación.",
+                        "hasTimer": true,
+                        "timerSeconds": 60,
+                        "gridCols": 5,
+                        "gridRows": 4,
+                        "startPos": { "x": 0, "y": 0 },
+                        "targetPos": { "x": 4, "y": 3 },
+                        "goalIcon": "🛡️",
+                        "goalName": "Servidor Blindado",
+                        "obstacles": [
+                                { "x": 1, "y": 1, "icon": "🔥", "name": "Firewall" },
+                                { "x": 3, "y": 1, "icon": "⚡", "name": "Descarga Eléctrica" },
+                                { "x": 2, "y": 2, "icon": "🧱", "name": "Muro de Datos" }
                         ],
-                        "validSequences": [
-                                [
-                                        "b_gyro",
-                                        "b_wheels",
-                                        "b_cam",
-                                        "b_explore"
-                                ]
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
                         ],
                         "hints": [
-                                "Pista 1: La tarjeta de suspender el sistema apaga el rover antes de explorar: ¡descartala!",
-                                "Pista 2: Primero se calibra la orientación, luego se despliegan ruedas, se enciende cámara y se inicia.",
-                                "Pista 3: Secuencia correcta: 1. Giroscopio ➡️ 2. Ruedas ➡️ 3. Cámara térmica ➡️ 4. Explorar."
+                                "Pista 1: El camino recto por la fila 0 permite avanzar hasta (4, 0) sin obstáculos.",
+                                "Pista 2: Desde (4, 0), solo tenés que descender por la columna 4 hasta la meta en (4, 3).",
+                                "Pista 3: La ruta más limpia es: 4 avances a la derecha y 3 descensos hacia abajo."
                         ]
                 }
         ]
@@ -4636,53 +4589,38 @@ const CODING_DATA = {
                 },
                 {
                         "id": "g5_hw_desafio3",
-                        "type": "build_sequence",
-                        "title": "Desafío 3: Construí la secuencia correcta",
-                        "instruction": "Misión «Seguridad de Servidor»: armá el protocolo criptográfico de 4 pasos descartando la vulnerabilidad.",
-                        "objective": "Secuenciar un protocolo formal de autenticación y seguridad informática.",
-                        "whatToObserve": "Revisá las fases: firewall, credenciales, certificados y habilitación de puerto seguro.",
-                        "howToPlay": "Ordená las tarjetas en estricta secuencia de seguridad.",
-                        "howToSubmit": "Presioná «🚀 ¡Comprobar Secuencia!» para autorizar la conexión.",
-                        "resultMeaning": "Completarás con honores el temario de Programación de 5.° grado.",
-                        "pool": [
-                                {
-                                        "id": "b_firewall",
-                                        "icon": "🛡️",
-                                        "text": "Inicializar cortafuegos (Firewall)"
-                                },
-                                {
-                                        "id": "b_auth",
-                                        "icon": "🔑",
-                                        "text": "Validar credenciales criptográficas"
-                                },
-                                {
-                                        "id": "b_certs",
-                                        "icon": "📜",
-                                        "text": "Verificar certificados SSL"
-                                },
-                                {
-                                        "id": "b_port",
-                                        "icon": "🔓",
-                                        "text": "Desbloquear puerto seguro de datos"
-                                },
-                                {
-                                        "id": "b_disable",
-                                        "icon": "⚠️",
-                                        "text": "Desactivar contraseñas de todos los usuarios"
-                                }
+                        "type": "byte_mission",
+                        "title": "Desafío 3: Misión Contrarreloj — Núcleo Cuántico",
+                        "instruction": "¡Misión de máxima velocidad! Guiá a Byte hasta el Núcleo Cuántico ⚛️ antes de que colapse la matriz de contención.",
+                        "objective": "Programar la ruta más eficiente a través de la red cuántica 6x3 esquivando anomalías y firewalls antes de que expire el cronómetro.",
+                        "whatToObserve": "Observá la matriz: Byte inicia en (0, 0), hay anomalías en (2, 0), (1, 2) y (4, 1). El Núcleo Cuántico se encuentra en (5, 2).",
+                        "howToPlay": "Seleccioná y ordená los comandos necesarios en la bandeja para esquivar las anomalías y alcanzar el objetivo.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para iniciar el recorrido de Byte contra el reloj.",
+                        "resultMeaning": "Si llegás a tiempo, obtendrás +10 puntos de bonificación de velocidad y completarás la Tarea con honores.",
+                        "hasTimer": true,
+                        "timerSeconds": 60,
+                        "gridCols": 6,
+                        "gridRows": 3,
+                        "startPos": { "x": 0, "y": 0 },
+                        "targetPos": { "x": 5, "y": 2 },
+                        "goalIcon": "⚛️",
+                        "goalName": "Núcleo Cuántico",
+                        "obstacles": [
+                                { "x": 2, "y": 0, "icon": "⚡", "name": "Nodo Inestable" },
+                                { "x": 1, "y": 2, "icon": "🔥", "name": "Fuga Térmica" },
+                                { "x": 4, "y": 1, "icon": "🚧", "name": "Barrera Cuántica" }
                         ],
-                        "validSequences": [
-                                [
-                                        "b_firewall",
-                                        "b_auth",
-                                        "b_certs",
-                                        "b_port"
-                                ]
+                        "availableCommands": [
+                                "right",
+                                "down",
+                                "up",
+                                "left",
+                                "jump"
                         ],
                         "hints": [
-                                "Pista 1: ¡Alerta de seguridad! Desactivar contraseñas es una brecha crítica: descartá esa tarjeta.",
-                                "Pista 2: El orden de seguridad es: 1. Firewall ➡️ 2. Credenciales ➡️ 3. Certificados ➡️ 4. Desbloqueo.",
-                                "Pista 3: Secuencia correcta: Firewall ➡️ Validar credenciales ➡️ Verificar SSL ➡️ Desbloquear puerto."
+                                "Pista 1: Como (2, 0) está bloqueado, podés avanzar a (1, 0) y descender a la fila 1 para continuar.",
+                                "Pista 2: Por la fila 1 podés llegar hasta (3, 1), luego bajar a (3, 2) y avanzar hasta el núcleo en (5, 2).",
+                                "Pista 3: Una ruta ganadora es: Derecha ➡️ Abajo ➡️ Derecha x2 ➡️ Abajo ➡️ Derecha x2."
                         ]
                 }
         ]
@@ -5105,6 +5043,11 @@ class CodingProgressStorage {
     };
   }
 
+  isActivityCompleted(grade, topic, activityId) {
+    const prog = this.getGradeProgress(grade, topic);
+    return Array.isArray(prog.activitiesCompleted) && prog.activitiesCompleted.includes(activityId);
+  }
+
   completeActivity(grade, topicOrId, activityIdOrPoints, pointsOrStars, stars) {
     let topic = 'instructions';
     let activityId = topicOrId;
@@ -5378,9 +5321,10 @@ class CodingModuleManager {
     this.currentTopic = 'instructions';
     this.currentActivityIndex = 0;
 
-    // Callbacks sonoros y visuales
+    // Callbacks sonoros, visuales y de navegación
     this.onPlaySound = options.onPlaySound || (() => {});
     this.onLaunchConfetti = options.onLaunchConfetti || (() => {});
+    this.onShowScreen = options.onShowScreen || null;
 
     // Estado general del sistema de Intentos y Pistas para la actividad actual
     this.activityState = {
@@ -5396,6 +5340,59 @@ class CodingModuleManager {
     this.gridPlayerPos = { x: 0, y: 0 };
     this.gridIsRunning = false;
     this.bgmEngine = new ByteBgmEngine();
+    this.byteMissionTimerId = null;
+
+    // Inicializar modal de reinicio de sesión escolar
+    this.initSessionResetModal();
+  }
+
+  /**
+   * Oculta de forma estricta los controles del editor de regalos
+   */
+  hideGiftButtons() {
+    document.body.classList.remove('editor-mode');
+    const headerActions = document.getElementById('header-gift-actions') || document.querySelector('.header-actions');
+    const printBtn = document.getElementById('btn-print-gift');
+    const exportBtn = document.getElementById('btn-export-gift');
+    const homeFromEditor = document.getElementById('btn-home-from-editor');
+    if (headerActions) headerActions.style.setProperty('display', 'none', 'important');
+    if (printBtn) printBtn.style.setProperty('display', 'none', 'important');
+    if (exportBtn) exportBtn.style.setProperty('display', 'none', 'important');
+    if (homeFromEditor) homeFromEditor.style.setProperty('display', 'none', 'important');
+  }
+
+  /**
+   * Vincula los botones de reinicio de sesión escolar en la pantalla de grados y temario
+   */
+  initSessionResetModal() {
+    const setupBtn = (btn, gradeTarget) => {
+      if (!btn) return;
+      btn.onclick = (e) => {
+        if (e) e.stopPropagation();
+        const modal = document.getElementById('modal-confirm-session-reset');
+        if (!modal) {
+          if (confirm('¿Finalizar sesión del grupo actual? El progreso de programación se reiniciará a 0%.')) {
+            this.resetGroupSession(gradeTarget);
+          }
+          return;
+        }
+        modal.style.display = 'flex';
+        const btnCancel = document.getElementById('btn-modal-cancel-reset');
+        const btnConfirm = document.getElementById('btn-modal-confirm-reset');
+        if (btnCancel) {
+          btnCancel.onclick = () => { modal.style.display = 'none'; };
+        }
+        if (btnConfirm) {
+          btnConfirm.onclick = () => {
+            modal.style.display = 'none';
+            this.resetGroupSession(gradeTarget);
+          };
+        }
+      };
+    };
+
+    setupBtn(document.getElementById('btn-session-reset-grades'), null);
+    setupBtn(document.getElementById('btn-session-reset-syllabus'), this.currentGrade);
   }
 
   /**
@@ -5459,6 +5456,10 @@ class CodingModuleManager {
   cleanupCurrentActivity() {
     this.stopSpeaking();
     this.stopBgm();
+    if (this.byteMissionTimerId) {
+      clearInterval(this.byteMissionTimerId);
+      this.byteMissionTimerId = null;
+    }
     if (this.gridAnimationAbort) {
       this.gridAnimationAbort.isAborted = true;
       this.gridAnimationAbort = null;
@@ -5471,35 +5472,45 @@ class CodingModuleManager {
   }
 
   showCodingAppScreen() {
-    const screens = [
-      document.getElementById('screen-home'),
-      document.getElementById('screen-grades'),
-      document.getElementById('screen-game'),
-      document.getElementById('screen-editor'),
-      document.getElementById('screen-coding-grades'),
-      document.getElementById('screen-coding-syllabus'),
-      document.getElementById('screen-coding-topic')
-    ];
-    screens.forEach(s => { if (s) s.classList.remove('active'); });
+    this.hideGiftButtons();
+    if (this.onShowScreen) {
+      this.onShowScreen('screen-coding-topic');
+    } else {
+      const screens = [
+        document.getElementById('screen-home'),
+        document.getElementById('screen-grades'),
+        document.getElementById('screen-game'),
+        document.getElementById('screen-editor'),
+        document.getElementById('screen-coding-grades'),
+        document.getElementById('screen-coding-syllabus'),
+        document.getElementById('screen-coding-topic')
+      ];
+      screens.forEach(s => { if (s) s.classList.remove('active'); });
 
-    const topicScreen = document.getElementById('screen-coding-topic');
-    if (topicScreen) topicScreen.classList.add('active');
+      const topicScreen = document.getElementById('screen-coding-topic');
+      if (topicScreen) topicScreen.classList.add('active');
+    }
   }
 
   showSyllabusScreen() {
-    const screens = [
-      document.getElementById('screen-home'),
-      document.getElementById('screen-grades'),
-      document.getElementById('screen-game'),
-      document.getElementById('screen-editor'),
-      document.getElementById('screen-coding-grades'),
-      document.getElementById('screen-coding-syllabus'),
-      document.getElementById('screen-coding-topic')
-    ];
-    screens.forEach(s => { if (s) s.classList.remove('active'); });
+    this.hideGiftButtons();
+    if (this.onShowScreen) {
+      this.onShowScreen('screen-coding-syllabus');
+    } else {
+      const screens = [
+        document.getElementById('screen-home'),
+        document.getElementById('screen-grades'),
+        document.getElementById('screen-game'),
+        document.getElementById('screen-editor'),
+        document.getElementById('screen-coding-grades'),
+        document.getElementById('screen-coding-syllabus'),
+        document.getElementById('screen-coding-topic')
+      ];
+      screens.forEach(s => { if (s) s.classList.remove('active'); });
 
-    const sylScreen = document.getElementById('screen-coding-syllabus');
-    if (sylScreen) sylScreen.classList.add('active');
+      const sylScreen = document.getElementById('screen-coding-syllabus');
+      if (sylScreen) sylScreen.classList.add('active');
+    }
   }
 
   /**
@@ -5648,13 +5659,22 @@ class CodingModuleManager {
           '<span>🔄</span> ¡Repasar Instrucciones!' :
           (completedCount > 0 ? '<span>▶️</span> ¡Continuar Instrucciones!' : '<span>🚀</span> ¡Comenzar Instrucciones!');
       }
-      btnStartInst.onclick = () => {
+      btnStartInst.onclick = (e) => {
+        if (e) e.stopPropagation();
         this.onPlaySound('pop');
         this.startInstructionsTopic();
       };
     }
 
-        // ========================================================
+    if (instCard) {
+      instCard.style.cursor = 'pointer';
+      instCard.onclick = () => {
+        this.onPlaySound('pop');
+        this.startInstructionsTopic();
+      };
+    }
+
+    // ========================================================
     // TEMA 2: TAREA (NUEVO BLOQUE PARA 1.° A 5.° GRADO)
     // ========================================================
     const hwCard = document.getElementById('topic-card-homework');
@@ -5666,7 +5686,14 @@ class CodingModuleManager {
     const hwDescEl = document.getElementById('syllabus-homework-desc');
 
     if (gConfig.homework) {
-      if (hwCard) hwCard.style.display = 'flex';
+      if (hwCard) {
+        hwCard.style.display = 'flex';
+        hwCard.style.cursor = 'pointer';
+        hwCard.onclick = () => {
+          this.onPlaySound('pop');
+          this.startHomeworkTopic();
+        };
+      }
       const hwProgress = this.storage.getGradeProgress(this.currentGrade, 'homework');
       const hwTotalActivities = gConfig.homework.activities.length;
       const hwCompletedCount = hwProgress.activitiesCompleted ? hwProgress.activitiesCompleted.length : 0;
@@ -5694,7 +5721,8 @@ class CodingModuleManager {
             ? '<span>🔄</span> ¡Repasar Tarea!'
             : (hwCompletedCount > 0 ? '<span>▶️</span> ¡Continuar Tarea!' : '<span>🚀</span> ¡Comenzar Tarea!');
         }
-        btnStartHw.onclick = () => {
+        btnStartHw.onclick = (e) => {
+          if (e) e.stopPropagation();
           this.onPlaySound('pop');
           this.startHomeworkTopic();
         };
@@ -7138,12 +7166,45 @@ class CodingModuleManager {
 
     let playerPos = { ...act.startPos };
     let playerFacing = 'right';
-    let commands = [];
+    let commands = (act.initialCommands && Array.isArray(act.initialCommands)) ? [...act.initialCommands] : [];
     let isRunning = false;
     let abortToken = { isAborted: false };
     let currentHintIndex = 0;
     let byteAnim = '';
     let isMissionWon = false;
+
+    // Temporizador amistoso para desafíos contrarreloj
+    let timerRemaining = act.hasTimer ? (act.timerSeconds || 50) : 0;
+    let missionTimer = null;
+    let timerExpired = false;
+
+    const formatTimer = (sec) => {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    };
+
+    const startTimer = () => {
+      if (!act.hasTimer || missionTimer) return;
+      missionTimer = setInterval(() => {
+        if (abortToken.isAborted || isMissionWon) {
+          clearInterval(missionTimer);
+          return;
+        }
+        timerRemaining--;
+        const pillEl = document.getElementById('byte-timer-val');
+        if (pillEl) pillEl.textContent = formatTimer(Math.max(0, timerRemaining));
+        if (timerRemaining <= 0) {
+          clearInterval(missionTimer);
+          timerExpired = true;
+          const badgeEl = document.getElementById('byte-timer-pill');
+          if (badgeEl) {
+            badgeEl.className = 'byte-timer-pill expired';
+            badgeEl.innerHTML = `<span>⏱️</span> ${isGradeOne ? 'TIEMPO FINALIZADO (¡PODÉS SEGUIR JUGANDO!)' : 'Tiempo de bonus finalizado (¡podés seguir jugando!)'}`;
+          }
+        }
+      }, 1000);
+    };
 
     this.byteMissionAbortToken = abortToken;
 
@@ -7177,9 +7238,16 @@ class CodingModuleManager {
           <div class="pattern-instruction-title" style="margin:0;">
             ${isGradeOne ? `🎯 OBJETIVO: ¡LLEVAR A BYTE A SU ${act.goalName || 'DESTINO'}!` : `🎯 Objetivo: Guiar a Byte hasta ${act.goalName || 'su destino'} superando los obstáculos.`}
           </div>
-          <button type="button" id="btn-toggle-welcome-help" class="btn-byte-tool" style="font-size:0.85rem; padding:4px 10px;">
-            <span>ℹ️</span> ${isGradeOne ? 'VER MISIÓN' : 'Ver Misión'}
-          </button>
+          <div style="display:flex; align-items:center; gap:8px;">
+            ${act.hasTimer ? `
+              <div id="byte-timer-pill" class="byte-timer-pill">
+                <span>⏱️</span> ${isGradeOne ? 'TIEMPO' : 'Tiempo'}: <strong id="byte-timer-val">${formatTimer(timerRemaining)}</strong>
+              </div>
+            ` : ''}
+            <button type="button" id="btn-toggle-welcome-help" class="btn-byte-tool" style="font-size:0.85rem; padding:4px 10px;">
+              <span>ℹ️</span> ${isGradeOne ? 'VER MISIÓN' : 'Ver Misión'}
+            </button>
+          </div>
         </div>
 
         <p style="font-size:1.1rem; color:#334155; margin-bottom:12px; font-weight:700; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
@@ -7228,6 +7296,9 @@ class CodingModuleManager {
             </div>
 
             <div class="byte-sequence-tray" id="byte-sequence-tray"></div>
+
+            <!-- Panel de Diagnóstico Inmediato e Inline (con Pistas Progresivas) -->
+            <div id="byte-inline-feedback" class="byte-inline-feedback" style="display:none; margin:10px 0;"></div>
 
             <div class="byte-actions-bar">
               <button type="button" id="btn-byte-run" class="btn-byte-run">
@@ -7347,6 +7418,7 @@ class CodingModuleManager {
             if (!isNaN(idx)) {
               this.onPlaySound('trash');
               commands.splice(idx, 1);
+              hideInlineFeedback();
               updateTray();
             }
           };
@@ -7354,8 +7426,57 @@ class CodingModuleManager {
       }
     };
 
+    // Funciones de control del Panel de Diagnóstico Inmediato e Inline
+    const showInlineFeedback = (msg) => {
+      const fbEl = document.getElementById('byte-inline-feedback');
+      if (!fbEl) return;
+      const hintsArr = act.hints || [];
+      fbEl.innerHTML = `
+        <div class="byte-inline-error-card">
+          <div class="byte-inline-error-head" style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:1.3rem;">⚠️</span>
+            <span style="font-weight:800; color:#991b1b; font-size:1rem;">
+              ${isGradeOne ? '¡ATENCIÓN! HAY QUE CORREGIR EL CAMINO' : '¡Atención! Hay un error en la secuencia'}
+            </span>
+          </div>
+          <p class="byte-inline-error-text" style="margin:6px 0; color:#7f1d1d; font-weight:600; font-size:0.95rem;">
+            ${msg}
+          </p>
+          ${hintsArr.length > 0 ? `
+            <div class="byte-inline-hint-area" style="margin-top:8px; border-top:1px dashed #fca5a5; padding-top:8px;">
+              <button type="button" id="btn-byte-inline-hint" class="btn-byte-inline-hint">
+                <span>💡</span> ${isGradeOne ? `VER PISTA (${Math.min(currentHintIndex + 1, hintsArr.length)}/${hintsArr.length})` : `Ver Pista (${Math.min(currentHintIndex + 1, hintsArr.length)}/${hintsArr.length})`}
+              </button>
+              <div id="byte-inline-hint-box" style="display:none; margin-top:6px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:8px 12px; color:#1e40af; font-size:0.9rem; font-weight:700;"></div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+      fbEl.style.display = 'block';
+
+      const btnInlineHint = document.getElementById('btn-byte-inline-hint');
+      const hintBox = document.getElementById('byte-inline-hint-box');
+      if (btnInlineHint && hintBox) {
+        btnInlineHint.onclick = () => {
+          const currentHint = hintsArr[currentHintIndex];
+          currentHintIndex = (currentHintIndex + 1) % hintsArr.length;
+          hintBox.textContent = currentHint;
+          hintBox.style.display = 'block';
+          btnInlineHint.innerHTML = `<span>💡</span> ${isGradeOne ? `SIGUIENTE PISTA (${currentHintIndex + 1}/${hintsArr.length})` : `Siguiente Pista (${currentHintIndex + 1}/${hintsArr.length})`}`;
+          this.updateByte(currentHint, 'thinking', currentHint);
+        };
+      }
+    };
+
+    const hideInlineFeedback = () => {
+      const fbEl = document.getElementById('byte-inline-feedback');
+      if (fbEl) fbEl.style.display = 'none';
+    };
+
     renderBoard();
     updateTray();
+    this.bindBgmToggle(container);
+    if (act.hasTimer) startTimer();
 
     // Eventos: Paleta de botones para agregar comandos
     container.querySelectorAll('.btn-byte-cmd').forEach(cmdBtn => {
@@ -7364,6 +7485,7 @@ class CodingModuleManager {
         const cmdKey = cmdBtn.getAttribute('data-cmd');
         if (!cmdKey) return;
         this.onPlaySound('click');
+        hideInlineFeedback();
         commands.push(cmdKey);
         updateTray();
       };
@@ -7373,6 +7495,7 @@ class CodingModuleManager {
       btnUndo.onclick = () => {
         if (isRunning || isMissionWon) return;
         this.onPlaySound('trash');
+        hideInlineFeedback();
         commands.pop();
         updateTray();
       };
@@ -7382,6 +7505,7 @@ class CodingModuleManager {
       btnClearAll.onclick = () => {
         if (isRunning || isMissionWon) return;
         this.onPlaySound('trash');
+        hideInlineFeedback();
         commands = [];
         playerPos = { ...act.startPos };
         playerFacing = 'right';
@@ -7395,6 +7519,7 @@ class CodingModuleManager {
       btnResetPos.onclick = () => {
         if (isRunning) return;
         this.onPlaySound('click');
+        hideInlineFeedback();
         playerPos = { ...act.startPos };
         playerFacing = 'right';
         byteAnim = '';
@@ -7434,6 +7559,7 @@ class CodingModuleManager {
           return;
         }
 
+        hideInlineFeedback();
         isRunning = true;
         btnRun.disabled = true;
         btnRun.innerHTML = `<span>⏳</span> ${isGradeOne ? 'EJECUTANDO...' : 'Ejecutando...'}`;
@@ -7491,6 +7617,7 @@ class CodingModuleManager {
               const msg = isGradeOne
                 ? `¡CUIDADO! BYTE SE SALDRÍA DEL MAPA CON ESE SALTO EN EL PASO ${i + 1}.`
                 : `¡Cuidado! Byte se saldría del mapa con ese salto en el paso ${i + 1}.`;
+              showInlineFeedback(msg);
               this.recordAttemptError(msg);
               break;
             }
@@ -7506,6 +7633,7 @@ class CodingModuleManager {
               const msg = isGradeOne
                 ? `¡CASI! NO HAY SUELO SEGURO PARA ATERRIZAR TRAS EL SALTO EN EL PASO ${i + 1}.`
                 : `¡Casi! No hay suelo seguro para aterrizar tras el salto en el paso ${i + 1}.`;
+              showInlineFeedback(msg);
               this.recordAttemptError(msg);
               break;
             }
@@ -7553,7 +7681,9 @@ class CodingModuleManager {
               byteAnim = 'crashed';
               this.onPlaySound('hit');
               renderBoard();
-              this.recordAttemptError(`¡Atención en el avance repetido del paso ${i + 1}! Se encontró un obstáculo o límite.`);
+              const msg = `¡Atención en el avance repetido del paso ${i + 1}! Se encontró un obstáculo o límite.`;
+              showInlineFeedback(msg);
+              this.recordAttemptError(msg);
               break;
             }
 
@@ -7581,6 +7711,7 @@ class CodingModuleManager {
             const msg = isGradeOne
               ? `¡CUIDADO! BYTE SE SALIÓ DEL CAMINO EN EL PASO ${i + 1}. ¡REVISÁ LA DIRECCIÓN!`
               : `¡Cuidado! Byte se salió del recorrido en el paso ${i + 1}. Revisá la dirección de ese paso.`;
+            showInlineFeedback(msg);
             this.recordAttemptError(msg);
             break;
           }
@@ -7596,6 +7727,7 @@ class CodingModuleManager {
             const msg = isGradeOne
               ? `¡CASI! EN EL PASO ${i + 1} HAY UN OBSTÁCULO (${hitObstacle.name}). ¡USÁ «SALTAR» PARA SUPERARLO!`
               : `¡Casi! En el paso ${i + 1} Byte encontró un obstáculo (${hitObstacle.name}). ¿Qué instrucción necesitás para superarlo? ¡Probá con SALTAR!`;
+            showInlineFeedback(msg);
             this.recordAttemptError(msg);
             break;
           }
@@ -7611,6 +7743,7 @@ class CodingModuleManager {
             const msg = isGradeOne
               ? `¡CUIDADO! EN EL PASO ${i + 1} BYTE CHOCÓ CON UN ELEMENTO DEL PAISAJE.`
               : `¡Cuidado! En el paso ${i + 1} Byte se desvió hacia el paisaje. Mantenete sobre el camino.`;
+            showInlineFeedback(msg);
             this.recordAttemptError(msg);
             break;
           }
@@ -7639,12 +7772,15 @@ class CodingModuleManager {
 
           if (reachedGoal) {
             isMissionWon = true;
+            if (missionTimer) clearInterval(missionTimer);
+            hideInlineFeedback();
             byteAnim = 'celebrating';
             renderBoard();
 
             this.onPlaySound('fanfare');
             this.showStarReward('success');
-            this.recordActivitySuccess(act.id, 25);
+            const bonusPts = (act.hasTimer && !timerExpired) ? 10 : 0;
+            this.recordActivitySuccess(act.id, 25 + bonusPts);
 
             btnRun.style.display = 'none';
             if (btnResetPos) btnResetPos.style.display = 'none';
@@ -7659,6 +7795,12 @@ class CodingModuleManager {
 
             this.updateByte(victoryHeading, 'happy', victoryHeading);
 
+            const actsList = this.getCurrentTopicActivities();
+            const isLastAct = (this.currentActivityIndex >= (actsList.length - 1));
+            const finishBtnText = isLastAct
+              ? (isGradeOne ? '✨ ¡FINALIZAR TEMA! ➡️' : '✨ ¡Completar y Ver Resultados! ➡️')
+              : (isGradeOne ? '✨ ¡SIGUIENTE ACTIVIDAD! ➡️' : '✨ ¡Siguiente Actividad! ➡️');
+
             if (celebrationEl) {
               celebrationEl.className = 'byte-celebration-banner';
               celebrationEl.innerHTML = `
@@ -7666,10 +7808,10 @@ class CodingModuleManager {
                 <h3 class="byte-celebration-title">${victoryHeading}</h3>
                 <p class="byte-celebration-text">${victorySub}</p>
                 <div style="background:#ecfdf5; border:2px solid #86efac; border-radius:14px; padding:10px 18px; font-weight:800; color:#166534;">
-                  +25 ${isGradeOne ? 'PUNTOS' : 'puntos'} • ⭐⭐⭐ ${isGradeOne ? '¡MISIÓN FINAL SUPERADA!' : '¡Misión final superada!'}
+                  +${25 + bonusPts} ${isGradeOne ? 'PUNTOS' : 'puntos'} ${bonusPts > 0 ? (isGradeOne ? '(¡+10 BONUS VELOCIDAD!)' : '(¡+10 bonus velocidad!)') : ''} • ⭐⭐⭐ ${isGradeOne ? '¡MISIÓN SUPERADA!' : '¡Misión superada!'}
                 </div>
                 <button type="button" id="btn-byte-finish-all" class="btn-stage-next" style="padding:14px 28px; font-size:1.15rem; margin-top:8px;">
-                  <span>${isGradeOne ? '✨ ¡FINALIZAR TEMA! ➡️' : '✨ ¡Completar y Ver Resultados! ➡️'}</span>
+                  <span>${finishBtnText}</span>
                 </button>
               `;
               celebrationEl.style.display = 'flex';
@@ -7686,6 +7828,7 @@ class CodingModuleManager {
             const missingMsg = isGradeOne
               ? `¡CASI! BYTE SIGUIÓ TODAS LAS INSTRUCCIONES PERO TODAVÍA NO LLEGÓ A SU ${act.goalName || 'DESTINO'}. ¡AGREGÁ MÁS PASOS!`
               : `¡Buen avance! Byte completó la secuencia pero todavía no llegó a destino. ¡Agregá más instrucciones para continuar!`;
+            showInlineFeedback(missingMsg);
             this.updateByte(missingMsg, 'thinking');
           }
         }
@@ -7693,11 +7836,18 @@ class CodingModuleManager {
     }
 
     this.wireResetButton(() => {
-      commands = [];
+      if (missionTimer) clearInterval(missionTimer);
+      commands = (act.initialCommands && Array.isArray(act.initialCommands)) ? [...act.initialCommands] : [];
       playerPos = { ...act.startPos };
       playerFacing = 'right';
       byteAnim = '';
       isMissionWon = false;
+      hideInlineFeedback();
+      if (act.hasTimer) {
+        timerRemaining = act.timerSeconds || 50;
+        timerExpired = false;
+        startTimer();
+      }
       if (btnRun) {
         btnRun.style.display = 'inline-flex';
         btnRun.disabled = false;
@@ -8468,7 +8618,7 @@ class CodingModuleManager {
               }, 1200);
             }
           } else {
-            // Actividad sin mapa (cocina, mochila, sándwich)
+            // Actividad de ordenar pasos lógicos (secuencia de instrucciones)
             const isCorrect = currentItems.every((it, i) => it.id === act.correctOrder[i]);
             if (isCorrect) {
               this.onPlaySound('fanfare');

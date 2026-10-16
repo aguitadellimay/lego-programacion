@@ -79,23 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStartWorkshop = document.getElementById('btn-start-workshop');
 
     // Inicializar el gestor de Programación
-    const codingManager = new CodingModuleManager({
-      onPlaySound: (type) => {
-        if (type === 'pop') playPopSound();
-        else if (type === 'click') playClickSound();
-        else if (type === 'coin') { playSnapSound(); playTone(880, 'triangle', 0.15); }
-        else if (type === 'snap') playSnapSound();
-        else if (type === 'hit') playTrashSound();
-        else if (type === 'wrong') playTone(220, 'sawtooth', 0.18);
-        else if (type === 'trash') playTrashSound();
-        else if (type === 'levelComplete') playCheerSound();
-        else if (type === 'fanfare') playFanfareSound();
-      },
-      onLaunchConfetti: () => {
-        launchConfetti();
-      }
-    });
-
+    let codingManager;
     const showScreen = (targetScreen) => {
       if (codingManager && codingManager.stopSpeaking) {
         codingManager.stopSpeaking();
@@ -111,13 +95,36 @@ document.addEventListener('DOMContentLoaded', () => {
       // Control estricto de visibilidad de botones del editor de regalos
       const isEditor = (targetScreen === screenEditor);
       document.body.classList.toggle('editor-mode', isEditor);
+      const headerActions = document.getElementById('header-gift-actions') || document.querySelector('.header-actions');
       const printBtn = document.getElementById('btn-print-gift');
       const exportBtn = document.getElementById('btn-export-gift');
       const homeFromEditor = document.getElementById('btn-home-from-editor');
-      if (printBtn) printBtn.style.display = isEditor ? 'flex' : 'none';
-      if (exportBtn) exportBtn.style.display = isEditor ? 'flex' : 'none';
-      if (homeFromEditor) homeFromEditor.style.display = isEditor ? 'inline-flex' : 'none';
+      if (headerActions) headerActions.style.setProperty('display', isEditor ? 'flex' : 'none', 'important');
+      if (printBtn) printBtn.style.setProperty('display', isEditor ? 'flex' : 'none', 'important');
+      if (exportBtn) exportBtn.style.setProperty('display', isEditor ? 'flex' : 'none', 'important');
+      if (homeFromEditor) homeFromEditor.style.setProperty('display', isEditor ? 'inline-flex' : 'none', 'important');
     };
+
+    codingManager = new CodingModuleManager({
+      onPlaySound: (type) => {
+        if (type === 'pop') playPopSound();
+        else if (type === 'click') playClickSound();
+        else if (type === 'coin') { playSnapSound(); playTone(880, 'triangle', 0.15); }
+        else if (type === 'snap') playSnapSound();
+        else if (type === 'hit') playTrashSound();
+        else if (type === 'wrong') playTone(220, 'sawtooth', 0.18);
+        else if (type === 'trash') playTrashSound();
+        else if (type === 'levelComplete') playCheerSound();
+        else if (type === 'fanfare') playFanfareSound();
+      },
+      onLaunchConfetti: () => {
+        launchConfetti();
+      },
+      onShowScreen: (screenId) => {
+        const target = document.getElementById(screenId);
+        if (target) showScreen(target);
+      }
+    });
 
     // Inicializar estado del encabezado en la pantalla de inicio
     showScreen(screenHome);

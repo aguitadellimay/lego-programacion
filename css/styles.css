@@ -99,19 +99,28 @@ body {
 }
 
 .header-actions {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 12px;
 }
 
+body.editor-mode .header-actions {
+  display: flex !important;
+}
+
 .btn-print-gift,
-.btn-export-gift {
-  display: none;
+.btn-export-gift,
+#btn-home-from-editor {
+  display: none !important;
 }
 
 body.editor-mode .btn-print-gift,
 body.editor-mode .btn-export-gift {
-  display: flex;
+  display: flex !important;
+}
+
+body.editor-mode #btn-home-from-editor {
+  display: inline-flex !important;
 }
 
 .btn-print-gift {
