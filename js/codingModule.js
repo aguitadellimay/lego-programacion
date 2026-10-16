@@ -484,41 +484,35 @@ const CODING_DATA = {
                 {
                         "id": "g1_hw_desafio3",
                         "type": "byte_mission",
-                        "title": "DESAFÍO 3: MISIÓN CONTRARRELOJ EN EL ESPACIO",
-                        "instruction": "¡MISIÓN RÁPIDA! AYUDÁ A BYTE A LLEGAR A LA BASE ESPACIAL 🚀 ESQUIVANDO EL METEORITO ☄️ ANTES DE QUE SE ACABE EL TIEMPO.",
-                        "objective": "PROGRAMAR LA RUTA ESPACIAL CON SALTO SOBRE EL METEORITO PARA GANAR EL BONUS DE VELOCIDAD.",
-                        "whatToObserve": "OBSERVÁ EL MAPA ESPACIAL: BYTE INICIA EN (0,0), EL METEORITO ESTÁ EN (2,0) Y LA BASE ESPACIAL EN (4,0).",
-                        "howToPlay": "TOCÁ LOS COMANDOS (AVANZAR Y SALTAR). PODÉS BORRAR CON ✕ O DESHACER SI TE EQUIVOCÁS.",
+                        "title": "DESAFÍO 3: CONSTRUÍ LA SECUENCIA DE BYTE",
+                        "instruction": "¡CONSTRUÍ EL CAMINO DE BYTE! OBSERVÁ EL MAPA Y ELEGÍ LAS INSTRUCCIONES PARA QUE BYTE LLEGUE A LA BATERÍA SOLAR 🔋 ESQUIVANDO LA ROCA 🪨. ORDENÁ LOS BLOQUES Y PRESIONÁ «▶️ ¡EJECUTAR INSTRUCCIONES!». SI BYTE NO LLEGA, REVISÁ EL CAMINO Y MODIFICÁ TU PROGRAMA.",
+                        "objective": "CONSTRUIR LA SECUENCIA COMPLETA DE INSTRUCCIONES PARA LLEVAR A BYTE A SU DESTINO SIN CHOCAR CON LA ROCA.",
+                        "whatToObserve": "OBSERVÁ EL MAPA: BYTE INICIA EN (0, 1), LA ROCA ESTÁ EN (2, 1) Y LA BATERÍA SOLAR EN (4, 1). EL CAMINO TIENE FILAS LIBRES ARRIBA Y ABAJO.",
+                        "howToPlay": "ELEGÍ LAS INSTRUCCIONES DE DIRECCIÓN (➡️ AVANZAR, ⬆️ SUBIR, ⬇️ BAJAR, 🦘 SALTAR) PARA ARMAR EL RECORRIDO. PODÉS BORRAR CON ✕ O REINICIAR LA POSICIÓN.",
                         "howToSubmit": "PRESIONÁ «▶️ ¡EJECUTAR INSTRUCCIONES!» PARA QUE BYTE COMIENCE SU RECORRIDO.",
-                        "resultMeaning": "SI LLEGÁS A TIEMPO SUMARÁS 10 PUNTOS EXTRA DE BONUS Y ESTRELLAS DORADAS.",
+                        "resultMeaning": "CUANDO BYTE LLEGUE A LA BATERÍA SOLAR HABRÁS COMPLETADO CON ÉXITO LA TAREA DE 1.º GRADO.",
                         "hasTimer": true,
-                        "timerSeconds": 45,
+                        "timerSeconds": 60,
                         "gridCols": 5,
-                        "gridRows": 2,
-                        "startPos": { "x": 0, "y": 0 },
-                        "targetPos": { "x": 4, "y": 0 },
-                        "goalIcon": "🚀",
-                        "goalName": "BASE ESPACIAL",
+                        "gridRows": 3,
+                        "startPos": { "x": 0, "y": 1 },
+                        "targetPos": { "x": 4, "y": 1 },
+                        "goalIcon": "🔋",
+                        "goalName": "BATERÍA SOLAR",
                         "obstacles": [
-                                { "x": 2, "y": 0, "icon": "☄️", "name": "METEORITO" }
-                        ],
-                        "scenery": [
-                                { "x": 0, "y": 1, "icon": "⭐" },
-                                { "x": 1, "y": 1, "icon": "🪐" },
-                                { "x": 2, "y": 1, "icon": "✨" },
-                                { "x": 3, "y": 1, "icon": "🛸" },
-                                { "x": 4, "y": 1, "icon": "⭐" }
+                                { "x": 2, "y": 1, "icon": "🪨", "name": "ROCA" }
                         ],
                         "availableCommands": [
                                 "right",
                                 "jump",
                                 "up",
-                                "down"
+                                "down",
+                                "left"
                         ],
                         "hints": [
-                                "PISTA 1: BYTE DEBE AVANZAR EN LÍNEA RECTA HACIA LA DERECHA.",
-                                "PISTA 2: EN EL PASO 2 ESTÁ JUSTO DELANTE DEL METEORITO: ¡USÁ LA ORDEN SALTAR!",
-                                "PISTA 3: LA SECUENCIA EXACTA ES: AVANZAR ➡️ SALTAR ➡️ AVANZAR."
+                                "PISTA 1: OBSERVÁ EL MAPA: HAY UNA ROCA EN EL MEDIO DEL CAMINO. PODÉS RODEARLA O SALTARLA.",
+                                "PISTA 2: SI QUERÉS RODEARLA, TOCÁ «SUBIR» O «BAJAR» PARA CAMBIAR DE FILA Y SEGUIR AVANZANDO.",
+                                "PISTA 3: SI PREFERÍS EL CAMINO CORTO, AVANZÁ UN PASO (➡️) Y LUEGO TOCÁ «SALTAR» (🦘) PARA PASAR POR ENCIMA DE LA ROCA."
                         ]
                 }
         ]
@@ -1622,24 +1616,25 @@ const CODING_DATA = {
                 {
                         "id": "g2_hw_desafio3",
                         "type": "byte_mission",
-                        "title": "Desafío 3: Misión Contrarreloj del Robot",
-                        "instruction": "¡Misión de rescate rápido! Programá a Byte para alcanzar la Base de Datos 💾 antes de que se termine el tiempo de bonus.",
-                        "objective": "Programar la ruta directa esquivando los obstáculos en la cuadrícula para conseguir el bonus de velocidad.",
-                        "whatToObserve": "Observá la cuadrícula 4x4: Byte inicia en (0, 0), hay una roca en (1, 0) y un charco en (2, 2). La base está en (3, 3).",
-                        "howToPlay": "Elegí las instrucciones direccionales (Abajo, Derecha) para armar tu ruta sin colisiones.",
-                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para poner en marcha a Byte.",
-                        "resultMeaning": "Si llegás a la meta dentro del tiempo, recibirás una bonificación de 10 puntos de velocidad.",
+                        "title": "Desafío 3: Ayudá a Byte a Llevar el Libro a la Biblioteca",
+                        "instruction": "Observá el mapa. Elegí las instrucciones necesarias para que Byte llegue a la Biblioteca 📚 transportando su libro 📖. Ordená los bloques y presioná «▶️ ¡Ejecutar Instrucciones!». Si Byte no llega, revisá el camino y modificá tu programa.",
+                        "objective": "Construir la secuencia de instrucciones que guíe a Byte hasta la biblioteca escolar esquivando los charcos del camino.",
+                        "whatToObserve": "Byte comienza en la esquina superior izquierda (0, 0) con su libro. La Biblioteca 📚 está en (3, 3). En el patio escolar hay un charco en (1, 1) y una pila de cajas en (2, 2).",
+                        "howToPlay": "Elegí las instrucciones de dirección (Avanzar a la derecha, Bajar, Subir, Retroceder) para trazar el camino sin pisar charcos ni chocar cajas.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!». Si cometés un error, podés borrar pasos con ✕ o reiniciar la posición para probar otra ruta.",
+                        "resultMeaning": "Byte entregará el libro en la biblioteca y recibirás las 3 estrellas doradas de 2.º grado.",
                         "hasTimer": true,
-                        "timerSeconds": 50,
+                        "timerSeconds": 60,
+                        "characterIcon": "🤖📖",
                         "gridCols": 4,
                         "gridRows": 4,
                         "startPos": { "x": 0, "y": 0 },
                         "targetPos": { "x": 3, "y": 3 },
-                        "goalIcon": "💾",
-                        "goalName": "Base de Datos",
+                        "goalIcon": "📚",
+                        "goalName": "Biblioteca Escolar",
                         "obstacles": [
-                                { "x": 1, "y": 0, "icon": "🪨", "name": "Roca" },
-                                { "x": 2, "y": 2, "icon": "🌊", "name": "Charco" }
+                                { "x": 1, "y": 1, "icon": "🌊", "name": "Charco de Agua" },
+                                { "x": 2, "y": 2, "icon": "📦", "name": "Pila de Cajas" }
                         ],
                         "availableCommands": [
                                 "right",
@@ -1648,9 +1643,9 @@ const CODING_DATA = {
                                 "left"
                         ],
                         "hints": [
-                                "Pista 1: Hacia la derecha hay una roca; conviene descender por la columna 0 primero.",
-                                "Pista 2: Bajá a (0, 1) y avanzá hacia la derecha evitando el charco en (2, 2).",
-                                "Pista 3: Una ruta ganadora es: [Abajo] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Abajo] ➡️ [Abajo] ➡️ [Derecha]."
+                                "Pista 1: Observá el mapa: para esquivar el charco de agua podés avanzar primero por la fila superior hacia la derecha.",
+                                "Pista 2: Desde la esquina superior derecha (3, 0), Byte puede descender en línea recta por la columna 3 hasta la biblioteca en (3, 3).",
+                                "Pista 3: Una secuencia ganadora es: [Derecha] x3 ➡️ [Abajo] x3 (o también [Abajo] x3 ➡️ [Derecha] x3)."
                         ]
                 }
         ]
@@ -2655,36 +2650,37 @@ const CODING_DATA = {
                 {
                         "id": "g3_hw_desafio3",
                         "type": "byte_mission",
-                        "title": "Desafío 3: Misión Contrarreloj en la Ciudad Digital",
-                        "instruction": "¡Alerta en la red! Guiá a Byte hasta la Supercomputadora 🖥️ sorteando los cortafuegos antes de que el temporizador llegue a cero.",
-                        "objective": "Construir una ruta precisa en la cuadrícula 5x3 esquivando los bloqueos para conseguir el bonus de tiempo.",
-                        "whatToObserve": "Observá el mapa: Byte parte de (0, 1), hay un cortafuegos en (2, 1) y una roca en (1, 0). La meta está en (4, 1).",
-                        "howToPlay": "Seleccioná las instrucciones direccionales (Abajo, Derecha, Arriba) o Saltar para superar los obstáculos.",
-                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!» para ejecutar tu código.",
-                        "resultMeaning": "Completar la misión dentro del tiempo otorga +10 puntos bonus de velocidad.",
+                        "title": "Desafío 3: Misión: Llevar el Paquete a la Estación de Rescate",
+                        "instruction": "¡Alerta en la ciudad! Guiá a Byte para transportar el paquete de ayuda 📦 hasta la Estación de Rescate 🏥 esquivando las barreras del camino. Elegí las instrucciones, ordenalas en la bandeja y presioná «▶️ ¡Ejecutar Instrucciones!». Si Byte choca o no llega, revisá la pista y modificá tu secuencia.",
+                        "objective": "Construir un algoritmo de navegación que lleve a Byte a la estación de rescate sorteando barreras y desvíos peligrosos.",
+                        "whatToObserve": "En el mapa, Byte inicia en (0, 1) con el paquete. La Estación de Rescate 🏥 está en (4, 1). Hay una barrera de obras en (2, 1) y una zona de derrumbe en (1, 0).",
+                        "howToPlay": "Elegí las instrucciones necesarias (Derecha, Abajo, Arriba, Izquierda, Saltar). Podés rodear la barrera por la fila inferior o usar la instrucción SALTAR para pasar por encima.",
+                        "howToSubmit": "Presioná «▶️ ¡Ejecutar Instrucciones!». Byte se moverá paso a paso. Si choca, se detendrá, te mostrará qué pasó y podrás borrar con ✕ para corregir.",
+                        "resultMeaning": "Byte entregará los suministros a tiempo y obtendrás las 3 estrellas de honor de 3.º grado.",
                         "hasTimer": true,
                         "timerSeconds": 60,
+                        "characterIcon": "🤖📦",
                         "gridCols": 5,
                         "gridRows": 3,
                         "startPos": { "x": 0, "y": 1 },
                         "targetPos": { "x": 4, "y": 1 },
-                        "goalIcon": "🖥️",
-                        "goalName": "Supercomputadora",
+                        "goalIcon": "🏥",
+                        "goalName": "Estación de Rescate",
                         "obstacles": [
-                                { "x": 2, "y": 1, "icon": "🔥", "name": "Cortafuegos" },
-                                { "x": 1, "y": 0, "icon": "🪨", "name": "Roca de Datos" }
+                                { "x": 2, "y": 1, "icon": "🚧", "name": "Barrera de Obras" },
+                                { "x": 1, "y": 0, "icon": "⚠️", "name": "Zona de Derrumbe" }
                         ],
                         "availableCommands": [
                                 "right",
                                 "jump",
-                                "up",
                                 "down",
+                                "up",
                                 "left"
                         ],
                         "hints": [
-                                "Pista 1: En (2, 1) hay fuego bloqueando el paso recto. Podés rodear por abajo en la fila 2.",
-                                "Pista 2: Bajá a (0, 2), avanzá hacia la derecha hasta (4, 2) y subí a la meta en (4, 1).",
-                                "Pista 3: Una ruta segura es: [Abajo] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Derecha] ➡️ [Arriba]."
+                                "Pista 1: Como la barrera de obras está en (2, 1), podés descender a la fila 2 para rodearla por abajo, o usar la instrucción SALTAR para pasar por encima.",
+                                "Pista 2: Si decidís rodear por abajo: desde (0, 1) bajá a (0, 2), avanzá por la fila 2 hasta (3, 2), subí a (3, 1) y avanzá a la meta en (4, 1).",
+                                "Pista 3: Si preferís la ruta corta con salto: Avanzar (1, 1) ➡️ Saltar sobre la barrera (aterrizando en 3, 1) ➡️ Avanzar a la meta (4, 1)."
                         ]
                 }
         ]
@@ -5958,8 +5954,8 @@ class CodingModuleManager {
     const attCount = this.activityState.attempts;
     let unlockedNewHint = false;
 
-    // Regla: cada 3 errores se desbloquea una pista (máximo 3 pistas)
-    if (attCount % 3 === 0 && this.activityState.hintsUnlocked < 3) {
+    // Desbloquea una pista inmediatamente en cada error (hasta 3 pistas)
+    if (this.activityState.hintsUnlocked < 3) {
       this.activityState.hintsUnlocked++;
       unlockedNewHint = true;
     }
@@ -7426,17 +7422,22 @@ class CodingModuleManager {
       }
     };
 
-    // Funciones de control del Panel de Diagnóstico Inmediato e Inline
-    const showInlineFeedback = (msg) => {
+    // Funciones de control del Panel de Diagnóstico Inmediato e Inline (con Pistas Progresivas Activas)
+    const showInlineFeedback = (msg, forceHintIdx = null) => {
       const fbEl = document.getElementById('byte-inline-feedback');
       if (!fbEl) return;
       const hintsArr = act.hints || [];
+      if (forceHintIdx !== null && forceHintIdx >= 0 && forceHintIdx < hintsArr.length) {
+        currentHintIndex = forceHintIdx;
+      }
+      const activeHint = hintsArr[currentHintIndex] || (isGradeOne ? 'OBSERVÁ EL MAPA PARA PLANIFICAR TU RECORRIDO PASO A PASO.' : 'Observá el mapa para planificar tu recorrido paso a paso.');
+
       fbEl.innerHTML = `
         <div class="byte-inline-error-card">
           <div class="byte-inline-error-head" style="display:flex; align-items:center; gap:8px;">
             <span style="font-size:1.3rem;">⚠️</span>
             <span style="font-weight:800; color:#991b1b; font-size:1rem;">
-              ${isGradeOne ? '¡ATENCIÓN! HAY QUE CORREGIR EL CAMINO' : '¡Atención! Hay un error en la secuencia'}
+              ${isGradeOne ? '¡ATENCIÓN! HAY QUE REVISAR EL CAMINO' : '¡Atención! Hay que revisar el camino'}
             </span>
           </div>
           <p class="byte-inline-error-text" style="margin:6px 0; color:#7f1d1d; font-weight:600; font-size:0.95rem;">
@@ -7444,10 +7445,19 @@ class CodingModuleManager {
           </p>
           ${hintsArr.length > 0 ? `
             <div class="byte-inline-hint-area" style="margin-top:8px; border-top:1px dashed #fca5a5; padding-top:8px;">
-              <button type="button" id="btn-byte-inline-hint" class="btn-byte-inline-hint">
-                <span>💡</span> ${isGradeOne ? `VER PISTA (${Math.min(currentHintIndex + 1, hintsArr.length)}/${hintsArr.length})` : `Ver Pista (${Math.min(currentHintIndex + 1, hintsArr.length)}/${hintsArr.length})`}
-              </button>
-              <div id="byte-inline-hint-box" style="display:none; margin-top:6px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:8px 12px; color:#1e40af; font-size:0.9rem; font-weight:700;"></div>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+                <strong id="byte-inline-hint-label" style="color:#1e40af; font-size:0.9rem;">
+                  💡 ${isGradeOne ? `PISTA ${currentHintIndex + 1} DE ${hintsArr.length}` : `Pista ${currentHintIndex + 1} de ${hintsArr.length}`}:
+                </strong>
+                ${hintsArr.length > 1 ? `
+                  <button type="button" id="btn-byte-inline-hint" class="btn-byte-inline-hint" style="margin:0; padding:3px 10px; font-size:0.8rem;">
+                    <span>💡</span> ${isGradeOne ? 'VER OTRA PISTA ➡️' : 'Ver otra pista ➡️'}
+                  </button>
+                ` : ''}
+              </div>
+              <div id="byte-inline-hint-box" style="display:block; background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:9px 13px; color:#1e40af; font-size:0.95rem; font-weight:700; line-height:1.45;">
+                ${activeHint}
+              </div>
             </div>
           ` : ''}
         </div>
@@ -7456,14 +7466,17 @@ class CodingModuleManager {
 
       const btnInlineHint = document.getElementById('btn-byte-inline-hint');
       const hintBox = document.getElementById('byte-inline-hint-box');
+      const hintLabel = document.getElementById('byte-inline-hint-label');
+
       if (btnInlineHint && hintBox) {
         btnInlineHint.onclick = () => {
-          const currentHint = hintsArr[currentHintIndex];
           currentHintIndex = (currentHintIndex + 1) % hintsArr.length;
-          hintBox.textContent = currentHint;
-          hintBox.style.display = 'block';
-          btnInlineHint.innerHTML = `<span>💡</span> ${isGradeOne ? `SIGUIENTE PISTA (${currentHintIndex + 1}/${hintsArr.length})` : `Siguiente Pista (${currentHintIndex + 1}/${hintsArr.length})`}`;
-          this.updateByte(currentHint, 'thinking', currentHint);
+          const nextHint = hintsArr[currentHintIndex];
+          hintBox.textContent = nextHint;
+          if (hintLabel) {
+            hintLabel.textContent = `💡 ${isGradeOne ? `PISTA ${currentHintIndex + 1} DE ${hintsArr.length}` : `Pista ${currentHintIndex + 1} de ${hintsArr.length}`}:`;
+          }
+          this.updateByte(nextHint, 'thinking', nextHint);
         };
       }
     };
@@ -7538,9 +7551,12 @@ class CodingModuleManager {
         this.onPlaySound('click');
         const hintsArr = act.hints || [];
         if (hintsArr.length === 0) return;
-        const currentHint = hintsArr[currentHintIndex];
-        currentHintIndex = (currentHintIndex + 1) % hintsArr.length;
-        this.updateByte(currentHint, 'thinking', currentHint);
+        const helpMsg = isGradeOne
+          ? '¡AQUÍ TENÉS AYUDA PARA COMPLETAR LA MISIÓN!'
+          : '¡Aquí tenés una pista para planificar tu recorrido!';
+        showInlineFeedback(helpMsg);
+        const curH = hintsArr[currentHintIndex];
+        this.updateByte(curH, 'thinking', curH);
       };
     }
 
@@ -7553,9 +7569,10 @@ class CodingModuleManager {
 
         if (commands.length === 0) {
           const emptyMsg = isGradeOne
-            ? '¡AGREGÁ AL MENOS UNA INSTRUCCIÓN ANTES DE EJECUTAR!'
-            : '¡Agregá al menos una instrucción antes de ejecutar!';
-          this.updateByte(emptyMsg, 'worried');
+            ? '¡LA BANDEJA ESTÁ VACÍA! TOCÁ LOS BOTONES DE DIRECCIÓN (➡️, ⬇️, ⬆️) PARA MARCAR EL CAMINO DE BYTE ANTES DE EJECUTAR.'
+            : '¡La bandeja está vacía! Tocá los botones de dirección para marcar el camino de Byte antes de ejecutar.';
+          showInlineFeedback(emptyMsg, 0);
+          this.updateByte(emptyMsg, 'thinking');
           return;
         }
 
