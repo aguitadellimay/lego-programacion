@@ -5140,4 +5140,385 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
   box-shadow: 0 2px 0 #1d4ed8;
 }
 
+/* ========================================================
+   MISIÓN 3: ¡REPARÁ EL COHETE DE BITY! (ESTACIONES Y REPARACIÓN)
+   ======================================================== */
+
+.bity-m3-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: rgba(15, 23, 42, 0.95);
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  padding: 10px 18px;
+  color: white;
+}
+
+.bity-m3-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e293b;
+  border: 1.5px solid #475569;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.bity-m3-counter-pill.moves {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.bity-m3-counter-pill.moves.limit-near {
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+
+.bity-m3-counter-pill.moves.limit-exceeded {
+  border-color: #ef4444;
+  color: #f87171;
+  animation: shakeShort 0.3s ease;
+}
+
+.bity-m3-counter-pill.errors {
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+.bity-m3-battery-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e293b;
+  border: 1.5px solid #22c55e;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #86efac;
+}
+
+.bity-m3-station-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bity-stn-dot {
+  background: #475569;
+  color: #94a3b8;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  transition: all 0.25s ease;
+}
+
+.bity-stn-dot.charged {
+  background: #22c55e;
+  color: white;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+/* Celda de Estación de Carga en el Laberinto */
+.bity-cell.station-cell {
+  border-color: #f59e0b;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(15, 23, 42, 0.8) 100%);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.bity-cell.station-cell.charged {
+  border-color: #22c55e;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.22) 0%, rgba(15, 23, 42, 0.8) 100%);
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.45);
+}
+
+.bity-station-badge-cell {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  background: #f59e0b;
+  color: #0f172a;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 1px 3px;
+  line-height: 1;
+}
+
+.bity-cell.station-cell.charged .bity-station-badge-cell {
+  background: #22c55e;
+  color: white;
+}
+
+/* Celda Centro de Repuestos */
+.bity-cell.repair-center-cell {
+  border-color: #38bdf8;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(15, 23, 42, 0.85) 100%);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+  animation: glowPulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(56, 189, 248, 0.35); }
+  100% { box-shadow: 0 0 20px rgba(56, 189, 248, 0.75); }
+}
+
+/* Modal de Pregunta en Estación de Carga */
+.bity-station-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.bity-station-modal-card {
+  background: #ffffff;
+  border: 3.5px solid #f59e0b;
+  border-radius: 24px;
+  padding: 24px 26px;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: popIn 0.3s ease-out;
+}
+
+.bity-station-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 2px solid #fef3c7;
+  padding-bottom: 12px;
+}
+
+.bity-station-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bity-station-badge {
+  background: #f59e0b;
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.bity-charging-anim-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.3rem;
+  animation: chargePulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes chargePulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px #f59e0b); }
+  100% { transform: scale(1.15); filter: drop-shadow(0 0 10px #f59e0b); }
+}
+
+.bity-station-question-text {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.bity-station-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bity-station-opt-btn {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.bity-station-opt-btn:hover:not(:disabled) {
+  background: #fef3c7;
+  border-color: #f59e0b;
+  color: #78350f;
+  transform: translateX(4px);
+}
+
+.bity-station-opt-btn.correct {
+  background: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+.bity-station-opt-btn.incorrect {
+  background: #fee2e2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+  animation: shakeShort 0.3s ease;
+}
+
+.bity-opt-letter {
+  background: #e2e8f0;
+  color: #475569;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.bity-station-feedback-box {
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  display: none;
+  line-height: 1.4;
+}
+
+.bity-station-feedback-box.success {
+  background: #ecfdf5;
+  border: 2px solid #86efac;
+  color: #166534;
+  display: block;
+}
+
+.bity-station-feedback-box.error {
+  background: #fff1f2;
+  border: 2px solid #fecdd3;
+  color: #9f1239;
+  display: block;
+}
+
+/* Modal de Reparación de Cohete (Victoria Misión 3) */
+.bity-repair-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(3, 7, 18, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.bity-repair-card {
+  background: radial-gradient(circle at center, #1e293b 0%, #030712 100%);
+  border: 3.5px solid #38bdf8;
+  border-radius: 28px;
+  padding: 32px 28px;
+  max-width: 560px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(56, 189, 248, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bity-repair-bay {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 4px;
+}
+
+.bity-repair-rocket {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.8));
+  animation: rocketShine 1.8s infinite alternate ease-in-out;
+}
+
+@keyframes rocketShine {
+  0% { transform: scale(1) rotate(-5deg); filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5)); }
+  100% { transform: scale(1.08) rotate(5deg); filter: drop-shadow(0 0 24px rgba(250, 204, 21, 0.9)); }
+}
+
+.bity-repair-tool-wrench {
+  font-size: 2.8rem;
+  animation: toolWrench 1.4s infinite alternate ease-in-out;
+}
+
+@keyframes toolWrench {
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(35deg); }
+}
+
+.bity-repair-tool-gear {
+  font-size: 2.8rem;
+  animation: toolGear 3s infinite linear;
+}
+
+@keyframes toolGear {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.bity-repair-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+.bity-stat-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid #334155;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #cbd5e1;
+}
+
+.bity-stat-val {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #38bdf8;
+  display: block;
+}
+
 

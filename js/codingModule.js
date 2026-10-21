@@ -668,6 +668,95 @@ const CODING_DATA = {
             "PISTA 2: LUEGO GIRÁ A LA IZQUIERDA Y AVANZÁ 3 CASILLEROS POR LA FILA LIBRE.",
             "PISTA 3: FINALMENTE GIRÁ A LA DERECHA Y AVANZÁ 1 CASILLERO HASTA LA NAVE."
         ]
+    },
+    {
+        "id": "g1_hw_repara_cohete",
+        "type": "repair_rocket",
+        "title": "MISIÓN 3: ¡REPARÁ EL COHETE DE BITY!",
+        "storyIntro": "¡EL COHETE DE BITY SUFRIÓ UNA AVERÍA! PROGRAMÁ EL CAMINO PARA LLEGAR AL CENTRO DE REPUESTOS ESPACIALES 🏭. EN EL VIAJE, DEBÉS PASAR OBLIGATORIAMENTE POR LAS 3 ESTACIONES DE CARGA ⚡ (1, 2 Y 3) Y RESPONDER SUS PREGUNTAS DE PROGRAMACIÓN.",
+        "ruleExplanation": "CADA CASILLERO QUE AVANZA BITY CUENTA COMO 1 MOVIMIENTO. GIRAR NO SUMA MOVIMIENTOS. ¡EL LÍMITE ES DE 15 MOVIMIENTOS!",
+        "maxMoves": 15,
+        "maxErrors": 3,
+        "gridCols": 5,
+        "gridRows": 3,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 4,
+            "y": 0
+        },
+        "targetName": "CENTRO DE REPUESTOS",
+        "targetIcon": "🏭",
+        "stations": [
+            {
+                "id": 1,
+                "name": "ESTACIÓN 1",
+                "icon": "⚡",
+                "x": 2,
+                "y": 0,
+                "questionKey": "station1"
+            },
+            {
+                "id": 2,
+                "name": "ESTACIÓN 2",
+                "icon": "⚡",
+                "x": 2,
+                "y": 2,
+                "questionKey": "station2"
+            },
+            {
+                "id": 3,
+                "name": "ESTACIÓN 3",
+                "icon": "⚡",
+                "x": 4,
+                "y": 2,
+                "questionKey": "station3"
+            }
+        ],
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "ROCA ESPACIAL",
+                "icon": "🪨"
+            },
+            {
+                "x": 3,
+                "y": 1,
+                "name": "CHATARRA",
+                "icon": "⚙️"
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "AVANZAR 1",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "AVANZAR 2",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "GIRAR DERECHA",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "GIRAR IZQUIERDA",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "PISTA 1: AVANZÁ 2 CASILLEROS PARA LLEGAR A LA ESTACIÓN 1 Y CARGAR BATERÍA.",
+            "PISTA 2: DESPUÉS GIRÁ A LA DERECHA Y BAJÁ 2 CASILLEROS HASTA LA ESTACIÓN 2.",
+            "PISTA 3: DESDE LA ESTACIÓN 2, GIRÁ A LA IZQUIERDA, AVANZÁ 2 A LA ESTACIÓN 3 Y SUBÍ AL CENTRO DE REPUESTOS."
+        ]
     }
   ]
 },
@@ -2002,6 +2091,106 @@ const CODING_DATA = {
             "Pista 2: Desde (0, 2), girá a la derecha y avanzá en línea recta por el pasillo despejado hasta la nave.",
             "Pista 3: Una secuencia segura es: Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 2 ➡️ Avanzar 2."
         ]
+    },
+    {
+        "id": "g2_hw_repara_cohete",
+        "type": "repair_rocket",
+        "title": "Misión 3: ¡Repará el cohete de Bity!",
+        "storyIntro": "El cohete de Bity sufrió una avería en sus propulsores. Programá su ruta hacia el Centro de Repuestos Espaciales 🏭 pasando obligatoriamente por las 3 estaciones de carga (1, 2 y 3) para recargar energía y responder sus preguntas de código.",
+        "ruleExplanation": "Cada casillero que avanza Bity cuenta como 1 movimiento. Girar no suma movimientos. ¡Tenés un máximo de 15 movimientos!",
+        "maxMoves": 15,
+        "maxErrors": 3,
+        "gridCols": 5,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 1,
+            "y": 2
+        },
+        "targetName": "Centro de Repuestos",
+        "targetIcon": "🏭",
+        "stations": [
+            {
+                "id": 1,
+                "name": "Estación 1",
+                "icon": "⚡",
+                "x": 3,
+                "y": 0,
+                "questionKey": "station1"
+            },
+            {
+                "id": 2,
+                "name": "Estación 2",
+                "icon": "⚡",
+                "x": 4,
+                "y": 1,
+                "questionKey": "station2"
+            },
+            {
+                "id": 3,
+                "name": "Estación 3",
+                "icon": "⚡",
+                "x": 1,
+                "y": 3,
+                "questionKey": "station3"
+            }
+        ],
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "Satélite",
+                "icon": "🛰️"
+            },
+            {
+                "x": 2,
+                "y": 2,
+                "name": "Asteroide",
+                "icon": "🪨"
+            },
+            {
+                "x": 3,
+                "y": 2,
+                "name": "Barrera",
+                "icon": "🚧"
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Avanzá 3 casilleros por la fila 0 para alcanzar la Estación 1.",
+            "Pista 2: Bajá 1 casillero y girá a la derecha para llegar a la Estación 2 en (4, 1).",
+            "Pista 3: Descendé a la fila inferior y avanzá hacia la izquierda para conectar con la Estación 3 y el Centro de Repuestos."
+        ]
     }
   ]
 },
@@ -3245,6 +3434,118 @@ const CODING_DATA = {
             "Pista 2: Desde (2, 2) bajá a la fila 3 y avanzá 3 casilleros en línea recta hacia la nave espacial.",
             "Pista 3: Un camino ganador es: Girar a la derecha ➡️ Avanzar 2 ➡️ Girar a la izquierda ➡️ Avanzar 2 ➡️ Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 3."
         ]
+    },
+    {
+        "id": "g3_hw_repara_cohete",
+        "type": "repair_rocket",
+        "title": "Misión 3: ¡Repará el cohete de Bity!",
+        "storyIntro": "Misión de navegación y recarga: Bity debe sortear obstáculos en el sector espacial para llegar al Centro de Repuestos 🏭. Debe conectar las 3 estaciones de energía en orden secuencial (1 ➡️ 2 ➡️ 3) antes del destino final.",
+        "ruleExplanation": "Cada casillero recorrido suma 1 movimiento al contador. Los giros no consumen movimientos. Límite: 15 movimientos.",
+        "maxMoves": 15,
+        "maxErrors": 3,
+        "gridCols": 6,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 1
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 3,
+            "y": 3
+        },
+        "targetName": "Centro de Repuestos",
+        "targetIcon": "🏭",
+        "stations": [
+            {
+                "id": 1,
+                "name": "Estación 1",
+                "icon": "⚡",
+                "x": 2,
+                "y": 1,
+                "questionKey": "station1"
+            },
+            {
+                "id": 2,
+                "name": "Estación 2",
+                "icon": "⚡",
+                "x": 5,
+                "y": 2,
+                "questionKey": "station2"
+            },
+            {
+                "id": 3,
+                "name": "Estación 3",
+                "icon": "⚡",
+                "x": 2,
+                "y": 3,
+                "questionKey": "station3"
+            }
+        ],
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 0,
+                "name": "Meteorito",
+                "icon": "☄️"
+            },
+            {
+                "x": 3,
+                "y": 1,
+                "name": "Radiación",
+                "icon": "☢️"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "Escombros",
+                "icon": "⚙️"
+            },
+            {
+                "x": 1,
+                "y": 2,
+                "name": "Asteroide",
+                "icon": "🪨"
+            },
+            {
+                "x": 1,
+                "y": 3,
+                "name": "Bloqueo",
+                "icon": "🚫"
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Desde la Estación 1 en (2, 1), subí a la fila 0 para rodear la radiación y los escombros.",
+            "Pista 2: Avanzá por la fila 0 hasta la columna 5 y descendé a la Estación 2.",
+            "Pista 3: Desde la Estación 2, avanzá 3 casilleros hacia la izquierda, bajá a la Estación 3 y entrá al Centro de Repuestos."
+        ]
     }
   ]
 },
@@ -4435,6 +4736,123 @@ const CODING_DATA = {
             "Pista 1: Podés avanzar por la fila superior hasta (4, 0) esquivando los bloqueos inferiores.",
             "Pista 2: Bajá a la fila 1, avanzá a la columna 5 y descendé en línea recta hacia la nave espacial.",
             "Pista 3: Una ruta efectiva es: Avanzar 4 ➡️ Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 1 ➡️ Girar a la derecha ➡️ Avanzar 3."
+        ]
+    },
+    {
+        "id": "g4_hw_repara_cohete",
+        "type": "repair_rocket",
+        "title": "Misión 3: ¡Repará el cohete de Bity!",
+        "storyIntro": "Misión de optimización de trayectoria: El sector tiene campos de fuerza y desvíos falsos que exceden los 15 movimientos. Planificá la ruta más directa que visite la Estación 1, Estación 2, Estación 3 y finalice en el Centro de Repuestos 🏭.",
+        "ruleExplanation": "Cada desplazamiento cuenta como 1 movimiento. Girar orienta a Bity pero no suma movimientos. ¡Máximo 15 movimientos!",
+        "maxMoves": 15,
+        "maxErrors": 3,
+        "gridCols": 6,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 2,
+            "y": 3
+        },
+        "targetName": "Centro de Repuestos",
+        "targetIcon": "🏭",
+        "stations": [
+            {
+                "id": 1,
+                "name": "Estación 1",
+                "icon": "⚡",
+                "x": 3,
+                "y": 0,
+                "questionKey": "station1"
+            },
+            {
+                "id": 2,
+                "name": "Estación 2",
+                "icon": "⚡",
+                "x": 5,
+                "y": 2,
+                "questionKey": "station2"
+            },
+            {
+                "id": 3,
+                "name": "Estación 3",
+                "icon": "⚡",
+                "x": 2,
+                "y": 4,
+                "questionKey": "station3"
+            }
+        ],
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 3,
+                "y": 3,
+                "name": "Campo de fuerza",
+                "icon": "🛡️"
+            },
+            {
+                "x": 1,
+                "y": 3,
+                "name": "Muro de plasma",
+                "icon": "🔥"
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Avanzá 3 casilleros a la Estación 1, bajá 2 y avanzá 2 a la Estación 2 (7 movimientos usados).",
+            "Pista 2: Bajá 2 a la fila 4 y avanzá 3 casilleros a la izquierda para alcanzar la Estación 3.",
+            "Pista 3: Desde la Estación 3 en (2, 4), solo necesitás subir 1 casillero al Centro de Repuestos (13 movimientos en total)."
         ]
     }
   ]
@@ -5689,6 +6107,130 @@ const CODING_DATA = {
             "Pista 1: El pasillo superior por la fila 0 permite avanzar en línea recta hasta la columna 6 sin obstáculos.",
             "Pista 2: La suma de avances debe ser menor o igual a 10: 1 paso arriba + 4 pasos derecha + 2 pasos derecha + 3 pasos abajo = 10 casilleros.",
             "Pista 3: Una secuencia óptima es: Girar a la izquierda ➡️ Avanzar 1 ➡️ Girar a la derecha ➡️ Avanzar 4 ➡️ Avanzar 2 ➡️ Girar a la derecha ➡️ Avanzar 3."
+        ]
+    },
+    {
+        "id": "g5_hw_repara_cohete",
+        "type": "repair_rocket",
+        "title": "Misión 3: ¡Repará el cohete de Bity!",
+        "storyIntro": "Misión avanzada con restricciones de eficiencia: Bity debe sortear una densa red de anomalías cuánticas y campos gravitatorios. Debe energizar sus baterías en las 3 estaciones en orden (1 ➡️ 2 ➡️ 3) y arribar al Centro de Repuestos 🏭 con una meta óptima de 12 movimientos (límite máximo 15).",
+        "ruleExplanation": "Cada avance de 1 casillero suma 1 movimiento. Los giros no consumen movimientos. Meta óptima: 12 movimientos. Límite máximo: 15.",
+        "recommendedMoves": 12,
+        "maxMoves": 15,
+        "maxErrors": 3,
+        "gridCols": 7,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 2
+        },
+        "startFacing": "up",
+        "targetPos": {
+            "x": 5,
+            "y": 3
+        },
+        "targetName": "Centro de Repuestos",
+        "targetIcon": "🏭",
+        "stations": [
+            {
+                "id": 1,
+                "name": "Estación 1",
+                "icon": "⚡",
+                "x": 3,
+                "y": 0,
+                "questionKey": "station1"
+            },
+            {
+                "id": 2,
+                "name": "Estación 2",
+                "icon": "⚡",
+                "x": 3,
+                "y": 2,
+                "questionKey": "station2"
+            },
+            {
+                "id": 3,
+                "name": "Estación 3",
+                "icon": "⚡",
+                "x": 6,
+                "y": 3,
+                "questionKey": "station3"
+            }
+        ],
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 1,
+                "y": 2,
+                "name": "Agujero de gusano",
+                "icon": "🕳️"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "Campo electromagnético",
+                "icon": "⚡"
+            },
+            {
+                "x": 4,
+                "y": 3,
+                "name": "Pared refractaria",
+                "icon": "🛡️"
+            },
+            {
+                "x": 5,
+                "y": 1,
+                "name": "Muro gravitatorio",
+                "icon": "🧱"
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Subí 2 casilleros hasta (0, 0) y avanzá 3 a la derecha hasta la Estación 1 en (3, 0).",
+            "Pista 2: Bajá 2 casilleros por el pasillo central para tocar la Estación 2 en (3, 2).",
+            "Pista 3: Avanzá hacia el extremo derecho en la fila 2, bajá a la Estación 3 en (6, 3) e ingresá al Centro de Repuestos en (5, 3)."
         ]
     }
   ]
@@ -7356,6 +7898,9 @@ class CodingModuleManager {
         break;
       case 'build_path':
         this.renderBuildPath(container, act);
+        break;
+      case 'repair_rocket':
+        this.renderRepairRocket(container, act);
         break;
       default:
         this.renderTheory(container, act);
@@ -9768,6 +10313,696 @@ class CodingModuleManager {
     document.body.appendChild(modal);
 
     const btnRetry = modal.querySelector('#btn-bity-retry-level');
+    if (btnRetry) {
+      btnRetry.onclick = () => {
+        this.onPlaySound('pop');
+        document.body.removeChild(modal);
+        if (typeof onRetry === 'function') onRetry();
+      };
+    }
+  }
+
+
+  // ========================================================
+  // MISIÓN 3: ¡REPARÁ EL COHETE DE BITY!
+  // ========================================================
+  renderRepairRocket(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    const missionTitle = isGradeOne ? act.title.toUpperCase() : act.title;
+    const missionStory = isGradeOne ? act.storyIntro.toUpperCase() : act.storyIntro;
+    const ruleExplanation = isGradeOne ? act.ruleExplanation.toUpperCase() : act.ruleExplanation;
+
+    this.updateByte(
+      isGradeOne
+        ? '¡MISIÓN 3! MI COHETE SUFRIÓ UNA AVERÍA. PASÁ POR LAS 3 ESTACIONES DE CARGA PARA RECARGAR ENERGÍA Y LLEGAR AL CENTRO DE REPUESTOS.'
+        : '¡Misión 3! Mi cohete sufrió una avería. Pasá por las 3 estaciones de carga para recargar energía y llegar al Centro de Repuestos.',
+      'normal'
+    );
+
+    // Banco de preguntas de las estaciones
+    const questionsDb = {
+      station1: {
+        title: "¿Qué es una instrucción?",
+        titleG1: "¿QUÉ ES UNA INSTRUCCIÓN?",
+        options: [
+          { id: "A", text: "Una orden que le indica a la computadora o al robot qué debe hacer.", textG1: "UNA ORDEN QUE LE INDICA A LA COMPUTADORA O AL ROBOT QUÉ DEBE HACER.", isCorrect: true },
+          { id: "B", text: "Un dibujo que decora la pantalla.", textG1: "UN DIBUJO QUE DECORA LA PANTALLA.", isCorrect: false },
+          { id: "C", text: "Una pieza que sirve para cargar la batería.", textG1: "UNA PIEZA QUE SIRVE PARA CARGAR LA BATERÍA.", isCorrect: false }
+        ],
+        feedbackSuccess: "¡Muy bien! Una instrucción le dice a Bity qué tiene que hacer. ¡Sigamos el camino!",
+        feedbackSuccessG1: "¡MUY BIEN! UNA INSTRUCCIÓN LE DICE A BITY QUÉ TIENE QUE HACER. ¡SIGAMOS EL CAMINO!"
+      },
+      station2: {
+        title: "¿Qué significa programar?",
+        titleG1: "¿QUÉ SIGNIFICA PROGRAMAR?",
+        options: [
+          { id: "A", text: "Encender la computadora y esperar sin hacer nada.", textG1: "ENCENDER LA COMPUTADORA Y ESPERAR SIN HACER NADA.", isCorrect: false },
+          { id: "B", text: "Dar instrucciones ordenadas para que una computadora o un robot realice una tarea.", textG1: "DAR INSTRUCCIONES ORDENADAS PARA QUE UNA COMPUTADORA O UN ROBOT REALICE UNA TAREA.", isCorrect: true },
+          { id: "C", text: "Dibujar un laberinto sin decidir cómo recorrerlo.", textG1: "DIBUJAR UN LABERINTO SIN DECIDIR CÓMO RECORRERLO.", isCorrect: false }
+        ],
+        feedbackSuccess: "¡Excelente! Programar es darle instrucciones a Bity para que pueda cumplir una misión.",
+        feedbackSuccessG1: "¡EXCELENTE! PROGRAMAR ES DARLE INSTRUCCIONES A BITY PARA QUE PUEDA CUMPLIR UNA MISIÓN."
+      },
+      station3: {
+        title: "¿Qué es un algoritmo?",
+        titleG1: "¿QUÉ ES UN ALGORITMO?",
+        options: [
+          { id: "A", text: "Una batería que permite que Bity se mueva.", textG1: "UNA BATERÍA QUE PERMITE QUE BITY SE MUEVA.", isCorrect: false },
+          { id: "B", text: "Un conjunto de dibujos sin un orden determinado.", textG1: "UN CONJUNTO DE DIBUJOS SIN UN ORDEN DETERMINADO.", isCorrect: false },
+          { id: "C", text: "Una serie de pasos ordenados para resolver un problema o realizar una tarea.", textG1: "UNA SERIE DE PASOS ORDENADOS PARA RESOLVER UN PROBLEMA O REALIZAR UNA TAREA.", isCorrect: true }
+        ],
+        feedbackSuccess: "¡Lo lograste! Un algoritmo es una serie de pasos ordenados. ¡Bity ya está cerca de conseguir los repuestos!",
+        feedbackSuccessG1: "¡LO LOGRASTE! UN ALGORITMO ES UNA SERIE DE PASOS ORDENADOS. ¡BITY YA ESTÁ CERCA DE CONSEGUIR LOS REPUESTOS!"
+      }
+    };
+
+    let movesCount = 0;
+    let errorsCount = 0;
+    let stationsCompleted = [false, false, false];
+    let playerPos = { ...act.startPos };
+    let playerFacing = act.startFacing || 'right';
+    let commands = [];
+    let isSimulating = false;
+    let activeExecutingIndex = -1;
+
+    const deltas = {
+      right: { x: 1, y: 0, arrow: '➡️', deg: 0 },
+      down: { x: 0, y: 1, arrow: '⬇️', deg: 90 },
+      left: { x: -1, y: 0, arrow: '⬅️', deg: 180 },
+      up: { x: 0, y: -1, arrow: '⬆️', deg: 270 }
+    };
+    const turnRightMap = { right: 'down', down: 'left', left: 'up', up: 'right' };
+    const turnLeftMap = { right: 'up', up: 'left', left: 'down', down: 'right' };
+
+    const resetToCleanState = () => {
+      commands = [];
+      movesCount = 0;
+      errorsCount = 0;
+      stationsCompleted = [false, false, false];
+      playerPos = { ...act.startPos };
+      playerFacing = act.startFacing || 'right';
+      isSimulating = false;
+      activeExecutingIndex = -1;
+      draw();
+    };
+
+    const draw = () => {
+      const movesLimitExceeded = movesCount > 15;
+      const movesLimitNear = movesCount >= 13 && movesCount <= 15;
+
+      container.innerHTML = `
+        <div class="bity-challenge-stage ${isGradeOne ? 'g1-uppercase' : ''}">
+          ${this.createActivityHeader(act, false)}
+
+          <!-- Card de Misión e Información -->
+          <div class="bity-mission-card">
+            <div class="bity-mission-header">
+              <div class="bity-mission-title-box">
+                <span class="bity-mission-badge">${isGradeOne ? 'MISIÓN 3' : 'Misión 3'}</span>
+                <h3 class="bity-mission-title">${missionTitle}</h3>
+              </div>
+            </div>
+            <p class="bity-mission-intro-text">${missionStory}</p>
+
+            <!-- Barra Superior de Contadores HUD -->
+            <div class="bity-m3-hud-bar">
+              <div class="bity-m3-counter-pill moves ${movesLimitExceeded ? 'limit-exceeded' : (movesLimitNear ? 'limit-near' : '')}">
+                <span>🕹️</span>
+                <span>${isGradeOne ? 'MOVIMIENTOS:' : 'Movimientos:'} <strong>${movesCount} / 15</strong></span>
+              </div>
+
+              <div class="bity-m3-counter-pill errors">
+                <span>❌</span>
+                <span>${isGradeOne ? 'ERRORES:' : 'Errores:'} <strong>${errorsCount} / 3</strong></span>
+              </div>
+
+              <div class="bity-m3-battery-pill">
+                <span>🔋</span>
+                <span>${isGradeOne ? 'BATERÍA:' : 'Batería:'}</span>
+                <div class="bity-m3-station-dots">
+                  <span class="bity-stn-dot ${stationsCompleted[0] ? 'charged' : ''}">⚡ 1</span>
+                  <span class="bity-stn-dot ${stationsCompleted[1] ? 'charged' : ''}">⚡ 2</span>
+                  <span class="bity-stn-dot ${stationsCompleted[2] ? 'charged' : ''}">⚡ 3</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regla Explicativa -->
+            <div class="bity-math-banner" style="background:#f0fdf4; border-color:#86efac; color:#166534;">
+              <span class="bity-math-icon">ℹ️</span>
+              <div>${ruleExplanation}</div>
+            </div>
+          </div>
+
+          <!-- Layout: Laberinto y Panel de Código -->
+          <div class="bity-stage-layout">
+            <!-- Columna Laberinto -->
+            <div class="bity-maze-wrapper">
+              <div class="bity-maze-board" id="bity-m3-board" style="grid-template-columns: repeat(${act.gridCols}, 1fr); width: ${act.gridCols * 64}px; max-width: 100%;">
+                ${renderGridCells()}
+              </div>
+
+              <!-- Controles -->
+              <div class="bity-maze-controls">
+                <button type="button" id="btn-m3-run" class="btn-bity-run" ${isSimulating ? 'disabled' : ''}>
+                  <span>▶️</span> ${isGradeOne ? 'PROBAR RECORRIDO' : 'Probar recorrido'}
+                </button>
+                <button type="button" id="btn-m3-reset-pos" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🔄</span> ${isGradeOne ? 'REINICIAR POSICIÓN' : 'Reiniciar posición'}
+                </button>
+                <button type="button" id="btn-m3-clear-all" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🗑️</span> ${isGradeOne ? 'BORRAR TODO' : 'Borrar todo'}
+                </button>
+              </div>
+            </div>
+
+            <!-- Columna Programa y Paleta -->
+            <div class="bity-code-panel">
+              <!-- Paleta de Instrucciones Disponibles -->
+              <div class="bity-palette-box">
+                <span class="bity-palette-label">📥 ${isGradeOne ? 'INSTRUCCIONES DISPONIBLES (HACÉ CLIC PARA AGREGAR):' : 'Instrucciones disponibles (hacé clic para agregar):'}</span>
+                <div class="bity-palette-buttons">
+                  ${act.availableCommands.map(cmd => `
+                    <button type="button" class="btn-palette-cmd" data-cmd="${cmd.cmd}" data-label="${cmd.label}" ${isSimulating ? 'disabled' : ''}>
+                      <span>${cmd.icon || '➡️'}</span>
+                      <span>${isGradeOne ? cmd.label.toUpperCase() : cmd.label}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="bity-panel-header" style="margin-top: 8px;">
+                <h4 class="bity-panel-title">
+                  <span>📜</span> ${isGradeOne ? 'TU PROGRAMA' : 'Tu programa'}
+                </h4>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #0284c7;">
+                  ${commands.length} ${isGradeOne ? 'INSTRUCCIONES' : 'instrucciones'}
+                </span>
+              </div>
+
+              <div class="bity-builder-sequence">
+                ${commands.length === 0 ? `
+                  <div class="bity-builder-empty">
+                    ${isGradeOne ? '¡TU PROGRAMA ESTÁ VACÍO! TOCÁ LAS INSTRUCCIONES DE ARRIBA PARA ARMAR EL CAMINO HACIA EL CENTRO DE REPUESTOS.' : '¡Tu programa está vacío! Tocá las instrucciones de arriba para armar el camino hacia el Centro de Repuestos.'}
+                  </div>
+                ` : commands.map((c, idx) => {
+                  const isExec = (activeExecutingIndex === idx);
+                  const cmdLabel = isGradeOne ? c.label.toUpperCase() : c.label;
+                  return `
+                    <div class="bity-step-item ${isExec ? 'executing' : ''}">
+                      <div class="bity-step-info">
+                        <span class="bity-step-num">${idx + 1}</span>
+                        <span>${cmdLabel}</span>
+                      </div>
+                      <button type="button" class="btn-remove-cmd" data-cmd-idx="${idx}" title="${isGradeOne ? 'QUITAR' : 'Quitar'}" ${isSimulating ? 'disabled' : ''}>
+                        ✖
+                      </button>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      bindEvents();
+    };
+
+    const renderGridCells = () => {
+      let html = '';
+      for (let r = 0; r < act.gridRows; r++) {
+        for (let c = 0; c < act.gridCols; c++) {
+          const isPlayer = (playerPos.x === c && playerPos.y === r);
+          const isTarget = (act.targetPos.x === c && act.targetPos.y === r);
+          const obstacle = (act.obstacles || []).find(o => o.x === c && o.y === r);
+          const station = (act.stations || []).find(s => s.x === c && s.y === r);
+          const isStart = (act.startPos.x === c && act.startPos.y === r);
+
+          let cellClass = 'bity-cell';
+          if (isStart) cellClass += ' start-cell';
+          if (isTarget) cellClass += ' repair-center-cell';
+          if (obstacle) cellClass += ' obstacle-cell';
+          if (station) {
+            const isCharged = stationsCompleted[station.id - 1];
+            cellClass += ' station-cell' + (isCharged ? ' charged' : '');
+          }
+
+          let content = '';
+          if (isPlayer) {
+            const rot = deltas[playerFacing].deg;
+            const arrow = deltas[playerFacing].arrow;
+            content = `
+              <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
+                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-pointer">${arrow}</span>
+              </div>
+            `;
+          } else if (isTarget) {
+            content = `<span class="bity-cell-icon" title="${act.targetName}">${act.targetIcon || '🏭'}</span>`;
+          } else if (station) {
+            const isCharged = stationsCompleted[station.id - 1];
+            content = `
+              <span class="bity-cell-icon">${isCharged ? '🔋' : '⚡'}</span>
+              <span class="bity-station-badge-cell">${isCharged ? '✅' : 'E' + station.id}</span>
+            `;
+          } else if (obstacle) {
+            content = `<span class="bity-cell-icon" title="${obstacle.name}">${obstacle.icon || '🪨'}</span>`;
+          }
+
+          html += `
+            <div class="${cellClass}" style="width: 58px; height: 58px;">
+              <span class="bity-cell-coord">${c},${r}</span>
+              ${content}
+            </div>
+          `;
+        }
+      }
+      return html;
+    };
+
+    const bindEvents = () => {
+      container.querySelectorAll('.btn-palette-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const cmd = btn.getAttribute('data-cmd');
+          const label = btn.getAttribute('data-label');
+          commands.push({ cmd, label });
+          draw();
+        };
+      });
+
+      container.querySelectorAll('.btn-remove-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const idx = parseInt(btn.getAttribute('data-cmd-idx'));
+          commands.splice(idx, 1);
+          draw();
+        };
+      });
+
+      const btnRun = document.getElementById('btn-m3-run');
+      if (btnRun) {
+        btnRun.onclick = () => runSimulation();
+      }
+
+      const btnResetPos = document.getElementById('btn-m3-reset-pos');
+      if (btnResetPos) {
+        btnResetPos.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          playerPos = { ...act.startPos };
+          playerFacing = act.startFacing || 'right';
+          movesCount = 0;
+          stationsCompleted = [false, false, false];
+          draw();
+        };
+      }
+
+      const btnClearAll = document.getElementById('btn-m3-clear-all');
+      if (btnClearAll) {
+        btnClearAll.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          resetToCleanState();
+        };
+      }
+    };
+
+    // Abre el panel de pregunta en la estación de carga
+    const askStationQuestion = (station) => {
+      return new Promise((resolve) => {
+        const qData = questionsDb[station.questionKey];
+        if (!qData) return resolve(true);
+
+        const modal = document.createElement('div');
+        modal.className = 'bity-station-modal-backdrop';
+        modal.innerHTML = `
+          <div class="bity-station-modal-card ${isGradeOne ? 'g1-uppercase' : ''}">
+            <div class="bity-station-card-header">
+              <div class="bity-station-title-box">
+                <span class="bity-station-badge">${isGradeOne ? `ESTACIÓN ${station.id}` : `Estación ${station.id}`}</span>
+                <span style="font-weight:900; color:#b45309;">${isGradeOne ? 'CARGA DE BATERÍA' : 'Carga de Batería'}</span>
+              </div>
+              <div class="bity-charging-anim-box">
+                <span>🔋</span>
+                <span style="color:#f59e0b;">⚡</span>
+              </div>
+            </div>
+
+            <h3 class="bity-station-question-text">${isGradeOne ? qData.titleG1 : qData.title}</h3>
+
+            <div class="bity-station-options-grid">
+              ${qData.options.map(opt => `
+                <button type="button" class="bity-station-opt-btn" data-opt-id="${opt.id}">
+                  <span class="bity-opt-letter">${opt.id}</span>
+                  <span>${isGradeOne ? opt.textG1 : opt.text}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <div class="bity-station-feedback-box" id="station-feedback-box"></div>
+          </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        const feedbackBox = modal.querySelector('#station-feedback-box');
+        const optButtons = modal.querySelectorAll('.bity-station-opt-btn');
+
+        optButtons.forEach(btn => {
+          btn.onclick = () => {
+            const optId = btn.getAttribute('data-opt-id');
+            const chosen = qData.options.find(o => o.id === optId);
+
+            if (chosen && chosen.isCorrect) {
+              btn.classList.add('correct');
+              this.onPlaySound('coin');
+              optButtons.forEach(b => b.disabled = true);
+
+              if (feedbackBox) {
+                feedbackBox.className = 'bity-station-feedback-box success';
+                feedbackBox.textContent = isGradeOne ? qData.feedbackSuccessG1 : qData.feedbackSuccess;
+              }
+
+              setTimeout(() => {
+                document.body.removeChild(modal);
+                resolve(true);
+              }, 1100);
+            } else {
+              btn.classList.add('incorrect');
+              this.onPlaySound('wrong');
+              errorsCount++;
+              draw();
+
+              if (feedbackBox) {
+                feedbackBox.className = 'bity-station-feedback-box error';
+                feedbackBox.textContent = isGradeOne
+                  ? 'ESA NO ES LA RESPUESTA CORRECTA. LEÉ NUEVAMENTE LA PREGUNTA CON ATENCIÓN.'
+                  : 'Esa no es la respuesta correcta. Leé nuevamente la pregunta con atención.';
+              }
+
+              if (errorsCount >= 3) {
+                optButtons.forEach(b => b.disabled = true);
+                setTimeout(() => {
+                  document.body.removeChild(modal);
+                  // Derrota por 3 errores
+                  this.showBityM3DefeatModal(act, () => {
+                    resetToCleanState();
+                  });
+                  resolve(false);
+                }, 1000);
+              } else {
+                setTimeout(() => {
+                  btn.classList.remove('incorrect');
+                }, 800);
+              }
+            }
+          };
+        });
+      });
+    };
+
+    const runSimulation = async () => {
+      if (isSimulating) return;
+
+      if (commands.length === 0) {
+        this.onPlaySound('wrong');
+        const emptyMsg = isGradeOne
+          ? '¡AGREGÁ AL MENOS UNA INSTRUCCIÓN PARA MOVER A BITY HACIA LAS ESTACIONES!'
+          : '¡Agregá al menos una instrucción para mover a Bity hacia las estaciones!';
+        this.updateByte(emptyMsg, 'thinking');
+        return;
+      }
+
+      isSimulating = true;
+      activeExecutingIndex = -1;
+      playerPos = { ...act.startPos };
+      playerFacing = act.startFacing || 'right';
+      movesCount = 0;
+      stationsCompleted = [false, false, false];
+      draw();
+
+      let failed = false;
+      let failReason = '';
+
+      for (let i = 0; i < commands.length; i++) {
+        activeExecutingIndex = i;
+        draw();
+        this.onPlaySound('pop');
+        await new Promise(r => setTimeout(r, 400));
+
+        const step = commands[i];
+
+        if (step.cmd === 'turn_right') {
+          playerFacing = turnRightMap[playerFacing];
+          draw();
+          await new Promise(r => setTimeout(r, 250));
+        } else if (step.cmd === 'turn_left') {
+          playerFacing = turnLeftMap[playerFacing];
+          draw();
+          await new Promise(r => setTimeout(r, 250));
+        } else if (step.cmd.startsWith('advance')) {
+          const count = parseInt(step.cmd.split('_')[1]) || 1;
+          const d = deltas[playerFacing];
+
+          for (let s = 1; s <= count; s++) {
+            movesCount++;
+            draw();
+
+            // Límite de 15 movimientos
+            if (movesCount > 15) {
+              failed = true;
+              failReason = isGradeOne
+                ? '¡LÍMITE DE MOVIMIENTOS ALCANZADO! BITY NECESITA UN RECORRIDO DE MÁXIMO 15 MOVIMIENTOS.'
+                : '¡Límite de movimientos alcanzado! Bity necesita un recorrido más corto (máximo 15 movimientos).';
+              break;
+            }
+
+            const nx = playerPos.x + d.x;
+            const ny = playerPos.y + d.y;
+
+            // Comprobar límites
+            if (nx < 0 || nx >= act.gridCols || ny < 0 || ny >= act.gridRows) {
+              failed = true;
+              failReason = isGradeOne
+                ? '¡CUIDADO! BITY SE SALIÓ DEL MAPA EN EL PASO ' + (i + 1) + '.'
+                : `¡Cuidado! Bity se salió del mapa en el paso ${i + 1}.`;
+              break;
+            }
+
+            // Comprobar obstáculos
+            const hit = (act.obstacles || []).find(o => o.x === nx && o.y === ny);
+            if (hit) {
+              failed = true;
+              const obsName = isGradeOne ? (hit.name || 'UN OBSTÁCULO').toUpperCase() : (hit.name || 'un obstáculo');
+              failReason = isGradeOne
+                ? `¡CUIDADO! BITY CHOCÓ CONTRA ${obsName} EN EL PASO ${i + 1}.`
+                : `¡Cuidado! Bity chocó contra ${obsName} en el paso ${i + 1}.`;
+              playerPos = { x: nx, y: ny };
+              draw();
+              break;
+            }
+
+            playerPos = { x: nx, y: ny };
+            draw();
+            await new Promise(r => setTimeout(r, 220));
+
+            // Comprobar si pisó una estación
+            const station = (act.stations || []).find(st => st.x === nx && st.y === ny);
+            if (station) {
+              const stnIdx = station.id - 1;
+              if (!stationsCompleted[stnIdx]) {
+                // Validación estricta de orden: primero 1, luego 2, luego 3
+                if (station.id === 2 && !stationsCompleted[0]) {
+                  failed = true;
+                  failReason = isGradeOne
+                    ? '¡ATENCIÓN! BITY DEBE PASAR PRIMERO POR LA ESTACIÓN 1 ANTES DE LA ESTACIÓN 2.'
+                    : '¡Atención! Bity debe pasar primero por la Estación 1 antes de la Estación 2.';
+                  break;
+                }
+                if (station.id === 3 && (!stationsCompleted[0] || !stationsCompleted[1])) {
+                  failed = true;
+                  failReason = isGradeOne
+                    ? '¡ATENCIÓN! BITY DEBE PASAR PRIMERO POR LAS ESTACIONES 1 Y 2 EN ORDEN.'
+                    : '¡Atención! Bity debe pasar primero por las Estaciones 1 y 2 en orden.';
+                  break;
+                }
+
+                // Pausar y preguntar
+                const answeredOk = await askStationQuestion(station);
+                if (!answeredOk) {
+                  // 3 errores alcanzados
+                  failed = true;
+                  failReason = isGradeOne
+                    ? 'SE ALCANZARON LOS 3 ERRORES EN LAS RESPUESTAS.'
+                    : 'Se alcanzaron los 3 errores en las respuestas.';
+                  break;
+                } else {
+                  stationsCompleted[stnIdx] = true;
+                  draw();
+                }
+              }
+            }
+          }
+        }
+
+        if (failed) break;
+      }
+
+      activeExecutingIndex = -1;
+      isSimulating = false;
+
+      const reachedTarget = (!failed && playerPos.x === act.targetPos.x && playerPos.y === act.targetPos.y);
+      const allStationsDone = stationsCompleted.every(Boolean);
+
+      if (reachedTarget && allStationsDone && movesCount <= 15) {
+        draw();
+        this.showBityRepairVictoryModal(act, movesCount, errorsCount);
+      } else {
+        this.onPlaySound('wrong');
+
+        if (reachedTarget && !allStationsDone) {
+          const missingMsg = isGradeOne
+            ? '¡LLEGASTE AL CENTRO DE REPUESTOS, PERO TE FALTÓ CARGAR BATERÍA EN TODAS LAS ESTACIONES EN ORDEN!'
+            : '¡Llegaste al Centro de Repuestos, pero te faltó cargar batería en todas las estaciones en orden!';
+          this.updateByte(missingMsg, 'worried');
+        } else if (failReason) {
+          this.updateByte(failReason, 'worried');
+        } else {
+          const incompleteMsg = isGradeOne
+            ? 'BITY COMPLETÓ LAS INSTRUCCIONES PERO NO LLEGÓ AL DESTINO FINAL. ¡REVISÁ EL CAMINO!'
+            : 'Bity completó las instrucciones pero no llegó al destino final. ¡Revisá el camino!';
+          this.updateByte(incompleteMsg, 'worried');
+        }
+
+        draw();
+
+        // Si los errores no llegaron a 3, permitir reiniciar posición manteniendo el programa
+        if (errorsCount < 3) {
+          setTimeout(() => {
+            playerPos = { ...act.startPos };
+            playerFacing = act.startFacing || 'right';
+            movesCount = 0;
+            stationsCompleted = [false, false, false];
+            draw();
+          }, 1500);
+        }
+      }
+    };
+
+    draw();
+  }
+
+  // ========================================================
+  // MODAL DE VICTORIA DE MISIÓN 3 (REPARACIÓN DE COHETE)
+  // ========================================================
+  showBityRepairVictoryModal(act, movesUsed, errorsCount) {
+    const isGradeOne = this.currentGrade === 1;
+    this.onPlaySound('fanfare');
+    this.onLaunchConfetti();
+    this.recordActivitySuccess(act.id, 25);
+
+    const victoryTitle = isGradeOne
+      ? '🎉 ¡MISIÓN 3 CUMPLIDA! ¡COHETE REPARADO!'
+      : '🎉 ¡Misión 3 Cumplida! ¡Cohete Reparado!';
+
+    const victoryMsg = isGradeOne
+      ? '¡MISIÓN CUMPLIDA! PROGRAMASTE EL RECORRIDO, SUPERASTE LAS TRES ESTACIONES Y CONSEGUISTE LOS REPUESTOS PARA REPARAR EL COHETE DE BITY.'
+      : '¡Misión cumplida! Programaste el recorrido, superaste las tres estaciones y conseguiste los repuestos para reparar el cohete de Bity.';
+
+    const modal = document.createElement('div');
+    modal.className = 'bity-repair-modal-backdrop';
+    modal.innerHTML = `
+      <div class="bity-repair-card ${isGradeOne ? 'g1-uppercase' : ''}">
+        <div class="bity-repair-bay">
+          <span class="bity-repair-tool-wrench">🔧</span>
+          <span class="bity-repair-rocket">🚀✨</span>
+          <span class="bity-repair-tool-gear">⚙️</span>
+        </div>
+
+        <h3 class="bity-victory-heading" style="color:#38bdf8;">${victoryTitle}</h3>
+        <p class="bity-victory-message">${victoryMsg}</p>
+
+        <!-- Estadísticas de la Misión -->
+        <div class="bity-repair-stats-grid">
+          <div class="bity-stat-box">
+            <span>${isGradeOne ? 'MOVIMIENTOS UTILIZADOS:' : 'Movimientos utilizados:'}</span>
+            <span class="bity-stat-val">🕹️ ${movesUsed} / 15</span>
+          </div>
+          <div class="bity-stat-box">
+            <span>${isGradeOne ? 'ERRORES COMETIDOS:' : 'Errores cometidos:'}</span>
+            <span class="bity-stat-val" style="color:${errorsCount === 0 ? '#86efac' : '#fca5a5'};">❌ ${errorsCount} / 3</span>
+          </div>
+          <div class="bity-stat-box" style="grid-column: span 2;">
+            <span>${isGradeOne ? 'ESTACIONES DE BATERÍA:' : 'Estaciones de batería:'}</span>
+            <span class="bity-stat-val" style="color:#86efac;">🔋 3 / 3 ${isGradeOne ? 'CARGADAS CON ÉXITO' : 'cargadas con éxito'}</span>
+          </div>
+        </div>
+
+        <div class="bity-victory-reward-box">
+          +25 ${isGradeOne ? 'PUNTOS' : 'puntos'} • ⭐⭐⭐ ${isGradeOne ? '¡MISIÓN SUPERADA!' : '¡Misión superada!'}
+        </div>
+
+        <button type="button" id="btn-m3-victory-next" class="btn-stage-next" style="width: 100%; justify-content: center; padding: 14px 28px; font-size: 1.15rem; margin-top: 10px;">
+          <span>✨ ${isGradeOne ? '¡CONTINUAR A LA SIGUIENTE ACTIVIDAD! ➡️' : '¡Continuar a la siguiente actividad! ➡️'}</span>
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const btnNext = modal.querySelector('#btn-m3-victory-next');
+    if (btnNext) {
+      btnNext.onclick = () => {
+        document.body.removeChild(modal);
+        this.nextActivity();
+      };
+    }
+  }
+
+  // ========================================================
+  // MODAL DE DERROTA POR 3 ERRORES (MISIÓN 3)
+  // ========================================================
+  showBityM3DefeatModal(act, onRetry) {
+    const isGradeOne = this.currentGrade === 1;
+    this.onPlaySound('wrong');
+
+    const defeatTitle = isGradeOne
+      ? '💧 ¡SE ALCANZARON LOS 3 ERRORES PERMITIDOS!'
+      : '💧 ¡Se alcanzaron los 3 errores permitidos!';
+
+    const defeatMsg = isGradeOne
+      ? 'BITY NO PUDO COMPLETAR LA REPARACIÓN DE SU COHETE. ¡NO TE PREOCUPES! HASTA LOS MEJORES PROGRAMADORES COMETEN ERRORES. VOLVAMOS A INTENTARLO DESDE CERO.'
+      : 'Bity no pudo completar la reparación de su cohete. ¡No te preocupes! En programación equivocarse es parte del aprendizaje. Volvamos a intentarlo desde cero.';
+
+    const modal = document.createElement('div');
+    modal.className = 'bity-defeat-modal-backdrop';
+    modal.innerHTML = `
+      <div class="bity-defeat-card ${isGradeOne ? 'g1-uppercase' : ''}">
+        <div class="bity-crying-box">
+          ${getByteAvatarSvg('crying')}
+        </div>
+
+        <h3 class="bity-defeat-title">${defeatTitle}</h3>
+        <p class="bity-defeat-message">${defeatMsg}</p>
+
+        <div class="bity-defeat-hint-box">
+          <span style="font-size: 1.4rem;">💡</span>
+          <div>${isGradeOne ? 'RECORDÁ QUE UNA INSTRUCCIÓN LE DICE QUÉ HACER, PROGRAMAR ES DAR INSTRUCCIONES ORDENADAS Y UN ALGORITMO ES LA SERIE DE PASOS.' : 'Recordá: Una instrucción le dice qué hacer a la máquina, programar es dar instrucciones ordenadas y un algoritmo es una serie de pasos ordenados.'}</div>
+        </div>
+
+        <button type="button" id="btn-m3-defeat-retry" class="btn-bity-retry">
+          <span>🔄</span> ${isGradeOne ? 'VOLVER A INTENTARLO' : 'Volver a intentarlo'}
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const btnRetry = modal.querySelector('#btn-m3-defeat-retry');
     if (btnRetry) {
       btnRetry.onclick = () => {
         this.onPlaySound('pop');
