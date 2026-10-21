@@ -270,7 +270,7 @@ const CODING_DATA = {
   "name": "TAREA",
   "badge": "⭐ NUEVO BLOQUE",
   "icon": "📝",
-  "description": "PREGUNTAS SENCILLAS Y 3 DESAFÍOS PARA PRACTICAR EN CASA O EN EL AULA.",
+  "description": "PREGUNTAS SENCILLAS Y DESAFÍOS PARA PRACTICAR EN CASA O EN EL AULA.",
   "activities": [
     {
       "id": "g1_hw_q1_inst",
@@ -497,6 +497,177 @@ const CODING_DATA = {
         "PISTA 2: SI QUERÉS ESQUIVARLA, TOCÁ «SUBIR» O «BAJAR» PARA CAMBIAR DE FILA Y SEGUIR AVANZANDO.",
         "PISTA 3: SI PREFERÍS EL CAMINO CORTO, AVANZÁ UN PASO (➡️) Y DESPUÉS TOCÁ «SALTAR» (🦘) PARA PASAR POR ENCIMA DE LA ROCA."
       ]
+    },
+    {
+        "id": "g1_hw_detectives",
+        "type": "code_detectives",
+        "title": "DESAFÍO: DETECTIVES DE CÓDIGO",
+        "storyIntro": "¡MISIÓN ESPACIAL! BITY NECESITA REGRESAR A SU PLANETA 🪐. SU NAVE ESPACIAL 🚀 LO ESPERA EN LA PLATAFORMA DE DESPEGUE, PERO EL PROGRAMA TIENE EXACTAMENTE 2 INSTRUCCIONES EQUIVOCADAS. ¡ENCONTRALAS, CORREGILAS Y AYUDÁ A BITY A DESPEGAR!",
+        "gridCols": 4,
+        "gridRows": 3,
+        "startPos": {
+            "x": 0,
+            "y": 1
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 3,
+            "y": 1
+        },
+        "targetName": "NAVE ESPACIAL",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "ASTEROIDE",
+                "icon": "☄️"
+            }
+        ],
+        "maxAttempts": 3,
+        "initialProgram": [
+            {
+                "id": 1,
+                "cmd": "turn_left",
+                "label": "GIRAR A LA IZQUIERDA",
+                "isError": false
+            },
+            {
+                "id": 2,
+                "cmd": "advance_1",
+                "label": "AVANZAR 1 CASILLERO",
+                "isError": false
+            },
+            {
+                "id": 3,
+                "cmd": "turn_left",
+                "label": "GIRAR A LA IZQUIERDA",
+                "isError": true,
+                "fixCmd": "turn_right",
+                "fixLabel": "GIRAR A LA DERECHA"
+            },
+            {
+                "id": 4,
+                "cmd": "advance_3",
+                "label": "AVANZAR 3 CASILLEROS",
+                "isError": false
+            },
+            {
+                "id": 5,
+                "cmd": "turn_right",
+                "label": "GIRAR A LA DERECHA",
+                "isError": false
+            },
+            {
+                "id": 6,
+                "cmd": "advance_2",
+                "label": "AVANZAR 2 CASILLEROS",
+                "isError": true,
+                "fixCmd": "advance_1",
+                "fixLabel": "AVANZAR 1 CASILLERO"
+            }
+        ],
+        "availableOptions": [
+            {
+                "cmd": "advance_1",
+                "label": "AVANZAR 1 CASILLERO",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "AVANZAR 2 CASILLEROS",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "AVANZAR 3 CASILLEROS",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "GIRAR A LA DERECHA",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "GIRAR A LA IZQUIERDA",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "PISTA 1: MIRÁ EL PASO 3: PARA IR HACIA LA DERECHA POR ARRIBA, BITY TIENE QUE GIRAR A LA DERECHA.",
+            "PISTA 2: MIRÁ EL PASO 6: BITY ESTÁ EN LA CASILLA DE ARRIBA DE LA NAVE. SOLO NECESITA AVANZAR 1 CASILLERO.",
+            "PISTA 3: CAMBIÁ EL PASO 3 POR «GIRAR A LA DERECHA» Y EL PASO 6 POR «AVANZAR 1 CASILLERO»."
+        ]
+    },
+    {
+        "id": "g1_hw_construi_camino",
+        "type": "build_path",
+        "title": "DESAFÍO: CONSTRUÍ EL CAMINO",
+        "storyIntro": "¡BITY NO TIENE PROGRAMA! ESTA VEZ DEBÉS CREAR TODO EL RECORRIDO DESDE CERO PARA QUE BITY LLEGUE A SU NAVE ESPACIAL 🚀 Y REGRESE A SU PLANETA 🪐.",
+        "mathClue": "¡CONTÁ LOS CASILLEROS! BITY ESTÁ EN LA SALIDA (0, 0). MIRÁ EL MAPA Y CONTÁ LOS PASOS LIBRES PARA BAJAR Y AVANZAR HACIA LA NAVE.",
+        "gridCols": 4,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 3,
+            "y": 2
+        },
+        "targetName": "NAVE ESPACIAL",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 0,
+                "name": "ROCA ESPACIAL",
+                "icon": "🪨"
+            },
+            {
+                "x": 2,
+                "y": 2,
+                "name": "CHARCO CÓSMICO",
+                "icon": "💧"
+            }
+        ],
+        "maxAttempts": 3,
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "AVANZAR 1",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "AVANZAR 2",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "AVANZAR 3",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "GIRAR DERECHA",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "GIRAR IZQUIERDA",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "PISTA 1: COMO ENFRENTE HAY UNA ROCA, PRIMERO GIRÁ A LA DERECHA Y BAJÁ UN CASILLERO.",
+            "PISTA 2: LUEGO GIRÁ A LA IZQUIERDA Y AVANZÁ 3 CASILLEROS POR LA FILA LIBRE.",
+            "PISTA 3: FINALMENTE GIRÁ A LA DERECHA Y AVANZÁ 1 CASILLERO HASTA LA NAVE."
+        ]
     }
   ]
 },
@@ -1377,7 +1548,7 @@ const CODING_DATA = {
   "name": "Tarea",
   "badge": "⭐ Nuevo Bloque",
   "icon": "📝",
-  "description": "Preguntas sencillas y 3 desafíos para poner a prueba lo que aprendiste.",
+  "description": "Preguntas sencillas y desafíos para poner a prueba lo que aprendiste.",
   "activities": [
     {
       "id": "g2_hw_q1_inst",
@@ -1618,6 +1789,219 @@ const CODING_DATA = {
         "Pista 2: Desde la esquina de arriba a la derecha, Byte puede bajar en línea recta hasta la biblioteca.",
         "Pista 3: Un camino seguro es: 3 pasos a la derecha y después 3 pasos hacia abajo."
       ]
+    },
+    {
+        "id": "g2_hw_detectives",
+        "type": "code_detectives",
+        "title": "Desafío: Detectives de código",
+        "storyIntro": "Bity necesita regresar a su planeta 🪐. Su nave espacial 🚀 lo espera en la plataforma, pero el programa de vuelo tiene exactamente 2 instrucciones equivocadas. ¡Descubrí cuáles son, reemplazalas por las correctas y ayudá a Bity a despegar!",
+        "gridCols": 5,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 4,
+            "y": 2
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 0,
+                "name": "Satélite averiado",
+                "icon": "🛰️"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Meteorito",
+                "icon": "☄️"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "Bloqueo láser",
+                "icon": "⚡"
+            }
+        ],
+        "maxAttempts": 3,
+        "initialProgram": [
+            {
+                "id": 1,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 2,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 3,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": true,
+                "fixCmd": "advance_2",
+                "fixLabel": "Avanzar 2 casilleros"
+            },
+            {
+                "id": 4,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 5,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 6,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 7,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 8,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 9,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 10,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": true,
+                "fixCmd": "turn_left",
+                "fixLabel": "Girar a la izquierda"
+            },
+            {
+                "id": 11,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            }
+        ],
+        "availableOptions": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: En el paso 3 Bity necesita descender 2 casilleros para evitar los obstáculos del centro.",
+            "Pista 2: En el paso 10 Bity debe girar hacia arriba (girar a la izquierda) para encarar la nave espacial.",
+            "Pista 3: Cambiá el paso 3 por «Avanzar 2 casilleros» y el paso 10 por «Girar a la izquierda»."
+        ]
+    },
+    {
+        "id": "g2_hw_construi_camino",
+        "type": "build_path",
+        "title": "Desafío: Construí el camino",
+        "storyIntro": "Bity no tiene un programa preparado. Armá la secuencia de movimientos desde cero para que Bity esquive los obstáculos y llegue a la nave espacial 🚀.",
+        "mathClue": "Suma de distancias: Bity está a 2 casilleros del cruce espacial. Luego debe avanzar 2 casilleros más hasta la plataforma de la nave (2 + 2 = 4 casilleros de avance en total). ¡Calculá tus pasos!",
+        "gridCols": 5,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 1
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 4,
+            "y": 2
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Puente roto",
+                "icon": "🌉"
+            },
+            {
+                "x": 1,
+                "y": 3,
+                "name": "Satélite",
+                "icon": "🛰️"
+            }
+        ],
+        "maxAttempts": 3,
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Como el camino recto está cortado por el puente roto en (2, 1), podés descender a la fila 2.",
+            "Pista 2: Desde (0, 2), girá a la derecha y avanzá en línea recta por el pasillo despejado hasta la nave.",
+            "Pista 3: Una secuencia segura es: Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 2 ➡️ Avanzar 2."
+        ]
     }
   ]
 },
@@ -2397,7 +2781,7 @@ const CODING_DATA = {
   "name": "Tarea",
   "badge": "⭐ Nuevo Bloque",
   "icon": "📝",
-  "description": "Preguntas sencillas y 3 desafíos para poner a prueba lo que aprendiste.",
+  "description": "Preguntas sencillas y desafíos para poner a prueba lo que aprendiste.",
   "activities": [
     {
       "id": "g3_hw_q1_inst",
@@ -2642,6 +3026,225 @@ const CODING_DATA = {
         "Pista 2: Si decidís rodear por abajo: bajá un paso, avanzá por el camino libre, subí y llegá a la meta.",
         "Pista 3: Si preferís la ruta corta con salto: avanzar ➡️ saltar sobre la barrera ➡️ avanzar a la meta."
       ]
+    },
+    {
+        "id": "g3_hw_detectives",
+        "type": "code_detectives",
+        "title": "Desafío: Detectives de código",
+        "storyIntro": "Bity necesita volver a su planeta 🪐. Su nave espacial 🚀 está lista en la plataforma, pero el programa de navegación contiene exactamente 2 instrucciones erróneas. ¡Detectá cuáles son y corregilas para completar la misión!",
+        "gridCols": 6,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 1
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 5,
+            "y": 2
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 0,
+                "name": "Meteorito Alfa",
+                "icon": "☄️"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Meteorito Beta",
+                "icon": "☄️"
+            },
+            {
+                "x": 4,
+                "y": 0,
+                "name": "Zona de radiación",
+                "icon": "☢️"
+            },
+            {
+                "x": 3,
+                "y": 3,
+                "name": "Asteroide",
+                "icon": "🪨"
+            }
+        ],
+        "maxAttempts": 3,
+        "initialProgram": [
+            {
+                "id": 1,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": true,
+                "fixCmd": "turn_right",
+                "fixLabel": "Girar a la derecha"
+            },
+            {
+                "id": 2,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 3,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 4,
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "isError": false
+            },
+            {
+                "id": 5,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 6,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 7,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": true,
+                "fixCmd": "turn_right",
+                "fixLabel": "Girar a la derecha"
+            },
+            {
+                "id": 8,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 9,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 10,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            }
+        ],
+        "availableOptions": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Al inicio Bity no puede girar a la izquierda porque chocaría contra el borde. Debe girar a la derecha para bajar.",
+            "Pista 2: En el paso 7 Bity debe orientarse hacia la derecha para encarar la recta final.",
+            "Pista 3: Cambiá el paso 1 por «Girar a la derecha» y el paso 7 por «Girar a la derecha»."
+        ]
+    },
+    {
+        "id": "g3_hw_construi_camino",
+        "type": "build_path",
+        "title": "Desafío: Construí el camino",
+        "storyIntro": "Planificá y construí todo el recorrido para que Bity alcance la nave espacial 🚀 esquivando los asteroides y barreras cósmicas.",
+        "mathClue": "Comparación de distancias: Planificá un camino que combine tramos de 2 y 3 casilleros. Compará las alternativas para evitar las zonas con asteroides.",
+        "gridCols": 6,
+        "gridRows": 4,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 5,
+            "y": 3
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 0,
+                "name": "Asteroide Alfa",
+                "icon": "☄️"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Asteroide Beta",
+                "icon": "☄️"
+            },
+            {
+                "x": 3,
+                "y": 2,
+                "name": "Meteorito",
+                "icon": "🪨"
+            }
+        ],
+        "maxAttempts": 3,
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Girar a la derecha al inicio te permite descender a la fila 2 para pasar por debajo de los asteroides.",
+            "Pista 2: Desde (2, 2) bajá a la fila 3 y avanzá 3 casilleros en línea recta hacia la nave espacial.",
+            "Pista 3: Un camino ganador es: Girar a la derecha ➡️ Avanzar 2 ➡️ Girar a la izquierda ➡️ Avanzar 2 ➡️ Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 3."
+        ]
     }
   ]
 },
@@ -3345,7 +3948,7 @@ const CODING_DATA = {
   "name": "Tarea",
   "badge": "⭐ Nuevo Bloque",
   "icon": "📝",
-  "description": "Preguntas sencillas y 3 desafíos para poner a prueba lo que aprendiste.",
+  "description": "Preguntas sencillas y desafíos para poner a prueba lo que aprendiste.",
   "activities": [
     {
       "id": "g4_hw_q1_inst",
@@ -3591,6 +4194,248 @@ const CODING_DATA = {
         "Pista 2: Desde la esquina superior derecha, solo tenés que bajar derecho hasta la meta.",
         "Pista 3: La ruta más directa es: 4 avances a la derecha y 3 descensos hacia abajo."
       ]
+    },
+    {
+        "id": "g4_hw_detectives",
+        "type": "code_detectives",
+        "title": "Desafío: Detectives de código",
+        "storyIntro": "Bity necesita regresar a su planeta 🪐. Su nave espacial 🚀 lo espera al final del laberinto, pero el algoritmo tiene exactamente 2 errores que desvían su trayectoria. ¡Analizá la secuencia y corregila!",
+        "gridCols": 6,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 5,
+            "y": 4
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 0,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 1,
+                "y": 3,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 4,
+                "y": 2,
+                "name": "Campo láser",
+                "icon": "⚡"
+            },
+            {
+                "x": 3,
+                "y": 4,
+                "name": "Campo láser",
+                "icon": "⚡"
+            }
+        ],
+        "maxAttempts": 3,
+        "initialProgram": [
+            {
+                "id": 1,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 2,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 3,
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "isError": true,
+                "fixCmd": "advance_2",
+                "fixLabel": "Avanzar 2 casilleros"
+            },
+            {
+                "id": 4,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 5,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 6,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 7,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 8,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": true,
+                "fixCmd": "turn_left",
+                "fixLabel": "Girar a la izquierda"
+            },
+            {
+                "id": 9,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 10,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 11,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            }
+        ],
+        "availableOptions": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: En el paso 3 avanzar 3 casilleros hace que Bity choque contra el láser en (1, 3). Solo debe avanzar 2.",
+            "Pista 2: En el paso 8 Bity debe girar a la izquierda para seguir hacia la columna 5.",
+            "Pista 3: Cambiá el paso 3 por «Avanzar 2 casilleros» y el paso 8 por «Girar a la izquierda»."
+        ]
+    },
+    {
+        "id": "g4_hw_construi_camino",
+        "type": "build_path",
+        "title": "Desafío: Construí el camino",
+        "storyIntro": "Construí el recorrido completo para guiar a Bity a través del sector de campos de fuerza hasta la nave espacial 🚀.",
+        "mathClue": "Cálculo de trayectoria y distancias: Calculá la distancia total de los tramos despejados y programá la ruta óptima evitando los campos de fuerza.",
+        "gridCols": 6,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 0
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 5,
+            "y": 4
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 1,
+                "y": 1,
+                "name": "Campo de fuerza",
+                "icon": "⚡"
+            },
+            {
+                "x": 3,
+                "y": 1,
+                "name": "Campo de fuerza",
+                "icon": "⚡"
+            },
+            {
+                "x": 3,
+                "y": 3,
+                "name": "Campo de fuerza",
+                "icon": "⚡"
+            },
+            {
+                "x": 4,
+                "y": 2,
+                "name": "Campo de fuerza",
+                "icon": "⚡"
+            }
+        ],
+        "maxAttempts": 3,
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: Podés avanzar por la fila superior hasta (4, 0) esquivando los bloqueos inferiores.",
+            "Pista 2: Bajá a la fila 1, avanzá a la columna 5 y descendé en línea recta hacia la nave espacial.",
+            "Pista 3: Una ruta efectiva es: Avanzar 4 ➡️ Girar a la derecha ➡️ Avanzar 1 ➡️ Girar a la izquierda ➡️ Avanzar 1 ➡️ Girar a la derecha ➡️ Avanzar 3."
+        ]
     }
   ]
 },
@@ -4318,7 +5163,7 @@ const CODING_DATA = {
   "name": "Tarea",
   "badge": "⭐ Nuevo Bloque",
   "icon": "📝",
-  "description": "Preguntas sencillas y 3 desafíos para poner a prueba lo que aprendiste.",
+  "description": "Preguntas sencillas y desafíos para poner a prueba lo que aprendiste.",
   "activities": [
     {
       "id": "g5_hw_q1_inst",
@@ -4561,6 +5406,290 @@ const CODING_DATA = {
         "Pista 2: Avanzá por la fila del medio, bajá a la fila inferior y avanzá hasta la meta.",
         "Pista 3: Un camino posible es: Derecha ➡️ Abajo ➡️ Derecha x2 ➡️ Abajo ➡️ Derecha x2."
       ]
+    },
+    {
+        "id": "g5_hw_detectives",
+        "type": "code_detectives",
+        "title": "Desafío: Detectives de código",
+        "storyIntro": "Misión avanzada: Bity debe sortear una red de anomalías cuánticas para llegar a su nave espacial 🚀. El programa contiene exactamente 2 errores sutiles en sus giros y desplazamientos. ¡Analizá el algoritmo y corregilos!",
+        "gridCols": 7,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 2
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 6,
+            "y": 2
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 2,
+                "y": 2,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 2,
+                "y": 3,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 5,
+                "y": 3,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            },
+            {
+                "x": 5,
+                "y": 2,
+                "name": "Anomalía cuántica",
+                "icon": "🌀"
+            }
+        ],
+        "maxAttempts": 3,
+        "initialProgram": [
+            {
+                "id": 1,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 2,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 3,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 4,
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "isError": false
+            },
+            {
+                "id": 5,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 6,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 7,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": true,
+                "fixCmd": "turn_left",
+                "fixLabel": "Girar a la izquierda"
+            },
+            {
+                "id": 8,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": false
+            },
+            {
+                "id": 9,
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "isError": false
+            },
+            {
+                "id": 10,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            },
+            {
+                "id": 11,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 12,
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "isError": true,
+                "fixCmd": "advance_2",
+                "fixLabel": "Avanzar 2 casilleros"
+            },
+            {
+                "id": 13,
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "isError": false
+            },
+            {
+                "id": 14,
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "isError": false
+            }
+        ],
+        "availableOptions": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: En el paso 7 Bity debe girar a la izquierda para cruzar el estrecho pasillo central en (4, 2).",
+            "Pista 2: En el paso 12 Bity necesita avanzar 2 casilleros para alcanzar la columna 6 antes de subir.",
+            "Pista 3: Cambiá el paso 7 por «Girar a la izquierda» y el paso 12 por «Avanzar 2 casilleros»."
+        ]
+    },
+    {
+        "id": "g5_hw_construi_camino",
+        "type": "build_path",
+        "title": "Desafío: Construí el camino",
+        "storyIntro": "Misión de optimización y límite de combustible: Bity debe llegar a su nave espacial 🚀 sin superar el límite de energía de 10 casilleros de avance en total.",
+        "mathClue": "Restricción de combustible: Tenés un límite de máximo 10 casilleros de avance en total. Si tu programa usa 11 o más avances, la nave no despegará. ¡Calculá la suma de tus avances!",
+        "maxAdvanceTiles": 10,
+        "gridCols": 7,
+        "gridRows": 5,
+        "startPos": {
+            "x": 0,
+            "y": 1
+        },
+        "startFacing": "right",
+        "targetPos": {
+            "x": 6,
+            "y": 3
+        },
+        "targetName": "Nave Espacial",
+        "targetIcon": "🚀",
+        "planetIcon": "🪐",
+        "obstacles": [
+            {
+                "x": 2,
+                "y": 1,
+                "name": "Agujero negro",
+                "icon": "🕳️"
+            },
+            {
+                "x": 2,
+                "y": 2,
+                "name": "Agujero negro",
+                "icon": "🕳️"
+            },
+            {
+                "x": 4,
+                "y": 2,
+                "name": "Agujero negro",
+                "icon": "🕳️"
+            },
+            {
+                "x": 4,
+                "y": 3,
+                "name": "Agujero negro",
+                "icon": "🕳️"
+            },
+            {
+                "x": 1,
+                "y": 4,
+                "name": "Anomalía",
+                "icon": "🌀"
+            },
+            {
+                "x": 5,
+                "y": 1,
+                "name": "Anomalía",
+                "icon": "🌀"
+            }
+        ],
+        "maxAttempts": 3,
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ],
+        "hints": [
+            "Pista 1: El pasillo superior por la fila 0 permite avanzar en línea recta hasta la columna 6 sin obstáculos.",
+            "Pista 2: La suma de avances debe ser menor o igual a 10: 1 paso arriba + 4 pasos derecha + 2 pasos derecha + 3 pasos abajo = 10 casilleros.",
+            "Pista 3: Una secuencia óptima es: Girar a la izquierda ➡️ Avanzar 1 ➡️ Girar a la derecha ➡️ Avanzar 4 ➡️ Avanzar 2 ➡️ Girar a la derecha ➡️ Avanzar 3."
+        ]
     }
   ]
 },
@@ -5064,6 +6193,11 @@ function getByteAvatarSvg(expression = 'normal') {
   } else if (expression === 'worried') {
     eyes = '<circle cx="38" cy="44" r="5" fill="#f59e0b"/><circle cx="62" cy="44" r="5" fill="#f59e0b"/>';
     mouth = '<path d="M 40 60 Q 50 53 60 60" stroke="#f59e0b" stroke-width="3" fill="none" stroke-linecap="round"/>';
+  } else if (expression === 'crying') {
+    eyes = '<circle cx="38" cy="42" r="4.5" fill="#38bdf8"/><circle cx="62" cy="42" r="4.5" fill="#38bdf8"/>' +
+           '<path d="M 38 48 C 38 53 34 54 38 58 C 42 54 38 53 38 48 Z" fill="#60a5fa" class="bity-tear-anim"/>' +
+           '<path d="M 62 48 C 62 53 58 54 62 58 C 66 54 62 53 62 48 Z" fill="#60a5fa" class="bity-tear-anim"/>';
+    mouth = '<path d="M 42 62 Q 50 56 58 62" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
   }
 
   return `
@@ -5646,8 +6780,8 @@ class CodingModuleManager {
       if (hwLabelEl) hwLabelEl.textContent = isGradeOne ? 'TAREA' : 'Tarea';
       if (hwDescEl) {
         hwDescEl.textContent = isGradeOne
-          ? 'PREGUNTAS SENCILLAS Y 3 DESAFÍOS DE PROGRAMACIÓN.'
-          : 'Preguntas sencillas y 3 desafíos para poner a prueba lo que aprendiste.';
+          ? 'PREGUNTAS SENCILLAS Y DESAFÍOS DE PROGRAMACIÓN.'
+          : 'Preguntas sencillas y desafíos para poner a prueba lo que aprendiste.';
       }
 
       if (btnStartHw) {
@@ -6216,6 +7350,12 @@ class CodingModuleManager {
       case 'byte_mission':
       case 'mario_mission':
         this.renderByteMission(container, act);
+        break;
+      case 'code_detectives':
+        this.renderCodeDetectives(container, act);
+        break;
+      case 'build_path':
+        this.renderBuildPath(container, act);
         break;
       default:
         this.renderTheory(container, act);
@@ -7829,6 +8969,813 @@ class CodingModuleManager {
   }
 
   // 2. ¿QUÉ ES UNA INSTRUCCIÓN?
+
+
+  // ========================================================
+  // DESAFÍO 1: DETECTIVES DE CÓDIGO
+  // ========================================================
+  renderCodeDetectives(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    const missionTitle = isGradeOne ? act.title.toUpperCase() : act.title;
+    const missionStory = isGradeOne ? act.storyIntro.toUpperCase() : act.storyIntro;
+
+    this.updateByte(
+      isGradeOne
+        ? '¡MISIÓN DE DETECTIVE! ENCONTRÁ LAS 2 INSTRUCCIONES EQUIVOCADAS Y CORREGILAS PARA QUE PUEDA REGRESAR A MI PLANETA.'
+        : '¡Misión de detective! Encontrá las 2 instrucciones equivocadas y corregilas para que pueda regresar a mi planeta.',
+      'normal'
+    );
+
+    let attemptsLeft = act.maxAttempts || 3;
+    let playerPos = { ...act.startPos };
+    let playerFacing = act.startFacing || 'right';
+    let program = JSON.parse(JSON.stringify(act.initialProgram));
+    let isSimulating = false;
+    let activeExecutingIndex = -1;
+
+    const deltas = {
+      right: { x: 1, y: 0, arrow: '➡️', deg: 0 },
+      down: { x: 0, y: 1, arrow: '⬇️', deg: 90 },
+      left: { x: -1, y: 0, arrow: '⬅️', deg: 180 },
+      up: { x: 0, y: -1, arrow: '⬆️', deg: 270 }
+    };
+    const turnRightMap = { right: 'down', down: 'left', left: 'up', up: 'right' };
+    const turnLeftMap = { right: 'up', up: 'left', left: 'down', down: 'right' };
+
+    const draw = () => {
+      container.innerHTML = `
+        <div class="bity-challenge-stage ${isGradeOne ? 'g1-uppercase' : ''}">
+          ${this.createActivityHeader(act, false)}
+
+          <!-- Card de Misión e Intentos -->
+          <div class="bity-mission-card">
+            <div class="bity-mission-header">
+              <div class="bity-mission-title-box">
+                <span class="bity-mission-badge">${isGradeOne ? 'DESAFÍO 1' : 'Desafío 1'}</span>
+                <h3 class="bity-mission-title">${missionTitle}</h3>
+              </div>
+              <div class="bity-attempts-tracker">
+                <span>${isGradeOne ? 'INTENTOS:' : 'Intentos:'}</span>
+                <div class="bity-attempts-hearts">
+                  <span class="bity-heart ${attemptsLeft < 1 ? 'lost' : ''}">❤️</span>
+                  <span class="bity-heart ${attemptsLeft < 2 ? 'lost' : ''}">❤️</span>
+                  <span class="bity-heart ${attemptsLeft < 3 ? 'lost' : ''}">❤️</span>
+                </div>
+                <span>(${attemptsLeft}/3)</span>
+              </div>
+            </div>
+            <p class="bity-mission-intro-text">${missionStory}</p>
+          </div>
+
+          <!-- Layout: Laberinto a la izquierda, Programa a la derecha -->
+          <div class="bity-stage-layout">
+            <!-- Columna Laberinto -->
+            <div class="bity-maze-wrapper">
+              <div class="bity-maze-board" id="bity-board" style="grid-template-columns: repeat(${act.gridCols}, 1fr); width: ${act.gridCols * 64}px; max-width: 100%;">
+                ${renderGridCells()}
+              </div>
+
+              <!-- Controles -->
+              <div class="bity-maze-controls">
+                <button type="button" id="btn-bity-run-prog" class="btn-bity-run" ${isSimulating ? 'disabled' : ''}>
+                  <span>▶️</span> ${isGradeOne ? 'PROBAR RECORRIDO' : 'Probar recorrido'}
+                </button>
+                <button type="button" id="btn-bity-reset-pos" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🔄</span> ${isGradeOne ? 'REINICIAR POSICIÓN' : 'Reiniciar posición'}
+                </button>
+                <button type="button" id="btn-bity-restore-prog" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>↺</span> ${isGradeOne ? 'PROGRAMA ORIGINAL' : 'Programa original'}
+                </button>
+              </div>
+            </div>
+
+            <!-- Columna Programa -->
+            <div class="bity-code-panel">
+              <div class="bity-panel-header">
+                <h4 class="bity-panel-title">
+                  <span>📜</span> ${isGradeOne ? 'PROGRAMA DE VUELO' : 'Programa de vuelo'}
+                </h4>
+                <span style="font-size: 0.8rem; font-weight: 800; color: #64748b;">
+                  ${isGradeOne ? 'HAY 2 ERRORES A CORREGIR' : 'Hay 2 errores a corregir'}
+                </span>
+              </div>
+
+              <div class="bity-program-list">
+                ${program.map((step, idx) => {
+                  const isExec = (activeExecutingIndex === idx);
+                  const isMod = !!step.wasModified;
+                  const stepLabel = isGradeOne ? step.label.toUpperCase() : step.label;
+                  return `
+                    <div class="bity-step-item ${isExec ? 'executing' : ''} ${isMod ? 'modified' : ''}">
+                      <div class="bity-step-info">
+                        <span class="bity-step-num">${idx + 1}</span>
+                        <span>${stepLabel}</span>
+                        ${isMod ? `<span class="bity-step-badge-edit">${isGradeOne ? '✏️ EDITADO' : '✏️ Editado'}</span>` : ''}
+                      </div>
+                      <button type="button" class="btn-bity-edit-step" data-step-idx="${idx}" ${isSimulating ? 'disabled' : ''}>
+                        <span>✏️</span> ${isGradeOne ? 'CAMBIAR' : 'Cambiar'}
+                      </button>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      bindEvents();
+    };
+
+    const renderGridCells = () => {
+      let html = '';
+      for (let r = 0; r < act.gridRows; r++) {
+        for (let c = 0; c < act.gridCols; c++) {
+          const isPlayer = (playerPos.x === c && playerPos.y === r);
+          const isTarget = (act.targetPos.x === c && act.targetPos.y === r);
+          const obstacle = (act.obstacles || []).find(o => o.x === c && o.y === r);
+          const isStart = (act.startPos.x === c && act.startPos.y === r);
+
+          let cellClass = 'bity-cell';
+          if (isStart) cellClass += ' start-cell';
+          if (isTarget) cellClass += ' target-cell';
+          if (obstacle) cellClass += ' obstacle-cell';
+
+          let content = '';
+          if (isPlayer) {
+            const rot = deltas[playerFacing].deg;
+            const arrow = deltas[playerFacing].arrow;
+            content = `
+              <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
+                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-pointer">${arrow}</span>
+              </div>
+            `;
+          } else if (isTarget) {
+            content = `<span class="bity-cell-icon" title="${act.targetName}">${act.targetIcon || '🚀'}</span>`;
+          } else if (obstacle) {
+            content = `<span class="bity-cell-icon" title="${obstacle.name}">${obstacle.icon || '☄️'}</span>`;
+          }
+
+          html += `
+            <div class="${cellClass}" style="width: 58px; height: 58px;">
+              <span class="bity-cell-coord">${c},${r}</span>
+              ${content}
+            </div>
+          `;
+        }
+      }
+      return html;
+    };
+
+    const bindEvents = () => {
+      const btnRun = document.getElementById('btn-bity-run-prog');
+      if (btnRun) {
+        btnRun.onclick = () => runSimulation();
+      }
+
+      const btnReset = document.getElementById('btn-bity-reset-pos');
+      if (btnReset) {
+        btnReset.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          playerPos = { ...act.startPos };
+          playerFacing = act.startFacing || 'right';
+          draw();
+        };
+      }
+
+      const btnRestore = document.getElementById('btn-bity-restore-prog');
+      if (btnRestore) {
+        btnRestore.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          program = JSON.parse(JSON.stringify(act.initialProgram));
+          playerPos = { ...act.startPos };
+          playerFacing = act.startFacing || 'right';
+          draw();
+        };
+      }
+
+      container.querySelectorAll('.btn-bity-edit-step').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          const sIdx = parseInt(btn.getAttribute('data-step-idx'));
+          openOptionPicker(sIdx);
+        };
+      });
+    };
+
+    const openOptionPicker = (stepIndex) => {
+      const step = program[stepIndex];
+      const modal = document.createElement('div');
+      modal.className = 'bity-picker-modal-backdrop';
+      modal.innerHTML = `
+        <div class="bity-picker-card ${isGradeOne ? 'g1-uppercase' : ''}">
+          <h4 class="bity-picker-title">
+            ${isGradeOne ? `PASO ${stepIndex + 1}: ELEGÍ LA INSTRUCCIÓN CORRECTA` : `Paso ${stepIndex + 1}: Elegí la instrucción correcta`}
+          </h4>
+          <div class="bity-picker-options">
+            ${act.availableOptions.map(opt => `
+              <button type="button" class="bity-picker-btn" data-cmd="${opt.cmd}" data-label="${opt.label}">
+                <span style="font-size:1.4rem;">${opt.icon || '➡️'}</span>
+                <span>${isGradeOne ? opt.label.toUpperCase() : opt.label}</span>
+              </button>
+            `).join('')}
+          </div>
+          <button type="button" class="btn-bity-secondary" id="btn-close-picker" style="width:100%; justify-content:center;">
+            ${isGradeOne ? 'CANCELAR' : 'Cancelar'}
+          </button>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      modal.querySelectorAll('.bity-picker-btn').forEach(btn => {
+        btn.onclick = () => {
+          this.onPlaySound('pop');
+          step.cmd = btn.getAttribute('data-cmd');
+          step.label = btn.getAttribute('data-label');
+          step.wasModified = true;
+          document.body.removeChild(modal);
+          draw();
+        };
+      });
+
+      const btnClose = modal.querySelector('#btn-close-picker');
+      if (btnClose) {
+        btnClose.onclick = () => {
+          document.body.removeChild(modal);
+        };
+      }
+    };
+
+    const runSimulation = async () => {
+      if (isSimulating) return;
+      isSimulating = true;
+      activeExecutingIndex = -1;
+      playerPos = { ...act.startPos };
+      playerFacing = act.startFacing || 'right';
+      draw();
+
+      let failed = false;
+      let failReason = '';
+
+      for (let i = 0; i < program.length; i++) {
+        activeExecutingIndex = i;
+        draw();
+        this.onPlaySound('pop');
+        await new Promise(r => setTimeout(r, 450));
+
+        const step = program[i];
+        if (step.cmd === 'turn_right') {
+          playerFacing = turnRightMap[playerFacing];
+        } else if (step.cmd === 'turn_left') {
+          playerFacing = turnLeftMap[playerFacing];
+        } else if (step.cmd.startsWith('advance')) {
+          const count = parseInt(step.cmd.split('_')[1]) || 1;
+          const d = deltas[playerFacing];
+          for (let s = 1; s <= count; s++) {
+            const nx = playerPos.x + d.x;
+            const ny = playerPos.y + d.y;
+            if (nx < 0 || nx >= act.gridCols || ny < 0 || ny >= act.gridRows) {
+              failed = true;
+              failReason = isGradeOne
+                ? '¡CUIDADO! BITY SE SALIÓ DEL MAPA EN EL PASO ' + (i + 1) + '.'
+                : `¡Cuidado! Bity se salió del mapa en el paso ${i + 1}.`;
+              break;
+            }
+            const hit = (act.obstacles || []).find(o => o.x === nx && o.y === ny);
+            if (hit) {
+              failed = true;
+              const obsName = isGradeOne ? (hit.name || 'UN OBSTÁCULO').toUpperCase() : (hit.name || 'un obstáculo');
+              failReason = isGradeOne
+                ? `¡CUIDADO! BITY CHOCÓ CONTRA ${obsName} EN EL PASO ${i + 1}.`
+                : `¡Cuidado! Bity chocó contra ${obsName} en el paso ${i + 1}.`;
+              playerPos = { x: nx, y: ny };
+              break;
+            }
+            playerPos = { x: nx, y: ny };
+            draw();
+            await new Promise(r => setTimeout(r, 200));
+          }
+        }
+
+        if (failed) break;
+      }
+
+      activeExecutingIndex = -1;
+      isSimulating = false;
+
+      const reachedGoal = (!failed && playerPos.x === act.targetPos.x && playerPos.y === act.targetPos.y);
+
+      if (reachedGoal) {
+        draw();
+        this.showBityVictoryModal(act, 'detectives');
+      } else {
+        this.onPlaySound('wrong');
+        attemptsLeft--;
+
+        const notReachedMsg = isGradeOne
+          ? 'BITY TERMINÓ EL RECORRIDO PERO NO LLEGÓ A LA NAVE ESPACIAL.'
+          : 'Bity terminó el recorrido pero no llegó a la nave espacial.';
+        const speech = failReason || notReachedMsg;
+
+        this.updateByte(speech, 'worried');
+        draw();
+
+        if (attemptsLeft <= 0) {
+          setTimeout(() => {
+            this.showBityDefeatModal(act, () => {
+              attemptsLeft = act.maxAttempts || 3;
+              playerPos = { ...act.startPos };
+              playerFacing = act.startFacing || 'right';
+              draw();
+            });
+          }, 600);
+        } else {
+          setTimeout(() => {
+            playerPos = { ...act.startPos };
+            playerFacing = act.startFacing || 'right';
+            draw();
+          }, 1200);
+        }
+      }
+    };
+
+    draw();
+  }
+
+  // ========================================================
+  // DESAFÍO 2: CONSTRUÍ EL CAMINO
+  // ========================================================
+  renderBuildPath(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    const missionTitle = isGradeOne ? act.title.toUpperCase() : act.title;
+    const missionStory = isGradeOne ? act.storyIntro.toUpperCase() : act.storyIntro;
+    const mathClueText = isGradeOne ? act.mathClue.toUpperCase() : act.mathClue;
+
+    this.updateByte(
+      isGradeOne
+        ? '¡CONSTRUÍ EL RECORRIDO! AGREGÁ LAS INSTRUCCIONES PARA QUE PUEDA ESQUIVAR LOS OBSTÁCULOS Y LLEGAR A MI NAVE.'
+        : '¡Construí el recorrido! Agregá las instrucciones para que pueda esquivar los obstáculos y llegar a mi nave.',
+      'normal'
+    );
+
+    let attemptsLeft = act.maxAttempts || 3;
+    let playerPos = { ...act.startPos };
+    let playerFacing = act.startFacing || 'right';
+    let commands = [];
+    let isSimulating = false;
+    let activeExecutingIndex = -1;
+
+    const deltas = {
+      right: { x: 1, y: 0, arrow: '➡️', deg: 0 },
+      down: { x: 0, y: 1, arrow: '⬇️', deg: 90 },
+      left: { x: -1, y: 0, arrow: '⬅️', deg: 180 },
+      up: { x: 0, y: -1, arrow: '⬆️', deg: 270 }
+    };
+    const turnRightMap = { right: 'down', down: 'left', left: 'up', up: 'right' };
+    const turnLeftMap = { right: 'up', up: 'left', left: 'down', down: 'right' };
+
+    const calculateAdvanceTiles = () => {
+      return commands.reduce((acc, c) => {
+        if (c.cmd.startsWith('advance')) {
+          return acc + (parseInt(c.cmd.split('_')[1]) || 1);
+        }
+        return acc;
+      }, 0);
+    };
+
+    const draw = () => {
+      const advanceTilesUsed = calculateAdvanceTiles();
+      const hasFuelLimit = !!act.maxAdvanceTiles;
+      const fuelExceeded = hasFuelLimit && (advanceTilesUsed > act.maxAdvanceTiles);
+
+      container.innerHTML = `
+        <div class="bity-challenge-stage ${isGradeOne ? 'g1-uppercase' : ''}">
+          ${this.createActivityHeader(act, false)}
+
+          <!-- Card de Misión e Intentos -->
+          <div class="bity-mission-card">
+            <div class="bity-mission-header">
+              <div class="bity-mission-title-box">
+                <span class="bity-mission-badge">${isGradeOne ? 'DESAFÍO 2' : 'Desafío 2'}</span>
+                <h3 class="bity-mission-title">${missionTitle}</h3>
+              </div>
+              <div class="bity-attempts-tracker">
+                <span>${isGradeOne ? 'INTENTOS:' : 'Intentos:'}</span>
+                <div class="bity-attempts-hearts">
+                  <span class="bity-heart ${attemptsLeft < 1 ? 'lost' : ''}">❤️</span>
+                  <span class="bity-heart ${attemptsLeft < 2 ? 'lost' : ''}">❤️</span>
+                  <span class="bity-heart ${attemptsLeft < 3 ? 'lost' : ''}">❤️</span>
+                </div>
+                <span>(${attemptsLeft}/3)</span>
+              </div>
+            </div>
+            <p class="bity-mission-intro-text">${missionStory}</p>
+
+            <!-- Pista Matemática -->
+            <div class="bity-math-banner">
+              <span class="bity-math-icon">📐</span>
+              <div>${mathClueText}</div>
+            </div>
+
+            ${hasFuelLimit ? `
+              <div class="bity-fuel-indicator">
+                <span>⛽ ${isGradeOne ? 'COMBUSTIBLE UTILIZADO:' : 'Combustible utilizado:'} ${advanceTilesUsed} / ${act.maxAdvanceTiles} ${isGradeOne ? 'CASILLEROS' : 'casilleros'}</span>
+                <div class="bity-fuel-bar-wrap">
+                  <div class="bity-fuel-bar-fill ${fuelExceeded ? 'exceeded' : ''}" style="width: ${Math.min(100, (advanceTilesUsed / act.maxAdvanceTiles) * 100)}%;"></div>
+                </div>
+                ${fuelExceeded ? `<span style="color:#f87171; font-weight:900;">⚠️ ${isGradeOne ? '¡LÍMITE SUPERADO!' : '¡Límite superado!'}</span>` : ''}
+              </div>
+            ` : ''}
+          </div>
+
+          <!-- Layout: Laberinto a la izquierda, Paleta y Programa a la derecha -->
+          <div class="bity-stage-layout">
+            <!-- Columna Laberinto -->
+            <div class="bity-maze-wrapper">
+              <div class="bity-maze-board" id="bity-board" style="grid-template-columns: repeat(${act.gridCols}, 1fr); width: ${act.gridCols * 64}px; max-width: 100%;">
+                ${renderGridCells()}
+              </div>
+
+              <!-- Controles -->
+              <div class="bity-maze-controls">
+                <button type="button" id="btn-bity-run-build" class="btn-bity-run" ${isSimulating ? 'disabled' : ''}>
+                  <span>▶️</span> ${isGradeOne ? 'PROBAR RECORRIDO' : 'Probar recorrido'}
+                </button>
+                <button type="button" id="btn-bity-reset-pos2" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🔄</span> ${isGradeOne ? 'REINICIAR POSICIÓN' : 'Reiniciar posición'}
+                </button>
+                <button type="button" id="btn-bity-clear-cmds" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🗑️</span> ${isGradeOne ? 'BORRAR TODO' : 'Borrar todo'}
+                </button>
+              </div>
+            </div>
+
+            <!-- Columna Programa y Paleta -->
+            <div class="bity-code-panel">
+              <!-- Paleta de Instrucciones Disponibles -->
+              <div class="bity-palette-box">
+                <span class="bity-palette-label">📥 ${isGradeOne ? 'INSTRUCCIONES DISPONIBLES (HACÉ CLIC PARA AGREGAR):' : 'Instrucciones disponibles (hacé clic para agregar):'}</span>
+                <div class="bity-palette-buttons">
+                  ${act.availableCommands.map(cmd => `
+                    <button type="button" class="btn-palette-cmd" data-cmd="${cmd.cmd}" data-label="${cmd.label}" ${isSimulating ? 'disabled' : ''}>
+                      <span>${cmd.icon || '➡️'}</span>
+                      <span>${isGradeOne ? cmd.label.toUpperCase() : cmd.label}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="bity-panel-header" style="margin-top: 8px;">
+                <h4 class="bity-panel-title">
+                  <span>📜</span> ${isGradeOne ? 'TU PROGRAMA' : 'Tu programa'}
+                </h4>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #0284c7;">
+                  ${commands.length} ${isGradeOne ? 'INSTRUCCIONES' : 'instrucciones'}
+                </span>
+              </div>
+
+              <div class="bity-builder-sequence">
+                ${commands.length === 0 ? `
+                  <div class="bity-builder-empty">
+                    ${isGradeOne ? '¡TU PROGRAMA ESTÁ VACÍO! TOCÁ LAS INSTRUCCIONES DE ARRIBA PARA ARMAR EL CAMINO DE BITY.' : '¡Tu programa está vacío! Tocá las instrucciones de arriba para armar el camino de Bity.'}
+                  </div>
+                ` : commands.map((c, idx) => {
+                  const isExec = (activeExecutingIndex === idx);
+                  const cmdLabel = isGradeOne ? c.label.toUpperCase() : c.label;
+                  return `
+                    <div class="bity-step-item ${isExec ? 'executing' : ''}">
+                      <div class="bity-step-info">
+                        <span class="bity-step-num">${idx + 1}</span>
+                        <span>${cmdLabel}</span>
+                      </div>
+                      <button type="button" class="btn-remove-cmd" data-cmd-idx="${idx}" title="${isGradeOne ? 'QUITAR' : 'Quitar'}" ${isSimulating ? 'disabled' : ''}>
+                        ✖
+                      </button>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      bindEvents();
+    };
+
+    const renderGridCells = () => {
+      let html = '';
+      for (let r = 0; r < act.gridRows; r++) {
+        for (let c = 0; c < act.gridCols; c++) {
+          const isPlayer = (playerPos.x === c && playerPos.y === r);
+          const isTarget = (act.targetPos.x === c && act.targetPos.y === r);
+          const obstacle = (act.obstacles || []).find(o => o.x === c && o.y === r);
+          const isStart = (act.startPos.x === c && act.startPos.y === r);
+
+          let cellClass = 'bity-cell';
+          if (isStart) cellClass += ' start-cell';
+          if (isTarget) cellClass += ' target-cell';
+          if (obstacle) cellClass += ' obstacle-cell';
+
+          let content = '';
+          if (isPlayer) {
+            const rot = deltas[playerFacing].deg;
+            const arrow = deltas[playerFacing].arrow;
+            content = `
+              <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
+                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-pointer">${arrow}</span>
+              </div>
+            `;
+          } else if (isTarget) {
+            content = `<span class="bity-cell-icon" title="${act.targetName}">${act.targetIcon || '🚀'}</span>`;
+          } else if (obstacle) {
+            content = `<span class="bity-cell-icon" title="${obstacle.name}">${obstacle.icon || '☄️'}</span>`;
+          }
+
+          html += `
+            <div class="${cellClass}" style="width: 58px; height: 58px;">
+              <span class="bity-cell-coord">${c},${r}</span>
+              ${content}
+            </div>
+          `;
+        }
+      }
+      return html;
+    };
+
+    const bindEvents = () => {
+      container.querySelectorAll('.btn-palette-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const cmd = btn.getAttribute('data-cmd');
+          const label = btn.getAttribute('data-label');
+          commands.push({ cmd, label });
+          draw();
+        };
+      });
+
+      container.querySelectorAll('.btn-remove-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const idx = parseInt(btn.getAttribute('data-cmd-idx'));
+          commands.splice(idx, 1);
+          draw();
+        };
+      });
+
+      const btnRun = document.getElementById('btn-bity-run-build');
+      if (btnRun) {
+        btnRun.onclick = () => runSimulation();
+      }
+
+      const btnReset = document.getElementById('btn-bity-reset-pos2');
+      if (btnReset) {
+        btnReset.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          playerPos = { ...act.startPos };
+          playerFacing = act.startFacing || 'right';
+          draw();
+        };
+      }
+
+      const btnClear = document.getElementById('btn-bity-clear-cmds');
+      if (btnClear) {
+        btnClear.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          commands = [];
+          playerPos = { ...act.startPos };
+          playerFacing = act.startFacing || 'right';
+          draw();
+        };
+      }
+    };
+
+    const runSimulation = async () => {
+      if (isSimulating) return;
+      if (commands.length === 0) {
+        this.onPlaySound('wrong');
+        const emptyMsg = isGradeOne
+          ? '¡AGREGÁ AL MENOS UNA INSTRUCCIÓN ANTES DE PROBAR EL RECORRIDO!'
+          : '¡Agregá al menos una instrucción antes de probar el recorrido!';
+        this.updateByte(emptyMsg, 'thinking');
+        return;
+      }
+
+      if (act.maxAdvanceTiles) {
+        const used = calculateAdvanceTiles();
+        if (used > act.maxAdvanceTiles) {
+          this.onPlaySound('wrong');
+          const fuelMsg = isGradeOne
+            ? `¡LÍMITE DE COMBUSTIBLE SUPERADO! USASTE ${used} CASILLEROS DE AVANCE (MÁXIMO ${act.maxAdvanceTiles}).`
+            : `¡Límite de combustible superado! Usaste ${used} casilleros de avance (máximo ${act.maxAdvanceTiles}).`;
+          this.updateByte(fuelMsg, 'worried');
+          return;
+        }
+      }
+
+      isSimulating = true;
+      activeExecutingIndex = -1;
+      playerPos = { ...act.startPos };
+      playerFacing = act.startFacing || 'right';
+      draw();
+
+      let failed = false;
+      let failReason = '';
+
+      for (let i = 0; i < commands.length; i++) {
+        activeExecutingIndex = i;
+        draw();
+        this.onPlaySound('pop');
+        await new Promise(r => setTimeout(r, 450));
+
+        const step = commands[i];
+        if (step.cmd === 'turn_right') {
+          playerFacing = turnRightMap[playerFacing];
+        } else if (step.cmd === 'turn_left') {
+          playerFacing = turnLeftMap[playerFacing];
+        } else if (step.cmd.startsWith('advance')) {
+          const count = parseInt(step.cmd.split('_')[1]) || 1;
+          const d = deltas[playerFacing];
+          for (let s = 1; s <= count; s++) {
+            const nx = playerPos.x + d.x;
+            const ny = playerPos.y + d.y;
+            if (nx < 0 || nx >= act.gridCols || ny < 0 || ny >= act.gridRows) {
+              failed = true;
+              failReason = isGradeOne
+                ? '¡CUIDADO! BITY SE SALIÓ DEL MAPA EN EL PASO ' + (i + 1) + '.'
+                : `¡Cuidado! Bity se salió del mapa en el paso ${i + 1}.`;
+              break;
+            }
+            const hit = (act.obstacles || []).find(o => o.x === nx && o.y === ny);
+            if (hit) {
+              failed = true;
+              const obsName = isGradeOne ? (hit.name || 'UN OBSTÁCULO').toUpperCase() : (hit.name || 'un obstáculo');
+              failReason = isGradeOne
+                ? `¡CUIDADO! BITY CHOCÓ CONTRA ${obsName} EN EL PASO ${i + 1}.`
+                : `¡Cuidado! Bity chocó contra ${obsName} en el paso ${i + 1}.`;
+              playerPos = { x: nx, y: ny };
+              break;
+            }
+            playerPos = { x: nx, y: ny };
+            draw();
+            await new Promise(r => setTimeout(r, 200));
+          }
+        }
+
+        if (failed) break;
+      }
+
+      activeExecutingIndex = -1;
+      isSimulating = false;
+
+      const reachedGoal = (!failed && playerPos.x === act.targetPos.x && playerPos.y === act.targetPos.y);
+
+      if (reachedGoal) {
+        draw();
+        this.showBityVictoryModal(act, 'build_path');
+      } else {
+        this.onPlaySound('wrong');
+        attemptsLeft--;
+
+        const notReachedMsg = isGradeOne
+          ? 'BITY TERMINÓ EL RECORRIDO PERO NO LLEGÓ A LA NAVE ESPACIAL.'
+          : 'Bity terminó el recorrido pero no llegó a la nave espacial.';
+        const speech = failReason || notReachedMsg;
+
+        this.updateByte(speech, 'worried');
+        draw();
+
+        if (attemptsLeft <= 0) {
+          setTimeout(() => {
+            this.showBityDefeatModal(act, () => {
+              attemptsLeft = act.maxAttempts || 3;
+              playerPos = { ...act.startPos };
+              playerFacing = act.startFacing || 'right';
+              draw();
+            });
+          }, 600);
+        } else {
+          setTimeout(() => {
+            playerPos = { ...act.startPos };
+            playerFacing = act.startFacing || 'right';
+            draw();
+          }, 1200);
+        }
+      }
+    };
+
+    draw();
+  }
+
+  // ========================================================
+  // MODAL DE VICTORIA ESPACIAL (DESPEGUE DE COHETE)
+  // ========================================================
+  showBityVictoryModal(act, type) {
+    const isGradeOne = this.currentGrade === 1;
+    this.onPlaySound('fanfare');
+    this.onLaunchConfetti();
+    this.recordActivitySuccess(act.id, 25);
+
+    const victoryTitle = isGradeOne
+      ? '🎉 ¡MISIÓN CUMPLIDA! ¡DESPEGUE EXITOSO! 🚀'
+      : '🎉 ¡Misión Cumplida! ¡Despegue exitoso! 🚀';
+
+    const victoryText = isGradeOne
+      ? '¡LA NAVE DE BITY ENCENDIÓ MOTORES Y YA VUELA RUMBO A SU PLANETA GRACIAS A TUS INSTRUCCIONES!'
+      : '¡Excelente trabajo! La nave de Bity encendió motores y ya viaja rumbo a su planeta natal gracias a tu algoritmo.';
+
+    const modal = document.createElement('div');
+    modal.className = 'bity-space-modal-backdrop';
+    modal.innerHTML = `
+      <div class="bity-space-card ${isGradeOne ? 'g1-uppercase' : ''}">
+        <div class="bity-launchpad-stage">
+          <div class="bity-planet-target">🪐</div>
+          <div class="bity-rocket-vessel">🚀</div>
+          <div class="bity-thruster-fire">🔥💨</div>
+        </div>
+
+        <h3 class="bity-victory-heading">${victoryTitle}</h3>
+        <p class="bity-victory-message">${victoryText}</p>
+
+        <div class="bity-victory-reward-box">
+          +25 ${isGradeOne ? 'PUNTOS' : 'puntos'} • ⭐⭐⭐ ${isGradeOne ? '¡MISIÓN SUPERADA!' : '¡Misión superada!'}
+        </div>
+
+        <button type="button" id="btn-bity-victory-next" class="btn-stage-next" style="width: 100%; justify-content: center; padding: 14px 28px; font-size: 1.15rem; margin-top: 10px;">
+          <span>✨ ${isGradeOne ? '¡CONTINUAR A LA SIGUIENTE ACTIVIDAD! ➡️' : '¡Continuar a la siguiente actividad! ➡️'}</span>
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const btnNext = modal.querySelector('#btn-bity-victory-next');
+    if (btnNext) {
+      btnNext.onclick = () => {
+        document.body.removeChild(modal);
+        this.nextActivity();
+      };
+    }
+  }
+
+  // ========================================================
+  // MODAL DE DERROTA AMIGABLE (BITY LLORANDO - 3 INTENTOS AGOTADOS)
+  // ========================================================
+  showBityDefeatModal(act, onRetry) {
+    const isGradeOne = this.currentGrade === 1;
+    this.onPlaySound('wrong');
+
+    const defeatTitle = isGradeOne
+      ? '💧 ¡SE AGOTARON LOS 3 INTENTOS!'
+      : '💧 ¡Se agotaron los 3 intentos!';
+
+    const defeatMsg = isGradeOne
+      ? '¡NO TE PREOCUPES! HASTA LOS MEJORES PROGRAMADORES SE EQUIVOCAN. LO IMPORTANTE ES ANALIZAR EL MAPA Y VOLVER A PROBAR.'
+      : '¡No te preocupes! En programación, equivocarse es el primer paso para aprender. Revisemos las pistas y volvamos a intentar.';
+
+    const hintText = (act.hints && act.hints[0]) ? act.hints[0] : (isGradeOne ? 'REVISÁ EL MAPA CON ATENCIÓN.' : 'Revisá el mapa con atención.');
+
+    const modal = document.createElement('div');
+    modal.className = 'bity-defeat-modal-backdrop';
+    modal.innerHTML = `
+      <div class="bity-defeat-card ${isGradeOne ? 'g1-uppercase' : ''}">
+        <div class="bity-crying-box">
+          ${getByteAvatarSvg('crying')}
+        </div>
+
+        <h3 class="bity-defeat-title">${defeatTitle}</h3>
+        <p class="bity-defeat-message">${defeatMsg}</p>
+
+        <div class="bity-defeat-hint-box">
+          <span style="font-size: 1.4rem;">💡</span>
+          <div>${isGradeOne ? hintText.toUpperCase() : hintText}</div>
+        </div>
+
+        <button type="button" id="btn-bity-retry-level" class="btn-bity-retry">
+          <span>🔄</span> ${isGradeOne ? '¡VOLVER A INTENTAR CON 3 NUEVOS INTENTOS!' : '¡Volver a intentar con 3 nuevos intentos!'}
+        </button>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const btnRetry = modal.querySelector('#btn-bity-retry-level');
+    if (btnRetry) {
+      btnRetry.onclick = () => {
+        this.onPlaySound('pop');
+        document.body.removeChild(modal);
+        if (typeof onRetry === 'function') onRetry();
+      };
+    }
+  }
 
   // ========================================================
   // RENDERIZADOR PARA PREGUNTAS CONCEPTUALES DEL BLOQUE TAREA
@@ -11258,7 +13205,56 @@ class CodingModuleManager {
     const container = document.getElementById('coding-stage-container');
     if (!container) return;
 
-        if (this.currentTopic === 'patterns') {
+        if (this.currentTopic === 'homework') {
+      const isGradeOne = this.currentGrade === 1;
+      container.innerHTML = `
+        <div style="display:flex; justify-content:center; align-items:center; padding:20px 0;">
+          <div class="coding-victory-card" style="border-color: #0284c7; text-align: center;">
+            <div class="victory-badge-icon" style="font-size: 4.5rem;">🚀</div>
+            <h2 class="victory-title" style="color: #0369a1; font-size: 2.2rem; text-transform: uppercase;">
+              🎉 ${isGradeOne ? '¡MISIÓN CUMPLIDA EN LA TAREA!' : '¡Misión Cumplida en la Tarea!'} 🎉
+            </h2>
+            <div class="pattern-final-stars-track" style="margin: 14px auto; max-width: 320px;">
+              <span class="pat-star-slot achieved">⭐</span>
+              <span class="pat-star-slot achieved">⭐</span>
+              <span class="pat-star-slot achieved">⭐</span>
+              <span class="pat-star-slot achieved">⭐</span>
+              <span class="pat-star-slot achieved">⭐</span>
+            </div>
+            <h3 style="font-size: 1.6rem; color: #1e293b; text-transform: uppercase; margin-bottom: 10px;">
+              ${isGradeOne ? '¡COMPLETASTE TODAS LAS ACTIVIDADES Y DESAFÍOS!' : `¡Completaste la Tarea de ${gConfig.badge}!`}
+            </h3>
+            <p class="victory-desc" style="font-size: 1.15rem; font-weight: 700; color: #475569; ${isGradeOne ? 'text-transform:uppercase;' : ''}">
+              ${isGradeOne ? '¡EXCELENTE TRABAJO! RESPONDISTE LAS PREGUNTAS Y AYUDASTE A BITY A DESPEGAR CON ÉXITO.' : '¡Excelente trabajo! Resolviste las preguntas conceptuales y guiaste a Bity a través de todos los desafíos.'}
+            </p>
+
+            <div class="victory-points-box" style="border-color: #0284c7; background: #f0f9ff;">
+              ⭐ ${progress.score || 0} ${isGradeOne ? 'PUNTOS TOTALES' : 'Puntos Totales'} • ${progress.starsTotal || 0} ${isGradeOne ? 'ESTRELLAS OBTENIDAS' : 'Estrellas Obtenidas'}<br>
+              <span style="font-size:1.15rem; color:#0369a1; font-weight:900;">${isGradeOne ? 'INSIGNIA: «PILOTO ESPACIAL DE CÓDIGO» 🏅' : 'Insignia: «Piloto Espacial de Código» 🏅'}</span>
+            </div>
+
+            <div style="margin-bottom:20px; font-size:1.1rem; color:#334155; text-transform: uppercase;">
+              <strong>${isGradeOne ? 'TAREA' : 'Tarea'}</strong><br>
+              <span style="font-family:monospace; font-size:1.4rem; color:#15803d;">██████████ 100%</span>
+            </div>
+
+            <button type="button" id="btn-victory-back-syllabus" class="btn-stage-next" style="width:100%; justify-content:center; ${isGradeOne ? 'text-transform: uppercase;' : ''}">
+              <span>⬅️ ${isGradeOne ? 'VOLVER AL TEMARIO' : 'Volver al Temario'}</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      const btnBack = document.getElementById('btn-victory-back-syllabus');
+      if (btnBack) {
+        btnBack.onclick = () => {
+          this.renderSyllabus();
+        };
+      }
+      return;
+    }
+
+    if (this.currentTopic === 'patterns') {
       const isGradeOne = this.currentGrade === 1;
       container.innerHTML = `
         <div style="display:flex; justify-content:center; align-items:center; padding:20px 0;">

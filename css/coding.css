@@ -4302,3 +4302,842 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
   transform: translateY(-1px);
 }
 
+/* ========================================================
+   DESAFÍOS ESPACIALES DE BITY: DETECTIVES & CONSTRUÍ EL CAMINO
+   ======================================================== */
+
+.bity-challenge-stage {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card de Introducción y Misión */
+.bity-mission-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 20px;
+  padding: 18px 24px;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bity-mission-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bity-mission-title-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bity-mission-badge {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bity-mission-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #38bdf8;
+  margin: 0;
+}
+
+/* Contador de Intentos */
+.bity-attempts-tracker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 2px solid #ef4444;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fca5a5;
+}
+
+.bity-attempts-hearts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.25rem;
+}
+
+.bity-heart {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.bity-heart.lost {
+  filter: grayscale(1) opacity(0.35);
+  transform: scale(0.85);
+}
+
+.bity-mission-intro-text {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* Tarjeta matemática (Desafío 2) */
+.bity-math-banner {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #78350f;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.bity-math-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* Límite de Combustible (G5) */
+.bity-fuel-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0f172a;
+  border: 2px solid #38bdf8;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #e2e8f0;
+}
+
+.bity-fuel-bar-wrap {
+  flex: 1;
+  height: 14px;
+  background: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bity-fuel-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #eab308);
+  border-radius: 999px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.bity-fuel-bar-fill.exceeded {
+  background: #ef4444;
+}
+
+/* Layout de Área de Trabajo: Laberinto y Panel de Código */
+.bity-stage-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .bity-stage-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contenedor del Laberinto */
+.bity-maze-wrapper {
+  background: #090d16;
+  border: 3px solid #1e293b;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.bity-maze-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.bity-maze-board {
+  display: grid;
+  gap: 6px;
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 14px;
+  border: 2px solid #334155;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.bity-cell {
+  background: #1e293b;
+  border: 1.5px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 1.7rem;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.bity-cell-coord {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #64748b;
+  font-family: monospace;
+}
+
+.bity-cell.start-cell {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.bity-cell.target-cell {
+  border-color: #f59e0b;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(15, 23, 42, 0.8) 100%);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+}
+
+.bity-cell.obstacle-cell {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.bity-cell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Personaje Bity en la celda */
+.bity-avatar-actor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  transition: transform 0.25s ease;
+}
+
+.bity-actor-robot {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 6px rgba(56, 189, 248, 0.7));
+}
+
+.bity-actor-pointer {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: #38bdf8;
+  color: #0f172a;
+  border-radius: 999px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 900;
+  box-shadow: 0 0 6px #38bdf8;
+}
+
+/* Controles de Ejecución debajo del laberinto */
+.bity-maze-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-bity-run {
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 28px;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #15803d, 0 8px 16px rgba(34, 197, 94, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.15s ease;
+}
+
+.btn-bity-run:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #15803d, 0 10px 20px rgba(34, 197, 94, 0.45);
+}
+
+.btn-bity-run:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #15803d;
+}
+
+.btn-bity-run:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-bity-secondary {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 2px solid #334155;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-bity-secondary:hover {
+  background: #334155;
+  color: #ffffff;
+  border-color: #475569;
+}
+
+/* Panel de Código / Programa */
+.bity-code-panel {
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.bity-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.bity-panel-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+/* Lista de Instrucciones (Detectives) */
+.bity-program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 440px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.bity-step-item {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.bity-step-item.executing {
+  border-color: #38bdf8;
+  background: #e0f2fe;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+  transform: scale(1.02);
+}
+
+.bity-step-item.modified {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.bity-step-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.bity-step-num {
+  background: #0284c7;
+  color: white;
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.bity-step-badge-edit {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #f59e0b;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.btn-bity-edit-step {
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
+  color: #1d4ed8;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.btn-bity-edit-step:hover {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+/* Selector Modal de Opciones para Reemplazar Instrucción */
+.bity-picker-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.bity-picker-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 3px solid #38bdf8;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bity-picker-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+  text-align: center;
+}
+
+.bity-picker-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bity-picker-btn {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.bity-picker-btn:hover {
+  background: #e0f2fe;
+  border-color: #0284c7;
+  color: #0369a1;
+  transform: translateX(4px);
+}
+
+/* Paleta de Comandos (Construí el camino) */
+.bity-palette-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bity-palette-label {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.bity-palette-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-palette-cmd {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #1e293b;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-palette-cmd:hover {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+  color: #0369a1;
+  transform: translateY(-2px);
+}
+
+.btn-palette-cmd:active {
+  transform: translateY(1px);
+}
+
+/* Área de Secuencia Construida (Desafío 2) */
+.bity-builder-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 140px;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 2px dashed #cbd5e1;
+  border-radius: 14px;
+  padding: 10px;
+  background: #fafafa;
+}
+
+.bity-builder-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  color: #94a3b8;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-remove-cmd {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-remove-cmd:hover {
+  background: #fee2e2;
+  transform: scale(1.15);
+}
+
+/* ========================================================
+   MODALES DE VICTORIA Y DERROTA
+   ======================================================== */
+
+/* Modal de Despegue Espacial (Victoria) */
+.bity-space-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(3, 7, 18, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.bity-space-card {
+  background: radial-gradient(circle at center, #1e1b4b 0%, #030712 100%);
+  border: 3px solid #818cf8;
+  border-radius: 28px;
+  padding: 36px 28px;
+  max-width: 540px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(99, 102, 241, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animación del cohete despegando */
+.bity-launchpad-stage {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.bity-planet-target {
+  font-size: 3.5rem;
+  position: absolute;
+  top: 10px;
+  animation: floatPlanet 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.6));
+}
+
+@keyframes floatPlanet {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.04); }
+}
+
+.bity-rocket-vessel {
+  font-size: 3.8rem;
+  line-height: 1;
+  position: relative;
+  animation: rocketBlastOff 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 14px rgba(249, 115, 22, 0.8));
+}
+
+@keyframes rocketBlastOff {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-6px) scale(1.02); }
+  60% { transform: translateY(-38px) scale(1.1); }
+  100% { transform: translateY(-75px) scale(0.9); opacity: 0.95; }
+}
+
+.bity-thruster-fire {
+  font-size: 2rem;
+  animation: thrusterFlicker 0.2s alternate infinite ease-in-out;
+  margin-top: -10px;
+}
+
+@keyframes thrusterFlicker {
+  0% { transform: scale(0.9) translateY(-2px); opacity: 0.8; }
+  100% { transform: scale(1.3) translateY(3px); opacity: 1; }
+}
+
+.bity-victory-heading {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #facc15;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(250, 204, 21, 0.4);
+}
+
+.bity-victory-message {
+  font-size: 1.05rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.bity-victory-reward-box {
+  background: rgba(34, 197, 94, 0.15);
+  border: 2px solid #22c55e;
+  border-radius: 14px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #86efac;
+}
+
+/* Modal de Derrota (Bity Llorando 3 intentos agotados) */
+.bity-defeat-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.bity-defeat-card {
+  background: #ffffff;
+  border: 3px solid #60a5fa;
+  border-radius: 28px;
+  padding: 32px 26px;
+  max-width: 500px;
+  width: 100%;
+  color: #1e293b;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: popIn 0.3s ease-out;
+}
+
+.bity-crying-box {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.bity-tear-anim {
+  animation: tearDrop 1.2s infinite ease-in;
+}
+
+@keyframes tearDrop {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+.bity-defeat-title {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #1d4ed8;
+  margin: 0;
+}
+
+.bity-defeat-message {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.bity-defeat-hint-box {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #166534;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.btn-bity-retry {
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #1d4ed8, 0 8px 16px rgba(37, 99, 235, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.15s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-bity-retry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #1d4ed8, 0 10px 20px rgba(37, 99, 235, 0.45);
+}
+
+.btn-bity-retry:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #1d4ed8;
+}
+
+
