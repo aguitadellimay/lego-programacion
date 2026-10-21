@@ -5521,4 +5521,195 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
   display: block;
 }
 
+/* ========================================================
+   MISIÓN 4: BITY CONTRARRELOJ (ARCADE / TIME TRIAL)
+   ======================================================== */
+
+.bity-tt-briefing-card {
+  background: radial-gradient(circle at center, #1e293b 0%, #090d16 100%);
+  border: 3.5px solid #eab308;
+  border-radius: 26px;
+  padding: 32px 28px;
+  max-width: 760px;
+  margin: 0 auto;
+  color: white;
+  box-shadow: 0 15px 40px rgba(234, 179, 8, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+}
+
+.bity-tt-rules-list {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid #334155;
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #e2e8f0;
+}
+
+.bity-tt-map-preview-tag {
+  background: #fef08a;
+  color: #854d0e;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* HUD Contrarreloj */
+.bity-tt-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #0f172a;
+  border: 2px solid #eab308;
+  border-radius: 18px;
+  padding: 10px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.bity-tt-stopwatch-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1e293b;
+  border: 2px solid #38bdf8;
+  border-radius: 14px;
+  padding: 6px 16px;
+  color: #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.bity-tt-digits {
+  font-family: monospace, 'Courier New', Courier;
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.bity-tt-stopwatch-box.timer-warning {
+  border-color: #f59e0b;
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.15);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+}
+
+.bity-tt-stopwatch-box.timer-critical {
+  border-color: #ef4444;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.7);
+  animation: timerCriticalPulse 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes timerCriticalPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+/* Temas visuales para los 3 mapas */
+.theme-volcano .bity-maze-board {
+  background: #1a0808 !important;
+  border-color: #dc2626 !important;
+}
+
+.theme-volcano .bity-cell {
+  background: #2b1111;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.theme-lake .bity-maze-board {
+  background: #032028 !important;
+  border-color: #06b6d4 !important;
+}
+
+.theme-lake .bity-cell {
+  background: #063742;
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.theme-cave .bity-maze-board {
+  background: #110626 !important;
+  border-color: #a855f7 !important;
+}
+
+.theme-cave .bity-cell {
+  background: #1f0d3d;
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Obstáculos dinámicos */
+.hazard-active {
+  animation: hazardFlicker 0.4s infinite alternate;
+  filter: drop-shadow(0 0 10px #ef4444);
+}
+
+@keyframes hazardFlicker {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.hazard-dormant {
+  opacity: 0.35;
+  filter: grayscale(0.8);
+}
+
+.patrol-obstacle {
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+  animation: patrolWiggle 1s infinite alternate ease-in-out;
+}
+
+@keyframes patrolWiggle {
+  0% { transform: rotate(-4deg); }
+  100% { transform: rotate(4deg); }
+}
+
+/* Podio de Victoria y Clasificación */
+.bity-podium-card {
+  background: radial-gradient(circle at center, #1e293b 0%, #030712 100%);
+  border: 3.5px solid #facc15;
+  border-radius: 28px;
+  padding: 34px 28px;
+  max-width: 580px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(250, 204, 21, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bity-record-badge {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: white;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+  animation: pulseGlow 1.2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
 

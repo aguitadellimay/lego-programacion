@@ -6232,6 +6232,424 @@ const CODING_DATA = {
             "Pista 2: Bajá 2 casilleros por el pasillo central para tocar la Estación 2 en (3, 2).",
             "Pista 3: Avanzá hacia el extremo derecho en la fila 2, bajá a la Estación 3 en (6, 3) e ingresá al Centro de Repuestos en (5, 3)."
         ]
+    },
+    {
+        "id": "g5_hw_bity_contrarreloj",
+        "type": "time_trial",
+        "title": "🏁 Misión 4: Bity Contrarreloj",
+        "badge": "COMPETENCIA",
+        "timeLimitSeconds": 120,
+        "maxAttemptsPerMap": 3,
+        "maps": [
+            {
+                "id": "volcano",
+                "name": "El volcán de lava",
+                "theme": "volcano",
+                "desc": "Senderos entre pozos de magma ardiente y géiseres de lava en erupción.",
+                "gridCols": 8,
+                "gridRows": 5,
+                "targetPos": {
+                    "x": 7,
+                    "y": 2
+                },
+                "targetName": "Plataforma de Extracción",
+                "targetIcon": "🛸",
+                "spawnPositions": [
+                    {
+                        "x": 0,
+                        "y": 0,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 0,
+                        "y": 4,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 1,
+                        "y": 2,
+                        "facing": "right"
+                    }
+                ],
+                "staticObstacles": [
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "name": "Cráter de lava",
+                        "icon": "🌋"
+                    },
+                    {
+                        "x": 2,
+                        "y": 1,
+                        "name": "Roca ardiente",
+                        "icon": "🪨"
+                    },
+                    {
+                        "x": 2,
+                        "y": 3,
+                        "name": "Roca ardiente",
+                        "icon": "🪨"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "name": "Cráter de lava",
+                        "icon": "🌋"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "name": "Pozo de magma",
+                        "icon": "🔥"
+                    },
+                    {
+                        "x": 5,
+                        "y": 0,
+                        "name": "Rocas volcánicas",
+                        "icon": "🪨"
+                    },
+                    {
+                        "x": 5,
+                        "y": 4,
+                        "name": "Rocas volcánicas",
+                        "icon": "🪨"
+                    }
+                ],
+                "dynamicObstacles": [
+                    {
+                        "id": "geyser_1",
+                        "name": "Géiser de lava norte",
+                        "type": "toggle_hazard",
+                        "x": 4,
+                        "y": 1,
+                        "periodSeconds": 2,
+                        "activeIcon": "🔥",
+                        "dormantIcon": "💨",
+                        "description": "Lanza fuego cada 2 segundos"
+                    },
+                    {
+                        "id": "geyser_2",
+                        "name": "Géiser de lava sur",
+                        "type": "toggle_hazard",
+                        "x": 4,
+                        "y": 3,
+                        "periodSeconds": 2,
+                        "activeIcon": "🔥",
+                        "dormantIcon": "💨",
+                        "description": "Lanza fuego cada 2 segundos"
+                    },
+                    {
+                        "id": "fireball_patrol",
+                        "name": "Bola de fuego rodante",
+                        "type": "patrol",
+                        "route": [
+                            {
+                                "x": 6,
+                                "y": 1
+                            },
+                            {
+                                "x": 6,
+                                "y": 2
+                            },
+                            {
+                                "x": 6,
+                                "y": 3
+                            },
+                            {
+                                "x": 6,
+                                "y": 2
+                            }
+                        ],
+                        "icon": "☄️",
+                        "description": "Patrulla verticalmente la columna 6"
+                    }
+                ]
+            },
+            {
+                "id": "crocodiles",
+                "name": "El lago de los cocodrilos",
+                "theme": "lake",
+                "desc": "Cruza por puentes y piedras flotantes esquivando cocodrilos que patrullan el agua.",
+                "gridCols": 8,
+                "gridRows": 5,
+                "targetPos": {
+                    "x": 7,
+                    "y": 2
+                },
+                "targetName": "Cabaña de Rescate",
+                "targetIcon": "🏕️",
+                "spawnPositions": [
+                    {
+                        "x": 0,
+                        "y": 1,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 0,
+                        "y": 3,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 1,
+                        "y": 0,
+                        "facing": "down"
+                    }
+                ],
+                "staticObstacles": [
+                    {
+                        "x": 2,
+                        "y": 0,
+                        "name": "Agua profunda",
+                        "icon": "🌊"
+                    },
+                    {
+                        "x": 2,
+                        "y": 2,
+                        "name": "Tronco caído",
+                        "icon": "🪵"
+                    },
+                    {
+                        "x": 2,
+                        "y": 4,
+                        "name": "Agua profunda",
+                        "icon": "🌊"
+                    },
+                    {
+                        "x": 4,
+                        "y": 0,
+                        "name": "Árbol pantanoso",
+                        "icon": "🌴"
+                    },
+                    {
+                        "x": 4,
+                        "y": 4,
+                        "name": "Árbol pantanoso",
+                        "icon": "🌴"
+                    },
+                    {
+                        "x": 6,
+                        "y": 0,
+                        "name": "Agua profunda",
+                        "icon": "🌊"
+                    },
+                    {
+                        "x": 6,
+                        "y": 1,
+                        "name": "Rocas del río",
+                        "icon": "🪨"
+                    },
+                    {
+                        "x": 6,
+                        "y": 3,
+                        "name": "Rocas del río",
+                        "icon": "🪨"
+                    },
+                    {
+                        "x": 6,
+                        "y": 4,
+                        "name": "Agua profunda",
+                        "icon": "🌊"
+                    }
+                ],
+                "dynamicObstacles": [
+                    {
+                        "id": "croc_1",
+                        "name": "Cocodrilo Alfa",
+                        "type": "patrol",
+                        "route": [
+                            {
+                                "x": 3,
+                                "y": 1
+                            },
+                            {
+                                "x": 3,
+                                "y": 2
+                            },
+                            {
+                                "x": 3,
+                                "y": 3
+                            },
+                            {
+                                "x": 3,
+                                "y": 2
+                            }
+                        ],
+                        "icon": "🐊",
+                        "description": "Nada por el canal central"
+                    },
+                    {
+                        "id": "croc_2",
+                        "name": "Cocodrilo Beta",
+                        "type": "patrol",
+                        "route": [
+                            {
+                                "x": 5,
+                                "y": 3
+                            },
+                            {
+                                "x": 5,
+                                "y": 2
+                            },
+                            {
+                                "x": 5,
+                                "y": 1
+                            },
+                            {
+                                "x": 5,
+                                "y": 2
+                            }
+                        ],
+                        "icon": "🐊",
+                        "description": "Patrulla el canal este"
+                    }
+                ]
+            },
+            {
+                "id": "space_cave",
+                "name": "La cueva espacial",
+                "theme": "cave",
+                "desc": "Gruta subterránea con cristales luminosos, barreras de energía intermitentes y un dron centinela.",
+                "gridCols": 8,
+                "gridRows": 5,
+                "targetPos": {
+                    "x": 7,
+                    "y": 2
+                },
+                "targetName": "Teletransportador Cuántico",
+                "targetIcon": "🌀",
+                "spawnPositions": [
+                    {
+                        "x": 0,
+                        "y": 2,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 0,
+                        "y": 0,
+                        "facing": "right"
+                    },
+                    {
+                        "x": 1,
+                        "y": 4,
+                        "facing": "up"
+                    }
+                ],
+                "staticObstacles": [
+                    {
+                        "x": 1,
+                        "y": 1,
+                        "name": "Estalagmita",
+                        "icon": "🧱"
+                    },
+                    {
+                        "x": 1,
+                        "y": 3,
+                        "name": "Estalagmita",
+                        "icon": "🧱"
+                    },
+                    {
+                        "x": 3,
+                        "y": 0,
+                        "name": "Cristal gigante",
+                        "icon": "💎"
+                    },
+                    {
+                        "x": 3,
+                        "y": 4,
+                        "name": "Cristal gigante",
+                        "icon": "💎"
+                    },
+                    {
+                        "x": 4,
+                        "y": 2,
+                        "name": "Pozo abisal",
+                        "icon": "🕳️"
+                    },
+                    {
+                        "x": 5,
+                        "y": 0,
+                        "name": "Pared rocosa",
+                        "icon": "🧱"
+                    },
+                    {
+                        "x": 5,
+                        "y": 4,
+                        "name": "Pared rocosa",
+                        "icon": "🧱"
+                    }
+                ],
+                "dynamicObstacles": [
+                    {
+                        "id": "laser_barrier_1",
+                        "name": "Barrera láser",
+                        "type": "toggle_hazard",
+                        "x": 3,
+                        "y": 2,
+                        "periodSeconds": 2,
+                        "activeIcon": "⚡",
+                        "dormantIcon": "▫️",
+                        "description": "Campo láser que titila cada 2 segundos"
+                    },
+                    {
+                        "id": "drone_patrol",
+                        "name": "Dron guardián",
+                        "type": "patrol",
+                        "route": [
+                            {
+                                "x": 6,
+                                "y": 1
+                            },
+                            {
+                                "x": 6,
+                                "y": 2
+                            },
+                            {
+                                "x": 6,
+                                "y": 3
+                            },
+                            {
+                                "x": 6,
+                                "y": 2
+                            }
+                        ],
+                        "icon": "🛸",
+                        "description": "Centinela que patrulla la entrada del teletransportador"
+                    }
+                ]
+            }
+        ],
+        "availableCommands": [
+            {
+                "cmd": "advance_1",
+                "label": "Avanzar 1 casillero",
+                "icon": "➡️"
+            },
+            {
+                "cmd": "advance_2",
+                "label": "Avanzar 2 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_3",
+                "label": "Avanzar 3 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "advance_4",
+                "label": "Avanzar 4 casilleros",
+                "icon": "⏩"
+            },
+            {
+                "cmd": "turn_right",
+                "label": "Girar a la derecha",
+                "icon": "🔄"
+            },
+            {
+                "cmd": "turn_left",
+                "label": "Girar a la izquierda",
+                "icon": "🔄"
+            }
+        ]
     }
   ]
 },
@@ -7075,6 +7493,14 @@ class CodingModuleManager {
       clearInterval(this.byteMissionTimerId);
       this.byteMissionTimerId = null;
     }
+    if (this.timeTrialTimerId) {
+      clearInterval(this.timeTrialTimerId);
+      this.timeTrialTimerId = null;
+    }
+    if (this.timeTrialDynamicId) {
+      clearInterval(this.timeTrialDynamicId);
+      this.timeTrialDynamicId = null;
+    }
     if (this.gridAnimationAbort) {
       this.gridAnimationAbort.isAborted = true;
       this.gridAnimationAbort = null;
@@ -7901,6 +8327,9 @@ class CodingModuleManager {
         break;
       case 'repair_rocket':
         this.renderRepairRocket(container, act);
+        break;
+      case 'time_trial':
+        this.renderTimeTrial(container, act);
         break;
       default:
         this.renderTheory(container, act);
@@ -11008,6 +11437,789 @@ class CodingModuleManager {
         this.onPlaySound('pop');
         document.body.removeChild(modal);
         if (typeof onRetry === 'function') onRetry();
+      };
+    }
+  }
+
+
+  // ========================================================
+  // MISIÓN 4: BITY CONTRARRELOJ (ARCADE / TIME TRIAL)
+  // ========================================================
+  renderTimeTrial(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+
+    // Estado general de la sesión Contrarreloj
+    let viewState = 'briefing'; // 'briefing' o 'playing'
+    let currentMapIndex = Math.floor(Math.random() * act.maps.length);
+    let attemptNumber = 1;
+    let spawnIndex = 0;
+    let remainingSeconds = act.timeLimitSeconds || 120;
+    let movesCount = 0;
+    let commands = [];
+    let isSimulating = false;
+    let activeExecutingIndex = -1;
+    let dynamicState = {}; // id -> patrol index o booleano activo
+
+    const deltas = {
+      right: { x: 1, y: 0, arrow: '➡️', deg: 0 },
+      down: { x: 0, y: 1, arrow: '⬇️', deg: 90 },
+      left: { x: -1, y: 0, arrow: '⬅️', deg: 180 },
+      up: { x: 0, y: -1, arrow: '⬆️', deg: 270 }
+    };
+    const turnRightMap = { right: 'down', down: 'left', left: 'up', up: 'right' };
+    const turnLeftMap = { right: 'up', up: 'left', left: 'down', down: 'right' };
+
+    const formatTime = (totalSec) => {
+      const m = Math.floor(Math.max(0, totalSec) / 60);
+      const s = Math.max(0, totalSec) % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    };
+
+    const clearTimers = () => {
+      if (this.timeTrialTimerId) {
+        clearInterval(this.timeTrialTimerId);
+        this.timeTrialTimerId = null;
+      }
+      if (this.timeTrialDynamicId) {
+        clearInterval(this.timeTrialDynamicId);
+        this.timeTrialDynamicId = null;
+      }
+    };
+
+    // Inicializa el estado dinámico de obstáculos
+    const initDynamicState = (map) => {
+      dynamicState = {};
+      (map.dynamicObstacles || []).forEach(o => {
+        if (o.type === 'patrol') {
+          dynamicState[o.id] = 0; // índice en la ruta
+        } else if (o.type === 'toggle_hazard') {
+          dynamicState[o.id] = true; // activo
+        }
+      });
+    };
+
+    // Retorna la posición y estado de un obstáculo dinámico
+    const getDynamicObstacleAt = (map, x, y) => {
+      for (const o of (map.dynamicObstacles || [])) {
+        if (o.type === 'patrol') {
+          const stepIdx = dynamicState[o.id] || 0;
+          const pos = o.route[stepIdx];
+          if (pos && pos.x === x && pos.y === y) {
+            return { isHazard: true, obstacle: o, icon: o.icon };
+          }
+        } else if (o.type === 'toggle_hazard') {
+          if (o.x === x && o.y === y) {
+            const isActive = !!dynamicState[o.id];
+            return {
+              isHazard: isActive,
+              obstacle: o,
+              icon: isActive ? (o.activeIcon || '🔥') : (o.dormantIcon || '💨')
+            };
+          }
+        }
+      }
+      return null;
+    };
+
+    const startPlayingTimers = () => {
+      clearTimers();
+
+      // Temporizador principal de 120 segundos
+      this.timeTrialTimerId = setInterval(() => {
+        if (remainingSeconds > 0) {
+          remainingSeconds--;
+          updateHudTimer();
+
+          if (remainingSeconds <= 10 && remainingSeconds > 0) {
+            this.onPlaySound('pop');
+          }
+
+          if (remainingSeconds === 0) {
+            clearTimers();
+            handleTimeoutDefeat();
+          }
+        }
+      }, 1000);
+
+      // Temporizador de obstáculos dinámicos
+      this.timeTrialDynamicId = setInterval(() => {
+        const curMap = act.maps[currentMapIndex];
+        (curMap.dynamicObstacles || []).forEach(o => {
+          if (o.type === 'patrol') {
+            const curStep = dynamicState[o.id] || 0;
+            dynamicState[o.id] = (curStep + 1) % o.route.length;
+          } else if (o.type === 'toggle_hazard') {
+            dynamicState[o.id] = !dynamicState[o.id];
+          }
+        });
+        refreshBoardCells();
+      }, 1200);
+    };
+
+    const updateHudTimer = () => {
+      const timerEl = document.getElementById('tt-timer-digits');
+      const boxEl = document.getElementById('tt-stopwatch-box');
+      if (timerEl) {
+        timerEl.textContent = formatTime(remainingSeconds);
+      }
+      if (boxEl) {
+        if (remainingSeconds <= 10) {
+          boxEl.className = 'bity-tt-stopwatch-box timer-critical';
+        } else if (remainingSeconds <= 30) {
+          boxEl.className = 'bity-tt-stopwatch-box timer-warning';
+        } else {
+          boxEl.className = 'bity-tt-stopwatch-box';
+        }
+      }
+    };
+
+    const handleTimeoutDefeat = () => {
+      if (isSimulating) isSimulating = false;
+      this.onPlaySound('wrong');
+
+      const curMap = act.maps[currentMapIndex];
+      const modal = document.createElement('div');
+      modal.className = 'bity-defeat-modal-backdrop';
+
+      if (attemptNumber < (act.maxAttemptsPerMap || 3)) {
+        // Intento fallido pero le quedan intentos en el mismo mapa
+        modal.innerHTML = `
+          <div class="bity-defeat-card">
+            <div class="bity-crying-box">
+              ${getByteAvatarSvg('worried')}
+            </div>
+            <h3 class="bity-defeat-title" style="color:#f59e0b;">⏰ ¡TIEMPO AGOTADO EN EL INTENTO ${attemptNumber}!</h3>
+            <p class="bity-defeat-message">
+              Se terminaron los 120 segundos. ¡No te preocupes! Bity comenzará desde otra posición de salida en este mismo mapa (${curMap.name}).
+            </p>
+            <div class="bity-defeat-hint-box" style="background:#fffbeb; border-color:#fde68a; color:#b45309;">
+              <span style="font-size:1.4rem;">🏁</span>
+              <div>Siguiente intento: <strong>Intento ${attemptNumber + 1} de ${act.maxAttemptsPerMap || 3}</strong> con 120 segundos nuevos.</div>
+            </div>
+            <button type="button" id="btn-tt-next-attempt" class="btn-bity-retry" style="background:linear-gradient(180deg, #f59e0b, #d97706); border-color:#b45309;">
+              <span>🔄</span> SIGUIENTE INTENTO (${attemptNumber + 1} de ${act.maxAttemptsPerMap || 3})
+            </button>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        const btnNext = modal.querySelector('#btn-tt-next-attempt');
+        if (btnNext) {
+          btnNext.onclick = () => {
+            document.body.removeChild(modal);
+            attemptNumber++;
+            spawnIndex = (spawnIndex + 1) % curMap.spawnPositions.length;
+            remainingSeconds = act.timeLimitSeconds || 120;
+            movesCount = 0;
+            commands = [];
+            isSimulating = false;
+            activeExecutingIndex = -1;
+            drawPlayingScreen();
+            startPlayingTimers();
+          };
+        }
+      } else {
+        // Se agotaron los 3 intentos en este mapa -> Cambiar a otro mapa
+        const otherMapIndices = act.maps.map((m, idx) => idx).filter(i => i !== currentMapIndex);
+        const nextMapIdx = otherMapIndices[Math.floor(Math.random() * otherMapIndices.length)];
+        const nextMap = act.maps[nextMapIdx];
+
+        modal.innerHTML = `
+          <div class="bity-defeat-card">
+            <div class="bity-crying-box">
+              ${getByteAvatarSvg('crying')}
+            </div>
+            <h3 class="bity-defeat-title" style="color:#ef4444;">❌ ¡SE AGOTARON LOS 3 INTENTOS!</h3>
+            <p class="bity-defeat-message">
+              Completaste tus 3 oportunidades en "${curMap.name}". ¡Vamos a generar un escenario diferente para reiniciar el desafío contrarreloj!
+            </p>
+            <div class="bity-defeat-hint-box" style="background:#eff6ff; border-color:#bfdbfe; color:#1e40af;">
+              <span style="font-size:1.4rem;">🗺️</span>
+              <div>Próximo mapa: <strong>${nextMap.name}</strong> (${nextMap.desc}).</div>
+            </div>
+            <button type="button" id="btn-tt-change-map" class="btn-bity-retry">
+              <span>🚀</span> ¡PROBAR NUEVO MAPA!
+            </button>
+          </div>
+        `;
+        document.body.appendChild(modal);
+
+        const btnChange = modal.querySelector('#btn-tt-change-map');
+        if (btnChange) {
+          btnChange.onclick = () => {
+            document.body.removeChild(modal);
+            currentMapIndex = nextMapIdx;
+            attemptNumber = 1;
+            spawnIndex = 0;
+            remainingSeconds = act.timeLimitSeconds || 120;
+            movesCount = 0;
+            commands = [];
+            isSimulating = false;
+            activeExecutingIndex = -1;
+            initDynamicState(nextMap);
+            drawPlayingScreen();
+            startPlayingTimers();
+          };
+        }
+      }
+    };
+
+    // --------------------------------------------------------
+    // PANTALLA 1: BRIEFING Y REGLAS (EL TIEMPO NO CORRE AQUÍ)
+    // --------------------------------------------------------
+    const drawBriefingScreen = () => {
+      clearTimers();
+      const curMap = act.maps[currentMapIndex];
+
+      this.updateByte(
+        '¡Desafío Contrarreloj! Tenés 2 minutos para programar el camino hacia la meta esquivando obstáculos en movimiento.',
+        'happy'
+      );
+
+      container.innerHTML = `
+        <div class="bity-challenge-stage">
+          ${this.createActivityHeader(act, false)}
+
+          <div class="bity-tt-briefing-card">
+            <div style="font-size:3.5rem;">🏁 ⏱️ 🤖</div>
+            <h2 style="font-size:2rem; font-weight:900; color:#facc15; margin:0;">
+              ${act.title}
+            </h2>
+            <p style="font-size:1.15rem; color:#cbd5e1; margin:0;">
+              Modo de alta velocidad y competencia. Programá el recorrido más rápido y con menos movimientos antes de que se agote el cronómetro.
+            </p>
+
+            <div class="bity-tt-rules-list">
+              <div>⏱️ <strong>Tiempo límite:</strong> 120 segundos (2 minutos) por intento. El reloj comienza cuando pulses el botón de abajo.</div>
+              <div>🔄 <strong>3 Intentos por mapa:</strong> Si se termina el tiempo, Bity cambia de punto de partida en el mismo mapa.</div>
+              <div>🗺️ <strong>Cambio de mapa:</strong> Si se agotan los 3 intentos, se genera automáticamente un mapa completamente nuevo.</div>
+              <div>🚧 <strong>Obstáculos dinámicos:</strong> ¡Atención con los volcanes, cocodrilos y lásers que se mueven o titilan en tiempo real!</div>
+              <div>🏆 <strong>Ranking escolar:</strong> Tu tiempo y movimientos se guardarán para comparar tus récords con tus compañeros.</div>
+            </div>
+
+            <div style="margin:6px 0;">
+              <span style="font-weight:800; color:#94a3b8; font-size:0.95rem;">Escenario seleccionado para esta ronda:</span><br>
+              <span class="bity-tt-map-preview-tag" style="margin-top:6px;">${curMap.name} • ${curMap.desc}</span>
+            </div>
+
+            <button type="button" id="btn-tt-start-mission" class="btn-bity-run" style="width:100%; justify-content:center; padding:16px 28px; font-size:1.3rem;">
+              <span>🚀</span> ¡COMENZAR MISIÓN CONTRA EL RELOJ!
+            </button>
+          </div>
+        </div>
+      `;
+
+      const btnStart = document.getElementById('btn-tt-start-mission');
+      if (btnStart) {
+        btnStart.onclick = () => {
+          this.onPlaySound('fanfare');
+          viewState = 'playing';
+          initDynamicState(curMap);
+          drawPlayingScreen();
+          startPlayingTimers();
+        };
+      }
+    };
+
+    // --------------------------------------------------------
+    // PANTALLA 2: JUEGO ACTIVO Y MAPA EN TIEMPO REAL
+    // --------------------------------------------------------
+    const drawPlayingScreen = () => {
+      const curMap = act.maps[currentMapIndex];
+      const curSpawn = curMap.spawnPositions[spawnIndex];
+      let playerPos = isSimulating ? { ...playerSimPos } : { ...curSpawn };
+      let playerFacing = isSimulating ? playerSimFacing : curSpawn.facing;
+
+      this.updateByte(
+        `¡Corré contra el reloj en ${curMap.name}! Programá tus movimientos antes de que termine el tiempo.`,
+        remainingSeconds <= 30 ? 'worried' : 'normal'
+      );
+
+      container.innerHTML = `
+        <div class="bity-challenge-stage">
+          ${this.createActivityHeader(act, false)}
+
+          <!-- Card de Misión y Contadores HUD -->
+          <div class="bity-mission-card ${'theme-' + curMap.theme}">
+            <div class="bity-mission-header">
+              <div class="bity-mission-title-box">
+                <span class="bity-mission-badge" style="background:#eab308; color:#0f172a;">🏁 MISIÓN 4</span>
+                <h3 class="bity-mission-title" style="color:#facc15;">${curMap.name}</h3>
+              </div>
+              <span style="font-size:0.9rem; font-weight:800; color:#cbd5e1;">${curMap.desc}</span>
+            </div>
+
+            <!-- HUD de Carrera -->
+            <div class="bity-tt-hud">
+              <div class="bity-tt-stopwatch-box" id="tt-stopwatch-box">
+                <span style="font-size:1.5rem;">⏱️</span>
+                <span class="bity-tt-digits" id="tt-timer-digits">${formatTime(remainingSeconds)}</span>
+              </div>
+
+              <div class="bity-m3-counter-pill moves">
+                <span>🕹️</span>
+                <span>Movimientos: <strong id="tt-moves-label">${movesCount}</strong></span>
+              </div>
+
+              <div class="bity-m3-counter-pill" style="border-color:#eab308; color:#fde047;">
+                <span>🎯</span>
+                <span>Intento: <strong>${attemptNumber} de ${act.maxAttemptsPerMap || 3}</strong></span>
+              </div>
+
+              <div class="bity-m3-counter-pill" style="border-color:#38bdf8; color:#7dd3fc;">
+                <span>📍</span>
+                <span>Punto de partida: <strong>#${spawnIndex + 1}</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layout: Laberinto y Panel de Código -->
+          <div class="bity-stage-layout ${'theme-' + curMap.theme}">
+            <!-- Columna Laberinto -->
+            <div class="bity-maze-wrapper">
+              <div class="bity-maze-board" id="bity-tt-board" style="grid-template-columns: repeat(${curMap.gridCols}, 1fr); width: ${curMap.gridCols * 64}px; max-width: 100%;">
+                ${renderGridCells(curMap, playerPos, playerFacing)}
+              </div>
+
+              <!-- Controles de Carrera -->
+              <div class="bity-maze-controls">
+                <button type="button" id="btn-tt-run" class="btn-bity-run" ${isSimulating ? 'disabled' : ''}>
+                  <span>▶️</span> PROBAR RECORRIDO
+                </button>
+                <button type="button" id="btn-tt-reset-pos" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🔄</span> REINICIAR POSICIÓN
+                </button>
+                <button type="button" id="btn-tt-clear-all" class="btn-bity-secondary" ${isSimulating ? 'disabled' : ''}>
+                  <span>🗑️</span> BORRAR TODO
+                </button>
+              </div>
+
+              <div id="tt-inline-alert" style="width:100%; display:none; margin-top:8px;"></div>
+            </div>
+
+            <!-- Columna Programa y Paleta -->
+            <div class="bity-code-panel">
+              <div class="bity-palette-box">
+                <span class="bity-palette-label">📥 INSTRUCCIONES DISPONIBLES (HACÉ CLIC PARA AGREGAR):</span>
+                <div class="bity-palette-buttons">
+                  ${act.availableCommands.map(cmd => `
+                    <button type="button" class="btn-palette-cmd" data-cmd="${cmd.cmd}" data-label="${cmd.label}" ${isSimulating ? 'disabled' : ''}>
+                      <span>${cmd.icon || '➡️'}</span>
+                      <span>${cmd.label}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <div class="bity-panel-header" style="margin-top: 8px;">
+                <h4 class="bity-panel-title">
+                  <span>📜</span> TU PROGRAMA
+                </h4>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #0284c7;">
+                  ${commands.length} instrucciones
+                </span>
+              </div>
+
+              <div class="bity-builder-sequence">
+                ${commands.length === 0 ? `
+                  <div class="bity-builder-empty">
+                    ¡Tu programa está vacío! Hacé clic en las instrucciones de arriba para construir tu ruta antes de que se agote el tiempo.
+                  </div>
+                ` : commands.map((c, idx) => {
+                  const isExec = (activeExecutingIndex === idx);
+                  return `
+                    <div class="bity-step-item ${isExec ? 'executing' : ''}">
+                      <div class="bity-step-info">
+                        <span class="bity-step-num">${idx + 1}</span>
+                        <span>${c.label}</span>
+                      </div>
+                      <button type="button" class="btn-remove-cmd" data-cmd-idx="${idx}" title="Quitar" ${isSimulating ? 'disabled' : ''}>
+                        ✖
+                      </button>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      bindPlayingEvents();
+    };
+
+    let playerSimPos = { x: 0, y: 0 };
+    let playerSimFacing = 'right';
+
+    const renderGridCells = (map, playerPos, playerFacing) => {
+      let html = '';
+      for (let r = 0; r < map.gridRows; r++) {
+        for (let c = 0; c < map.gridCols; c++) {
+          const isPlayer = (playerPos.x === c && playerPos.y === r);
+          const isTarget = (map.targetPos.x === c && map.targetPos.y === r);
+          const staticObs = (map.staticObstacles || []).find(o => o.x === c && o.y === r);
+          const dynamicObs = getDynamicObstacleAt(map, c, r);
+          const curSpawn = map.spawnPositions[spawnIndex];
+          const isStart = (curSpawn.x === c && curSpawn.y === r);
+
+          let cellClass = 'bity-cell';
+          if (isStart) cellClass += ' start-cell';
+          if (isTarget) cellClass += ' target-cell';
+          if (staticObs) cellClass += ' obstacle-cell';
+
+          let content = '';
+          if (isPlayer) {
+            const rot = deltas[playerFacing].deg;
+            const arrow = deltas[playerFacing].arrow;
+            content = `
+              <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
+                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-pointer">${arrow}</span>
+              </div>
+            `;
+          } else if (isTarget) {
+            content = `<span class="bity-cell-icon" title="${map.targetName}">${map.targetIcon || '🏁'}</span>`;
+          } else if (dynamicObs) {
+            const dynClass = dynamicObs.isHazard ? 'hazard-active' : 'hazard-dormant';
+            content = `<span class="bity-cell-icon ${dynClass}" title="${dynamicObs.obstacle.name}">${dynamicObs.icon}</span>`;
+          } else if (staticObs) {
+            content = `<span class="bity-cell-icon" title="${staticObs.name}">${staticObs.icon || '🪨'}</span>`;
+          }
+
+          html += `
+            <div class="${cellClass}" style="width: 58px; height: 58px;" id="tt-cell-${c}-${r}">
+              <span class="bity-cell-coord">${c},${r}</span>
+              ${content}
+            </div>
+          `;
+        }
+      }
+      return html;
+    };
+
+    const refreshBoardCells = () => {
+      const boardEl = document.getElementById('bity-tt-board');
+      if (!boardEl) return;
+      const curMap = act.maps[currentMapIndex];
+      const curSpawn = curMap.spawnPositions[spawnIndex];
+      const pPos = isSimulating ? playerSimPos : curSpawn;
+      const pFacing = isSimulating ? playerSimFacing : curSpawn.facing;
+      boardEl.innerHTML = renderGridCells(curMap, pPos, pFacing);
+    };
+
+    const showInlineAlert = (msg, type = 'error') => {
+      const el = document.getElementById('tt-inline-alert');
+      if (!el) return;
+      el.style.display = 'block';
+      el.className = 'byte-inline-error-card';
+      el.innerHTML = `
+        <div class="byte-inline-error-head">
+          <span>${type === 'error' ? '⚠️' : 'ℹ️'}</span>
+          <div class="byte-inline-error-text"><strong>${msg}</strong></div>
+        </div>
+      `;
+    };
+
+    const hideInlineAlert = () => {
+      const el = document.getElementById('tt-inline-alert');
+      if (el) el.style.display = 'none';
+    };
+
+    const bindPlayingEvents = () => {
+      container.querySelectorAll('.btn-palette-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const cmd = btn.getAttribute('data-cmd');
+          const label = btn.getAttribute('data-label');
+          commands.push({ cmd, label });
+          drawPlayingScreen();
+        };
+      });
+
+      container.querySelectorAll('.btn-remove-cmd').forEach(btn => {
+        btn.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          const idx = parseInt(btn.getAttribute('data-cmd-idx'));
+          commands.splice(idx, 1);
+          drawPlayingScreen();
+        };
+      });
+
+      const btnRun = document.getElementById('btn-tt-run');
+      if (btnRun) {
+        btnRun.onclick = () => runSimulation();
+      }
+
+      const btnResetPos = document.getElementById('btn-tt-reset-pos');
+      if (btnResetPos) {
+        btnResetPos.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          hideInlineAlert();
+          movesCount = 0;
+          drawPlayingScreen();
+        };
+      }
+
+      const btnClearAll = document.getElementById('btn-tt-clear-all');
+      if (btnClearAll) {
+        btnClearAll.onclick = () => {
+          if (isSimulating) return;
+          this.onPlaySound('pop');
+          hideInlineAlert();
+          commands = [];
+          movesCount = 0;
+          drawPlayingScreen();
+        };
+      }
+    };
+
+    const runSimulation = async () => {
+      if (isSimulating) return;
+      hideInlineAlert();
+
+      if (commands.length === 0) {
+        this.onPlaySound('wrong');
+        showInlineAlert('¡Agregá al menos una instrucción antes de probar el recorrido!', 'error');
+        return;
+      }
+
+      const curMap = act.maps[currentMapIndex];
+      const curSpawn = curMap.spawnPositions[spawnIndex];
+
+      isSimulating = true;
+      activeExecutingIndex = -1;
+      playerSimPos = { ...curSpawn };
+      playerSimFacing = curSpawn.facing;
+      movesCount = 0;
+      drawPlayingScreen();
+
+      let failed = false;
+      let failReason = '';
+
+      for (let i = 0; i < commands.length; i++) {
+        // Si el tiempo se agotó mientras corría la simulación, cortar
+        if (remainingSeconds <= 0) {
+          failed = true;
+          break;
+        }
+
+        activeExecutingIndex = i;
+        refreshBoardCells();
+        this.onPlaySound('pop');
+        await new Promise(r => setTimeout(r, 380));
+
+        const step = commands[i];
+
+        if (step.cmd === 'turn_right') {
+          playerSimFacing = turnRightMap[playerSimFacing];
+          refreshBoardCells();
+          await new Promise(r => setTimeout(r, 220));
+        } else if (step.cmd === 'turn_left') {
+          playerSimFacing = turnLeftMap[playerSimFacing];
+          refreshBoardCells();
+          await new Promise(r => setTimeout(r, 220));
+        } else if (step.cmd.startsWith('advance')) {
+          const count = parseInt(step.cmd.split('_')[1]) || 1;
+          const d = deltas[playerSimFacing];
+
+          for (let s = 1; s <= count; s++) {
+            if (remainingSeconds <= 0) {
+              failed = true;
+              break;
+            }
+
+            movesCount++;
+            const movesLabel = document.getElementById('tt-moves-label');
+            if (movesLabel) movesLabel.textContent = movesCount;
+
+            const nx = playerSimPos.x + d.x;
+            const ny = playerSimPos.y + d.y;
+
+            // 1. Límites
+            if (nx < 0 || nx >= curMap.gridCols || ny < 0 || ny >= curMap.gridRows) {
+              failed = true;
+              failReason = `¡Cuidado! Bity chocó contra el borde del mapa en el paso ${i + 1}.`;
+              break;
+            }
+
+            // 2. Obstáculo estático
+            const hitStatic = (curMap.staticObstacles || []).find(o => o.x === nx && o.y === ny);
+            if (hitStatic) {
+              failed = true;
+              failReason = `¡Cuidado! Bity chocó contra ${hitStatic.name} en el paso ${i + 1}.`;
+              playerSimPos = { x: nx, y: ny };
+              refreshBoardCells();
+              break;
+            }
+
+            // 3. Obstáculo dinámico
+            const hitDynamic = getDynamicObstacleAt(curMap, nx, ny);
+            if (hitDynamic && hitDynamic.isHazard) {
+              failed = true;
+              failReason = `¡Peligro! Bity fue alcanzado por ${hitDynamic.obstacle.name} en el paso ${i + 1}.`;
+              playerSimPos = { x: nx, y: ny };
+              refreshBoardCells();
+              break;
+            }
+
+            playerSimPos = { x: nx, y: ny };
+            refreshBoardCells();
+            await new Promise(r => setTimeout(r, 200));
+          }
+        }
+
+        if (failed) break;
+      }
+
+      activeExecutingIndex = -1;
+      isSimulating = false;
+
+      // Verificar si llegó a la meta antes de que termine el tiempo
+      const reachedGoal = (!failed && remainingSeconds > 0 && playerSimPos.x === curMap.targetPos.x && playerSimPos.y === curMap.targetPos.y);
+
+      if (reachedGoal) {
+        clearTimers();
+        const timeUsed = (act.timeLimitSeconds || 120) - remainingSeconds;
+        this.showBityTimeTrialVictoryModal(act, curMap, timeUsed, movesCount, attemptNumber);
+      } else if (remainingSeconds > 0) {
+        // Falló en llegar a la meta pero aún queda tiempo: informar y permitir seguir editando
+        this.onPlaySound('wrong');
+        const notReachedMsg = 'Bity completó las instrucciones pero no llegó a la meta. ¡Agregá más pasos antes de que termine el tiempo!';
+        showInlineAlert(failReason || notReachedMsg, 'error');
+
+        // Bity regresa a la salida para permitir corregir inmediatamente
+        setTimeout(() => {
+          playerSimPos = { ...curSpawn };
+          playerSimFacing = curSpawn.facing;
+          refreshBoardCells();
+        }, 1200);
+      }
+    };
+
+    // Iniciar con la pantalla de briefing
+    drawBriefingScreen();
+  }
+
+  // ========================================================
+  // MODAL DE VICTORIA Y PODIO DE COMPETENCIA CONTRARRELOJ
+  // ========================================================
+  showBityTimeTrialVictoryModal(act, map, timeUsed, moves, attempt) {
+    const isGradeOne = this.currentGrade === 1;
+    this.onPlaySound('fanfare');
+    this.onLaunchConfetti();
+    this.recordActivitySuccess(act.id, 25);
+
+    const formatTime = (totalSec) => {
+      const m = Math.floor(Math.max(0, totalSec) / 60);
+      const s = Math.max(0, totalSec) % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    };
+
+    // Guardado y comparación en localStorage
+    let records = [];
+    try {
+      records = JSON.parse(localStorage.getItem('lego_bity_contrarreloj_records') || '[]');
+    } catch (e) {
+      records = [];
+    }
+
+    const currentRun = {
+      mapId: map.id,
+      mapName: map.name,
+      timeUsed: timeUsed,
+      timeStr: formatTime(timeUsed),
+      moves: moves,
+      attempts: attempt,
+      date: new Date().toISOString()
+    };
+
+    const prevBest = records.length > 0 ? records[0] : null;
+    const isNewRecord = !prevBest || (currentRun.timeUsed < prevBest.timeUsed) || (currentRun.timeUsed === prevBest.timeUsed && currentRun.moves < prevBest.moves);
+
+    records.push(currentRun);
+    // Ordenamiento oficial de competencia escolar:
+    // 1. Menor tiempo de resolución
+    // 2. Menor cantidad de movimientos (desempate)
+    // 3. Menor cantidad de intentos utilizados
+    records.sort((a, b) => {
+      if (a.timeUsed !== b.timeUsed) return a.timeUsed - b.timeUsed;
+      if (a.moves !== b.moves) return a.moves - b.moves;
+      return a.attempts - b.attempts;
+    });
+
+    try {
+      localStorage.setItem('lego_bity_contrarreloj_records', JSON.stringify(records.slice(0, 10)));
+    } catch (e) {}
+
+    const modal = document.createElement('div');
+    modal.className = 'bity-repair-modal-backdrop';
+    modal.innerHTML = `
+      <div class="bity-podium-card">
+        <div style="font-size:3.8rem; line-height:1;">🏆 🏁</div>
+
+        ${isNewRecord ? `<div class="bity-record-badge">🌟 ¡NUEVO RÉCORD PERSONAL!</div>` : ''}
+
+        <h3 class="bity-victory-heading" style="color:#facc15; font-size:1.9rem; margin:0;">
+          🎉 ¡MISIÓN CONTRARRELOJ COMPLETADA!
+        </h3>
+
+        <p class="bity-victory-message" style="margin:0;">
+          ¡Excelente velocidad y planificación! Guiaste a Bity a través de <strong>${map.name}</strong> esquivando todos los obstáculos dinámicos antes del límite de tiempo.
+        </p>
+
+        <!-- Estadísticas de Carrera -->
+        <div class="bity-repair-stats-grid">
+          <div class="bity-stat-box">
+            <span>TIEMPO DE RESOLUCIÓN:</span>
+            <span class="bity-stat-val" style="color:#facc15; font-family:monospace; font-size:1.35rem;">⏱️ ${formatTime(timeUsed)}</span>
+          </div>
+          <div class="bity-stat-box">
+            <span>MOVIMIENTOS:</span>
+            <span class="bity-stat-val">🕹️ ${moves}</span>
+          </div>
+          <div class="bity-stat-box">
+            <span>INTENTO UTILIZADO:</span>
+            <span class="bity-stat-val" style="color:#86efac;">🎯 Intento ${attempt} de ${act.maxAttemptsPerMap || 3}</span>
+          </div>
+          <div class="bity-stat-box">
+            <span>MEJOR TIEMPO GUARDADO:</span>
+            <span class="bity-stat-val" style="color:#38bdf8; font-family:monospace;">🥇 ${records[0].timeStr}</span>
+          </div>
+        </div>
+
+        <div class="bity-victory-reward-box" style="width:100%; box-sizing:border-box;">
+          +25 PUNTOS • ⭐⭐⭐ ¡PILOTO DE VELOCIDAD!
+        </div>
+
+        <div style="display:flex; gap:10px; width:100%; flex-wrap:wrap;">
+          <button type="button" id="btn-tt-replay-race" class="btn-bity-secondary" style="flex:1; justify-content:center; padding:12px 18px; font-size:1rem;">
+            <span>🔄</span> ¡CORRER EN OTRO MAPA!
+          </button>
+          <button type="button" id="btn-tt-finish-race" class="btn-stage-next" style="flex:1; justify-content:center; padding:12px 18px; font-size:1rem;">
+            <span>✨</span> CONTINUAR AL TEMARIO ➡️
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const btnReplay = modal.querySelector('#btn-tt-replay-race');
+    if (btnReplay) {
+      btnReplay.onclick = () => {
+        document.body.removeChild(modal);
+        this.renderTimeTrial(document.getElementById('coding-stage-container'), act);
+      };
+    }
+
+    const btnFinish = modal.querySelector('#btn-tt-finish-race');
+    if (btnFinish) {
+      btnFinish.onclick = () => {
+        document.body.removeChild(modal);
+        this.nextActivity();
       };
     }
   }
