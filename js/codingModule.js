@@ -757,6 +757,17 @@ const CODING_DATA = {
             "PISTA 2: DESPUÉS GIRÁ A LA DERECHA Y BAJÁ 2 CASILLEROS HASTA LA ESTACIÓN 2.",
             "PISTA 3: DESDE LA ESTACIÓN 2, GIRÁ A LA IZQUIERDA, AVANZÁ 2 A LA ESTACIÓN 3 Y SUBÍ AL CENTRO DE REPUESTOS."
         ]
+    },
+    {
+        "id": "g1_hw_final_platformer",
+        "type": "platformer_game",
+        "title": "🎮 DESAFÍO FINAL: INSTRUCCIONES",
+        "badge": "VIDEOJUEGO",
+        "hints": [
+            "PISTA 1: USÁ LAS FLECHAS O BOTONES TÁCTILES PARA CAMINAR Y SALTAR.",
+            "PISTA 2: ESQUIVÁ LOS POZOS Y ROBOTS ENEMIGOS PARA NO PERDER VIDAS.",
+            "PISTA 3: RECOGÉ LA FLOR, EL HONGO Y LA BATERÍA PARA RESPONDER SUS PREGUNTAS Y LLEGAR A LA META."
+        ]
     }
   ]
 },
@@ -2191,6 +2202,17 @@ const CODING_DATA = {
             "Pista 2: Bajá 1 casillero y girá a la derecha para llegar a la Estación 2 en (4, 1).",
             "Pista 3: Descendé a la fila inferior y avanzá hacia la izquierda para conectar con la Estación 3 y el Centro de Repuestos."
         ]
+    },
+    {
+        "id": "g2_hw_final_platformer",
+        "type": "platformer_game",
+        "title": "🎮 Desafío final: Instrucciones",
+        "badge": "Videojuego",
+        "hints": [
+            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
+            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
+            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
+        ]
     }
   ]
 },
@@ -3546,6 +3568,17 @@ const CODING_DATA = {
             "Pista 2: Avanzá por la fila 0 hasta la columna 5 y descendé a la Estación 2.",
             "Pista 3: Desde la Estación 2, avanzá 3 casilleros hacia la izquierda, bajá a la Estación 3 y entrá al Centro de Repuestos."
         ]
+    },
+    {
+        "id": "g3_hw_final_platformer",
+        "type": "platformer_game",
+        "title": "🎮 Desafío final: Instrucciones",
+        "badge": "Videojuego",
+        "hints": [
+            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
+            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
+            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
+        ]
     }
   ]
 },
@@ -4853,6 +4886,17 @@ const CODING_DATA = {
             "Pista 1: Avanzá 3 casilleros a la Estación 1, bajá 2 y avanzá 2 a la Estación 2 (7 movimientos usados).",
             "Pista 2: Bajá 2 a la fila 4 y avanzá 3 casilleros a la izquierda para alcanzar la Estación 3.",
             "Pista 3: Desde la Estación 3 en (2, 4), solo necesitás subir 1 casillero al Centro de Repuestos (13 movimientos en total)."
+        ]
+    },
+    {
+        "id": "g4_hw_final_platformer",
+        "type": "platformer_game",
+        "title": "🎮 Desafío final: Instrucciones",
+        "badge": "Videojuego",
+        "hints": [
+            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
+            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
+            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
         ]
     }
   ]
@@ -6650,6 +6694,17 @@ const CODING_DATA = {
                 "icon": "🔄"
             }
         ]
+    },
+    {
+        "id": "g5_hw_final_platformer",
+        "type": "platformer_game",
+        "title": "🎮 Desafío final: Instrucciones",
+        "badge": "Videojuego",
+        "hints": [
+            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
+            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
+            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
+        ]
     }
   ]
 },
@@ -7509,6 +7564,10 @@ class CodingModuleManager {
       this.byteMissionAbortToken.isAborted = true;
       this.byteMissionAbortToken = null;
     }
+    if (this.currentPlatformerGame) {
+      this.currentPlatformerGame.destroy();
+      this.currentPlatformerGame = null;
+    }
     this.gridIsRunning = false;
   }
 
@@ -8330,6 +8389,9 @@ class CodingModuleManager {
         break;
       case 'time_trial':
         this.renderTimeTrial(container, act);
+        break;
+      case 'platformer_game':
+        this.renderPlatformerGame(container, act);
         break;
       default:
         this.renderTheory(container, act);
@@ -12222,6 +12284,45 @@ class CodingModuleManager {
         this.nextActivity();
       };
     }
+  }
+
+  // ========================================================
+  // DESAFÍO FINAL: INSTRUCCIONES (PLATFORMER GAME 2D CON BITY)
+  // ========================================================
+  renderPlatformerGame(container, act) {
+    const isGradeOne = this.currentGrade === 1;
+    this.updateByte(
+      isGradeOne
+        ? '¡LLEGÓ EL DESAFÍO FINAL! CONTROLÁ A BITY, RESPONDÉ LAS PREGUNTAS Y LLEGÁ A LA META.'
+        : '¡Llegó el Desafío final! Controlá a Bity con las flechas o botones táctiles, respondé las preguntas y llegá a la meta.',
+      'excited'
+    );
+
+    container.innerHTML = `
+      <div class="bity-platformer-stage-root">
+        <div id="bity-platformer-game-slot"></div>
+      </div>
+    `;
+
+    const mountSlot = document.getElementById('bity-platformer-game-slot');
+    if (!mountSlot) return;
+
+    this.currentPlatformerGame = new BityPlatformerGame({
+      container: mountSlot,
+      grade: this.currentGrade,
+      onComplete: (stats) => {
+        const earnedPoints = (stats && stats.score) ? stats.score : 50;
+        this.storage.completeActivity(this.currentGrade, this.currentTopic, act.id, earnedPoints, 3);
+        this.updateHud();
+        this.nextActivity();
+      },
+      onBack: () => {
+        this.renderSyllabus();
+      },
+      onPlaySound: (type) => {
+        this.onPlaySound(type);
+      }
+    });
   }
 
   // ========================================================

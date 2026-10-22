@@ -5713,3 +5713,589 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
 }
 
 
+
+/* ========================================================
+   DESAFÍO FINAL: INSTRUCCIONES (PLATFORMER 2D CON BITY)
+   ======================================================== */
+
+.bity-platformer-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  user-select: none;
+}
+
+.bity-plat-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  padding: 10px 18px;
+  color: white;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2);
+}
+
+.plat-hud-left,
+.plat-hud-center,
+.plat-hud-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-plat-back {
+  background: #334155;
+  color: white;
+  border: 1.5px solid #64748b;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-plat-back:hover {
+  background: #475569;
+  border-color: #94a3b8;
+}
+
+.plat-hud-lives {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.plat-hud-label {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.plat-hud-hearts {
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.plat-hud-timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0284c7;
+  padding: 6px 18px;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.5);
+  transition: background 0.3s ease;
+}
+
+.plat-hud-timer-box.timer-warning {
+  background: #d97706;
+  box-shadow: 0 0 16px rgba(217, 119, 6, 0.6);
+}
+
+.plat-hud-timer-box.timer-danger {
+  background: #dc2626;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.8);
+  animation: timerCriticalPulse 0.8s infinite alternate;
+}
+
+.plat-timer-icon {
+  font-size: 1.1rem;
+}
+
+.plat-hud-timer-digits {
+  font-family: 'Courier New', monospace;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.plat-hud-score {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid #f59e0b;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 900;
+  color: #fbbf24;
+}
+
+.plat-hud-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.plat-badge-pending {
+  font-size: 1.25rem;
+  filter: grayscale(100%) opacity(0.4);
+  transition: all 0.3s ease;
+}
+
+.plat-badge-done {
+  font-size: 1.25rem;
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.15);
+  animation: popBadge 0.4s ease;
+}
+
+@keyframes popBadge {
+  0% { transform: scale(0.7); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1.15); }
+}
+
+/* Canvas Container */
+.bity-plat-canvas-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 0 3px #1e293b;
+}
+
+#bity-plat-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Modales dentro del contenedor de juego */
+.plat-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  padding: 16px;
+}
+
+.plat-modal-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 22px;
+  padding: 24px 28px;
+  max-width: 580px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.3);
+  text-align: center;
+  animation: modalPopIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPopIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.plat-briefing-icon,
+.plat-victory-icon,
+.plat-defeat-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.plat-modal-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  color: #38bdf8;
+}
+
+.plat-title-victory {
+  color: #4ade80;
+}
+
+.plat-title-defeat {
+  color: #f87171;
+}
+
+.plat-briefing-desc,
+.plat-victory-desc,
+.plat-defeat-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.plat-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.plat-rule-item {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.plat-rule-icon {
+  font-size: 1.4rem;
+}
+
+.plat-rule-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #facc15;
+  margin-bottom: 3px;
+}
+
+.plat-rule-item p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.btn-plat-start,
+.btn-plat-replay,
+.btn-plat-finish,
+.btn-plat-restart {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-plat-start {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-plat-start:hover {
+  background: linear-gradient(135deg, #34d399, #10b981);
+  transform: translateY(-2px);
+}
+
+.btn-plat-replay {
+  background: #0284c7;
+  color: white;
+}
+
+.btn-plat-replay:hover {
+  background: #0369a1;
+  transform: translateY(-2px);
+}
+
+.btn-plat-finish {
+  background: #10b981;
+  color: white;
+}
+
+.btn-plat-finish:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-plat-restart {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-plat-restart:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Tarjetas de Pregunta */
+.plat-question-card {
+  text-align: left;
+}
+
+.plat-q-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.plat-q-badge {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #38bdf8;
+}
+
+.plat-q-badge-math {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: #f59e0b;
+}
+
+.plat-q-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: white;
+}
+
+.plat-q-enunciado {
+  font-size: 1.1rem;
+  color: #f1f5f9;
+  margin: 10px 0 18px 0;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.plat-q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plat-opt-btn {
+  background: #334155;
+  color: white;
+  border: 2px solid #475569;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.plat-opt-btn:hover:not(:disabled) {
+  background: #475569;
+  border-color: #38bdf8;
+  transform: translateX(4px);
+}
+
+.plat-opt-btn.opt-correct {
+  background: #065f46 !important;
+  border-color: #10b981 !important;
+  color: #a7f3d0 !important;
+}
+
+.plat-opt-btn.opt-wrong {
+  background: #7f1d1d !important;
+  border-color: #ef4444 !important;
+  color: #fecaca !important;
+}
+
+.plat-q-feedback {
+  margin-top: 14px;
+  min-height: 24px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.plat-q-feedback.feedback-correct {
+  color: #4ade80;
+}
+
+.plat-q-feedback.feedback-wrong {
+  color: #f87171;
+}
+
+/* Barra de cuenta regresiva de matemática */
+.plat-math-countdown-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #f59e0b;
+}
+
+.plat-math-timer-digits {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #facc15;
+}
+
+.plat-math-progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 6px 0 12px 0;
+}
+
+.plat-math-progress-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #10b981;
+  transition: width 0.25s linear, background-color 0.3s ease;
+}
+
+/* Grilla de estadísticas de victoria */
+.plat-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 18px 0 24px 0;
+}
+
+.plat-stat-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.plat-stat-icon {
+  font-size: 1.3rem;
+}
+
+.plat-stat-val {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #38bdf8;
+}
+
+.plat-stat-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.plat-actions-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Controles táctiles en pantalla */
+.plat-touch-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.plat-touch-left-group,
+.plat-touch-right-group {
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.plat-touch-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.68);
+  border: 2px solid #38bdf8;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.plat-touch-btn:active {
+  transform: scale(0.92);
+  background: rgba(56, 189, 248, 0.5);
+}
+
+.plat-touch-btn-jump {
+  width: auto;
+  height: 58px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.75);
+  border-color: #34d399;
+  font-size: 1rem;
+  gap: 6px;
+}
+
+.plat-touch-btn-jump:active {
+  background: rgba(16, 185, 129, 1);
+}
+
+.plat-controls-legend {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  padding: 4px;
+}
+
+/* Responsive queries */
+@media (max-width: 680px) {
+  .plat-rules-grid {
+    grid-template-columns: 1fr;
+  }
+  .plat-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bity-plat-hud {
+    padding: 8px 12px;
+  }
+  .plat-hud-hearts {
+    font-size: 0.95rem;
+  }
+  .plat-touch-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  .plat-touch-btn-jump {
+    height: 50px;
+    padding: 0 16px;
+    font-size: 0.85rem;
+  }
+}
