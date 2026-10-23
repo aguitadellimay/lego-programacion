@@ -273,11 +273,11 @@ class BityPlatformerGame {
         { x: 1540, y: 230, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 }
       ];
 
-      // Coleccionables (4 preguntas: Flor, 2 Hongos, Batería matemática)
+      // Coleccionables (4 preguntas: Flor, Hongo, Chip de Algoritmo, Batería matemática)
       this.collectibles = [
         { id: 'c_flower', type: 'flower', cat: 'instrucciones', x: 240, y: 268, w: 36, h: 36, collected: false, icon: '🌸' },
         { id: 'c_mush1', type: 'mushroom', cat: 'programacion', x: 860, y: 248, w: 36, h: 36, collected: false, icon: '🍄' },
-        { id: 'c_mush2', type: 'mushroom', cat: 'algoritmos', x: 1480, y: 248, w: 36, h: 36, collected: false, icon: '🍄' },
+        { id: 'c_mush2', type: 'algo_chip', cat: 'algoritmos', x: 1480, y: 248, w: 36, h: 36, collected: false, icon: '🧩' },
         { id: 'c_batt', type: 'battery', cat: 'matematica', x: 1745, y: 140, w: 36, h: 36, collected: false, icon: '🔋' }
       ];
 
@@ -355,11 +355,11 @@ class BityPlatformerGame {
         { x: 1440, y: 230, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 }
       ];
 
-      // Coleccionables estratégicos
+      // Coleccionables estratégicos (Instrucciones, Programación, Algoritmos, Matemática)
       this.collectibles = [
         { id: 'c_flower', type: 'flower', cat: 'instrucciones', x: 200, y: 268, w: 36, h: 36, collected: false, icon: '🌸' },
         { id: 'c_mush1', type: 'mushroom', cat: 'programacion', x: 840, y: 238, w: 36, h: 36, collected: false, icon: '🍄' },
-        { id: 'c_mush2', type: 'mushroom', cat: 'algoritmos', x: 1420, y: 248, w: 36, h: 36, collected: false, icon: '🍄' },
+        { id: 'c_mush2', type: 'algo_chip', cat: 'algoritmos', x: 1420, y: 248, w: 36, h: 36, collected: false, icon: '🧩' },
         { id: 'c_batt', type: 'battery', cat: 'matematica', x: 2060, y: 238, w: 36, h: 36, collected: false, icon: '🔋' }
       ];
 
@@ -446,6 +446,7 @@ class BityPlatformerGame {
             <div class="plat-hud-status-icons" id="plat-collectibles-status">
               <span id="badge-obj-flower" class="plat-badge-pending" title="Instrucciones">🌸</span>
               <span id="badge-obj-mushroom" class="plat-badge-pending" title="Programación">🍄</span>
+              <span id="badge-obj-algo" class="plat-badge-pending" title="Algoritmos" style="${this.currentLevelIndex >= 2 ? '' : 'display:none;'}">🧩</span>
               <span id="badge-obj-battery" class="plat-badge-pending" title="Matemática">🔋</span>
             </div>
           </div>
@@ -1017,9 +1018,9 @@ class BityPlatformerGame {
       : null;
 
     if (item.type === 'battery') {
-      this.showMathQuestionModal(questionObj);
+      this.showMathQuestionModal(questionObj, item);
     } else {
-      this.showStandardQuestionModal(questionObj, item.type);
+      this.showStandardQuestionModal(questionObj, item);
     }
   }
 
@@ -1708,10 +1709,19 @@ class BityPlatformerGame {
     // Badges de coleccionables
     const bFlower = document.getElementById('badge-obj-flower');
     const bMushroom = document.getElementById('badge-obj-mushroom');
+    const bAlgo = document.getElementById('badge-obj-algo');
     const bBattery = document.getElementById('badge-obj-battery');
 
     if (bFlower) bFlower.className = this.questionsAnswered.flower ? 'plat-badge-done' : 'plat-badge-pending';
-    if (bMushroom) bMushroom.className = (this.questionsAnswered.mushroom || this.questionsAnswered.mushroom2) ? 'plat-badge-done' : 'plat-badge-pending';
+    if (bMushroom) bMushroom.className = this.questionsAnswered.mushroom ? 'plat-badge-done' : 'plat-badge-pending';
+    if (bAlgo) {
+      if (this.currentLevelIndex >= 2) {
+        bAlgo.style.display = 'inline-flex';
+        bAlgo.className = this.questionsAnswered.mushroom2 ? 'plat-badge-done' : 'plat-badge-pending';
+      } else {
+        bAlgo.style.display = 'none';
+      }
+    }
     if (bBattery) bBattery.className = this.questionsAnswered.math ? 'plat-badge-done' : 'plat-badge-pending';
   }
 
@@ -1899,7 +1909,12 @@ class BityPlatformerGame {
     const btnClose = document.getElementById('btn-close-levels-modal');
     if (btnClose) {
       btnClose.onclick = () => {
-        this.showBriefingModal();
+        if (this.isStarted && !this.isGameOver && !this.isVictory) {
+          this.hideModal();
+          this.isRunning = true;
+        } else {
+          this.showBriefingModal();
+        }
       };
     }
   }
@@ -1913,7 +1928,7 @@ class BityPlatformerGame {
     this.showBriefingModal();
   }
 
-  showStandardQuestionModal(questionObj, collectibleType) {
+  showStandardQuestionModal(questionObj, item) {
     // Si no vino pregunta desde el banco, generar fallback de emergencia
     const q = questionObj || {
       id: 'fallback_q',
@@ -1926,7 +1941,10 @@ class BityPlatformerGame {
       explanation: 'Una instrucción le indica a la computadora qué acción específica realizar.'
     };
 
-    const badgeIcon = collectibleType === 'flower' ? '🌸' : '🍄';
+    const badgeIcon = (typeof item === 'object' && item.icon)
+      ? item.icon
+      : (q.category === 'algoritmos' ? '🧩' : (q.category === 'programacion' ? '🍄' : '🌸'));
+
     const catLabel = q.category === 'algoritmos'
       ? (this.isGradeOne ? 'ALGORITMOS' : 'Algoritmos')
       : (q.category === 'programacion'
@@ -1953,10 +1971,10 @@ class BityPlatformerGame {
     `;
 
     this.showModal(html);
-    this.bindQuestionButtons(collectibleType, q);
+    this.bindQuestionButtons(item, q);
   }
 
-  showMathQuestionModal(questionObj) {
+  showMathQuestionModal(questionObj, item) {
     const q = questionObj || {
       id: 'fallback_math',
       question: this.isGradeOne ? '¡CALCULÁ TU BATERÍA! ¿CUÁNTO ES 15 + 17 − 2?' : '¡Calculá tu batería! ¿Cuánto es 15 + 17 − 2?',
@@ -1997,19 +2015,23 @@ class BityPlatformerGame {
 
     this.showModal(html);
     this.startMathTimer();
-    this.bindQuestionButtons('battery', q);
+    this.bindQuestionButtons(item || 'battery', q);
   }
 
-  bindQuestionButtons(collectibleType, qObj) {
+  bindQuestionButtons(item, qObj) {
     const btns = this.modalContent.querySelectorAll('.plat-opt-btn');
     const feedbackBox = document.getElementById('plat-q-feedback');
+
+    const itemId = (typeof item === 'object') ? item.id : item;
+    const itemType = (typeof item === 'object') ? item.type : item;
+    const itemCat = (typeof item === 'object') ? item.cat : (qObj ? qObj.category : item);
 
     btns.forEach((btn) => {
       btn.onclick = () => {
         btns.forEach(b => b.disabled = true);
         const isCorrect = btn.getAttribute('data-correct') === 'true';
 
-        if (collectibleType === 'battery') {
+        if (itemType === 'battery' || itemCat === 'matematica') {
           this.stopMathTimer();
         }
 
@@ -2017,9 +2039,10 @@ class BityPlatformerGame {
           btn.classList.add('opt-correct');
           this.playSound('coin');
 
-          if (collectibleType === 'flower') this.questionsAnswered.flower = true;
-          else if (collectibleType === 'mushroom') this.questionsAnswered.mushroom = true;
-          else if (collectibleType === 'battery') this.questionsAnswered.math = true;
+          if (itemId === 'c_flower' || itemCat === 'instrucciones') this.questionsAnswered.flower = true;
+          else if (itemId === 'c_mush2' || itemCat === 'algoritmos') this.questionsAnswered.mushroom2 = true;
+          else if (itemId === 'c_mush' || itemId === 'c_mush1' || itemCat === 'programacion') this.questionsAnswered.mushroom = true;
+          else if (itemId === 'c_batt' || itemCat === 'matematica' || itemType === 'battery') this.questionsAnswered.math = true;
 
           this.score += 20;
           this.updateHud();
@@ -2075,6 +2098,7 @@ class BityPlatformerGame {
     const sec = timeUsedSeconds % 60;
     const timeFormatted = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
 
+    const maxQuestions = this.currentLevelIndex >= 2 ? 4 : 3;
     const answeredCount = Object.values(this.questionsAnswered).filter(Boolean).length;
 
     if (this.currentLevelIndex < 3) {
@@ -2109,7 +2133,7 @@ class BityPlatformerGame {
             </div>
             <div class="plat-stat-box">
               <span class="plat-stat-icon">🎯</span>
-              <span class="plat-stat-val">${answeredCount}</span>
+              <span class="plat-stat-val">${answeredCount} / ${maxQuestions}</span>
               <span class="plat-stat-label">${this.isGradeOne ? 'PREGUNTAS' : 'Preguntas'}</span>
             </div>
             <div class="plat-stat-box">
@@ -2187,7 +2211,7 @@ class BityPlatformerGame {
             </div>
             <div class="plat-stat-box">
               <span class="plat-stat-icon">🎯</span>
-              <span class="plat-stat-val">${answeredCount}</span>
+              <span class="plat-stat-val">${answeredCount} / ${maxQuestions}</span>
               <span class="plat-stat-label">${this.isGradeOne ? 'PREGUNTAS' : 'Preguntas'}</span>
             </div>
             <div class="plat-stat-box">
@@ -2199,9 +2223,12 @@ class BityPlatformerGame {
 
           <div class="plat-actions-row">
             <button type="button" class="btn-plat-finish" id="btn-plat-complete-campaign">
-              ✅ ${this.isGradeOne ? 'FINALIZAR TAREA' : 'Finalizar tarea'}
+              🏆 ${this.isGradeOne ? 'FINALIZAR DESAFÍO' : 'Finalizar desafío'}
             </button>
-            <button type="button" class="btn-plat-replay" id="btn-plat-replay-campaign">
+            <button type="button" class="btn-plat-replay" id="btn-campaign-levels-menu" style="background:#475569;">
+              🗺️ ${this.isGradeOne ? 'VER NIVELES' : 'Ver niveles'}
+            </button>
+            <button type="button" class="btn-plat-start" id="btn-plat-replay-campaign" style="background:#0284c7;">
               🔄 ${this.isGradeOne ? 'JUGAR DE NUEVO' : 'Jugar de nuevo'}
             </button>
           </div>
@@ -2220,6 +2247,13 @@ class BityPlatformerGame {
             timeUsed: timeUsedSeconds,
             livesRemaining: this.lives
           });
+        };
+      }
+
+      const btnLevelsMenu = document.getElementById('btn-campaign-levels-menu');
+      if (btnLevelsMenu) {
+        btnLevelsMenu.onclick = () => {
+          this.showLevelSelectModal();
         };
       }
 
@@ -2264,6 +2298,9 @@ class BityPlatformerGame {
           <button type="button" class="btn-plat-replay" id="btn-defeat-levels-menu" style="background:#475569;">
             🗺️ ${this.isGradeOne ? 'VER NIVELES' : 'Ver niveles'}
           </button>
+          <button type="button" class="btn-plat-start" id="btn-defeat-exit-game" style="background:#334155;">
+            🚪 ${this.isGradeOne ? 'SALIR' : 'Salir'}
+          </button>
         </div>
       </div>
     `;
@@ -2278,6 +2315,14 @@ class BityPlatformerGame {
     const btnMenu = document.getElementById('btn-defeat-levels-menu');
     if (btnMenu) {
       btnMenu.onclick = () => this.showLevelSelectModal();
+    }
+
+    const btnExit = document.getElementById('btn-defeat-exit-game');
+    if (btnExit) {
+      btnExit.onclick = () => {
+        this.destroy();
+        this.onBack();
+      };
     }
   }
 

@@ -6206,7 +6206,9 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
 .plat-actions-row {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Controles táctiles en pantalla */

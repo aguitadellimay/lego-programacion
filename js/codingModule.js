@@ -7566,6 +7566,7 @@ class CodingModuleManager {
         this.storage.completeActivity(this.currentGrade, 'final_challenge', `g${this.currentGrade}_final_platformer`, earnedPoints, 3);
         if (this.onPlaySound) this.onPlaySound('fanfare');
         if (this.onLaunchConfetti) this.onLaunchConfetti();
+        this.exitPlatformerAdventure();
       },
       onBack: () => {
         this.exitPlatformerAdventure();
