@@ -84,6 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar el gestor de Programación
     let codingManager;
     const showScreen = (targetScreen) => {
+      // Verificación de disponibilidad por Panel Docente
+      if (window.teacherManager && targetScreen && targetScreen !== screenHome) {
+        if (!window.teacherManager.canAccessScreen(targetScreen.id)) {
+          // Si el módulo está bloqueado, permanecer o volver a screenHome
+          [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure].forEach(s => {
+            if (s) s.classList.remove('active');
+          });
+          if (screenHome) screenHome.classList.add('active');
+          window.teacherManager.showBlockedNoticeForScreen(targetScreen.id);
+          return;
+        }
+      }
+
       if (codingManager && codingManager.stopSpeaking) {
         codingManager.stopSpeaking();
       }
@@ -149,6 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Opción A: Ir a la selección de grados (1° a 5°) de Matemática o directo al juego
     const openPlayMode = () => {
+      if (window.teacherManager && !window.teacherManager.isModuleEnabled('play')) {
+        window.teacherManager.showBlockedNotice('Jugar y aprender');
+        return;
+      }
       if (screenGrades) {
         showScreen(screenGrades);
       } else if (screenGame) {
@@ -169,6 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Selección de grado escolar para Matemática
     gradeCards.forEach(card => {
       card.addEventListener('click', () => {
+        if (window.teacherManager && !window.teacherManager.isModuleEnabled('play')) {
+          window.teacherManager.showBlockedNotice('Jugar y aprender');
+          return;
+        }
         const grade = card.getAttribute('data-grade');
         if (typeof game !== 'undefined') {
           if (game.setGrade) game.setGrade(grade);
@@ -191,6 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Opción B: MÓDULO DE PROGRAMACIÓN (1° a 5° Grado)
     const openCodingMode = () => {
+      if (window.teacherManager && !window.teacherManager.isModuleEnabled('coding')) {
+        window.teacherManager.showBlockedNotice('Módulo de programación');
+        return;
+      }
       if (typeof game !== 'undefined' && game.stop) game.stop();
       if (screenCodingGrades) {
         showScreen(screenCodingGrades);
@@ -210,6 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const codingGradeCards = document.querySelectorAll('.coding-grade-card');
     codingGradeCards.forEach(card => {
       card.addEventListener('click', () => {
+        if (window.teacherManager && !window.teacherManager.isModuleEnabled('coding')) {
+          window.teacherManager.showBlockedNotice('Módulo de programación');
+          return;
+        }
         const grade = card.getAttribute('data-cgrade');
         codingManager.loadGrade(grade);
         playClickSound();
@@ -227,6 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Opción: MÓDULO INDEPENDIENTE - DESAFÍO FINAL: INSTRUCCIONES (La Aventura de Bity)
     const openAdventureMode = () => {
+      if (window.teacherManager && !window.teacherManager.isModuleEnabled('adventure')) {
+        window.teacherManager.showBlockedNotice('La aventura de Bity');
+        return;
+      }
       if (typeof game !== 'undefined' && game.stop) game.stop();
       codingManager.startPlatformerAdventure({ returnTo: 'home' });
       playClickSound();
@@ -245,6 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Opción C: Ir directamente al taller de la foto (Modo Creativo)
     const goToEditor = () => {
+      if (window.teacherManager && !window.teacherManager.isModuleEnabled('editor')) {
+        window.teacherManager.showBlockedNotice('Armar mi regalo familiar');
+        return;
+      }
       if (typeof game !== 'undefined' && game.stop) {
         game.stop();
       }

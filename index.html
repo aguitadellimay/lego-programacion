@@ -940,6 +940,170 @@
   <!-- Contenedor para lluvia de confeti animado (Desactivado) -->
   <div id="confetti-container" class="confetti-container"></div>
 
+  <!-- Pie de página discreto con acceso a Modo Docente -->
+  <footer class="app-footer-docente">
+    <div class="footer-docente-inner">
+      <span class="footer-docente-brand">Lego Familiar • Plataforma Escolar</span>
+      <button id="btn-open-teacher-login" class="btn-docente-discrete" type="button" title="Acceso exclusivo para docentes">
+        <span class="docente-lock-icon">🔒</span> Modo docente
+      </button>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- MODALES DE ADMINISTRACIÓN DOCENTE                           -->
+  <!-- ============================================================ -->
+
+  <!-- Modal 1: Acceso Docente (Login con Clave) -->
+  <div id="modal-teacher-login" class="teacher-modal-overlay" style="display: none;">
+    <div class="teacher-modal-card teacher-login-card">
+      <div class="teacher-modal-header">
+        <div class="teacher-modal-badge">🔒 ACCESO EXCLUSIVO</div>
+        <h2 class="teacher-modal-title">Modo Docente</h2>
+        <p class="teacher-modal-subtitle">Ingresá la clave de acceso para administrar los módulos de la plataforma:</p>
+      </div>
+
+      <form id="form-teacher-login" class="teacher-login-form" onsubmit="return false;">
+        <div class="teacher-form-group">
+          <label for="teacher-password-input" class="teacher-form-label">Clave de acceso docente:</label>
+          <div class="teacher-input-wrapper">
+            <input type="password" id="teacher-password-input" class="teacher-input" placeholder="Ingresá la clave docente" autocomplete="current-password" required>
+            <button type="button" id="btn-toggle-teacher-pwd" class="btn-toggle-pwd" title="Mostrar u ocultar clave">👁️</button>
+          </div>
+          <div id="teacher-login-error" class="teacher-form-error" style="display: none;" role="alert"></div>
+        </div>
+
+        <div class="teacher-modal-actions">
+          <button type="button" id="btn-cancel-teacher-login" class="btn-teacher-secondary">Volver</button>
+          <button type="submit" id="btn-submit-teacher-login" class="btn-teacher-primary">Ingresar al panel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Panel Docente - Administrar Módulos -->
+  <div id="modal-teacher-panel" class="teacher-modal-overlay" style="display: none;">
+    <div class="teacher-modal-card teacher-panel-card">
+      <div class="teacher-panel-header">
+        <div class="teacher-panel-header-left">
+          <div class="teacher-panel-icon">🛠️</div>
+          <div>
+            <h2 class="teacher-panel-title">PANEL DOCENTE — ADMINISTRAR MÓDULOS</h2>
+            <p class="teacher-panel-desc">Elegí qué módulos pueden ver y utilizar los alumnos en este equipo. Los cambios se aplicarán al guardar.</p>
+          </div>
+        </div>
+        <button type="button" id="btn-teacher-close-x" class="btn-teacher-close-x" title="Cerrar panel">✕</button>
+      </div>
+
+      <!-- Barra de Estado / Alertas -->
+      <div id="teacher-save-alert" class="teacher-alert teacher-alert-success" style="display: none;">
+        <span>✅ ¡Configuración guardada con éxito! Los módulos han sido actualizados para los alumnos.</span>
+      </div>
+      <div id="teacher-pending-alert" class="teacher-alert teacher-alert-warning" style="display: none;">
+        <span>⚠️ Hay cambios pendientes sin guardar. Haz clic en "Guardar cambios" para aplicarlos.</span>
+      </div>
+
+      <!-- Barra de Acciones Globales del Panel -->
+      <div class="teacher-quick-actions">
+        <div class="teacher-quick-left">
+          <button type="button" id="btn-teacher-enable-all" class="btn-teacher-tool btn-tool-enable" title="Habilitar todos los módulos">
+            <span>✅</span> Habilitar todos
+          </button>
+          <button type="button" id="btn-teacher-disable-all" class="btn-teacher-tool btn-tool-disable" title="Bloquear todos los módulos">
+            <span>🚫</span> Bloquear todos
+          </button>
+        </div>
+        <button type="button" id="btn-teacher-open-change-pwd" class="btn-teacher-tool btn-tool-pwd" title="Modificar la clave de acceso docente">
+          <span>🔑</span> Cambiar clave docente
+        </button>
+      </div>
+
+      <!-- Lista de Módulos (Filas independientes con interruptores) -->
+      <div class="teacher-modules-list" id="teacher-modules-list">
+        <!-- Renderizado dinámicamente por teacherPanel.js -->
+      </div>
+
+      <!-- Pie del Panel Docente -->
+      <div class="teacher-panel-footer">
+        <div class="teacher-footer-left">
+          <button type="button" id="btn-teacher-logout" class="btn-teacher-danger" title="Finalizar la sesión del docente">
+            <span>🚪</span> Cerrar sesión docente
+          </button>
+        </div>
+        <div class="teacher-footer-right">
+          <button type="button" id="btn-teacher-cancel-changes" class="btn-teacher-secondary">
+            Volver a la plataforma
+          </button>
+          <button type="button" id="btn-teacher-save-changes" class="btn-teacher-primary btn-save-primary">
+            <span>💾</span> Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Cambiar Clave Docente -->
+  <div id="modal-teacher-change-pwd" class="teacher-modal-overlay" style="display: none; z-index: 100005;">
+    <div class="teacher-modal-card teacher-submodal-card">
+      <div class="teacher-modal-header">
+        <h3 class="teacher-modal-title">🔑 Cambiar Clave Docente</h3>
+        <p class="teacher-modal-subtitle">Definí una nueva clave de acceso para la administración docente en este equipo:</p>
+      </div>
+
+      <form id="form-teacher-change-pwd" onsubmit="return false;">
+        <div class="teacher-form-group">
+          <label for="pwd-current" class="teacher-form-label">Clave actual:</label>
+          <input type="password" id="pwd-current" class="teacher-input" required autocomplete="current-password" placeholder="Ingresá la clave actual">
+        </div>
+        <div class="teacher-form-group">
+          <label for="pwd-new" class="teacher-form-label">Nueva clave (mínimo 4 caracteres):</label>
+          <input type="password" id="pwd-new" class="teacher-input" required autocomplete="new-password" placeholder="Nueva clave">
+        </div>
+        <div class="teacher-form-group">
+          <label for="pwd-confirm" class="teacher-form-label">Confirmar nueva clave:</label>
+          <input type="password" id="pwd-confirm" class="teacher-input" required autocomplete="new-password" placeholder="Repetí la nueva clave">
+        </div>
+        <div id="teacher-change-pwd-error" class="teacher-form-error" style="display: none;" role="alert"></div>
+
+        <div class="teacher-modal-actions">
+          <button type="button" id="btn-cancel-change-pwd" class="btn-teacher-secondary">Cancelar</button>
+          <button type="submit" id="btn-submit-change-pwd" class="btn-teacher-primary">Guardar nueva clave</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 4: Aviso de Módulo Bloqueado para Alumnos -->
+  <div id="modal-module-blocked-notice" class="teacher-modal-overlay" style="display: none; z-index: 100010;">
+    <div class="teacher-modal-card teacher-blocked-card">
+      <div class="teacher-blocked-icon">🔒 🎒</div>
+      <h3 class="teacher-blocked-title">Módulo No Disponible</h3>
+      <p id="teacher-blocked-message" class="teacher-blocked-desc">
+        Este módulo está temporalmente bloqueado por el docente para la clase de hoy.<br>
+        ¡Consultale a tu docente para saber cuándo estará disponible!
+      </p>
+      <div class="teacher-modal-actions" style="justify-content: center;">
+        <button type="button" id="btn-close-blocked-notice" class="btn-teacher-primary" style="min-width: 150px;">
+          ¡Entendido! 👍
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Advertencia de Cambios Pendientes sin Guardar -->
+  <div id="modal-teacher-unsaved-warning" class="teacher-modal-overlay" style="display: none; z-index: 100008;">
+    <div class="teacher-modal-card teacher-submodal-card">
+      <div class="teacher-modal-header">
+        <h3 class="teacher-modal-title">⚠️ Cambios sin guardar</h3>
+        <p class="teacher-modal-subtitle">Tenés modificaciones pendientes en el estado de los módulos. Si salís ahora, no se aplicarán.</p>
+      </div>
+      <div class="teacher-modal-actions">
+        <button type="button" id="btn-discard-unsaved" class="btn-teacher-secondary">Descartar y salir</button>
+        <button type="button" id="btn-stay-unsaved" class="btn-teacher-primary">Permanecer en el panel</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts de la Aplicación -->
   <script src="js/backgrounds.js"></script>
   <script src="js/legoBricks.js"></script>
@@ -948,6 +1112,7 @@
   <script src="js/platformerQuestions.js"></script>
   <script src="js/platformerGame.js"></script>
   <script src="js/codingModule.js?v=20261013"></script>
+  <script src="js/teacherPanel.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

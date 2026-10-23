@@ -7500,6 +7500,12 @@ class CodingModuleManager {
    * @param {Object} options - { grade?: number, returnTo?: 'home' | 'syllabus' }
    */
   startPlatformerAdventure(options = {}) {
+    // Verificación de disponibilidad por Panel Docente
+    if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.isModuleEnabled('adventure')) {
+      window.teacherManager.showBlockedNotice('La aventura de Bity');
+      return;
+    }
+
     this.cleanupCurrentActivity();
 
     // Guardar origen para volver de forma limpia
