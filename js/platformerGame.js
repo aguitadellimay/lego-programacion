@@ -62,6 +62,23 @@ class BityPlatformerGame {
     this.mathTimerInterval = null;
     this.mathTimeRemaining = 30;
 
+    // Sistema de audio y preferencia del usuario
+    this.soundEnabled = (typeof localStorage !== 'undefined' && localStorage.getItem('lego_bity_plat_sound') === 'false') ? false : true;
+    this.audioCtx = null;
+    this.stormRainNode = null;
+    this.stormRainGain = null;
+
+    // Estado de despegue cinemático para la nave del Nivel 3
+    this.isTakingOff = false;
+    this.takeoffTimer = 0;
+    this.shipOffsetY = 0;
+
+    // Peligros, clima y zonas de checkpoint
+    this.hazards = [];
+    this.puddles = [];
+    this.weather = { isRaining: false, raindrops: [], lightningTimer: 0, lightningAlpha: 0, thunderTimer: 0 };
+    this.checkpointZones = [];
+
     // Puntaje y preguntas respondidas en el nivel actual
     this.score = 0;
     this.questionsAnswered = {
@@ -175,7 +192,17 @@ class BityPlatformerGame {
       this.theme = 'valley';
       this.worldWidth = 2200;
       this.worldHeight = 450;
+      this.timeLimitSeconds = 180;
+      this.timeRemaining = 180;
+      this.checkpointZones = [
+        { x: 0, cp: { x: 60, y: 342 } },
+        { x: 790, cp: { x: 810, y: 342 } },
+        { x: 1610, cp: { x: 1630, y: 342 } }
+      ];
       this.safeCheckpoint = { x: 60, y: 342 };
+      this.hazards = [];
+      this.puddles = [];
+      this.weather = { isRaining: false, raindrops: [], lightningTimer: 0, lightningAlpha: 0, thunderTimer: 0 };
 
       // Segmentos de suelo (2 pozos sencillos: 130px y 140px)
       this.groundSegments = [
@@ -225,7 +252,18 @@ class BityPlatformerGame {
       this.theme = 'factory';
       this.worldWidth = 2600;
       this.worldHeight = 450;
+      this.timeLimitSeconds = 180;
+      this.timeRemaining = 180;
+      this.checkpointZones = [
+        { x: 0, cp: { x: 60, y: 342 } },
+        { x: 740, cp: { x: 760, y: 342 } },
+        { x: 1400, cp: { x: 1420, y: 342 } },
+        { x: 2060, cp: { x: 2080, y: 342 } }
+      ];
       this.safeCheckpoint = { x: 60, y: 342 };
+      this.hazards = [];
+      this.puddles = [];
+      this.weather = { isRaining: false, raindrops: [], lightningTimer: 0, lightningAlpha: 0, thunderTimer: 0 };
 
       // Suelo industrial con 3 pozos de magma/residuos
       this.groundSegments = [
@@ -294,86 +332,180 @@ class BityPlatformerGame {
 
     } else {
       // ----------------------------------------------------
-      // NIVEL 3: EL PLANETA DE BITY (DESAFÍO CUMBRE)
+      // NIVEL 3: EL PLANETA DE BITY (DESAFÍO CUMBRE - 5 ZONAS)
       // ----------------------------------------------------
-      this.levelName = this.isGradeOne ? 'EL PLANETA DE BITY' : 'El planeta de Bity';
+      this.levelName = this.isGradeOne ? 'EL PLANETA DE BITY (TORMENTA CÓSMICA)' : 'El planeta de Bity: Tormenta Cósmica';
       this.theme = 'alien_planet';
-      this.worldWidth = 3000;
+      this.worldWidth = 4400; // 69.2% más extenso que Nivel 2 (2600px)
       this.worldHeight = 450;
+      this.timeLimitSeconds = 240; // 4 minutos para explorar las 5 zonas
+      this.timeRemaining = 240;
+
+      // Zonas de checkpoint seguro sobre suelo firme (uno por cada zona de juego)
+      this.checkpointZones = [
+        { x: 0, cp: { x: 60, y: 342 } },       // Zona 1: Bosque bajo la lluvia
+        { x: 900, cp: { x: 920, y: 342 } },    // Zona 2: El puente inundado
+        { x: 1800, cp: { x: 1840, y: 342 } },  // Zona 3: La fábrica eléctrica
+        { x: 2750, cp: { x: 2780, y: 342 } },  // Zona 4: La montaña de las tormentas
+        { x: 3700, cp: { x: 3740, y: 342 } }   // Zona 5: La meta final
+      ];
       this.safeCheckpoint = { x: 60, y: 342 };
 
-      // Terreno cósmico fragmentado con pozos de abismo estelar
+      // Segmentos de suelo a lo largo de las 5 zonas continuas
       this.groundSegments = [
-        { x: 0, y: 390, w: 520, h: 60 },
-        { x: 740, y: 390, w: 440, h: 60 },
-        { x: 1360, y: 390, w: 440, h: 60 },
-        { x: 2000, y: 390, w: 420, h: 60 },
-        { x: 2580, y: 390, w: 420, h: 60 }
+        // Zona 1: El bosque bajo la lluvia (0 a 900)
+        { x: 0, y: 390, w: 900, h: 60 },
+        // Zona 2: El puente inundado (900 a 1800, con pozo inundado 1050 a 1320)
+        { x: 900, y: 390, w: 150, h: 60 },
+        { x: 1320, y: 390, w: 480, h: 60 },
+        // Zona 3: La fábrica eléctrica (1800 a 2750, con pozo 2180 a 2320)
+        { x: 1800, y: 390, w: 380, h: 60 },
+        { x: 2320, y: 390, w: 430, h: 60 },
+        // Zona 4: La montaña de las tormentas (2750 a 3700, con pozo 3060 a 3220)
+        { x: 2750, y: 390, w: 310, h: 60 },
+        { x: 3220, y: 390, w: 480, h: 60 },
+        // Zona 5: La meta final (3700 a 4400)
+        { x: 3700, y: 390, w: 700, h: 60 }
       ];
 
-      // Plataformas con 4 PLATAFORMAS MÓVILES (precisión y timing)
-      this.platforms = [
-        // Plataformas estáticas elevadas
-        { x: 180, y: 310, w: 120, h: 22, type: 'crystal' },
-        { x: 360, y: 240, w: 110, h: 22, type: 'crystal' },
-        { x: 800, y: 280, w: 120, h: 22, type: 'crystal' },
-        { x: 1400, y: 290, w: 120, h: 22, type: 'crystal' },
-        { x: 2040, y: 280, w: 120, h: 22, type: 'crystal' },
+      // Charcos con agua reflectante y ondas en el suelo
+      this.puddles = [
+        { x: 340, y: 388, w: 75, h: 8 },
+        { x: 700, y: 388, w: 85, h: 8 },
+        { x: 960, y: 388, w: 65, h: 8 },
+        { x: 1480, y: 388, w: 100, h: 8 },
+        { x: 3860, y: 388, w: 90, h: 8 }
+      ];
 
-        // PLATAFORMA MÓVIL 1 (horizontal sobre abismo 1: x 520 a 740)
+      // Plataformas estáticas y móviles distribuidas en las 5 zonas
+      this.platforms = [
+        // Zona 1: Bosque bajo la lluvia (x: 0 a 900)
+        { x: 180, y: 310, w: 120, h: 22, type: 'crystal' },
+        { x: 400, y: 250, w: 110, h: 22, type: 'crystal' },
+        { x: 640, y: 290, w: 120, h: 22, type: 'crystal' },
+
+        // Zona 2: El puente inundado (x: 900 a 1800)
+        { x: 1060, y: 320, w: 70, h: 22, type: 'crystal' },
+        // Plataforma móvil horizontal sobre el puente inundado
         {
-          x: 540, y: 310, w: 90, h: 22, type: 'crystal',
-          isMoving: true, axis: 'x', minX: 530, maxX: 720,
+          x: 1150, y: 290, w: 85, h: 22, type: 'crystal',
+          isMoving: true, axis: 'x', minX: 1140, maxX: 1260,
+          speedX: 1.6 * gradeSpeedScale, dirX: 1, vx: 0, vy: 0
+        },
+        { x: 1380, y: 290, w: 120, h: 22, type: 'crystal' },
+        { x: 1560, y: 230, w: 110, h: 22, type: 'crystal' },
+
+        // Zona 3: La fábrica eléctrica (x: 1800 a 2750)
+        // Plataforma móvil horizontal
+        {
+          x: 1940, y: 290, w: 90, h: 22, type: 'crystal',
+          isMoving: true, axis: 'x', minX: 1920, maxX: 2100,
           speedX: 1.8 * gradeSpeedScale, dirX: 1, vx: 0, vy: 0
         },
-
-        // PLATAFORMA MÓVIL 2 (isla flotante vertical: y 170 a 320)
+        // Ascensor vertical sobre el foso de la fábrica
         {
-          x: 1210, y: 300, w: 90, h: 22, type: 'crystal',
-          isMoving: true, axis: 'y', minY: 170, maxY: 320,
-          speedY: 1.6 * gradeSpeedScale, dirY: -1, vx: 0, vy: 0
+          x: 2220, y: 300, w: 85, h: 22, type: 'crystal',
+          isMoving: true, axis: 'y', minY: 180, maxY: 320,
+          speedY: 1.7 * gradeSpeedScale, dirY: -1, vx: 0, vy: 0
         },
+        { x: 2380, y: 240, w: 130, h: 22, type: 'crystal' },
+        { x: 2580, y: 280, w: 120, h: 22, type: 'crystal' },
 
-        // PLATAFORMA MÓVIL 3 (transporte cósmico horizontal: x 1800 a 2000)
+        // Zona 4: La montaña de las tormentas (x: 2750 a 3700)
+        { x: 2840, y: 310, w: 110, h: 22, type: 'crystal' },
+        { x: 2980, y: 240, w: 100, h: 22, type: 'crystal' },
+        // Plataforma móvil horizontal sobre el abismo de montaña
         {
-          x: 1810, y: 280, w: 90, h: 22, type: 'crystal',
-          isMoving: true, axis: 'x', minX: 1800, maxX: 1980,
+          x: 3080, y: 270, w: 85, h: 22, type: 'crystal',
+          isMoving: true, axis: 'x', minX: 3070, maxX: 3200,
           speedX: 2.0 * gradeSpeedScale, dirX: 1, vx: 0, vy: 0
         },
-
-        // PLATAFORMA MÓVIL 4 (ascensor vertical final hacia la nave)
+        // Ascensor vertical hacia la cumbre
         {
-          x: 2440, y: 300, w: 85, h: 22, type: 'crystal',
-          isMoving: true, axis: 'y', minY: 180, maxY: 310,
+          x: 3320, y: 280, w: 85, h: 22, type: 'crystal',
+          isMoving: true, axis: 'y', minY: 160, maxY: 300,
           speedY: 1.8 * gradeSpeedScale, dirY: -1, vx: 0, vy: 0
+        },
+        { x: 3460, y: 180, w: 130, h: 22, type: 'crystal' }, // Cumbre donde se ubica la batería matemática
+        { x: 3620, y: 270, w: 100, h: 22, type: 'crystal' },
+
+        // Zona 5: La meta final (x: 3700 a 4400)
+        { x: 3900, y: 300, w: 110, h: 22, type: 'crystal' }
+      ];
+
+      // Bloques misteriosos interactivos
+      this.bumpBlocks = [
+        { x: 420, y: 180, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 },
+        { x: 1580, y: 160, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 },
+        { x: 3000, y: 170, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 }
+      ];
+
+      // Campos eléctricos de peligro (ciclo: inactivo -> advertencia -> activo)
+      this.hazards = [
+        {
+          id: 'gate_1',
+          name: 'Campo Eléctrico 1',
+          x: 2120, y: 310, w: 26, h: 80,
+          cycleTime: 5.0, timer: 0.0, state: 'inactive'
+        },
+        {
+          id: 'gate_2',
+          name: 'Campo Eléctrico 2',
+          x: 2520, y: 310, w: 26, h: 80,
+          cycleTime: 5.0, timer: 2.5, state: 'active'
+        },
+        {
+          id: 'gate_3',
+          name: 'Campo Eléctrico 3',
+          x: 3260, y: 310, w: 26, h: 80,
+          cycleTime: 5.0, timer: 1.2, state: 'inactive'
         }
       ];
 
-      // Bloques misteriosos
-      this.bumpBlocks = [
-        { x: 380, y: 180, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 },
-        { x: 1440, y: 230, w: 42, h: 42, bumped: false, animOffsetY: 0, bumpTimer: 0 }
-      ];
-
-      // Coleccionables estratégicos (Instrucciones, Programación, Algoritmos, Matemática)
+      // Coleccionables pedagógicos (4 preguntas diferenciadas)
       this.collectibles = [
-        { id: 'c_flower', type: 'flower', cat: 'instrucciones', x: 200, y: 268, w: 36, h: 36, collected: false, icon: '🌸' },
-        { id: 'c_mush1', type: 'mushroom', cat: 'programacion', x: 840, y: 238, w: 36, h: 36, collected: false, icon: '🍄' },
-        { id: 'c_mush2', type: 'algo_chip', cat: 'algoritmos', x: 1420, y: 248, w: 36, h: 36, collected: false, icon: '🧩' },
-        { id: 'c_batt', type: 'battery', cat: 'matematica', x: 2060, y: 238, w: 36, h: 36, collected: false, icon: '🔋' }
+        { id: 'c_flower', type: 'flower', cat: 'instrucciones', x: 220, y: 268, w: 36, h: 36, collected: false, icon: '🌸' },
+        { id: 'c_mush1', type: 'mushroom', cat: 'programacion', x: 1420, y: 248, w: 36, h: 36, collected: false, icon: '🍄' },
+        { id: 'c_mush2', type: 'algo_chip', cat: 'algoritmos', x: 2420, y: 198, w: 36, h: 36, collected: false, icon: '🧩' },
+        { id: 'c_batt', type: 'battery', cat: 'matematica', x: 3500, y: 138, w: 36, h: 36, collected: false, icon: '🔋' }
       ];
 
-      // Enemigos extraterrestres (3 terrestres, 2 drones veloces)
+      // Enemigos extraterrestres (4 terrestres + 3 drones)
       this.enemies = [
-        { type: 'ground', x: 820, y: 350, w: 38, h: 40, minX: 750, maxX: 1040, speed: 2.0 * gradeSpeedScale, dir: 1, facing: 'right' },
-        { type: 'ground', x: 1420, y: 350, w: 38, h: 40, minX: 1370, maxX: 1660, speed: 2.3 * gradeSpeedScale, dir: 1, facing: 'right' },
-        { type: 'ground', x: 2080, y: 350, w: 38, h: 40, minX: 2020, maxX: 2320, speed: 2.5 * gradeSpeedScale, dir: 1, facing: 'right' },
-        { type: 'drone', x: 1060, baseY: 180, y: 180, w: 42, h: 32, minX: 1000, maxX: 1260, speed: 2.4 * gradeSpeedScale, dir: 1, angle: 0 },
-        { type: 'drone', x: 2660, baseY: 200, y: 200, w: 42, h: 32, minX: 2600, maxX: 2880, speed: 2.8 * gradeSpeedScale, dir: 1, angle: 2.0 }
+        // Zona 1: Robot terrestre calmo
+        { type: 'ground', x: 620, y: 350, w: 38, h: 40, minX: 520, maxX: 820, speed: 1.8 * gradeSpeedScale, dir: 1, facing: 'right' },
+        // Zona 2: Dron sobre puente + Robot terrestre
+        { type: 'drone', x: 1120, baseY: 170, y: 170, w: 42, h: 32, minX: 1060, maxX: 1280, speed: 2.0 * gradeSpeedScale, dir: 1, angle: 0 },
+        { type: 'ground', x: 1480, y: 350, w: 38, h: 40, minX: 1360, maxX: 1700, speed: 2.1 * gradeSpeedScale, dir: 1, facing: 'right' },
+        // Zona 3: Dron con cono de escáner + Robot terrestre
+        { type: 'drone', x: 2000, baseY: 180, y: 180, w: 42, h: 32, minX: 1920, maxX: 2160, speed: 2.2 * gradeSpeedScale, dir: 1, angle: 1.2 },
+        { type: 'ground', x: 2420, y: 350, w: 38, h: 40, minX: 2360, maxX: 2660, speed: 2.3 * gradeSpeedScale, dir: 1, facing: 'right' },
+        // Zona 4: Dron veloz de tormenta + Robot terrestre
+        { type: 'drone', x: 3240, baseY: 160, y: 160, w: 42, h: 32, minX: 3160, maxX: 3400, speed: 2.6 * gradeSpeedScale, dir: 1, angle: 2.4 },
+        { type: 'ground', x: 3360, y: 350, w: 38, h: 40, minX: 3280, maxX: 3640, speed: 2.4 * gradeSpeedScale, dir: 1, facing: 'right' }
       ];
 
-      // Meta: Cohete intergaláctico reparado de Bity
-      this.goal = { x: 2840, y: 230, w: 80, h: 160, type: 'spaceship' };
+      // Meta: Cohete intergaláctico reparado de Bity (en Zona 5, con despegue especial)
+      this.goal = { x: 4200, y: 230, w: 90, h: 160, type: 'spaceship_storm' };
+
+      // Clima de tormenta continua (100 gotas recicladas y relámpagos distantes)
+      this.weather = {
+        isRaining: true,
+        raindrops: [],
+        lightningTimer: 4.0,
+        lightningAlpha: 0,
+        thunderTimer: 0
+      };
+      for (let i = 0; i < 100; i++) {
+        this.weather.raindrops.push({
+          x: Math.random() * (this.worldWidth + 200) - 100,
+          y: Math.random() * this.viewHeight,
+          len: Math.random() * 12 + 10,
+          speedY: Math.random() * 4 + 11,
+          speedX: -1.5,
+          alpha: Math.random() * 0.4 + 0.35
+        });
+      }
     }
 
     // Inicializar jugador Bity
@@ -416,6 +548,9 @@ class BityPlatformerGame {
             </button>
             <button type="button" class="btn-plat-levels-nav" id="btn-plat-levels-modal">
               <span>🗺️</span> ${this.isGradeOne ? 'NIVELES' : 'Niveles'}
+            </button>
+            <button type="button" class="btn-plat-sound-toggle" id="btn-plat-sound-toggle" title="${this.soundEnabled ? 'Silenciar audio' : 'Activar audio'}">
+              ${this.soundEnabled ? '🔊' : '🔇'}
             </button>
             <div class="plat-hud-lives" id="plat-hud-lives-box" title="Vidas de Bity">
               <span class="plat-hud-label">${this.isGradeOne ? 'VIDAS:' : 'Vidas:'}</span>
@@ -510,6 +645,14 @@ class BityPlatformerGame {
       };
     }
 
+    // Botón activar / silenciar audio
+    const btnSound = document.getElementById('btn-plat-sound-toggle');
+    if (btnSound) {
+      btnSound.onclick = () => {
+        this.toggleSound();
+      };
+    }
+
     // Vincular controles táctiles
     this.bindTouchControls();
   }
@@ -591,6 +734,7 @@ class BityPlatformerGame {
   }
 
   playSound(type) {
+    if (!this.soundEnabled) return;
     if (this.onPlaySound) {
       try {
         this.onPlaySound(type);
@@ -598,6 +742,167 @@ class BityPlatformerGame {
         console.warn('Sound error:', err);
       }
     }
+  }
+
+  // ========================================================
+  // SISTEMA DE AUDIO PROCEDURAL Y AMBIENTE DE TORMENTA
+  // ========================================================
+
+  initAudio() {
+    if (this.audioCtx) return;
+    try {
+      const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtxClass) {
+        this.audioCtx = new AudioCtxClass();
+      }
+    } catch (e) {
+      console.warn('Web Audio not available:', e);
+    }
+  }
+
+  toggleSound() {
+    this.soundEnabled = !this.soundEnabled;
+    try {
+      localStorage.setItem('lego_bity_plat_sound', this.soundEnabled ? 'true' : 'false');
+    } catch (e) {}
+
+    const btn = document.getElementById('btn-plat-sound-toggle');
+    if (btn) {
+      btn.textContent = this.soundEnabled ? '🔊' : '🔇';
+      btn.title = this.soundEnabled ? 'Silenciar audio' : 'Activar audio';
+    }
+
+    if (this.soundEnabled) {
+      this.initAudio();
+      if (this.audioCtx && this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+      if (this.currentLevelIndex === 3 && this.isRunning && !this.isPausedForModal) {
+        this.startStormAmbience();
+      }
+    } else {
+      this.stopStormAmbience();
+    }
+  }
+
+  startStormAmbience() {
+    if (!this.soundEnabled || typeof window === 'undefined') return;
+    this.initAudio();
+    if (!this.audioCtx) return;
+
+    if (this.stormRainNode) return;
+
+    try {
+      const bufferSize = this.audioCtx.sampleRate * 2;
+      const noiseBuffer = this.audioCtx.createBuffer(1, bufferSize, this.audioCtx.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        b3 = 0.86650 * b3 + white * 0.3104856;
+        b4 = 0.55000 * b4 + white * 0.5329522;
+        b5 = -0.7616 * b5 - white * 0.0168980;
+        output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.035;
+        b6 = white * 0.115926;
+      }
+
+      const whiteNoise = this.audioCtx.createBufferSource();
+      whiteNoise.buffer = noiseBuffer;
+      whiteNoise.loop = true;
+
+      const filter = this.audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 850;
+
+      const gain = this.audioCtx.createGain();
+      if (gain.gain && typeof gain.gain.setValueAtTime === 'function') {
+        gain.gain.setValueAtTime(0.01, this.audioCtx.currentTime);
+      }
+      if (gain.gain && typeof gain.gain.linearRampToValueAtTime === 'function') {
+        gain.gain.linearRampToValueAtTime(0.09, this.audioCtx.currentTime + 1.2);
+      }
+
+      whiteNoise.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      whiteNoise.start(0);
+      this.stormRainNode = whiteNoise;
+      this.stormRainGain = gain;
+    } catch (err) {
+      console.warn('Storm audio error:', err);
+    }
+  }
+
+  stopStormAmbience() {
+    if (this.stormRainGain && this.audioCtx) {
+      try {
+        if (this.stormRainGain.gain && typeof this.stormRainGain.gain.linearRampToValueAtTime === 'function') {
+          this.stormRainGain.gain.linearRampToValueAtTime(0.001, this.audioCtx.currentTime + 0.4);
+        }
+        setTimeout(() => {
+          if (this.stormRainNode) {
+            try { this.stormRainNode.stop(); } catch (e) {}
+            this.stormRainNode = null;
+            this.stormRainGain = null;
+          }
+        }, 500);
+      } catch (e) {
+        if (this.stormRainNode) {
+          try { this.stormRainNode.stop(); } catch (err) {}
+          this.stormRainNode = null;
+          this.stormRainGain = null;
+        }
+      }
+    }
+  }
+
+  playThunderSound() {
+    if (!this.soundEnabled || typeof window === 'undefined') return;
+    this.initAudio();
+    if (!this.audioCtx) return;
+
+    try {
+      const t = this.audioCtx.currentTime;
+      const osc1 = this.audioCtx.createOscillator();
+      const osc2 = this.audioCtx.createOscillator();
+      const gain = this.audioCtx.createGain();
+
+      osc1.type = 'sawtooth';
+      osc1.frequency.setValueAtTime(55, t);
+      osc1.frequency.exponentialRampToValueAtTime(25, t + 1.8);
+
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(70, t);
+      osc2.frequency.exponentialRampToValueAtTime(30, t + 1.8);
+
+      const filter = this.audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 180;
+
+      if (gain.gain && typeof gain.gain.setValueAtTime === 'function') {
+        gain.gain.setValueAtTime(0.01, t);
+      }
+      if (gain.gain && typeof gain.gain.linearRampToValueAtTime === 'function') {
+        gain.gain.linearRampToValueAtTime(0.16, t + 0.15);
+      }
+      if (gain.gain && typeof gain.gain.exponentialRampToValueAtTime === 'function') {
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 1.8);
+      }
+
+      osc1.connect(filter);
+      osc2.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      osc1.start(t);
+      osc2.start(t);
+      osc1.stop(t + 1.9);
+      osc2.stop(t + 1.9);
+    } catch (e) {}
   }
 
   // ========================================================
@@ -759,9 +1064,15 @@ class BityPlatformerGame {
     this.lastFrameTime = currentTime;
 
     if (this.isRunning && !this.isPausedForModal && !this.isGameOver && !this.isVictory) {
-      this.updatePlatforms();
-      this.updatePhysics();
-      this.updateEnemies();
+      if (this.isTakingOff) {
+        this.updateTakeoff(dt);
+      } else {
+        this.updatePlatforms();
+        this.updatePhysics();
+        this.updateEnemies();
+        this.updateHazards(dt);
+      }
+      this.updateWeather(dt);
       this.updateParticles();
       this.updateCamera();
     }
@@ -944,14 +1255,14 @@ class BityPlatformerGame {
       return;
     }
 
-    // E) Actualizar checkpoint seguro según avance de Bity
-    if (p.grounded) {
-      if (p.x > 2100) {
-        this.safeCheckpoint = { x: 2120, y: 342 };
-      } else if (p.x > 1400) {
-        this.safeCheckpoint = { x: 1420, y: 342 };
-      } else if (p.x > 760) {
-        this.safeCheckpoint = { x: 780, y: 342 };
+    // E) Actualizar checkpoint seguro según avance de Bity en suelo firme
+    if (p.grounded && Array.isArray(this.checkpointZones)) {
+      for (let i = this.checkpointZones.length - 1; i >= 0; i--) {
+        const zone = this.checkpointZones[i];
+        if (p.x >= zone.x) {
+          this.safeCheckpoint = { x: zone.cp.x, y: zone.cp.y };
+          break;
+        }
       }
     }
 
@@ -1034,7 +1345,133 @@ class BityPlatformerGame {
       p.y + p.h > g.y &&
       p.y < g.y + g.h
     ) {
+      if (this.currentLevelIndex === 3) {
+        if (!this.isTakingOff) {
+          this.startTakeoffSequence();
+        }
+      } else {
+        this.triggerVictory();
+      }
+    }
+  }
+
+  startTakeoffSequence() {
+    this.isTakingOff = true;
+    this.takeoffTimer = 0;
+    this.shipOffsetY = 0;
+    this.player.vx = 0;
+    this.player.vy = 0;
+    this.keys.left = false;
+    this.keys.right = false;
+    this.keys.jump = false;
+    this.playSound('fanfare');
+    this.addFloatingText(this.goal.x + 40, this.goal.y - 30, '🚀 ¡DESPEGUE INTERGALÁCTICO!', '#facc15');
+  }
+
+  updateTakeoff(dt) {
+    this.takeoffTimer += dt;
+    this.shipOffsetY = Math.pow(this.takeoffTimer / 1.6, 2) * -350;
+
+    // Partículas de ignición y propulsión debajo del cohete
+    const emitX = this.goal.x + 45;
+    const emitY = this.goal.y + 145 + this.shipOffsetY;
+    for (let i = 0; i < 4; i++) {
+      this.particles.push({
+        x: emitX + (Math.random() - 0.5) * 24,
+        y: emitY,
+        vx: (Math.random() - 0.5) * 3,
+        vy: Math.random() * 4 + 3,
+        color: Math.random() < 0.6 ? '#f97316' : '#facc15',
+        life: 0.7,
+        size: Math.random() * 5 + 3
+      });
+    }
+
+    if (this.takeoffTimer >= 1.6) {
+      this.isTakingOff = false;
       this.triggerVictory();
+    }
+  }
+
+  updateHazards(dt) {
+    if (!this.hazards || this.hazards.length === 0) return;
+    const p = this.player;
+
+    for (const h of this.hazards) {
+      h.timer += dt;
+      const cycle = h.timer % h.cycleTime;
+
+      if (cycle < 2.5) {
+        h.state = 'inactive';
+      } else if (cycle < 3.5) {
+        h.state = 'warning';
+        if (Math.random() < 0.25) {
+          this.particles.push({
+            x: h.x + Math.random() * h.w,
+            y: h.y + Math.random() * h.h,
+            vx: (Math.random() - 0.5) * 2,
+            vy: (Math.random() - 0.5) * 2,
+            color: '#facc15',
+            life: 0.35,
+            size: 2.5
+          });
+        }
+      } else {
+        h.state = 'active';
+        // Colisión con Bity si está activo
+        if (
+          p.x + p.w > h.x &&
+          p.x < h.x + h.w &&
+          p.y + p.h > h.y &&
+          p.y < h.y + h.h
+        ) {
+          if (p.invulnerable <= 0) {
+            this.playSound('wrong');
+            this.createSparkles(p.x + p.w / 2, p.y + p.h / 2, '#38bdf8', 22);
+            this.addFloatingText(
+              h.x - 10,
+              h.y - 15,
+              this.isGradeOne ? '⚡ ¡DESCARGA ELÉCTRICA!' : '⚡ ¡Descarga eléctrica!',
+              '#ef4444'
+            );
+            this.takeDamage('electric_hazard');
+          }
+        }
+      }
+    }
+  }
+
+  updateWeather(dt) {
+    if (!this.weather || !this.weather.isRaining) return;
+
+    const camL = this.cameraX - 100;
+    const camR = this.cameraX + this.viewWidth + 100;
+
+    for (const drop of this.weather.raindrops) {
+      drop.x += drop.speedX;
+      drop.y += drop.speedY;
+
+      if (drop.y > this.viewHeight || drop.x < camL) {
+        drop.y = -15;
+        drop.x = camL + Math.random() * (camR - camL + 150);
+      }
+    }
+
+    // Temporizador de relámpagos distantes
+    this.weather.lightningTimer -= dt;
+    if (this.weather.lightningTimer <= 0) {
+      this.weather.lightningAlpha = 0.35;
+      this.weather.lightningTimer = Math.random() * 5 + 6;
+      if (this.soundEnabled) {
+        this.playThunderSound();
+      }
+    }
+
+    if (this.weather.lightningAlpha > 0) {
+      this.weather.lightningAlpha *= 0.88;
+      if (this.weather.lightningAlpha < 0.01) {
+        this.weather.lightningAlpha = 0;
+      }
     }
   }
 
@@ -1172,30 +1609,188 @@ class BityPlatformerGame {
     // 1. Fondo temático según nivel
     this.renderBackground(ctx);
 
-    // 2. Suelo y pozos
+    // 2. Charcos de lluvia en el suelo (Nivel 3)
+    this.renderPuddles(ctx);
+
+    // 3. Suelo y pozos
     this.renderGround(ctx);
 
-    // 3. Plataformas flotantes y móviles
+    // 4. Plataformas flotantes y móviles
     this.renderPlatforms(ctx);
 
-    // 4. Bloques misteriosos
+    // 5. Campos eléctricos de peligro (Nivel 3)
+    this.renderHazards(ctx);
+
+    // 6. Bloques misteriosos
     this.renderBumpBlocks(ctx);
 
-    // 5. Coleccionables
+    // 7. Coleccionables
     this.renderCollectibles(ctx);
 
-    // 6. Meta
+    // 8. Meta
     this.renderGoal(ctx);
 
-    // 7. Enemigos
+    // 9. Enemigos
     this.renderEnemies(ctx);
 
-    // 8. Jugador Bity
+    // 10. Jugador Bity
     this.renderBity(ctx);
 
-    // 9. Partículas y textos flotantes
+    // 11. Partículas y textos flotantes
     this.renderEffects(ctx);
 
+    // 12. Clima / Lluvia y relámpago
+    this.renderWeather(ctx);
+
+    ctx.restore();
+  }
+
+  renderPuddles(ctx) {
+    if (!this.puddles || this.puddles.length === 0) return;
+
+    for (const pud of this.puddles) {
+      if (pud.x + pud.w < this.cameraX - 60 || pud.x > this.cameraX + this.viewWidth + 60) continue;
+
+      ctx.save();
+      // Superficie oscura del charco
+      ctx.fillStyle = 'rgba(30, 27, 75, 0.85)';
+      ctx.beginPath();
+      ctx.ellipse(pud.x + pud.w / 2, pud.y + pud.h / 2, pud.w / 2, pud.h / 2, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Reflejo violeta cósmico del cielo
+      ctx.fillStyle = 'rgba(168, 85, 247, 0.28)';
+      ctx.beginPath();
+      ctx.ellipse(pud.x + pud.w / 2, pud.y + pud.h / 2, pud.w / 2.6, pud.h / 3, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Ondas concéntricas animadas producidas por gotas
+      const wavePhase = (Date.now() / 420 + pud.x * 0.04) % 2;
+      if (wavePhase < 1.0) {
+        ctx.strokeStyle = `rgba(186, 230, 253, ${0.45 * (1.0 - wavePhase)})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.ellipse(
+          pud.x + pud.w / 2,
+          pud.y + pud.h / 2,
+          (pud.w / 2) * wavePhase,
+          (pud.h / 2) * wavePhase,
+          0, 0, Math.PI * 2
+        );
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+  }
+
+  renderHazards(ctx) {
+    if (!this.hazards || this.hazards.length === 0) return;
+
+    for (const h of this.hazards) {
+      if (h.x + h.w < this.cameraX - 60 || h.x > this.cameraX + this.viewWidth + 60) continue;
+
+      ctx.save();
+
+      // Postes emisores metálicos superior e inferior
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(h.x + 3, h.y, h.w - 6, 12);
+      ctx.fillRect(h.x + 3, h.y + h.h - 12, h.w - 6, 12);
+
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(h.x + 1, h.y + 4, h.w - 2, 4);
+      ctx.fillRect(h.x + 1, h.y + h.h - 8, h.w - 2, 4);
+
+      if (h.state === 'inactive') {
+        // Indicador tenue seguro (verde)
+        ctx.fillStyle = '#10b981';
+        ctx.beginPath();
+        ctx.arc(h.x + h.w / 2, h.y + 6, 3, 0, Math.PI * 2);
+        ctx.arc(h.x + h.w / 2, h.y + h.h - 6, 3, 0, Math.PI * 2);
+        ctx.fill();
+
+      } else if (h.state === 'warning') {
+        // Indicador ámbar intermitente
+        const warnGlow = Math.sin(Date.now() / 80) * 0.4 + 0.6;
+        ctx.fillStyle = `rgba(245, 158, 11, ${warnGlow})`;
+        ctx.shadowColor = '#f59e0b';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(h.x + h.w / 2, h.y + 6, 4, 0, Math.PI * 2);
+        ctx.arc(h.x + h.w / 2, h.y + h.h - 6, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Línea punteada de advertencia
+        ctx.strokeStyle = `rgba(250, 204, 21, ${warnGlow * 0.55})`;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(h.x + h.w / 2, h.y + 12);
+        ctx.lineTo(h.x + h.w / 2, h.y + h.h - 12);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+      } else if (h.state === 'active') {
+        // Descarga de plasma eléctrico de alta tensión
+        ctx.fillStyle = '#ef4444';
+        ctx.beginPath();
+        ctx.arc(h.x + h.w / 2, h.y + 6, 4, 0, Math.PI * 2);
+        ctx.arc(h.x + h.w / 2, h.y + h.h - 6, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Resplandor de área peligrosa
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.2)';
+        ctx.fillRect(h.x + 2, h.y + 12, h.w - 4, h.h - 24);
+
+        // Rayo zig-zag neon
+        ctx.strokeStyle = '#38bdf8';
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 12;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(h.x + h.w / 2, h.y + 12);
+
+        const segments = 6;
+        const segH = (h.h - 24) / segments;
+        for (let s = 1; s < segments; s++) {
+          const jitter = (Math.random() - 0.5) * (h.w - 8);
+          ctx.lineTo(h.x + h.w / 2 + jitter, h.y + 12 + s * segH);
+        }
+        ctx.lineTo(h.x + h.w / 2, h.y + h.h - 12);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+  }
+
+  renderWeather(ctx) {
+    if (!this.weather || !this.weather.isRaining) return;
+
+    // 1. Destello tenue de relámpago en el cielo
+    if (this.weather.lightningAlpha > 0.01) {
+      ctx.save();
+      ctx.fillStyle = `rgba(186, 230, 253, ${this.weather.lightningAlpha})`;
+      ctx.fillRect(this.cameraX, 0, this.viewWidth, this.viewHeight);
+      ctx.restore();
+    }
+
+    // 2. Trazado continuo de lluvia
+    ctx.save();
+    ctx.strokeStyle = 'rgba(186, 230, 253, 0.45)';
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    for (const drop of this.weather.raindrops) {
+      if (drop.x >= this.cameraX - 50 && drop.x <= this.cameraX + this.viewWidth + 50) {
+        ctx.moveTo(drop.x, drop.y);
+        ctx.lineTo(drop.x + drop.speedX * (drop.len / drop.speedY), drop.y + drop.len);
+      }
+    }
+    ctx.stroke();
     ctx.restore();
   }
 
@@ -1253,34 +1848,56 @@ class BityPlatformerGame {
       }
 
     } else {
-      // Nivel 3: El planeta de Bity (cielo cósmico violeta, nebulosas, estrellas lejanas)
-      sky.addColorStop(0, '#090514');
-      sky.addColorStop(0.5, '#1e1b4b');
-      sky.addColorStop(1, '#581c87');
+      // Nivel 3: El planeta de Bity (Tormenta cósmica alienígena con lluvia, nubes y atmósfera electrizante)
+      sky.addColorStop(0, '#060310');
+      sky.addColorStop(0.45, '#15102a');
+      sky.addColorStop(0.8, '#261b47');
+      sky.addColorStop(1, '#3b1d60');
       ctx.fillStyle = sky;
       ctx.fillRect(0, 0, this.worldWidth, this.viewHeight);
 
-      // Estrellas titilantes
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
-      for (let x = 30; x < this.worldWidth; x += 85) {
-        const y = ((x * 47) % 220) + 15;
-        ctx.fillRect(x, y, 2.5, 2.5);
+      // Estrellas lejanas a través de la tormenta
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+      for (let x = 20; x < this.worldWidth; x += 110) {
+        const y = ((x * 47) % 180) + 15;
+        ctx.fillRect(x, y, 2, 2);
       }
 
-      // Nebulosa resplandeciente
-      ctx.fillStyle = 'rgba(236, 72, 153, 0.15)';
-      for (let nx = 200; nx < this.worldWidth; nx += 600) {
+      // Nubes de tormenta cósmica rodantes
+      const cloudOffset = (Date.now() / 60) % 400;
+      ctx.fillStyle = 'rgba(30, 27, 75, 0.55)';
+      for (let cx = -200 + cloudOffset; cx < this.worldWidth + 200; cx += 320) {
         ctx.beginPath();
-        ctx.arc(nx, 100, 90, 0, Math.PI * 2);
+        ctx.arc(cx, 40, 70, 0, Math.PI * 2);
+        ctx.arc(cx + 80, 50, 90, 0, Math.PI * 2);
+        ctx.arc(cx + 170, 45, 75, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Cordillera de cristales alienígenas
-      ctx.fillStyle = '#3b0764';
+      // Capa secundaria de nubes de tormenta más oscuras
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.45)';
+      for (let cx = -100 - cloudOffset * 0.5; cx < this.worldWidth + 200; cx += 420) {
+        ctx.beginPath();
+        ctx.arc(cx, 70, 60, 0, Math.PI * 2);
+        ctx.arc(cx + 90, 85, 80, 0, Math.PI * 2);
+        ctx.arc(cx + 180, 75, 65, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Nebulosa púrpura electrizante
+      ctx.fillStyle = 'rgba(192, 132, 252, 0.12)';
+      for (let nx = 300; nx < this.worldWidth; nx += 750) {
+        ctx.beginPath();
+        ctx.arc(nx, 130, 110, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Cordillera de cristales alienígenas en la lejanía
+      ctx.fillStyle = '#2e1065';
       for (let cx = -80; cx < this.worldWidth; cx += 260) {
         ctx.beginPath();
         ctx.moveTo(cx, 390);
-        ctx.lineTo(cx + 80, 220);
+        ctx.lineTo(cx + 80, 210);
         ctx.lineTo(cx + 160, 390);
         ctx.fill();
       }
@@ -1408,12 +2025,26 @@ class BityPlatformerGame {
         const cy = c.y + bobOffset;
 
         ctx.save();
+        // Halo de resplandor según la categoría pedagógica
+        const haloCol = c.type === 'flower' ? 'rgba(236, 72, 153, 0.28)'
+          : (c.type === 'mushroom' ? 'rgba(234, 179, 8, 0.28)'
+          : (c.type === 'algo_chip' ? 'rgba(56, 189, 248, 0.28)'
+          : 'rgba(34, 197, 94, 0.28)'));
+
+        ctx.fillStyle = haloCol;
+        ctx.beginPath();
+        ctx.arc(c.x + c.w / 2, cy + c.h / 2, 22, 0, Math.PI * 2);
+        ctx.fill();
+
         ctx.font = '28px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
         ctx.shadowBlur = 12;
-        ctx.shadowColor = c.type === 'flower' ? '#ec4899' : (c.type === 'mushroom' ? '#eab308' : '#22c55e');
+        ctx.shadowColor = c.type === 'flower' ? '#ec4899'
+          : (c.type === 'mushroom' ? '#eab308'
+          : (c.type === 'algo_chip' ? '#38bdf8'
+          : '#22c55e'));
 
         ctx.fillText(c.icon, c.x + c.w / 2, cy + c.h / 2);
         ctx.restore();
@@ -1425,45 +2056,83 @@ class BityPlatformerGame {
     const g = this.goal;
     ctx.save();
 
-    if (g.type === 'spaceship') {
-      // Cohete espacial de Bity (Nivel 3)
+    if (g.type === 'spaceship' || g.type === 'spaceship_storm') {
+      const drawY = g.y + (this.isTakingOff ? this.shipOffsetY : 0);
       const pulse = Math.sin(Date.now() / 150) * 4;
+
+      // Cuerpo del cohete espacial
       ctx.fillStyle = '#e2e8f0';
       ctx.beginPath();
-      ctx.roundRect(g.x + 10, g.y + 20, 50, 100, 15);
+      ctx.roundRect(g.x + 10, drawY + 20, 50, 100, 15);
       ctx.fill();
+
+      // Borde metálico
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 2;
+      ctx.stroke();
 
       // Cúpula / Punta roja del cohete
       ctx.fillStyle = '#ef4444';
       ctx.beginPath();
-      ctx.moveTo(g.x + 35, g.y - 15);
-      ctx.lineTo(g.x + 60, g.y + 20);
-      ctx.lineTo(g.x + 10, g.y + 20);
+      ctx.moveTo(g.x + 35, drawY - 15);
+      ctx.lineTo(g.x + 60, drawY + 20);
+      ctx.lineTo(g.x + 10, drawY + 20);
       ctx.fill();
 
-      // Ventana circular de la nave
+      // Ventana circular de la cabina
       ctx.fillStyle = '#0284c7';
       ctx.beginPath();
-      ctx.arc(g.x + 35, g.y + 50, 14, 0, Math.PI * 2);
+      ctx.arc(g.x + 35, drawY + 50, 14, 0, Math.PI * 2);
       ctx.fill();
       ctx.fillStyle = '#38bdf8';
       ctx.beginPath();
-      ctx.arc(g.x + 35, g.y + 50, 8, 0, Math.PI * 2);
+      ctx.arc(g.x + 35, drawY + 50, 8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Si Bity ya subió a la nave, mostrar sus ojos en la cabina
+      if (this.isTakingOff) {
+        ctx.fillStyle = '#facc15';
+        ctx.fillRect(g.x + 30, drawY + 48, 3, 4);
+        ctx.fillRect(g.x + 37, drawY + 48, 3, 4);
+      }
+
+      // Aletas laterales
+      ctx.fillStyle = '#dc2626';
+      ctx.beginPath();
+      ctx.moveTo(g.x + 10, drawY + 90);
+      ctx.lineTo(g.x - 6, drawY + 120);
+      ctx.lineTo(g.x + 10, drawY + 120);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(g.x + 60, drawY + 90);
+      ctx.lineTo(g.x + 76, drawY + 120);
+      ctx.lineTo(g.x + 60, drawY + 120);
       ctx.fill();
 
       // Fuego de los propulsores
-      ctx.fillStyle = '#f59e0b';
+      const flameH = this.isTakingOff ? 55 + Math.random() * 20 : 25 + pulse;
+      ctx.fillStyle = '#f97316';
       ctx.beginPath();
-      ctx.moveTo(g.x + 20, g.y + 120);
-      ctx.lineTo(g.x + 35, g.y + 145 + pulse);
-      ctx.lineTo(g.x + 50, g.y + 120);
+      ctx.moveTo(g.x + 18, drawY + 120);
+      ctx.lineTo(g.x + 35, drawY + 120 + flameH);
+      ctx.lineTo(g.x + 52, drawY + 120);
+      ctx.fill();
+
+      ctx.fillStyle = '#facc15';
+      ctx.beginPath();
+      ctx.moveTo(g.x + 24, drawY + 120);
+      ctx.lineTo(g.x + 35, drawY + 120 + flameH * 0.65);
+      ctx.lineTo(g.x + 46, drawY + 120);
       ctx.fill();
 
       // Letrero NAVE DE BITY
-      ctx.fillStyle = '#facc15';
-      ctx.font = 'bold 13px Fredoka, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText(this.isGradeOne ? 'NAVE ESPACIAL' : 'Nave Espacial', g.x + 35, g.y - 25);
+      if (!this.isTakingOff) {
+        ctx.fillStyle = '#facc15';
+        ctx.font = 'bold 13px Fredoka, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(this.isGradeOne ? 'NAVE DE BITY' : 'Nave de Bity', g.x + 35, drawY - 25);
+      }
 
     } else if (g.type === 'airlock') {
       // Compuerta de extracción de fábrica (Nivel 2)
@@ -1525,21 +2194,26 @@ class BityPlatformerGame {
         const bodyColor = this.theme === 'alien_planet' ? '#7e22ce' : (this.theme === 'factory' ? '#b45309' : '#dc2626');
         const eyeColor = this.theme === 'alien_planet' ? '#38bdf8' : '#fef08a';
 
+        // Cuerpo robótico
         ctx.fillStyle = bodyColor;
         ctx.fillRect(4, 12, 30, 20);
         ctx.fillStyle = eyeColor;
         ctx.fillRect(20, 16, 10, 4);
 
+        // Orugas con ruedas giratorias animadas
         ctx.fillStyle = '#1e293b';
         ctx.fillRect(2, 32, 34, 8);
         ctx.fillStyle = '#64748b';
+        const wheelRoll = Math.floor(Date.now() / 90) % 4;
         for (let wx = 6; wx < 32; wx += 8) {
-          ctx.fillRect(wx, 34, 4, 4);
+          ctx.fillRect(wx + (wheelRoll % 2), 34, 4, 4);
         }
 
+        // Antena pulsante
         ctx.fillStyle = '#94a3b8';
         ctx.fillRect(16, 4, 3, 8);
-        ctx.fillStyle = bodyColor;
+        const antGlow = Math.sin(Date.now() / 140) * 0.35 + 0.65;
+        ctx.fillStyle = `rgba(239, 68, 68, ${antGlow})`;
         ctx.beginPath();
         ctx.arc(17.5, 4, 4, 0, Math.PI * 2);
         ctx.fill();
@@ -1550,8 +2224,23 @@ class BityPlatformerGame {
         ctx.save();
         ctx.translate(en.x, en.y);
 
-        const propOffset = Math.sin(Date.now() / 30) * 8;
-        ctx.fillStyle = '#64748b';
+        // Cono de escaneo luminoso hacia abajo
+        const sweep = Math.sin(Date.now() / 350) * 8;
+        const scanGrad = ctx.createLinearGradient(20, 28, 20 + sweep, 110);
+        scanGrad.addColorStop(0, 'rgba(239, 68, 68, 0.35)');
+        scanGrad.addColorStop(1, 'rgba(239, 68, 68, 0.0)');
+        ctx.fillStyle = scanGrad;
+        ctx.beginPath();
+        ctx.moveTo(16, 28);
+        ctx.lineTo(24, 28);
+        ctx.lineTo(38 + sweep, 110);
+        ctx.lineTo(2 + sweep, 110);
+        ctx.closePath();
+        ctx.fill();
+
+        // Hélices animadas con desenfoque de rotación
+        const propOffset = Math.sin(Date.now() / 25) * 8;
+        ctx.fillStyle = '#94a3b8';
         ctx.fillRect(4 - propOffset / 2, 2, 12 + propOffset, 3);
         ctx.fillRect(26 - propOffset / 2, 2, 12 + propOffset, 3);
 
@@ -1561,11 +2250,9 @@ class BityPlatformerGame {
         ctx.roundRect(4, 10, 34, 18, 6);
         ctx.fill();
 
+        // Lente roja de observación
         ctx.fillStyle = '#ef4444';
         ctx.fillRect(18, 15, 6, 4);
-
-        ctx.fillStyle = 'rgba(239, 68, 68, 0.15)';
-        ctx.fillRect(16, 28, 10, 50);
 
         ctx.restore();
       }
@@ -1573,18 +2260,27 @@ class BityPlatformerGame {
   }
 
   renderBity(ctx) {
+    if (this.isTakingOff) return; // Si Bity abordó la nave, se muestra dentro de ella
     const p = this.player;
 
     ctx.save();
     ctx.translate(p.x, p.y);
 
-    if (p.invulnerable > 0 && Math.floor(Date.now() / 80) % 2 === 0) {
-      ctx.globalAlpha = 0.4;
+    if (p.invulnerable > 0 && Math.floor(Date.now() / 70) % 2 === 0) {
+      ctx.globalAlpha = 0.35;
     }
 
     if (p.facing === 'left') {
       ctx.scale(-1, 1);
       ctx.translate(-p.w, 0);
+    }
+
+    // Aura rojiza tras recibir daño
+    if (p.invulnerable > 45) {
+      ctx.fillStyle = 'rgba(239, 68, 68, 0.25)';
+      ctx.beginPath();
+      ctx.arc(p.w / 2, p.h / 2, 28, 0, Math.PI * 2);
+      ctx.fill();
     }
 
     // 1. Antena
@@ -1596,22 +2292,24 @@ class BityPlatformerGame {
     ctx.arc(17, 2, 4, 0, Math.PI * 2);
     ctx.fill();
 
-    // 2. Cabeza robótica
+    // 2. Cabeza robótica (con balanceo al caminar)
+    const headBob = p.grounded && (this.keys.left || this.keys.right) ? Math.sin(p.walkFrame * 2) * 1.5 : 0;
     ctx.fillStyle = '#0284c7';
     ctx.beginPath();
-    ctx.roundRect(4, 8, 26, 18, 6);
+    ctx.roundRect(4, 8 + headBob, 26, 18, 6);
     ctx.fill();
 
     // Visor
     ctx.fillStyle = '#0f172a';
     ctx.beginPath();
-    ctx.roundRect(7, 11, 20, 11, 3);
+    ctx.roundRect(7, 11 + headBob, 20, 11, 3);
     ctx.fill();
 
     // Ojos LED cyan
     ctx.fillStyle = '#38bdf8';
-    ctx.fillRect(11, 14, 4, 5);
-    ctx.fillRect(19, 14, 4, 5);
+    const eyeY = (!p.grounded && p.vy >= 0) ? 15 + headBob : 14 + headBob;
+    ctx.fillRect(11, eyeY, 4, 5);
+    ctx.fillRect(19, eyeY, 4, 5);
 
     // 3. Torso
     ctx.fillStyle = '#e2e8f0';
@@ -1625,11 +2323,40 @@ class BityPlatformerGame {
     ctx.fillStyle = '#38bdf8';
     ctx.fillRect(15, 30, 4, 4);
 
-    // 4. Piernas / Orugas animadas
-    const legSwing = p.grounded ? Math.sin(p.walkFrame) * 4 : 2;
-    ctx.fillStyle = '#1e293b';
-    ctx.fillRect(8, 39, 6, 7 + legSwing);
-    ctx.fillRect(20, 39, 6, 7 - legSwing);
+    // 4. Piernas / Orugas y llamas propulsoras en salto
+    if (!p.grounded && p.vy < 0) {
+      // Salto ascendente: propulsores activados bajo las orugas
+      const flameH = 9 + Math.random() * 6;
+      ctx.fillStyle = '#f97316';
+      ctx.beginPath();
+      ctx.moveTo(8, 44);
+      ctx.lineTo(17, 44 + flameH);
+      ctx.lineTo(26, 44);
+      ctx.fill();
+
+      ctx.fillStyle = '#facc15';
+      ctx.beginPath();
+      ctx.moveTo(11, 44);
+      ctx.lineTo(17, 44 + flameH * 0.6);
+      ctx.lineTo(23, 44);
+      ctx.fill();
+
+      // Orugas plegadas
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(8, 39, 6, 5);
+      ctx.fillRect(20, 39, 6, 5);
+    } else if (!p.grounded && p.vy >= 0) {
+      // Caída: postura amortiguada
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(7, 39, 6, 7);
+      ctx.fillRect(21, 39, 6, 7);
+    } else {
+      // Caminata / parada sobre suelo
+      const legSwing = Math.sin(p.walkFrame) * 4;
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(8, 39, 6, 7 + legSwing);
+      ctx.fillRect(20, 39, 6, 7 - legSwing);
+    }
 
     ctx.restore();
   }
@@ -1731,6 +2458,7 @@ class BityPlatformerGame {
 
   showModal(htmlContent) {
     if (!this.modalOverlay || !this.modalContent) return;
+    this.stopStormAmbience();
     this.modalContent.innerHTML = htmlContent;
     this.modalOverlay.style.display = 'flex';
   }
@@ -1739,6 +2467,9 @@ class BityPlatformerGame {
     if (!this.modalOverlay) return;
     this.modalOverlay.style.display = 'none';
     this.isPausedForModal = false;
+    if (this.currentLevelIndex === 3 && this.soundEnabled && this.isRunning && !this.isGameOver && !this.isVictory) {
+      this.startStormAmbience();
+    }
   }
 
   showBriefingModal() {
@@ -1760,8 +2491,8 @@ class BityPlatformerGame {
         : '¡Mayor desafío! Calculá tus saltos sobre las plataformas móviles y anticipá los movimientos de los drones.';
     } else {
       levelGoalDesc = this.isGradeOne
-        ? '¡EL DESAFÍO CUMBRE! RECORRÉ EL PLANETA DE BITY, SUPERÁ TODOS LOS PELIGROS Y REPARÁ SU NAVE ESPACIAL.'
-        : '¡Misión final! Superá los saltos de precisión y resolvé las preguntas más exigentes para despegar.';
+        ? '¡EL DESAFÍO CUMBRE! RECORRÉ LAS 5 ZONAS DEL PLANETA BAJO LA TORMENTA CÓSMICA, ESQUIVÁ LOS CAMPOS ELÉCTRICOS Y DESPEGÁ EN SU NAVE.'
+        : '¡Misión final! Recorré las 5 zonas del planeta bajo la tormenta cósmica, superá los campos eléctricos y despegá en la nave.';
     }
 
     const html = `
@@ -1781,7 +2512,7 @@ class BityPlatformerGame {
           <div class="plat-rule-item">
             <span class="plat-rule-icon">⏱️</span>
             <div>
-              <strong>${this.isGradeOne ? '3 MINUTOS' : '3 Minutos'}</strong>
+              <strong>${this.isGradeOne ? `${Math.round(this.timeLimitSeconds / 60)} MINUTOS` : `${Math.round(this.timeLimitSeconds / 60)} Minutos`}</strong>
               <p>${this.isGradeOne ? 'EL TIEMPO COMIENZA AL TOCAR EL BOTÓN VERDE.' : 'El cronómetro comenzará al iniciar la misión.'}</p>
             </div>
           </div>
@@ -1815,6 +2546,9 @@ class BityPlatformerGame {
         this.isRunning = true;
         this.hideModal();
         this.startGlobalTimer();
+        if (this.currentLevelIndex === 3 && this.soundEnabled) {
+          this.startStormAmbience();
+        }
       };
     }
 
@@ -1920,8 +2654,12 @@ class BityPlatformerGame {
   }
 
   switchLevel(levelNum) {
+    this.stopStormAmbience();
     this.stopGlobalTimer();
     this.stopMathTimer();
+    this.isTakingOff = false;
+    this.takeoffTimer = 0;
+    this.shipOffsetY = 0;
     this.loadLevelConfig(levelNum);
     this.mount();
     this.updateHud();
@@ -2327,6 +3065,7 @@ class BityPlatformerGame {
   }
 
   restartGame() {
+    this.stopStormAmbience();
     this.hideModal();
     this.lives = this.maxLives;
     this.timeRemaining = this.timeLimitSeconds;
@@ -2334,6 +3073,9 @@ class BityPlatformerGame {
     this.isGameOver = false;
     this.isVictory = false;
     this.isPausedForModal = false;
+    this.isTakingOff = false;
+    this.takeoffTimer = 0;
+    this.shipOffsetY = 0;
 
     // Resetear checkpoint seguro y jugador
     this.safeCheckpoint = { x: 60, y: 342 };
@@ -2375,6 +3117,9 @@ class BityPlatformerGame {
     this.isStarted = true;
     this.isRunning = true;
     this.startGlobalTimer();
+    if (this.currentLevelIndex === 3 && this.soundEnabled) {
+      this.startStormAmbience();
+    }
   }
 
   // ========================================================
@@ -2382,6 +3127,7 @@ class BityPlatformerGame {
   // ========================================================
 
   destroy() {
+    this.stopStormAmbience();
     this.isRunning = false;
     this.isStarted = false;
     this.stopGlobalTimer();
