@@ -7,8 +7,12 @@
  * 2. Qué es un algoritmo (conjunto de pasos ordenados para resolver una tarea).
  * 3. Qué significa programar (darle instrucciones a una computadora o robot).
  *
- * Operaciones matemáticas simples con sumas, restas, multiplicaciones y
- * divisiones exactas con divisor <= 5 únicamente.
+ * Operaciones matemáticas simples adaptadas por grado:
+ * - 1.°: Sumas sencillas con números pequeños
+ * - 2.°: Restas sencillas y sumas fáciles con números pequeños (resultado positivo)
+ * - 3.°: Sumas y restas simples con números de hasta dos cifras
+ * - 4.°: Operaciones combinadas sencillas de 2 pasos (solo sumas y restas)
+ * - 5.°: Operaciones combinadas sencillas con números de 2 cifras (solo sumas y restas)
  *
  * Banco de 240 preguntas distribuidas equitativamente:
  * - 5 grados (1.° a 5.° grado)
@@ -821,11 +825,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "7",
+        "text": "8",
         "isCorrect": false
       },
       {
-        "text": "8",
+        "text": "10",
         "isCorrect": false
       }
     ],
@@ -836,7 +840,139 @@ const BITY_QUESTION_BANK = [
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity calcula su salto! ¿Cuánto es 6 + 3?",
+    "question": "¡Bity calcula su salto! ¿Cuánto es 9 + 3?",
+    "options": [
+      {
+        "text": "12",
+        "isCorrect": true
+      },
+      {
+        "text": "11",
+        "isCorrect": false
+      },
+      {
+        "text": "13",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "9 más 3 es igual a 12."
+  },
+  {
+    "id": "g1_matematica_3",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity recarga su batería! ¿Cuánto es 6 + 2?",
+    "options": [
+      {
+        "text": "8",
+        "isCorrect": true
+      },
+      {
+        "text": "7",
+        "isCorrect": false
+      },
+      {
+        "text": "9",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "6 más 2 es igual a 8."
+  },
+  {
+    "id": "g1_matematica_4",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity mide la distancia a la meta! ¿Cuánto es 7 + 5?",
+    "options": [
+      {
+        "text": "12",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      },
+      {
+        "text": "13",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "7 más 5 es igual a 12."
+  },
+  {
+    "id": "g1_matematica_5",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity esquiva un obstáculo! ¿Cuánto es 4 + 3?",
+    "options": [
+      {
+        "text": "7",
+        "isCorrect": true
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      },
+      {
+        "text": "8",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "4 más 3 es igual a 7."
+  },
+  {
+    "id": "g1_matematica_6",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity cuenta sus pasos! ¿Cuánto es 8 + 4?",
+    "options": [
+      {
+        "text": "12",
+        "isCorrect": true
+      },
+      {
+        "text": "11",
+        "isCorrect": false
+      },
+      {
+        "text": "14",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "8 más 4 es igual a 12."
+  },
+  {
+    "id": "g1_matematica_7",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity analiza el camino! ¿Cuánto es 6 + 5?",
+    "options": [
+      {
+        "text": "11",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "6 más 5 es igual a 11."
+  },
+  {
+    "id": "g1_matematica_8",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity repara su motor! ¿Cuánto es 3 + 6?",
     "options": [
       {
         "text": "9",
@@ -851,36 +987,58 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "6 más 3 es igual a 9."
+    "explanation": "3 más 6 es igual a 9."
   },
   {
-    "id": "g1_matematica_3",
+    "id": "g1_matematica_9",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity recarga su batería! ¿Cuánto es 7 − 3?",
+    "question": "¡Bity conecta un cable! ¿Cuánto es 7 + 4?",
     "options": [
       {
-        "text": "4",
+        "text": "11",
         "isCorrect": true
       },
       {
-        "text": "3",
+        "text": "12",
         "isCorrect": false
       },
       {
-        "text": "5",
+        "text": "9",
         "isCorrect": false
       }
     ],
-    "explanation": "7 menos 3 es igual a 4."
+    "explanation": "7 más 4 es igual a 11."
   },
   {
-    "id": "g1_matematica_4",
+    "id": "g1_matematica_10",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity mide la distancia a la meta! ¿Cuánto es 8 + 2?",
+    "question": "¡Bity enciende sus luces! ¿Cuánto es 5 + 3?",
+    "options": [
+      {
+        "text": "8",
+        "isCorrect": true
+      },
+      {
+        "text": "9",
+        "isCorrect": false
+      },
+      {
+        "text": "7",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "5 más 3 es igual a 8."
+  },
+  {
+    "id": "g1_matematica_11",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity sube a la plataforma! ¿Cuánto es 8 + 2?",
     "options": [
       {
         "text": "10",
@@ -898,180 +1056,26 @@ const BITY_QUESTION_BANK = [
     "explanation": "8 más 2 es igual a 10."
   },
   {
-    "id": "g1_matematica_5",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity esquiva un obstáculo! ¿Cuánto es 10 − 5?",
-    "options": [
-      {
-        "text": "5",
-        "isCorrect": true
-      },
-      {
-        "text": "4",
-        "isCorrect": false
-      },
-      {
-        "text": "6",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "10 menos 5 es igual a 5."
-  },
-  {
-    "id": "g1_matematica_6",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity cuenta sus pasos! ¿Cuánto es 4 + 4?",
-    "options": [
-      {
-        "text": "8",
-        "isCorrect": true
-      },
-      {
-        "text": "7",
-        "isCorrect": false
-      },
-      {
-        "text": "9",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "4 más 4 es igual a 8."
-  },
-  {
-    "id": "g1_matematica_7",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity analiza el camino! ¿Cuánto es 9 − 4?",
-    "options": [
-      {
-        "text": "5",
-        "isCorrect": true
-      },
-      {
-        "text": "6",
-        "isCorrect": false
-      },
-      {
-        "text": "4",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "9 menos 4 es igual a 5."
-  },
-  {
-    "id": "g1_matematica_8",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity repara su motor! ¿Cuánto es 6 + 2?",
-    "options": [
-      {
-        "text": "8",
-        "isCorrect": true
-      },
-      {
-        "text": "9",
-        "isCorrect": false
-      },
-      {
-        "text": "7",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "6 más 2 es igual a 8."
-  },
-  {
-    "id": "g1_matematica_9",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity conecta un cable! ¿Cuánto es 8 − 5?",
-    "options": [
-      {
-        "text": "3",
-        "isCorrect": true
-      },
-      {
-        "text": "2",
-        "isCorrect": false
-      },
-      {
-        "text": "4",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "8 menos 5 es igual a 3."
-  },
-  {
-    "id": "g1_matematica_10",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity enciende sus luces! ¿Cuánto es 7 + 3?",
-    "options": [
-      {
-        "text": "10",
-        "isCorrect": true
-      },
-      {
-        "text": "8",
-        "isCorrect": false
-      },
-      {
-        "text": "9",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "7 más 3 es igual a 10."
-  },
-  {
-    "id": "g1_matematica_11",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity sube a la plataforma! ¿Cuánto es 5 + 5?",
-    "options": [
-      {
-        "text": "10",
-        "isCorrect": true
-      },
-      {
-        "text": "11",
-        "isCorrect": false
-      },
-      {
-        "text": "9",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "5 más 5 es igual a 10."
-  },
-  {
     "id": "g1_matematica_12",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity alcanza la batería dorada! ¿Cuánto es 10 − 3?",
+    "question": "¡Bity alcanza la batería dorada! ¿Cuánto es 9 + 4?",
     "options": [
       {
-        "text": "7",
+        "text": "13",
         "isCorrect": true
       },
       {
-        "text": "6",
+        "text": "12",
         "isCorrect": false
       },
       {
-        "text": "8",
+        "text": "14",
         "isCorrect": false
       }
     ],
-    "explanation": "10 menos 3 es igual a 7."
+    "explanation": "9 más 4 es igual a 13."
   },
   {
     "id": "g2_instrucciones_1",
@@ -1870,76 +1874,76 @@ const BITY_QUESTION_BANK = [
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity calcula su energía de salto! ¿Cuánto es 12 + 6?",
+    "question": "¡Bity calcula su batería! ¿Cuánto es 15 − 2?",
     "options": [
       {
-        "text": "18",
+        "text": "13",
         "isCorrect": true
       },
       {
-        "text": "16",
+        "text": "12",
         "isCorrect": false
       },
       {
-        "text": "20",
+        "text": "14",
         "isCorrect": false
       }
     ],
-    "explanation": "12 más 6 es igual a 18."
+    "explanation": "15 menos 2 es igual a 13."
   },
   {
     "id": "g2_matematica_2",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity gasta energía en una carrera! ¿Cuánto es 20 − 8?",
+    "question": "¡Bity gasta energía en una carrera! ¿Cuánto es 12 − 4?",
     "options": [
       {
-        "text": "12",
+        "text": "8",
         "isCorrect": true
       },
       {
-        "text": "10",
+        "text": "7",
         "isCorrect": false
       },
       {
-        "text": "14",
+        "text": "9",
         "isCorrect": false
       }
     ],
-    "explanation": "20 menos 8 es igual a 12."
+    "explanation": "12 menos 4 es igual a 8."
   },
   {
     "id": "g2_matematica_3",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity suma dos baterías medianas! ¿Cuánto es 15 + 10?",
+    "question": "¡Bity recarga sus celdas! ¿Cuánto es 18 − 5?",
     "options": [
       {
-        "text": "25",
+        "text": "13",
         "isCorrect": true
       },
       {
-        "text": "20",
+        "text": "14",
         "isCorrect": false
       },
       {
-        "text": "30",
+        "text": "12",
         "isCorrect": false
       }
     ],
-    "explanation": "15 más 10 es igual a 25."
+    "explanation": "18 menos 5 es igual a 13."
   },
   {
     "id": "g2_matematica_4",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity ajusta su sensor de distancia! ¿Cuánto es 25 − 10?",
+    "question": "¡Bity suma dos baterías medianas! ¿Cuánto es 7 + 6?",
     "options": [
       {
-        "text": "15",
+        "text": "13",
         "isCorrect": true
       },
       {
@@ -1947,179 +1951,91 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "18",
+        "text": "14",
         "isCorrect": false
       }
     ],
-    "explanation": "25 menos 10 es igual a 15."
+    "explanation": "7 más 6 es igual a 13."
   },
   {
     "id": "g2_matematica_5",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity duplica su velocidad! ¿Cuánto es 14 + 14?",
+    "question": "¡Bity ajusta su sensor de distancia! ¿Cuánto es 16 − 3?",
     "options": [
       {
-        "text": "28",
+        "text": "13",
         "isCorrect": true
       },
       {
-        "text": "26",
+        "text": "11",
         "isCorrect": false
       },
       {
-        "text": "30",
+        "text": "14",
         "isCorrect": false
       }
     ],
-    "explanation": "14 más 14 es igual a 28."
+    "explanation": "16 menos 3 es igual a 13."
   },
   {
     "id": "g2_matematica_6",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity comparte energía con un amigo! ¿Cuánto es 30 − 15?",
+    "question": "¡Bity desciende una plataforma! ¿Cuánto es 14 − 5?",
     "options": [
       {
-        "text": "15",
+        "text": "9",
         "isCorrect": true
+      },
+      {
+        "text": "8",
+        "isCorrect": false
       },
       {
         "text": "10",
         "isCorrect": false
-      },
-      {
-        "text": "20",
-        "isCorrect": false
       }
     ],
-    "explanation": "30 menos 15 es igual a 15."
+    "explanation": "14 menos 5 es igual a 9."
   },
   {
     "id": "g2_matematica_7",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity recarga sus celdas solares! ¿Cuánto es 20 + 15?",
+    "question": "¡Bity comparte energía con un amigo! ¿Cuánto es 19 − 7?",
     "options": [
       {
-        "text": "35",
+        "text": "12",
         "isCorrect": true
       },
       {
-        "text": "30",
+        "text": "11",
         "isCorrect": false
       },
       {
-        "text": "40",
+        "text": "13",
         "isCorrect": false
       }
     ],
-    "explanation": "20 más 15 es igual a 35."
+    "explanation": "19 menos 7 es igual a 12."
   },
   {
     "id": "g2_matematica_8",
     "grade": 2,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity desciende una plataforma! ¿Cuánto es 35 − 20?",
+    "question": "¡Bity recolecta chips de energía! ¿Cuánto es 8 + 7?",
     "options": [
       {
         "text": "15",
         "isCorrect": true
       },
-      {
-        "text": "12",
-        "isCorrect": false
-      },
-      {
-        "text": "18",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "35 menos 20 es igual a 15."
-  },
-  {
-    "id": "g2_matematica_9",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity recolecta tornillos dorados! ¿Cuánto es 18 + 12?",
-    "options": [
-      {
-        "text": "30",
-        "isCorrect": true
-      },
-      {
-        "text": "28",
-        "isCorrect": false
-      },
-      {
-        "text": "32",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "18 más 12 es igual a 30."
-  },
-  {
-    "id": "g2_matematica_10",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity calibra sus motores laterales! ¿Cuánto es 40 − 20?",
-    "options": [
-      {
-        "text": "20",
-        "isCorrect": true
-      },
-      {
-        "text": "25",
-        "isCorrect": false
-      },
-      {
-        "text": "15",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "40 menos 20 es igual a 20."
-  },
-  {
-    "id": "g2_matematica_11",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity conecta dos baterías! ¿Cuánto es 16 + 10?",
-    "options": [
-      {
-        "text": "26",
-        "isCorrect": true
-      },
-      {
-        "text": "24",
-        "isCorrect": false
-      },
-      {
-        "text": "28",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "16 más 10 es igual a 26."
-  },
-  {
-    "id": "g2_matematica_12",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity reduce la temperatura de su motor! ¿Cuánto es 28 − 14?",
-    "options": [
       {
         "text": "14",
-        "isCorrect": true
-      },
-      {
-        "text": "12",
         "isCorrect": false
       },
       {
@@ -2127,7 +2043,95 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "28 menos 14 es igual a 14."
+    "explanation": "8 más 7 es igual a 15."
+  },
+  {
+    "id": "g2_matematica_9",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity calibra su escudo! ¿Cuánto es 20 − 6?",
+    "options": [
+      {
+        "text": "14",
+        "isCorrect": true
+      },
+      {
+        "text": "13",
+        "isCorrect": false
+      },
+      {
+        "text": "15",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 menos 6 es igual a 14."
+  },
+  {
+    "id": "g2_matematica_10",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity mide la altura del salto! ¿Cuánto es 17 − 4?",
+    "options": [
+      {
+        "text": "13",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "15",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "17 menos 4 es igual a 13."
+  },
+  {
+    "id": "g2_matematica_11",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity reduce la velocidad de frenado! ¿Cuánto es 13 − 5?",
+    "options": [
+      {
+        "text": "8",
+        "isCorrect": true
+      },
+      {
+        "text": "9",
+        "isCorrect": false
+      },
+      {
+        "text": "7",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "13 menos 5 es igual a 8."
+  },
+  {
+    "id": "g2_matematica_12",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity conecta dos baterías auxiliares! ¿Cuánto es 9 + 6?",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": true
+      },
+      {
+        "text": "14",
+        "isCorrect": false
+      },
+      {
+        "text": "16",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "9 más 6 es igual a 15."
   },
   {
     "id": "g3_instrucciones_1",
@@ -2926,7 +2930,29 @@ const BITY_QUESTION_BANK = [
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity calibra sus propulsores! ¿Cuánto es 4 × 5?",
+    "question": "¡Bity calcula su propulsión! ¿Cuánto es 17 + 3?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "19",
+        "isCorrect": false
+      },
+      {
+        "text": "21",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "17 más 3 es igual a 20."
+  },
+  {
+    "id": "g3_matematica_2",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity analiza la distancia a la base! ¿Cuánto es 24 − 4?",
     "options": [
       {
         "text": "20",
@@ -2941,153 +2967,43 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "4 por 5 es igual a 20."
-  },
-  {
-    "id": "g3_matematica_2",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calcula la energía de su radar! ¿Cuánto es 3 × 6?",
-    "options": [
-      {
-        "text": "18",
-        "isCorrect": true
-      },
-      {
-        "text": "15",
-        "isCorrect": false
-      },
-      {
-        "text": "21",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "3 por 6 es igual a 18."
+    "explanation": "24 menos 4 es igual a 20."
   },
   {
     "id": "g3_matematica_3",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity divide baterías en 2 cajas iguales! ¿Cuánto es 10 ÷ 2?",
+    "question": "¡Bity suma energía para el radar! ¿Cuánto es 12 + 6?",
     "options": [
       {
-        "text": "5",
+        "text": "18",
         "isCorrect": true
       },
       {
-        "text": "4",
+        "text": "17",
         "isCorrect": false
       },
       {
-        "text": "6",
+        "text": "19",
         "isCorrect": false
       }
     ],
-    "explanation": "10 dividido 2 es igual a 5."
+    "explanation": "12 más 6 es igual a 18."
   },
   {
     "id": "g3_matematica_4",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity reparte 15 piezas entre 3 robots! ¿Cuánto es 15 ÷ 3?",
+    "question": "¡Bity gasta reserva de escudo! ¿Cuánto es 28 − 8?",
     "options": [
-      {
-        "text": "5",
-        "isCorrect": true
-      },
-      {
-        "text": "3",
-        "isCorrect": false
-      },
-      {
-        "text": "6",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "15 dividido 3 es igual a 5."
-  },
-  {
-    "id": "g3_matematica_5",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity recarga sus celdas de energía! ¿Cuánto es 5 × 5?",
-    "options": [
-      {
-        "text": "25",
-        "isCorrect": true
-      },
       {
         "text": "20",
-        "isCorrect": false
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "5 por 5 es igual a 25."
-  },
-  {
-    "id": "g3_matematica_6",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity comparte 20 tornillos en 4 bolsas iguales! ¿Cuánto es 20 ÷ 4?",
-    "options": [
-      {
-        "text": "5",
         "isCorrect": true
       },
       {
-        "text": "4",
-        "isCorrect": false
-      },
-      {
-        "text": "6",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "20 dividido 4 es igual a 5."
-  },
-  {
-    "id": "g3_matematica_7",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity divide 12 cables entre 3 paneles! ¿Cuánto es 12 ÷ 3?",
-    "options": [
-      {
-        "text": "4",
-        "isCorrect": true
-      },
-      {
-        "text": "3",
-        "isCorrect": false
-      },
-      {
-        "text": "5",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "12 dividido 3 es igual a 4."
-  },
-  {
-    "id": "g3_matematica_8",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity mide la potencia de sus motores! ¿Cuánto es 2 × 8?",
-    "options": [
-      {
-        "text": "16",
-        "isCorrect": true
-      },
-      {
-        "text": "14",
+        "text": "22",
         "isCorrect": false
       },
       {
@@ -3095,95 +3011,183 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "2 por 8 es igual a 16."
+    "explanation": "28 menos 8 es igual a 20."
+  },
+  {
+    "id": "g3_matematica_5",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity potencia sus motores! ¿Cuánto es 35 + 5?",
+    "options": [
+      {
+        "text": "40",
+        "isCorrect": true
+      },
+      {
+        "text": "38",
+        "isCorrect": false
+      },
+      {
+        "text": "42",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "35 más 5 es igual a 40."
+  },
+  {
+    "id": "g3_matematica_6",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity desciende una pendiente! ¿Cuánto es 42 − 12?",
+    "options": [
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "28",
+        "isCorrect": false
+      },
+      {
+        "text": "32",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "42 menos 12 es igual a 30."
+  },
+  {
+    "id": "g3_matematica_7",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity recarga sus baterías secundarias! ¿Cuánto es 19 + 5?",
+    "options": [
+      {
+        "text": "24",
+        "isCorrect": true
+      },
+      {
+        "text": "23",
+        "isCorrect": false
+      },
+      {
+        "text": "25",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "19 más 5 es igual a 24."
+  },
+  {
+    "id": "g3_matematica_8",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity reduce la potencia de frenado! ¿Cuánto es 30 − 7?",
+    "options": [
+      {
+        "text": "23",
+        "isCorrect": true
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      },
+      {
+        "text": "24",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "30 menos 7 es igual a 23."
   },
   {
     "id": "g3_matematica_9",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity reparte 16 sensores entre 4 drones! ¿Cuánto es 16 ÷ 4?",
+    "question": "¡Bity añade una batería de reserva! ¿Cuánto es 25 + 10?",
     "options": [
       {
-        "text": "4",
+        "text": "35",
         "isCorrect": true
       },
       {
-        "text": "5",
+        "text": "34",
         "isCorrect": false
       },
       {
-        "text": "3",
+        "text": "36",
         "isCorrect": false
       }
     ],
-    "explanation": "16 dividido 4 es igual a 4."
+    "explanation": "25 más 10 es igual a 35."
   },
   {
     "id": "g3_matematica_10",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity distribuye 20 luces en 5 filas iguales! ¿Cuánto es 20 ÷ 5?",
+    "question": "¡Bity calibra los sensores de ruta! ¿Cuánto es 38 − 6?",
     "options": [
       {
-        "text": "4",
+        "text": "32",
         "isCorrect": true
       },
       {
-        "text": "5",
+        "text": "31",
         "isCorrect": false
       },
       {
-        "text": "3",
+        "text": "33",
         "isCorrect": false
       }
     ],
-    "explanation": "20 dividido 5 es igual a 4."
+    "explanation": "38 menos 6 es igual a 32."
   },
   {
     "id": "g3_matematica_11",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity suma la energía de sus placas! ¿Cuánto es 4 × 4?",
+    "question": "¡Bity suma energía para el gran salto! ¿Cuánto es 22 + 8?",
     "options": [
       {
-        "text": "16",
+        "text": "30",
         "isCorrect": true
       },
       {
-        "text": "12",
+        "text": "28",
         "isCorrect": false
       },
       {
-        "text": "20",
+        "text": "31",
         "isCorrect": false
       }
     ],
-    "explanation": "4 por 4 es igual a 16."
+    "explanation": "22 más 8 es igual a 30."
   },
   {
     "id": "g3_matematica_12",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity divide 15 repuestos entre 5 estaciones! ¿Cuánto es 15 ÷ 5?",
+    "question": "¡Bity ajusta la presión del propulsor! ¿Cuánto es 45 − 5?",
     "options": [
       {
-        "text": "3",
+        "text": "40",
         "isCorrect": true
       },
       {
-        "text": "4",
+        "text": "39",
         "isCorrect": false
       },
       {
-        "text": "2",
+        "text": "41",
         "isCorrect": false
       }
     ],
-    "explanation": "15 dividido 5 es igual a 3."
+    "explanation": "45 menos 5 es igual a 40."
   },
   {
     "id": "g4_instrucciones_1",
@@ -3982,264 +3986,264 @@ const BITY_QUESTION_BANK = [
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity ajusta su radar! ¿Cuánto es 15 ÷ 3 + 10?",
+    "question": "¡Bity calibra su energía! ¿Cuánto es 21 + 6 − 2?",
     "options": [
       {
-        "text": "15",
+        "text": "25",
         "isCorrect": true
       },
       {
-        "text": "12",
+        "text": "24",
         "isCorrect": false
       },
       {
-        "text": "18",
+        "text": "27",
         "isCorrect": false
       }
     ],
-    "explanation": "15 dividido 3 es 5; luego 5 más 10 es igual a 15."
+    "explanation": "21 + 6 = 27; luego 27 − 2 = 25."
   },
   {
     "id": "g4_matematica_2",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity calcula su batería de propulsión! ¿Cuánto es 4 × 5 − 8?",
+    "question": "¡Bity ajusta la telemetría! ¿Cuánto es 30 − 5 + 3?",
     "options": [
       {
-        "text": "12",
+        "text": "28",
         "isCorrect": true
       },
       {
-        "text": "10",
+        "text": "27",
         "isCorrect": false
       },
       {
-        "text": "15",
+        "text": "29",
         "isCorrect": false
       }
     ],
-    "explanation": "4 por 5 es 20; luego 20 menos 8 es igual a 12."
+    "explanation": "30 − 5 = 25; luego 25 + 3 = 28."
   },
   {
     "id": "g4_matematica_3",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity calibra sus sensores de vuelo! ¿Cuánto es 20 ÷ 4 + 7?",
+    "question": "¡Bity calcula la ruta espacial! ¿Cuánto es 14 + 8 − 4?",
     "options": [
       {
-        "text": "12",
+        "text": "18",
         "isCorrect": true
       },
       {
-        "text": "11",
+        "text": "17",
         "isCorrect": false
       },
       {
-        "text": "14",
+        "text": "19",
         "isCorrect": false
       }
     ],
-    "explanation": "20 dividido 4 es 5; luego 5 más 7 es igual a 12."
+    "explanation": "14 + 8 = 22; luego 22 − 4 = 18."
   },
   {
     "id": "g4_matematica_4",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity mide la energía de sus turbinas! ¿Cuánto es 3 × 6 − 8?",
+    "question": "¡Bity gestiona la carga de la nave! ¿Cuánto es 25 + 10 − 5?",
     "options": [
       {
-        "text": "10",
+        "text": "30",
         "isCorrect": true
       },
       {
-        "text": "8",
+        "text": "32",
         "isCorrect": false
       },
       {
-        "text": "12",
+        "text": "28",
         "isCorrect": false
       }
     ],
-    "explanation": "3 por 6 es 18; luego 18 menos 8 es igual a 10."
+    "explanation": "25 + 10 = 35; luego 35 − 5 = 30."
   },
   {
     "id": "g4_matematica_5",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity conecta celdas solares! ¿Cuánto es 25 ÷ 5 + 15?",
-    "options": [
-      {
-        "text": "20",
-        "isCorrect": true
-      },
-      {
-        "text": "18",
-        "isCorrect": false
-      },
-      {
-        "text": "22",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "25 dividido 5 es 5; luego 5 más 15 es igual a 20."
-  },
-  {
-    "id": "g4_matematica_6",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity duplica la potencia de su escudo! ¿Cuánto es 12 ÷ 3 × 2?",
-    "options": [
-      {
-        "text": "8",
-        "isCorrect": true
-      },
-      {
-        "text": "6",
-        "isCorrect": false
-      },
-      {
-        "text": "10",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "12 dividido 3 es 4; luego 4 por 2 es igual a 8."
-  },
-  {
-    "id": "g4_matematica_7",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calcula el combustible restante! ¿Cuánto es 30 − 4 × 5?",
-    "options": [
-      {
-        "text": "10",
-        "isCorrect": true
-      },
-      {
-        "text": "8",
-        "isCorrect": false
-      },
-      {
-        "text": "12",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "4 por 5 es 20; luego 30 menos 20 es igual a 10."
-  },
-  {
-    "id": "g4_matematica_8",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity suma repuestos a su nave! ¿Cuánto es 16 ÷ 4 + 16?",
-    "options": [
-      {
-        "text": "20",
-        "isCorrect": true
-      },
-      {
-        "text": "18",
-        "isCorrect": false
-      },
-      {
-        "text": "22",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "16 dividido 4 es 4; luego 4 más 16 es igual a 20."
-  },
-  {
-    "id": "g4_matematica_9",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity multiplica la señal del transmisor! ¿Cuánto es 20 ÷ 5 × 4?",
+    "question": "¡Bity mide el consumo de propulsores! ¿Cuánto es 18 − 6 + 4?",
     "options": [
       {
         "text": "16",
         "isCorrect": true
       },
       {
-        "text": "12",
+        "text": "15",
         "isCorrect": false
       },
       {
-        "text": "20",
+        "text": "17",
         "isCorrect": false
       }
     ],
-    "explanation": "20 dividido 5 es 4; luego 4 por 4 es igual a 16."
+    "explanation": "18 − 6 = 12; luego 12 + 4 = 16."
+  },
+  {
+    "id": "g4_matematica_6",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity suma y resta energía de vuelo! ¿Cuánto es 32 + 5 − 3?",
+    "options": [
+      {
+        "text": "34",
+        "isCorrect": true
+      },
+      {
+        "text": "33",
+        "isCorrect": false
+      },
+      {
+        "text": "35",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "32 + 5 = 37; luego 37 − 3 = 34."
+  },
+  {
+    "id": "g4_matematica_7",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity reconfigura el generador! ¿Cuánto es 27 − 7 + 6?",
+    "options": [
+      {
+        "text": "26",
+        "isCorrect": true
+      },
+      {
+        "text": "25",
+        "isCorrect": false
+      },
+      {
+        "text": "27",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "27 − 7 = 20; luego 20 + 6 = 26."
+  },
+  {
+    "id": "g4_matematica_8",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity equilibra las baterías auxiliares! ¿Cuánto es 16 + 9 − 5?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "19",
+        "isCorrect": false
+      },
+      {
+        "text": "21",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "16 + 9 = 25; luego 25 − 5 = 20."
+  },
+  {
+    "id": "g4_matematica_9",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity evalúa la altitud de vuelo! ¿Cuánto es 35 − 10 + 5?",
+    "options": [
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "29",
+        "isCorrect": false
+      },
+      {
+        "text": "31",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "35 − 10 = 25; luego 25 + 5 = 30."
   },
   {
     "id": "g4_matematica_10",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity equilibra la carga de sus motores! ¿Cuánto es 10 × 3 − 15?",
+    "question": "¡Bity calcula la velocidad de crucero! ¿Cuánto es 20 + 12 − 4?",
     "options": [
       {
-        "text": "15",
+        "text": "28",
         "isCorrect": true
       },
       {
-        "text": "12",
+        "text": "26",
         "isCorrect": false
       },
       {
-        "text": "18",
+        "text": "30",
         "isCorrect": false
       }
     ],
-    "explanation": "10 por 3 es 30; luego 30 menos 15 es igual a 15."
+    "explanation": "20 + 12 = 32; luego 32 − 4 = 28."
   },
   {
     "id": "g4_matematica_11",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity refuerza su sistema de luces! ¿Cuánto es 18 ÷ 3 + 14?",
+    "question": "¡Bity calibra el escudo térmico! ¿Cuánto es 40 − 8 + 3?",
     "options": [
       {
-        "text": "20",
+        "text": "35",
         "isCorrect": true
       },
       {
-        "text": "18",
+        "text": "34",
         "isCorrect": false
       },
       {
-        "text": "22",
+        "text": "36",
         "isCorrect": false
       }
     ],
-    "explanation": "18 dividido 3 es 6; luego 6 más 14 es igual a 20."
+    "explanation": "40 − 8 = 32; luego 32 + 3 = 35."
   },
   {
     "id": "g4_matematica_12",
     "grade": 4,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity recarga la batería principal! ¿Cuánto es 25 − 20 ÷ 4?",
+    "question": "¡Bity completa la secuencia de energía! ¿Cuánto es 15 + 15 − 6?",
     "options": [
       {
-        "text": "20",
+        "text": "24",
         "isCorrect": true
       },
       {
-        "text": "22",
+        "text": "23",
         "isCorrect": false
       },
       {
-        "text": "18",
+        "text": "25",
         "isCorrect": false
       }
     ],
-    "explanation": "20 dividido 4 es 5; luego 25 menos 5 es igual a 20."
+    "explanation": "15 + 15 = 30; luego 30 − 6 = 24."
   },
   {
     "id": "g5_instrucciones_1",
@@ -5038,264 +5042,264 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity ajusta su batería cuántica! ¿Cuánto es (15 ÷ 3 + 5) × 2?",
+    "question": "¡Bity calibra la computadora de vuelo! ¿Cuánto es 55 + 12 − 6?",
     "options": [
       {
-        "text": "20",
+        "text": "61",
         "isCorrect": true
       },
       {
-        "text": "18",
+        "text": "59",
         "isCorrect": false
       },
       {
-        "text": "22",
+        "text": "63",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 15 ÷ 3 = 5; luego 5 + 5 = 10. Finalmente 10 × 2 = 20."
+    "explanation": "55 + 12 = 67; luego 67 − 6 = 61."
   },
   {
     "id": "g5_matematica_2",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity calibra sus motores espaciales! ¿Cuánto es (20 ÷ 4 + 7) × 2?",
+    "question": "¡Bity sincroniza los propulsores principales! ¿Cuánto es 40 + 15 − 5?",
     "options": [
       {
-        "text": "24",
+        "text": "50",
         "isCorrect": true
       },
       {
-        "text": "20",
+        "text": "48",
         "isCorrect": false
       },
       {
-        "text": "26",
+        "text": "52",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 20 ÷ 4 = 5; luego 5 + 7 = 12. Finalmente 12 × 2 = 24."
+    "explanation": "40 + 15 = 55; luego 55 − 5 = 50."
   },
   {
     "id": "g5_matematica_3",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity mide la energía de su escudo! ¿Cuánto es 30 − (12 ÷ 3 × 4)?",
+    "question": "¡Bity calcula la telemetría orbital! ¿Cuánto es 68 − 10 + 4?",
     "options": [
       {
-        "text": "14",
+        "text": "62",
         "isCorrect": true
       },
       {
-        "text": "16",
+        "text": "60",
         "isCorrect": false
       },
       {
-        "text": "12",
+        "text": "64",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 12 ÷ 3 = 4; luego 4 × 4 = 16. Restamos: 30 − 16 = 14."
+    "explanation": "68 − 10 = 58; luego 58 + 4 = 62."
   },
   {
     "id": "g5_matematica_4",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity recarga sus celdas de combustible! ¿Cuánto es (25 ÷ 5 + 10) × 2?",
+    "question": "¡Bity optimiza la energía del reactor! ¿Cuánto es 50 + 25 − 15?",
     "options": [
       {
-        "text": "30",
+        "text": "60",
         "isCorrect": true
       },
       {
-        "text": "25",
+        "text": "58",
         "isCorrect": false
       },
       {
-        "text": "35",
+        "text": "62",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 25 ÷ 5 = 5; luego 5 + 10 = 15. Finalmente 15 × 2 = 30."
+    "explanation": "50 + 25 = 75; luego 75 − 15 = 60."
   },
   {
     "id": "g5_matematica_5",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity equilibra la temperatura del cohete! ¿Cuánto es 40 − 5 × 6?",
+    "question": "¡Bity reconfigura el campo de fuerza! ¿Cuánto es 72 − 20 + 8?",
     "options": [
       {
-        "text": "10",
+        "text": "60",
         "isCorrect": true
       },
       {
-        "text": "8",
+        "text": "59",
         "isCorrect": false
       },
       {
-        "text": "12",
+        "text": "62",
         "isCorrect": false
       }
     ],
-    "explanation": "Multiplicación primero: 5 × 6 = 30. Luego 40 − 30 = 10."
+    "explanation": "72 − 20 = 52; luego 52 + 8 = 60."
   },
   {
     "id": "g5_matematica_6",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity ajusta el radar de telemetría! ¿Cuánto es (16 ÷ 4 + 6) × 3?",
+    "question": "¡Bity calcula el empuje para el despegue! ¿Cuánto es 45 + 18 − 10?",
     "options": [
       {
-        "text": "30",
+        "text": "53",
         "isCorrect": true
       },
       {
-        "text": "28",
+        "text": "51",
         "isCorrect": false
       },
       {
-        "text": "32",
+        "text": "55",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 16 ÷ 4 = 4; luego 4 + 6 = 10. Finalmente 10 × 3 = 30."
+    "explanation": "45 + 18 = 63; luego 63 − 10 = 53."
   },
   {
     "id": "g5_matematica_7",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity mide el consumo de sus turbinas! ¿Cuánto es 50 − (20 ÷ 2 + 15)?",
+    "question": "¡Bity estabiliza el generador de gravedad! ¿Cuánto es 60 − 25 + 15?",
     "options": [
       {
-        "text": "25",
+        "text": "50",
         "isCorrect": true
       },
       {
-        "text": "20",
+        "text": "48",
         "isCorrect": false
       },
       {
-        "text": "30",
+        "text": "52",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 20 ÷ 2 = 10; luego 10 + 15 = 25. Restamos: 50 − 25 = 25."
+    "explanation": "60 − 25 = 35; luego 35 + 15 = 50."
   },
   {
     "id": "g5_matematica_8",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity calcula el impulso de despegue! ¿Cuánto es (12 ÷ 3 + 8) × 2?",
+    "question": "¡Bity calibra la navegación estelar! ¿Cuánto es 80 − 30 + 12?",
     "options": [
       {
-        "text": "24",
+        "text": "62",
         "isCorrect": true
       },
       {
-        "text": "22",
+        "text": "61",
         "isCorrect": false
       },
       {
-        "text": "26",
+        "text": "64",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 12 ÷ 3 = 4; luego 4 + 8 = 12. Finalmente 12 × 2 = 24."
+    "explanation": "80 − 30 = 50; luego 50 + 12 = 62."
   },
   {
     "id": "g5_matematica_9",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity potencia la señal de su antena! ¿Cuánto es 20 ÷ 5 + 6 × 4?",
+    "question": "¡Bity suma la reserva de celdas cuánticas! ¿Cuánto es 54 + 16 − 8?",
     "options": [
       {
-        "text": "28",
+        "text": "62",
         "isCorrect": true
       },
       {
-        "text": "26",
+        "text": "60",
         "isCorrect": false
       },
       {
-        "text": "30",
+        "text": "63",
         "isCorrect": false
       }
     ],
-    "explanation": "División: 20 ÷ 5 = 4. Multiplicación: 6 × 4 = 24. Suma final: 4 + 24 = 28."
+    "explanation": "54 + 16 = 70; luego 70 − 8 = 62."
   },
   {
     "id": "g5_matematica_10",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity conecta los generadores solares! ¿Cuánto es (30 ÷ 5 + 4) × 3?",
+    "question": "¡Bity compensa el consumo de navegación! ¿Cuánto es 65 − 15 + 20?",
     "options": [
       {
-        "text": "30",
+        "text": "70",
         "isCorrect": true
       },
       {
-        "text": "25",
+        "text": "68",
         "isCorrect": false
       },
       {
-        "text": "35",
+        "text": "72",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 30 ÷ 5 = 6; luego 6 + 4 = 10. Finalmente 10 × 3 = 30."
+    "explanation": "65 − 15 = 50; luego 50 + 20 = 70."
   },
   {
     "id": "g5_matematica_11",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity regula el flujo de energía! ¿Cuánto es 60 − (15 ÷ 3 × 8)?",
+    "question": "¡Bity afina los sensores del radar! ¿Cuánto es 38 + 22 − 10?",
     "options": [
       {
-        "text": "20",
+        "text": "50",
         "isCorrect": true
       },
       {
-        "text": "18",
+        "text": "49",
         "isCorrect": false
       },
       {
-        "text": "22",
+        "text": "52",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 15 ÷ 3 = 5; luego 5 × 8 = 40. Restamos: 60 − 40 = 20."
+    "explanation": "38 + 22 = 60; luego 60 − 10 = 50."
   },
   {
     "id": "g5_matematica_12",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity completa la recarga para volver a casa! ¿Cuánto es (10 ÷ 2 + 15) × 2?",
+    "question": "¡Bity programa la velocidad de escape! ¿Cuánto es 75 − 25 + 14?",
     "options": [
       {
-        "text": "40",
+        "text": "64",
         "isCorrect": true
       },
       {
-        "text": "35",
+        "text": "62",
         "isCorrect": false
       },
       {
-        "text": "45",
+        "text": "66",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 10 ÷ 2 = 5; luego 5 + 15 = 20. Finalmente 20 × 2 = 40."
+    "explanation": "75 − 25 = 50; luego 50 + 14 = 64."
   }
 ];
 
@@ -5317,75 +5321,100 @@ class BityQuestionManager {
     let explanation = '';
 
     if (targetGrade === 1) {
-      // Sumas y restas pequeñas hasta 10
-      const a = Math.floor(Math.random() * 5) + 3; // 3 a 7
-      const b = Math.floor(Math.random() * 4) + 1; // 1 a 4
-      const isSub = Math.random() > 0.5 && a > b;
-      if (isSub) {
-        answer = a - b;
-        question = `¡Bity recarga su batería! ¿Cuánto es ${a} − ${b}?`;
-        explanation = `${a} menos ${b} es igual a ${answer}.`;
-      } else {
-        answer = a + b;
-        question = `¡Bity necesita energía! ¿Cuánto es ${a} + ${b}?`;
-        explanation = `${a} más ${b} es igual a ${answer}.`;
-      }
+      // 1.er Grado: Sumas sencillas con números naturales pequeños (1 al 9)
+      const a = Math.floor(Math.random() * 6) + 4; // 4 a 9
+      const b = Math.floor(Math.random() * 4) + 2; // 2 a 5
+      answer = a + b;
+      question = `¡Bity necesita energía! ¿Cuánto es ${a} + ${b}?`;
+      explanation = `${a} más ${b} es igual a ${answer}.`;
       distractors = [answer + 1, Math.max(1, answer - 1)];
     } else if (targetGrade === 2) {
-      // Sumas y restas con decenas hasta 30
-      const a = (Math.floor(Math.random() * 3) + 1) * 10; // 10, 20, 30
-      const b = (Math.floor(Math.random() * 2) + 1) * 5;  // 5, 10
-      const isSub = Math.random() > 0.5;
+      // 2.º Grado: Restas sencillas y sumas fáciles con números pequeños (resultado positivo)
+      const isSub = Math.random() > 0.35; // Principalmente restas
       if (isSub) {
+        const a = Math.floor(Math.random() * 8) + 12; // 12 a 19
+        const b = Math.floor(Math.random() * 5) + 2;  // 2 a 6
         answer = a - b;
         question = `¡Bity calcula su batería! ¿Cuánto es ${a} − ${b}?`;
         explanation = `${a} menos ${b} es igual a ${answer}.`;
       } else {
+        const a = Math.floor(Math.random() * 4) + 7; // 7 a 10
+        const b = Math.floor(Math.random() * 4) + 4; // 4 a 7
         answer = a + b;
-        question = `¡Bity suma energía! ¿Cuánto es ${a} + ${b}?`;
+        question = `¡Bity suma dos baterías! ¿Cuánto es ${a} + ${b}?`;
+        explanation = `${a} más ${b} es igual a ${answer}.`;
+      }
+      distractors = [answer + 1, Math.max(1, answer - 1)];
+    } else if (targetGrade === 3) {
+      // 3.er Grado: Sumas y restas simples con números de hasta dos cifras, resolución mental
+      const isSub = Math.random() > 0.5;
+      if (isSub) {
+        const a = (Math.floor(Math.random() * 3) + 2) * 10 + Math.floor(Math.random() * 6); // 20-25, 30-35, 40-45
+        const b = Math.floor(Math.random() * 5) + 4; // 4 a 8
+        answer = a - b;
+        question = `¡Bity calibra sus sensores! ¿Cuánto es ${a} − ${b}?`;
+        explanation = `${a} menos ${b} es igual a ${answer}.`;
+      } else {
+        const a = Math.floor(Math.random() * 15) + 15; // 15 a 29
+        const b = Math.floor(Math.random() * 6) + 3;  // 3 a 8
+        answer = a + b;
+        question = `¡Bity potencia sus motores! ¿Cuánto es ${a} + ${b}?`;
         explanation = `${a} más ${b} es igual a ${answer}.`;
       }
       distractors = [answer + 2, answer - 2];
-    } else if (targetGrade === 3) {
-      // Multiplicación simple o división con divisor <= 5
-      const divisor = Math.floor(Math.random() * 4) + 2; // 2, 3, 4, 5 (NUNCA > 5)
-      const cociente = Math.floor(Math.random() * 5) + 2; // 2 a 6
-      const dividendo = divisor * cociente;
-      answer = cociente;
-      question = `¡Bity reparte piezas espaciales! ¿Cuánto es ${dividendo} ÷ ${divisor}?`;
-      explanation = `${dividendo} dividido ${divisor} es igual a ${answer}.`;
-      distractors = [answer + 1, Math.max(1, answer - 1)];
     } else if (targetGrade === 4) {
-      // Operación combinada simple: (dividendo ÷ divisor) + constante, con divisor <= 5
-      const divisor = Math.floor(Math.random() * 4) + 2; // 2, 3, 4, 5
-      const cociente = Math.floor(Math.random() * 4) + 3; // 3 a 6
-      const dividendo = divisor * cociente;
-      const extra = Math.floor(Math.random() * 6) + 5; // 5 a 10
-      answer = cociente + extra;
-      question = `¡Bity calibra su propulsor! ¿Cuánto es ${dividendo} ÷ ${divisor} + ${extra}?`;
-      explanation = `${dividendo} ÷ ${divisor} es ${cociente}; luego ${cociente} + ${extra} = ${answer}.`;
+      // 4.º Grado: Operaciones combinadas sencillas de 2 pasos (solo sumas y restas, izq a der, máx 3 números)
+      const mode = Math.random() > 0.5 ? 'add_sub' : 'sub_add';
+      if (mode === 'add_sub') {
+        const a = Math.floor(Math.random() * 15) + 15; // 15 a 29
+        const b = Math.floor(Math.random() * 6) + 5;  // 5 a 10
+        const c = Math.floor(Math.random() * 4) + 2;  // 2 a 5
+        answer = a + b - c;
+        question = `¡Bity calibra su energía! ¿Cuánto es ${a} + ${b} − ${c}?`;
+        explanation = `${a} + ${b} = ${a + b}; luego ${a + b} − ${c} = ${answer}.`;
+      } else {
+        const a = (Math.floor(Math.random() * 3) + 2) * 10; // 20, 30, 40
+        const b = Math.floor(Math.random() * 5) + 5;        // 5 a 9
+        const c = Math.floor(Math.random() * 4) + 3;        // 3 a 6
+        answer = a - b + c;
+        question = `¡Bity ajusta la telemetría! ¿Cuánto es ${a} − ${b} + ${c}?`;
+        explanation = `${a} − ${b} = ${a - b}; luego ${a - b} + ${c} = ${answer}.`;
+      }
       distractors = [answer + 2, answer - 2];
     } else {
-      // 5.° Grado: Operación con divisor <= 5 y multiplicador simple
-      const divisor = Math.floor(Math.random() * 3) + 3; // 3, 4, 5 (NUNCA > 5)
-      const cociente = Math.floor(Math.random() * 3) + 3; // 3 a 5
-      const dividendo = divisor * cociente;
-      const base = 5;
-      const mult = 2;
-      answer = (cociente + base) * mult;
-      question = `¡Bity ajusta la telemetría! ¿Cuánto es (${dividendo} ÷ ${divisor} + ${base}) × ${mult}?`;
-      explanation = `Paréntesis: ${dividendo} ÷ ${divisor} = ${cociente}, más ${base} = ${cociente + base}. Luego por ${mult} = ${answer}.`;
+      // 5.º Grado: Operaciones combinadas sencillas con números de dos cifras (máx 3 números y 2 operaciones)
+      const mode = Math.random() > 0.5 ? 'add_sub' : 'sub_add';
+      if (mode === 'add_sub') {
+        const a = (Math.floor(Math.random() * 4) + 4) * 10 + Math.floor(Math.random() * 6); // 40-45, 50-55, 60-65, 70-75
+        const b = (Math.floor(Math.random() * 2) + 1) * 10 + Math.floor(Math.random() * 6); // 10-15, 20-25
+        const c = Math.floor(Math.random() * 8) + 5;                                       // 5 a 12
+        answer = a + b - c;
+        question = `¡Bity optimiza los sistemas de la nave! ¿Cuánto es ${a} + ${b} − ${c}?`;
+        explanation = `${a} + ${b} = ${a + b}; luego ${a + b} − ${c} = ${answer}.`;
+      } else {
+        const a = (Math.floor(Math.random() * 3) + 6) * 10; // 60, 70, 80
+        const b = (Math.floor(Math.random() * 2) + 1) * 10 + 5; // 15, 25
+        const c = Math.floor(Math.random() * 8) + 5;            // 5 a 12
+        answer = a - b + c;
+        question = `¡Bity sincroniza la computadora cuántica! ¿Cuánto es ${a} − ${b} + ${c}?`;
+        explanation = `${a} − ${b} = ${a - b}; luego ${a - b} + ${c} = ${answer}.`;
+      }
       distractors = [answer + 2, answer - 2];
     }
 
+    let d1 = distractors[0];
+    let d2 = distractors[1];
+    if (d1 === answer) d1 = answer + 1;
+    if (d2 === answer || d2 === d1 || d2 < 0) d2 = answer + 3;
+
     const opts = [
       { text: String(answer), isCorrect: true },
-      { text: String(distractors[0]), isCorrect: false },
-      { text: String(distractors[1]), isCorrect: false }
+      { text: String(d1), isCorrect: false },
+      { text: String(d2), isCorrect: false }
     ];
 
     return {
-      id: `dynamic_math_g${targetGrade}_${Date.now()}`,
+      id: `dynamic_math_g${targetGrade}_${Date.now()}_${Math.floor(Math.random()*1000)}`,
       grade: targetGrade,
       category: 'matematica',
       difficulty: targetGrade <= 2 ? 'facil' : (targetGrade <= 4 ? 'medio' : 'avanzado'),
@@ -5394,7 +5423,6 @@ class BityQuestionManager {
       explanation: targetGrade === 1 ? explanation.toUpperCase() : explanation
     };
   }
-
   /**
    * Obtiene una pregunta aleatoria no repetida recientemente para el grado y categoría especificados.
    * @param {number} grade - Grado escolar (1 a 5)
