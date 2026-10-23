@@ -82,7 +82,21 @@
           </button>
         </article>
 
-        <!-- Banner 3 (Opción C): Armar Regalo Directo -->
+        <!-- Banner 3 (Módulo Independiente): Desafío Final: Instrucciones -->
+        <article id="banner-adventure" class="home-banner-card banner-adventure">
+          <span class="banner-badge">🎮 Videojuego Plataformas • Bity</span>
+          <div class="banner-icon-box">🤖 🍄 🚩 🪙</div>
+          <span class="banner-adventure-tag">DESAFÍO FINAL: INSTRUCCIONES</span>
+          <h3 class="banner-title">¡LA AVENTURA DE BITY!</h3>
+          <p class="banner-desc">
+            Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.
+          </p>
+          <button id="btn-home-adventure" class="btn-banner-action" type="button">
+            <span>🎮</span> COMENZAR AVENTURA
+          </button>
+        </article>
+
+        <!-- Banner 4 (Opción C): Armar Regalo Directo -->
         <article id="banner-editor" class="home-banner-card banner-editor">
           <span class="banner-badge">🎁 Modo Creativo • Directo</span>
           <div class="banner-icon-box">🖼️ 👨‍👩‍👧‍👦 ✨</div>
@@ -320,6 +334,30 @@
             </button>
           </article>
 
+          <!-- Módulo Independiente: DESAFÍO FINAL: INSTRUCCIONES -->
+          <article id="topic-card-adventure" class="topic-card topic-card-adventure active" style="border-color: #f59e0b; cursor: pointer;">
+            <div class="topic-card-header">
+              <span class="topic-icon">🎮</span>
+              <span class="topic-status-tag status-active" style="background: #fef3c7; color: #b45309;">⭐ VIDEOJUEGO DE AVENTURA</span>
+            </div>
+            <h4 class="topic-title">Desafío final: Instrucciones</h4>
+            <p class="topic-desc">
+              ¡La aventura de Bity! Superá obstáculos, respondé preguntas y completá misiones usando lo aprendido sobre instrucciones.
+            </p>
+            <div class="topic-progress-box">
+              <div class="topic-progress-label">
+                <span>DESAFÍO FINAL</span>
+                <span id="syllabus-adventure-pct">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="syllabus-adventure-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #f59e0b, #ef4444);"></div>
+              </div>
+            </div>
+            <button id="btn-start-adventure-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #f59e0b, #d97706); box-shadow: 0 4px 0 #b45309;">
+              <span>🎮</span> ¡Comenzar Aventura!
+            </button>
+          </article>
+
           <!-- Tema 3: PATRONES (Bloqueado según requerimiento de 1.° a 5.° Grado) -->
           <article id="topic-card-patterns" class="topic-card locked" style="border-color: #cbd5e1; cursor: not-allowed;">
             <div class="topic-card-header">
@@ -427,6 +465,49 @@
           <!-- Renderizado dinámicamente por codingModule.js -->
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANTALLA INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES (LA AVENTURA DE BITY) -->
+  <section id="screen-coding-adventure" class="screen">
+    <div class="coding-screen-wrapper adventure-screen-wrapper">
+      
+      <!-- Barra Superior / HUD del Módulo Independiente -->
+      <div class="adventure-top-header">
+        <div class="adventure-nav-left">
+          <button id="btn-back-from-adventure" class="btn-adventure-back" type="button" title="Volver a la plataforma">
+            <span>⬅️</span> Volver
+          </button>
+        </div>
+
+        <div class="adventure-header-center">
+          <span class="adventure-header-badge">⭐ MÓDULO INDEPENDIENTE DE PROGRAMACIÓN</span>
+          <h2 class="adventure-header-title">DESAFÍO FINAL: INSTRUCCIONES</h2>
+          <span class="adventure-header-subtitle">¡La Aventura de Bity! 🚀</span>
+        </div>
+
+        <div class="adventure-nav-right">
+          <div class="adventure-grade-selector-box">
+            <span class="adventure-grade-label">Grado:</span>
+            <select id="select-adventure-grade" class="adventure-grade-select" title="Seleccionar grado escolar">
+              <option value="1">1.º Grado (Exploradores)</option>
+              <option value="2">2.º Grado (Constructores)</option>
+              <option value="3">3.º Grado (Aventureros)</option>
+              <option value="4">4.º Grado (Detectives)</option>
+              <option value="5">5.º Grado (Maestros)</option>
+            </select>
+          </div>
+          <span id="adventure-grade-tag" class="adventure-grade-tag-pill">1.º Grado 🐣</span>
+        </div>
+      </div>
+
+      <!-- Contenedor del Videojuego de Plataformas -->
+      <div class="adventure-game-mount-wrap">
+        <div id="adventure-game-mount-slot" class="adventure-game-mount">
+          <!-- BityPlatformerGame se monta aquí dinámicamente -->
+        </div>
       </div>
 
     </div>
@@ -864,6 +945,7 @@
   <script src="js/legoBricks.js"></script>
   <script src="js/canvasManager.js"></script>
   <script src="js/miniGame.js"></script>
+  <script src="js/platformerQuestions.js"></script>
   <script src="js/platformerGame.js"></script>
   <script src="js/codingModule.js?v=20261013"></script>
   <script src="js/app.js"></script>

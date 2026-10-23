@@ -6299,3 +6299,483 @@ body:has(#screen-coding-topic.active) #btn-export-gift {
     font-size: 0.85rem;
   }
 }
+
+/* ========================================================
+   ESTILOS DE LA ETAPA 2: PROGRESIÓN DE 3 NIVELES Y SELECTOR
+   ======================================================== */
+
+.btn-plat-levels-nav {
+  background: #1e293b;
+  color: #facc15;
+  border: 1.5px solid #eab308;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-plat-levels-nav:hover {
+  background: #334155;
+  transform: translateY(-1px);
+}
+
+.plat-level-indicator-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.plat-level-name-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+  max-width: 190px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plat-level-steps-track {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  background: #334155;
+  color: #94a3b8;
+  border: 1.5px solid #475569;
+}
+
+.step-dot.active {
+  background: #0284c7;
+  color: white;
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+  transform: scale(1.15);
+}
+
+.step-dot.done {
+  background: #059669;
+  color: white;
+  border-color: #10b981;
+}
+
+.step-dot.unlocked {
+  background: #1e293b;
+  color: #facc15;
+  border-color: #eab308;
+}
+
+.step-dot.locked {
+  background: #18181b;
+  color: #52525b;
+  border-color: #27272a;
+}
+
+/* Modal Selector de Niveles */
+.plat-levels-modal-card {
+  max-width: 640px;
+  width: 100%;
+}
+
+.plat-lvl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.plat-lvl-select-card {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.plat-lvl-select-card.unlocked {
+  cursor: pointer;
+  border-color: #0284c7;
+}
+
+.plat-lvl-select-card.unlocked:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+  border-color: #38bdf8;
+}
+
+.plat-lvl-select-card.current {
+  border-color: #facc15;
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.4);
+}
+
+.plat-lvl-select-card.locked {
+  opacity: 0.55;
+  filter: grayscale(80%);
+  cursor: not-allowed;
+}
+
+.plat-lvl-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.plat-lvl-icon {
+  font-size: 1.8rem;
+}
+
+.plat-lvl-status-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.tag-unlocked {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid #10b981;
+}
+
+.tag-locked {
+  background: rgba(100, 116, 139, 0.2);
+  color: #94a3b8;
+  border: 1px solid #64748b;
+}
+
+.plat-lvl-title {
+  margin: 0;
+  font-size: 0.95rem;
+  color: white;
+  line-height: 1.3;
+}
+
+.plat-lvl-desc {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.35;
+  flex-grow: 1;
+}
+
+.btn-plat-play-lvl {
+  background: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.btn-plat-play-lvl:hover:not(:disabled) {
+  background: #0369a1;
+}
+
+.btn-plat-play-lvl:disabled {
+  background: #334155;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.plat-campaign-victory-card {
+  border-color: #facc15 !important;
+  box-shadow: 0 20px 60px rgba(250, 204, 21, 0.4) !important;
+}
+
+@media (max-width: 680px) {
+  .plat-lvl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================================
+   MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+   (LA AVENTURA DE BITY - VIDEOJUEGO DE PLATAFORMAS)
+   ======================================================== */
+
+/* Adaptación de la cuadrícula de banners en el Menú Principal para 4 tarjetas */
+.home-banners-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+  gap: 22px !important;
+  width: 100% !important;
+  max-width: 1260px !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 1140px) {
+  .home-banners-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Banner 4: La Aventura de Bity en pantalla de inicio */
+.banner-adventure {
+  border-color: #f59e0b;
+  background: linear-gradient(180deg, #ffffff 0%, #fffbeb 50%, #fef3c7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-adventure:hover {
+  box-shadow: 0 18px 36px rgba(245, 158, 11, 0.32);
+  transform: translateY(-6px);
+  border-color: #d97706;
+}
+
+.banner-adventure .banner-badge {
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+}
+
+.banner-adventure-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #9a3412;
+  background: #ffedd5;
+  border: 1.5px solid #fdba74;
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.banner-adventure .banner-title {
+  color: #b45309;
+  font-size: 1.55rem;
+  font-weight: 900;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.banner-adventure .banner-desc {
+  color: #4b5563;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.banner-adventure .btn-banner-action {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  color: #ffffff;
+  box-shadow: 0 6px 0 #92400e, 0 8px 14px rgba(217, 119, 6, 0.3);
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.banner-adventure .btn-banner-action:hover {
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  box-shadow: 0 4px 0 #92400e, 0 4px 8px rgba(217, 119, 6, 0.3);
+}
+
+/* Tarjeta en el Temario: Desafío Final */
+.topic-card-adventure {
+  border: 3px solid #f59e0b !important;
+  background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%) !important;
+}
+
+.topic-card-adventure:hover {
+  border-color: #d97706 !important;
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.25) !important;
+}
+
+/* PANTALLA PROPIA DEL MÓDULO INDEPENDIENTE */
+.adventure-screen-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.adventure-top-header {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #ffffff 0%, #fef3c7 100%);
+  border: 3px solid #f59e0b;
+  border-radius: 20px;
+  padding: 12px 24px;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.18);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.adventure-nav-left,
+.adventure-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-adventure-back {
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  color: #1e293b;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.18s ease;
+}
+
+.btn-adventure-back:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #94a3b8;
+}
+
+.btn-adventure-back:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #94a3b8;
+}
+
+.adventure-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.adventure-header-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #9a3412;
+  background: #ffedd5;
+  border: 1px solid #fdba74;
+  border-radius: 999px;
+  padding: 2px 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.adventure-header-title {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #b45309;
+  letter-spacing: 0.5px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.adventure-header-subtitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #ea580c;
+  margin-top: 2px;
+}
+
+.adventure-grade-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 2px solid #fdba74;
+  border-radius: 12px;
+  padding: 4px 10px;
+}
+
+.adventure-grade-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.adventure-grade-select {
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1e293b;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+}
+
+.adventure-grade-tag-pill {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #1e293b;
+  background: #fed7aa;
+  border: 1.5px solid #f97316;
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.adventure-game-mount-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.adventure-game-mount {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 820px) {
+  .adventure-top-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .adventure-header-center {
+    order: 1;
+  }
+  .adventure-nav-left {
+    order: 2;
+  }
+  .adventure-nav-right {
+    order: 3;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

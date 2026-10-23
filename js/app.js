@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenCodingGrades = document.getElementById('screen-coding-grades');
     const screenCodingSyllabus = document.getElementById('screen-coding-syllabus');
     const screenCodingTopic = document.getElementById('screen-coding-topic');
+    const screenCodingAdventure = document.getElementById('screen-coding-adventure');
 
     const btnHomePlay = document.getElementById('btn-home-play');
     const bannerPlay = document.getElementById('banner-play');
@@ -70,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const bannerEditor = document.getElementById('banner-editor');
     const btnHomeCoding = document.getElementById('btn-home-coding');
     const bannerCoding = document.getElementById('banner-coding');
+    const btnHomeAdventure = document.getElementById('btn-home-adventure');
+    const bannerAdventure = document.getElementById('banner-adventure');
 
     const btnBackToHomeFromGrades = document.getElementById('btn-back-to-home-from-grades');
     const gradeCards = document.querySelectorAll('.grade-card');
@@ -87,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (codingManager && codingManager.stopBgm) {
         codingManager.stopBgm();
       }
-      [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic].forEach(s => {
+      [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure].forEach(s => {
         if (s) s.classList.remove('active');
       });
       if (targetScreen) targetScreen.classList.add('active');
@@ -221,6 +224,24 @@ document.addEventListener('DOMContentLoaded', () => {
         playClickSound();
       });
     }
+
+    // 3. Opción: MÓDULO INDEPENDIENTE - DESAFÍO FINAL: INSTRUCCIONES (La Aventura de Bity)
+    const openAdventureMode = () => {
+      if (typeof game !== 'undefined' && game.stop) game.stop();
+      codingManager.startPlatformerAdventure({ returnTo: 'home' });
+      playClickSound();
+    };
+
+    if (btnHomeAdventure) btnHomeAdventure.addEventListener('click', (e) => { e.stopPropagation(); openAdventureMode(); });
+    if (bannerAdventure) bannerAdventure.addEventListener('click', openAdventureMode);
+
+    const fallbackBtnAdventure = document.querySelector('.banner-adventure .btn-banner-action');
+    if (fallbackBtnAdventure && !btnHomeAdventure) {
+      fallbackBtnAdventure.addEventListener('click', (e) => { e.stopPropagation(); openAdventureMode(); });
+    }
+
+    // Exponer codingManager globalmente para interoperabilidad
+    window.codingManager = codingManager;
 
     // 3. Opción C: Ir directamente al taller de la foto (Modo Creativo)
     const goToEditor = () => {

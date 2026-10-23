@@ -757,20 +757,17 @@ const CODING_DATA = {
             "PISTA 2: DESPUÉS GIRÁ A LA DERECHA Y BAJÁ 2 CASILLEROS HASTA LA ESTACIÓN 2.",
             "PISTA 3: DESDE LA ESTACIÓN 2, GIRÁ A LA IZQUIERDA, AVANZÁ 2 A LA ESTACIÓN 3 Y SUBÍ AL CENTRO DE REPUESTOS."
         ]
-    },
-    {
-        "id": "g1_hw_final_platformer",
-        "type": "platformer_game",
-        "title": "🎮 DESAFÍO FINAL: INSTRUCCIONES",
-        "badge": "VIDEOJUEGO",
-        "hints": [
-            "PISTA 1: USÁ LAS FLECHAS O BOTONES TÁCTILES PARA CAMINAR Y SALTAR.",
-            "PISTA 2: ESQUIVÁ LOS POZOS Y ROBOTS ENEMIGOS PARA NO PERDER VIDAS.",
-            "PISTA 3: RECOGÉ LA FLOR, EL HONGO Y LA BATERÍA PARA RESPONDER SUS PREGUNTAS Y LLEGAR A LA META."
-        ]
     }
   ]
 },
+      // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+      final_challenge: {
+        id: 'final_challenge',
+        title: 'DESAFÍO FINAL: INSTRUCCIONES',
+        subtitle: '¡LA AVENTURA DE BITY!',
+        desc: 'AYUDÁ A BITY A SUPERAR LOS OBSTÁCULOS, RESPONDER PREGUNTAS Y COMPLETAR MISIONES. USÁ LO QUE APRENDISTE SOBRE INSTRUCCIONES Y PROGRAMACIÓN PARA LLEGAR AL FINAL.',
+        badge: 'VIDEOJUEGO DE AVENTURA'
+      },
       // TEMA 2: PATRONES (EXCLUSIVO 1.° GRADO - TODO EN MAYÚSCULAS)
       patterns: {
         title: 'PATRONES',
@@ -2202,20 +2199,17 @@ const CODING_DATA = {
             "Pista 2: Bajá 1 casillero y girá a la derecha para llegar a la Estación 2 en (4, 1).",
             "Pista 3: Descendé a la fila inferior y avanzá hacia la izquierda para conectar con la Estación 3 y el Centro de Repuestos."
         ]
-    },
-    {
-        "id": "g2_hw_final_platformer",
-        "type": "platformer_game",
-        "title": "🎮 Desafío final: Instrucciones",
-        "badge": "Videojuego",
-        "hints": [
-            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
-            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
-            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
-        ]
     }
   ]
 },
+      // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+      final_challenge: {
+        id: 'final_challenge',
+        title: 'Desafío final: Instrucciones',
+        subtitle: '¡La Aventura de Bity!',
+        desc: 'Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.',
+        badge: 'Videojuego de Aventura'
+      },
 
 
       // ====================================================
@@ -3568,20 +3562,17 @@ const CODING_DATA = {
             "Pista 2: Avanzá por la fila 0 hasta la columna 5 y descendé a la Estación 2.",
             "Pista 3: Desde la Estación 2, avanzá 3 casilleros hacia la izquierda, bajá a la Estación 3 y entrá al Centro de Repuestos."
         ]
-    },
-    {
-        "id": "g3_hw_final_platformer",
-        "type": "platformer_game",
-        "title": "🎮 Desafío final: Instrucciones",
-        "badge": "Videojuego",
-        "hints": [
-            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
-            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
-            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
-        ]
     }
   ]
 },
+      // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+      final_challenge: {
+        id: 'final_challenge',
+        title: 'Desafío final: Instrucciones',
+        subtitle: '¡La Aventura de Bity!',
+        desc: 'Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.',
+        badge: 'Videojuego de Aventura'
+      },
 
 
       // ====================================================
@@ -4887,20 +4878,17 @@ const CODING_DATA = {
             "Pista 2: Bajá 2 a la fila 4 y avanzá 3 casilleros a la izquierda para alcanzar la Estación 3.",
             "Pista 3: Desde la Estación 3 en (2, 4), solo necesitás subir 1 casillero al Centro de Repuestos (13 movimientos en total)."
         ]
-    },
-    {
-        "id": "g4_hw_final_platformer",
-        "type": "platformer_game",
-        "title": "🎮 Desafío final: Instrucciones",
-        "badge": "Videojuego",
-        "hints": [
-            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
-            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
-            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
-        ]
     }
   ]
 },
+      // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+      final_challenge: {
+        id: 'final_challenge',
+        title: 'Desafío final: Instrucciones',
+        subtitle: '¡La Aventura de Bity!',
+        desc: 'Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.',
+        badge: 'Videojuego de Aventura'
+      },
 
 
       // ====================================================
@@ -6694,20 +6682,17 @@ const CODING_DATA = {
                 "icon": "🔄"
             }
         ]
-    },
-    {
-        "id": "g5_hw_final_platformer",
-        "type": "platformer_game",
-        "title": "🎮 Desafío final: Instrucciones",
-        "badge": "Videojuego",
-        "hints": [
-            "Pista 1: Usá las flechas o controles táctiles para caminar y saltar.",
-            "Pista 2: Esquivá los pozos y enemigos mecánicos para cuidar tus 3 vidas.",
-            "Pista 3: Recogé la flor, el hongo y la batería para responder las preguntas y llegar a la meta."
-        ]
     }
   ]
 },
+      // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+      final_challenge: {
+        id: 'final_challenge',
+        title: 'Desafío final: Instrucciones',
+        subtitle: '¡La Aventura de Bity!',
+        desc: 'Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.',
+        badge: 'Videojuego de Aventura'
+      },
 
 
       // ====================================================
@@ -7059,7 +7044,8 @@ class CodingProgressStorage {
     if (data.grades) {
       data.grades[grade] = {
         instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 },
-        homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }
+        homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 },
+        final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }
       };
     }
     this.save(data);
@@ -7068,11 +7054,11 @@ class CodingProgressStorage {
   resetAllProgress() {
     const data = {
       grades: {
-        1: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
-        2: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
-        3: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
-        4: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
-        5: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } }
+        1: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        2: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        3: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        4: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } },
+        5: { instructions: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, homework: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 }, final_challenge: { activitiesCompleted: [], score: 0, completed: false, starsTotal: 0 } }
       },
       totalScore: 0,
       badges: []
@@ -7510,6 +7496,105 @@ class CodingModuleManager {
   }
 
   /**
+   * Inicia el Módulo Independiente: "DESAFÍO FINAL: INSTRUCCIONES" (La Aventura de Bity)
+   * @param {Object} options - { grade?: number, returnTo?: 'home' | 'syllabus' }
+   */
+  startPlatformerAdventure(options = {}) {
+    this.cleanupCurrentActivity();
+
+    // Guardar origen para volver de forma limpia
+    this.adventureReturnTo = options.returnTo || 'home';
+
+    if (options.grade) {
+      this.currentGrade = parseInt(options.grade) || this.currentGrade;
+    }
+
+    // Mostrar pantalla propia del módulo independiente
+    const adventureScreen = document.getElementById('screen-coding-adventure');
+    if (this.onShowScreen && adventureScreen) {
+      this.onShowScreen('screen-coding-adventure');
+    } else if (adventureScreen) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      adventureScreen.classList.add('active');
+    }
+
+    // Actualizar selector de grado del módulo independiente
+    const gradeSelect = document.getElementById('select-adventure-grade');
+    if (gradeSelect) {
+      gradeSelect.value = String(this.currentGrade);
+      gradeSelect.onchange = (e) => {
+        const newGrade = parseInt(e.target.value) || 1;
+        this.startPlatformerAdventure({ grade: newGrade, returnTo: this.adventureReturnTo });
+      };
+    }
+
+    const gradeTag = document.getElementById('adventure-grade-tag');
+    if (gradeTag) {
+      const gNames = {
+        1: '1.º Grado (Exploradores) 🐣',
+        2: '2.º Grado (Constructores) 🧱',
+        3: '3.º Grado (Aventureros) 🏹',
+        4: '4.º Grado (Detectives) 🔍',
+        5: '5.º Grado (Maestros) 💻'
+      };
+      gradeTag.textContent = gNames[this.currentGrade] || `${this.currentGrade}.º Grado`;
+    }
+
+    // Botón volver superior del módulo independiente
+    const btnBack = document.getElementById('btn-back-from-adventure');
+    if (btnBack) {
+      btnBack.onclick = () => {
+        this.exitPlatformerAdventure();
+      };
+    }
+
+    // Contenedor de montaje para el juego
+    const mountSlot = document.getElementById('adventure-game-mount-slot');
+    if (!mountSlot) {
+      console.error('No se encontró el contenedor #adventure-game-mount-slot');
+      return;
+    }
+
+    mountSlot.innerHTML = '';
+
+    // Montar BityPlatformerGame en su pantalla independiente
+    this.currentPlatformerGame = new BityPlatformerGame({
+      container: mountSlot,
+      grade: this.currentGrade,
+      onComplete: (stats) => {
+        const earnedPoints = (stats && stats.score) ? stats.score : 50;
+        this.storage.completeActivity(this.currentGrade, 'final_challenge', `g${this.currentGrade}_final_platformer`, earnedPoints, 3);
+        if (this.onPlaySound) this.onPlaySound('fanfare');
+        if (this.onLaunchConfetti) this.onLaunchConfetti();
+      },
+      onBack: () => {
+        this.exitPlatformerAdventure();
+      },
+      onPlaySound: (type) => {
+        if (this.onPlaySound) this.onPlaySound(type);
+      }
+    });
+  }
+
+  /**
+   * Sale del módulo independiente y vuelve de manera limpia al origen (Home o Temario)
+   */
+  exitPlatformerAdventure() {
+    this.cleanupCurrentActivity();
+    if (this.adventureReturnTo === 'syllabus') {
+      this.renderSyllabus();
+    } else {
+      const homeScreen = document.getElementById('screen-home');
+      if (this.onShowScreen && homeScreen) {
+        this.onShowScreen('screen-home');
+      } else if (homeScreen) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        homeScreen.classList.add('active');
+      }
+    }
+  }
+
+  /**
    * Carga un grado escolar (1 a 5) y abre su temario
    */
   loadGrade(grade) {
@@ -7829,6 +7914,56 @@ class CodingModuleManager {
       }
     } else {
       if (hwCard) hwCard.style.display = 'none';
+    }
+
+    // ========================================================
+    // MÓDULO INDEPENDIENTE: DESAFÍO FINAL: INSTRUCCIONES
+    // ========================================================
+    const advCard = document.getElementById('topic-card-adventure');
+    const btnStartAdv = document.getElementById('btn-start-adventure-topic');
+    const advFillEl = document.getElementById('syllabus-adventure-progress');
+    const advTextEl = document.getElementById('syllabus-adventure-pct');
+
+    if (advCard) {
+      advCard.style.display = 'flex';
+      advCard.style.cursor = 'pointer';
+      advCard.onclick = () => {
+        this.onPlaySound('pop');
+        this.startPlatformerAdventure({ returnTo: 'syllabus' });
+      };
+    }
+
+    const advProgress = this.storage.getGradeProgress(this.currentGrade, 'final_challenge');
+    let platData = null;
+    try {
+      const raw = localStorage.getItem(`lego_bity_plat_progress_g${this.currentGrade}`);
+      if (raw) platData = JSON.parse(raw);
+    } catch (e) {}
+
+    const completedLvs = (platData && Array.isArray(platData.completedLevels)) ? platData.completedLevels.length : 0;
+    const isAdvCompleted = (advProgress && advProgress.completed) || (completedLvs >= 1);
+    const advPct = isAdvCompleted ? 100 : Math.min(100, Math.round((completedLvs / 3) * 100));
+
+    if (advFillEl) advFillEl.style.width = `${advPct}%`;
+    if (advTextEl) {
+      advTextEl.textContent = isAdvCompleted ? (isGradeOne ? '🎉 ¡COMPLETADO!' : '🎉 ¡Completado!') : `${advPct}%`;
+    }
+
+    if (btnStartAdv) {
+      if (isGradeOne) {
+        btnStartAdv.innerHTML = isAdvCompleted
+          ? '<span>🔄</span> ¡JUGAR DE NUEVO!'
+          : (completedLvs > 0 ? '<span>▶️</span> ¡CONTINUAR AVENTURA!' : '<span>🎮</span> ¡COMENZAR AVENTURA!');
+      } else {
+        btnStartAdv.innerHTML = isAdvCompleted
+          ? '<span>🔄</span> ¡Jugar de nuevo!'
+          : (completedLvs > 0 ? '<span>▶️</span> ¡Continuar aventura!' : '<span>🎮</span> ¡Comenzar aventura!');
+      }
+      btnStartAdv.onclick = (e) => {
+        if (e) e.stopPropagation();
+        this.onPlaySound('pop');
+        this.startPlatformerAdventure({ returnTo: 'syllabus' });
+      };
     }
 
     // ========================================================
