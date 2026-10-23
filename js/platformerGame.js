@@ -2920,27 +2920,38 @@ class BityPlatformerGame {
 
     } else {
       // ----------------------------------------------------
-      // VICTORIA FINAL DE LA CAMPAÑA (Nivel 3 completado)
+      // VICTORIA FINAL DE LA CAMPAÑA (Nivel 3 completado - PANTALLA DE REFLEXIÓN)
       // ----------------------------------------------------
-      const victoryTitle = this.isGradeOne
-        ? '🏆 ¡MISIÓN CUMPLIDA! ¡CAMPAÑA FINALIZADA!'
-        : '🏆 ¡Misión Cumplida! ¡Campaña Finalizada!';
-
-      const victoryMsg = this.isGradeOne
-        ? '¡FELICITACIONES! AYUDASTE A BITY A SUPERAR EL VALLE, LA FÁBRICA Y SU PLANETA. SU COHETE ESTÁ COMPLETAMENTE REPARADO.'
-        : '¡Felicitaciones! Has completado los 3 niveles del Desafío Final con éxito. Bity reparó su cohete y puede regresar a casa.';
-
       const html = `
-        <div class="plat-victory-card plat-campaign-victory-card">
-          <div class="plat-victory-icon">🏆 🛸 🌟</div>
-          <h2 class="plat-modal-title plat-title-victory" style="font-size:1.8rem;">${victoryTitle}</h2>
-          <p class="plat-victory-desc">${victoryMsg}</p>
+        <div class="plat-victory-card plat-campaign-victory-card plat-reflection-card">
+          <!-- Bity celebrando con trofeo y confeti -->
+          <div class="plat-celebration-banner">
+            <span class="plat-confetti-particle c1">🎉</span>
+            <span class="plat-confetti-particle c2">⭐</span>
+            <div class="plat-bity-celebrating-avatar" title="¡Bity celebra la victoria!">
+              <span class="plat-bity-face">🤖</span>
+              <span class="plat-trophy-badge">🏆</span>
+            </div>
+            <span class="plat-confetti-particle c3">✨</span>
+            <span class="plat-confetti-particle c4">🚀</span>
+          </div>
+
+          <h2 class="plat-modal-title plat-reflection-title">¡MISIÓN CUMPLIDA!</h2>
+          <p class="plat-reflection-lead">¡LO LOGRASTE! AYUDASTE A BITY A SUPERAR TODOS LOS DESAFÍOS.</p>
+
+          <div class="plat-classroom-card">
+            <div class="plat-classroom-header">
+              <span class="plat-classroom-icon">🏫</span>
+              <span class="plat-classroom-tag">AHORA CONTÁ EN CLASSROOM:</span>
+            </div>
+            <p class="plat-classroom-prompt">¿QUÉ APRENDISTE DURANTE ESTA AVENTURA?</p>
+          </div>
 
           <div class="plat-stats-grid">
             <div class="plat-stat-box">
               <span class="plat-stat-icon">⏱️</span>
               <span class="plat-stat-val">${timeFormatted}</span>
-              <span class="plat-stat-label">${this.isGradeOne ? 'TIEMPO FINAL' : 'Tiempo final'}</span>
+              <span class="plat-stat-label">${this.isGradeOne ? 'TIEMPO' : 'Tiempo'}</span>
             </div>
             <div class="plat-stat-box">
               <span class="plat-stat-icon">❤️</span>
@@ -2955,7 +2966,7 @@ class BityPlatformerGame {
             <div class="plat-stat-box">
               <span class="plat-stat-icon">⭐</span>
               <span class="plat-stat-val">${this.score} pts</span>
-              <span class="plat-stat-label">${this.isGradeOne ? 'PUNTOS' : 'Puntaje'}</span>
+              <span class="plat-stat-label">${this.isGradeOne ? 'PUNTAJE' : 'Puntaje'}</span>
             </div>
           </div>
 
