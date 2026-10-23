@@ -2713,16 +2713,35 @@ class BityPlatformerGame {
   }
 
   showMathQuestionModal(questionObj, item) {
-    const q = questionObj || {
-      id: 'fallback_math',
-      question: this.isGradeOne ? '¡CALCULÁ TU BATERÍA! ¿CUÁNTO ES 15 + 17 − 2?' : '¡Calculá tu batería! ¿Cuánto es 15 + 17 − 2?',
-      options: [
-        { label: 'A', text: 'A. 30', isCorrect: true },
-        { label: 'B', text: 'B. 28', isCorrect: false },
-        { label: 'C', text: 'C. 32', isCorrect: false }
-      ],
-      explanation: '15 más 17 es 32; menos 2 es igual a 30.'
-    };
+    let fallbackMathQ;
+    if (this.questionManager && typeof this.questionManager.generateSafeMathQuestion === 'function') {
+      const dyn = this.questionManager.generateSafeMathQuestion(this.grade);
+      fallbackMathQ = this.questionManager._formatQuestion(dyn, this.isGradeOne);
+    } else {
+      fallbackMathQ = this.isGradeOne
+        ? {
+            id: 'fallback_math_g1',
+            question: '¡CALCULÁ TU BATERÍA! ¿CUÁNTO ES 5 + 4?',
+            options: [
+              { label: 'A', text: 'A. 9', isCorrect: true },
+              { label: 'B', text: 'B. 7', isCorrect: false },
+              { label: 'C', text: 'C. 8', isCorrect: false }
+            ],
+            explanation: '5 MÁS 4 ES IGUAL A 9.'
+          }
+        : {
+            id: 'fallback_math_std',
+            question: '¡Calculá tu batería! ¿Cuánto es 12 + 6?',
+            options: [
+              { label: 'A', text: 'A. 18', isCorrect: true },
+              { label: 'B', text: 'B. 15', isCorrect: false },
+              { label: 'C', text: 'C. 20', isCorrect: false }
+            ],
+            explanation: '12 más 6 es igual a 18.'
+          };
+    }
+
+    const q = questionObj || fallbackMathQ;
 
     const html = `
       <div class="plat-question-card plat-math-card">

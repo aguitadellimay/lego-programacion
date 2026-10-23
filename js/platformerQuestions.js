@@ -2,11 +2,18 @@
  * platformerQuestions.js - Banco de preguntas pedagógicas y motor de aleatoriedad
  * Desafío final: Instrucciones - Lego Familiar
  *
- * Incluye un banco de 240 preguntas distribuidas equitativamente entre:
+ * Contenidos estrictamente adaptados a Educación Primaria (1.° a 5.° grado):
+ * 1. Qué es una instrucción (orden clara que indica qué hacer).
+ * 2. Qué es un algoritmo (conjunto de pasos ordenados para resolver una tarea).
+ * 3. Qué significa programar (darle instrucciones a una computadora o robot).
+ *
+ * Operaciones matemáticas simples con sumas, restas, multiplicaciones y
+ * divisiones exactas con divisor <= 5 únicamente.
+ *
+ * Banco de 240 preguntas distribuidas equitativamente:
  * - 5 grados (1.° a 5.° grado)
  * - 4 categorías (instrucciones, programacion, algoritmos, matematica)
- * - Exactamente 12 preguntas por cada combinación de grado y categoría.
- * - Motor con historial de prevención de repeticiones continuas.
+ * - Exactamente 12 preguntas por combinación.
  */
 
 const BITY_QUESTION_BANK = [
@@ -18,26 +25,26 @@ const BITY_QUESTION_BANK = [
     "question": "¿Qué es una instrucción?",
     "options": [
       {
-        "text": "Una orden clara que nos dice qué acción hacer.",
+        "text": "Una orden que indica qué acción debe hacer Bity o una computadora.",
         "isCorrect": true
       },
       {
-        "text": "Un dibujo para colorear la pantalla.",
+        "text": "Un dibujo de colores para la pantalla.",
         "isCorrect": false
       },
       {
-        "text": "Un botón que apaga la máquina.",
+        "text": "Un sonido musical que suena al azar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una instrucción le indica a Bity o a una computadora qué acción específica debe realizar."
+    "explanation": "Una instrucción es una orden clara que le dice a una persona, a una computadora o a un robot qué acción realizar."
   },
   {
     "id": "g1_instrucciones_2",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "Si queremos que Bity avance hacia adelante, ¿cuál es la instrucción?",
+    "question": "Si queremos que Bity camine hacia adelante, ¿cuál es la instrucción correcta?",
     "options": [
       {
         "text": "Avanzar 1 paso",
@@ -48,33 +55,33 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Apagar la luz",
+        "text": "Pintar una flor",
         "isCorrect": false
       }
     ],
-    "explanation": "«Avanzar» le da la orden directa a Bity de moverse hacia adelante."
+    "explanation": "«Avanzar 1 paso» le da la orden directa y clara a Bity de moverse hacia el frente."
   },
   {
     "id": "g1_instrucciones_3",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "¿Cuál de estas es una instrucción clara para Bity?",
+    "question": "Si le damos a Bity la orden «Saltar», ¿qué acción realiza?",
     "options": [
       {
-        "text": "Girar a la derecha",
+        "text": "Da un salto hacia arriba.",
         "isCorrect": true
       },
       {
-        "text": "Hacer cualquier cosa",
+        "text": "Se apaga por completo.",
         "isCorrect": false
       },
       {
-        "text": "Color amarillo brillante",
+        "text": "Gira en círculos sin parar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una instrucción clara indica con precisión la acción a ejecutar."
+    "explanation": "Al recibir la orden «Saltar», el robot se impulsa verticalmente hacia arriba."
   },
   {
     "id": "g1_instrucciones_4",
@@ -88,191 +95,191 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Para jugar solo sin que nadie le diga nada.",
+        "text": "Para comer galletitas.",
         "isCorrect": false
       },
       {
-        "text": "Para cambiar de color sin moverse.",
+        "text": "Para cambiar de nombre solo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los robots necesitan instrucciones para saber cómo y cuándo moverse."
+    "explanation": "Los robots no saben qué hacer por sí mismos; necesitan instrucciones para guiarse."
   },
   {
     "id": "g1_instrucciones_5",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "Si un semáforo peatonal se pone en verde, ¿qué instrucción nos da?",
+    "question": "Si un semáforo peatonal se pone en verde, ¿qué instrucción nos indica?",
     "options": [
       {
         "text": "Cruzar la calle con cuidado.",
         "isCorrect": true
       },
       {
-        "text": "Detenerse y esperar en la vereda.",
+        "text": "Quedarse quieto para siempre.",
         "isCorrect": false
       },
       {
-        "text": "Cerrar los ojos.",
+        "text": "Correr hacia atrás.",
         "isCorrect": false
       }
     ],
-    "explanation": "La luz verde nos indica que es momento de avanzar cruzando por la senda peatonal."
+    "explanation": "La luz verde peatonal es una señal que nos da la instrucción de cruzar la calle."
   },
   {
     "id": "g1_instrucciones_6",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "Si le damos a Bity la orden «Saltar», ¿qué hace?",
+    "question": "¿Cuál de estas es una instrucción clara para Bity?",
     "options": [
       {
-        "text": "Se eleva en el aire para esquivar un pozo.",
+        "text": "Girar a la derecha",
         "isCorrect": true
       },
       {
-        "text": "Se queda quieto en el suelo.",
+        "text": "Cualquier cosa linda",
         "isCorrect": false
       },
       {
-        "text": "Gira en círculos.",
+        "text": "Mañana quizás",
         "isCorrect": false
       }
     ],
-    "explanation": "La acción de saltar le permite elevarse por encima de obstáculos o pozos."
+    "explanation": "«Girar a la derecha» es una orden precisa con acción y dirección claras."
   },
   {
     "id": "g1_instrucciones_7",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "¿Qué ocurre si le damos a Bity una instrucción confusa o incompleta?",
-    "options": [
-      {
-        "text": "El robot no sabe qué hacer y se detiene.",
-        "isCorrect": true
-      },
-      {
-        "text": "Adivina solo lo que queríamos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Vuela por el espacio.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las computadoras y robots no adivinan: necesitan instrucciones completas y claras."
-  },
-  {
-    "id": "g1_instrucciones_8",
-    "grade": 1,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "En una receta de cocina, ¿cuál es una instrucción correcta?",
-    "options": [
-      {
-        "text": "Mezclar los ingredientes en el recipiente.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un dibujo de una manzana.",
-        "isCorrect": false
-      },
-      {
-        "text": "La mesa del comedor.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "«Mezclar» es una orden de acción dentro del procedimiento de la receta."
-  },
-  {
-    "id": "g1_instrucciones_9",
-    "grade": 1,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "Si Bity se encuentra frente a una roca gigante, ¿qué instrucción lo ayuda a seguir?",
-    "options": [
-      {
-        "text": "Girar a la izquierda para rodear la roca.",
-        "isCorrect": true
-      },
-      {
-        "text": "Chocar de frente contra la roca.",
-        "isCorrect": false
-      },
-      {
-        "text": "Quedarse apagado para siempre.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Girar le permite buscar un camino libre para esquivar el obstáculo."
-  },
-  {
-    "id": "g1_instrucciones_10",
-    "grade": 1,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "¿Por qué las instrucciones deben darse en orden?",
-    "options": [
-      {
-        "text": "Para que el robot haga las cosas paso a paso sin equivocarse.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque da igual hacer cualquier cosa primero.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para que las letras se vean más grandes.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El orden correcto asegura que cada paso prepare el camino para el siguiente."
-  },
-  {
-    "id": "g1_instrucciones_11",
-    "grade": 1,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "¿Cuál es una instrucción clara para entrar al aula?",
-    "options": [
-      {
-        "text": "Caminar hacia la puerta y pasar en orden.",
-        "isCorrect": true
-      },
-      {
-        "text": "Gritar muy fuerte en el patio.",
-        "isCorrect": false
-      },
-      {
-        "text": "La mochila escolar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Indica con claridad y respeto la acción de entrar al aula."
-  },
-  {
-    "id": "g1_instrucciones_12",
-    "grade": 1,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "Si la orden dice «Retroceder un paso», ¿hacia dónde va Bity?",
+    "question": "Si la orden dice «Retroceder 1 paso», ¿hacia dónde se mueve Bity?",
     "options": [
       {
         "text": "Hacia atrás.",
         "isCorrect": true
       },
       {
-        "text": "Hacia adelante.",
+        "text": "Hacia arriba volando.",
         "isCorrect": false
       },
       {
-        "text": "Hacia arriba.",
+        "text": "Hacia adelante.",
         "isCorrect": false
       }
     ],
-    "explanation": "Retroceder significa dar un paso en sentido contrario a donde está mirando."
+    "explanation": "Retroceder significa dar un paso en dirección contraria al frente."
+  },
+  {
+    "id": "g1_instrucciones_8",
+    "grade": 1,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "En la escuela, ¿cuál es una instrucción clara de la maestra?",
+    "options": [
+      {
+        "text": "Abrir el cuaderno en la página 5.",
+        "isCorrect": true
+      },
+      {
+        "text": "El lápiz es de color azul.",
+        "isCorrect": false
+      },
+      {
+        "text": "El recreo fue divertido.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "«Abrir el cuaderno en la página 5» es una orden que indica qué acción exacta realizar."
+  },
+  {
+    "id": "g1_instrucciones_9",
+    "grade": 1,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si Bity está frente a un charco pequeño, ¿qué orden le ayuda a no mojarse?",
+    "options": [
+      {
+        "text": "Saltar el charco",
+        "isCorrect": true
+      },
+      {
+        "text": "Sentarse en el agua",
+        "isCorrect": false
+      },
+      {
+        "text": "Apagar los ojos",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Saltar permite a Bity superar el obstáculo del charco de forma segura."
+  },
+  {
+    "id": "g1_instrucciones_10",
+    "grade": 1,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "¿Qué pasa si le damos a Bity una orden incompleta como «Avanzar» sin decirle cuánto?",
+    "options": [
+      {
+        "text": "Bity no sabe cuántos pasos debe dar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Bity adivina perfectamente nuestro pensamiento.",
+        "isCorrect": false
+      },
+      {
+        "text": "Bity se transforma en auto.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las instrucciones deben ser completas y precisas para que el robot sepa exactamente qué hacer."
+  },
+  {
+    "id": "g1_instrucciones_11",
+    "grade": 1,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si queremos que Bity recoja una batería del suelo, ¿qué instrucción le damos al estar sobre ella?",
+    "options": [
+      {
+        "text": "Agarrar la batería",
+        "isCorrect": true
+      },
+      {
+        "text": "Tirar la batería lejos",
+        "isCorrect": false
+      },
+      {
+        "text": "Mirar el cielo",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "«Agarrar la batería» es la orden adecuada para recolectar el objeto del piso."
+  },
+  {
+    "id": "g1_instrucciones_12",
+    "grade": 1,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si le decimos a Bity «Detenerse», ¿qué hace el robot?",
+    "options": [
+      {
+        "text": "Se queda quieto en su lugar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Corre muy rápido.",
+        "isCorrect": false
+      },
+      {
+        "text": "Salta sin parar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "«Detenerse» le ordena al robot frenar todo movimiento de inmediato."
   },
   {
     "id": "g1_programacion_1",
@@ -282,422 +289,378 @@ const BITY_QUESTION_BANK = [
     "question": "¿Qué significa programar?",
     "options": [
       {
-        "text": "Dar instrucciones ordenadas a una máquina para que cumpla una tarea.",
+        "text": "Darle instrucciones a una computadora o a un robot para que haga una tarea.",
         "isCorrect": true
       },
       {
-        "text": "Usar la computadora sin saber qué hace.",
+        "text": "Comprar una computadora en una tienda.",
         "isCorrect": false
       },
       {
-        "text": "Desarmar los juguetes en el piso.",
+        "text": "Limpiar la pantalla con un paño.",
         "isCorrect": false
       }
     ],
-    "explanation": "Programar es escribir y ordenar las instrucciones que una máquina necesita seguir."
+    "explanation": "Programar es enseñarle a una computadora o a un robot qué pasos debe hacer mediante instrucciones."
   },
   {
     "id": "g1_programacion_2",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Quién le dice a Bity qué tiene que hacer?",
+    "question": "¿Quién le dice a Bity qué tiene que hacer en cada momento?",
     "options": [
       {
-        "text": "Nosotros cuando armamos su programa de instrucciones.",
+        "text": "La persona que lo programa con instrucciones.",
         "isCorrect": true
       },
       {
-        "text": "El robot lo inventa todo solo.",
+        "text": "El robot decide todo por arte de magia.",
         "isCorrect": false
       },
       {
-        "text": "Nadie, las máquinas no necesitan órdenes.",
+        "text": "Nadie, Bity lee la mente.",
         "isCorrect": false
       }
     ],
-    "explanation": "Bity depende de nuestro programa para saber qué acciones ejecutar."
+    "explanation": "Bity necesita que un niño o niña lo programe con órdenes claras para poder moverse."
   },
   {
     "id": "g1_programacion_3",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Las computadoras pueden pensar solas como los humanos?",
+    "question": "¿Las computadoras pueden pensar solas como las personas?",
     "options": [
       {
-        "text": "No, solo siguen exactamente las instrucciones del programa.",
+        "text": "No, solo siguen las instrucciones que les programamos.",
         "isCorrect": true
       },
       {
-        "text": "Sí, sueñan y piensan como personas.",
+        "text": "Sí, piensan y sueñan solas.",
         "isCorrect": false
       },
       {
-        "text": "Sí, saben todo sin que nadie les enseñe.",
+        "text": "Sí, saben todo sin instrucciones.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las computadoras son máquinas creadas para ejecutar los programas que creamos."
+    "explanation": "Las computadoras no piensan como nosotros; solo ejecutan las instrucciones que las personas les dan."
   },
   {
     "id": "g1_programacion_4",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Qué necesitamos para armar un programa divertido?",
+    "question": "Cuando programamos a Bity, ¿en qué orden realiza las acciones?",
     "options": [
       {
-        "text": "Pensar el recorrido y ordenar bien los bloques de instrucciones.",
+        "text": "En el orden en que colocamos las instrucciones.",
         "isCorrect": true
       },
       {
-        "text": "Apretar todos los botones al mismo tiempo.",
+        "text": "En cualquier orden desordenado.",
         "isCorrect": false
       },
       {
-        "text": "Apagar la pantalla enseguida.",
+        "text": "Al revés, de abajo hacia arriba siempre.",
         "isCorrect": false
       }
     ],
-    "explanation": "Planificar el recorrido y ordenar los bloques nos permite crear programas exitosos."
+    "explanation": "Los robots siguen las instrucciones paso por paso en el orden exacto en que fueron programadas."
   },
   {
     "id": "g1_programacion_5",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "Si programamos a un robot para limpiar la mesa, ¿qué hará?",
+    "question": "¿Qué hace el botón verde con el triángulo «Play» o «Iniciar»?",
     "options": [
       {
-        "text": "Seguirá los pasos para dejar la mesa limpia.",
+        "text": "Comienza a ejecutar las instrucciones que le programamos a Bity.",
         "isCorrect": true
       },
       {
-        "text": "Se irá a dormir al patio.",
+        "text": "Borra todo el juego.",
         "isCorrect": false
       },
       {
-        "text": "Romperá los platos.",
+        "text": "Apaga la pantalla de la computadora.",
         "isCorrect": false
       }
     ],
-    "explanation": "El robot cumplirá la tarea para la cual fue programado paso a paso."
+    "explanation": "El botón de inicio activa el programa para que Bity empiece a realizar sus órdenes."
   },
   {
     "id": "g1_programacion_6",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Qué podemos crear aprendiendo a programar?",
+    "question": "Si programamos a Bity para llegar al cohete, ¿qué debemos darle?",
     "options": [
       {
-        "text": "Videojuegos, cuentos animados y robots inteligentes.",
+        "text": "Una lista de instrucciones paso a paso hasta el cohete.",
         "isCorrect": true
       },
       {
-        "text": "Solamente cuentas de sumar aburridas.",
+        "text": "Un solo dibujo de un cohete.",
         "isCorrect": false
       },
       {
-        "text": "Nada divertido.",
+        "text": "Ninguna instrucción.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación nos abre un mundo de creatividad, animación y robótica."
+    "explanation": "Para llegar a la meta se necesita una serie ordenada de instrucciones de camino."
   },
   {
     "id": "g1_programacion_7",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "Si cambiamos de lugar dos instrucciones en un programa, ¿qué sucede?",
+    "question": "¿Quién es un programador o programadora?",
     "options": [
       {
-        "text": "El robot puede equivocarse de camino.",
+        "text": "Una persona que crea instrucciones para computadoras o robots.",
         "isCorrect": true
       },
       {
-        "text": "Todo queda exactamente igual.",
+        "text": "Una persona que solo mira videos sin jugar.",
         "isCorrect": false
       },
       {
-        "text": "La computadora se apaga para siempre.",
+        "text": "Un robot que fabrica cables.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cambiar el orden altera la secuencia y el robot puede no llegar a la meta."
+    "explanation": "Los programadores son quienes diseñan y escriben las instrucciones para que las máquinas funcionen."
   },
   {
     "id": "g1_programacion_8",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Una tablet o celular funciona sin programas?",
+    "question": "Si queremos que Bity salude con la mano, ¿qué tenemos que hacer?",
     "options": [
       {
-        "text": "No, necesita programas y juegos para que podamos usarla.",
+        "text": "Programar la instrucción de levantar y mover la mano.",
         "isCorrect": true
       },
       {
-        "text": "Sí, funciona solo con mirarla.",
+        "text": "Esperar que Bity lo adivine solo.",
         "isCorrect": false
       },
       {
-        "text": "Sí, porque tiene batería mágica.",
+        "text": "Gritarle fuerte a la pantalla.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las aplicaciones y juegos son programas que hacen funcionar a los dispositivos."
+    "explanation": "Para que un robot haga un saludo debemos darle la instrucción precisa de mover su brazo."
   },
   {
     "id": "g1_programacion_9",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Qué hace el botón verde con el triángulo «Play»?",
+    "question": "¿Qué podemos crear cuando aprendemos a programar?",
     "options": [
       {
-        "text": "Inicia el programa para que Bity comience a moverse.",
+        "text": "Juegos divertidos, historias y robots que nos ayudan.",
         "isCorrect": true
       },
       {
-        "text": "Borra todo el trabajo que hicimos.",
+        "text": "Solamente cuentas aburridas.",
         "isCorrect": false
       },
       {
-        "text": "Apaga la computadora.",
+        "text": "Nada, no sirve para crear cosas.",
         "isCorrect": false
       }
     ],
-    "explanation": "El botón de Play o Ejecutar pone en marcha las instrucciones preparadas."
+    "explanation": "La programación nos permite crear videojuegos, cuentos animados y robots útiles."
   },
   {
     "id": "g1_programacion_10",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "Si queremos que Bity baile, ¿qué debemos hacer?",
+    "question": "Si cambiamos de lugar dos instrucciones en nuestro programa, ¿qué sucede?",
     "options": [
       {
-        "text": "Programar una secuencia de giros y pasos alegres.",
+        "text": "Bity hará las acciones en un orden diferente.",
         "isCorrect": true
       },
       {
-        "text": "Esperar a que tenga ganas de bailar.",
+        "text": "Bity siempre hace lo mismo sin importar el orden.",
         "isCorrect": false
       },
       {
-        "text": "Dejarlo quieto en el lugar.",
+        "text": "La computadora se rompe para siempre.",
         "isCorrect": false
       }
     ],
-    "explanation": "Con instrucciones de giros y movimientos podemos armar una divertida coreografía."
+    "explanation": "El orden de las instrucciones determina el orden en que Bity realiza sus movimientos."
   },
   {
     "id": "g1_programacion_11",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Quién es un programador o programadora?",
+    "question": "¿Un robot como Bity puede funcionar sin un programa de instrucciones?",
     "options": [
       {
-        "text": "Una persona que crea instrucciones para que las máquinas funcionen.",
+        "text": "No, sin instrucciones se queda quieto sin saber qué hacer.",
         "isCorrect": true
       },
       {
-        "text": "Alguien que solo mira la televisión.",
+        "text": "Sí, camina solo a donde él quiere.",
         "isCorrect": false
       },
       {
-        "text": "Un robot de metal.",
+        "text": "Sí, habla y canta sin instrucciones.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los programadores somos nosotros cuando diseñamos las órdenes para el robot."
+    "explanation": "Los robots dependen de los programas para saber qué tareas deben realizar."
   },
   {
     "id": "g1_programacion_12",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Qué hacemos después de escribir un programa para Bity?",
+    "question": "Después de escribir un programa para Bity, ¿qué hacemos para ver si funciona?",
     "options": [
       {
-        "text": "Probarlo para ver si Bity llega a la meta.",
+        "text": "Probarlo y observar si Bity cumple la tarea.",
         "isCorrect": true
       },
       {
-        "text": "Apagar todo sin mirar qué pasó.",
+        "text": "Cerrar los ojos y no mirar.",
         "isCorrect": false
       },
       {
-        "text": "Enojarnos si algo sale mal.",
+        "text": "Borrarlo inmediatamente sin probarlo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Probar el programa nos permite verificar si funciona y celebrar el logro."
+    "explanation": "Probar el programa nos permite ver si Bity hace lo que le ordenamos o si debemos corregir algo."
   },
   {
     "id": "g1_algoritmos_1",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "¿Qué es un algoritmo en la vida diaria?",
+    "question": "¿Qué es un algoritmo?",
     "options": [
       {
-        "text": "Una lista ordenada de pasos para hacer una tarea.",
+        "text": "Un conjunto de pasos ordenados para realizar una tarea o resolver un problema.",
         "isCorrect": true
       },
       {
-        "text": "Un montón de juguetes desordenados.",
+        "text": "Una máquina que limpia pisos.",
         "isCorrect": false
       },
       {
-        "text": "Una sola palabra suelta.",
+        "text": "Un número muy grande que no termina.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un algoritmo es una secuencia de pasos ordenados para resolver un problema."
+    "explanation": "Un algoritmo es una serie ordenada de pasos sencillos para completar una tarea con éxito."
   },
   {
     "id": "g1_algoritmos_2",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para lavarse las manos, ¿cuál es el primer paso?",
+    "question": "Para lavarse las manos: ¿cuál es el primer paso?",
     "options": [
       {
-        "text": "Abrir la canilla y mojarse las manos con agua.",
+        "text": "Abrir la canilla y mojarse las manos.",
         "isCorrect": true
       },
       {
-        "text": "Secarse con la toalla limpia.",
+        "text": "Secarse con la toalla.",
         "isCorrect": false
       },
       {
-        "text": "Cerrar la puerta con llave.",
+        "text": "Ponerse los guantes de lana.",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero nos mojamos las manos con agua antes de aplicar el jabón."
+    "explanation": "El primer paso para higienizarse las manos es abrir el agua y mojarlas."
   },
   {
     "id": "g1_algoritmos_3",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para ponerse las zapatillas, ¿qué paso va antes?",
+    "question": "Para ponerse las zapatillas: ¿qué paso va antes?",
     "options": [
       {
         "text": "Ponerse las medias.",
         "isCorrect": true
       },
       {
-        "text": "Atarse los cordones de las zapatillas.",
+        "text": "Atarse los cordones.",
         "isCorrect": false
       },
       {
-        "text": "Salir a correr por el parque.",
+        "text": "Salir a correr al patio.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las medias deben ponerse siempre antes de calzarse las zapatillas."
+    "explanation": "En la secuencia correcta, primero se colocan las medias y luego las zapatillas."
   },
   {
     "id": "g1_algoritmos_4",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para armar una torre de bloques, ¿cuál es el primer paso?",
+    "question": "Para armar una torre de 2 bloques Lego: ¿cuál es el primer paso?",
     "options": [
       {
-        "text": "Apoyar el bloque base firme en el suelo.",
+        "text": "Apoyar el primer bloque en la mesa.",
         "isCorrect": true
       },
       {
-        "text": "Poner el techo en el aire.",
+        "text": "Poner el bloque de arriba flotando en el aire.",
         "isCorrect": false
       },
       {
-        "text": "Derribar la torre.",
+        "text": "Desarmar la torre terminada.",
         "isCorrect": false
       }
     ],
-    "explanation": "Toda torre necesita primero un bloque base bien apoyado en el suelo."
+    "explanation": "Una torre se construye desde la base: primero apoyamos el bloque inferior sobre la superficie."
   },
   {
     "id": "g1_algoritmos_5",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para tomar un vaso de agua, ¿cuál es el paso final?",
+    "question": "Para comer una banana: ¿cuál es el primer paso de este algoritmo?",
     "options": [
       {
-        "text": "Beber el agua del vaso.",
+        "text": "Pelar la cáscara de la banana.",
         "isCorrect": true
       },
       {
-        "text": "Buscar el vaso en la alacena.",
+        "text": "Tirar la banana a la basura.",
         "isCorrect": false
       },
       {
-        "text": "Llenar el vaso con la jarra.",
+        "text": "Morder la cáscara cerrada.",
         "isCorrect": false
       }
     ],
-    "explanation": "Beber el agua es la acción final que completa el algoritmo."
+    "explanation": "Para comer una banana se debe pelar la cáscara antes de dar el primer bocado."
   },
   {
     "id": "g1_algoritmos_6",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para cultivar una planta: 1. Tierra, 2. Semilla... ¿cuál es el paso 3?",
-    "options": [
-      {
-        "text": "Regar con agua para que reciba humedad.",
-        "isCorrect": true
-      },
-      {
-        "text": "Cortar las hojas con tijera.",
-        "isCorrect": false
-      },
-      {
-        "text": "Tirar la maceta a la basura.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El agua es necesaria para que la semilla despierte y comience a crecer."
-  },
-  {
-    "id": "g1_algoritmos_7",
-    "grade": 1,
-    "category": "algoritmos",
-    "difficulty": "facil",
-    "question": "Si Bity tiene que avanzar 3 pasos hasta la nave, ¿cómo es la secuencia?",
-    "options": [
-      {
-        "text": "Paso 1, luego Paso 2, y luego Paso 3.",
-        "isCorrect": true
-      },
-      {
-        "text": "Paso 3 antes del Paso 1.",
-        "isCorrect": false
-      },
-      {
-        "text": "Quedarse sentado sin moverse.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los pasos se avanzan uno a uno en orden consecutivo."
-  },
-  {
-    "id": "g1_algoritmos_8",
-    "grade": 1,
-    "category": "algoritmos",
-    "difficulty": "facil",
-    "question": "Para dibujar una carita feliz, ¿qué va primero?",
+    "question": "Para dibujar una carita feliz en un papel: ¿qué paso va primero?",
     "options": [
       {
         "text": "Dibujar el círculo de la cara.",
@@ -708,194 +671,216 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Guardar los lápices en la cartuchera.",
+        "text": "Guardar los lápices.",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero dibujamos el contorno circular de la cara para luego ubicar ojos y sonrisa."
+    "explanation": "Primero trazamos el contorno circular de la cara y luego los ojos y la sonrisa adentro."
+  },
+  {
+    "id": "g1_algoritmos_7",
+    "grade": 1,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Si Bity tiene que avanzar 2 pasos hasta la bandera: ¿cómo es el algoritmo?",
+    "options": [
+      {
+        "text": "Paso 1: Avanzar 1 paso. Paso 2: Avanzar 1 paso.",
+        "isCorrect": true
+      },
+      {
+        "text": "Paso 1: Saltar hacia atrás. Paso 2: Dormir.",
+        "isCorrect": false
+      },
+      {
+        "text": "Paso 1: Girar sin parar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dos pasos hacia adelante llevan ordenadamente a Bity hacia la bandera."
+  },
+  {
+    "id": "g1_algoritmos_8",
+    "grade": 1,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Para regar una planta: 1. Tomar la regadera, 2. Echar agua a la tierra... ¿cuál es el paso final?",
+    "options": [
+      {
+        "text": "Guardar la regadera en su lugar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Arrancar la planta.",
+        "isCorrect": false
+      },
+      {
+        "text": "Mojarse la ropa.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Al finalizar el riego, se guarda la regadera en su lugar de almacenamiento."
   },
   {
     "id": "g1_algoritmos_9",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "¿Por qué un algoritmo no puede tener pasos al revés?",
+    "question": "¿Por qué los pasos de un algoritmo deben estar ordenados?",
     "options": [
       {
-        "text": "Porque las acciones deben seguir un orden que tenga sentido.",
+        "text": "Para que la tarea salga bien y logremos el resultado esperado.",
         "isCorrect": true
       },
       {
-        "text": "Porque las máquinas se enojan.",
+        "text": "Para que sea más difícil de hacer.",
         "isCorrect": false
       },
       {
-        "text": "Porque las letras no entran en la hoja.",
+        "text": "Porque a las computadoras les da igual el orden.",
         "isCorrect": false
       }
     ],
-    "explanation": "Seguir un orden lógico garantiza que el resultado sea el esperado."
+    "explanation": "El orden de los pasos garantiza que la tarea se complete sin confusiones ni errores."
   },
   {
     "id": "g1_algoritmos_10",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para pelar una banana y comerla, ¿qué va primero?",
+    "question": "Si en un algoritmo de 3 pasos falta el paso del medio, ¿qué sucede?",
     "options": [
       {
-        "text": "Pelar la cáscara con las manos.",
+        "text": "La tarea queda incompleta y puede salir mal.",
         "isCorrect": true
       },
       {
-        "text": "Morder la banana con cáscara.",
+        "text": "La tarea se completa el doble de rápido.",
         "isCorrect": false
       },
       {
-        "text": "Tirar la banana entera.",
+        "text": "No pasa nada, sale perfecto igual.",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero quitamos la cáscara para poder disfrutar la fruta limpia."
+    "explanation": "Un paso faltante interrumpe la secuencia y la tarea no se puede completar correctamente."
   },
   {
     "id": "g1_algoritmos_11",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Si en un algoritmo de 3 pasos falta el paso del medio, ¿qué pasa?",
+    "question": "Para cepillarse los dientes: ¿qué paso va antes de cepillar?",
     "options": [
       {
-        "text": "El algoritmo queda incompleto y el robot se traba.",
+        "text": "Poner pasta dental en el cepillo.",
         "isCorrect": true
       },
       {
-        "text": "El robot vuela por arte de magia.",
+        "text": "Enjuagarse la boca al final.",
         "isCorrect": false
       },
       {
-        "text": "Sale todo perfecto igual.",
+        "text": "Guardar el cepillo seco.",
         "isCorrect": false
       }
     ],
-    "explanation": "Todos los pasos necesarios deben estar presentes para que el algoritmo funcione."
+    "explanation": "Antes de cepillarse debemos colocar la pasta sobre las cerdas del cepillo."
   },
   {
     "id": "g1_algoritmos_12",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Si nos equivocamos en un paso de nuestro algoritmo, ¿qué hacemos?",
+    "question": "Si seguimos un algoritmo paso a paso con atención, ¿qué logramos?",
     "options": [
       {
-        "text": "Corregimos el paso equivocado y volvemos a probar.",
+        "text": "Completar la tarea con éxito.",
         "isCorrect": true
       },
       {
-        "text": "Abandonamos la misión para siempre.",
+        "text": "Perdernos en el camino siempre.",
         "isCorrect": false
       },
       {
-        "text": "Rompemos el teclado de la computadora.",
+        "text": "Que el robot se equivoque.",
         "isCorrect": false
       }
     ],
-    "explanation": "En programación siempre revisamos los errores para aprender y mejorar."
+    "explanation": "Seguir los pasos en orden nos guía directamente a resolver la tarea planteada."
   },
   {
     "id": "g1_matematica_1",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity necesita calcular su energía! ¿Cuánto es 5 + 4?",
+    "question": "¡Bity necesita energía! ¿Cuánto es 5 + 4?",
     "options": [
       {
         "text": "9",
         "isCorrect": true
       },
       {
-        "text": "8",
+        "text": "7",
         "isCorrect": false
       },
       {
-        "text": "10",
+        "text": "8",
         "isCorrect": false
       }
     ],
-    "explanation": "¡5 más 4 es igual a 9! Bity suma 9 unidades de energía."
+    "explanation": "5 más 4 es igual a 9."
   },
   {
     "id": "g1_matematica_2",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity calcula su salto! ¿Cuánto es 8 + 7?",
+    "question": "¡Bity calcula su salto! ¿Cuánto es 6 + 3?",
     "options": [
       {
-        "text": "15",
+        "text": "9",
         "isCorrect": true
       },
       {
-        "text": "14",
+        "text": "8",
         "isCorrect": false
       },
       {
-        "text": "16",
+        "text": "10",
         "isCorrect": false
       }
     ],
-    "explanation": "¡8 más 7 es igual a 15!"
+    "explanation": "6 más 3 es igual a 9."
   },
   {
     "id": "g1_matematica_3",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity recarga su batería! ¿Cuánto es 10 − 4?",
+    "question": "¡Bity recarga su batería! ¿Cuánto es 7 − 3?",
     "options": [
       {
-        "text": "6",
+        "text": "4",
         "isCorrect": true
+      },
+      {
+        "text": "3",
+        "isCorrect": false
       },
       {
         "text": "5",
         "isCorrect": false
-      },
-      {
-        "text": "7",
-        "isCorrect": false
       }
     ],
-    "explanation": "¡A 10 le quitamos 4 y nos quedan 6!"
+    "explanation": "7 menos 3 es igual a 4."
   },
   {
     "id": "g1_matematica_4",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity mide la distancia a la meta! ¿Cuánto es 12 + 6?",
-    "options": [
-      {
-        "text": "18",
-        "isCorrect": true
-      },
-      {
-        "text": "17",
-        "isCorrect": false
-      },
-      {
-        "text": "19",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡12 más 6 es igual a 18!"
-  },
-  {
-    "id": "g1_matematica_5",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity esquiva un obstáculo! ¿Cuánto es 15 − 5?",
+    "question": "¡Bity mide la distancia a la meta! ¿Cuánto es 8 + 2?",
     "options": [
       {
         "text": "10",
@@ -910,58 +895,36 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "¡15 menos 5 es igual a 10!"
+    "explanation": "8 más 2 es igual a 10."
+  },
+  {
+    "id": "g1_matematica_5",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity esquiva un obstáculo! ¿Cuánto es 10 − 5?",
+    "options": [
+      {
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "10 menos 5 es igual a 5."
   },
   {
     "id": "g1_matematica_6",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity cuenta sus pasos! ¿Cuánto es 7 + 7?",
-    "options": [
-      {
-        "text": "14",
-        "isCorrect": true
-      },
-      {
-        "text": "13",
-        "isCorrect": false
-      },
-      {
-        "text": "15",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡El doble de 7 es 14!"
-  },
-  {
-    "id": "g1_matematica_7",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity analiza el terreno! ¿Cuánto es 9 + 8?",
-    "options": [
-      {
-        "text": "17",
-        "isCorrect": true
-      },
-      {
-        "text": "16",
-        "isCorrect": false
-      },
-      {
-        "text": "18",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡9 más 8 es igual a 17!"
-  },
-  {
-    "id": "g1_matematica_8",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity repara su motor! ¿Cuánto es 16 − 8?",
+    "question": "¡Bity cuenta sus pasos! ¿Cuánto es 4 + 4?",
     "options": [
       {
         "text": "8",
@@ -976,39 +939,83 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "¡16 menos 8 es igual a 8!"
+    "explanation": "4 más 4 es igual a 8."
+  },
+  {
+    "id": "g1_matematica_7",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity analiza el camino! ¿Cuánto es 9 − 4?",
+    "options": [
+      {
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "9 menos 4 es igual a 5."
+  },
+  {
+    "id": "g1_matematica_8",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity repara su motor! ¿Cuánto es 6 + 2?",
+    "options": [
+      {
+        "text": "8",
+        "isCorrect": true
+      },
+      {
+        "text": "9",
+        "isCorrect": false
+      },
+      {
+        "text": "7",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "6 más 2 es igual a 8."
   },
   {
     "id": "g1_matematica_9",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity conecta un cable! ¿Cuánto es 11 + 5?",
+    "question": "¡Bity conecta un cable! ¿Cuánto es 8 − 5?",
     "options": [
       {
-        "text": "16",
+        "text": "3",
         "isCorrect": true
       },
       {
-        "text": "15",
+        "text": "2",
         "isCorrect": false
       },
       {
-        "text": "17",
+        "text": "4",
         "isCorrect": false
       }
     ],
-    "explanation": "¡11 más 5 es igual a 16!"
+    "explanation": "8 menos 5 es igual a 3."
   },
   {
     "id": "g1_matematica_10",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity enciende sus luces LED! ¿Cuánto es 18 − 9?",
+    "question": "¡Bity enciende sus luces! ¿Cuánto es 7 + 3?",
     "options": [
       {
-        "text": "9",
+        "text": "10",
         "isCorrect": true
       },
       {
@@ -1016,43 +1023,21 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "10",
+        "text": "9",
         "isCorrect": false
       }
     ],
-    "explanation": "¡18 menos 9 es igual a 9!"
+    "explanation": "7 más 3 es igual a 10."
   },
   {
     "id": "g1_matematica_11",
     "grade": 1,
     "category": "matematica",
     "difficulty": "facil",
-    "question": "¡Bity sube a la plataforma! ¿Cuánto es 6 + 7?",
+    "question": "¡Bity sube a la plataforma! ¿Cuánto es 5 + 5?",
     "options": [
       {
-        "text": "13",
-        "isCorrect": true
-      },
-      {
-        "text": "12",
-        "isCorrect": false
-      },
-      {
-        "text": "14",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡6 más 7 es igual a 13!"
-  },
-  {
-    "id": "g1_matematica_12",
-    "grade": 1,
-    "category": "matematica",
-    "difficulty": "facil",
-    "question": "¡Bity alcanza la batería dorada! ¿Cuánto es 20 − 8?",
-    "options": [
-      {
-        "text": "12",
+        "text": "10",
         "isCorrect": true
       },
       {
@@ -1060,487 +1045,1191 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "13",
+        "text": "9",
         "isCorrect": false
       }
     ],
-    "explanation": "¡20 menos 8 es igual a 12!"
+    "explanation": "5 más 5 es igual a 10."
+  },
+  {
+    "id": "g1_matematica_12",
+    "grade": 1,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity alcanza la batería dorada! ¿Cuánto es 10 − 3?",
+    "options": [
+      {
+        "text": "7",
+        "isCorrect": true
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      },
+      {
+        "text": "8",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "10 menos 3 es igual a 7."
   },
   {
     "id": "g2_instrucciones_1",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Por qué una instrucción para un robot debe ser muy precisa?",
+    "difficulty": "facil",
+    "question": "¿Por qué una instrucción para Bity debe ser muy clara y precisa?",
     "options": [
       {
-        "text": "Porque el robot no interpreta intenciones: solo ejecuta lo que se le indica exactamente.",
+        "text": "Porque los robots no adivinan; hacen exactamente lo que les ordenamos.",
         "isCorrect": true
       },
       {
-        "text": "Porque los robots leen nuestros pensamientos.",
+        "text": "Porque Bity se cansa si la orden es corta.",
         "isCorrect": false
       },
       {
-        "text": "Para que la pantalla use menos batería.",
+        "text": "Porque los robots prefieren órdenes misteriosas.",
         "isCorrect": false
       }
     ],
-    "explanation": "La precisión evita ambigüedades y asegura que el robot ejecute la acción correcta."
+    "explanation": "Un robot requiere instrucciones exactas para poder ejecutar la acción sin desviarse."
   },
   {
     "id": "g2_instrucciones_2",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Entre estas dos frases, ¿cuál es una instrucción clara de programación?",
+    "difficulty": "facil",
+    "question": "Entre estas opciones, ¿cuál es una instrucción clara de movimiento?",
     "options": [
       {
-        "text": "«Avanzar 4 casilleros»",
+        "text": "Avanzar 3 casilleros hacia el frente",
         "isCorrect": true
       },
       {
-        "text": "«Caminar un poquito hacia allá»",
+        "text": "Hacer algo lindo por ahí",
         "isCorrect": false
       },
       {
-        "text": "«Ser un buen robot explorador»",
+        "text": "Ir a pasear un rato",
         "isCorrect": false
       }
     ],
-    "explanation": "«Avanzar 4 casilleros» contiene la acción y la cantidad exacta de casilleros a recorrer."
+    "explanation": "«Avanzar 3 casilleros hacia el frente» tiene una acción concreta, una cantidad y una dirección."
   },
   {
     "id": "g2_instrucciones_3",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si Bity mira hacia adelante y le indicamos «Girar 90° a la derecha», ¿hacia dónde queda mirando?",
+    "difficulty": "facil",
+    "question": "Si Bity mira hacia adelante y le ordenamos «Girar a la derecha», ¿hacia dónde queda mirando?",
     "options": [
       {
-        "text": "Hacia su derecha.",
+        "text": "Hacia su lado derecho.",
         "isCorrect": true
       },
       {
-        "text": "Hacia atrás.",
+        "text": "Hacia atrás directamente.",
         "isCorrect": false
       },
       {
-        "text": "Hacia el techo.",
+        "text": "Hacia arriba al techo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Girar 90° a la derecha reorienta al robot un cuarto de vuelta hacia ese lado."
+    "explanation": "Girar a la derecha orienta el frente de Bity hacia su costado derecho."
   },
   {
     "id": "g2_instrucciones_4",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Qué ocurre si le damos a Bity una instrucción imposible, como atravesar una pared sólida?",
+    "difficulty": "facil",
+    "question": "¿Cuál es la diferencia entre un deseo y una instrucción en programación?",
     "options": [
       {
-        "text": "El robot colisiona o se detiene al detectar el obstáculo físico.",
+        "text": "El deseo dice lo que esperamos («Ojalá ganes»); la instrucción ordena una acción directa («Avanzar 2»).",
         "isCorrect": true
       },
       {
-        "text": "Atraviesa la pared como un fantasma.",
+        "text": "Son exactamente lo mismo.",
         "isCorrect": false
       },
       {
-        "text": "Se convierte en un cohete supersónico.",
+        "text": "La instrucción solo se usa para cocinar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las leyes físicas y la detección de colisiones impiden atravesar obstáculos sólidos."
+    "explanation": "Una instrucción le indica una acción concreta a la máquina; un deseo solo expresa una esperanza sin ordenar nada."
   },
   {
     "id": "g2_instrucciones_5",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Cuál es la diferencia entre un deseo y una instrucción en programación?",
-    "options": [
-      {
-        "text": "La instrucción contiene una orden concreta y ejecutable por la máquina.",
-        "isCorrect": true
-      },
-      {
-        "text": "No hay ninguna diferencia.",
-        "isCorrect": false
-      },
-      {
-        "text": "El deseo se escribe en la computadora y la instrucción no.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las máquinas solo entienden comandos ejecutables con parámetros definidos."
-  },
-  {
-    "id": "g2_instrucciones_6",
-    "grade": 2,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si un dron recibe la orden «Descender 2 metros», ¿qué movimiento realiza?",
+    "difficulty": "facil",
+    "question": "Si un dron de rescate recibe la orden «Descender 2 metros», ¿qué movimiento realiza?",
     "options": [
       {
         "text": "Baja 2 metros hacia el suelo.",
         "isCorrect": true
       },
       {
-        "text": "Sube 2 metros hacia el cielo.",
+        "text": "Sube 2 metros hacia las nubes.",
         "isCorrect": false
       },
       {
-        "text": "Gira en su propio eje.",
+        "text": "Gira en círculos sin bajar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Descender significa bajar de altura verticalmente."
+    "explanation": "Descender significa moverse hacia abajo en dirección al suelo."
+  },
+  {
+    "id": "g2_instrucciones_6",
+    "grade": 2,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si le decimos a Bity «Dar 2 pasos adelante y luego 1 paso atrás», ¿cuántos pasos avanzó en total?",
+    "options": [
+      {
+        "text": "Avanzó 1 paso respecto a su posición inicial.",
+        "isCorrect": true
+      },
+      {
+        "text": "Avanzó 3 pasos hacia adelante.",
+        "isCorrect": false
+      },
+      {
+        "text": "No se movió nada.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dar 2 pasos hacia adelante y retroceder 1 paso deja a Bity a 1 paso de distancia del inicio."
   },
   {
     "id": "g2_instrucciones_7",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Qué significa la instrucción «Repetir 3 veces: Avanzar 1»?",
+    "difficulty": "facil",
+    "question": "Para que Bity recoja un bloque del suelo, ¿cuál es la secuencia correcta de instrucciones?",
     "options": [
       {
-        "text": "Avanzar un casillero, luego otro, y luego otro más (3 casilleros en total).",
+        "text": "1. Caminar hasta el bloque. 2. Agacharse. 3. Agarrar el bloque.",
         "isCorrect": true
       },
       {
-        "text": "Avanzar solo medio casillero.",
+        "text": "1. Agarrar el bloque antes de llegar. 2. Caminar.",
         "isCorrect": false
       },
       {
-        "text": "Retroceder 3 casilleros de golpe.",
+        "text": "1. Saltar hacia atrás. 2. Irse sin el bloque.",
         "isCorrect": false
       }
     ],
-    "explanation": "El bloque de repetición ejecuta la acción indicada la cantidad exacta de veces solicitada."
+    "explanation": "Primero hay que posicionarse junto al objeto para luego agacharse y agarrarlo con éxito."
   },
   {
     "id": "g2_instrucciones_8",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si le damos dos instrucciones que se contradicen a la vez (ej: «Avanzar y Retroceder»), ¿qué sucede?",
+    "difficulty": "facil",
+    "question": "Si una instrucción dice «Detenerse frente a la línea roja», ¿cuándo debe parar Bity?",
     "options": [
       {
-        "text": "El sistema entra en conflicto porque no puede ir en dos direcciones opuestas.",
+        "text": "En el momento exacto en que llega a la línea roja.",
         "isCorrect": true
       },
       {
-        "text": "Bity se duplica en dos robots.",
+        "text": "Antes de empezar a caminar.",
         "isCorrect": false
       },
       {
-        "text": "El robot se teletransporta.",
+        "text": "Mucho después de cruzar la línea.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las instrucciones no pueden contradecirse en el mismo instante de ejecución."
+    "explanation": "La orden establece claramente el punto de frenado al llegar a la línea roja indicada."
   },
   {
     "id": "g2_instrucciones_9",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Para que Bity recoja una pieza de Lego en el suelo, ¿qué instrucción debe ejecutar al estar sobre ella?",
+    "difficulty": "facil",
+    "question": "¿Qué sucede si le damos a Bity dos instrucciones contrarias al mismo tiempo, como «Avanzar y Retroceder»?",
     "options": [
       {
-        "text": "Recoger objeto.",
+        "text": "Se genera una confusión porque no puede ir hacia adelante y hacia atrás a la vez.",
         "isCorrect": true
       },
       {
-        "text": "Mirar hacia arriba.",
+        "text": "El robot se duplica en dos robots.",
         "isCorrect": false
       },
       {
-        "text": "Apagar motores.",
+        "text": "Vuela por el aire con superpoderes.",
         "isCorrect": false
       }
     ],
-    "explanation": "«Recoger objeto» interactúa con el elemento ubicado en su misma coordenada."
+    "explanation": "Las órdenes deben ser coherentes; un robot no puede moverse en direcciones opuestas simultáneamente."
   },
   {
     "id": "g2_instrucciones_10",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si una instrucción dice «Si el sensor detecta pozo, saltar», ¿qué hace Bity al ver un pozo?",
+    "difficulty": "facil",
+    "question": "¿Por qué es importante comprobar que Bity cumplió una instrucción antes de darle la siguiente?",
     "options": [
       {
-        "text": "Salta para evitar caer al abismo.",
+        "text": "Para asegurarnos de que está en la posición correcta para continuar la misión.",
         "isCorrect": true
       },
       {
-        "text": "Se tira directo al fondo del pozo.",
+        "text": "Para que Bity descanse una hora.",
         "isCorrect": false
       },
       {
-        "text": "Se queda dormido.",
+        "text": "Porque las instrucciones se borran solas.",
         "isCorrect": false
       }
     ],
-    "explanation": "La condición evalúa la presencia del pozo y ejecuta la acción preventiva de saltar."
+    "explanation": "Verificar cada paso asegura que el robot esté donde esperamos antes de iniciar la siguiente orden."
   },
   {
     "id": "g2_instrucciones_11",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Por qué verificamos si una instrucción se cumplió antes de pasar a la siguiente?",
+    "difficulty": "facil",
+    "question": "Si Bity necesita recorrer 4 casilleros, ¿cuál instrucción cumple esa meta?",
     "options": [
       {
-        "text": "Para asegurarnos de que el robot está en la posición esperada para la próxima orden.",
+        "text": "Avanzar 4 casilleros",
         "isCorrect": true
       },
       {
-        "text": "Porque el juego es más lento.",
+        "text": "Retroceder 4 casilleros",
         "isCorrect": false
       },
       {
-        "text": "Para cambiar de color el fondo.",
+        "text": "Girar 4 veces en el mismo lugar",
         "isCorrect": false
       }
     ],
-    "explanation": "Cada paso construye la posición desde donde se ejecutará el siguiente."
+    "explanation": "«Avanzar 4 casilleros» cubre exactamente la distancia requerida hacia adelante."
   },
   {
     "id": "g2_instrucciones_12",
     "grade": 2,
     "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si Bity debe llegar a un punto a 5 metros y avanza de a 1 metro, ¿cuántas instrucciones de avance necesita?",
+    "difficulty": "facil",
+    "question": "En un semáforo de autos, la luz roja es una instrucción que significa:",
     "options": [
       {
-        "text": "5 instrucciones de avance.",
+        "text": "Detener la marcha por completo.",
         "isCorrect": true
       },
       {
-        "text": "1 sola instrucción de avance.",
+        "text": "Acelerar con más fuerza.",
         "isCorrect": false
       },
       {
-        "text": "10 instrucciones de avance.",
+        "text": "Tocar la bocina y seguir.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cada paso cubre 1 metro, por lo que 5 pasos completan los 5 metros."
+    "explanation": "La luz roja es una orden universal de detención vehicular."
   },
   {
     "id": "g2_programacion_1",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es un comando en programación?",
+    "difficulty": "facil",
+    "question": "¿Qué es un programa de computadora?",
     "options": [
       {
-        "text": "Una palabra o bloque de código que representa una instrucción específica.",
+        "text": "Una lista ordenada de instrucciones que una máquina sigue para cumplir una tarea.",
         "isCorrect": true
       },
       {
-        "text": "Un cable para enchufar el teclado.",
+        "text": "Una película que miramos en la televisión.",
         "isCorrect": false
       },
       {
-        "text": "Una foto que guardamos en la galería.",
+        "text": "Una caja vacía sin nada adentro.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un comando le indica a la computadora una operación concreta a realizar."
+    "explanation": "Un programa es una secuencia de instrucciones preparadas para que la computadora las ejecute paso a paso."
   },
   {
     "id": "g2_programacion_2",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué ventaja tiene usar un bloque «Repetir» en vez de escribir la misma orden muchas veces?",
+    "difficulty": "facil",
+    "question": "¿Por qué los programadores escriben las instrucciones en una lista ordenada?",
     "options": [
       {
-        "text": "Ahorra tiempo, hace el programa más corto y reduce los errores.",
+        "text": "Porque la computadora las lee y ejecuta una tras otra en ese orden.",
         "isCorrect": true
       },
       {
-        "text": "Hace que el robot camine más lento.",
+        "text": "Porque a la computadora le gusta mezclar las órdenes.",
         "isCorrect": false
       },
       {
-        "text": "Borra los bloques anteriores.",
+        "text": "Para que nadie las pueda leer.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los bucles o repeticiones simplifican el código y facilitan su mantenimiento."
+    "explanation": "El orden de la lista determina exactamente la secuencia de acciones que realizará la máquina."
   },
   {
     "id": "g2_programacion_3",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si Bity no llega a la meta, ¿dónde suele estar el error?",
+    "difficulty": "facil",
+    "question": "Si Bity no llega a la meta que programamos, ¿dónde está el problema?",
     "options": [
       {
-        "text": "En las instrucciones que ordenamos en el programa.",
+        "text": "En las instrucciones que escribimos; debemos revisarlas y corregirlas.",
         "isCorrect": true
       },
       {
-        "text": "En la pantalla que se cansó.",
+        "text": "Bity se rebeló y no quiere jugar.",
         "isCorrect": false
       },
       {
-        "text": "En el color de los bloques.",
+        "text": "El cohete cambió de planeta solo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los robots ejecutan exactamente lo programado; si fallan, revisamos el programa."
+    "explanation": "Los errores en un programa se originan en las instrucciones que les dimos y podemos corregirlos."
   },
   {
     "id": "g2_programacion_4",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué significa «depurar» o buscar bugs en un programa?",
+    "difficulty": "facil",
+    "question": "¿Qué hace una persona cuando programa a un robot?",
     "options": [
       {
-        "text": "Encontrar la instrucción equivocada y corregirla.",
+        "text": "Diseña y escribe las instrucciones que guían los movimientos del robot.",
         "isCorrect": true
       },
       {
-        "text": "Limpiar la pantalla con un paño.",
+        "text": "Construye cables de metal con martillo.",
         "isCorrect": false
       },
       {
-        "text": "Cerrar el juego sin guardar.",
+        "text": "Espera a que el robot aprenda solo sin ayuda.",
         "isCorrect": false
       }
     ],
-    "explanation": "Depurar (debugging) es el proceso de detectar y solucionar errores en el código."
+    "explanation": "Programar un robot consiste en definir las órdenes que controlan sus acciones y su camino."
   },
   {
     "id": "g2_programacion_5",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es un sensor en un robot educativo?",
+    "difficulty": "facil",
+    "question": "¿Por qué es una buena idea planificar el camino de Bity en un papel antes de programarlo?",
     "options": [
       {
-        "text": "Un dispositivo que capta datos del entorno, como distancia, colores o tacto.",
+        "text": "Porque nos ayuda a pensar los pasos correctos antes de poner las instrucciones.",
         "isCorrect": true
       },
       {
-        "text": "Una batería gigante de repuesto.",
+        "text": "Porque la computadora no funciona si no usamos papel.",
         "isCorrect": false
       },
       {
-        "text": "Una antena decorativa que no hace nada.",
+        "text": "Para gastar lápices de colores.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los sensores le brindan información del mundo exterior al programa del robot."
+    "explanation": "Planificar previamente evita errores y nos permite ordenar el recorrido de manera lógica."
   },
   {
     "id": "g2_programacion_6",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué hace el bloque de inicio «Al hacer clic en Bandera Verde»?",
+    "difficulty": "facil",
+    "question": "Si programamos un juego donde Bity salta al presionar un botón, ¿qué le enseñamos a la máquina?",
     "options": [
       {
-        "text": "Es el evento que da inicio a la ejecución del programa.",
+        "text": "Que cuando alguien toque ese botón, debe ejecutar la instrucción de saltar.",
         "isCorrect": true
       },
       {
-        "text": "Pinta la bandera de color rojo.",
+        "text": "Que apague la pantalla cuando toquen el botón.",
         "isCorrect": false
       },
       {
-        "text": "Detiene la música del juego.",
+        "text": "Que el juego termine de inmediato.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los bloques de eventos definen qué suceso dispara la secuencia de instrucciones."
+    "explanation": "Programamos una conexión clara: al presionar un botón, se activa una instrucción determinada."
   },
   {
     "id": "g2_programacion_7",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Por qué planificamos un camino en un papel antes de programar los bloques?",
+    "difficulty": "facil",
+    "question": "¿Qué significa que un programa se ejecute paso a paso?",
     "options": [
       {
-        "text": "Para pensar con calma los giros y no equivocarnos al armar el código.",
+        "text": "Que realiza la primera instrucción, luego la segunda, luego la tercera, en orden.",
         "isCorrect": true
       },
       {
-        "text": "Porque la computadora no funciona si no dibujamos antes.",
+        "text": "Que hace todas las instrucciones al mismo milisegundo a la vez.",
         "isCorrect": false
       },
       {
-        "text": "Para gastar hojas de la carpeta.",
+        "text": "Que elige solo la última instrucción.",
         "isCorrect": false
       }
     ],
-    "explanation": "Planificar anticipadamente nos permite visualizar soluciones antes de codificar."
+    "explanation": "La ejecución secuencial avanza ordenadamente desde el primer paso hasta el último."
   },
   {
     "id": "g2_programacion_8",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si programamos un salto cuando el usuario presiona la barra espaciadora, ¿qué estamos creando?",
+    "difficulty": "facil",
+    "question": "Para que Bity recolecte 2 monedas seguidas en una línea recta, ¿qué instrucciones programamos?",
     "options": [
       {
-        "text": "Un control interactivo mediante eventos de teclado.",
+        "text": "Avanzar, tomar moneda, avanzar, tomar moneda.",
         "isCorrect": true
       },
       {
-        "text": "Un error de sistema.",
+        "text": "Saltar, girar, retroceder, dormir.",
         "isCorrect": false
       },
       {
-        "text": "Una imagen fija que no responde.",
+        "text": "Tomar moneda sin haberse movido hasta ella.",
         "isCorrect": false
       }
     ],
-    "explanation": "Vincular teclas a acciones es la base del control de personajes en videojuegos."
+    "explanation": "Se alterna el avance hasta la moneda con la instrucción de agarrarla para cada una."
   },
   {
     "id": "g2_programacion_9",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué significa que un programa se ejecute de forma secuencial?",
+    "difficulty": "facil",
+    "question": "¿Una computadora puede cambiar por su cuenta las instrucciones que le diste?",
     "options": [
       {
-        "text": "Que ejecuta las instrucciones una tras otra, de arriba hacia abajo.",
+        "text": "No, las computadoras ejecutan exactamente lo que el programador les indicó.",
         "isCorrect": true
       },
       {
-        "text": "Que salta pasos al azar.",
+        "text": "Sí, cambian de idea cuando se aburren.",
         "isCorrect": false
       },
       {
-        "text": "Que ejecuta la última instrucción primero.",
+        "text": "Sí, hacen lo que quieren según el clima.",
         "isCorrect": false
       }
     ],
-    "explanation": "La ejecución secuencial respeta el orden estricto en que fueron colocados los bloques."
+    "explanation": "Las computadoras son máquinas estrictas que siguen las instrucciones sin modificarlas."
   },
   {
     "id": "g2_programacion_10",
     "grade": 2,
     "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si queremos que Bity recoja 3 monedas en fila, ¿cuál es la mejor estrategia?",
+    "difficulty": "facil",
+    "question": "¿Cómo sabemos si nuestro programa está bien hecho?",
     "options": [
       {
-        "text": "Avanzar y recoger en cada posición donde haya una moneda.",
+        "text": "Al ejecutarlo, Bity realiza la tarea que nos propusimos sin equivocarse.",
         "isCorrect": true
       },
       {
-        "text": "Saltar por encima de todas sin tocarlas.",
+        "text": "Porque tiene muchos botones brillantes aunque no funcione.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque es muy largo y difícil de entender.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El éxito de un programa se demuestra cuando cumple la misión planificada de forma correcta."
+  },
+  {
+    "id": "g2_programacion_11",
+    "grade": 2,
+    "category": "programacion",
+    "difficulty": "facil",
+    "question": "Si queremos que Bity encienda una luz azul al llegar a la meta, ¿dónde ponemos esa orden?",
+    "options": [
+      {
+        "text": "Al final de las instrucciones, justo después de llegar a la meta.",
+        "isCorrect": true
+      },
+      {
+        "text": "Al principio de todo, antes de empezar a caminar.",
+        "isCorrect": false
+      },
+      {
+        "text": "En ningún lado, la luz prende sola.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La acción de festejo al llegar a la meta debe ubicarse al concluir el recorrido."
+  },
+  {
+    "id": "g2_programacion_12",
+    "grade": 2,
+    "category": "programacion",
+    "difficulty": "facil",
+    "question": "Aprender a programar nos ayuda principalmente a:",
+    "options": [
+      {
+        "text": "Pensar de forma ordenada para resolver problemas paso a paso.",
+        "isCorrect": true
+      },
+      {
+        "text": "Adivinar respuestas sin pensar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Memorizar palabras difíciles sin sentido.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La programación estimula el pensamiento lógico y la resolución metódica de desafíos."
+  },
+  {
+    "id": "g2_algoritmos_1",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "¿Cuáles son los momentos principales de un algoritmo?",
+    "options": [
+      {
+        "text": "Un punto de inicio, una serie de pasos ordenados y un resultado final.",
+        "isCorrect": true
+      },
+      {
+        "text": "Un botón roto, un dibujo y una pausa.",
+        "isCorrect": false
+      },
+      {
+        "text": "Empezar por el final y terminar en el inicio.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Todo algoritmo comienza en un estado inicial, ejecuta pasos ordenados y alcanza una solución."
+  },
+  {
+    "id": "g2_algoritmos_2",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Algoritmo para cruzar la calle: 1. Llegar a la esquina, 2. Mirar el semáforo... ¿cuál es el paso 3?",
+    "options": [
+      {
+        "text": "Cruzar cuando esté en verde para peatones.",
+        "isCorrect": true
+      },
+      {
+        "text": "Cerrar los ojos y cruzar corriendo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Regresar a casa sin cruzar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Una vez verificado el semáforo verde, el siguiente paso seguro es cruzar."
+  },
+  {
+    "id": "g2_algoritmos_3",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Si un algoritmo para preparar chocolatada mezcla con la cuchara antes de poner la leche, ¿qué sucede?",
+    "options": [
+      {
+        "text": "El orden de los pasos es incorrecto; primero debemos servir la leche.",
+        "isCorrect": true
+      },
+      {
+        "text": "La chocolatada queda más rica.",
+        "isCorrect": false
+      },
+      {
+        "text": "No cambia nada, la leche aparece sola.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "No podemos revolver un líquido que todavía no se sirvió en el vaso; el orden es fundamental."
+  },
+  {
+    "id": "g2_algoritmos_4",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Bity sigue este algoritmo: «Avanzar 2 pasos, Girar a la derecha, Avanzar 1 paso». ¿Cuántos pasos caminó?",
+    "options": [
+      {
+        "text": "Caminó 3 pasos en total.",
+        "isCorrect": true
+      },
+      {
+        "text": "Caminó 2 pasos en total.",
+        "isCorrect": false
+      },
+      {
+        "text": "Caminó 5 pasos en total.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dio 2 pasos al inicio y 1 paso después de girar: 2 + 1 = 3 pasos."
+  },
+  {
+    "id": "g2_algoritmos_5",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Para guardar los útiles en la cartuchera: ¿cuál de estas acciones NO pertenece a ese algoritmo?",
+    "options": [
+      {
+        "text": "Regar una planta del jardín con agua.",
+        "isCorrect": true
+      },
+      {
+        "text": "Guardar el lápiz.",
+        "isCorrect": false
+      },
+      {
+        "text": "Cerrar el cierre de la cartuchera.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Regar una planta es una acción ajena a la tarea de guardar útiles escolares."
+  },
+  {
+    "id": "g2_algoritmos_6",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "¿Por qué una receta de cocina es un ejemplo claro de algoritmo?",
+    "options": [
+      {
+        "text": "Porque tiene una lista de ingredientes y pasos ordenados para preparar una comida.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque las comidas se preparan sin ninguna orden.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque la cocina usa computadoras gigantes.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Una receta detalla los pasos secuenciales necesarios para cocinar un plato con éxito."
+  },
+  {
+    "id": "g2_algoritmos_7",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Para enviar una carta: 1. Escribir la carta, 2. Meterla en el sobre... ¿cuál es el paso siguiente?",
+    "options": [
+      {
+        "text": "Cerrar el sobre y poner la dirección.",
+        "isCorrect": true
+      },
+      {
+        "text": "Romper el sobre en pedacitos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Escribir la carta de nuevo adentro del sobre cerrado.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Después de colocar la carta adentro, se sella el sobre y se indica el destinatario."
+  },
+  {
+    "id": "g2_algoritmos_8",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Si un robot encuentra un charco y su algoritmo dice «Saltar sobre el charco», ¿qué acción realiza?",
+    "options": [
+      {
+        "text": "Realiza un salto para superar el charco sin tocar el agua.",
+        "isCorrect": true
+      },
+      {
+        "text": "Se queda nadando en el charco.",
+        "isCorrect": false
+      },
+      {
+        "text": "Da la vuelta y se va al inicio.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El algoritmo le indica una acción concreta de salto para evitar mojarse."
+  },
+  {
+    "id": "g2_algoritmos_9",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "¿Qué significa que un algoritmo sea eficiente para Bity?",
+    "options": [
+      {
+        "text": "Que resuelve la tarea de forma clara y sin dar vueltas innecesarias.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que tarda horas en moverse un solo metro.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que tiene cien pasos que no sirven para nada.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un algoritmo eficiente alcanza la solución con la menor cantidad de pasos necesarios."
+  },
+  {
+    "id": "g2_algoritmos_10",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Para apagar una lámpara: 1. Acercarse al interruptor, 2. Presionar el botón... ¿cuál es el resultado?",
+    "options": [
+      {
+        "text": "La lámpara se apaga.",
+        "isCorrect": true
+      },
+      {
+        "text": "La lámpara se rompe.",
+        "isCorrect": false
+      },
+      {
+        "text": "La lámpara cambia de habitación.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Presionar el interruptor de apagado corta la luz y logra el objetivo del algoritmo."
+  },
+  {
+    "id": "g2_algoritmos_11",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Si cambiamos el orden de los pasos en el algoritmo para ponerse los zapatos, ¿qué problema puede haber?",
+    "options": [
+      {
+        "text": "Podríamos intentar ponernos los zapatos antes que las medias.",
+        "isCorrect": true
+      },
+      {
+        "text": "Los zapatos cambian de color solos.",
+        "isCorrect": false
+      },
+      {
+        "text": "La puerta de casa se abre sola.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El orden lógico es poner primero las medias y luego el calzado por encima."
+  },
+  {
+    "id": "g2_algoritmos_12",
+    "grade": 2,
+    "category": "algoritmos",
+    "difficulty": "facil",
+    "question": "Cuando un algoritmo se ejecuta correctamente de principio a fin, ¿qué logramos?",
+    "options": [
+      {
+        "text": "Alcanzar la meta o solución que buscábamos.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que el problema siga sin resolverse.",
+        "isCorrect": false
+      },
+      {
+        "text": "Tener que empezar de nuevo obligatoriamente.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un algoritmo bien diseñado resuelve completamente la tarea que motivó su creación."
+  },
+  {
+    "id": "g2_matematica_1",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity calcula su energía de salto! ¿Cuánto es 12 + 6?",
+    "options": [
+      {
+        "text": "18",
+        "isCorrect": true
+      },
+      {
+        "text": "16",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "12 más 6 es igual a 18."
+  },
+  {
+    "id": "g2_matematica_2",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity gasta energía en una carrera! ¿Cuánto es 20 − 8?",
+    "options": [
+      {
+        "text": "12",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      },
+      {
+        "text": "14",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 menos 8 es igual a 12."
+  },
+  {
+    "id": "g2_matematica_3",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity suma dos baterías medianas! ¿Cuánto es 15 + 10?",
+    "options": [
+      {
+        "text": "25",
+        "isCorrect": true
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "15 más 10 es igual a 25."
+  },
+  {
+    "id": "g2_matematica_4",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity ajusta su sensor de distancia! ¿Cuánto es 25 − 10?",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "25 menos 10 es igual a 15."
+  },
+  {
+    "id": "g2_matematica_5",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity duplica su velocidad! ¿Cuánto es 14 + 14?",
+    "options": [
+      {
+        "text": "28",
+        "isCorrect": true
+      },
+      {
+        "text": "26",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "14 más 14 es igual a 28."
+  },
+  {
+    "id": "g2_matematica_6",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity comparte energía con un amigo! ¿Cuánto es 30 − 15?",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": true
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "30 menos 15 es igual a 15."
+  },
+  {
+    "id": "g2_matematica_7",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity recarga sus celdas solares! ¿Cuánto es 20 + 15?",
+    "options": [
+      {
+        "text": "35",
+        "isCorrect": true
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      },
+      {
+        "text": "40",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 más 15 es igual a 35."
+  },
+  {
+    "id": "g2_matematica_8",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity desciende una plataforma! ¿Cuánto es 35 − 20?",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "35 menos 20 es igual a 15."
+  },
+  {
+    "id": "g2_matematica_9",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity recolecta tornillos dorados! ¿Cuánto es 18 + 12?",
+    "options": [
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "28",
+        "isCorrect": false
+      },
+      {
+        "text": "32",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "18 más 12 es igual a 30."
+  },
+  {
+    "id": "g2_matematica_10",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity calibra sus motores laterales! ¿Cuánto es 40 − 20?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "25",
+        "isCorrect": false
+      },
+      {
+        "text": "15",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "40 menos 20 es igual a 20."
+  },
+  {
+    "id": "g2_matematica_11",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity conecta dos baterías! ¿Cuánto es 16 + 10?",
+    "options": [
+      {
+        "text": "26",
+        "isCorrect": true
+      },
+      {
+        "text": "24",
+        "isCorrect": false
+      },
+      {
+        "text": "28",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "16 más 10 es igual a 26."
+  },
+  {
+    "id": "g2_matematica_12",
+    "grade": 2,
+    "category": "matematica",
+    "difficulty": "facil",
+    "question": "¡Bity reduce la temperatura de su motor! ¿Cuánto es 28 − 14?",
+    "options": [
+      {
+        "text": "14",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "16",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "28 menos 14 es igual a 14."
+  },
+  {
+    "id": "g3_instrucciones_1",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Bity tiene la secuencia: 1. Caminar a la puerta, 2. Entrar a la nave. ¿Qué instrucción falta en el medio?",
+    "options": [
+      {
+        "text": "Abrir la puerta",
+        "isCorrect": true
+      },
+      {
+        "text": "Pintar la nave de rojo",
+        "isCorrect": false
+      },
+      {
+        "text": "Apagar las luces de la ciudad",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Para entrar a la nave, antes de pasar por la abertura es indispensable abrir la puerta."
+  },
+  {
+    "id": "g3_instrucciones_2",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Para guardar un juguete en una caja con tapa: ¿cuál instrucción está fuera de lugar si la ponemos al inicio?",
+    "options": [
+      {
+        "text": "Cerrar la tapa de la caja",
+        "isCorrect": true
+      },
+      {
+        "text": "Caminar hacia la caja",
+        "isCorrect": false
+      },
+      {
+        "text": "Levantar el juguete",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "No podemos cerrar la tapa antes de haber guardado el juguete adentro de la caja."
+  },
+  {
+    "id": "g3_instrucciones_3",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Bity recibe estas instrucciones: 1. Avanzar 2 pasos, 2. Tomar la llave, 3. Abrir el cofre. Si falta el paso 2, ¿qué pasa?",
+    "options": [
+      {
+        "text": "Bity no puede abrir el cofre porque no tiene la llave en sus manos.",
+        "isCorrect": true
+      },
+      {
+        "text": "El cofre se abre solo por arte de magia.",
+        "isCorrect": false
+      },
+      {
+        "text": "Bity vuela por el cielo.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Sin la llave que se obtenía en el paso 2, el cofre permanece cerrado."
+  },
+  {
+    "id": "g3_instrucciones_4",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Para lavarse los dientes: 1. Poner pasta, 2. Cepillarse, 3. Enjuagarse. ¿Qué instrucción está fuera de lugar si va al final?",
+    "options": [
+      {
+        "text": "Poner pasta en el cepillo cuando ya nos enjuagamos.",
+        "isCorrect": true
+      },
+      {
+        "text": "Enjuagarse la boca.",
+        "isCorrect": false
+      },
+      {
+        "text": "Guardar el cepillo limpio.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La pasta dental se coloca al comienzo del cepillado, nunca después de terminar."
+  },
+  {
+    "id": "g3_instrucciones_5",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si la meta de Bity está a 3 pasos y la orden dice «Avanzar 1 paso», ¿qué instrucción falta para llegar?",
+    "options": [
+      {
+        "text": "Avanzar 2 pasos más.",
+        "isCorrect": true
+      },
+      {
+        "text": "Retroceder 3 pasos.",
         "isCorrect": false
       },
       {
@@ -1548,241 +2237,659 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Coordinar el desplazamiento con la interacción permite recoger cada recompensa."
+    "explanation": "Para completar los 3 pasos necesarios se requiere sumar una orden de 2 pasos adicionales."
   },
   {
-    "id": "g2_programacion_11",
-    "grade": 2,
+    "id": "g3_instrucciones_6",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Bity debe saltar un pozo: 1. Correr hacia el pozo, 2. Aterrizar del otro lado. ¿Qué instrucción crucial falta?",
+    "options": [
+      {
+        "text": "Saltar con fuerza justo antes del pozo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Sentarse dentro del pozo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Cerrar los ojos y caminar hacia abajo.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El impulso del salto es el paso indispensable para elevarse sobre el pozo."
+  },
+  {
+    "id": "g3_instrucciones_7",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "En una lista de instrucciones, ¿por qué cada orden debe estar en su posición exacta?",
+    "options": [
+      {
+        "text": "Porque si una orden se ejecuta antes de tiempo, la acción puede fallar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque a los robots les gusta leer trabalenguas.",
+        "isCorrect": false
+      },
+      {
+        "text": "No importa el orden, todo sale igual.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El momento de ejecución de cada orden condiciona el resultado de toda la secuencia."
+  },
+  {
+    "id": "g3_instrucciones_8",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Bity quiere pintar una pared: 1. Mojar el pincel en la pintura, 2. Pasar el pincel por la pared. ¿Qué orden falta al terminar?",
+    "options": [
+      {
+        "text": "Limpiar y guardar el pincel.",
+        "isCorrect": true
+      },
+      {
+        "text": "Tirar la pintura al suelo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Romper la pared.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Al concluir la tarea de pintar, la instrucción de cierre adecuada es limpiar los utensilios."
+  },
+  {
+    "id": "g3_instrucciones_9",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si un robot debe cruzar un puente levadizo: ¿qué instrucción debe verificar antes de cruzar?",
+    "options": [
+      {
+        "text": "Comprobar que el puente esté bajo y seguro.",
+        "isCorrect": true
+      },
+      {
+        "text": "Comprobar que sea de noche.",
+        "isCorrect": false
+      },
+      {
+        "text": "Girar 5 veces sobre sí mismo.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Verificar que el puente esté apoyado previene que el robot caiga al vacío."
+  },
+  {
+    "id": "g3_instrucciones_10",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Tenemos la secuencia: 1. Abrir la heladera, 2. Sacar la manzana, 3. ¿...?, 4. Comer la manzana. ¿Cuál es el paso 3?",
+    "options": [
+      {
+        "text": "Lavar la manzana con agua limpia.",
+        "isCorrect": true
+      },
+      {
+        "text": "Guardar la manzana en el horno caliente.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pintar la manzana de azul.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Antes de ingerir la fruta fresca, el paso higiénico correcto es lavarla."
+  },
+  {
+    "id": "g3_instrucciones_11",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si Bity debe girar hacia el cohete que está a su izquierda, pero la orden dice «Girar a la derecha», ¿qué error hay?",
+    "options": [
+      {
+        "text": "La instrucción tiene la dirección equivocada; debe girar a la izquierda.",
+        "isCorrect": true
+      },
+      {
+        "text": "La orden está perfecta, Bity llegará igual.",
+        "isCorrect": false
+      },
+      {
+        "text": "El cohete debe moverse solo hacia Bity.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El sentido de giro indicado es opuesto al que conduce hacia el cohete."
+  },
+  {
+    "id": "g3_instrucciones_12",
+    "grade": 3,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Para encender la linterna de Bity: ¿cuál es la instrucción correcta?",
+    "options": [
+      {
+        "text": "Presionar el botón de encendido de la linterna.",
+        "isCorrect": true
+      },
+      {
+        "text": "Sacar las pilas y guardarlas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Tapar la linterna con cinta negra.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Presionar el interruptor activa el circuito de luz de la linterna."
+  },
+  {
+    "id": "g3_programacion_1",
+    "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué almacena una variable llamada «Puntos» en nuestro juego?",
+    "question": "En un programa para Bity, ¿qué significa que las instrucciones se lean en secuencia?",
     "options": [
       {
-        "text": "La cantidad de puntos que Bity va acumulando durante la partida.",
+        "text": "Que la computadora ejecuta una instrucción después de otra, en el orden establecido.",
         "isCorrect": true
       },
       {
-        "text": "El color de los zapatos de Bity.",
+        "text": "Que elige instrucciones al azar sin ningún orden.",
         "isCorrect": false
       },
       {
-        "text": "La hora del reloj de la pared.",
+        "text": "Que solo ejecuta la última instrucción y nada más.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las variables son contenedores digitales para guardar valores que van cambiando."
+    "explanation": "La secuencia garantiza que cada orden ocurra en su turno sin saltos arbitrarios."
   },
   {
-    "id": "g2_programacion_12",
-    "grade": 2,
+    "id": "g3_programacion_2",
+    "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Puede una computadora cambiar sus propias instrucciones por capricho?",
+    "question": "Si queremos que Bity avance 3 pasos y luego salude, ¿cómo organizamos el programa?",
     "options": [
       {
-        "text": "No, una computadora es una máquina fiel que solo ejecuta su programación.",
+        "text": "Primero colocamos las órdenes de avanzar y después la de saludar.",
         "isCorrect": true
       },
       {
-        "text": "Sí, cuando se aburre cambia de ideas.",
+        "text": "Primero saludar y nunca avanzar.",
         "isCorrect": false
       },
       {
-        "text": "Sí, porque siente emociones humanas.",
+        "text": "Poner todas las órdenes mezcladas sin orden.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las computadoras procesan estrictamente la lógica de su software."
+    "explanation": "Para saludar al llegar al destino, la acción de saludo debe ir luego de los pasos de avance."
   },
   {
-    "id": "g2_algoritmos_1",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_3",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Cuáles son las tres partes básicas de un algoritmo?",
+    "question": "¿Qué hace el programador cuando encuentra un error en el recorrido de Bity?",
     "options": [
       {
-        "text": "Inicio, pasos ordenados y finalización.",
+        "text": "Revisa la lista de instrucciones para encontrar cuál está equivocada o desordenada y la corrige.",
         "isCorrect": true
       },
       {
-        "text": "Tapa, contratapa y lomo.",
+        "text": "Apaga la computadora y no juega nunca más.",
         "isCorrect": false
       },
       {
-        "text": "Pregunta, duda y silencio.",
+        "text": "Le pide a Bity que haga magia.",
         "isCorrect": false
       }
     ],
-    "explanation": "Todo algoritmo parte de un estado inicial, ejecuta pasos y alcanza un objetivo final."
+    "explanation": "La corrección metódica consiste en inspeccionar las órdenes y reemplazar la que produce la falla."
   },
   {
-    "id": "g2_algoritmos_2",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_4",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Para cruzar la calle con semáforo: 1. Llegar a la esquina, 2. Mirar el semáforo... ¿cuál sigue?",
+    "question": "Si un programa tiene la instrucción «Avanzar 5 pasos» pero Bity choca en el paso 3, ¿cómo lo arreglamos?",
     "options": [
       {
-        "text": "Esperar la luz verde para cruzar con seguridad.",
+        "text": "Cambiamos la instrucción por «Avanzar 2 pasos» y luego girar para esquivar el obstáculo.",
         "isCorrect": true
       },
       {
-        "text": "Cruzar corriendo con luz roja.",
+        "text": "Le decimos que avance 10 pasos con más fuerza.",
         "isCorrect": false
       },
       {
-        "text": "Sentarse en el cordón a esperar la noche.",
+        "text": "Dejamos el programa igual.",
         "isCorrect": false
       }
     ],
-    "explanation": "Esperar la luz verde peatonal es la condición de seguridad indispensable."
+    "explanation": "Ajustar la cantidad de pasos antes del obstáculo evita la colisión y permite rodearlo."
   },
   {
-    "id": "g2_algoritmos_3",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_5",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Si un algoritmo para preparar chocolatada mezcla la leche antes de abrir la botella, ¿qué tipo de error tiene?",
+    "question": "¿Por qué programar es como escribir una receta o un instructivo para un robot?",
     "options": [
       {
-        "text": "Un error en el orden lógico de los pasos.",
+        "text": "Porque le damos el paso a paso exacto que debe seguir para lograr un resultado.",
         "isCorrect": true
       },
       {
-        "text": "Un error de color de la taza.",
+        "text": "Porque a los robots les gusta cocinar pasteles.",
         "isCorrect": false
       },
       {
-        "text": "No tiene ningún error.",
+        "text": "Porque los programas solo sirven para comer.",
         "isCorrect": false
       }
     ],
-    "explanation": "No se puede verter la leche sin antes abrir el envase que la contiene."
+    "explanation": "Ambos son guías ordenadas de pasos diseñadas para que alguien ejecute una tarea con éxito."
   },
   {
-    "id": "g2_algoritmos_4",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_6",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Si Bity recorre: «Avanzar 2, Girar a la derecha, Avanzar 3», ¿cuántos pasos avanzó en total?",
+    "question": "Si ejecutamos el mismo programa diez veces con las mismas instrucciones, ¿qué hará Bity?",
     "options": [
       {
-        "text": "5 pasos en total.",
+        "text": "Hará exactamente el mismo recorrido las diez veces.",
         "isCorrect": true
       },
       {
-        "text": "6 pasos en total.",
+        "text": "Hará diez recorridos totalmente diferentes cada vez.",
         "isCorrect": false
       },
       {
-        "text": "2 pasos en total.",
+        "text": "Se olvidará de las órdenes en el segundo intento.",
         "isCorrect": false
       }
     ],
-    "explanation": "Avanzó 2 pasos iniciales más 3 pasos finales: 2 + 3 = 5 pasos."
+    "explanation": "Los programas son precisos y repetibles: mismas instrucciones producen siempre el mismo resultado."
   },
   {
-    "id": "g2_algoritmos_5",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_7",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Para guardar los útiles en la mochila: ¿cuál de estas acciones NO pertenece a ese algoritmo?",
+    "question": "¿Qué ventaja tiene probar nuestro programa por partes antes de probarlo completo?",
     "options": [
       {
-        "text": "Comerse un helado de chocolate.",
+        "text": "Nos permite verificar que los primeros pasos funcionen bien antes de sumar más instrucciones.",
         "isCorrect": true
       },
       {
-        "text": "Guardar el cuaderno de clase.",
+        "text": "Ninguna, es mejor escribir cien pasos sin mirar.",
         "isCorrect": false
       },
       {
-        "text": "Cerrar la cartuchera y guardarla.",
+        "text": "Hace que el robot camine más lento.",
         "isCorrect": false
       }
     ],
-    "explanation": "Comer un helado es una acción no relacionada con organizar la mochila escolar."
+    "explanation": "Probar tramos cortos permite aislar errores y construir soluciones sólidas paso a paso."
   },
   {
-    "id": "g2_algoritmos_6",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_8",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué significa optimizar un algoritmo de recorrido?",
+    "question": "Para programar a Bity para que recoja 3 baterías en fila: ¿cuál es la forma correcta?",
     "options": [
       {
-        "text": "Lograr que Bity llegue a la meta usando la menor cantidad de pasos y giros posibles.",
+        "text": "Avanzar hasta cada batería y ordenar recogerla una por una hasta completar las 3.",
         "isCorrect": true
       },
       {
-        "text": "Hacer que Bity dé muchas vueltas innecesarias.",
+        "text": "Ordenar recoger las 3 baterías desde lejos sin moverse.",
         "isCorrect": false
       },
       {
-        "text": "Pintar el laberinto de muchos colores.",
+        "text": "Saltar en el lugar sin avanzar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Optimizar es hacer el procedimiento más eficiente sin perder efectividad."
+    "explanation": "Cada objeto debe alcanzarse físicamente antes de ejecutar la acción de recolección."
   },
   {
-    "id": "g2_algoritmos_7",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_9",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "En un camino con bifurcación (dos caminos), ¿qué elemento del algoritmo nos permite elegir el correcto?",
+    "question": "¿Qué sucede si olvidamos incluir la instrucción de inicio en nuestro programa?",
     "options": [
       {
-        "text": "Una condición lógica (ej: «Si el camino está libre, ir por allí»).",
+        "text": "El robot no sabrá cuándo comenzar y se quedará esperando la orden.",
         "isCorrect": true
       },
       {
-        "text": "Tirar una moneda al aire sin mirar.",
+        "text": "El robot comienza a correr solo sin parar.",
         "isCorrect": false
       },
       {
-        "text": "Quedarse quieto sin decidir.",
+        "text": "La computadora se apaga de golpe.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las condiciones lógicas guían la toma de decisiones dentro del algoritmo."
+    "explanation": "La señal de inicio es el disparador indispensable para que el robot empiece a ejecutar el programa."
   },
   {
-    "id": "g2_algoritmos_8",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_10",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Para enviar un dibujo por correo postal: ¿cuál es el paso que va justo después de meterlo en el sobre?",
+    "question": "¿Cuál es el rol de quien programa frente a la máquina?",
     "options": [
       {
-        "text": "Cerrar el sobre y pegarle la estampilla con la dirección.",
+        "text": "Es la persona que piensa la solución y le da las órdenes precisas a la máquina.",
         "isCorrect": true
       },
       {
-        "text": "Abrir la carta ya enviada.",
+        "text": "Es un espectador que no puede decidir nada.",
         "isCorrect": false
       },
       {
-        "text": "Romper el sobre con una tijera.",
+        "text": "Es alguien que solo limpia el teclado.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cerrar y rotular el sobre prepara la carta para ser depositada en el buzón."
+    "explanation": "El ser humano aporta la inteligencia y la planificación que guían a la máquina."
   },
   {
-    "id": "g2_algoritmos_9",
-    "grade": 2,
-    "category": "algoritmos",
+    "id": "g3_programacion_11",
+    "grade": 3,
+    "category": "programacion",
     "difficulty": "medio",
-    "question": "Si un robot encuentra un obstáculo en su camino y el algoritmo dice «Si hay obstáculo, retroceder 1», ¿qué hace?",
+    "question": "Si queremos que Bity vuelva a su posición de inicio, ¿qué debemos programar?",
     "options": [
       {
-        "text": "Da un paso hacia atrás para no chocar.",
+        "text": "Las instrucciones de retroceso o giro necesarias para regresar al punto de partida.",
         "isCorrect": true
       },
       {
-        "text": "Acelera y choca de frente.",
+        "text": "Una orden para que desaparezca la pantalla.",
+        "isCorrect": false
+      },
+      {
+        "text": "Nada, los robots vuelven solos volando.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El regreso requiere instrucciones ordenadas de vuelta o giro hacia el punto de origen."
+  },
+  {
+    "id": "g3_programacion_12",
+    "grade": 3,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Cuando dos programadores revisan juntos las instrucciones de un programa, ¿qué buscan?",
+    "options": [
+      {
+        "text": "Asegurarse de que el programa sea claro, ordenado y cumpla la tarea sin errores.",
+        "isCorrect": true
+      },
+      {
+        "text": "Borrar todo el trabajo para empezar de cero.",
+        "isCorrect": false
+      },
+      {
+        "text": "Hacer que el programa sea imposible de entender.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El trabajo colaborativo permite detectar pasos faltantes o desordenados más rápidamente."
+  },
+  {
+    "id": "g3_algoritmos_1",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Qué le sucede a un algoritmo si dos pasos importantes se intercambian de lugar?",
+    "options": [
+      {
+        "text": "El resultado final cambia y la tarea puede salir mal o no completarse.",
+        "isCorrect": true
+      },
+      {
+        "text": "El algoritmo siempre funciona igual sin importar el orden.",
+        "isCorrect": false
+      },
+      {
+        "text": "El algoritmo se arregla solo automáticamente.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Alterar el orden de los pasos modifica la lógica y puede impedir alcanzar el objetivo."
+  },
+  {
+    "id": "g3_algoritmos_2",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Para preparar una tostada con manteca: 1. Tostar el pan, 2. Untar la manteca. ¿Qué pasaría si invertimos el orden?",
+    "options": [
+      {
+        "text": "Pondríamos manteca en pan frío antes de meterlo a la tostadora, lo cual es incorrecto.",
+        "isCorrect": true
+      },
+      {
+        "text": "La tostada se prepara sola más rápido.",
+        "isCorrect": false
+      },
+      {
+        "text": "No cambia nada, es exactamente igual.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La manteca se derrite sobre el pan caliente; colocarla antes puede quemar la tostadora."
+  },
+  {
+    "id": "g3_algoritmos_3",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si un algoritmo para que Bity llegue a su cohete olvida el paso de «Abrir la escotilla», ¿qué ocurre?",
+    "options": [
+      {
+        "text": "Bity llega hasta el cohete pero no puede entrar para despegar.",
+        "isCorrect": true
+      },
+      {
+        "text": "El cohete despega con Bity afuera sin problemas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Bity atraviesa el metal como un fantasma.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Sin abrir el acceso a la cabina, Bity no puede abordar el cohete."
+  },
+  {
+    "id": "g3_algoritmos_4",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Para ordenar tres números de menor a mayor (2, 8, 5), ¿cuál es el resultado del algoritmo?",
+    "options": [
+      {
+        "text": "2, 5, 8",
+        "isCorrect": true
+      },
+      {
+        "text": "8, 5, 2",
+        "isCorrect": false
+      },
+      {
+        "text": "5, 8, 2",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Al ordenar de menor a mayor se ubica primero el 2, luego el 5 y finalmente el 8."
+  },
+  {
+    "id": "g3_algoritmos_5",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "En un algoritmo de pasos repetidos: 1. Avanzar, 2. Girar, 3. Avanzar, 4. Girar... ¿cuál es el paso 5?",
+    "options": [
+      {
+        "text": "Avanzar",
+        "isCorrect": true
+      },
+      {
+        "text": "Girar",
+        "isCorrect": false
+      },
+      {
+        "text": "Detenerse para siempre",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La secuencia sigue un patrón alternado: los pasos impares son «Avanzar» y los pares son «Girar»."
+  },
+  {
+    "id": "g3_algoritmos_6",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Por qué decimos que un algoritmo tiene un número finito de pasos?",
+    "options": [
+      {
+        "text": "Porque debe tener un final claro para resolver el problema y no seguir para siempre.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque los pasos no se pueden contar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque nunca debe terminar de ejecutarse.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un algoritmo útil debe concluir al alcanzar la solución buscada."
+  },
+  {
+    "id": "g3_algoritmos_7",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Algoritmo para pintar un cuadro: 1. Preparar la tela, 2. Dibujar las formas, 3. Pintar con colores. ¿Cuál es el paso 1?",
+    "options": [
+      {
+        "text": "Preparar la tela donde se va a pintar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Colgar el cuadro terminado en la pared.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pintar con colores directamente en el aire.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Toda obra comienza preparando la superficie base de trabajo."
+  },
+  {
+    "id": "g3_algoritmos_8",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si seguimos un algoritmo para armar un juguete de bloques pero nos saltamos el paso de la base, ¿qué pasa?",
+    "options": [
+      {
+        "text": "El juguete no tendrá apoyo y se caerá al intentar colocar las piezas de arriba.",
+        "isCorrect": true
+      },
+      {
+        "text": "El juguete queda más firme y fuerte.",
+        "isCorrect": false
+      },
+      {
+        "text": "Las piezas flotan solas en el aire.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Omitir los cimientos estructurales hace que la construcción colapse."
+  },
+  {
+    "id": "g3_algoritmos_9",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Qué es lo primero que debemos hacer antes de escribir los pasos de un algoritmo?",
+    "options": [
+      {
+        "text": "Entender claramente cuál es el problema o la tarea que queremos resolver.",
+        "isCorrect": true
+      },
+      {
+        "text": "Escribir órdenes sin saber qué queremos lograr.",
+        "isCorrect": false
+      },
+      {
+        "text": "Apretar botones al azar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Comprender la meta es el punto de partida indispensable para definir los pasos correctos."
+  },
+  {
+    "id": "g3_algoritmos_10",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Para cruzar un laberinto sencillo, ¿qué busca un buen algoritmo?",
+    "options": [
+      {
+        "text": "Encontrar un camino continuo desde la entrada hasta la salida evitando los callejones sin salida.",
+        "isCorrect": true
+      },
+      {
+        "text": "Chocar contra todas las paredes posibles.",
+        "isCorrect": false
+      },
+      {
+        "text": "Quedarse en la entrada sin caminar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La meta algorítmica en un laberinto es conectar inicio y fin esquivando bloqueos."
+  },
+  {
+    "id": "g3_algoritmos_11",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si un algoritmo tiene un paso repetido innecesariamente, como «Girar a la derecha 4 veces seguidas»: ¿qué hace?",
+    "options": [
+      {
+        "text": "Da una vuelta completa y queda mirando al mismo lugar donde ya estaba.",
+        "isCorrect": true
+      },
+      {
+        "text": "Avanza 10 kilómetros hacia adelante.",
         "isCorrect": false
       },
       {
@@ -1790,2412 +2897,58 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "La condición le indica dar un paso atrás como maniobra de evasión."
-  },
-  {
-    "id": "g2_algoritmos_10",
-    "grade": 2,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Por qué las recetas de cocina se consideran algoritmos cotidianos?",
-    "options": [
-      {
-        "text": "Porque tienen una lista de ingredientes y pasos numerados paso a paso.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque las computadoras comen pasteles.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque tienen fotos en colores.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Una receta es el ejemplo clásico de secuencia ordenada para obtener un producto final."
-  },
-  {
-    "id": "g2_algoritmos_11",
-    "grade": 2,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Si un algoritmo tiene un bucle que nunca se detiene, ¿cómo se le llama en informática?",
-    "options": [
-      {
-        "text": "Bucle infinito.",
-        "isCorrect": true
-      },
-      {
-        "text": "Bucle veloz.",
-        "isCorrect": false
-      },
-      {
-        "text": "Bucle premiado.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Un bucle infinito ocurre cuando falta la condición de salida o parada."
-  },
-  {
-    "id": "g2_algoritmos_12",
-    "grade": 2,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Si probamos nuestro algoritmo y siempre funciona con éxito, ¿qué podemos afirmar?",
-    "options": [
-      {
-        "text": "Que el algoritmo es correcto y confiable.",
-        "isCorrect": true
-      },
-      {
-        "text": "Que tuvimos suerte por casualidad.",
-        "isCorrect": false
-      },
-      {
-        "text": "Que hay que borrarlo todo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La verificación repetida confirma la solidez de la solución algorítmica."
-  },
-  {
-    "id": "g2_matematica_1",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calcula su energía de salto! ¿Cuánto es 24 + 15?",
-    "options": [
-      {
-        "text": "39",
-        "isCorrect": true
-      },
-      {
-        "text": "38",
-        "isCorrect": false
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡24 más 15 es igual a 39! (20+10=30; 4+5=9 -> 39)."
-  },
-  {
-    "id": "g2_matematica_2",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity gasta energía en una carrera! ¿Cuánto es 48 − 16?",
-    "options": [
-      {
-        "text": "32",
-        "isCorrect": true
-      },
-      {
-        "text": "31",
-        "isCorrect": false
-      },
-      {
-        "text": "34",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡48 menos 16 es igual a 32!"
-  },
-  {
-    "id": "g2_matematica_3",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity suma dos baterías medianas! ¿Cuánto es 35 + 25?",
-    "options": [
-      {
-        "text": "60",
-        "isCorrect": true
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      },
-      {
-        "text": "65",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡35 más 25 es igual a 60 exactos!"
-  },
-  {
-    "id": "g2_matematica_4",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity ajusta su sensor de distancia! ¿Cuánto es 70 − 25?",
-    "options": [
-      {
-        "text": "45",
-        "isCorrect": true
-      },
-      {
-        "text": "55",
-        "isCorrect": false
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡70 menos 25 es igual a 45!"
-  },
-  {
-    "id": "g2_matematica_5",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity duplica su velocidad de procesamiento! ¿Cuánto es el doble de 14?",
-    "options": [
-      {
-        "text": "28",
-        "isCorrect": true
-      },
-      {
-        "text": "24",
-        "isCorrect": false
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡El doble de 14 es 14 + 14 = 28!"
-  },
-  {
-    "id": "g2_matematica_6",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity comparte energía con un aliado! ¿Cuánto es la mitad de 40?",
-    "options": [
-      {
-        "text": "20",
-        "isCorrect": true
-      },
-      {
-        "text": "15",
-        "isCorrect": false
-      },
-      {
-        "text": "25",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡La mitad de 40 es 40 ÷ 2 = 20!"
-  },
-  {
-    "id": "g2_matematica_7",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity recarga sus celdas solares! ¿Cuánto es 52 + 18?",
-    "options": [
-      {
-        "text": "70",
-        "isCorrect": true
-      },
-      {
-        "text": "60",
-        "isCorrect": false
-      },
-      {
-        "text": "72",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡52 más 18 es igual a 70!"
-  },
-  {
-    "id": "g2_matematica_8",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity desciende una montaña tecnológica! ¿Cuánto es 85 − 30?",
-    "options": [
-      {
-        "text": "55",
-        "isCorrect": true
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      },
-      {
-        "text": "65",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡85 menos 30 es igual a 55!"
-  },
-  {
-    "id": "g2_matematica_9",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity recolecta tornillos dorados! ¿Cuánto es 19 + 21?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "39",
-        "isCorrect": false
-      },
-      {
-        "text": "41",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡19 más 21 es igual a 40!"
-  },
-  {
-    "id": "g2_matematica_10",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calibra sus motores laterales! ¿Cuánto es 64 − 22?",
-    "options": [
-      {
-        "text": "42",
-        "isCorrect": true
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      },
-      {
-        "text": "44",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡64 menos 22 es igual a 42!"
-  },
-  {
-    "id": "g2_matematica_11",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity conecta dos bancos de memoria! ¿Cuánto es 33 + 33?",
-    "options": [
-      {
-        "text": "66",
-        "isCorrect": true
-      },
-      {
-        "text": "63",
-        "isCorrect": false
-      },
-      {
-        "text": "69",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡33 más 33 es igual a 66!"
-  },
-  {
-    "id": "g2_matematica_12",
-    "grade": 2,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity reduce la temperatura de su CPU! ¿Cuánto es 90 − 45?",
-    "options": [
-      {
-        "text": "45",
-        "isCorrect": true
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡90 menos 45 es exactamente 45!"
-  },
-  {
-    "id": "g3_instrucciones_1",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "En programación, ¿qué es una condición lógica (ej: «SI hay obstáculo»)?",
-    "options": [
-      {
-        "text": "Una regla que evalúa una situación y decide si se ejecuta una acción o no.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un cable que conecta dos computadoras.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un tipo de letra en negrita.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las condiciones permiten a los programas tomar decisiones según el estado actual."
-  },
-  {
-    "id": "g3_instrucciones_2",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si la orden dice «SI la batería es menor a 20%, ir a la base de carga», ¿cuándo va Bity a cargar?",
-    "options": [
-      {
-        "text": "Únicamente cuando su batería baja del 20%.",
-        "isCorrect": true
-      },
-      {
-        "text": "Todo el tiempo sin detenerse.",
-        "isCorrect": false
-      },
-      {
-        "text": "Nunca, porque la batería no se gasta.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La acción solo se dispara cuando la condición evaluada resulta verdadera."
-  },
-  {
-    "id": "g3_instrucciones_3",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Qué valor puede devolver un sensor booleano en una instrucción?",
-    "options": [
-      {
-        "text": "Verdadero o Falso (Sí o No).",
-        "isCorrect": true
-      },
-      {
-        "text": "Cualquier palabra inventada.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una canción en audio.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los valores booleanos representan los dos únicos estados de verdad: True o False."
-  },
-  {
-    "id": "g3_instrucciones_4",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si una instrucción indica «Avanzar HASTA tocar la pared», ¿cuándo se detiene Bity?",
-    "options": [
-      {
-        "text": "En el momento exacto en que hace contacto con la pared.",
-        "isCorrect": true
-      },
-      {
-        "text": "Al dar exactamente 2 pasos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Nunca, sigue de largo rompiendo la pared.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El bucle condicional «Hasta que» detiene la marcha en cuanto se cumple la condición."
-  },
-  {
-    "id": "g3_instrucciones_5",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Para qué sirve agrupar varias instrucciones bajo el nombre de un bloque propio o función?",
-    "options": [
-      {
-        "text": "Para poder reutilizar ese grupo de acciones fácilmente sin volver a escribirlo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el robot cambie de peinado.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para que el archivo pese el doble.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La modularidad en funciones permite invocar secuencias complejas con una sola orden."
-  },
-  {
-    "id": "g3_instrucciones_6",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si Bity mira hacia el norte y le ordenamos «Girar 180°», ¿hacia dónde queda mirando?",
-    "options": [
-      {
-        "text": "Hacia el sur (hacia atrás).",
-        "isCorrect": true
-      },
-      {
-        "text": "Hacia el este (derecha).",
-        "isCorrect": false
-      },
-      {
-        "text": "Hacia el oeste (izquierda).",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Girar 180° equivale a dar media vuelta completa y mirar en la dirección opuesta."
-  },
-  {
-    "id": "g3_instrucciones_7",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "En un plano de coordenadas (X, Y), si Bity avanza hacia la derecha horizontalmente, ¿qué valor cambia?",
-    "options": [
-      {
-        "text": "Aumenta el valor de la coordenada X.",
-        "isCorrect": true
-      },
-      {
-        "text": "Disminuye el valor de la coordenada Y.",
-        "isCorrect": false
-      },
-      {
-        "text": "Ninguno de los dos valores cambia.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El eje horizontal corresponde a la coordenada X, mientras que el eje vertical es Y."
-  },
-  {
-    "id": "g3_instrucciones_8",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Qué instrucción permite que Bity espere 2 segundos antes de ejecutar la siguiente acción?",
-    "options": [
-      {
-        "text": "«Esperar 2 segundos»",
-        "isCorrect": true
-      },
-      {
-        "text": "«Avanzar 2 metros»",
-        "isCorrect": false
-      },
-      {
-        "text": "«Apagar pantalla»",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La instrucción de espera o temporización pausa la ejecución durante el tiempo indicado."
-  },
-  {
-    "id": "g3_instrucciones_9",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si la condición dice: «SI es de día, activar panel solar; SINO, encender linterna», ¿qué hace de noche?",
-    "options": [
-      {
-        "text": "Enciende la linterna.",
-        "isCorrect": true
-      },
-      {
-        "text": "Activa el panel solar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Apaga todo y se detiene.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La cláusula SINO (ELSE) se ejecuta cuando la condición de día es falsa."
-  },
-  {
-    "id": "g3_instrucciones_10",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si Bity ejecuta 4 veces la secuencia «Avanzar 2, Girar 90° a la derecha», ¿qué figura geométrica dibuja?",
-    "options": [
-      {
-        "text": "Un cuadrado perfecto.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un círculo ondulado.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una línea recta sin fin.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Cuatro avances iguales combinados con cuatro giros rectos forman el perímetro de un cuadrado."
-  },
-  {
-    "id": "g3_instrucciones_11",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "¿Qué error tiene la orden «Avanzar 3 casilleros hacia la izquierda sin girar» si Bity mira al frente?",
-    "options": [
-      {
-        "text": "Contradice la orientación: para ir a la izquierda necesita primero girar o usar desplazamiento lateral.",
-        "isCorrect": true
-      },
-      {
-        "text": "No tiene ningún error.",
-        "isCorrect": false
-      },
-      {
-        "text": "Tiene demasiados números.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los robots de desplazamiento frontal necesitan orientar sus motores hacia la dirección del avance."
-  },
-  {
-    "id": "g3_instrucciones_12",
-    "grade": 3,
-    "category": "instrucciones",
-    "difficulty": "medio",
-    "question": "Si el sensor de distancia detecta un objeto a 10 cm y la instrucción dice «SI distancia < 20 cm, FRENAR», ¿qué hace?",
-    "options": [
-      {
-        "text": "Frena de inmediato porque 10 cm es menor a 20 cm.",
-        "isCorrect": true
-      },
-      {
-        "text": "Sigue acelerando a máxima velocidad.",
-        "isCorrect": false
-      },
-      {
-        "text": "Gira hacia atrás sin frenar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La condición matemática 10 < 20 es verdadera, por lo que la acción de frenado se ejecuta."
-  },
-  {
-    "id": "g3_programacion_1",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es un bucle «Repetir N veces» en programación?",
-    "options": [
-      {
-        "text": "Una estructura que ejecuta un conjunto de instrucciones un número fijo de repeticiones.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un tipo de virus informático.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un botón que apaga el monitor.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los bucles iterativos permiten automatizar tareas repetitivas de forma elegante y precisa."
-  },
-  {
-    "id": "g3_programacion_2",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es una variable en un videojuego?",
-    "options": [
-      {
-        "text": "Un espacio con nombre donde se guarda un dato que puede cambiar, como vidas o puntos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un dibujo de una nube en el fondo.",
-        "isCorrect": false
-      },
-      {
-        "text": "El cable de alimentación eléctrica.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las variables permiten al juego recordar el estado de la partida y actualizarlo en tiempo real."
-  },
-  {
-    "id": "g3_programacion_3",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si la variable «Vidas» vale 3 y Bity cae en un pozo, ¿cuánto debe valer «Vidas» después del evento?",
-    "options": [
-      {
-        "text": "2 vidas.",
-        "isCorrect": true
-      },
-      {
-        "text": "0 vidas.",
-        "isCorrect": false
-      },
-      {
-        "text": "4 vidas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Al caer en un pozo pierde exactamente 1 vida, reduciendo el contador de 3 a 2."
-  },
-  {
-    "id": "g3_programacion_4",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es un «evento» en un entorno de programación visual como Scratch o Lego?",
-    "options": [
-      {
-        "text": "Un suceso externo (clic, tecla presionada o mensaje) que desencadena un bloque de código.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una fiesta de cumpleaños del robot.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un error que borra la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los eventos conectan las interacciones del usuario con las respuestas del programa."
-  },
-  {
-    "id": "g3_programacion_5",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Para qué sirven los comentarios dentro del código fuente de un programa?",
-    "options": [
-      {
-        "text": "Para explicar a las personas qué hace cada parte del código, sin que la máquina los ejecute.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el robot hable en voz alta.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para que el juego tenga más niveles.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los comentarios son notas explicativas esenciales para el trabajo colaborativo en programación."
-  },
-  {
-    "id": "g3_programacion_6",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si dos algoritmos resuelven el mismo problema, pero uno usa 4 pasos y otro usa 18, ¿cuál es mejor?",
-    "options": [
-      {
-        "text": "El de 4 pasos, porque es más eficiente y fácil de comprender.",
-        "isCorrect": true
-      },
-      {
-        "text": "El de 18 pasos, porque tiene más letras.",
-        "isCorrect": false
-      },
-      {
-        "text": "Ninguno sirve.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La simplicidad y eficiencia son virtudes fundamentales en el diseño de software."
-  },
-  {
-    "id": "g3_programacion_7",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué ocurre cuando un programa entra en un bucle sin fin (bucle infinito)?",
-    "options": [
-      {
-        "text": "El programa se queda atrapado repitiendo lo mismo y puede dejar de responder.",
-        "isCorrect": true
-      },
-      {
-        "text": "El juego se vuelve automáticamente invencible.",
-        "isCorrect": false
-      },
-      {
-        "text": "Se descargan nuevos juegos gratis.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Un bucle infinito consume recursos sin avanzar, por lo que siempre requiere una condición de corte."
-  },
-  {
-    "id": "g3_programacion_8",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es la interfaz de usuario (UI) en un videojuego como el de Bity?",
-    "options": [
-      {
-        "text": "Los elementos visuales como el HUD de vidas, el cronómetro y los botones de control.",
-        "isCorrect": true
-      },
-      {
-        "text": "Los cables internos de la computadora.",
-        "isCorrect": false
-      },
-      {
-        "text": "El plástico del teclado.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La interfaz de usuario comunica el estado del juego y permite al jugador interactuar con él."
-  },
-  {
-    "id": "g3_programacion_9",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "Si queremos que un contador sume de 5 en 5, ¿cómo evoluciona su variable?",
-    "options": [
-      {
-        "text": "0, 5, 10, 15, 20...",
-        "isCorrect": true
-      },
-      {
-        "text": "0, 1, 2, 3, 4...",
-        "isCorrect": false
-      },
-      {
-        "text": "5, 4, 3, 2, 1...",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El incremento constante de 5 genera una progresión aritmética de cinco en cinco."
-  },
-  {
-    "id": "g3_programacion_10",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué significa que un programa sea multiplataforma?",
-    "options": [
-      {
-        "text": "Que puede ejecutarse tanto en computadoras de escritorio como en tablets y celulares.",
-        "isCorrect": true
-      },
-      {
-        "text": "Que solo funciona en una marca de teclado.",
-        "isCorrect": false
-      },
-      {
-        "text": "Que tiene muchas plataformas de madera.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La compatibilidad multiplataforma permite a los usuarios jugar desde diversos dispositivos."
-  },
-  {
-    "id": "g3_programacion_11",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Qué es un sprite en un videojuego 2D?",
-    "options": [
-      {
-        "text": "Un elemento gráfico bidimensional animado que representa a un personaje u objeto.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un tipo de bebida gaseosa en la heladera.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un cable de red.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Bity, los enemigos y las monedas son representados visualmente mediante sprites en el canvas."
-  },
-  {
-    "id": "g3_programacion_12",
-    "grade": 3,
-    "category": "programacion",
-    "difficulty": "medio",
-    "question": "¿Por qué se guardan copias de seguridad (backups) de los proyectos de programación?",
-    "options": [
-      {
-        "text": "Para no perder el trabajo realizado si ocurre algún corte de energía o fallo técnico.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para llenar la memoria de la máquina.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque es obligatorio por ley.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El respaldo periódico garantiza la preservación y seguridad de todo el código desarrollado."
-  },
-  {
-    "id": "g3_algoritmos_1",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Qué es un diagrama de flujo en algoritmos?",
-    "options": [
-      {
-        "text": "Una representación gráfica con flechas y figuras geométricas que muestra el flujo de decisiones.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un mapa para viajar en avión.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un dibujo de un río con peces.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los diagramas de flujo permiten visualizar la lógica de un algoritmo antes de escribir código."
-  },
-  {
-    "id": "g3_algoritmos_2",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "En un diagrama de flujo, ¿qué figura geométrica suele representar una decisión condicional (Sí/No)?",
-    "options": [
-      {
-        "text": "Un rombo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un círculo.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un rectángulo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El rombo de decisión bifurca el camino en dos salidas posibles según la condición."
-  },
-  {
-    "id": "g3_algoritmos_3",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Para ordenar los números 9, 2 y 7 de menor a mayor, ¿cuál es el resultado del algoritmo?",
-    "options": [
-      {
-        "text": "2, 7, 9",
-        "isCorrect": true
-      },
-      {
-        "text": "9, 7, 2",
-        "isCorrect": false
-      },
-      {
-        "text": "7, 2, 9",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El orden ascendente ubica el menor primero (2), luego el intermedio (7) y al final el mayor (9)."
-  },
-  {
-    "id": "g3_algoritmos_4",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Qué significa «descomponer un problema» en el pensamiento computacional?",
-    "options": [
-      {
-        "text": "Dividir un problema grande en partes más pequeñas y fáciles de resolver una por una.",
-        "isCorrect": true
-      },
-      {
-        "text": "Romper una máquina con un martillo.",
-        "isCorrect": false
-      },
-      {
-        "text": "Olvidarse de la mitad de las cosas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La descomposición simplifica la complejidad permitiendo abordar cada desafío paso a paso."
-  },
-  {
-    "id": "g3_algoritmos_5",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Si Bity debe sortear un laberinto en cuadrícula, ¿qué busca un algoritmo de camino óptimo?",
-    "options": [
-      {
-        "text": "La ruta que llega a la meta en la menor cantidad de pasos posibles.",
-        "isCorrect": true
-      },
-      {
-        "text": "El camino con más pozos y peligros.",
-        "isCorrect": false
-      },
-      {
-        "text": "Cualquier camino que tarde muchas horas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El camino óptimo minimiza el gasto de energía y tiempo para cumplir el objetivo."
-  },
-  {
-    "id": "g3_algoritmos_6",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "En una serie de pasos que repite: «Arriba, Derecha, Arriba, Derecha...», ¿cuál es el paso 6?",
-    "options": [
-      {
-        "text": "Derecha.",
-        "isCorrect": true
-      },
-      {
-        "text": "Arriba.",
-        "isCorrect": false
-      },
-      {
-        "text": "Abajo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los pasos impares (1, 3, 5) son Arriba; los pasos pares (2, 4, 6) son Derecha."
-  },
-  {
-    "id": "g3_algoritmos_7",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Si un algoritmo para calcular el promedio de notas olvida dividir por la cantidad de notas, ¿qué error comete?",
-    "options": [
-      {
-        "text": "Un error en la fórmula del cálculo final.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un error de ortografía.",
-        "isCorrect": false
-      },
-      {
-        "text": "No comete ningún error.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El promedio requiere sumar los valores y dividir por el número total de elementos sumados."
-  },
-  {
-    "id": "g3_algoritmos_8",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Por qué las computadoras pueden ejecutar millones de pasos algorítmicos en un solo segundo?",
-    "options": [
-      {
-        "text": "Porque poseen procesadores electrónicos de alta frecuencia diseñados para calcular velozmente.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque tienen magia en sus cables.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque no duermen por la noche.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los microprocesadores modernos ejecutan ciclos de instrucciones a velocidades de gigahertz."
-  },
-  {
-    "id": "g3_algoritmos_9",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Para qué se utiliza un algoritmo de búsqueda en una lista de nombres de alumnos?",
-    "options": [
-      {
-        "text": "Para localizar rápidamente si un alumno en particular se encuentra en la lista.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para borrar todos los nombres.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para cambiarle el nombre a los chicos.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los algoritmos de búsqueda recorren la estructura de datos hasta dar con el elemento requerido."
-  },
-  {
-    "id": "g3_algoritmos_10",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "Si una serie numérica sigue la regla «Sumar 4 cada vez» empezando en 2: 2, 6, 10... ¿cuál es el siguiente?",
-    "options": [
-      {
-        "text": "14",
-        "isCorrect": true
-      },
-      {
-        "text": "12",
-        "isCorrect": false
-      },
-      {
-        "text": "16",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Siguiendo la regla del algoritmo aritmético: 10 + 4 = 14."
-  },
-  {
-    "id": "g3_algoritmos_11",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Qué es un algoritmo determinista?",
-    "options": [
-      {
-        "text": "Un algoritmo que ante las mismas entradas siempre produce exactamente el mismo resultado.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un algoritmo que cambia de opinión al azar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un programa que no tiene final.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El determinismo garantiza previsibilidad y consistencia en los resultados de un sistema."
+    "explanation": "Cuatro giros de 90° devuelven al robot exactamente a su orientación original."
   },
   {
     "id": "g3_algoritmos_12",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "¿Cómo confirmamos que un algoritmo funciona antes de usarlo en un cohete espacial real?",
+    "question": "¿Por qué es útil compartir nuestro algoritmo con un compañero para que lo lea?",
     "options": [
       {
-        "text": "Probándolo en simuladores con diversas situaciones de prueba y casos extremos.",
+        "text": "Para que compruebe si los pasos son claros y fáciles de seguir sin confusiones.",
         "isCorrect": true
       },
       {
-        "text": "Lanzándolo al espacio sin revisar.",
+        "text": "Para que nadie más pueda resolver la tarea.",
         "isCorrect": false
       },
       {
-        "text": "Preguntándole a una mascota.",
+        "text": "Porque los algoritmos son secretos que no se leen.",
         "isCorrect": false
       }
     ],
-    "explanation": "La verificación y validación rigurosa mediante pruebas asegura la confiabilidad en misiones críticas."
+    "explanation": "Un segundo lector ayuda a comprobar si las instrucciones son claras y comprensibles."
   },
   {
     "id": "g3_matematica_1",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity calibra sus motores espaciales! ¿Cuánto es 6 × 5?",
+    "question": "¡Bity calibra sus propulsores! ¿Cuánto es 4 × 5?",
     "options": [
       {
-        "text": "30",
+        "text": "20",
         "isCorrect": true
       },
       {
-        "text": "35",
+        "text": "18",
         "isCorrect": false
       },
       {
-        "text": "25",
+        "text": "22",
         "isCorrect": false
       }
     ],
-    "explanation": "¡6 por 5 es igual a 30!"
+    "explanation": "4 por 5 es igual a 20."
   },
   {
     "id": "g3_matematica_2",
     "grade": 3,
     "category": "matematica",
     "difficulty": "medio",
-    "question": "¡Bity calcula la potencia de su escudo! ¿Cuánto es 8 × 4?",
-    "options": [
-      {
-        "text": "32",
-        "isCorrect": true
-      },
-      {
-        "text": "36",
-        "isCorrect": false
-      },
-      {
-        "text": "28",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡8 por 4 es igual a 32!"
-  },
-  {
-    "id": "g3_matematica_3",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity mide la frecuencia de su radar! ¿Cuánto es 9 × 3?",
-    "options": [
-      {
-        "text": "27",
-        "isCorrect": true
-      },
-      {
-        "text": "24",
-        "isCorrect": false
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡9 por 3 es igual a 27!"
-  },
-  {
-    "id": "g3_matematica_4",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity carga celdas de energía! ¿Cuánto es 7 × 5?",
-    "options": [
-      {
-        "text": "35",
-        "isCorrect": true
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "¡7 por 5 es igual a 35!"
-  },
-  {
-    "id": "g3_matematica_5",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity realiza una operación combinada! ¿Cuánto es 4 × 10 + 15?",
-    "options": [
-      {
-        "text": "55",
-        "isCorrect": true
-      },
-      {
-        "text": "45",
-        "isCorrect": false
-      },
-      {
-        "text": "65",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero multiplicamos 4 × 10 = 40, luego sumamos 15: 40 + 15 = 55."
-  },
-  {
-    "id": "g3_matematica_6",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calcula su batería restante! ¿Cuánto es 50 − 3 × 6?",
-    "options": [
-      {
-        "text": "32",
-        "isCorrect": true
-      },
-      {
-        "text": "36",
-        "isCorrect": false
-      },
-      {
-        "text": "28",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero resolvemos la multiplicación 3 × 6 = 18, luego restamos: 50 − 18 = 32."
-  },
-  {
-    "id": "g3_matematica_7",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity ajusta la altitud de vuelo! ¿Cuánto es 25 + 5 × 5?",
-    "options": [
-      {
-        "text": "50",
-        "isCorrect": true
-      },
-      {
-        "text": "45",
-        "isCorrect": false
-      },
-      {
-        "text": "55",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Por jerarquía de operaciones: 5 × 5 = 25; luego 25 + 25 = 50."
-  },
-  {
-    "id": "g3_matematica_8",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity regula la velocidad del dron! ¿Cuánto es 80 − 4 × 8?",
-    "options": [
-      {
-        "text": "48",
-        "isCorrect": true
-      },
-      {
-        "text": "52",
-        "isCorrect": false
-      },
-      {
-        "text": "44",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 4 × 8 = 32; luego restamos 80 − 32 = 48."
-  },
-  {
-    "id": "g3_matematica_9",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity sincroniza sus sensores! ¿Cuánto es 3 × 8 + 12?",
-    "options": [
-      {
-        "text": "36",
-        "isCorrect": true
-      },
-      {
-        "text": "32",
-        "isCorrect": false
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 3 × 8 = 24; luego sumamos 12: 24 + 12 = 36."
-  },
-  {
-    "id": "g3_matematica_10",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity calcula el empuje del propulsor! ¿Cuánto es 10 × 6 − 20?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 10 × 6 = 60; luego restamos 20: 60 − 20 = 40."
-  },
-  {
-    "id": "g3_matematica_11",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity mide la distancia al Centro de Repuestos! ¿Cuánto es 100 − 7 × 10?",
-    "options": [
-      {
-        "text": "30",
-        "isCorrect": true
-      },
-      {
-        "text": "20",
-        "isCorrect": false
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 7 × 10 = 70; luego 100 − 70 = 30."
-  },
-  {
-    "id": "g3_matematica_12",
-    "grade": 3,
-    "category": "matematica",
-    "difficulty": "medio",
-    "question": "¡Bity completa su recarga de batería! ¿Cuánto es 4 × 9 + 4?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "36",
-        "isCorrect": false
-      },
-      {
-        "text": "44",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 4 × 9 = 36; luego sumamos 4: 36 + 4 = 40."
-  },
-  {
-    "id": "g4_instrucciones_1",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una condición lógica compuesta con el operador «Y» (AND)?",
-    "options": [
-      {
-        "text": "Una regla donde TODAS las condiciones deben ser verdaderas a la vez para ejecutar la acción.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una regla donde alcanza con que una sola sea verdadera.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una regla que invierte el resultado.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El operador AND exige que cada una de las condiciones evaluadas sea verdadera simultáneamente."
-  },
-  {
-    "id": "g4_instrucciones_2",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En: «SI batería > 50% Y puerta abierta, AVANZAR». Si la batería es 90% pero la puerta está cerrada, ¿qué hace Bity?",
-    "options": [
-      {
-        "text": "No avanza, porque la condición de la puerta no se cumple.",
-        "isCorrect": true
-      },
-      {
-        "text": "Avanza igual rompiendo la puerta.",
-        "isCorrect": false
-      },
-      {
-        "text": "Apaga la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Al usar AND, si cualquiera de las dos premisas es falsa, la condición global es falsa."
-  },
-  {
-    "id": "g4_instrucciones_3",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué caracteriza al operador lógico «O» (OR) en una instrucción condicional?",
-    "options": [
-      {
-        "text": "Es verdadero si al menos una de las condiciones evaluadas se cumple.",
-        "isCorrect": true
-      },
-      {
-        "text": "Exige que ambas condiciones sean falsas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Solo funciona con números impares.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La disyunción lógica OR resulta verdadera si la primera, la segunda o ambas son verdaderas."
-  },
-  {
-    "id": "g4_instrucciones_4",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En: «SI llueve O hace frío, llevar campera». Si hace frío pero no llueve, ¿debe llevar campera?",
-    "options": [
-      {
-        "text": "Sí, porque al menos una de las dos condiciones es verdadera.",
-        "isCorrect": true
-      },
-      {
-        "text": "No, tienen que ocurrir las dos cosas juntas sí o sí.",
-        "isCorrect": false
-      },
-      {
-        "text": "Solo si es fin de semana.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La presencia de frío satisface la condición del operador OR."
-  },
-  {
-    "id": "g4_instrucciones_5",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué permite la estructura «SI... SINO...» (IF-ELSE) en un algoritmo?",
-    "options": [
-      {
-        "text": "Definir un camino de acción si es verdadero y un camino alternativo si es falso.",
-        "isCorrect": true
-      },
-      {
-        "text": "Repetir instrucciones de forma infinita.",
-        "isCorrect": false
-      },
-      {
-        "text": "Borrar las variables de la memoria.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "IF-ELSE garantiza que siempre se tome una de las dos vías alternativas sin ambigüedad."
-  },
-  {
-    "id": "g4_instrucciones_6",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un parámetro o argumento en una instrucción como `avanzar(casilleros)`?",
-    "options": [
-      {
-        "text": "Un valor que enviamos a la instrucción para especificar la cantidad o modo de ejecución.",
-        "isCorrect": true
-      },
-      {
-        "text": "El nombre del autor del juego.",
-        "isCorrect": false
-      },
-      {
-        "text": "El color de la pantalla.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los parámetros dotan de flexibilidad y dinamismo a las instrucciones y funciones."
-  },
-  {
-    "id": "g4_instrucciones_7",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "Si la función de movimiento es `mover(dx, dy)`, ¿hacia dónde se mueve Bity con `mover(0, -15)` en canvas?",
-    "options": [
-      {
-        "text": "Hacia arriba 15 píxeles en el eje vertical.",
-        "isCorrect": true
-      },
-      {
-        "text": "Hacia abajo 15 píxeles.",
-        "isCorrect": false
-      },
-      {
-        "text": "Hacia la derecha 15 píxeles.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "En coordenadas de pantalla estándar, los valores negativos de Y se orientan hacia la parte superior."
-  },
-  {
-    "id": "g4_instrucciones_8",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Por qué los programadores validan los límites del escenario antes de mover al personaje?",
-    "options": [
-      {
-        "text": "Para evitar que Bity traspase las paredes o caiga fuera del mundo visible.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el personaje cambie de ropa.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para consumir más electricidad.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El control de límites (bounding box) preserva la consistencia física del videojuego."
-  },
-  {
-    "id": "g4_instrucciones_9",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué significa «anidar» estructuras condicionales en el código?",
-    "options": [
-      {
-        "text": "Colocar una instrucción condicional dentro de otra para evaluar casos más específicos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Guardar bloques de código en cajas de cartón.",
-        "isCorrect": false
-      },
-      {
-        "text": "Crear pájaros en la pantalla.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las condiciones anidadas permiten ramificar la toma de decisiones en múltiples niveles jerárquicos."
-  },
-  {
-    "id": "g4_instrucciones_10",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué sucede si una instrucción intenta dividir un número por cero en la computadora?",
-    "options": [
-      {
-        "text": "Provoca un error matemático de ejecución porque la división por cero no está definida.",
-        "isCorrect": true
-      },
-      {
-        "text": "El resultado siempre da 100.",
-        "isCorrect": false
-      },
-      {
-        "text": "La computadora se convierte en calculadora solar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los programas deben validar que los divisores sean distintos de cero para evitar fallos."
-  },
-  {
-    "id": "g4_instrucciones_11",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Cuál es la función del operador lógico «NO» (NOT)?",
-    "options": [
-      {
-        "text": "Invierte el valor de verdad: si es verdadero lo hace falso, y si es falso lo hace verdadero.",
-        "isCorrect": true
-      },
-      {
-        "text": "Suma dos números positivos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Multiplica el resultado por dos.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El operador NOT niega la condición lógica evaluada invirtiendo su estado booleano."
-  },
-  {
-    "id": "g4_instrucciones_12",
-    "grade": 4,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "Si una instrucción de detección comprueba cajas AABB, ¿qué verifica matemáticamente?",
-    "options": [
-      {
-        "text": "Si los rectángulos que envuelven a ambos objetos se superponen en X y en Y.",
-        "isCorrect": true
-      },
-      {
-        "text": "Si los dos objetos tienen el mismo peso.",
-        "isCorrect": false
-      },
-      {
-        "text": "Si los dos objetos son del mismo color.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La colisión Axis-Aligned Bounding Box (AABB) evalúa la superposición de intervalos en ambos ejes."
-  },
-  {
-    "id": "g4_programacion_1",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un arreglo o lista (array) en programación?",
-    "options": [
-      {
-        "text": "Una estructura ordenada que permite guardar múltiples datos bajo un mismo identificador.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una herramienta para desarmar la pantalla.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un tipo de conector USB.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las listas organizan colecciones de elementos indexados secuencialmente."
-  },
-  {
-    "id": "g4_programacion_2",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "Si una lista tiene [rojo, azul, verde], ¿cuál es el elemento en el índice 0 en la mayoría de lenguajes?",
-    "options": [
-      {
-        "text": "rojo",
-        "isCorrect": true
-      },
-      {
-        "text": "azul",
-        "isCorrect": false
-      },
-      {
-        "text": "verde",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "En programación, la indexación estándar es basada en cero (zero-indexed)."
-  },
-  {
-    "id": "g4_programacion_3",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una función modular y qué ventaja ofrece en un proyecto de software?",
-    "options": [
-      {
-        "text": "Un bloque reutilizable de código con propósito específico que evita duplicar lógica.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un cable que conecta dos monitores.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un archivo que solo se puede abrir una vez.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La modularidad divide programas complejos en funciones autónomas y fáciles de depurar."
-  },
-  {
-    "id": "g4_programacion_4",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué diferencia existe entre una variable local y una variable global?",
-    "options": [
-      {
-        "text": "La local solo existe dentro de su función; la global puede leerse en todo el programa.",
-        "isCorrect": true
-      },
-      {
-        "text": "La local se guarda en un pendrive y la global en la nube.",
-        "isCorrect": false
-      },
-      {
-        "text": "No hay diferencia alguna.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El alcance o ámbito (scope) define en qué sectores del código es accesible cada variable."
-  },
-  {
-    "id": "g4_programacion_5",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Cuál es el rol del bucle principal del juego (Game Loop) que corre a 60 FPS?",
-    "options": [
-      {
-        "text": "Procesar entradas de usuario, actualizar la física y dibujar el siguiente fotograma.",
-        "isCorrect": true
-      },
-      {
-        "text": "Descargar archivos de internet sin parar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Borrar el progreso de las partidas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El Game Loop es el corazón interactivo que mantiene la simulación continua en tiempo real."
-  },
-  {
-    "id": "g4_programacion_6",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Para qué sirve un acumulador dentro de un bucle de programación?",
-    "options": [
-      {
-        "text": "Para ir sumando y almacenando valores sucesivos a lo largo de las iteraciones.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para restar la velocidad a cero.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para reiniciar la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El patrón acumulador permite calcular totales, puntajes acumulados o promedios."
-  },
-  {
-    "id": "g4_programacion_7",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una bandera booleana (flag) en la lógica de un programa?",
-    "options": [
-      {
-        "text": "Una variable que vale verdadero o falso para recordar si ocurrió un suceso específico.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una imagen de un mástil de tela.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un sonido de victoria.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los flags señalan estados clave, como `estaEnElSuelo`, `invulnerable` o `misionCompletada`."
-  },
-  {
-    "id": "g4_programacion_8",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué significa que un código sea legible y siga convenciones de estilo?",
-    "options": [
-      {
-        "text": "Que utiliza nombres claros y buena indentación para que cualquier persona lo entienda fácilmente.",
-        "isCorrect": true
-      },
-      {
-        "text": "Que tiene muchas palabras difíciles y desordenadas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Que está escrito en un idioma secreto.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El código limpio y legible facilita el mantenimiento, el trabajo en equipo y la detección de errores."
-  },
-  {
-    "id": "g4_programacion_9",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una constante en programación?",
-    "options": [
-      {
-        "text": "Un valor definido al inicio que no debe cambiar durante la ejecución del programa.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una variable que cambia de valor cada segundo.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un botón de reinicio.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las constantes protegen valores fundamentales fijos, como la gravedad o el límite de tiempo."
-  },
-  {
-    "id": "g4_programacion_10",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué significa refactorizar código sin cambiar su funcionalidad externa?",
-    "options": [
-      {
-        "text": "Reorganizar y limpiar el código interno para hacerlo más eficiente, claro y mantenible.",
-        "isCorrect": true
-      },
-      {
-        "text": "Borrar todo el proyecto y empezar de cero.",
-        "isCorrect": false
-      },
-      {
-        "text": "Cambiar los gráficos por otros de menor calidad.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Refactorizar mejora la arquitectura interna del software manteniendo intacto el comportamiento."
-  },
-  {
-    "id": "g4_programacion_11",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Cómo se comunican dos módulos independientes en una aplicación web bien diseñada?",
-    "options": [
-      {
-        "text": "A través de interfaces, parámetros de funciones o emisión y escucha de eventos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Compartiendo cables físicos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Sobrescribiendo archivos al azar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El desacoplamiento mediante llamadas limpias garantiza estabilidad y escalabilidad."
-  },
-  {
-    "id": "g4_programacion_12",
-    "grade": 4,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Para qué sirve el almacenamiento local (localStorage) en los navegadores web?",
-    "options": [
-      {
-        "text": "Para guardar el progreso de los niveles y récords en el dispositivo del alumno sin depender de un servidor.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para guardar fotos de la cámara web.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para aumentar la velocidad de internet.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El almacenamiento local permite persistir datos entre sesiones de navegación de forma sencilla."
-  },
-  {
-    "id": "g4_algoritmos_1",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿En qué consiste el algoritmo de búsqueda binaria?",
-    "options": [
-      {
-        "text": "En buscar en una lista ordenada dividiendo sucesivamente el rango de búsqueda a la mitad.",
-        "isCorrect": true
-      },
-      {
-        "text": "En revisar todos los elementos uno por uno de izquierda a derecha.",
-        "isCorrect": false
-      },
-      {
-        "text": "En elegir elementos al azar hasta acertar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La búsqueda binaria descarta la mitad de los elementos en cada paso, siendo sumamente veloz."
-  },
-  {
-    "id": "g4_algoritmos_2",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Por qué la búsqueda binaria exige obligatoriamente que la lista esté previamente ordenada?",
-    "options": [
-      {
-        "text": "Porque compara con el valor central para saber si buscar en la mitad izquierda o derecha.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque a las computadoras no les gusta el desorden.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque solo funciona con números negativos.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El orden permite descartar con certeza una de las mitades con una sola comparación."
-  },
-  {
-    "id": "g4_algoritmos_3",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es la abstracción dentro del pensamiento computacional?",
-    "options": [
-      {
-        "text": "Focalizarse en los aspectos relevantes de un problema y prescindir de detalles secundarios.",
-        "isCorrect": true
-      },
-      {
-        "text": "Ignorar el problema y no hacer nada.",
-        "isCorrect": false
-      },
-      {
-        "text": "Pintar un cuadro con figuras abstractas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La abstracción permite crear modelos conceptuales simples para resolver problemas complejos."
-  },
-  {
-    "id": "g4_algoritmos_4",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "En un algoritmo que modela un mapa de plataformas, ¿qué abstracción geométrica se utiliza para Bity?",
-    "options": [
-      {
-        "text": "Un rectángulo con posición (x, y) y dimensiones de ancho y alto (w, h).",
-        "isCorrect": true
-      },
-      {
-        "text": "Un modelo atómico con protones y electrones.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una esfera perfecta de gas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El rectángulo de colisión simplifica los cálculos físicos manteniendo gran fidelidad jugable."
-  },
-  {
-    "id": "g4_algoritmos_5",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un algoritmo de ordenamiento por burbuja (Bubble Sort)?",
-    "options": [
-      {
-        "text": "Un método que compara pares adyacentes y los intercambia si están en el orden incorrecto.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un filtro que infla burbujas en el agua.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una animación gráfica de círculos.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Bubble Sort hace que los valores más grandes «burbujeen» hacia el final de la lista paso a paso."
-  },
-  {
-    "id": "g4_algoritmos_6",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una estructura de datos tipo Cola (Queue) y qué regla sigue?",
-    "options": [
-      {
-        "text": "Una estructura FIFO: el primer elemento en ingresar es el primero en salir.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una estructura donde sale primero el último en llegar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una lista que borra todo al azar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "First-In First-Out (FIFO) reproduce la lógica de una fila de personas en un supermercado."
-  },
-  {
-    "id": "g4_algoritmos_7",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una estructura de datos tipo Pila (Stack) y qué regla sigue?",
-    "options": [
-      {
-        "text": "Una estructura LIFO: el último elemento en entrar es el primero en ser retirado.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una lista donde todos salen a la vez.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una batería de automóvil.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Last-In First-Out (LIFO) funciona como una pila de platos: el último apoyado es el primero en retirarse."
-  },
-  {
-    "id": "g4_algoritmos_8",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "En un laberinto, si un algoritmo sigue la regla de la pared derecha, ¿qué técnica heurística utiliza?",
-    "options": [
-      {
-        "text": "Mantener siempre la mano en la pared continua hasta encontrar la salida.",
-        "isCorrect": true
-      },
-      {
-        "text": "Caminar con los ojos cerrados.",
-        "isCorrect": false
-      },
-      {
-        "text": "Saltar por arriba de las paredes.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La regla de la mano derecha garantiza resolver cualquier laberinto simplemente conexo."
-  },
-  {
-    "id": "g4_algoritmos_9",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Cómo se mide el rendimiento o eficiencia de un algoritmo en informática?",
-    "options": [
-      {
-        "text": "Por la cantidad de pasos computacionales y memoria RAM requerida según el tamaño de la entrada.",
-        "isCorrect": true
-      },
-      {
-        "text": "Por la cantidad de colores del monitor.",
-        "isCorrect": false
-      },
-      {
-        "text": "Por lo lindo que se ve impreso en papel.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El análisis de complejidad temporal y espacial determina la eficiencia de un algoritmo."
-  },
-  {
-    "id": "g4_algoritmos_10",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un caso límite o caso de prueba extremo (edge case) al evaluar un algoritmo?",
-    "options": [
-      {
-        "text": "Una situación inusual o en los extremos de los datos, como listas vacías o valores máximos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un caso que nunca importa revisar.",
-        "isCorrect": false
-      },
-      {
-        "text": "El dibujo del borde de la pantalla.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los edge cases ponen a prueba la solidez del software ante situaciones imprevistas."
-  },
-  {
-    "id": "g4_algoritmos_11",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué hace un algoritmo de detección de ciclos en una red o lista vinculada?",
-    "options": [
-      {
-        "text": "Verifica si el recorrido vuelve sobre sí mismo formando un bucle cerrado sin salida.",
-        "isCorrect": true
-      },
-      {
-        "text": "Pinta círculos en la pantalla.",
-        "isCorrect": false
-      },
-      {
-        "text": "Aumenta la velocidad del procesador.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Detectar ciclos evita que los algoritmos de navegación o recorrido se queden atrapados."
-  },
-  {
-    "id": "g4_algoritmos_12",
-    "grade": 4,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Por qué es fundamental descomponer un videojuego en subsistemas (física, render, audio, lógica)?",
-    "options": [
-      {
-        "text": "Porque permite que cada parte se programe, pruebe y mantenga de forma clara y especializada.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el archivo sea más difícil de abrir.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque la computadora no permite escribir más de 10 líneas.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La arquitectura en subsistemas es el estándar profesional en la ingeniería de videojuegos."
-  },
-  {
-    "id": "g4_matematica_1",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity realiza un cálculo de propulsión! ¿Cuánto es 12 × 6 − 15?",
-    "options": [
-      {
-        "text": "57",
-        "isCorrect": true
-      },
-      {
-        "text": "55",
-        "isCorrect": false
-      },
-      {
-        "text": "62",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 12 × 6 = 72; luego restamos 15: 72 − 15 = 57."
-  },
-  {
-    "id": "g4_matematica_2",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity analiza la energía del reactor! ¿Cuánto es (20 + 30) × 2?",
-    "options": [
-      {
-        "text": "100",
-        "isCorrect": true
-      },
-      {
-        "text": "80",
-        "isCorrect": false
-      },
-      {
-        "text": "120",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El paréntesis se resuelve primero: 20 + 30 = 50; luego 50 × 2 = 100."
-  },
-  {
-    "id": "g4_matematica_3",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calibra la frecuencia de radio! ¿Cuánto es 72 ÷ 8 + 25?",
-    "options": [
-      {
-        "text": "34",
-        "isCorrect": true
-      },
-      {
-        "text": "32",
-        "isCorrect": false
-      },
-      {
-        "text": "36",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero dividimos 72 ÷ 8 = 9; luego sumamos 25: 9 + 25 = 34."
-  },
-  {
-    "id": "g4_matematica_4",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity mide la distancia a la base industrial! ¿Cuánto es 15 × 5 − 25?",
-    "options": [
-      {
-        "text": "50",
-        "isCorrect": true
-      },
-      {
-        "text": "45",
-        "isCorrect": false
-      },
-      {
-        "text": "55",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 15 × 5 = 75; luego 75 − 25 = 50."
-  },
-  {
-    "id": "g4_matematica_5",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity regula el flujo térmico! ¿Cuánto es 80 − (12 × 4)?",
-    "options": [
-      {
-        "text": "32",
-        "isCorrect": true
-      },
-      {
-        "text": "36",
-        "isCorrect": false
-      },
-      {
-        "text": "28",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El paréntesis primero: 12 × 4 = 48; luego 80 − 48 = 32."
-  },
-  {
-    "id": "g4_matematica_6",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity ajusta la potencia de los motores! ¿Cuánto es 9 × 8 − 32?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "38",
-        "isCorrect": false
-      },
-      {
-        "text": "42",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 9 × 8 = 72; luego 72 − 32 = 40."
-  },
-  {
-    "id": "g4_matematica_7",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calcula el impulso de salto! ¿Cuánto es (45 − 15) × 3?",
-    "options": [
-      {
-        "text": "90",
-        "isCorrect": true
-      },
-      {
-        "text": "85",
-        "isCorrect": false
-      },
-      {
-        "text": "95",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Resolvemos el paréntesis: 45 − 15 = 30; luego 30 × 3 = 90."
-  },
-  {
-    "id": "g4_matematica_8",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calcula la trayectoria del dron! ¿Cuánto es 64 ÷ 8 × 5?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "35",
-        "isCorrect": false
-      },
-      {
-        "text": "45",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "De izquierda a derecha: 64 ÷ 8 = 8; luego 8 × 5 = 40."
-  },
-  {
-    "id": "g4_matematica_9",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity optimiza el consumo de batería! ¿Cuánto es 100 − (25 × 2 + 10)?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      },
-      {
-        "text": "30",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Dentro del paréntesis: 25 × 2 = 50, más 10 = 60. Luego 100 − 60 = 40."
-  },
-  {
-    "id": "g4_matematica_10",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity sincroniza los enlaces de datos! ¿Cuánto es 14 × 3 + 18?",
-    "options": [
-      {
-        "text": "60",
-        "isCorrect": true
-      },
-      {
-        "text": "58",
-        "isCorrect": false
-      },
-      {
-        "text": "62",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Primero 14 × 3 = 42; luego 42 + 18 = 60."
-  },
-  {
-    "id": "g4_matematica_11",
-    "grade": 4,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calcula el enfriamiento de la CPU! ¿Cuánto es 90 ÷ 3 − 12?",
+    "question": "¡Bity calcula la energía de su radar! ¿Cuánto es 3 × 6?",
     "options": [
       {
         "text": "18",
@@ -4206,1008 +2959,1096 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
+        "text": "21",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "3 por 6 es igual a 18."
+  },
+  {
+    "id": "g3_matematica_3",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity divide baterías en 2 cajas iguales! ¿Cuánto es 10 ÷ 2?",
+    "options": [
+      {
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "10 dividido 2 es igual a 5."
+  },
+  {
+    "id": "g3_matematica_4",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity reparte 15 piezas entre 3 robots! ¿Cuánto es 15 ÷ 3?",
+    "options": [
+      {
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "15 dividido 3 es igual a 5."
+  },
+  {
+    "id": "g3_matematica_5",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity recarga sus celdas de energía! ¿Cuánto es 5 × 5?",
+    "options": [
+      {
+        "text": "25",
+        "isCorrect": true
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "5 por 5 es igual a 25."
+  },
+  {
+    "id": "g3_matematica_6",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity comparte 20 tornillos en 4 bolsas iguales! ¿Cuánto es 20 ÷ 4?",
+    "options": [
+      {
+        "text": "5",
+        "isCorrect": true
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 dividido 4 es igual a 5."
+  },
+  {
+    "id": "g3_matematica_7",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity divide 12 cables entre 3 paneles! ¿Cuánto es 12 ÷ 3?",
+    "options": [
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      },
+      {
+        "text": "5",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "12 dividido 3 es igual a 4."
+  },
+  {
+    "id": "g3_matematica_8",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity mide la potencia de sus motores! ¿Cuánto es 2 × 8?",
+    "options": [
+      {
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "text": "14",
+        "isCorrect": false
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "2 por 8 es igual a 16."
+  },
+  {
+    "id": "g3_matematica_9",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity reparte 16 sensores entre 4 drones! ¿Cuánto es 16 ÷ 4?",
+    "options": [
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "5",
+        "isCorrect": false
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "16 dividido 4 es igual a 4."
+  },
+  {
+    "id": "g3_matematica_10",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity distribuye 20 luces en 5 filas iguales! ¿Cuánto es 20 ÷ 5?",
+    "options": [
+      {
+        "text": "4",
+        "isCorrect": true
+      },
+      {
+        "text": "5",
+        "isCorrect": false
+      },
+      {
+        "text": "3",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 dividido 5 es igual a 4."
+  },
+  {
+    "id": "g3_matematica_11",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity suma la energía de sus placas! ¿Cuánto es 4 × 4?",
+    "options": [
+      {
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
         "text": "20",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero 90 ÷ 3 = 30; luego 30 − 12 = 18."
+    "explanation": "4 por 4 es igual a 16."
   },
   {
-    "id": "g4_matematica_12",
+    "id": "g3_matematica_12",
+    "grade": 3,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity divide 15 repuestos entre 5 estaciones! ¿Cuánto es 15 ÷ 5?",
+    "options": [
+      {
+        "text": "3",
+        "isCorrect": true
+      },
+      {
+        "text": "4",
+        "isCorrect": false
+      },
+      {
+        "text": "2",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "15 dividido 5 es igual a 3."
+  },
+  {
+    "id": "g4_instrucciones_1",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Comparamos dos secuencias para avanzar 3 metros: Secuencia A («Avanzar 3»). Secuencia B («Avanzar 1, Retroceder 1, Avanzar 3»). ¿Cuál es más directa?",
+    "options": [
+      {
+        "text": "La Secuencia A, porque no tiene pasos innecesarios que hagan perder tiempo.",
+        "isCorrect": true
+      },
+      {
+        "text": "La Secuencia B, porque caminar hacia atrás hace que el robot sea más rápido.",
+        "isCorrect": false
+      },
+      {
+        "text": "Son idénticas en cantidad de movimientos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La secuencia A alcanza la meta de forma directa sin desperdiciar pasos en retrocesos inútiles."
+  },
+  {
+    "id": "g4_instrucciones_2",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si Bity necesita ir a la derecha y luego adelante: ¿cuál de estas secuencias es la correcta?",
+    "options": [
+      {
+        "text": "1. Girar a la derecha. 2. Avanzar.",
+        "isCorrect": true
+      },
+      {
+        "text": "1. Avanzar hacia adelante. 2. Girar a la derecha.",
+        "isCorrect": false
+      },
+      {
+        "text": "1. Girar a la izquierda. 2. Retroceder.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Primero se orienta el frente de Bity girando a la derecha y luego se avanza en esa nueva dirección."
+  },
+  {
+    "id": "g4_instrucciones_3",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Un robot debe esquivar una roca que está justo adelante: ¿qué secuencia de instrucciones resuelve el problema?",
+    "options": [
+      {
+        "text": "Girar a un lado, avanzar para esquivar la roca, girar de nuevo y continuar hacia la meta.",
+        "isCorrect": true
+      },
+      {
+        "text": "Avanzar directo contra la roca hasta chocarla.",
+        "isCorrect": false
+      },
+      {
+        "text": "Quedarse quieto frente a la roca para siempre.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Rodear un obstáculo requiere desviar la trayectoria, avanzar el tramo del bloqueo y retomar el rumbo."
+  },
+  {
+    "id": "g4_instrucciones_4",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si un programa tiene dos instrucciones seguidas: «Girar a la izquierda» y después «Girar a la derecha», ¿hacia dónde queda mirando Bity?",
+    "options": [
+      {
+        "text": "Queda mirando exactamente hacia la misma dirección en la que comenzó.",
+        "isCorrect": true
+      },
+      {
+        "text": "Queda mirando hacia atrás.",
+        "isCorrect": false
+      },
+      {
+        "text": "Queda mirando hacia el suelo.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dos giros en sentidos opuestos de igual magnitud se anulan mutuamente."
+  },
+  {
+    "id": "g4_instrucciones_5",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "¿Por qué decimos que una computadora no interpreta «intenciones» y solo lee instrucciones?",
+    "options": [
+      {
+        "text": "Porque no puede adivinar lo que querías hacer; ejecuta únicamente lo que le ordenaste al pie de la letra.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque las computadoras prefieren hacer lo contrario de lo que les pedimos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque las computadoras leen las mentes de los niños.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las máquinas carecen de intuición; solo procesan las órdenes literales que recibieron."
+  },
+  {
+    "id": "g4_instrucciones_6",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Comparamos: Camino 1 (4 instrucciones sencillas) y Camino 2 (8 instrucciones para llegar al mismo lugar). ¿Cuál elegimos y por qué?",
+    "options": [
+      {
+        "text": "El Camino 1, porque llega a la misma meta con menos pasos y de forma más clara.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Camino 2, porque mientras más larga la orden, mejor funciona el robot.",
+        "isCorrect": false
+      },
+      {
+        "text": "Cualquiera, no importa cuántos pasos demos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El camino más corto optimiza el tiempo y reduce las posibilidades de error."
+  },
+  {
+    "id": "g4_instrucciones_7",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Bity debe encender 3 luces en orden: Luz 1, Luz 2 y Luz 3. ¿Qué instrucción debe colocarse primero?",
+    "options": [
+      {
+        "text": "La instrucción para encender la Luz 1.",
+        "isCorrect": true
+      },
+      {
+        "text": "La instrucción para apagar todo el tablero.",
+        "isCorrect": false
+      },
+      {
+        "text": "La instrucción de encender la Luz 3.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Si el orden pedido es 1, 2 y 3, la primera orden de la secuencia debe encender la Luz 1."
+  },
+  {
+    "id": "g4_instrucciones_8",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si una orden dice «Avanzar 2 casilleros» pero el camino termina en 1 casillero por un precipicio, ¿qué instrucción debemos poner?",
+    "options": [
+      {
+        "text": "Cambiar la orden a «Avanzar 1 casillero» y luego girar para evitar caer al precipicio.",
+        "isCorrect": true
+      },
+      {
+        "text": "Dejar «Avanzar 2 casilleros» y esperar que Bity vuele.",
+        "isCorrect": false
+      },
+      {
+        "text": "Apagar el monitor sin corregir la orden.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Adaptar la distancia al terreno evita que Bity caiga al vacío."
+  },
+  {
+    "id": "g4_instrucciones_9",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "¿Qué significa organizar las instrucciones de forma lógica?",
+    "options": [
+      {
+        "text": "Colocar cada orden en el momento preciso en que debe ocurrir para que la tarea sea posible.",
+        "isCorrect": true
+      },
+      {
+        "text": "Mezclar las instrucciones para que parezca un juego de azar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Poner todas las órdenes juntas al final.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La lógica de una secuencia requiere que cada acción tenga las condiciones previas cumplidas para ejecutarse."
+  },
+  {
+    "id": "g4_instrucciones_10",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si Bity debe recoger una llave y abrir un cofre, ¿por qué no podemos poner «Abrir cofre» antes de «Recoger llave»?",
+    "options": [
+      {
+        "text": "Porque en el mundo real y en la programación se necesitan las herramientas antes de usarlas.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque los cofres se enojan si no los saludas primero.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque la llave desaparece si la tocamos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "No es posible utilizar un objeto antes de haberlo adquirido."
+  },
+  {
+    "id": "g4_instrucciones_11",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Dos alumnos programan a Bity para dar una vuelta cuadrada: Alumno A usa 4 avances y 4 giros. Alumno B usa 10 avances y 8 giros. ¿Qué podemos decir?",
+    "options": [
+      {
+        "text": "El Alumno A organizó su secuencia de forma más eficiente y clara.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Alumno B lo hizo mejor porque gastó más instrucciones.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ninguno pudo dibujar un cuadrado.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un cuadrado regular se compone de 4 lados iguales y 4 esquinas de 90°."
+  },
+  {
+    "id": "g4_instrucciones_12",
+    "grade": 4,
+    "category": "instrucciones",
+    "difficulty": "medio",
+    "question": "Si queremos que Bity se detenga exactamente en la meta, ¿qué instrucción debe cerrar la secuencia de movimiento?",
+    "options": [
+      {
+        "text": "La instrucción de detenerse o finalizar la misión.",
+        "isCorrect": true
+      },
+      {
+        "text": "Una instrucción para seguir corriendo sin control.",
+        "isCorrect": false
+      },
+      {
+        "text": "Una orden para volver al inicio sin frenar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Una orden de detención sella el cumplimiento exitoso del objetivo."
+  },
+  {
+    "id": "g4_programacion_1",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "¿Por qué es importante que un programa sea fácil de leer para otras personas?",
+    "options": [
+      {
+        "text": "Para que otros programadores o compañeros puedan entender cómo funciona y ayudar a mejorarlo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Para que la computadora trabaje el doble de rápido.",
+        "isCorrect": false
+      },
+      {
+        "text": "No importa, los programas solo los entiende una sola persona.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La claridad en el código facilita el trabajo colaborativo y la corrección de errores."
+  },
+  {
+    "id": "g4_programacion_2",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Si Bity ejecuta un programa y se choca contra una pared en el paso 4, ¿cómo encontramos el error?",
+    "options": [
+      {
+        "text": "Miramos qué orden pusimos en el paso 4 y la cambiamos por una dirección libre.",
+        "isCorrect": true
+      },
+      {
+        "text": "Cambiamos todas las órdenes del paso 1 al 10 al azar sin mirar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Rompemos el teclado de la computadora.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Localizar el paso exacto de la falla permite corregir puntualmente la instrucción equivocada."
+  },
+  {
+    "id": "g4_programacion_3",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Al programar una misión de Bity, ¿qué significa descomponer la tarea en partes más pequeñas?",
+    "options": [
+      {
+        "text": "Dividir el recorrido grande en pasos simples: primero llegar a la esquina, luego girar, luego alcanzar la meta.",
+        "isCorrect": true
+      },
+      {
+        "text": "Romper el robot en partes de plástico.",
+        "isCorrect": false
+      },
+      {
+        "text": "Hacer todo de golpe sin pensar en los pasos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Descomponer un problema complejo en metas intermedias facilita encontrar la solución."
+  },
+  {
+    "id": "g4_programacion_4",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "¿Qué diferencia hay entre una persona que usa un videojuego y la persona que lo programa?",
+    "options": [
+      {
+        "text": "Quien lo usa juega con las reglas creadas; quien lo programa diseña las reglas y las instrucciones del juego.",
+        "isCorrect": true
+      },
+      {
+        "text": "No hay ninguna diferencia, hacen exactamente lo mismo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Quien programa solo compra los controles.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El programador es el creador de la lógica, desafíos y movimientos del juego."
+  },
+  {
+    "id": "g4_programacion_5",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Si un programa tiene dos caminos para que Bity elija: Camino con puente seguro vs Camino con foso de fuego. ¿Cuál programamos?",
+    "options": [
+      {
+        "text": "Programamos las instrucciones para que Bity cruce por el puente seguro.",
+        "isCorrect": true
+      },
+      {
+        "text": "Programamos que salte directo al foso de fuego.",
+        "isCorrect": false
+      },
+      {
+        "text": "No programamos nada y dejamos que choque.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La programación debe buscar la ruta que preserve la integridad del robot."
+  },
+  {
+    "id": "g4_programacion_6",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "¿Por qué repetimos las pruebas de un programa varias veces antes de darlo por terminado?",
+    "options": [
+      {
+        "text": "Para comprobar que las instrucciones funcionen bien en todas las situaciones de la misión.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque la computadora se olvida de las órdenes a los cinco minutos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Para que Bity cambie de color.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las pruebas reiteradas aseguran que no haya fallas ocultas en diferentes escenarios."
+  },
+  {
+    "id": "g4_programacion_7",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Si programamos un robot para regar las plantas del jardín, ¿qué instrucciones básicas debe tener?",
+    "options": [
+      {
+        "text": "Moverse hacia las plantas, abrir el agua de riego sobre la tierra y cerrar el agua al terminar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Cortar las flores con tijera y tirarlas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Quedarse adentro de la casa sin salir.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las instrucciones deben corresponder al ciclo completo de la tarea encomendada."
+  },
+  {
+    "id": "g4_programacion_8",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "¿Qué hace que un programa de instrucciones sea ordenado?",
+    "options": [
+      {
+        "text": "Que cada paso tenga un propósito claro y que conduzca directamente a cumplir la misión.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que tenga órdenes confusas y caminos que no llevan a ningún lado.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que sea tan largo que nadie lo entienda.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un buen programa es directo, coherente y carece de instrucciones superfluas."
+  },
+  {
+    "id": "g4_programacion_9",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Si un compañero mira nuestro programa y nos dice: «En el paso 3 Bity gira al lado contrario», ¿qué hacemos?",
+    "options": [
+      {
+        "text": "Agradecemos la ayuda, verificamos la instrucción y la corregimos hacia el lado correcto.",
+        "isCorrect": true
+      },
+      {
+        "text": "Nos enojamos y borramos todo el programa.",
+        "isCorrect": false
+      },
+      {
+        "text": "Dejamos el error a propósito.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La retroalimentación entre pares ayuda a detectar y reparar desvíos en el código."
+  },
+  {
+    "id": "g4_programacion_10",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "¿Qué logramos cuando programamos a Bity con instrucciones precisas?",
+    "options": [
+      {
+        "text": "Que complete la misión en el menor tiempo y sin errores en el camino.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que el juego se vuelva aburrido e imposible de jugar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que Bity se pierda en el espacio exterior.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La precisión en las órdenes se traduce en recorridos limpios y victorias rápidas."
+  },
+  {
+    "id": "g4_programacion_11",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "Si queremos que Bity encienda sus turbinas antes de despegar, ¿dónde va esa orden?",
+    "options": [
+      {
+        "text": "Justo antes de la instrucción de despegar hacia el cielo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Después de que el cohete ya llegó al espacio.",
+        "isCorrect": false
+      },
+      {
+        "text": "Al inicio cuando Bity recién sale de su casa.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Los motores deben entrar en funcionamiento previo al momento de elevarse."
+  },
+  {
+    "id": "g4_programacion_12",
+    "grade": 4,
+    "category": "programacion",
+    "difficulty": "medio",
+    "question": "La programación nos enseña que cuando algo no sale a la primera:",
+    "options": [
+      {
+        "text": "Podemos revisar las instrucciones paso a paso, encontrar la falla y aprender a corregirla.",
+        "isCorrect": true
+      },
+      {
+        "text": "Debemos darnos por vencidos de inmediato.",
+        "isCorrect": false
+      },
+      {
+        "text": "La computadora nunca tiene solución.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El ensayo y la corrección son partes naturales del aprendizaje computacional."
+  },
+  {
+    "id": "g4_algoritmos_1",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Qué es un algoritmo en la vida diaria?",
+    "options": [
+      {
+        "text": "Un método ordenado paso a paso para resolver un problema cotidiano o realizar una tarea.",
+        "isCorrect": true
+      },
+      {
+        "text": "Una máquina que habla sola.",
+        "isCorrect": false
+      },
+      {
+        "text": "Un dibujo mágico que no necesita pasos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Cualquier procedimiento estructurado para resolver una tarea cotidiana es un algoritmo."
+  },
+  {
+    "id": "g4_algoritmos_2",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Para preparar una ensalada de frutas: ¿cuál es la mejor manera de organizar los pasos?",
+    "options": [
+      {
+        "text": "1. Lavar las frutas. 2. Pelarlas y cortarlas. 3. Colocarlas en un bol y mezclar.",
+        "isCorrect": true
+      },
+      {
+        "text": "1. Comer la fruta sin cortar ni lavar. 2. Lavar los platos vacíos.",
+        "isCorrect": false
+      },
+      {
+        "text": "1. Mezclar un bol vacío. 2. Comprar las frutas mañana.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La preparación higiénica exige lavar primero, luego procesar las frutas y finalmente mezclarlas."
+  },
+  {
+    "id": "g4_algoritmos_3",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si tenemos dos algoritmos para llegar a la biblioteca: Algoritmo 1 (recorre 2 cuadras directas) y Algoritmo 2 (da una vuelta de 6 cuadras). ¿Cuál es más conveniente?",
+    "options": [
+      {
+        "text": "El Algoritmo 1, porque llega a la meta de forma más directa y sin rodeos innecesarios.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Algoritmo 2, porque mientras más caminemos en círculos es mejor.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ninguno, no se puede caminar por cuadras.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La ruta de 2 cuadras ahorra energía y tiempo al evitar desvíos."
+  },
+  {
+    "id": "g4_algoritmos_4",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si un algoritmo tiene un paso repetido como «Avanzar 1, Retroceder 1, Avanzar 1, Retroceder 1» sin avanzar nada, ¿qué debemos hacer?",
+    "options": [
+      {
+        "text": "Eliminar esos pasos que no aportan nada para que el algoritmo sea más claro y directo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Dejarlos y agregar diez pasos más iguales.",
+        "isCorrect": false
+      },
+      {
+        "text": "Apagar el robot para que no camine.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Eliminar acciones neutralizadas simplifica el algoritmo sin alterar el resultado."
+  },
+  {
+    "id": "g4_algoritmos_5",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Por qué un algoritmo debe ser comprensible para cualquier persona que lo lea?",
+    "options": [
+      {
+        "text": "Porque cualquier persona debe ser capaz de seguir los mismos pasos y obtener el mismo resultado.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque los algoritmos deben ser difíciles para que nadie los use.",
+        "isCorrect": false
+      },
+      {
+        "text": "Para que cada persona haga algo totalmente distinto.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La claridad permite que cualquiera reproduzca el procedimiento con el mismo éxito."
+  },
+  {
+    "id": "g4_algoritmos_6",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Para armar un rompecabezas: ¿cuál es una buena estrategia algorítmica inicial?",
+    "options": [
+      {
+        "text": "Separar primero las piezas de los bordes y las esquinas para armar el marco.",
+        "isCorrect": true
+      },
+      {
+        "text": "Tirar todas las piezas al piso con los ojos cerrados.",
+        "isCorrect": false
+      },
+      {
+        "text": "Romper las piezas para que encajen a la fuerza.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Armar el perímetro delimita el espacio y facilita ubicar las piezas interiores."
+  },
+  {
+    "id": "g4_algoritmos_7",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si un algoritmo para hacer compras olvida el paso de «Pagar en la caja antes de salir», ¿qué error tiene?",
+    "options": [
+      {
+        "text": "Le falta un paso fundamental para que la tarea sea correcta y legal.",
+        "isCorrect": true
+      },
+      {
+        "text": "El algoritmo es perfecto porque ahorra dinero.",
+        "isCorrect": false
+      },
+      {
+        "text": "No le falta nada, los productos son gratis.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un paso esencial omitido invalida la correcta finalización del proceso."
+  },
+  {
+    "id": "g4_algoritmos_8",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Qué significa que los pasos de un algoritmo no deben ser contradictorios?",
+    "options": [
+      {
+        "text": "Que una orden no puede pedir hacer lo contrario de lo que pide la orden anterior sin una razón lógica.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que todas las palabras deben rimar como una poesía.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que no se pueden usar números.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La coherencia de objetivos evita instrucciones que se anulen o bloqueen entre sí."
+  },
+  {
+    "id": "g4_algoritmos_9",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Bity sigue este algoritmo: 1. Ir al árbol, 2. Tomar la manzana caída, 3. Volver al cohete. ¿Cuál es el objetivo final?",
+    "options": [
+      {
+        "text": "Llevar la manzana al cohete de Bity.",
+        "isCorrect": true
+      },
+      {
+        "text": "Cortar el árbol de manzanas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Perderse en el bosque para siempre.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El algoritmo traslada el fruto recolectado hacia la nave espacial."
+  },
+  {
+    "id": "g4_algoritmos_10",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Por qué es importante que un algoritmo tenga un paso final bien definido?",
+    "options": [
+      {
+        "text": "Para saber en qué momento la tarea ha concluido exitosamente.",
+        "isCorrect": true
+      },
+      {
+        "text": "Para que el robot siga trabajando sin parar nunca.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque los algoritmos no pueden terminar jamás.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El criterio de parada marca el cierre formal de la actividad."
+  },
+  {
+    "id": "g4_algoritmos_11",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Si dos caminos llevan a Bity a la meta, pero uno tiene charcos que le quitan batería y el otro es camino seco: ¿cuál algoritmo elegimos?",
+    "options": [
+      {
+        "text": "El algoritmo que pasa por el camino seco para cuidar la energía y las vidas de Bity.",
+        "isCorrect": true
+      },
+      {
+        "text": "El algoritmo que pasa por todos los charcos para perder energía.",
+        "isCorrect": false
+      },
+      {
+        "text": "Cualquiera de los dos, la energía no importa.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Elegir la ruta segura protege los recursos y maximiza las chances de victoria."
+  },
+  {
+    "id": "g4_algoritmos_12",
+    "grade": 4,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "Cuando diseñamos un algoritmo para ayudar a Bity, ¿qué demostramos?",
+    "options": [
+      {
+        "text": "Que sabemos pensar y organizar una solución lógica paso a paso para resolver un desafío.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que sabemos adivinar cosas mágicas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que los robots no necesitan ayuda humana.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Crear un algoritmo evidencia capacidad analítica para estructurar soluciones ordenadas."
+  },
+  {
+    "id": "g4_matematica_1",
     "grade": 4,
     "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity alcanza la batería de alta capacidad! ¿Cuánto es (18 + 12) × 4?",
+    "difficulty": "medio",
+    "question": "¡Bity ajusta su radar! ¿Cuánto es 15 ÷ 3 + 10?",
     "options": [
       {
-        "text": "120",
+        "text": "15",
         "isCorrect": true
       },
       {
-        "text": "110",
+        "text": "12",
         "isCorrect": false
       },
       {
-        "text": "130",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El paréntesis primero: 18 + 12 = 30; luego 30 × 4 = 120."
-  },
-  {
-    "id": "g5_instrucciones_1",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una condición lógica compleja con operadores combinados (AND, OR, NOT)?",
-    "options": [
-      {
-        "text": "Una expresión booleana evaluada mediante reglas de precedencia para gobernar decisiones complejas.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un texto en prosa sin reglas matemáticas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una función que no devuelve ningún resultado.",
+        "text": "18",
         "isCorrect": false
       }
     ],
-    "explanation": "Las expresiones lógicas combinadas permiten modelar situaciones complejas en sistemas autónomos."
+    "explanation": "15 dividido 3 es 5; luego 5 más 10 es igual a 15."
   },
   {
-    "id": "g5_instrucciones_2",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En: `SI (vidas > 1 Y nivel == 3) O tieneLlaveMaestra, ABRIR_PORTAL`. ¿Cuándo se abre el portal?",
-    "options": [
-      {
-        "text": "Si tiene más de 1 vida en nivel 3, o si posee la llave maestra en cualquier circunstancia.",
-        "isCorrect": true
-      },
-      {
-        "text": "Solo si tiene cero vidas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Nunca, porque el portal está bloqueado.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El operador OR permite que se cumpla o bien el bloque entre paréntesis o bien la posesión de la llave."
-  },
-  {
-    "id": "g5_instrucciones_3",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Cuál es el orden de precedencia estándar entre operadores lógicos si no hay paréntesis?",
-    "options": [
-      {
-        "text": "Primero NOT, luego AND, y finalmente OR.",
-        "isCorrect": true
-      },
-      {
-        "text": "Primero OR, luego AND, y finalmente NOT.",
-        "isCorrect": false
-      },
-      {
-        "text": "Se evalúan todos exactamente al mismo tiempo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La jerarquía booleana resuelve negaciones primero, conjunciones (AND) después y disyunciones (OR) al final."
-  },
-  {
-    "id": "g5_instrucciones_4",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En la instrucción matemática `velocidad = clamp(velocidad + acel, -vMax, vMax)`, ¿qué realiza `clamp`?",
-    "options": [
-      {
-        "text": "Restringe el valor numérico para que nunca sea menor a -vMax ni mayor a vMax.",
-        "isCorrect": true
-      },
-      {
-        "text": "Multiplica la velocidad por un número aleatorio.",
-        "isCorrect": false
-      },
-      {
-        "text": "Borra la aceleración del personaje.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "`clamp` acota una magnitud dentro de un intervalo cerrado seguro, evitando desbordamientos físicos."
-  },
-  {
-    "id": "g5_instrucciones_5",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una instrucción asincrónica o con retardo (timeout/callback) en un sistema de juego?",
-    "options": [
-      {
-        "text": "Una orden programada para ejecutarse luego de que transcurra un lapso o finalice un proceso paralelo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una instrucción que frena todo el sistema operativo.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un comando que solo funciona con cables de fibra óptica.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La asincronía permite ejecutar animaciones o conteos sin congelar el renderizado en pantalla."
-  },
-  {
-    "id": "g5_instrucciones_6",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Por qué las instrucciones de seguridad en un robot real deben tener interrupción de hardware inmediata?",
-    "options": [
-      {
-        "text": "Para detener los actuadores al instante ante un peligro sin esperar a que el software termine su bucle.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el robot cambie de color de luces.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para ahorrar batería en modo reposo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las interrupciones de seguridad críticas priorizan la integridad física sobre el flujo normal del programa."
-  },
-  {
-    "id": "g5_instrucciones_7",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En un sistema de física 2D con vectores, ¿qué representa la instrucción `posicion.add(velocidad)`?",
-    "options": [
-      {
-        "text": "La integración numérica de Euler: sumar el vector de velocidad para actualizar la posición en el tiempo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Dibujar una línea entre dos puntos fijos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Reiniciar la posición a cero.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "En cada frame, el desplazamiento acumulado modifica las coordenadas espaciales del personaje."
-  },
-  {
-    "id": "g5_instrucciones_8",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué diferencia a un paradigma de programación imperativo de uno declarativo?",
-    "options": [
-      {
-        "text": "El imperativo detalla el paso a paso de cómo hacer; el declarativo describe qué resultado se desea obtener.",
-        "isCorrect": true
-      },
-      {
-        "text": "El imperativo es para robots y el declarativo para personas.",
-        "isCorrect": false
-      },
-      {
-        "text": "No hay ninguna diferencia técnica.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La programación imperativa guía el flujo de control, mientras la declarativa expresa la lógica sin control explícito."
-  },
-  {
-    "id": "g5_instrucciones_9",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un parámetro por defecto (default parameter) en una función de código?",
-    "options": [
-      {
-        "text": "Un valor predefinido que se utiliza automáticamente si el programador no pasa ese argumento al llamarla.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un error que la máquina no puede solucionar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una contraseña de administrador.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los parámetros por defecto otorgan robustez permitiendo llamadas simplificadas con valores estándar seguros."
-  },
-  {
-    "id": "g5_instrucciones_10",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Por qué los sistemas de control de robots verifican el estado de los sensores antes y después de cada acción?",
-    "options": [
-      {
-        "text": "Para confirmar la retroalimentación (feedback loop) y corregir desvíos entre la orden y la realidad física.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque los sensores se olvidan de las órdenes.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para generar más calor en la placa.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El lazo de control cerrado (closed-loop) compara el estado real con el deseado para aplicar correcciones."
-  },
-  {
-    "id": "g5_instrucciones_11",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "¿Qué es el manejo de excepciones mediante bloques `try / catch` en programación?",
-    "options": [
-      {
-        "text": "Una estructura que captura errores durante la ejecución para gestionarlos sin que la aplicación se cierre.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un juego de atrapar pelotas en pantalla.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un método para apagar la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "`try / catch` previene caídas catastróficas del sistema permitiendo una recuperación elegante ante imprevistos."
-  },
-  {
-    "id": "g5_instrucciones_12",
-    "grade": 5,
-    "category": "instrucciones",
-    "difficulty": "avanzado",
-    "question": "En la arquitectura de nuestro juego, ¿qué función cumple la instrucción `cleanupCurrentActivity()`?",
-    "options": [
-      {
-        "text": "Detener timers activos, cancelar bucles y liberar memoria antes de cambiar de pantalla o nivel.",
-        "isCorrect": true
-      },
-      {
-        "text": "Borrar las notas de los alumnos.",
-        "isCorrect": false
-      },
-      {
-        "text": "Aumentar la dificultad al máximo.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La limpieza de timers y listeners evita fugas de memoria y colisiones entre procesos en segundo plano."
-  },
-  {
-    "id": "g5_programacion_1",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "En programación orientada a objetos (POO), ¿qué es una Clase y qué es un Objeto?",
-    "options": [
-      {
-        "text": "La clase es el molde o plantilla; el objeto es la instancia concreta creada con ese molde.",
-        "isCorrect": true
-      },
-      {
-        "text": "La clase es el aula de la escuela y el objeto es el pizarrón.",
-        "isCorrect": false
-      },
-      {
-        "text": "Son exactamente sinónimos sin diferencia.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Una clase define propiedades y métodos compartidos, mientras cada objeto contiene su propio estado."
-  },
-  {
-    "id": "g5_programacion_2",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "En nuestra clase `BityPlatformerGame`, ¿cuáles son propiedades de estado del personaje?",
-    "options": [
-      {
-        "text": "`player.x`, `player.y`, `player.vy`, `player.grounded` y `player.invulnerable`.",
-        "isCorrect": true
-      },
-      {
-        "text": "El color de las cortinas del aula.",
-        "isCorrect": false
-      },
-      {
-        "text": "La marca del teclado de la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Estas variables numéricas y booleanas describen con precisión el estado físico de Bity en cada fotograma."
-  },
-  {
-    "id": "g5_programacion_3",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una Máquina de Estados Finitos (FSM) y por qué se usa para controlar personajes?",
-    "options": [
-      {
-        "text": "Un modelo donde el personaje se encuentra en un estado único a la vez (reposo, salto, daño) y transiciona por eventos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una máquina de vapor que fabrica engranajes.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un programa que no tiene fin.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La FSM asegura que el personaje solo realice acciones válidas según su estado actual (ej: no saltar si ya está en el aire)."
-  },
-  {
-    "id": "g5_programacion_4",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es la recursividad en programación?",
-    "options": [
-      {
-        "text": "Una función que se llama a sí misma para resolver un subproblema más pequeño hasta alcanzar un caso base.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un bucle que nunca se detiene y rompe el juego.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un tipo de cable conector.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La recursión divide problemas complejos en instancias similares más simples hasta llegar a una solución trivial."
-  },
-  {
-    "id": "g5_programacion_5",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Por qué se busca mantener una tasa constante de 60 cuadros por segundo (60 FPS) en un juego?",
-    "options": [
-      {
-        "text": "Para ofrecer máxima fluidez visual y garantizar que los cálculos de física sean estables y responsivos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el monitor gaste más energía.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque 60 es el número favorito de las computadoras.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "A 60 FPS, el intervalo entre cuadros es de aproximadamente 16.6 ms, ideal para la percepción humana."
-  },
-  {
-    "id": "g5_programacion_6",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué peligro genera una fuga de memoria (memory leak) en una aplicación web interactiva?",
-    "options": [
-      {
-        "text": "Acumula objetos en memoria RAM que nunca se liberan, ralentizando el navegador hasta congelarlo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Hace que los gráficos salgan de la pantalla.",
-        "isCorrect": false
-      },
-      {
-        "text": "Provoca un cortocircuito eléctrico en el enchufe.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Liberar referencias e intervalos no utilizados es vital para el rendimiento continuo del sistema."
-  },
-  {
-    "id": "g5_programacion_7",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una API (Application Programming Interface) en el desarrollo de software?",
-    "options": [
-      {
-        "text": "Un conjunto de funciones y reglas públicas que permite que dos sistemas o módulos se comuniquen de forma estándar.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un tipo de pantalla táctil.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un lenguaje que solo entiende la placa de video.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las APIs permiten integrar servicios, módulos y bases de datos sin necesidad de conocer su código interno."
-  },
-  {
-    "id": "g5_programacion_8",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Para qué se utiliza el formato JSON (JavaScript Object Notation) en la persistencia de datos?",
-    "options": [
-      {
-        "text": "Para serializar estructuras de datos en texto plano legible, ideal para guardar y transmitir información.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para pintar píxeles en el canvas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para amplificar el sonido de los parlantes.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "JSON es el estándar universal liviano para representar objetos y arreglos estructurados."
-  },
-  {
-    "id": "g5_programacion_9",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es el patrón de diseño Modelo-Vista-Controlador (MVC)?",
-    "options": [
-      {
-        "text": "Una arquitectura que separa los datos (Modelo), la interfaz (Vista) y la lógica de interacción (Controlador).",
-        "isCorrect": true
-      },
-      {
-        "text": "Una marca de tres computadoras conectadas.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un tipo de control de mando con tres botones.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "MVC promueve la separación de responsabilidades, facilitando el desarrollo y testeo modular."
-  },
-  {
-    "id": "g5_programacion_10",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Por qué es fundamental la inmutabilidad o el aislamiento del estado en sistemas concurrentes?",
-    "options": [
-      {
-        "text": "Para prevenir que dos procesos modifiquen los mismos datos al mismo tiempo generando inconsistencias (race conditions).",
-        "isCorrect": true
-      },
-      {
-        "text": "Para que el juego nunca pueda actualizar sus puntajes.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque las computadoras no saben sumar dos veces.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Evitar estados compartidos mutables asegura predictibilidad y previene bugs difíciles de reproducir."
-  },
-  {
-    "id": "g5_programacion_11",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué es una prueba unitaria (unit test) automatizada en el desarrollo de software?",
-    "options": [
-      {
-        "text": "Un test de código que verifica automáticamente que una función o módulo cumpla su contrato esperado.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un examen sorpresa que se le toma a los alumnos en clase.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un cable de prueba con voltímetro.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Las pruebas unitarias garantizan que los cambios nuevos no rompan funcionalidades preexistentes (evitan regresiones)."
-  },
-  {
-    "id": "g5_programacion_12",
-    "grade": 5,
-    "category": "programacion",
-    "difficulty": "avanzado",
-    "question": "¿Qué significa que un sistema sea escalable?",
-    "options": [
-      {
-        "text": "Que puede crecer en niveles, usuarios y complejidad sin requerir una reescritura total de su arquitectura.",
-        "isCorrect": true
-      },
-      {
-        "text": "Que tiene una escalera dibujada en el fondo.",
-        "isCorrect": false
-      },
-      {
-        "text": "Que solo funciona con monitores gigantes.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La escalabilidad es un atributo de calidad esencial para la evolución de plataformas educativas a largo plazo."
-  },
-  {
-    "id": "g5_algoritmos_1",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es el algoritmo de Búsqueda en Anchura (Breadth-First Search - BFS)?",
-    "options": [
-      {
-        "text": "Un algoritmo que explora un grafo nivel por nivel garantizando hallar el camino más corto en grafos no ponderados.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un algoritmo que busca solo por el borde exterior del mapa.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un método que elige caminos al azar sin memorizar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "BFS explora todas las ramas adyacentes de forma concéntrica, asegurando la ruta óptima de menor cantidad de pasos."
-  },
-  {
-    "id": "g5_algoritmos_2",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué diferencia a un algoritmo voraz (greedy) de uno de programación dinámica?",
-    "options": [
-      {
-        "text": "El voraz elige la mejor opción local inmediata; la dinámica evalúa y reutiliza soluciones de subproblemas globales.",
-        "isCorrect": true
-      },
-      {
-        "text": "El voraz nunca llega al final y la dinámica sí.",
-        "isCorrect": false
-      },
-      {
-        "text": "Son exactamente iguales con diferente nombre.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Los algoritmos greedy son rápidos pero pueden no hallar la solución global óptima; la programación dinámica sí."
-  },
-  {
-    "id": "g5_algoritmos_3",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿En qué consiste el principio algorítmico de «Divide y Vencerás» (Divide and Conquer)?",
-    "options": [
-      {
-        "text": "Dividir un problema en subproblemas independientes, resolver cada uno y luego combinar sus soluciones.",
-        "isCorrect": true
-      },
-      {
-        "text": "Hacer que dos robots peleen entre sí.",
-        "isCorrect": false
-      },
-      {
-        "text": "Separar la pantalla en dos mitades sin comunicarse.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Divide y vencerás es la base de algoritmos fundamentales como Quicksort y Mergesort."
-  },
-  {
-    "id": "g5_algoritmos_4",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Por qué una Tabla Hash (diccionario con clave-valor) permite búsquedas en tiempo constante promedio O(1)?",
-    "options": [
-      {
-        "text": "Porque aplica una función hash a la clave para calcular directamente la posición de memoria del dato.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque tiene pocos datos guardados.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque busca de izquierda a derecha a toda velocidad.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La función hash transforma la clave en un índice directo, obviando la necesidad de recorrer toda la lista."
-  },
-  {
-    "id": "g5_algoritmos_5",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es el pseudocódigo y para qué lo emplean los ingenieros de software?",
-    "options": [
-      {
-        "text": "Una descripción estructurada en lenguaje natural de los pasos de un algoritmo antes de codificarlo formalmente.",
-        "isCorrect": true
-      },
-      {
-        "text": "Un código falso creado por un virus.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un idioma que solo entienden los procesadores cuánticos.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "El pseudocódigo permite razonar sobre la lógica algorítmica sin atarse a la sintaxis estricta de un lenguaje específico."
-  },
-  {
-    "id": "g5_algoritmos_6",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "En el algoritmo de ordenamiento rápido (Quicksort), ¿qué función cumple el «pivote»?",
-    "options": [
-      {
-        "text": "Es el elemento de referencia que divide los datos: los menores se ubican a su izquierda y los mayores a su derecha.",
-        "isCorrect": true
-      },
-      {
-        "text": "El elemento que se borra de la lista.",
-        "isCorrect": false
-      },
-      {
-        "text": "El primer elemento que se imprime en pantalla.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La partición en torno al pivote es la operación nuclear que ordena recursivamente los subarreglos."
-  },
-  {
-    "id": "g5_algoritmos_7",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es un caso base en una función algorítmica recursiva?",
-    "options": [
-      {
-        "text": "La condición de detención que retorna un valor directo y evita que la función se invoque infinitamente.",
-        "isCorrect": true
-      },
-      {
-        "text": "El primer piso de la torre de bloques.",
-        "isCorrect": false
-      },
-      {
-        "text": "El nombre del archivo principal.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Sin un caso base bien formulado, una llamada recursiva provocaría un desbordamiento de pila (stack overflow)."
-  },
-  {
-    "id": "g5_algoritmos_8",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Para qué se utilizan los algoritmos de encriptación y criptografía en la seguridad informática?",
-    "options": [
-      {
-        "text": "Para cifrar datos mediante transformaciones matemáticas de modo que solo quien posea la clave pueda descifrarlos.",
-        "isCorrect": true
-      },
-      {
-        "text": "Para comprimir videos de alta definición.",
-        "isCorrect": false
-      },
-      {
-        "text": "Para borrar el historial del navegador.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La criptografía moderna protege la confidencialidad, autenticidad e integridad de la información digital."
-  },
-  {
-    "id": "g5_algoritmos_9",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Cómo resuelve un algoritmo de arbitraje la colisión inminente de dos robots autónomos en un cruce?",
-    "options": [
-      {
-        "text": "Calculando prioridades de paso, frenando a uno temporalmente o reservando franjas temporales de tránsito.",
-        "isCorrect": true
-      },
-      {
-        "text": "Permitiendo que choquen para ver cuál es más fuerte.",
-        "isCorrect": false
-      },
-      {
-        "text": "Apagando ambos robots al azar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La planificación de trayectorias sin colisión gestiona reservas espaciotemporales seguras para cada agente."
-  },
-  {
-    "id": "g5_algoritmos_10",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es la compresión de datos sin pérdida (lossless compression)?",
-    "options": [
-      {
-        "text": "Un algoritmo que reduce el tamaño del archivo de forma tal que se puede recuperar exactamente el 100% de la información original.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una compresión que descarta la mitad de las letras.",
-        "isCorrect": false
-      },
-      {
-        "text": "Un método que borra archivos duplicados.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Algoritmos como Huffman o DEFLATE (ZIP) reducen redundancias estadísticas preservando cada byte original."
-  },
-  {
-    "id": "g5_algoritmos_11",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Qué es la Notación Asintótica Big-O en ciencias de la computación?",
-    "options": [
-      {
-        "text": "Una convención matemática para describir el comportamiento y escalabilidad del tiempo de ejecución de un algoritmo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Una letra grande que se dibuja en el pizarrón.",
-        "isCorrect": false
-      },
-      {
-        "text": "Una marca registrada de computadoras.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Big-O modela cómo crece el consumo de recursos al aumentar el tamaño N de los datos de entrada."
-  },
-  {
-    "id": "g5_algoritmos_12",
-    "grade": 5,
-    "category": "algoritmos",
-    "difficulty": "avanzado",
-    "question": "¿Por qué un algoritmo de optimización permite que miles de alumnos jueguen simultáneamente en un servidor escolar?",
-    "options": [
-      {
-        "text": "Porque distribuye eficientemente los ciclos de CPU y memoria, evitando cuellos de botella en la red.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque el servidor tiene miles de cables enchufados.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque los juegos no usan memoria de la computadora.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "La eficiencia algorítmica maximiza el rendimiento y disponibilidad de servicios educativos de gran escala."
-  },
-  {
-    "id": "g5_matematica_1",
-    "grade": 5,
+    "id": "g4_matematica_2",
+    "grade": 4,
     "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity sincroniza la energía del núcleo cuántico! ¿Cuánto es 15 × 4 − 8 × 3?",
+    "difficulty": "medio",
+    "question": "¡Bity calcula su batería de propulsión! ¿Cuánto es 4 × 5 − 8?",
     "options": [
       {
-        "text": "36",
+        "text": "12",
         "isCorrect": true
       },
       {
-        "text": "32",
+        "text": "10",
         "isCorrect": false
       },
       {
-        "text": "40",
+        "text": "15",
         "isCorrect": false
       }
     ],
-    "explanation": "Multiplicamos primero: 15 × 4 = 60 y 8 × 3 = 24. Luego restamos: 60 − 24 = 36."
+    "explanation": "4 por 5 es 20; luego 20 menos 8 es igual a 12."
   },
   {
-    "id": "g5_matematica_2",
-    "grade": 5,
+    "id": "g4_matematica_3",
+    "grade": 4,
     "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity regula el sistema de propulsión estelar! ¿Cuánto es 100 − (12 × 5 + 10)?",
+    "difficulty": "medio",
+    "question": "¡Bity calibra sus sensores de vuelo! ¿Cuánto es 20 ÷ 4 + 7?",
     "options": [
       {
-        "text": "30",
+        "text": "12",
         "isCorrect": true
       },
       {
-        "text": "35",
+        "text": "11",
         "isCorrect": false
       },
       {
-        "text": "25",
+        "text": "14",
         "isCorrect": false
       }
     ],
-    "explanation": "Dentro del paréntesis: 12 × 5 = 60, más 10 = 70. Luego 100 − 70 = 30."
+    "explanation": "20 dividido 4 es 5; luego 5 más 7 es igual a 12."
   },
   {
-    "id": "g5_matematica_3",
-    "grade": 5,
+    "id": "g4_matematica_4",
+    "grade": 4,
     "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calcula la trayectoria orbital! ¿Cuánto es (24 ÷ 6 + 6) × 7?",
-    "options": [
-      {
-        "text": "70",
-        "isCorrect": true
-      },
-      {
-        "text": "65",
-        "isCorrect": false
-      },
-      {
-        "text": "75",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Dentro del paréntesis: 24 ÷ 6 = 4, más 6 = 10. Luego 10 × 7 = 70."
-  },
-  {
-    "id": "g5_matematica_4",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity estabiliza el escudo deflector! ¿Cuánto es 8 × 9 − 5 × 6?",
-    "options": [
-      {
-        "text": "42",
-        "isCorrect": true
-      },
-      {
-        "text": "40",
-        "isCorrect": false
-      },
-      {
-        "text": "45",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Multiplicamos primero: 8 × 9 = 72 y 5 × 6 = 30. Restamos: 72 − 30 = 42."
-  },
-  {
-    "id": "g5_matematica_5",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity equilibra la temperatura del generador! ¿Cuánto es 150 − (20 × 4 + 30)?",
-    "options": [
-      {
-        "text": "40",
-        "isCorrect": true
-      },
-      {
-        "text": "35",
-        "isCorrect": false
-      },
-      {
-        "text": "50",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Paréntesis: 20 × 4 = 80, más 30 = 110. Luego 150 − 110 = 40."
-  },
-  {
-    "id": "g5_matematica_6",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity ajusta el radar de telemetría! ¿Cuánto es (45 ÷ 9 + 7) × 8?",
-    "options": [
-      {
-        "text": "96",
-        "isCorrect": true
-      },
-      {
-        "text": "90",
-        "isCorrect": false
-      },
-      {
-        "text": "104",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Paréntesis: 45 ÷ 9 = 5, más 7 = 12. Luego 12 × 8 = 96."
-  },
-  {
-    "id": "g5_matematica_7",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity calibra la matriz de sensores! ¿Cuánto es 25 × 4 − 18 × 2?",
-    "options": [
-      {
-        "text": "64",
-        "isCorrect": true
-      },
-      {
-        "text": "60",
-        "isCorrect": false
-      },
-      {
-        "text": "68",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Multiplicamos: 25 × 4 = 100 y 18 × 2 = 36. Restamos: 100 − 36 = 64."
-  },
-  {
-    "id": "g5_matematica_8",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity programa el salto hiperespacial! ¿Cuánto es 200 − (35 × 2 + 50)?",
-    "options": [
-      {
-        "text": "80",
-        "isCorrect": true
-      },
-      {
-        "text": "75",
-        "isCorrect": false
-      },
-      {
-        "text": "85",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Paréntesis: 35 × 2 = 70, más 50 = 120. Luego 200 − 120 = 80."
-  },
-  {
-    "id": "g5_matematica_9",
-    "grade": 5,
-    "category": "matematica",
-    "difficulty": "avanzado",
-    "question": "¡Bity analiza la densidad del asteroide! ¿Cuánto es (16 × 3 − 8) ÷ 4?",
+    "difficulty": "medio",
+    "question": "¡Bity mide la energía de sus turbinas! ¿Cuánto es 3 × 6 − 8?",
     "options": [
       {
         "text": "10",
@@ -5222,80 +4063,1336 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 16 × 3 = 48, menos 8 = 40. Luego 40 ÷ 4 = 10."
+    "explanation": "3 por 6 es 18; luego 18 menos 8 es igual a 10."
+  },
+  {
+    "id": "g4_matematica_5",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity conecta celdas solares! ¿Cuánto es 25 ÷ 5 + 15?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "25 dividido 5 es 5; luego 5 más 15 es igual a 20."
+  },
+  {
+    "id": "g4_matematica_6",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity duplica la potencia de su escudo! ¿Cuánto es 12 ÷ 3 × 2?",
+    "options": [
+      {
+        "text": "8",
+        "isCorrect": true
+      },
+      {
+        "text": "6",
+        "isCorrect": false
+      },
+      {
+        "text": "10",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "12 dividido 3 es 4; luego 4 por 2 es igual a 8."
+  },
+  {
+    "id": "g4_matematica_7",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity calcula el combustible restante! ¿Cuánto es 30 − 4 × 5?",
+    "options": [
+      {
+        "text": "10",
+        "isCorrect": true
+      },
+      {
+        "text": "8",
+        "isCorrect": false
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "4 por 5 es 20; luego 30 menos 20 es igual a 10."
+  },
+  {
+    "id": "g4_matematica_8",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity suma repuestos a su nave! ¿Cuánto es 16 ÷ 4 + 16?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "16 dividido 4 es 4; luego 4 más 16 es igual a 20."
+  },
+  {
+    "id": "g4_matematica_9",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity multiplica la señal del transmisor! ¿Cuánto es 20 ÷ 5 × 4?",
+    "options": [
+      {
+        "text": "16",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 dividido 5 es 4; luego 4 por 4 es igual a 16."
+  },
+  {
+    "id": "g4_matematica_10",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity equilibra la carga de sus motores! ¿Cuánto es 10 × 3 − 15?",
+    "options": [
+      {
+        "text": "15",
+        "isCorrect": true
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "10 por 3 es 30; luego 30 menos 15 es igual a 15."
+  },
+  {
+    "id": "g4_matematica_11",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity refuerza su sistema de luces! ¿Cuánto es 18 ÷ 3 + 14?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "18 dividido 3 es 6; luego 6 más 14 es igual a 20."
+  },
+  {
+    "id": "g4_matematica_12",
+    "grade": 4,
+    "category": "matematica",
+    "difficulty": "medio",
+    "question": "¡Bity recarga la batería principal! ¿Cuánto es 25 − 20 ÷ 4?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "20 dividido 4 es 5; luego 25 menos 5 es igual a 20."
+  },
+  {
+    "id": "g5_instrucciones_1",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Bity está mirando al norte. Si ejecuta: 1. Girar a la derecha, 2. Girar a la derecha, ¿hacia dónde queda mirando?",
+    "options": [
+      {
+        "text": "Hacia el sur (la dirección contraria a la que empezó).",
+        "isCorrect": true
+      },
+      {
+        "text": "Hacia el norte nuevamente.",
+        "isCorrect": false
+      },
+      {
+        "text": "Hacia el oeste.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Dos giros seguidos a la derecha de 90° suman 180°, orientando al robot exactamente hacia el sur."
+  },
+  {
+    "id": "g5_instrucciones_2",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "¿Cuál de estas instrucciones es AMBIGUA (poco clara) y cuál es precisa para un robot?",
+    "options": [
+      {
+        "text": "«Moverse hacia allá» es ambigua; «Avanzar 4 casilleros al frente» es precisa.",
+        "isCorrect": true
+      },
+      {
+        "text": "«Avanzar 2 pasos» es ambigua; «Caminar» es precisa.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ambas son perfectamente precisas para un robot.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "«Hacia allá» no indica distancia ni rumbo exacto; la segunda orden brinda magnitud y sentido medibles."
+  },
+  {
+    "id": "g5_instrucciones_3",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Bity tiene esta secuencia: 1. Avanzar 3, 2. Girar a la derecha, 3. Avanzar 2. Si un obstáculo bloquea el paso en la posición 2 del segundo avance, ¿qué cambio de instrucción corrige el camino?",
+    "options": [
+      {
+        "text": "Cambiar el segundo avance a 1 paso, girar para rodear el obstáculo y luego continuar hacia la meta.",
+        "isCorrect": true
+      },
+      {
+        "text": "Pedirle a Bity que avance con más fuerza para atravesar el obstáculo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Eliminar todas las instrucciones y no moverse.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Reducir el avance antes de chocar permite intercalar un giro y esquivar la zona obstruida."
+  },
+  {
+    "id": "g5_instrucciones_4",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Si Bity da 5 pasos al frente y luego 5 pasos atrás, ¿dónde se encuentra respecto a su posición de inicio?",
+    "options": [
+      {
+        "text": "Exactamente en el mismo lugar donde comenzó.",
+        "isCorrect": true
+      },
+      {
+        "text": "A 10 metros hacia adelante.",
+        "isCorrect": false
+      },
+      {
+        "text": "A 5 metros hacia la izquierda.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Avanzar y retroceder la misma distancia anula el desplazamiento neto total."
+  },
+  {
+    "id": "g5_instrucciones_5",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "¿Por qué en programación no basta con decirle a un robot «Sé cuidadoso con el pozo»?",
+    "options": [
+      {
+        "text": "Porque el robot necesita órdenes concretas de acción, como «Si estás a 1 paso del pozo, saltar».",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque los robots no tienen oídos para escuchar palabras amables.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque los pozos desaparecen si el robot es cuidadoso.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las máquinas requieren pautas operativas precisas de medición y movimiento, no advertencias abstractas."
+  },
+  {
+    "id": "g5_instrucciones_6",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Tenemos dos secuencias para hacer que Bity llegue al cohete: Secuencia 1 (Avanzar 2, Girar a la derecha, Avanzar 3). Secuencia 2 (Avanzar 2, Girar a la izquierda, Avanzar 3). Si el cohete está a la derecha, ¿cuál es la correcta?",
+    "options": [
+      {
+        "text": "La Secuencia 1, porque orienta a Bity hacia la dirección real donde está el cohete.",
+        "isCorrect": true
+      },
+      {
+        "text": "La Secuencia 2, porque girar al lado contrario ayuda a no marearse.",
+        "isCorrect": false
+      },
+      {
+        "text": "Las dos llegan exactamente al mismo lugar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El giro hacia la derecha alinea el avance final con la ubicación real de la nave."
+  },
+  {
+    "id": "g5_instrucciones_7",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Si Bity ejecuta la orden «Avanzar 4 pasos» pero solo puede caminar de a 1 casillero por vez, ¿a cuántas instrucciones unitarias de avance equivale?",
+    "options": [
+      {
+        "text": "A repetir la instrucción de avanzar 1 casillero 4 veces seguidas.",
+        "isCorrect": true
+      },
+      {
+        "text": "A dar 1 solo paso gigante de 4 metros.",
+        "isCorrect": false
+      },
+      {
+        "text": "A ninguna, no se puede avanzar de a casilleros.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Una orden compuesta de 4 casilleros se descompone en 4 pasos unitarios consecutivos."
+  },
+  {
+    "id": "g5_instrucciones_8",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "¿Qué ocurre si en una secuencia de instrucciones colocamos «Subir al cohete» antes de «Caminar hasta la base de lanzamiento»?",
+    "options": [
+      {
+        "text": "La instrucción fallará porque Bity intentará subir a un cohete en el que todavía no está presente.",
+        "isCorrect": true
+      },
+      {
+        "text": "El cohete vendrá volando a buscar a Bity a su casa.",
+        "isCorrect": false
+      },
+      {
+        "text": "No ocurre nada, Bity sube igual a la distancia.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Para interactuar físicamente con un objeto, primero se debe alcanzar su ubicación espacial."
+  },
+  {
+    "id": "g5_instrucciones_9",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "En una cuadrícula, Bity está en la casilla (1, 1). Si le ordenamos «Avanzar 3 casillas a la derecha», ¿en qué casilla quedará?",
+    "options": [
+      {
+        "text": "En la casilla (4, 1).",
+        "isCorrect": true
+      },
+      {
+        "text": "En la casilla (1, 4).",
+        "isCorrect": false
+      },
+      {
+        "text": "En la casilla (3, 3).",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Moverse horizontalmente hacia la derecha suma 3 posiciones a la coordenada horizontal X (1 + 3 = 4)."
+  },
+  {
+    "id": "g5_instrucciones_10",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "¿Por qué es fundamental que cada instrucción en una misión espacial tenga un orden lógico estricto?",
+    "options": [
+      {
+        "text": "Porque un error de secuencia puede desviar la nave de su ruta o causar un accidente en el aterrizaje.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque a los astronautas les gusta memorizar números.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque en el espacio las órdenes se ejecutan al revés.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "En misiones espaciales el margen de error es cero; cada maniobra depende del éxito de la anterior."
+  },
+  {
+    "id": "g5_instrucciones_11",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Si queremos que Bity recolecte un objeto a 2 pasos y vuelva al inicio, ¿cuál es la secuencia correcta?",
+    "options": [
+      {
+        "text": "1. Avanzar 2 pasos. 2. Agarrar el objeto. 3. Girar 180°. 4. Avanzar 2 pasos.",
+        "isCorrect": true
+      },
+      {
+        "text": "1. Avanzar 2 pasos. 2. Volver al inicio sin agarrar nada.",
+        "isCorrect": false
+      },
+      {
+        "text": "1. Girar 180° antes de caminar y alejarse del objeto.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La secuencia recorre la distancia, recolecta la pieza, se da media vuelta y desanda los 2 pasos."
+  },
+  {
+    "id": "g5_instrucciones_12",
+    "grade": 5,
+    "category": "instrucciones",
+    "difficulty": "avanzado",
+    "question": "Si una orden dice «Saltar a la derecha», ¿qué dos movimientos combinados está realizando Bity?",
+    "options": [
+      {
+        "text": "Un movimiento vertical de elevación y un movimiento horizontal hacia la derecha.",
+        "isCorrect": true
+      },
+      {
+        "text": "Un giro completo hacia abajo en el suelo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Solo un movimiento hacia atrás.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un salto diagonal combina energía ascensional en el eje vertical y desplazamiento horizontal."
+  },
+  {
+    "id": "g5_programacion_1",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Qué es lo más importante que hace un programador antes de escribir código o bloques?",
+    "options": [
+      {
+        "text": "Analizar el problema, entender la meta y planificar la secuencia lógica de instrucciones.",
+        "isCorrect": true
+      },
+      {
+        "text": "Empezar a teclear sin saber qué hay que resolver.",
+        "isCorrect": false
+      },
+      {
+        "text": "Comprar una computadora más grande.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El análisis previo y la planificación mental ahorran tiempo y aseguran soluciones eficaces."
+  },
+  {
+    "id": "g5_programacion_2",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "Si dos programas logran que Bity complete el mismo nivel, pero el Programa A usa 6 instrucciones y el Programa B usa 20 instrucciones innecesarias, ¿cuál preferimos?",
+    "options": [
+      {
+        "text": "El Programa A, porque es más claro, directo y eficiente al no desperdiciar pasos.",
+        "isCorrect": true
+      },
+      {
+        "text": "El Programa B, porque mientras más órdenes tenga un programa siempre es mejor.",
+        "isCorrect": false
+      },
+      {
+        "text": "Cualquiera, la cantidad de instrucciones no importa.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La economía de instrucciones favorece programas más limpios, rápidos de ejecutar y fáciles de mantener."
+  },
+  {
+    "id": "g5_programacion_3",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Qué significa que un programa tenga un error de lógica en las instrucciones?",
+    "options": [
+      {
+        "text": "Que las órdenes están escritas pero el resultado que producen no es el que queríamos lograr.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que la computadora se quedó sin energía eléctrica.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que el teclado tiene polvo en las teclas.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un error lógico ocurre cuando la computadora sigue órdenes que no conducen al objetivo deseado."
+  },
+  {
+    "id": "g5_programacion_4",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "Si un programa debe hacer que Bity recoja 3 repuestos y luego active el cohete, ¿cuál es la condición necesaria para activar el cohete?",
+    "options": [
+      {
+        "text": "Haber completado previamente la recolección de los 3 repuestos requeridos.",
+        "isCorrect": true
+      },
+      {
+        "text": "Activar el cohete antes de buscar los repuestos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Dejar los repuestos en el suelo y festejar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El despegue exige haber satisfecho antes todos los pasos preparatorios."
+  },
+  {
+    "id": "g5_programacion_5",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Por qué decimos que la programación es una herramienta para resolver problemas?",
+    "options": [
+      {
+        "text": "Porque nos permite crear soluciones paso a paso para que las computadoras nos ayuden en tareas complejas.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque reemplaza a las personas y no requiere pensar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque solo sirve para jugar a videojuegos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La programación es el puente para instruir a la tecnología en la resolución de desafíos reales."
+  },
+  {
+    "id": "g5_programacion_6",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "Si probamos nuestro programa y Bity gira hacia el lado opuesto al cohete, ¿cómo razonamos para solucionarlo?",
+    "options": [
+      {
+        "text": "Identificamos la instrucción de giro errónea y la cambiamos por el giro en la dirección correcta.",
+        "isCorrect": true
+      },
+      {
+        "text": "Movemos el monitor con las manos para engañar a la pantalla.",
+        "isCorrect": false
+      },
+      {
+        "text": "Dejamos el error porque el cohete debería moverse.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Localizar puntualmente el bloque desalineado y cambiar su sentido resuelve la desviación."
+  },
+  {
+    "id": "g5_programacion_7",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Qué hace que un programa sea fácil de mantener y modificar si el juego cambia?",
+    "options": [
+      {
+        "text": "Que sus instrucciones estén ordenadas de forma clara, con partes bien diferenciadas para cada objetivo.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que todas las instrucciones estén amontonadas sin orden ni sentido.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que nadie sepa qué hace cada orden.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Una estructura limpia y modular permite ajustar tramos específicos sin romper el resto."
+  },
+  {
+    "id": "g5_programacion_8",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "Al programar el despegue de la nave de Bity, ¿qué instrucciones deben cumplirse en orden?",
+    "options": [
+      {
+        "text": "1. Subir Bity a la cabina. 2. Cerrar la compuerta. 3. Encender propulsores. 4. Despegar.",
+        "isCorrect": true
+      },
+      {
+        "text": "1. Despegar. 2. Subir Bity después en el espacio. 3. Cerrar compuerta.",
+        "isCorrect": false
+      },
+      {
+        "text": "1. Encender propulsores sin Bity adentro y dejarlo en tierra.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La tripulación debe abordar y sellar la cabina antes del encendido de motores y la partida."
+  },
+  {
+    "id": "g5_programacion_9",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Por qué los programas educativos de Bity no usan trucos mágicos y solo usan instrucciones lógicas?",
+    "options": [
+      {
+        "text": "Porque las computadoras reales funcionan únicamente con lógica e instrucciones humanas programadas.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque la magia en las computadoras se cobra aparte.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque Bity no cree en la tecnología.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El aprendizaje computacional se fundamenta en reglas lógicas comprensibles y reproducibles."
+  },
+  {
+    "id": "g5_programacion_10",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "Si queremos que Bity avise cuando llega a la meta, ¿qué instrucción agregamos al final del programa?",
+    "options": [
+      {
+        "text": "Una instrucción para mostrar el mensaje «¡Misión cumplida!» y celebrar la victoria.",
+        "isCorrect": true
+      },
+      {
+        "text": "Una instrucción para reiniciar el juego sin avisar nada.",
+        "isCorrect": false
+      },
+      {
+        "text": "Una orden para borrar todo el nivel.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "El mensaje final comunica claramente al jugador que el objetivo fue alcanzado."
+  },
+  {
+    "id": "g5_programacion_11",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "¿Qué aprendemos cuando comparamos nuestra solución programada con la de un compañero?",
+    "options": [
+      {
+        "text": "Que un mismo problema puede resolverse con distintos caminos válidos y podemos aprender nuevas estrategias.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que solo existe una única forma en el mundo de programar algo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que no se debe compartir ideas con nadie.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La programación admite múltiples recorridos válidos y enriquece el pensamiento divergente."
+  },
+  {
+    "id": "g5_programacion_12",
+    "grade": 5,
+    "category": "programacion",
+    "difficulty": "avanzado",
+    "question": "En resumen, ¿qué significa programar en la escuela primaria?",
+    "options": [
+      {
+        "text": "Aprender a pensar de manera lógica, ordenada y creativa para darle instrucciones útiles a una computadora o robot.",
+        "isCorrect": true
+      },
+      {
+        "text": "Aprender de memoria códigos difíciles sin entender qué hacen.",
+        "isCorrect": false
+      },
+      {
+        "text": "Jugar sin pensar en las reglas de las máquinas.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Programar es desarrollar habilidades de pensamiento lógico para crear soluciones estructuradas."
+  },
+  {
+    "id": "g5_algoritmos_1",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "¿Qué diferencia a un buen algoritmo de una simple lista de ideas desordenadas?",
+    "options": [
+      {
+        "text": "Que el algoritmo tiene un orden estricto de pasos pensados para alcanzar una meta concreta sin ambigüedades.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que el algoritmo se escribe con lápices de colores especiales.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que no tiene ningún orden ni principio ni fin.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La estructura secuencial y el propósito definido diferencian al algoritmo del caos."
+  },
+  {
+    "id": "g5_algoritmos_2",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "Si dos algoritmos para reparar el cohete de Bity llegan al mismo resultado, pero uno requiere 5 pasos y el otro 15 pasos con rodeos, ¿por qué elegimos el de 5 pasos?",
+    "options": [
+      {
+        "text": "Porque es más eficiente, ahorra tiempo y batería, y es más fácil de verificar sin errores.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque a las computadoras no les gusta trabajar.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque los cohetes solo aceptan números menores a 6.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un menor número de pasos optimiza recursos y reduce puntos potenciales de falla."
+  },
+  {
+    "id": "g5_algoritmos_3",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "Bity sigue este algoritmo: 1. Caminar 4 pasos, 2. Si hay puerta cerrada: usar llave, 3. Entrar. ¿Qué pasaría si la puerta estuviese cerrada pero no tuviese llave?",
+    "options": [
+      {
+        "text": "El algoritmo se detendría en el paso 2 porque falta el elemento necesario para continuar.",
+        "isCorrect": true
+      },
+      {
+        "text": "Bity derriba la pared con los ojos.",
+        "isCorrect": false
+      },
+      {
+        "text": "El cohete abre la puerta solo desde el espacio.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Las dependencias insatisfechas interrumpen la progresión normal del algoritmo."
+  },
+  {
+    "id": "g5_algoritmos_4",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "Para ordenar una fila de 4 cajas por tamaño de menor a mayor: ¿qué procedimiento realiza un algoritmo de ordenamiento simple?",
+    "options": [
+      {
+        "text": "Compara las cajas de a pares y va colocando la más pequeña adelante hasta que todas estén en orden.",
+        "isCorrect": true
+      },
+      {
+        "text": "Tira todas las cajas al aire esperando que caigan ordenadas solas.",
+        "isCorrect": false
+      },
+      {
+        "text": "Pinta todas las cajas del mismo color para no mirar el tamaño.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La comparación sucesiva de a pares es la base metódica para ordenar elementos de forma determinista."
+  },
+  {
+    "id": "g5_algoritmos_5",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "¿Por qué un algoritmo no puede tener pasos infinitos que nunca terminen?",
+    "options": [
+      {
+        "text": "Porque nunca llegaría a resolver el problema ni a mostrar el resultado final.",
+        "isCorrect": true
+      },
+      {
+        "text": "Porque a la computadora se le gasta la memoria a los 2 minutos.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque los algoritmos solo duran 10 segundos.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La condición de finitud es indispensable: un algoritmo debe culminar en un tiempo determinado."
+  },
+  {
+    "id": "g5_algoritmos_6",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "En un algoritmo para cruzar un río con piedras: Piedra 1, Piedra 2, Piedra 3... Si la Piedra 2 está rota, ¿qué debe prever el algoritmo?",
+    "options": [
+      {
+        "text": "Un paso alternativo para esquivar la piedra rota o saltar a una piedra segura contigua.",
+        "isCorrect": true
+      },
+      {
+        "text": "Pisar la piedra rota de todas formas aunque se caiga al agua.",
+        "isCorrect": false
+      },
+      {
+        "text": "Volver a casa sin intentar cruzar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Los algoritmos robustos prevén rutas de contingencia ante obstáculos en el camino."
+  },
+  {
+    "id": "g5_algoritmos_7",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "¿Qué significa que un algoritmo sea reproducible?",
+    "options": [
+      {
+        "text": "Que si cualquier persona o computadora sigue exactamente los mismos pasos, obtendrá siempre el mismo resultado.",
+        "isCorrect": true
+      },
+      {
+        "text": "Que se puede escuchar con auriculares como una canción.",
+        "isCorrect": false
+      },
+      {
+        "text": "Que cambia de respuesta cada vez que se usa.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La reproducibilidad garantiza consistencia universal en la ejecución de los pasos."
+  },
+  {
+    "id": "g5_algoritmos_8",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "Si un algoritmo tiene como meta «Apagar el motor de Bity», ¿cuál debe ser su última instrucción?",
+    "options": [
+      {
+        "text": "Cortar el suministro de energía del motor para que se detenga.",
+        "isCorrect": true
+      },
+      {
+        "text": "Acelerar al máximo para ver si explota.",
+        "isCorrect": false
+      },
+      {
+        "text": "Encender las luces de baile.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "La orden de corte de alimentación cumple directamente con el objetivo establecido."
+  },
+  {
+    "id": "g5_algoritmos_9",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "¿Cómo ayuda el pensamiento algorítmico a resolver problemas en la vida real?",
+    "options": [
+      {
+        "text": "Nos ayuda a descomponer problemas difíciles en pasos más simples y ordenados que podemos resolver uno a uno.",
+        "isCorrect": true
+      },
+      {
+        "text": "Hace que todos los problemas desaparezcan sin hacer nada.",
+        "isCorrect": false
+      },
+      {
+        "text": "Solo sirve para usar calculadoras.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Desmenuzar la complejidad en pasos sucesivos facilita encontrar soluciones factibles."
+  },
+  {
+    "id": "g5_algoritmos_10",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "Si comparamos el algoritmo para lavarse los dientes con el algoritmo para encender un televisor, ¿qué tienen en común?",
+    "options": [
+      {
+        "text": "Ambos son secuencias ordenadas de pasos que deben cumplirse para lograr un objetivo específico.",
+        "isCorrect": true
+      },
+      {
+        "text": "Los dos usan pasta dental y cepillo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Ninguno tiene pasos ni orden.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Aunque los ámbitos difieran, la estructura lógica de pasos orientados a una meta es común."
+  },
+  {
+    "id": "g5_algoritmos_11",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "¿Por qué un algoritmo debe probarse paso por paso antes de aplicarlo en una misión espacial real?",
+    "options": [
+      {
+        "text": "Para verificar que cada paso funcione como se esperaba y no ponga en riesgo la misión de la nave.",
+        "isCorrect": true
+      },
+      {
+        "text": "Para que los astronautas pasen el tiempo jugando.",
+        "isCorrect": false
+      },
+      {
+        "text": "Porque en el espacio los algoritmos no funcionan.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Validar paso por paso previene catástrofes y certifica la seguridad del vuelo."
+  },
+  {
+    "id": "g5_algoritmos_12",
+    "grade": 5,
+    "category": "algoritmos",
+    "difficulty": "avanzado",
+    "question": "En conclusión, dominar las instrucciones, los programas y los algoritmos nos permite:",
+    "options": [
+      {
+        "text": "Ser creadores de tecnología capaces de decirle a las máquinas cómo ayudarnos a resolver desafíos.",
+        "isCorrect": true
+      },
+      {
+        "text": "Ser solo usuarios que miran pantallas sin saber cómo funcionan las cosas por dentro.",
+        "isCorrect": false
+      },
+      {
+        "text": "Adivinar el futuro con computadoras mágicas.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Comprender la lógica computacional nos empodera como constructores creativos de soluciones."
+  },
+  {
+    "id": "g5_matematica_1",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity ajusta su batería cuántica! ¿Cuánto es (15 ÷ 3 + 5) × 2?",
+    "options": [
+      {
+        "text": "20",
+        "isCorrect": true
+      },
+      {
+        "text": "18",
+        "isCorrect": false
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 15 ÷ 3 = 5; luego 5 + 5 = 10. Finalmente 10 × 2 = 20."
+  },
+  {
+    "id": "g5_matematica_2",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity calibra sus motores espaciales! ¿Cuánto es (20 ÷ 4 + 7) × 2?",
+    "options": [
+      {
+        "text": "24",
+        "isCorrect": true
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "26",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 20 ÷ 4 = 5; luego 5 + 7 = 12. Finalmente 12 × 2 = 24."
+  },
+  {
+    "id": "g5_matematica_3",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity mide la energía de su escudo! ¿Cuánto es 30 − (12 ÷ 3 × 4)?",
+    "options": [
+      {
+        "text": "14",
+        "isCorrect": true
+      },
+      {
+        "text": "16",
+        "isCorrect": false
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 12 ÷ 3 = 4; luego 4 × 4 = 16. Restamos: 30 − 16 = 14."
+  },
+  {
+    "id": "g5_matematica_4",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity recarga sus celdas de combustible! ¿Cuánto es (25 ÷ 5 + 10) × 2?",
+    "options": [
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "25",
+        "isCorrect": false
+      },
+      {
+        "text": "35",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 25 ÷ 5 = 5; luego 5 + 10 = 15. Finalmente 15 × 2 = 30."
+  },
+  {
+    "id": "g5_matematica_5",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity equilibra la temperatura del cohete! ¿Cuánto es 40 − 5 × 6?",
+    "options": [
+      {
+        "text": "10",
+        "isCorrect": true
+      },
+      {
+        "text": "8",
+        "isCorrect": false
+      },
+      {
+        "text": "12",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Multiplicación primero: 5 × 6 = 30. Luego 40 − 30 = 10."
+  },
+  {
+    "id": "g5_matematica_6",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity ajusta el radar de telemetría! ¿Cuánto es (16 ÷ 4 + 6) × 3?",
+    "options": [
+      {
+        "text": "30",
+        "isCorrect": true
+      },
+      {
+        "text": "28",
+        "isCorrect": false
+      },
+      {
+        "text": "32",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 16 ÷ 4 = 4; luego 4 + 6 = 10. Finalmente 10 × 3 = 30."
+  },
+  {
+    "id": "g5_matematica_7",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity mide el consumo de sus turbinas! ¿Cuánto es 50 − (20 ÷ 2 + 15)?",
+    "options": [
+      {
+        "text": "25",
+        "isCorrect": true
+      },
+      {
+        "text": "20",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 20 ÷ 2 = 10; luego 10 + 15 = 25. Restamos: 50 − 25 = 25."
+  },
+  {
+    "id": "g5_matematica_8",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity calcula el impulso de despegue! ¿Cuánto es (12 ÷ 3 + 8) × 2?",
+    "options": [
+      {
+        "text": "24",
+        "isCorrect": true
+      },
+      {
+        "text": "22",
+        "isCorrect": false
+      },
+      {
+        "text": "26",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Paréntesis: 12 ÷ 3 = 4; luego 4 + 8 = 12. Finalmente 12 × 2 = 24."
+  },
+  {
+    "id": "g5_matematica_9",
+    "grade": 5,
+    "category": "matematica",
+    "difficulty": "avanzado",
+    "question": "¡Bity potencia la señal de su antena! ¿Cuánto es 20 ÷ 5 + 6 × 4?",
+    "options": [
+      {
+        "text": "28",
+        "isCorrect": true
+      },
+      {
+        "text": "26",
+        "isCorrect": false
+      },
+      {
+        "text": "30",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "División: 20 ÷ 5 = 4. Multiplicación: 6 × 4 = 24. Suma final: 4 + 24 = 28."
   },
   {
     "id": "g5_matematica_10",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity calcula la potencia de la nave espacial! ¿Cuánto es 12 × 12 − 44?",
+    "question": "¡Bity conecta los generadores solares! ¿Cuánto es (30 ÷ 5 + 4) × 3?",
     "options": [
       {
-        "text": "100",
+        "text": "30",
         "isCorrect": true
       },
       {
-        "text": "96",
+        "text": "25",
         "isCorrect": false
       },
       {
-        "text": "104",
+        "text": "35",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero el cuadrado 12 × 12 = 144; luego restamos 44: 144 − 44 = 100."
+    "explanation": "Paréntesis: 30 ÷ 5 = 6; luego 6 + 4 = 10. Finalmente 10 × 3 = 30."
   },
   {
     "id": "g5_matematica_11",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity programa el retorno a la Tierra! ¿Cuánto es (70 − 25) × 2 − 30?",
+    "question": "¡Bity regula el flujo de energía! ¿Cuánto es 60 − (15 ÷ 3 × 8)?",
     "options": [
       {
-        "text": "60",
+        "text": "20",
         "isCorrect": true
       },
       {
-        "text": "55",
+        "text": "18",
         "isCorrect": false
       },
       {
-        "text": "65",
+        "text": "22",
         "isCorrect": false
       }
     ],
-    "explanation": "Paréntesis: 70 − 25 = 45; luego 45 × 2 = 90; finalmente 90 − 30 = 60."
+    "explanation": "Paréntesis: 15 ÷ 3 = 5; luego 5 × 8 = 40. Restamos: 60 − 40 = 20."
   },
   {
     "id": "g5_matematica_12",
     "grade": 5,
     "category": "matematica",
     "difficulty": "avanzado",
-    "question": "¡Bity recarga la batería cósmica definitiva! ¿Cuánto es 50 × 3 − (40 × 2 + 20)?",
+    "question": "¡Bity completa la recarga para volver a casa! ¿Cuánto es (10 ÷ 2 + 15) × 2?",
     "options": [
       {
-        "text": "50",
+        "text": "40",
         "isCorrect": true
+      },
+      {
+        "text": "35",
+        "isCorrect": false
       },
       {
         "text": "45",
         "isCorrect": false
-      },
-      {
-        "text": "55",
-        "isCorrect": false
       }
     ],
-    "explanation": "Primero 50 × 3 = 150. Paréntesis: 40 × 2 = 80 + 20 = 100. Restamos: 150 − 100 = 50."
+    "explanation": "Paréntesis: 10 ÷ 2 = 5; luego 5 + 15 = 20. Finalmente 20 × 2 = 40."
   }
 ];
 
 class BityQuestionManager {
   constructor() {
     this.history = [];
-    this.maxHistoryPerCategory = 8; // Recuerda hasta 8 preguntas recientes por categoría
+    this.maxHistoryPerCategory = 8;
+  }
+
+  /**
+   * Genera de forma segura una operación matemática adecuada al grado si fuese necesario
+   * Garantiza: divisiones exactas con divisor <= 5 y números apropiados a la edad.
+   */
+  generateSafeMathQuestion(grade = 1) {
+    const targetGrade = parseInt(grade) || 1;
+    let question = '';
+    let answer = 0;
+    let distractors = [];
+    let explanation = '';
+
+    if (targetGrade === 1) {
+      // Sumas y restas pequeñas hasta 10
+      const a = Math.floor(Math.random() * 5) + 3; // 3 a 7
+      const b = Math.floor(Math.random() * 4) + 1; // 1 a 4
+      const isSub = Math.random() > 0.5 && a > b;
+      if (isSub) {
+        answer = a - b;
+        question = `¡Bity recarga su batería! ¿Cuánto es ${a} − ${b}?`;
+        explanation = `${a} menos ${b} es igual a ${answer}.`;
+      } else {
+        answer = a + b;
+        question = `¡Bity necesita energía! ¿Cuánto es ${a} + ${b}?`;
+        explanation = `${a} más ${b} es igual a ${answer}.`;
+      }
+      distractors = [answer + 1, Math.max(1, answer - 1)];
+    } else if (targetGrade === 2) {
+      // Sumas y restas con decenas hasta 30
+      const a = (Math.floor(Math.random() * 3) + 1) * 10; // 10, 20, 30
+      const b = (Math.floor(Math.random() * 2) + 1) * 5;  // 5, 10
+      const isSub = Math.random() > 0.5;
+      if (isSub) {
+        answer = a - b;
+        question = `¡Bity calcula su batería! ¿Cuánto es ${a} − ${b}?`;
+        explanation = `${a} menos ${b} es igual a ${answer}.`;
+      } else {
+        answer = a + b;
+        question = `¡Bity suma energía! ¿Cuánto es ${a} + ${b}?`;
+        explanation = `${a} más ${b} es igual a ${answer}.`;
+      }
+      distractors = [answer + 2, answer - 2];
+    } else if (targetGrade === 3) {
+      // Multiplicación simple o división con divisor <= 5
+      const divisor = Math.floor(Math.random() * 4) + 2; // 2, 3, 4, 5 (NUNCA > 5)
+      const cociente = Math.floor(Math.random() * 5) + 2; // 2 a 6
+      const dividendo = divisor * cociente;
+      answer = cociente;
+      question = `¡Bity reparte piezas espaciales! ¿Cuánto es ${dividendo} ÷ ${divisor}?`;
+      explanation = `${dividendo} dividido ${divisor} es igual a ${answer}.`;
+      distractors = [answer + 1, Math.max(1, answer - 1)];
+    } else if (targetGrade === 4) {
+      // Operación combinada simple: (dividendo ÷ divisor) + constante, con divisor <= 5
+      const divisor = Math.floor(Math.random() * 4) + 2; // 2, 3, 4, 5
+      const cociente = Math.floor(Math.random() * 4) + 3; // 3 a 6
+      const dividendo = divisor * cociente;
+      const extra = Math.floor(Math.random() * 6) + 5; // 5 a 10
+      answer = cociente + extra;
+      question = `¡Bity calibra su propulsor! ¿Cuánto es ${dividendo} ÷ ${divisor} + ${extra}?`;
+      explanation = `${dividendo} ÷ ${divisor} es ${cociente}; luego ${cociente} + ${extra} = ${answer}.`;
+      distractors = [answer + 2, answer - 2];
+    } else {
+      // 5.° Grado: Operación con divisor <= 5 y multiplicador simple
+      const divisor = Math.floor(Math.random() * 3) + 3; // 3, 4, 5 (NUNCA > 5)
+      const cociente = Math.floor(Math.random() * 3) + 3; // 3 a 5
+      const dividendo = divisor * cociente;
+      const base = 5;
+      const mult = 2;
+      answer = (cociente + base) * mult;
+      question = `¡Bity ajusta la telemetría! ¿Cuánto es (${dividendo} ÷ ${divisor} + ${base}) × ${mult}?`;
+      explanation = `Paréntesis: ${dividendo} ÷ ${divisor} = ${cociente}, más ${base} = ${cociente + base}. Luego por ${mult} = ${answer}.`;
+      distractors = [answer + 2, answer - 2];
+    }
+
+    const opts = [
+      { text: String(answer), isCorrect: true },
+      { text: String(distractors[0]), isCorrect: false },
+      { text: String(distractors[1]), isCorrect: false }
+    ];
+
+    return {
+      id: `dynamic_math_g${targetGrade}_${Date.now()}`,
+      grade: targetGrade,
+      category: 'matematica',
+      difficulty: targetGrade <= 2 ? 'facil' : (targetGrade <= 4 ? 'medio' : 'avanzado'),
+      question: targetGrade === 1 ? question.toUpperCase() : question,
+      options: opts,
+      explanation: targetGrade === 1 ? explanation.toUpperCase() : explanation
+    };
   }
 
   /**
@@ -5309,14 +5406,17 @@ class BityQuestionManager {
     const targetGrade = parseInt(grade) || 1;
     const isGradeOne = targetGrade === 1;
 
-    // Si la categoría solicitada es 'programming', normalizar a 'programacion'
+    // Normalizar categoría
     const catNorm = category === 'programming' ? 'programacion' : (category === 'math' ? 'matematica' : category);
 
     // 1. Filtrar preguntas que coincidan con grado y categoría
     const pool = BITY_QUESTION_BANK.filter(q => q.grade === targetGrade && q.category === catNorm);
 
     if (pool.length === 0) {
-      // Fallback a cualquier pregunta de esa categoría
+      if (catNorm === 'matematica') {
+        const dynMath = this.generateSafeMathQuestion(targetGrade);
+        return this._formatQuestion(dynMath, isGradeOne);
+      }
       const fallback = BITY_QUESTION_BANK.filter(q => q.category === catNorm);
       if (fallback.length === 0) return null;
       return this._formatQuestion(fallback[0], isGradeOne);
@@ -5326,7 +5426,6 @@ class BityQuestionManager {
     let available = pool.filter(q => !this.history.includes(q.id));
 
     // Si se agotó el banco disponible en el historial, reiniciar el historial de esta categoría
-    // pero conservando la última para evitar repetición inmediata
     if (available.length === 0) {
       const lastId = this.history.filter(id => id.startsWith(`g${targetGrade}_${catNorm}`)).pop();
       this.history = this.history.filter(id => !id.startsWith(`g${targetGrade}_${catNorm}`) || id === lastId);
@@ -5393,5 +5492,10 @@ class BityQuestionManager {
 }
 
 // Exportar globalmente
-window.BITY_QUESTION_BANK = BITY_QUESTION_BANK;
-window.BityQuestionManager = BityQuestionManager;
+if (typeof window !== 'undefined') {
+  window.BITY_QUESTION_BANK = BITY_QUESTION_BANK;
+  window.BityQuestionManager = BityQuestionManager;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { BITY_QUESTION_BANK, BityQuestionManager };
+}
