@@ -2,7 +2,7 @@
  * platformerQuestions.js - Banco de preguntas pedagógicas y motor de aleatoriedad
  * Desafío final: Instrucciones - Lego Familiar
  *
- * Contenidos estrictamente adaptados a Educación Primaria (1.° a 5.° grado):
+ * Contenidos estrictamente adaptados a Educación Primaria (1.º a 5.º grado):
  * 1. Qué es una instrucción (orden clara que indica qué hacer).
  * 2. Qué es un algoritmo (conjunto de pasos ordenados para resolver una tarea).
  * 3. Qué significa programar (darle instrucciones a una computadora o robot).
@@ -15,7 +15,7 @@
  * - 5.°: Operaciones combinadas sencillas con números de 2 cifras (solo sumas y restas)
  *
  * Banco de 240 preguntas distribuidas equitativamente:
- * - 5 grados (1.° a 5.° grado)
+ * - 5 grados (1.º a 5.º grado)
  * - 4 categorías (instrucciones, programacion, algoritmos, matematica)
  * - Exactamente 12 preguntas por combinación.
  */
@@ -33,15 +33,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Un dibujo de colores para la pantalla.",
+        "text": "Un dibujo de muchos colores.",
         "isCorrect": false
       },
       {
-        "text": "Un sonido musical que suena al azar.",
+        "text": "Una canción para bailar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una instrucción es una orden clara que le dice a una persona, a una computadora o a un robot qué acción realizar."
+    "explanation": "Una instrucción es una indicación u orden clara que dice qué acción realizar."
   },
   {
     "id": "g1_instrucciones_2",
@@ -59,11 +59,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Pintar una flor",
+        "text": "Quedarse quieto",
         "isCorrect": false
       }
     ],
-    "explanation": "«Avanzar 1 paso» le da la orden directa y clara a Bity de moverse hacia el frente."
+    "explanation": "«Avanzar 1 paso» le indica a Bity que se desplace hacia el frente."
   },
   {
     "id": "g1_instrucciones_3",
@@ -81,11 +81,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Gira en círculos sin parar.",
+        "text": "Camina hacia atrás.",
         "isCorrect": false
       }
     ],
-    "explanation": "Al recibir la orden «Saltar», el robot se impulsa verticalmente hacia arriba."
+    "explanation": "La orden «Saltar» hace que Bity se impulse hacia arriba."
   },
   {
     "id": "g1_instrucciones_4",
@@ -99,15 +99,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Para comer galletitas.",
+        "text": "Para funcionar sin encenderse.",
         "isCorrect": false
       },
       {
-        "text": "Para cambiar de nombre solo.",
+        "text": "Para moverse sin que nadie le diga nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los robots no saben qué hacer por sí mismos; necesitan instrucciones para guiarse."
+    "explanation": "Los robots necesitan instrucciones para saber con exactitud qué hacer."
   },
   {
     "id": "g1_instrucciones_5",
@@ -121,15 +121,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Quedarse quieto para siempre.",
+        "text": "Esperar en la vereda sin moverse.",
         "isCorrect": false
       },
       {
-        "text": "Correr hacia atrás.",
+        "text": "Retroceder a casa.",
         "isCorrect": false
       }
     ],
-    "explanation": "La luz verde peatonal es una señal que nos da la instrucción de cruzar la calle."
+    "explanation": "La luz verde peatonal es una señal que indica la orden de cruzar."
   },
   {
     "id": "g1_instrucciones_6",
@@ -143,15 +143,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Cualquier cosa linda",
+        "text": "Hacer algo divertido",
         "isCorrect": false
       },
       {
-        "text": "Mañana quizás",
+        "text": "Mañana tal vez",
         "isCorrect": false
       }
     ],
-    "explanation": "«Girar a la derecha» es una orden precisa con acción y dirección claras."
+    "explanation": "«Girar a la derecha» es una orden directa y comprensible."
   },
   {
     "id": "g1_instrucciones_7",
@@ -165,15 +165,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Hacia arriba volando.",
+        "text": "Hacia adelante.",
         "isCorrect": false
       },
       {
-        "text": "Hacia adelante.",
+        "text": "Hacia arriba.",
         "isCorrect": false
       }
     ],
-    "explanation": "Retroceder significa dar un paso en dirección contraria al frente."
+    "explanation": "Retroceder significa moverse hacia atrás."
   },
   {
     "id": "g1_instrucciones_8",
@@ -187,22 +187,22 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "El lápiz es de color azul.",
+        "text": "El sol es de color amarillo.",
         "isCorrect": false
       },
       {
-        "text": "El recreo fue divertido.",
+        "text": "Hoy es un día soleado.",
         "isCorrect": false
       }
     ],
-    "explanation": "«Abrir el cuaderno en la página 5» es una orden que indica qué acción exacta realizar."
+    "explanation": "«Abrir el cuaderno en la página 5» es una orden concreta que indica una acción a realizar."
   },
   {
     "id": "g1_instrucciones_9",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "Si Bity está frente a un charco pequeño, ¿qué orden le ayuda a no mojarse?",
+    "question": "Si Bity está frente a un charco pequeño, ¿qué orden le ayuda a superarlo sin mojarse?",
     "options": [
       {
         "text": "Saltar el charco",
@@ -213,33 +213,33 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Apagar los ojos",
+        "text": "Caminar hacia abajo",
         "isCorrect": false
       }
     ],
-    "explanation": "Saltar permite a Bity superar el obstáculo del charco de forma segura."
+    "explanation": "Saltar permite elevarse y pasar por encima del charco sin tocar el agua."
   },
   {
     "id": "g1_instrucciones_10",
     "grade": 1,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "¿Qué pasa si le damos a Bity una orden incompleta como «Avanzar» sin decirle cuánto?",
+    "question": "Si le damos a Bity una orden incompleta como «Avanzar» sin decirle cuánto, ¿qué sucede?",
     "options": [
       {
         "text": "Bity no sabe cuántos pasos debe dar.",
         "isCorrect": true
       },
       {
-        "text": "Bity adivina perfectamente nuestro pensamiento.",
+        "text": "Bity camina exactamente 100 pasos.",
         "isCorrect": false
       },
       {
-        "text": "Bity se transforma en auto.",
+        "text": "Bity adivina nuestro pensamiento.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las instrucciones deben ser completas y precisas para que el robot sepa exactamente qué hacer."
+    "explanation": "Una instrucción incompleta deja dudas y la máquina no sabe cómo actuar."
   },
   {
     "id": "g1_instrucciones_11",
@@ -253,15 +253,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Tirar la batería lejos",
+        "text": "Mirar hacia el cielo",
         "isCorrect": false
       },
       {
-        "text": "Mirar el cielo",
+        "text": "Dar tres vueltas",
         "isCorrect": false
       }
     ],
-    "explanation": "«Agarrar la batería» es la orden adecuada para recolectar el objeto del piso."
+    "explanation": "La instrucción «Agarrar la batería» realiza la recolección del objeto."
   },
   {
     "id": "g1_instrucciones_12",
@@ -275,7 +275,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Corre muy rápido.",
+        "text": "Corre hacia adelante.",
         "isCorrect": false
       },
       {
@@ -283,7 +283,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "«Detenerse» le ordena al robot frenar todo movimiento de inmediato."
+    "explanation": "«Detenerse» le ordena finalizar el movimiento y permanecer en su sitio."
   },
   {
     "id": "g1_programacion_1",
@@ -301,11 +301,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Limpiar la pantalla con un paño.",
+        "text": "Limpiar la pantalla de la computadora.",
         "isCorrect": false
       }
     ],
-    "explanation": "Programar es enseñarle a una computadora o a un robot qué pasos debe hacer mediante instrucciones."
+    "explanation": "Programar consiste en indicar mediante órdenes qué debe hacer una máquina."
   },
   {
     "id": "g1_programacion_2",
@@ -319,15 +319,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "El robot decide todo por arte de magia.",
+        "text": "La computadora sola sin ayuda.",
         "isCorrect": false
       },
       {
-        "text": "Nadie, Bity lee la mente.",
+        "text": "Nadie, el robot adivina todo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Bity necesita que un niño o niña lo programe con órdenes claras para poder moverse."
+    "explanation": "Bity cumple únicamente las instrucciones que una persona le programó."
   },
   {
     "id": "g1_programacion_3",
@@ -341,7 +341,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Sí, piensan y sueñan solas.",
+        "text": "Sí, piensan y deciden por su cuenta.",
         "isCorrect": false
       },
       {
@@ -349,7 +349,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Las computadoras no piensan como nosotros; solo ejecutan las instrucciones que las personas les dan."
+    "explanation": "Las computadoras no piensan; ejecutan estrictamente las órdenes que reciben."
   },
   {
     "id": "g1_programacion_4",
@@ -363,37 +363,37 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "En cualquier orden desordenado.",
+        "text": "En cualquier orden al azar.",
         "isCorrect": false
       },
       {
-        "text": "Al revés, de abajo hacia arriba siempre.",
+        "text": "Al revés de lo que escribimos.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los robots siguen las instrucciones paso por paso en el orden exacto en que fueron programadas."
+    "explanation": "Bity sigue la lista de instrucciones paso a paso, una tras otra."
   },
   {
     "id": "g1_programacion_5",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "¿Qué hace el botón verde con el triángulo «Play» o «Iniciar»?",
+    "question": "¿Qué hace el botón verde «Play» o «Iniciar» en el juego?",
     "options": [
       {
-        "text": "Comienza a ejecutar las instrucciones que le programamos a Bity.",
+        "text": "Comienza a ejecutar las instrucciones programadas.",
         "isCorrect": true
       },
       {
-        "text": "Borra todo el juego.",
+        "text": "Borra todas las instrucciones.",
         "isCorrect": false
       },
       {
-        "text": "Apaga la pantalla de la computadora.",
+        "text": "Apaga la computadora.",
         "isCorrect": false
       }
     ],
-    "explanation": "El botón de inicio activa el programa para que Bity empiece a realizar sus órdenes."
+    "explanation": "El botón Iniciar activa la ejecución de las órdenes preparadas."
   },
   {
     "id": "g1_programacion_6",
@@ -407,15 +407,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Un solo dibujo de un cohete.",
+        "text": "Un dibujo de un cohete.",
         "isCorrect": false
       },
       {
-        "text": "Ninguna instrucción.",
+        "text": "Ninguna orden, solo mirar la pantalla.",
         "isCorrect": false
       }
     ],
-    "explanation": "Para llegar a la meta se necesita una serie ordenada de instrucciones de camino."
+    "explanation": "Para alcanzar la meta se requiere una secuencia ordenada de pasos."
   },
   {
     "id": "g1_programacion_7",
@@ -429,15 +429,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Una persona que solo mira videos sin jugar.",
+        "text": "Una persona que solo mira dibujos animados.",
         "isCorrect": false
       },
       {
-        "text": "Un robot que fabrica cables.",
+        "text": "Un robot que fabrica tornillos.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los programadores son quienes diseñan y escriben las instrucciones para que las máquinas funcionen."
+    "explanation": "Un programador o programadora diseña las órdenes que guían a las máquinas."
   },
   {
     "id": "g1_programacion_8",
@@ -451,15 +451,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Esperar que Bity lo adivine solo.",
+        "text": "Esperar a que Bity lo adivine solo.",
         "isCorrect": false
       },
       {
-        "text": "Gritarle fuerte a la pantalla.",
+        "text": "Apretar cualquier botón sin mirar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Para que un robot haga un saludo debemos darle la instrucción precisa de mover su brazo."
+    "explanation": "Para que un personaje realice una acción específica, debemos programar su instrucción."
   },
   {
     "id": "g1_programacion_9",
@@ -473,15 +473,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Solamente cuentas aburridas.",
+        "text": "Solamente cuentas difíciles.",
         "isCorrect": false
       },
       {
-        "text": "Nada, no sirve para crear cosas.",
+        "text": "Nada, la programación no crea nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación nos permite crear videojuegos, cuentos animados y robots útiles."
+    "explanation": "Programar nos permite crear videojuegos, animaciones y soluciones útiles."
   },
   {
     "id": "g1_programacion_10",
@@ -499,11 +499,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "La computadora se rompe para siempre.",
+        "text": "La computadora se apaga de inmediato.",
         "isCorrect": false
       }
     ],
-    "explanation": "El orden de las instrucciones determina el orden en que Bity realiza sus movimientos."
+    "explanation": "Al cambiar el orden de las instrucciones, cambia la secuencia en que actúa el robot."
   },
   {
     "id": "g1_programacion_11",
@@ -517,22 +517,22 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Sí, camina solo a donde él quiere.",
+        "text": "Sí, camina solo a donde él quiera.",
         "isCorrect": false
       },
       {
-        "text": "Sí, habla y canta sin instrucciones.",
+        "text": "Sí, adivina el camino sin ayuda.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los robots dependen de los programas para saber qué tareas deben realizar."
+    "explanation": "Los robots dependen por completo de las instrucciones programadas para actuar."
   },
   {
     "id": "g1_programacion_12",
     "grade": 1,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "Después de escribir un programa para Bity, ¿qué hacemos para ver si funciona?",
+    "question": "Después de armar un programa para Bity, ¿qué hacemos para ver si funciona?",
     "options": [
       {
         "text": "Probarlo y observar si Bity cumple la tarea.",
@@ -543,11 +543,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Borrarlo inmediatamente sin probarlo.",
+        "text": "Borrarlo enseguida sin probar nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "Probar el programa nos permite ver si Bity hace lo que le ordenamos o si debemos corregir algo."
+    "explanation": "Probar el programa permite verificar que las instrucciones logren la meta esperada."
   },
   {
     "id": "g1_algoritmos_1",
@@ -561,15 +561,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Una máquina que limpia pisos.",
+        "text": "Una máquina para cortar papel.",
         "isCorrect": false
       },
       {
-        "text": "Un número muy grande que no termina.",
+        "text": "Un dibujo en el pizarrón.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un algoritmo es una serie ordenada de pasos sencillos para completar una tarea con éxito."
+    "explanation": "Un algoritmo es una serie de pasos ordenados para alcanzar un objetivo."
   },
   {
     "id": "g1_algoritmos_2",
@@ -583,15 +583,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Secarse con la toalla.",
+        "text": "Secarse con la toalla limpia.",
         "isCorrect": false
       },
       {
-        "text": "Ponerse los guantes de lana.",
+        "text": "Guardar el jabón sin abrir el agua.",
         "isCorrect": false
       }
     ],
-    "explanation": "El primer paso para higienizarse las manos es abrir el agua y mojarlas."
+    "explanation": "El primer paso para lavarse las manos es mojárselas con agua de la canilla."
   },
   {
     "id": "g1_algoritmos_3",
@@ -605,15 +605,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Atarse los cordones.",
+        "text": "Atarse los cordones de la zapatilla.",
         "isCorrect": false
       },
       {
-        "text": "Salir a correr al patio.",
+        "text": "Salir corriendo a jugar.",
         "isCorrect": false
       }
     ],
-    "explanation": "En la secuencia correcta, primero se colocan las medias y luego las zapatillas."
+    "explanation": "Antes de calzarse las zapatillas, es necesario ponerse las medias."
   },
   {
     "id": "g1_algoritmos_4",
@@ -623,19 +623,19 @@ const BITY_QUESTION_BANK = [
     "question": "Para armar una torre de 2 bloques Lego: ¿cuál es el primer paso?",
     "options": [
       {
-        "text": "Apoyar el primer bloque en la mesa.",
+        "text": "Apoyar el primer bloque sobre la mesa.",
         "isCorrect": true
       },
       {
-        "text": "Poner el bloque de arriba flotando en el aire.",
+        "text": "Poner el segundo bloque en el aire.",
         "isCorrect": false
       },
       {
-        "text": "Desarmar la torre terminada.",
+        "text": "Desarmar la torre completa.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una torre se construye desde la base: primero apoyamos el bloque inferior sobre la superficie."
+    "explanation": "Toda construcción comienza apoyando la pieza base sobre una superficie."
   },
   {
     "id": "g1_algoritmos_5",
@@ -649,15 +649,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Tirar la banana a la basura.",
+        "text": "Tirar la banana entera a la basura.",
         "isCorrect": false
       },
       {
-        "text": "Morder la cáscara cerrada.",
+        "text": "Morder la cáscara sin abrirla.",
         "isCorrect": false
       }
     ],
-    "explanation": "Para comer una banana se debe pelar la cáscara antes de dar el primer bocado."
+    "explanation": "Para comer una banana, primero hay que pelarla."
   },
   {
     "id": "g1_algoritmos_6",
@@ -671,15 +671,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Pintar la sonrisa en el aire.",
+        "text": "Pintar los ojos en el aire.",
         "isCorrect": false
       },
       {
-        "text": "Guardar los lápices.",
+        "text": "Guardar los lápices en la mochila.",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero trazamos el contorno circular de la cara y luego los ojos y la sonrisa adentro."
+    "explanation": "Primero se traza el contorno de la cara y luego se dibujan los rasgos adentro."
   },
   {
     "id": "g1_algoritmos_7",
@@ -693,7 +693,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Paso 1: Saltar hacia atrás. Paso 2: Dormir.",
+        "text": "Paso 1: Retroceder. Paso 2: Quedarse quieto.",
         "isCorrect": false
       },
       {
@@ -701,29 +701,29 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Dos pasos hacia adelante llevan ordenadamente a Bity hacia la bandera."
+    "explanation": "Avanzar dos pasos sucesivos permite alcanzar la bandera al frente."
   },
   {
     "id": "g1_algoritmos_8",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para regar una planta: 1. Tomar la regadera, 2. Echar agua a la tierra... ¿cuál es el paso final?",
+    "question": "Para regar una planta: 1. Poner agua en la regadera, 2. Echar agua a la tierra... ¿cuál es el primer paso?",
     "options": [
       {
-        "text": "Guardar la regadera en su lugar.",
+        "text": "Poner agua en la regadera.",
         "isCorrect": true
       },
       {
-        "text": "Arrancar la planta.",
+        "text": "Guardar la regadera vacía.",
         "isCorrect": false
       },
       {
-        "text": "Mojarse la ropa.",
+        "text": "Cortar las hojas de la planta.",
         "isCorrect": false
       }
     ],
-    "explanation": "Al finalizar el riego, se guarda la regadera en su lugar de almacenamiento."
+    "explanation": "Para poder regar, el paso inicial indispensable es cargar la regadera con agua."
   },
   {
     "id": "g1_algoritmos_9",
@@ -733,19 +733,19 @@ const BITY_QUESTION_BANK = [
     "question": "¿Por qué los pasos de un algoritmo deben estar ordenados?",
     "options": [
       {
-        "text": "Para que la tarea salga bien y logremos el resultado esperado.",
+        "text": "Para que la tarea salga bien y logremos lo que queremos.",
         "isCorrect": true
       },
       {
-        "text": "Para que sea más difícil de hacer.",
+        "text": "Para que sea muy difícil de entender.",
         "isCorrect": false
       },
       {
-        "text": "Porque a las computadoras les da igual el orden.",
+        "text": "Porque el orden no tiene ninguna importancia.",
         "isCorrect": false
       }
     ],
-    "explanation": "El orden de los pasos garantiza que la tarea se complete sin confusiones ni errores."
+    "explanation": "Seguir los pasos en su orden correcto asegura completar la tarea sin errores."
   },
   {
     "id": "g1_algoritmos_10",
@@ -759,7 +759,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "La tarea se completa el doble de rápido.",
+        "text": "La tarea se completa mucho más rápido.",
         "isCorrect": false
       },
       {
@@ -767,51 +767,51 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Un paso faltante interrumpe la secuencia y la tarea no se puede completar correctamente."
+    "explanation": "Omitir un paso intermedio interrumpe la secuencia y perjudica el resultado."
   },
   {
     "id": "g1_algoritmos_11",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para cepillarse los dientes: ¿qué paso va antes de cepillar?",
+    "question": "Para cepillarte los dientes, ¿qué hacés primero?",
     "options": [
       {
         "text": "Poner pasta dental en el cepillo.",
         "isCorrect": true
       },
       {
-        "text": "Enjuagarse la boca al final.",
+        "text": "Enjuagarte la boca al terminar.",
         "isCorrect": false
       },
       {
-        "text": "Guardar el cepillo seco.",
+        "text": "Guardar el cepillo en el vaso.",
         "isCorrect": false
       }
     ],
-    "explanation": "Antes de cepillarse debemos colocar la pasta sobre las cerdas del cepillo."
+    "explanation": "El paso inicial para el cepillado es colocar pasta dental en el cepillo."
   },
   {
     "id": "g1_algoritmos_12",
     "grade": 1,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Si seguimos un algoritmo paso a paso con atención, ¿qué logramos?",
+    "question": "Si seguimos los pasos de un algoritmo con atención, ¿qué logramos?",
     "options": [
       {
         "text": "Completar la tarea con éxito.",
         "isCorrect": true
       },
       {
-        "text": "Perdernos en el camino siempre.",
+        "text": "Equivocarnos siempre en el camino.",
         "isCorrect": false
       },
       {
-        "text": "Que el robot se equivoque.",
+        "text": "Que el robot no se mueva nunca.",
         "isCorrect": false
       }
     ],
-    "explanation": "Seguir los pasos en orden nos guía directamente a resolver la tarea planteada."
+    "explanation": "Seguir los pasos ordenadamente permite alcanzar el resultado esperado."
   },
   {
     "id": "g1_matematica_1",
@@ -1089,15 +1089,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Porque Bity se cansa si la orden es corta.",
+        "text": "Porque los robots prefieren órdenes largas y difíciles.",
         "isCorrect": false
       },
       {
-        "text": "Porque los robots prefieren órdenes misteriosas.",
+        "text": "Porque da igual cómo se escriban las órdenes.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un robot requiere instrucciones exactas para poder ejecutar la acción sin desviarse."
+    "explanation": "Los robots no tienen intuición; procesan con precisión únicamente lo indicado."
   },
   {
     "id": "g2_instrucciones_2",
@@ -1111,18 +1111,40 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Hacer algo lindo por ahí",
+        "text": "Moverse un poco hacia allá",
         "isCorrect": false
       },
       {
-        "text": "Ir a pasear un rato",
+        "text": "Pasear un ratito",
         "isCorrect": false
       }
     ],
-    "explanation": "«Avanzar 3 casilleros hacia el frente» tiene una acción concreta, una cantidad y una dirección."
+    "explanation": "«Avanzar 3 casilleros hacia el frente» especifica la acción, la cantidad y la dirección."
   },
   {
     "id": "g2_instrucciones_3",
+    "grade": 2,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si le pedimos a Bity que gire a la derecha y gira a la izquierda, ¿siguió la orden?",
+    "options": [
+      {
+        "text": "No, porque giró hacia el lado opuesto al que se le indicó.",
+        "isCorrect": true
+      },
+      {
+        "text": "Sí, porque girar hacia cualquier lado es lo mismo.",
+        "isCorrect": false
+      },
+      {
+        "text": "Sí, porque los robots eligen hacia dónde girar.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Seguir una orden implica cumplir exactamente la dirección indicada."
+  },
+  {
+    "id": "g2_instrucciones_4",
     "grade": 2,
     "category": "instrucciones",
     "difficulty": "facil",
@@ -1137,21 +1159,43 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Hacia arriba al techo.",
+        "text": "Hacia su lado izquierdo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Girar a la derecha orienta el frente de Bity hacia su costado derecho."
+    "explanation": "Un giro a la derecha orienta el frente de Bity 90 grados hacia su derecha."
   },
   {
-    "id": "g2_instrucciones_4",
+    "id": "g2_instrucciones_5",
+    "grade": 2,
+    "category": "instrucciones",
+    "difficulty": "facil",
+    "question": "Si le decimos a Bity «Dar 2 pasos adelante y luego 1 paso atrás», ¿dónde queda ubicado?",
+    "options": [
+      {
+        "text": "A 1 paso hacia adelante de donde empezó.",
+        "isCorrect": true
+      },
+      {
+        "text": "A 3 pasos hacia adelante.",
+        "isCorrect": false
+      },
+      {
+        "text": "En el mismo lugar donde empezó.",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Avanzar 2 y retroceder 1 resulta en un avance neto de 1 paso (2 − 1 = 1)."
+  },
+  {
+    "id": "g2_instrucciones_6",
     "grade": 2,
     "category": "instrucciones",
     "difficulty": "facil",
     "question": "¿Cuál es la diferencia entre un deseo y una instrucción en programación?",
     "options": [
       {
-        "text": "El deseo dice lo que esperamos («Ojalá ganes»); la instrucción ordena una acción directa («Avanzar 2»).",
+        "text": "El deseo expresa lo que esperamos; la instrucción ordena una acción concreta («Avanzar 2 pasos»).",
         "isCorrect": true
       },
       {
@@ -1159,55 +1203,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "La instrucción solo se usa para cocinar.",
+        "text": "El deseo solo se usa en computadoras.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una instrucción le indica una acción concreta a la máquina; un deseo solo expresa una esperanza sin ordenar nada."
-  },
-  {
-    "id": "g2_instrucciones_5",
-    "grade": 2,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "Si un dron de rescate recibe la orden «Descender 2 metros», ¿qué movimiento realiza?",
-    "options": [
-      {
-        "text": "Baja 2 metros hacia el suelo.",
-        "isCorrect": true
-      },
-      {
-        "text": "Sube 2 metros hacia las nubes.",
-        "isCorrect": false
-      },
-      {
-        "text": "Gira en círculos sin bajar.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Descender significa moverse hacia abajo en dirección al suelo."
-  },
-  {
-    "id": "g2_instrucciones_6",
-    "grade": 2,
-    "category": "instrucciones",
-    "difficulty": "facil",
-    "question": "Si le decimos a Bity «Dar 2 pasos adelante y luego 1 paso atrás», ¿cuántos pasos avanzó en total?",
-    "options": [
-      {
-        "text": "Avanzó 1 paso respecto a su posición inicial.",
-        "isCorrect": true
-      },
-      {
-        "text": "Avanzó 3 pasos hacia adelante.",
-        "isCorrect": false
-      },
-      {
-        "text": "No se movió nada.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Dar 2 pasos hacia adelante y retroceder 1 paso deja a Bity a 1 paso de distancia del inicio."
+    "explanation": "Una instrucción es un mandato ejecutable, no una simple expresión de deseo."
   },
   {
     "id": "g2_instrucciones_7",
@@ -1225,11 +1225,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "1. Saltar hacia atrás. 2. Irse sin el bloque.",
+        "text": "1. Caminar. 2. Irse sin levantar el bloque.",
         "isCorrect": false
       }
     ],
-    "explanation": "Primero hay que posicionarse junto al objeto para luego agacharse y agarrarlo con éxito."
+    "explanation": "Primero hay que desplazarse hasta el objeto, descender y finalmente tomarlo."
   },
   {
     "id": "g2_instrucciones_8",
@@ -1247,11 +1247,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Mucho después de cruzar la línea.",
+        "text": "Mucho después de haber cruzado la línea.",
         "isCorrect": false
       }
     ],
-    "explanation": "La orden establece claramente el punto de frenado al llegar a la línea roja indicada."
+    "explanation": "La orden establece una condición de parada precisa al alcanzar la línea."
   },
   {
     "id": "g2_instrucciones_9",
@@ -1265,15 +1265,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "El robot se duplica en dos robots.",
+        "text": "El robot se divide en dos robots iguales.",
         "isCorrect": false
       },
       {
-        "text": "Vuela por el aire con superpoderes.",
+        "text": "El robot vuela por el aire.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las órdenes deben ser coherentes; un robot no puede moverse en direcciones opuestas simultáneamente."
+    "explanation": "Órdenes opuestas simultáneas son incompatibles físicamente."
   },
   {
     "id": "g2_instrucciones_10",
@@ -1287,22 +1287,22 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Para que Bity descanse una hora.",
+        "text": "Para que Bity descanse mucho tiempo.",
         "isCorrect": false
       },
       {
-        "text": "Porque las instrucciones se borran solas.",
+        "text": "Porque las órdenes se borran solas si no esperamos.",
         "isCorrect": false
       }
     ],
-    "explanation": "Verificar cada paso asegura que el robot esté donde esperamos antes de iniciar la siguiente orden."
+    "explanation": "Verificar la posición intermedia garantiza que la siguiente acción se ejecute desde el punto correcto."
   },
   {
     "id": "g2_instrucciones_11",
     "grade": 2,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "Si Bity necesita recorrer 4 casilleros, ¿cuál instrucción cumple esa meta?",
+    "question": "Si Bity necesita recorrer una distancia de 4 casilleros, ¿cuál instrucción cumple esa meta?",
     "options": [
       {
         "text": "Avanzar 4 casilleros",
@@ -1324,22 +1324,22 @@ const BITY_QUESTION_BANK = [
     "grade": 2,
     "category": "instrucciones",
     "difficulty": "facil",
-    "question": "En un semáforo de autos, la luz roja es una instrucción que significa:",
+    "question": "En un semáforo peatonal, la luz roja es una instrucción que significa:",
     "options": [
       {
-        "text": "Detener la marcha por completo.",
+        "text": "Detenerse y esperar en la vereda sin cruzar.",
         "isCorrect": true
       },
       {
-        "text": "Acelerar con más fuerza.",
+        "text": "Cruzar corriendo rápidamente.",
         "isCorrect": false
       },
       {
-        "text": "Tocar la bocina y seguir.",
+        "text": "Cerrar los ojos y caminar.",
         "isCorrect": false
       }
     ],
-    "explanation": "La luz roja es una orden universal de detención vehicular."
+    "explanation": "La luz roja peatonal ordena esperar de forma segura hasta que el paso esté habilitado."
   },
   {
     "id": "g2_programacion_1",
@@ -1353,7 +1353,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Una película que miramos en la televisión.",
+        "text": "Una película animada que miramos en televisión.",
         "isCorrect": false
       },
       {
@@ -1361,7 +1361,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Un programa es una secuencia de instrucciones preparadas para que la computadora las ejecute paso a paso."
+    "explanation": "Un programa es una secuencia estructurada de órdenes para resolver una tarea."
   },
   {
     "id": "g2_programacion_2",
@@ -1379,11 +1379,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Para que nadie las pueda leer.",
+        "text": "Para que nadie las pueda entender.",
         "isCorrect": false
       }
     ],
-    "explanation": "El orden de la lista determina exactamente la secuencia de acciones que realizará la máquina."
+    "explanation": "El orden de la lista determina la secuencia temporal en que se realizan las acciones."
   },
   {
     "id": "g2_programacion_3",
@@ -1397,15 +1397,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Bity se rebeló y no quiere jugar.",
+        "text": "En que la computadora cambió las órdenes por su cuenta.",
         "isCorrect": false
       },
       {
-        "text": "El cohete cambió de planeta solo.",
+        "text": "En que la meta se movió de planeta sola.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los errores en un programa se originan en las instrucciones que les dimos y podemos corregirlos."
+    "explanation": "Los errores en el resultado se originan en las instrucciones dadas por el programador."
   },
   {
     "id": "g2_programacion_4",
@@ -1419,15 +1419,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Construye cables de metal con martillo.",
+        "text": "Espera a que el robot aprenda solo sin darle órdenes.",
         "isCorrect": false
       },
       {
-        "text": "Espera a que el robot aprenda solo sin ayuda.",
+        "text": "Le pide al robot que adivine el juego.",
         "isCorrect": false
       }
     ],
-    "explanation": "Programar un robot consiste en definir las órdenes que controlan sus acciones y su camino."
+    "explanation": "Programar es la acción humana de diseñar las órdenes que la máquina ejecutará."
   },
   {
     "id": "g2_programacion_5",
@@ -1441,7 +1441,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Porque la computadora no funciona si no usamos papel.",
+        "text": "Porque la computadora no enciende si no usamos papel.",
         "isCorrect": false
       },
       {
@@ -1449,21 +1449,21 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Planificar previamente evita errores y nos permite ordenar el recorrido de manera lógica."
+    "explanation": "Planificar previamente organiza las ideas y previene equivocaciones."
   },
   {
     "id": "g2_programacion_6",
     "grade": 2,
     "category": "programacion",
     "difficulty": "facil",
-    "question": "Si programamos un juego donde Bity salta al presionar un botón, ¿qué le enseñamos a la máquina?",
+    "question": "Si programamos un juego donde Bity salta al presionar la tecla espacio, ¿qué le enseñamos a la máquina?",
     "options": [
       {
-        "text": "Que cuando alguien toque ese botón, debe ejecutar la instrucción de saltar.",
+        "text": "Que cuando alguien toque esa tecla, debe ejecutar la instrucción de saltar.",
         "isCorrect": true
       },
       {
-        "text": "Que apague la pantalla cuando toquen el botón.",
+        "text": "Que apague la pantalla cuando toquen la tecla.",
         "isCorrect": false
       },
       {
@@ -1471,7 +1471,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Programamos una conexión clara: al presionar un botón, se activa una instrucción determinada."
+    "explanation": "Se vincula una entrada del usuario con una instrucción programada de salto."
   },
   {
     "id": "g2_programacion_7",
@@ -1481,19 +1481,19 @@ const BITY_QUESTION_BANK = [
     "question": "¿Qué significa que un programa se ejecute paso a paso?",
     "options": [
       {
-        "text": "Que realiza la primera instrucción, luego la segunda, luego la tercera, en orden.",
+        "text": "Que realiza la primera instrucción, luego la segunda y luego la tercera, en orden.",
         "isCorrect": true
       },
       {
-        "text": "Que hace todas las instrucciones al mismo milisegundo a la vez.",
+        "text": "Que hace todas las instrucciones al mismo instante.",
         "isCorrect": false
       },
       {
-        "text": "Que elige solo la última instrucción.",
+        "text": "Que ejecuta solo la última instrucción de la lista.",
         "isCorrect": false
       }
     ],
-    "explanation": "La ejecución secuencial avanza ordenadamente desde el primer paso hasta el último."
+    "explanation": "La ejecución secuencial avanza ordenadamente instrucción por instrucción."
   },
   {
     "id": "g2_programacion_8",
@@ -1507,7 +1507,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Saltar, girar, retroceder, dormir.",
+        "text": "Saltar, girar, retroceder, detenerse.",
         "isCorrect": false
       },
       {
@@ -1515,7 +1515,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Se alterna el avance hasta la moneda con la instrucción de agarrarla para cada una."
+    "explanation": "La secuencia debe combinar desplazamientos con acciones de recolección en cada posición."
   },
   {
     "id": "g2_programacion_9",
@@ -1529,15 +1529,15 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Sí, cambian de idea cuando se aburren.",
+        "text": "Sí, cambian de idea cuando están encendidas mucho tiempo.",
         "isCorrect": false
       },
       {
-        "text": "Sí, hacen lo que quieren según el clima.",
+        "text": "Sí, inventan órdenes nuevas según el clima.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las computadoras son máquinas estrictas que siguen las instrucciones sin modificarlas."
+    "explanation": "Las máquinas son estrictamente deterministas: siguen el programa sin alteraciones."
   },
   {
     "id": "g2_programacion_10",
@@ -1555,11 +1555,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Porque es muy largo y difícil de entender.",
+        "text": "Porque es muy largo y nadie lo entiende.",
         "isCorrect": false
       }
     ],
-    "explanation": "El éxito de un programa se demuestra cuando cumple la misión planificada de forma correcta."
+    "explanation": "El éxito de un programa se comprueba cuando cumple la meta esperada de forma correcta."
   },
   {
     "id": "g2_programacion_11",
@@ -1581,7 +1581,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "La acción de festejo al llegar a la meta debe ubicarse al concluir el recorrido."
+    "explanation": "La instrucción de celebración debe ubicarse al concluir el recorrido hacia la meta."
   },
   {
     "id": "g2_programacion_12",
@@ -1599,11 +1599,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Memorizar palabras difíciles sin sentido.",
+        "text": "Memorizar listas sin entender qué significan.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación estimula el pensamiento lógico y la resolución metódica de desafíos."
+    "explanation": "La programación fomenta el razonamiento lógico, el orden y la resolución metódica de problemas."
   },
   {
     "id": "g2_algoritmos_1",
@@ -1617,7 +1617,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Un botón roto, un dibujo y una pausa.",
+        "text": "Un dibujo, una pausa y nada más.",
         "isCorrect": false
       },
       {
@@ -1625,58 +1625,58 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Todo algoritmo comienza en un estado inicial, ejecuta pasos ordenados y alcanza una solución."
+    "explanation": "Todo algoritmo parte de un estado inicial, ejecuta pasos secuenciales y arriba a una meta."
   },
   {
     "id": "g2_algoritmos_2",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Algoritmo para cruzar la calle: 1. Llegar a la esquina, 2. Mirar el semáforo... ¿cuál es el paso 3?",
+    "question": "¿Por qué tenemos que ordenar los pasos de un algoritmo?",
     "options": [
       {
-        "text": "Cruzar cuando esté en verde para peatones.",
+        "text": "Porque si los pasos están desordenados, la tarea no se puede completar correctamente.",
         "isCorrect": true
       },
       {
-        "text": "Cerrar los ojos y cruzar corriendo.",
+        "text": "Porque a las computadoras no les gusta que las tareas salgan rápido.",
         "isCorrect": false
       },
       {
-        "text": "Regresar a casa sin cruzar.",
+        "text": "Porque el orden no cambia el resultado final.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una vez verificado el semáforo verde, el siguiente paso seguro es cruzar."
+    "explanation": "El orden asegura que cada acción se realice cuando las condiciones previas están listas."
   },
   {
     "id": "g2_algoritmos_3",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Si un algoritmo para preparar chocolatada mezcla con la cuchara antes de poner la leche, ¿qué sucede?",
+    "question": "En la secuencia para abrir una puerta: 1. Acercarse a la puerta, 2. Girar el picaporte, 3. Empujar la puerta. ¿Qué paso falta si solo decimos «Acercarse y empujar»?",
     "options": [
       {
-        "text": "El orden de los pasos es incorrecto; primero debemos servir la leche.",
+        "text": "Girar el picaporte para destrabar la puerta.",
         "isCorrect": true
       },
       {
-        "text": "La chocolatada queda más rica.",
+        "text": "Pintar la puerta de verde.",
         "isCorrect": false
       },
       {
-        "text": "No cambia nada, la leche aparece sola.",
+        "text": "Cerrar la puerta con llave.",
         "isCorrect": false
       }
     ],
-    "explanation": "No podemos revolver un líquido que todavía no se sirvió en el vaso; el orden es fundamental."
+    "explanation": "Sin accionar el picaporte, la puerta permanece trabada y no se abre."
   },
   {
     "id": "g2_algoritmos_4",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Bity sigue este algoritmo: «Avanzar 2 pasos, Girar a la derecha, Avanzar 1 paso». ¿Cuántos pasos caminó?",
+    "question": "Bity sigue este algoritmo: «Avanzar 2 pasos, Girar a la derecha, Avanzar 1 paso». ¿Cuántos pasos caminó en total?",
     "options": [
       {
         "text": "Caminó 3 pasos en total.",
@@ -1691,7 +1691,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Dio 2 pasos al inicio y 1 paso después de girar: 2 + 1 = 3 pasos."
+    "explanation": "Dio 2 pasos al inicio y 1 paso tras el giro: 2 + 1 = 3 pasos caminados."
   },
   {
     "id": "g2_algoritmos_5",
@@ -1701,7 +1701,7 @@ const BITY_QUESTION_BANK = [
     "question": "Para guardar los útiles en la cartuchera: ¿cuál de estas acciones NO pertenece a ese algoritmo?",
     "options": [
       {
-        "text": "Regar una planta del jardín con agua.",
+        "text": "Regar una planta del jardín.",
         "isCorrect": true
       },
       {
@@ -1713,51 +1713,51 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Regar una planta es una acción ajena a la tarea de guardar útiles escolares."
+    "explanation": "Regar una planta es una acción ajena a la tarea de guardar útiles en la cartuchera."
   },
   {
     "id": "g2_algoritmos_6",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "¿Por qué una receta de cocina es un ejemplo claro de algoritmo?",
+    "question": "¿Por qué una receta sencilla para hacer una ensalada de frutas es un algoritmo?",
     "options": [
       {
-        "text": "Porque tiene una lista de ingredientes y pasos ordenados para preparar una comida.",
+        "text": "Porque indica los pasos ordenados que debemos seguir para prepararla.",
         "isCorrect": true
       },
       {
-        "text": "Porque las comidas se preparan sin ninguna orden.",
+        "text": "Porque las frutas se pelan y cortan solas sin pasos.",
         "isCorrect": false
       },
       {
-        "text": "Porque la cocina usa computadoras gigantes.",
+        "text": "Porque solo se puede hacer con una computadora.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una receta detalla los pasos secuenciales necesarios para cocinar un plato con éxito."
+    "explanation": "Una receta es un conjunto estructurado de pasos orientados a preparar un plato."
   },
   {
     "id": "g2_algoritmos_7",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para enviar una carta: 1. Escribir la carta, 2. Meterla en el sobre... ¿cuál es el paso siguiente?",
+    "question": "Para enviar un dibujo por sobre: 1. Poner el dibujo en el sobre, 2. Cerrar el sobre, 3. Escribir el destinatario. ¿Cuál es el paso 1?",
     "options": [
       {
-        "text": "Cerrar el sobre y poner la dirección.",
+        "text": "Poner el dibujo adentro del sobre.",
         "isCorrect": true
+      },
+      {
+        "text": "Cerrar el sobre vacío.",
+        "isCorrect": false
       },
       {
         "text": "Romper el sobre en pedacitos.",
         "isCorrect": false
-      },
-      {
-        "text": "Escribir la carta de nuevo adentro del sobre cerrado.",
-        "isCorrect": false
       }
     ],
-    "explanation": "Después de colocar la carta adentro, se sella el sobre y se indica el destinatario."
+    "explanation": "El paso inicial es colocar el contenido adentro del sobre."
   },
   {
     "id": "g2_algoritmos_8",
@@ -1771,91 +1771,91 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Se queda nadando en el charco.",
+        "text": "Se queda parado dentro del agua.",
         "isCorrect": false
       },
       {
-        "text": "Da la vuelta y se va al inicio.",
+        "text": "Vuelve al punto de partida.",
         "isCorrect": false
       }
     ],
-    "explanation": "El algoritmo le indica una acción concreta de salto para evitar mojarse."
+    "explanation": "La acción de salto permite sobrepasar el obstáculo limpiamente."
   },
   {
     "id": "g2_algoritmos_9",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "¿Qué significa que un algoritmo sea eficiente para Bity?",
+    "question": "Algoritmo para cruzar la calle: 1. Llegar a la esquina, 2. Mirar el semáforo peatonal... ¿cuál es el paso 3?",
     "options": [
       {
-        "text": "Que resuelve la tarea de forma clara y sin dar vueltas innecesarias.",
+        "text": "Cruzar cuando la luz peatonal esté en verde.",
         "isCorrect": true
       },
       {
-        "text": "Que tarda horas en moverse un solo metro.",
+        "text": "Cruzar corriendo con luz roja.",
         "isCorrect": false
       },
       {
-        "text": "Que tiene cien pasos que no sirven para nada.",
+        "text": "Regresar a casa sin cruzar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un algoritmo eficiente alcanza la solución con la menor cantidad de pasos necesarios."
+    "explanation": "El cruce seguro se realiza cuando la señal peatonal autoriza el paso en verde."
   },
   {
     "id": "g2_algoritmos_10",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Para apagar una lámpara: 1. Acercarse al interruptor, 2. Presionar el botón... ¿cuál es el resultado?",
+    "question": "Para apagar una lámpara: 1. Acercarse a la perilla, 2. Presionar el interruptor... ¿cuál es el resultado?",
     "options": [
       {
         "text": "La lámpara se apaga.",
         "isCorrect": true
       },
       {
-        "text": "La lámpara se rompe.",
+        "text": "La lámpara cambia de lugar sola.",
         "isCorrect": false
       },
       {
-        "text": "La lámpara cambia de habitación.",
+        "text": "La lámpara se enciende más fuerte.",
         "isCorrect": false
       }
     ],
-    "explanation": "Presionar el interruptor de apagado corta la luz y logra el objetivo del algoritmo."
+    "explanation": "Accionar el interruptor de una lámpara encendida interrumpe la corriente y la apaga."
   },
   {
     "id": "g2_algoritmos_11",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Si cambiamos el orden de los pasos en el algoritmo para ponerse los zapatos, ¿qué problema puede haber?",
+    "question": "Si cambiamos el orden de los pasos al vestirnos e intentamos poner los zapatos antes que las medias, ¿qué sucede?",
     "options": [
       {
-        "text": "Podríamos intentar ponernos los zapatos antes que las medias.",
+        "text": "No podemos ponernos las medias porque los zapatos cubren los pies.",
         "isCorrect": true
       },
       {
-        "text": "Los zapatos cambian de color solos.",
+        "text": "Las medias se ponen solas por encima.",
         "isCorrect": false
       },
       {
-        "text": "La puerta de casa se abre sola.",
+        "text": "No cambia nada, es exactamente igual.",
         "isCorrect": false
       }
     ],
-    "explanation": "El orden lógico es poner primero las medias y luego el calzado por encima."
+    "explanation": "Invertir el orden lógico hace imposible completar la tarea."
   },
   {
     "id": "g2_algoritmos_12",
     "grade": 2,
     "category": "algoritmos",
     "difficulty": "facil",
-    "question": "Cuando un algoritmo se ejecuta correctamente de principio a fin, ¿qué logramos?",
+    "question": "Cuando un algoritmo de tres pasos se completa con éxito, ¿qué conseguimos?",
     "options": [
       {
-        "text": "Alcanzar la meta o solución que buscábamos.",
+        "text": "Resolver la tarea de forma correcta siguiendo cada paso en su momento.",
         "isCorrect": true
       },
       {
@@ -1867,7 +1867,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "Un algoritmo bien diseñado resuelve completamente la tarea que motivó su creación."
+    "explanation": "Completar la secuencia en el orden debido permite alcanzar la solución buscada."
   },
   {
     "id": "g2_matematica_1",
@@ -2138,29 +2138,29 @@ const BITY_QUESTION_BANK = [
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Bity tiene la secuencia: 1. Caminar a la puerta, 2. Entrar a la nave. ¿Qué instrucción falta en el medio?",
+    "question": "Bity tiene la secuencia: 1. Caminar a la puerta, 2. Entrar a la nave. ¿Qué instrucción falta en el medio para poder ingresar?",
     "options": [
       {
         "text": "Abrir la puerta",
         "isCorrect": true
       },
       {
-        "text": "Pintar la nave de rojo",
+        "text": "Pintar la puerta",
         "isCorrect": false
       },
       {
-        "text": "Apagar las luces de la ciudad",
+        "text": "Apagar las luces de la sala",
         "isCorrect": false
       }
     ],
-    "explanation": "Para entrar a la nave, antes de pasar por la abertura es indispensable abrir la puerta."
+    "explanation": "Para entrar a la nave, antes de cruzar la abertura es indispensable abrir la puerta."
   },
   {
     "id": "g3_instrucciones_2",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Para guardar un juguete en una caja con tapa: ¿cuál instrucción está fuera de lugar si la ponemos al inicio?",
+    "question": "Para guardar un juguete en una caja con tapa: ¿cuál instrucción está fuera de lugar si la ponemos al inicio de todo?",
     "options": [
       {
         "text": "Cerrar la tapa de la caja",
@@ -2171,62 +2171,62 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Levantar el juguete",
+        "text": "Levantar el juguete del suelo",
         "isCorrect": false
       }
     ],
-    "explanation": "No podemos cerrar la tapa antes de haber guardado el juguete adentro de la caja."
+    "explanation": "No se puede cerrar la tapa antes de haber colocado el juguete adentro de la caja."
   },
   {
     "id": "g3_instrucciones_3",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Bity recibe estas instrucciones: 1. Avanzar 2 pasos, 2. Tomar la llave, 3. Abrir el cofre. Si falta el paso 2, ¿qué pasa?",
+    "question": "Bity recibe estas instrucciones: 1. Avanzar 2 pasos, 2. Tomar la llave, 3. Abrir el cofre. Si falta el paso 2, ¿qué problema ocurre?",
     "options": [
       {
         "text": "Bity no puede abrir el cofre porque no tiene la llave en sus manos.",
         "isCorrect": true
       },
       {
-        "text": "El cofre se abre solo por arte de magia.",
+        "text": "El cofre se abre solo sin necesidad de llave.",
         "isCorrect": false
       },
       {
-        "text": "Bity vuela por el cielo.",
+        "text": "Bity atraviesa el cofre cerrado.",
         "isCorrect": false
       }
     ],
-    "explanation": "Sin la llave que se obtenía en el paso 2, el cofre permanece cerrado."
+    "explanation": "Sin la llave recogida en el paso 2, la cerradura del cofre permanece cerrada."
   },
   {
     "id": "g3_instrucciones_4",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Para lavarse los dientes: 1. Poner pasta, 2. Cepillarse, 3. Enjuagarse. ¿Qué instrucción está fuera de lugar si va al final?",
+    "question": "¿Qué problema tiene una orden que no explica bien qué hacer, como por ejemplo «Moverse un poco»?",
     "options": [
       {
-        "text": "Poner pasta en el cepillo cuando ya nos enjuagamos.",
+        "text": "Es una orden imprecisa y el robot no sabe hacia dónde ni cuántos pasos dar.",
         "isCorrect": true
       },
       {
-        "text": "Enjuagarse la boca.",
+        "text": "Es una orden perfecta que cualquier computadora entiende.",
         "isCorrect": false
       },
       {
-        "text": "Guardar el cepillo limpio.",
+        "text": "Hace que el robot avance el doble de rápido.",
         "isCorrect": false
       }
     ],
-    "explanation": "La pasta dental se coloca al comienzo del cepillado, nunca después de terminar."
+    "explanation": "Una orden ambigua carece de parámetros y la máquina no sabe cómo interpretarla."
   },
   {
     "id": "g3_instrucciones_5",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Si la meta de Bity está a 3 pasos y la orden dice «Avanzar 1 paso», ¿qué instrucción falta para llegar?",
+    "question": "Si la meta de Bity está a 3 pasos de distancia y la orden dice «Avanzar 1 paso», ¿qué instrucción falta para llegar?",
     "options": [
       {
         "text": "Avanzar 2 pasos más.",
@@ -2237,33 +2237,33 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Girar en círculos sin avanzar.",
+        "text": "Girar en el mismo lugar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Para completar los 3 pasos necesarios se requiere sumar una orden de 2 pasos adicionales."
+    "explanation": "Para cubrir los 3 pasos totales se deben sumar 2 pasos adicionales al paso inicial."
   },
   {
     "id": "g3_instrucciones_6",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Bity debe saltar un pozo: 1. Correr hacia el pozo, 2. Aterrizar del otro lado. ¿Qué instrucción crucial falta?",
+    "question": "Bity debe cruzar un pozo: 1. Correr hacia el pozo, 2. Aterrizar del otro lado. ¿Qué instrucción fundamental falta entre ambos pasos?",
     "options": [
       {
-        "text": "Saltar con fuerza justo antes del pozo.",
+        "text": "Saltar con fuerza sobre el pozo.",
         "isCorrect": true
       },
       {
-        "text": "Sentarse dentro del pozo.",
+        "text": "Caminar hacia el fondo del pozo.",
         "isCorrect": false
       },
       {
-        "text": "Cerrar los ojos y caminar hacia abajo.",
+        "text": "Detenerse para siempre.",
         "isCorrect": false
       }
     ],
-    "explanation": "El impulso del salto es el paso indispensable para elevarse sobre el pozo."
+    "explanation": "El impulso del salto es la orden necesaria para sobrevolar el espacio del pozo."
   },
   {
     "id": "g3_instrucciones_7",
@@ -2273,15 +2273,15 @@ const BITY_QUESTION_BANK = [
     "question": "En una lista de instrucciones, ¿por qué cada orden debe estar en su posición exacta?",
     "options": [
       {
-        "text": "Porque si una orden se ejecuta antes de tiempo, la acción puede fallar.",
+        "text": "Porque si una orden se ejecuta antes de tiempo, la acción falla.",
         "isCorrect": true
       },
       {
-        "text": "Porque a los robots les gusta leer trabalenguas.",
+        "text": "Porque el orden de las instrucciones nunca influye.",
         "isCorrect": false
       },
       {
-        "text": "No importa el orden, todo sale igual.",
+        "text": "Porque a los robots les da igual qué hacer primero.",
         "isCorrect": false
       }
     ],
@@ -2292,10 +2292,10 @@ const BITY_QUESTION_BANK = [
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Bity quiere pintar una pared: 1. Mojar el pincel en la pintura, 2. Pasar el pincel por la pared. ¿Qué orden falta al terminar?",
+    "question": "Bity quiere pintar una pared: 1. Mojar el pincel en la pintura, 2. Pasar el pincel por la pared. ¿Qué orden corresponde colocar al terminar?",
     "options": [
       {
-        "text": "Limpiar y guardar el pincel.",
+        "text": "Limpiar y guardar el pincel en su lugar.",
         "isCorrect": true
       },
       {
@@ -2303,11 +2303,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Romper la pared.",
+        "text": "Desarmar la pared.",
         "isCorrect": false
       }
     ],
-    "explanation": "Al concluir la tarea de pintar, la instrucción de cierre adecuada es limpiar los utensilios."
+    "explanation": "Al concluir la tarea, la instrucción final correcta es limpiar y guardar los útiles."
   },
   {
     "id": "g3_instrucciones_9",
@@ -2317,7 +2317,7 @@ const BITY_QUESTION_BANK = [
     "question": "Si un robot debe cruzar un puente levadizo: ¿qué instrucción debe verificar antes de cruzar?",
     "options": [
       {
-        "text": "Comprobar que el puente esté bajo y seguro.",
+        "text": "Comprobar que el puente esté bajo y seguro para pisar.",
         "isCorrect": true
       },
       {
@@ -2325,18 +2325,18 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Girar 5 veces sobre sí mismo.",
+        "text": "Girar cinco veces sobre sí mismo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Verificar que el puente esté apoyado previene que el robot caiga al vacío."
+    "explanation": "Verificar que el puente esté abajo previene que el robot caiga al agua."
   },
   {
     "id": "g3_instrucciones_10",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Tenemos la secuencia: 1. Abrir la heladera, 2. Sacar la manzana, 3. ¿...?, 4. Comer la manzana. ¿Cuál es el paso 3?",
+    "question": "Tenemos la secuencia: 1. Abrir la heladera, 2. Sacar la manzana, 3. ¿...?, 4. Comer la manzana. ¿Cuál es el paso 3 más adecuado?",
     "options": [
       {
         "text": "Lavar la manzana con agua limpia.",
@@ -2347,18 +2347,18 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Pintar la manzana de azul.",
+        "text": "Pintar la manzana con témpera.",
         "isCorrect": false
       }
     ],
-    "explanation": "Antes de ingerir la fruta fresca, el paso higiénico correcto es lavarla."
+    "explanation": "Por higiene, antes de ingerir la fruta fresca se debe lavar adecuadamente."
   },
   {
     "id": "g3_instrucciones_11",
     "grade": 3,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Si Bity debe girar hacia el cohete que está a su izquierda, pero la orden dice «Girar a la derecha», ¿qué error hay?",
+    "question": "Si Bity debe girar hacia el cohete que está a su izquierda, pero la orden dice «Girar a la derecha», ¿cuál es el error?",
     "options": [
       {
         "text": "La instrucción tiene la dirección equivocada; debe girar a la izquierda.",
@@ -2373,7 +2373,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       }
     ],
-    "explanation": "El sentido de giro indicado es opuesto al que conduce hacia el cohete."
+    "explanation": "El sentido de giro indicado es opuesto al que conduce hacia la meta."
   },
   {
     "id": "g3_instrucciones_12",
@@ -2387,11 +2387,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Sacar las pilas y guardarlas.",
+        "text": "Sacar las pilas de la linterna.",
         "isCorrect": false
       },
       {
-        "text": "Tapar la linterna con cinta negra.",
+        "text": "Tapar la linterna con cinta oscura.",
         "isCorrect": false
       }
     ],
@@ -2435,11 +2435,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Poner todas las órdenes mezcladas sin orden.",
+        "text": "Poner todas las órdenes mezcladas sin importar el orden.",
         "isCorrect": false
       }
     ],
-    "explanation": "Para saludar al llegar al destino, la acción de saludo debe ir luego de los pasos de avance."
+    "explanation": "La estructura secuencial refleja el orden temporal exacto de las acciones deseadas."
   },
   {
     "id": "g3_programacion_3",
@@ -2457,187 +2457,187 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Le pide a Bity que haga magia.",
+        "text": "Espera que el robot aprenda solo sin cambiar nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "La corrección metódica consiste en inspeccionar las órdenes y reemplazar la que produce la falla."
+    "explanation": "La revisión sistemática de las órdenes permite localizar y corregir el error."
   },
   {
     "id": "g3_programacion_4",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si un programa tiene la instrucción «Avanzar 5 pasos» pero Bity choca en el paso 3, ¿cómo lo arreglamos?",
+    "question": "¿Por qué una computadora no puede corregir sola una orden equivocada que escribió el usuario?",
     "options": [
       {
-        "text": "Cambiamos la instrucción por «Avanzar 2 pasos» y luego girar para esquivar el obstáculo.",
+        "text": "Porque las computadoras no piensan por sí mismas; cumplen fielmente lo programado.",
         "isCorrect": true
       },
       {
-        "text": "Le decimos que avance 10 pasos con más fuerza.",
+        "text": "Porque prefieren que el juego termine rápido.",
         "isCorrect": false
       },
       {
-        "text": "Dejamos el programa igual.",
+        "text": "Porque las computadoras no saben leer números.",
         "isCorrect": false
       }
     ],
-    "explanation": "Ajustar la cantidad de pasos antes del obstáculo evita la colisión y permite rodearlo."
+    "explanation": "Las computadoras carecen de juicio propio y ejecutan exactamente el código recibido."
   },
   {
     "id": "g3_programacion_5",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Por qué programar es como escribir una receta o un instructivo para un robot?",
+    "question": "Si en un programa colocamos la orden «Girar a la derecha» dos veces seguidas, ¿qué giro realiza Bity?",
     "options": [
       {
-        "text": "Porque le damos el paso a paso exacto que debe seguir para lograr un resultado.",
+        "text": "Gira dos veces seguidas hacia su derecha.",
         "isCorrect": true
       },
       {
-        "text": "Porque a los robots les gusta cocinar pasteles.",
+        "text": "Gira una vez a la derecha y otra a la izquierda.",
         "isCorrect": false
       },
       {
-        "text": "Porque los programas solo sirven para comer.",
+        "text": "No gira nada y camina hacia atrás.",
         "isCorrect": false
       }
     ],
-    "explanation": "Ambos son guías ordenadas de pasos diseñadas para que alguien ejecute una tarea con éxito."
+    "explanation": "Cada instrucción de giro produce un cambio de dirección en el sentido indicado."
   },
   {
     "id": "g3_programacion_6",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si ejecutamos el mismo programa diez veces con las mismas instrucciones, ¿qué hará Bity?",
+    "question": "Para que Bity dibuje un triángulo en el suelo, ¿qué necesita su programa?",
     "options": [
       {
-        "text": "Hará exactamente el mismo recorrido las diez veces.",
+        "text": "Instrucciones que combinen avanzar en línea recta y girar en cada esquina.",
         "isCorrect": true
       },
       {
-        "text": "Hará diez recorridos totalmente diferentes cada vez.",
+        "text": "Solo una instrucción de avanzar 100 pasos.",
         "isCorrect": false
       },
       {
-        "text": "Se olvidará de las órdenes en el segundo intento.",
+        "text": "Ninguna instrucción de giro.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los programas son precisos y repetibles: mismas instrucciones producen siempre el mismo resultado."
+    "explanation": "Trazar una figura poligonal requiere alternar avances lineales con giros en los vértices."
   },
   {
     "id": "g3_programacion_7",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué ventaja tiene probar nuestro programa por partes antes de probarlo completo?",
+    "question": "Si un programa tiene 5 instrucciones y la número 3 tiene un error, ¿qué sucede con las instrucciones 1 y 2?",
     "options": [
       {
-        "text": "Nos permite verificar que los primeros pasos funcionen bien antes de sumar más instrucciones.",
+        "text": "Las instrucciones 1 y 2 se ejecutan normalmente antes de llegar al error.",
         "isCorrect": true
       },
       {
-        "text": "Ninguna, es mejor escribir cien pasos sin mirar.",
+        "text": "No se ejecuta ninguna instrucción desde el principio.",
         "isCorrect": false
       },
       {
-        "text": "Hace que el robot camine más lento.",
+        "text": "Se ejecutan al revés.",
         "isCorrect": false
       }
     ],
-    "explanation": "Probar tramos cortos permite aislar errores y construir soluciones sólidas paso a paso."
+    "explanation": "La ejecución secuencial cumple las primeras órdenes válidas hasta alcanzar el fallo."
   },
   {
     "id": "g3_programacion_8",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Para programar a Bity para que recoja 3 baterías en fila: ¿cuál es la forma correcta?",
+    "question": "¿Qué ventaja tiene guardar nuestro programa de instrucciones en la computadora?",
     "options": [
       {
-        "text": "Avanzar hasta cada batería y ordenar recogerla una por una hasta completar las 3.",
+        "text": "Que podemos volver a probarlo, mejorarlo o reutilizarlo cuando queramos.",
         "isCorrect": true
       },
       {
-        "text": "Ordenar recoger las 3 baterías desde lejos sin moverse.",
+        "text": "Que la computadora se bloquea para siempre.",
         "isCorrect": false
       },
       {
-        "text": "Saltar en el lugar sin avanzar.",
+        "text": "Ninguna, los programas se usan una sola vez.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cada objeto debe alcanzarse físicamente antes de ejecutar la acción de recolección."
+    "explanation": "Almacenar el programa permite la reutilización, la prueba continua y el perfeccionamiento."
   },
   {
     "id": "g3_programacion_9",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué sucede si olvidamos incluir la instrucción de inicio en nuestro programa?",
+    "question": "Si queremos que un personaje salte cuando el jugador presiona un botón, ¿qué vinculamos al programar?",
     "options": [
       {
-        "text": "El robot no sabrá cuándo comenzar y se quedará esperando la orden.",
+        "text": "La acción de presionar el botón con la instrucción de salto del personaje.",
         "isCorrect": true
       },
       {
-        "text": "El robot comienza a correr solo sin parar.",
+        "text": "El botón con apagar la pantalla.",
         "isCorrect": false
       },
       {
-        "text": "La computadora se apaga de golpe.",
+        "text": "El botón con retroceder 10 casilleros.",
         "isCorrect": false
       }
     ],
-    "explanation": "La señal de inicio es el disparador indispensable para que el robot empiece a ejecutar el programa."
+    "explanation": "Se asocia el evento del control con la rutina de movimiento de salto."
   },
   {
     "id": "g3_programacion_10",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Cuál es el rol de quien programa frente a la máquina?",
+    "question": "¿Por qué es importante que las instrucciones tengan nombres claros y comprensibles?",
     "options": [
       {
-        "text": "Es la persona que piensa la solución y le da las órdenes precisas a la máquina.",
+        "text": "Para que cualquier persona pueda leer el programa y entender qué hace.",
         "isCorrect": true
       },
       {
-        "text": "Es un espectador que no puede decidir nada.",
+        "text": "Para que sea imposible de descifrar.",
         "isCorrect": false
       },
       {
-        "text": "Es alguien que solo limpia el teclado.",
+        "text": "Porque las computadoras solo leen palabras secretas.",
         "isCorrect": false
       }
     ],
-    "explanation": "El ser humano aporta la inteligencia y la planificación que guían a la máquina."
+    "explanation": "La legibilidad del código facilita el trabajo en equipo y la detección de fallas."
   },
   {
     "id": "g3_programacion_11",
     "grade": 3,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si queremos que Bity vuelva a su posición de inicio, ¿qué debemos programar?",
+    "question": "Si un robot llega al final de un camino y queremos que vuelva, ¿qué instrucciones agregamos?",
     "options": [
       {
-        "text": "Las instrucciones de retroceso o giro necesarias para regresar al punto de partida.",
+        "text": "Instrucciones de giro y de avance para recorrer el camino de regreso.",
         "isCorrect": true
       },
       {
-        "text": "Una orden para que desaparezca la pantalla.",
+        "text": "Una orden para que se apague la pantalla.",
         "isCorrect": false
       },
       {
-        "text": "Nada, los robots vuelven solos volando.",
+        "text": "Ninguna orden, los robots vuelven solos volando.",
         "isCorrect": false
       }
     ],
-    "explanation": "El regreso requiere instrucciones ordenadas de vuelta o giro hacia el punto de origen."
+    "explanation": "El retorno requiere instrucciones explícitas de cambio de orientación y avance."
   },
   {
     "id": "g3_programacion_12",
@@ -2651,18 +2651,40 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Borrar todo el trabajo para empezar de cero.",
+        "text": "Borrar todo el trabajo para empezar de cero sin motivos.",
         "isCorrect": false
       },
       {
-        "text": "Hacer que el programa sea imposible de entender.",
+        "text": "Hacer que el programa sea confuso.",
         "isCorrect": false
       }
     ],
-    "explanation": "El trabajo colaborativo permite detectar pasos faltantes o desordenados más rápidamente."
+    "explanation": "La revisión entre pares ayuda a detectar omisiones y verificar la calidad de la solución."
   },
   {
     "id": "g3_algoritmos_1",
+    "grade": 3,
+    "category": "algoritmos",
+    "difficulty": "medio",
+    "question": "¿Cómo se llama una lista de pasos ordenados para realizar una tarea o resolver un problema?",
+    "options": [
+      {
+        "text": "Algoritmo",
+        "isCorrect": true
+      },
+      {
+        "text": "Adivinanza",
+        "isCorrect": false
+      },
+      {
+        "text": "Canción infantil",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Un algoritmo es la definición ordenada de pasos que resuelven un problema determinado."
+  },
+  {
+    "id": "g3_algoritmos_2",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
@@ -2684,11 +2706,11 @@ const BITY_QUESTION_BANK = [
     "explanation": "Alterar el orden de los pasos modifica la lógica y puede impedir alcanzar el objetivo."
   },
   {
-    "id": "g3_algoritmos_2",
+    "id": "g3_algoritmos_3",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Para preparar una tostada con manteca: 1. Tostar el pan, 2. Untar la manteca. ¿Qué pasaría si invertimos el orden?",
+    "question": "Para preparar una tostada con manteca: 1. Tostar el pan en la tostadora, 2. Untar la manteca sobre el pan caliente. ¿Qué pasaría si invertimos el orden?",
     "options": [
       {
         "text": "Pondríamos manteca en pan frío antes de meterlo a la tostadora, lo cual es incorrecto.",
@@ -2706,7 +2728,7 @@ const BITY_QUESTION_BANK = [
     "explanation": "La manteca se derrite sobre el pan caliente; colocarla antes puede quemar la tostadora."
   },
   {
-    "id": "g3_algoritmos_3",
+    "id": "g3_algoritmos_4",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
@@ -2721,14 +2743,14 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Bity atraviesa el metal como un fantasma.",
+        "text": "La escotilla se abre sola aunque no le demos la orden.",
         "isCorrect": false
       }
     ],
     "explanation": "Sin abrir el acceso a la cabina, Bity no puede abordar el cohete."
   },
   {
-    "id": "g3_algoritmos_4",
+    "id": "g3_algoritmos_5",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
@@ -2750,7 +2772,7 @@ const BITY_QUESTION_BANK = [
     "explanation": "Al ordenar de menor a mayor se ubica primero el 2, luego el 5 y finalmente el 8."
   },
   {
-    "id": "g3_algoritmos_5",
+    "id": "g3_algoritmos_6",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
@@ -2772,48 +2794,26 @@ const BITY_QUESTION_BANK = [
     "explanation": "La secuencia sigue un patrón alternado: los pasos impares son «Avanzar» y los pares son «Girar»."
   },
   {
-    "id": "g3_algoritmos_6",
-    "grade": 3,
-    "category": "algoritmos",
-    "difficulty": "medio",
-    "question": "¿Por qué decimos que un algoritmo tiene un número finito de pasos?",
-    "options": [
-      {
-        "text": "Porque debe tener un final claro para resolver el problema y no seguir para siempre.",
-        "isCorrect": true
-      },
-      {
-        "text": "Porque los pasos no se pueden contar.",
-        "isCorrect": false
-      },
-      {
-        "text": "Porque nunca debe terminar de ejecutarse.",
-        "isCorrect": false
-      }
-    ],
-    "explanation": "Un algoritmo útil debe concluir al alcanzar la solución buscada."
-  },
-  {
     "id": "g3_algoritmos_7",
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Algoritmo para pintar un cuadro: 1. Preparar la tela, 2. Dibujar las formas, 3. Pintar con colores. ¿Cuál es el paso 1?",
+    "question": "En este algoritmo para regar una planta: 1. Llenar la regadera con agua, 2. Guardar la regadera en el armario, 3. Echar agua a la tierra de la maceta. ¿Cuál es el paso que está fuera de lugar?",
     "options": [
       {
-        "text": "Preparar la tela donde se va a pintar.",
+        "text": "El paso 2 (Guardar la regadera), porque primero hay que echar el agua a la maceta y guardar la regadera al final.",
         "isCorrect": true
       },
       {
-        "text": "Colgar el cuadro terminado en la pared.",
+        "text": "El paso 1 (Llenar la regadera), porque la regadera debe usarse vacía.",
         "isCorrect": false
       },
       {
-        "text": "Pintar con colores directamente en el aire.",
+        "text": "El paso 3 (Echar el agua), porque las plantas no necesitan agua.",
         "isCorrect": false
       }
     ],
-    "explanation": "Toda obra comienza preparando la superficie base de trabajo."
+    "explanation": "Guardar la regadera debe ser el paso final de la tarea; si la guardamos en el paso 2, no podemos regar la tierra de la planta."
   },
   {
     "id": "g3_algoritmos_8",
@@ -2871,7 +2871,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Chocar contra todas las paredes posibles.",
+        "text": "Chocar contra las paredes.",
         "isCorrect": false
       },
       {
@@ -2886,22 +2886,22 @@ const BITY_QUESTION_BANK = [
     "grade": 3,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Si un algoritmo tiene un paso repetido innecesariamente, como «Girar a la derecha 4 veces seguidas»: ¿qué hace?",
+    "question": "Si un algoritmo tiene un paso repetido innecesariamente, como «Girar a la derecha 4 veces seguidas en el mismo lugar»: ¿hacia dónde queda mirando?",
     "options": [
       {
-        "text": "Da una vuelta completa y queda mirando al mismo lugar donde ya estaba.",
+        "text": "Queda mirando exactamente al mismo lugar donde ya estaba.",
         "isCorrect": true
       },
       {
-        "text": "Avanza 10 kilómetros hacia adelante.",
+        "text": "Queda mirando hacia atrás.",
         "isCorrect": false
       },
       {
-        "text": "Se apaga para siempre.",
+        "text": "Queda mirando hacia el suelo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cuatro giros de 90° devuelven al robot exactamente a su orientación original."
+    "explanation": "Cuatro giros de 90° completan 360° y devuelven al robot a su orientación original."
   },
   {
     "id": "g3_algoritmos_12",
@@ -2911,7 +2911,7 @@ const BITY_QUESTION_BANK = [
     "question": "¿Por qué es útil compartir nuestro algoritmo con un compañero para que lo lea?",
     "options": [
       {
-        "text": "Para que compruebe si los pasos son claros y fáciles de seguir sin confusiones.",
+        "text": "Para comprobar si los pasos son claros y fáciles de seguir sin confusiones.",
         "isCorrect": true
       },
       {
@@ -2919,11 +2919,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Porque los algoritmos son secretos que no se leen.",
+        "text": "Porque los algoritmos no deben leerse nunca.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un segundo lector ayuda a comprobar si las instrucciones son claras y comprensibles."
+    "explanation": "Un segundo lector ayuda a comprobar si las instrucciones son comprensibles y no dejan dudas."
   },
   {
     "id": "g3_matematica_1",
@@ -3282,18 +3282,18 @@ const BITY_QUESTION_BANK = [
     "grade": 4,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "¿Por qué decimos que una computadora no interpreta «intenciones» y solo lee instrucciones?",
+    "question": "¿Por qué un robot no debe adivinar lo que queremos que haga y necesita instrucciones claras?",
     "options": [
       {
-        "text": "Porque no puede adivinar lo que querías hacer; ejecuta únicamente lo que le ordenaste al pie de la letra.",
+        "text": "Porque no tiene pensamiento propio; solo puede ejecutar con exactitud las órdenes que se le programaron.",
         "isCorrect": true
       },
       {
-        "text": "Porque las computadoras prefieren hacer lo contrario de lo que les pedimos.",
+        "text": "Porque prefiere hacer lo contrario de lo que le pedimos.",
         "isCorrect": false
       },
       {
-        "text": "Porque las computadoras leen las mentes de los niños.",
+        "text": "Porque los robots adivinan el futuro.",
         "isCorrect": false
       }
     ],
@@ -3355,7 +3355,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": true
       },
       {
-        "text": "Dejar «Avanzar 2 casilleros» y esperar que Bity vuele.",
+        "text": "Dejar «Avanzar 2 casilleros» sin corregir nada.",
         "isCorrect": false
       },
       {
@@ -3395,11 +3395,11 @@ const BITY_QUESTION_BANK = [
     "question": "Si Bity debe recoger una llave y abrir un cofre, ¿por qué no podemos poner «Abrir cofre» antes de «Recoger llave»?",
     "options": [
       {
-        "text": "Porque en el mundo real y en la programación se necesitan las herramientas antes de usarlas.",
+        "text": "Porque se necesita tener la llave en la mano antes de poder abrir la cerradura del cofre.",
         "isCorrect": true
       },
       {
-        "text": "Porque los cofres se enojan si no los saludas primero.",
+        "text": "Porque el cofre se puede abrir con las manos vacías sin la llave.",
         "isCorrect": false
       },
       {
@@ -3436,550 +3436,550 @@ const BITY_QUESTION_BANK = [
     "grade": 4,
     "category": "instrucciones",
     "difficulty": "medio",
-    "question": "Si queremos que Bity se detenga exactamente en la meta, ¿qué instrucción debe cerrar la secuencia de movimiento?",
+    "question": "Si queremos que Bity se detenga exactamente en la meta, ¿qué instrucción colocamos al final?",
     "options": [
       {
         "text": "La instrucción de detenerse o finalizar la misión.",
         "isCorrect": true
       },
       {
-        "text": "Una instrucción para seguir corriendo sin control.",
+        "text": "Una instrucción de reiniciar todo el nivel.",
         "isCorrect": false
       },
       {
-        "text": "Una orden para volver al inicio sin frenar.",
+        "text": "Una orden de saltar hacia atrás.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una orden de detención sella el cumplimiento exitoso del objetivo."
+    "explanation": "La instrucción de detención concluye el recorrido de forma controlada en la posición objetivo."
   },
   {
     "id": "g4_programacion_1",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Por qué es importante que un programa sea fácil de leer para otras personas?",
+    "question": "¿Cuál es la función principal de programar en una computadora o robot?",
     "options": [
       {
-        "text": "Para que otros programadores o compañeros puedan entender cómo funciona y ayudar a mejorarlo.",
+        "text": "Darle una serie de instrucciones organizadas para que resuelva una tarea o problema.",
         "isCorrect": true
       },
       {
-        "text": "Para que la computadora trabaje el doble de rápido.",
+        "text": "Hacer dibujos en la pantalla sin ningún orden.",
         "isCorrect": false
       },
       {
-        "text": "No importa, los programas solo los entiende una sola persona.",
+        "text": "Desarmar el teclado y el monitor.",
         "isCorrect": false
       }
     ],
-    "explanation": "La claridad en el código facilita el trabajo colaborativo y la corrección de errores."
+    "explanation": "Programar es estructurar soluciones mediante secuencias de órdenes ejecutables."
   },
   {
     "id": "g4_programacion_2",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si Bity ejecuta un programa y se choca contra una pared en el paso 4, ¿cómo encontramos el error?",
+    "question": "Si un robot ejecuta una instrucción equivocada que escribimos nosotros, ¿de quién es la responsabilidad?",
     "options": [
       {
-        "text": "Miramos qué orden pusimos en el paso 4 y la cambiamos por una dirección libre.",
+        "text": "Del programador que escribió la instrucción; el robot solo cumplió la orden recibida.",
         "isCorrect": true
       },
       {
-        "text": "Cambiamos todas las órdenes del paso 1 al 10 al azar sin mirar.",
+        "text": "Del robot, porque desobedeció a propósito.",
         "isCorrect": false
       },
       {
-        "text": "Rompemos el teclado de la computadora.",
+        "text": "De la pantalla por mostrar la orden.",
         "isCorrect": false
       }
     ],
-    "explanation": "Localizar el paso exacto de la falla permite corregir puntualmente la instrucción equivocada."
+    "explanation": "El robot es un ejecutor neutral; la lógica proviene del programador."
   },
   {
     "id": "g4_programacion_3",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Al programar una misión de Bity, ¿qué significa descomponer la tarea en partes más pequeñas?",
+    "question": "¿Por qué es conveniente dividir un recorrido largo de Bity en pequeños tramos más cortos?",
     "options": [
       {
-        "text": "Dividir el recorrido grande en pasos simples: primero llegar a la esquina, luego girar, luego alcanzar la meta.",
+        "text": "Porque hace que sea más fácil de planificar, programar y revisar paso a paso.",
         "isCorrect": true
       },
       {
-        "text": "Romper el robot en partes de plástico.",
+        "text": "Porque las computadoras solo aceptan 2 pasos por día.",
         "isCorrect": false
       },
       {
-        "text": "Hacer todo de golpe sin pensar en los pasos.",
+        "text": "Para que el juego tarde muchas horas en cargar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Descomponer un problema complejo en metas intermedias facilita encontrar la solución."
+    "explanation": "La descomposición en subtareas simplifica la resolución y facilita encontrar errores."
   },
   {
     "id": "g4_programacion_4",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué diferencia hay entre una persona que usa un videojuego y la persona que lo programa?",
+    "question": "Si Bity tiene que avanzar 5 casillas, pero pusimos «Avanzar 3 casillas», ¿cómo corregimos el programa?",
     "options": [
       {
-        "text": "Quien lo usa juega con las reglas creadas; quien lo programa diseña las reglas y las instrucciones del juego.",
+        "text": "Cambiamos el número de pasos a 5, o agregamos una orden de avanzar 2 casillas más.",
         "isCorrect": true
       },
       {
-        "text": "No hay ninguna diferencia, hacen exactamente lo mismo.",
+        "text": "Borramos todo el juego y no jugamos más.",
         "isCorrect": false
       },
       {
-        "text": "Quien programa solo compra los controles.",
+        "text": "Esperamos que la meta se mueva sola 2 casillas hacia Bity.",
         "isCorrect": false
       }
     ],
-    "explanation": "El programador es el creador de la lógica, desafíos y movimientos del juego."
+    "explanation": "Ajustar el parámetro numérico o añadir el tramo faltante alcanza la distancia requerida."
   },
   {
     "id": "g4_programacion_5",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si un programa tiene dos caminos para que Bity elija: Camino con puente seguro vs Camino con foso de fuego. ¿Cuál programamos?",
+    "question": "¿Por qué las instrucciones de un programa deben escribirse con total precisión?",
     "options": [
       {
-        "text": "Programamos las instrucciones para que Bity cruce por el puente seguro.",
+        "text": "Porque las computadoras interpretan las órdenes de manera literal, sin suponer lo que queríamos decir.",
         "isCorrect": true
       },
       {
-        "text": "Programamos que salte directo al foso de fuego.",
+        "text": "Porque a las computadoras les gustan las órdenes confusas.",
         "isCorrect": false
       },
       {
-        "text": "No programamos nada y dejamos que choque.",
+        "text": "Para que el programa tarde más en funcionar.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación debe buscar la ruta que preserve la integridad del robot."
+    "explanation": "La literalidad del procesamiento exige exactitud en cada parámetro."
   },
   {
     "id": "g4_programacion_6",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Por qué repetimos las pruebas de un programa varias veces antes de darlo por terminado?",
+    "question": "¿Qué puede pasar si cambiamos el orden de las instrucciones en un programa?",
     "options": [
       {
-        "text": "Para comprobar que las instrucciones funcionen bien en todas las situaciones de la misión.",
+        "text": "El robot ejecutará las acciones en una secuencia distinta y puede no alcanzar la meta esperada.",
         "isCorrect": true
       },
       {
-        "text": "Porque la computadora se olvida de las órdenes a los cinco minutos.",
+        "text": "El robot siempre llega a la misma meta sin importar el orden.",
         "isCorrect": false
       },
       {
-        "text": "Para que Bity cambie de color.",
+        "text": "La computadora se apaga de inmediato.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las pruebas reiteradas aseguran que no haya fallas ocultas en diferentes escenarios."
+    "explanation": "El orden de ejecución determina la trayectoria y el desenlace de la tarea."
   },
   {
     "id": "g4_programacion_7",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si programamos un robot para regar las plantas del jardín, ¿qué instrucciones básicas debe tener?",
+    "question": "Al programar una animación de Bity caminando, ¿qué órdenes se repiten de forma ordenada?",
     "options": [
       {
-        "text": "Moverse hacia las plantas, abrir el agua de riego sobre la tierra y cerrar el agua al terminar.",
+        "text": "Mover la pierna derecha, mover la pierna izquierda y avanzar un paso.",
         "isCorrect": true
       },
       {
-        "text": "Cortar las flores con tijera y tirarlas.",
+        "text": "Apagar la luz y dormir una siesta.",
         "isCorrect": false
       },
       {
-        "text": "Quedarse adentro de la casa sin salir.",
+        "text": "Desarmar el robot en piezas.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las instrucciones deben corresponder al ciclo completo de la tarea encomendada."
+    "explanation": "La marcha animada se compone de la alternancia rítmica de pasos y avances."
   },
   {
     "id": "g4_programacion_8",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué hace que un programa de instrucciones sea ordenado?",
+    "question": "Si queremos comprobar si una parte de nuestro programa funciona bien, ¿qué podemos hacer?",
     "options": [
       {
-        "text": "Que cada paso tenga un propósito claro y que conduzca directamente a cumplir la misión.",
+        "text": "Probar esa parte paso por paso observando cómo responde el robot.",
         "isCorrect": true
       },
       {
-        "text": "Que tenga órdenes confusas y caminos que no llevan a ningún lado.",
+        "text": "No mirar la pantalla y confiar en la suerte.",
         "isCorrect": false
       },
       {
-        "text": "Que sea tan largo que nadie lo entienda.",
+        "text": "Cambiar todas las instrucciones al azar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un buen programa es directo, coherente y carece de instrucciones superfluas."
+    "explanation": "La verificación modular paso a paso permite aislar aciertos y desvíos."
   },
   {
     "id": "g4_programacion_9",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si un compañero mira nuestro programa y nos dice: «En el paso 3 Bity gira al lado contrario», ¿qué hacemos?",
+    "question": "¿Por qué dos programas diferentes pueden resolver el mismo desafío de Bity?",
     "options": [
       {
-        "text": "Agradecemos la ayuda, verificamos la instrucción y la corregimos hacia el lado correcto.",
+        "text": "Porque puede haber más de un camino o combinación de pasos válidos para llegar a la misma meta.",
         "isCorrect": true
       },
       {
-        "text": "Nos enojamos y borramos todo el programa.",
+        "text": "Porque las computadoras no prestan atención a las órdenes.",
         "isCorrect": false
       },
       {
-        "text": "Dejamos el error a propósito.",
+        "text": "Porque solo existe una sola forma de programar en el mundo.",
         "isCorrect": false
       }
     ],
-    "explanation": "La retroalimentación entre pares ayuda a detectar y reparar desvíos en el código."
+    "explanation": "Existen múltiples rutas algorítmicas válidas para alcanzar un mismo objetivo."
   },
   {
     "id": "g4_programacion_10",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "¿Qué logramos cuando programamos a Bity con instrucciones precisas?",
+    "question": "Si un programa tiene muchas instrucciones desordenadas e innecesarias, ¿qué conviene hacer?",
     "options": [
       {
-        "text": "Que complete la misión en el menor tiempo y sin errores en el camino.",
+        "text": "Limpiar y ordenar la lista para que solo queden las instrucciones indispensables.",
         "isCorrect": true
       },
       {
-        "text": "Que el juego se vuelva aburrido e imposible de jugar.",
+        "text": "Agregar 50 órdenes más para confundir al robot.",
         "isCorrect": false
       },
       {
-        "text": "Que Bity se pierda en el espacio exterior.",
+        "text": "Dejarlo desordenado para que tarde más tiempo.",
         "isCorrect": false
       }
     ],
-    "explanation": "La precisión en las órdenes se traduce en recorridos limpios y victorias rápidas."
+    "explanation": "Simplificar y ordenar el programa mejora su claridad, velocidad y mantenimiento."
   },
   {
     "id": "g4_programacion_11",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "Si queremos que Bity encienda sus turbinas antes de despegar, ¿dónde va esa orden?",
+    "question": "¿Qué ocurre si un robot recibe una orden que no sabe realizar porque no fue programada?",
     "options": [
       {
-        "text": "Justo antes de la instrucción de despegar hacia el cielo.",
+        "text": "No la puede ejecutar y se detiene sin completar la acción.",
         "isCorrect": true
       },
       {
-        "text": "Después de que el cohete ya llegó al espacio.",
+        "text": "La inventa solo con imaginación.",
         "isCorrect": false
       },
       {
-        "text": "Al inicio cuando Bity recién sale de su casa.",
+        "text": "El robot se rompe en pedacitos.",
         "isCorrect": false
       }
     ],
-    "explanation": "Los motores deben entrar en funcionamiento previo al momento de elevarse."
+    "explanation": "Las máquinas solo reconocen el conjunto de órdenes previamente definidas en su sistema."
   },
   {
     "id": "g4_programacion_12",
     "grade": 4,
     "category": "programacion",
     "difficulty": "medio",
-    "question": "La programación nos enseña que cuando algo no sale a la primera:",
+    "question": "¿Cómo ayuda la programación a desarrollar el pensamiento lógico?",
     "options": [
       {
-        "text": "Podemos revisar las instrucciones paso a paso, encontrar la falla y aprender a corregirla.",
+        "text": "Nos enseña a ordenar ideas, anticipar resultados y buscar soluciones paso a paso.",
         "isCorrect": true
       },
       {
-        "text": "Debemos darnos por vencidos de inmediato.",
+        "text": "Haciendo que no tengamos que pensar nunca más.",
         "isCorrect": false
       },
       {
-        "text": "La computadora nunca tiene solución.",
+        "text": "Obligándonos a memorizar palabras sin sentido.",
         "isCorrect": false
       }
     ],
-    "explanation": "El ensayo y la corrección son partes naturales del aprendizaje computacional."
+    "explanation": "Estructurar programas entrena la capacidad de análisis y resolución sistemática."
   },
   {
     "id": "g4_algoritmos_1",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "¿Qué es un algoritmo en la vida diaria?",
+    "question": "¿Qué es un algoritmo en informática?",
     "options": [
       {
-        "text": "Un método ordenado paso a paso para resolver un problema cotidiano o realizar una tarea.",
+        "text": "Una secuencia de pasos ordenados y finitos que conducen a la resolución de un problema.",
         "isCorrect": true
       },
       {
-        "text": "Una máquina que habla sola.",
+        "text": "Una pieza de metal que se pone dentro del teclado.",
         "isCorrect": false
       },
       {
-        "text": "Un dibujo mágico que no necesita pasos.",
+        "text": "Un cable largo que conecta dos pantallas.",
         "isCorrect": false
       }
     ],
-    "explanation": "Cualquier procedimiento estructurado para resolver una tarea cotidiana es un algoritmo."
+    "explanation": "El algoritmo es el diseño metodológico de la solución independiente del soporte."
   },
   {
     "id": "g4_algoritmos_2",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Para preparar una ensalada de frutas: ¿cuál es la mejor manera de organizar los pasos?",
+    "question": "¿Qué puede pasar si cambiamos el orden de los pasos en un algoritmo?",
     "options": [
       {
-        "text": "1. Lavar las frutas. 2. Pelarlas y cortarlas. 3. Colocarlas en un bol y mezclar.",
+        "text": "El resultado se altera y la tarea puede salir mal o quedar incompleta.",
         "isCorrect": true
       },
       {
-        "text": "1. Comer la fruta sin cortar ni lavar. 2. Lavar los platos vacíos.",
+        "text": "El resultado siempre es el mismo sin importar el orden.",
         "isCorrect": false
       },
       {
-        "text": "1. Mezclar un bol vacío. 2. Comprar las frutas mañana.",
+        "text": "La computadora arregla el orden automáticamente.",
         "isCorrect": false
       }
     ],
-    "explanation": "La preparación higiénica exige lavar primero, luego procesar las frutas y finalmente mezclarlas."
+    "explanation": "La alteración de la secuencia destruye las condiciones lógicas de ejecución."
   },
   {
     "id": "g4_algoritmos_3",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Si tenemos dos algoritmos para llegar a la biblioteca: Algoritmo 1 (recorre 2 cuadras directas) y Algoritmo 2 (da una vuelta de 6 cuadras). ¿Cuál es más conveniente?",
+    "question": "Para preparar una taza de chocolatada tenemos este algoritmo: 1. Servir la leche en la taza. 2. Agregar una cucharada de cacao. 3. Revolver con la cuchara. ¿Qué sucede si cambiamos el orden y ponemos el paso 3 antes del paso 1 y del paso 2?",
     "options": [
       {
-        "text": "El Algoritmo 1, porque llega a la meta de forma más directa y sin rodeos innecesarios.",
+        "text": "Estaríamos revolviendo con la cuchara en una taza vacía, antes de tener la leche y el cacao servidos.",
         "isCorrect": true
       },
       {
-        "text": "El Algoritmo 2, porque mientras más caminemos en círculos es mejor.",
+        "text": "La chocolatada queda lista igual de rápido sin necesidad de poner leche.",
         "isCorrect": false
       },
       {
-        "text": "Ninguno, no se puede caminar por cuadras.",
+        "text": "El cacao se disuelve automáticamente en el aire antes de tocar la taza.",
         "isCorrect": false
       }
     ],
-    "explanation": "La ruta de 2 cuadras ahorra energía y tiempo al evitar desvíos."
+    "explanation": "El orden de los pasos es indispensable en un algoritmo: no se puede mezclar ingredientes en un vaso antes de haberlos colocado."
   },
   {
     "id": "g4_algoritmos_4",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Si un algoritmo tiene un paso repetido como «Avanzar 1, Retroceder 1, Avanzar 1, Retroceder 1» sin avanzar nada, ¿qué debemos hacer?",
+    "question": "En una pista recta de 3 casillas (A - B - C), Bity está en la casilla A y la meta es la C. ¿Cuál de estas secuencias permite llegar a la meta?",
     "options": [
       {
-        "text": "Eliminar esos pasos que no aportan nada para que el algoritmo sea más claro y directo.",
+        "text": "Avanzar a la casilla B y luego avanzar a la casilla C.",
         "isCorrect": true
       },
       {
-        "text": "Dejarlos y agregar diez pasos más iguales.",
+        "text": "Retroceder a la casilla B y quedarse quieto.",
         "isCorrect": false
       },
       {
-        "text": "Apagar el robot para que no camine.",
+        "text": "Saltar en la casilla A sin moverse de lugar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Eliminar acciones neutralizadas simplifica el algoritmo sin alterar el resultado."
+    "explanation": "Desplazarse secuencialmente por las posiciones intermedias conecta el punto inicial con la meta."
   },
   {
     "id": "g4_algoritmos_5",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "¿Por qué un algoritmo debe ser comprensible para cualquier persona que lo lea?",
+    "question": "Para lavarse los dientes en 4 pasos: 1. Poner pasta, 2. Cepillar los dientes, 3. Enjuagarse la boca, 4. Secarse con la toalla. ¿Qué pasaría si el paso 3 se coloca antes del paso 2?",
     "options": [
       {
-        "text": "Porque cualquier persona debe ser capaz de seguir los mismos pasos y obtener el mismo resultado.",
+        "text": "Nos enjuagaríamos la boca antes de cepillar los dientes, por lo que el cepillado no cumpliría su función.",
         "isCorrect": true
       },
       {
-        "text": "Porque los algoritmos deben ser difíciles para que nadie los use.",
+        "text": "Los dientes se limpian el doble de rápido.",
         "isCorrect": false
       },
       {
-        "text": "Para que cada persona haga algo totalmente distinto.",
+        "text": "No cambia nada, da igual cepillarse antes o después.",
         "isCorrect": false
       }
     ],
-    "explanation": "La claridad permite que cualquiera reproduzca el procedimiento con el mismo éxito."
+    "explanation": "El enjuague retira los restos tras la acción de cepillado; invertirlo anula el proceso."
   },
   {
     "id": "g4_algoritmos_6",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Para armar un rompecabezas: ¿cuál es una buena estrategia algorítmica inicial?",
+    "question": "Si comparamos dos algoritmos para armar la mochila: uno revisa cada bolsillo con orden y otro mete cosas al azar, ¿cuál es mejor?",
     "options": [
       {
-        "text": "Separar primero las piezas de los bordes y las esquinas para armar el marco.",
+        "text": "El algoritmo ordenado, porque asegura que no olvidemos ningún elemento importante.",
         "isCorrect": true
       },
       {
-        "text": "Tirar todas las piezas al piso con los ojos cerrados.",
+        "text": "El algoritmo al azar, porque no requiere pensar.",
         "isCorrect": false
       },
       {
-        "text": "Romper las piezas para que encajen a la fuerza.",
+        "text": "Son iguales, da lo mismo olvidar los cuadernos.",
         "isCorrect": false
       }
     ],
-    "explanation": "Armar el perímetro delimita el espacio y facilita ubicar las piezas interiores."
+    "explanation": "El método ordenado garantiza exhaustividad y previene olvidos."
   },
   {
     "id": "g4_algoritmos_7",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Si un algoritmo para hacer compras olvida el paso de «Pagar en la caja antes de salir», ¿qué error tiene?",
+    "question": "¿Por qué un algoritmo debe tener un paso de finalización bien definido?",
     "options": [
       {
-        "text": "Le falta un paso fundamental para que la tarea sea correcta y legal.",
+        "text": "Para que la tarea se dé por terminada en el momento adecuado y no continúe sin rumbo.",
         "isCorrect": true
       },
       {
-        "text": "El algoritmo es perfecto porque ahorra dinero.",
+        "text": "Para que la computadora se apague sola a los 2 minutos.",
         "isCorrect": false
       },
       {
-        "text": "No le falta nada, los productos son gratis.",
+        "text": "Porque los algoritmos nunca deben terminar.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un paso esencial omitido invalida la correcta finalización del proceso."
+    "explanation": "La condición de parada asegura que el proceso concluya una vez alcanzado el objetivo."
   },
   {
     "id": "g4_algoritmos_8",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "¿Qué significa que los pasos de un algoritmo no deben ser contradictorios?",
+    "question": "En un algoritmo de rescate, Bity debe: 1. Ubicar la señal de auxilio, 2. Trazar el camino, 3. Acudir al lugar. ¿Qué sucedería si se salta el paso 1?",
     "options": [
       {
-        "text": "Que una orden no puede pedir hacer lo contrario de lo que pide la orden anterior sin una razón lógica.",
+        "text": "No sabría hacia dónde dirigirse porque no conoce la ubicación del rescate.",
         "isCorrect": true
       },
       {
-        "text": "Que todas las palabras deben rimar como una poesía.",
+        "text": "Llegaría más rápido sin importar dónde esté la señal.",
         "isCorrect": false
       },
       {
-        "text": "Que no se pueden usar números.",
+        "text": "El rescate se completa solo automáticamente.",
         "isCorrect": false
       }
     ],
-    "explanation": "La coherencia de objetivos evita instrucciones que se anulen o bloqueen entre sí."
+    "explanation": "Omitir la etapa de detección impide trazar una trayectoria orientada a la meta."
   },
   {
     "id": "g4_algoritmos_9",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Bity sigue este algoritmo: 1. Ir al árbol, 2. Tomar la manzana caída, 3. Volver al cohete. ¿Cuál es el objetivo final?",
+    "question": "Si un algoritmo tiene un paso repetido que no aporta nada, como «Avanzar 0 pasos», ¿qué conviene hacer?",
     "options": [
       {
-        "text": "Llevar la manzana al cohete de Bity.",
+        "text": "Eliminar ese paso innecesario para que el algoritmo sea más limpio y directo.",
         "isCorrect": true
       },
       {
-        "text": "Cortar el árbol de manzanas.",
+        "text": "Dejarlo muchas veces para que el robot se canse.",
         "isCorrect": false
       },
       {
-        "text": "Perderse en el bosque para siempre.",
+        "text": "Borrar todo el algoritmo entero.",
         "isCorrect": false
       }
     ],
-    "explanation": "El algoritmo traslada el fruto recolectado hacia la nave espacial."
+    "explanation": "Depurar instrucciones inocuas optimiza la claridad y el desempeño del algoritmo."
   },
   {
     "id": "g4_algoritmos_10",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "¿Por qué es importante que un algoritmo tenga un paso final bien definido?",
+    "question": "Para armar una figura con 3 piezas Lego encastrables: Pieza base, Pieza media y Pieza superior. ¿En qué orden deben colocarse?",
     "options": [
       {
-        "text": "Para saber en qué momento la tarea ha concluido exitosamente.",
+        "text": "1. Pieza base, 2. Pieza media, 3. Pieza superior.",
         "isCorrect": true
       },
       {
-        "text": "Para que el robot siga trabajando sin parar nunca.",
+        "text": "1. Pieza superior en el aire, 2. Pieza media, 3. Pieza base.",
         "isCorrect": false
       },
       {
-        "text": "Porque los algoritmos no pueden terminar jamás.",
+        "text": "1. Pieza media, 2. Pieza superior, 3. Pieza base al final.",
         "isCorrect": false
       }
     ],
-    "explanation": "El criterio de parada marca el cierre formal de la actividad."
+    "explanation": "El ensamblaje físico progresivo exige asentar la base antes de encastrar los pisos superiores."
   },
   {
     "id": "g4_algoritmos_11",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Si dos caminos llevan a Bity a la meta, pero uno tiene charcos que le quitan batería y el otro es camino seco: ¿cuál algoritmo elegimos?",
+    "question": "¿Por qué los algoritmos se utilizan tanto en la vida cotidiana como en la tecnología?",
     "options": [
       {
-        "text": "El algoritmo que pasa por el camino seco para cuidar la energía y las vidas de Bity.",
+        "text": "Porque proporcionan un método claro y seguro para resolver tareas paso a paso en cualquier ámbito.",
         "isCorrect": true
       },
       {
-        "text": "El algoritmo que pasa por todos los charcos para perder energía.",
+        "text": "Porque solo sirven para jugar en teléfonos.",
         "isCorrect": false
       },
       {
-        "text": "Cualquiera de los dos, la energía no importa.",
+        "text": "Porque impiden que las personas piensen por sí mismas.",
         "isCorrect": false
       }
     ],
-    "explanation": "Elegir la ruta segura protege los recursos y maximiza las chances de victoria."
+    "explanation": "El pensamiento algorítmico es universal: estructura procedimientos en cualquier actividad humana."
   },
   {
     "id": "g4_algoritmos_12",
     "grade": 4,
     "category": "algoritmos",
     "difficulty": "medio",
-    "question": "Cuando diseñamos un algoritmo para ayudar a Bity, ¿qué demostramos?",
+    "question": "Al terminar de diseñar un algoritmo, ¿cuál es la mejor manera de verificar que es correcto?",
     "options": [
       {
-        "text": "Que sabemos pensar y organizar una solución lógica paso a paso para resolver un desafío.",
+        "text": "Seguir cada paso en orden con atención y comprobar si se llega al resultado deseado.",
         "isCorrect": true
       },
       {
-        "text": "Que sabemos adivinar cosas mágicas.",
+        "text": "No revisarlo y asumir que nunca falla.",
         "isCorrect": false
       },
       {
-        "text": "Que los robots no necesitan ayuda humana.",
+        "text": "Cambiar todos los pasos antes de probarlo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Crear un algoritmo evidencia capacidad analítica para estructurar soluciones ordenadas."
+    "explanation": "La traza paso a paso valida la solidez lógica de la secuencia diseñada."
   },
   {
     "id": "g4_matematica_1",
@@ -4250,168 +4250,168 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Bity está mirando al norte. Si ejecuta: 1. Girar a la derecha, 2. Girar a la derecha, ¿hacia dónde queda mirando?",
+    "question": "¿Cuál es la diferencia principal entre una indicación ambigua y una instrucción precisa en un recorrido?",
     "options": [
       {
-        "text": "Hacia el sur (la dirección contraria a la que empezó).",
+        "text": "La indicación ambigua no define cuánto ni hacia dónde («Moverse hacia allá»); la instrucción precisa indica dirección y cantidad exacta («Avanzar 4 casilleros al frente»).",
         "isCorrect": true
       },
       {
-        "text": "Hacia el norte nuevamente.",
+        "text": "No existe ninguna diferencia; las computadoras interpretan ambas por igual.",
         "isCorrect": false
       },
       {
-        "text": "Hacia el oeste.",
+        "text": "La indicación ambigua es más corta y por eso siempre funciona mejor.",
         "isCorrect": false
       }
     ],
-    "explanation": "Dos giros seguidos a la derecha de 90° suman 180°, orientando al robot exactamente hacia el sur."
+    "explanation": "La precisión en la magnitud y orientación elimina ambigüedades en la ejecución."
   },
   {
     "id": "g5_instrucciones_2",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "¿Cuál de estas instrucciones es AMBIGUA (poco clara) y cuál es precisa para un robot?",
+    "question": "Bity está en una pista recta dividida en casilleros numerados del 1 al 10. Está parado en el casillero 2, mirando hacia adelante. Si recibe la orden «Avanzar 3 casilleros», ¿en qué casillero queda parado?",
     "options": [
       {
-        "text": "«Moverse hacia allá» es ambigua; «Avanzar 4 casilleros al frente» es precisa.",
+        "text": "En el casillero 5 (porque 2 + 3 = 5).",
         "isCorrect": true
       },
       {
-        "text": "«Avanzar 2 pasos» es ambigua; «Caminar» es precisa.",
+        "text": "En el casillero 4 (porque avanzó 2 casilleros).",
         "isCorrect": false
       },
       {
-        "text": "Ambas son perfectamente precisas para un robot.",
+        "text": "En el casillero 6 (porque contó el casillero 2 dos veces).",
         "isCorrect": false
       }
     ],
-    "explanation": "«Hacia allá» no indica distancia ni rumbo exacto; la segunda orden brinda magnitud y sentido medibles."
+    "explanation": "Al partir de la posición 2 y desplazarse 3 unidades hacia adelante, se arriba a la posición 5 (2 + 3 = 5)."
   },
   {
     "id": "g5_instrucciones_3",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Bity tiene esta secuencia: 1. Avanzar 3, 2. Girar a la derecha, 3. Avanzar 2. Si un obstáculo bloquea el paso en la posición 2 del segundo avance, ¿qué cambio de instrucción corrige el camino?",
+    "question": "En un recorrido con obstáculos, ¿por qué es fundamental indicar tanto la distancia como el sentido de giro?",
     "options": [
       {
-        "text": "Cambiar el segundo avance a 1 paso, girar para rodear el obstáculo y luego continuar hacia la meta.",
+        "text": "Porque si solo indicamos el giro sin la distancia, el robot no sabe cuántos pasos debe avanzar en esa nueva dirección.",
         "isCorrect": true
       },
       {
-        "text": "Pedirle a Bity que avance con más fuerza para atravesar el obstáculo.",
+        "text": "Porque a los robots solo les gusta girar y no caminar.",
         "isCorrect": false
       },
       {
-        "text": "Eliminar todas las instrucciones y no moverse.",
+        "text": "Porque la distancia se calcula sola sin instrucciones.",
         "isCorrect": false
       }
     ],
-    "explanation": "Reducir el avance antes de chocar permite intercalar un giro y esquivar la zona obstruida."
+    "explanation": "La navegación espacial requiere la definición conjunta de orientación y desplazamiento."
   },
   {
     "id": "g5_instrucciones_4",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Si Bity da 5 pasos al frente y luego 5 pasos atrás, ¿dónde se encuentra respecto a su posición de inicio?",
+    "question": "Si una instrucción dice «Avanzar hasta encontrar la línea amarilla», ¿qué condición debe verificar el sensor de Bity en cada paso?",
     "options": [
       {
-        "text": "Exactamente en el mismo lugar donde comenzó.",
+        "text": "Comprobar si el suelo que pisa es de color amarillo para saber cuándo detenerse.",
         "isCorrect": true
       },
       {
-        "text": "A 10 metros hacia adelante.",
+        "text": "Mirar si el cielo tiene estrellas.",
         "isCorrect": false
       },
       {
-        "text": "A 5 metros hacia la izquierda.",
+        "text": "Contar cuántos segundos pasaron desde el inicio.",
         "isCorrect": false
       }
     ],
-    "explanation": "Avanzar y retroceder la misma distancia anula el desplazamiento neto total."
+    "explanation": "La orden establece una condición de parada vinculada a la detección sensorial del color amarillo."
   },
   {
     "id": "g5_instrucciones_5",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "¿Por qué en programación no basta con decirle a un robot «Sé cuidadoso con el pozo»?",
+    "question": "Bity debe recoger 3 gemas en línea recta separadas por 2 casilleros cada una. ¿Qué secuencia de instrucciones describe esa tarea?",
     "options": [
       {
-        "text": "Porque el robot necesita órdenes concretas de acción, como «Si estás a 1 paso del pozo, saltar».",
+        "text": "Avanzar 2, recoger gema, avanzar 2, recoger gema, avanzar 2, recoger gema.",
         "isCorrect": true
       },
       {
-        "text": "Porque los robots no tienen oídos para escuchar palabras amables.",
+        "text": "Recoger gema 3 veces seguidas sin avanzar ningún casillero.",
         "isCorrect": false
       },
       {
-        "text": "Porque los pozos desaparecen si el robot es cuidadoso.",
+        "text": "Avanzar 6 casilleros y recoger una sola gema.",
         "isCorrect": false
       }
     ],
-    "explanation": "Las máquinas requieren pautas operativas precisas de medición y movimiento, no advertencias abstractas."
+    "explanation": "Se repite la estructura de desplazamiento de 2 casilleros seguida de la acción de recolección en cada gema."
   },
   {
     "id": "g5_instrucciones_6",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Tenemos dos secuencias para hacer que Bity llegue al cohete: Secuencia 1 (Avanzar 2, Girar a la derecha, Avanzar 3). Secuencia 2 (Avanzar 2, Girar a la izquierda, Avanzar 3). Si el cohete está a la derecha, ¿cuál es la correcta?",
+    "question": "Si cambiamos una instrucción en medio de una secuencia de 6 pasos, ¿qué consecuencias tiene sobre los pasos siguientes?",
     "options": [
       {
-        "text": "La Secuencia 1, porque orienta a Bity hacia la dirección real donde está el cohete.",
+        "text": "Todos los pasos posteriores se ejecutarán desde la nueva posición o dirección que dejó la orden modificada.",
         "isCorrect": true
       },
       {
-        "text": "La Secuencia 2, porque girar al lado contrario ayuda a no marearse.",
+        "text": "Los pasos posteriores no sufren ningún cambio y llegan al mismo lugar.",
         "isCorrect": false
       },
       {
-        "text": "Las dos llegan exactamente al mismo lugar.",
+        "text": "El programa se borra por completo.",
         "isCorrect": false
       }
     ],
-    "explanation": "El giro hacia la derecha alinea el avance final con la ubicación real de la nave."
+    "explanation": "Los movimientos son relativos a la posición y orientación acumulada en los pasos previos."
   },
   {
     "id": "g5_instrucciones_7",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Si Bity ejecuta la orden «Avanzar 4 pasos» pero solo puede caminar de a 1 casillero por vez, ¿a cuántas instrucciones unitarias de avance equivale?",
+    "question": "En un tablero de casilleros numerados del 1 al 10 en línea recta, Bity empieza ubicado en el casillero 1, mirando hacia adelante (hacia el casillero 10). Si le damos las instrucciones: «Paso 1: Avanzar 1 casillero. Paso 2: Avanzar 2 casilleros», ¿en qué casillero termina su recorrido?",
     "options": [
       {
-        "text": "A repetir la instrucción de avanzar 1 casillero 4 veces seguidas.",
+        "text": "En el casillero 4 (porque parte del 1 y avanza un total de 1 + 2 = 3 casilleros; 1 + 3 = 4).",
         "isCorrect": true
       },
       {
-        "text": "A dar 1 solo paso gigante de 4 metros.",
+        "text": "En el casillero 3 (porque no contó el casillero inicial donde ya estaba parado).",
         "isCorrect": false
       },
       {
-        "text": "A ninguna, no se puede avanzar de a casilleros.",
+        "text": "En el casillero 5 (porque sumó un casillero extra que no estaba en las órdenes).",
         "isCorrect": false
       }
     ],
-    "explanation": "Una orden compuesta de 4 casilleros se descompone en 4 pasos unitarios consecutivos."
+    "explanation": "Bity inicia en el casillero 1. Con el paso 1 pasa al casillero 2. Con el paso 2 avanza dos casilleros más y llega al casillero 4. La meta alcanzada es exactamente el casillero 4."
   },
   {
     "id": "g5_instrucciones_8",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "¿Qué ocurre si en una secuencia de instrucciones colocamos «Subir al cohete» antes de «Caminar hasta la base de lanzamiento»?",
+    "question": "¿Qué ocurre si en una secuencia de instrucciones para abordar la nave colocamos «Subir a la cabina» antes de «Caminar hasta la nave»?",
     "options": [
       {
-        "text": "La instrucción fallará porque Bity intentará subir a un cohete en el que todavía no está presente.",
+        "text": "La instrucción fallará porque Bity todavía no está cerca de la nave para poder subir a ella.",
         "isCorrect": true
       },
       {
-        "text": "El cohete vendrá volando a buscar a Bity a su casa.",
+        "text": "La nave vendrá volando a buscar a Bity.",
         "isCorrect": false
       },
       {
@@ -4426,66 +4426,66 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "En una cuadrícula, Bity está en la casilla (1, 1). Si le ordenamos «Avanzar 3 casillas a la derecha», ¿en qué casilla quedará?",
+    "question": "Si Bity está en el casillero 5 de una pista recta y recibe la secuencia: «Retroceder 2 casilleros, Avanzar 4 casilleros», ¿a qué casillero llega?",
     "options": [
       {
-        "text": "En la casilla (4, 1).",
+        "text": "Al casillero 7 (porque 5 − 2 = 3; luego 3 + 4 = 7).",
         "isCorrect": true
       },
       {
-        "text": "En la casilla (1, 4).",
+        "text": "Al casillero 9 (porque sumó todos los números sin retroceder).",
         "isCorrect": false
       },
       {
-        "text": "En la casilla (3, 3).",
+        "text": "Al casillero 3 (porque olvidó el avance final).",
         "isCorrect": false
       }
     ],
-    "explanation": "Moverse horizontalmente hacia la derecha suma 3 posiciones a la coordenada horizontal X (1 + 3 = 4)."
+    "explanation": "Partiendo de 5: retroceder 2 deja la posición en 3; avanzar 4 traslada la posición final a 7."
   },
   {
     "id": "g5_instrucciones_10",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "¿Por qué es fundamental que cada instrucción en una misión espacial tenga un orden lógico estricto?",
+    "question": "¿Por qué una regla sencilla como «Si hay un muro enfrente: girar a la derecha» hace más seguro el recorrido de Bity?",
     "options": [
       {
-        "text": "Porque un error de secuencia puede desviar la nave de su ruta o causar un accidente en el aterrizaje.",
+        "text": "Porque le permite reaccionar a tiempo ante un obstáculo y evitar chocar.",
         "isCorrect": true
       },
       {
-        "text": "Porque a los astronautas les gusta memorizar números.",
+        "text": "Porque hace que el robot camine más lento sin motivo.",
         "isCorrect": false
       },
       {
-        "text": "Porque en el espacio las órdenes se ejecutan al revés.",
+        "text": "Porque las paredes desaparecen al ver girar al robot.",
         "isCorrect": false
       }
     ],
-    "explanation": "En misiones espaciales el margen de error es cero; cada maniobra depende del éxito de la anterior."
+    "explanation": "Evaluar el entorno antes de avanzar previene colisiones e interrupciones en la trayectoria."
   },
   {
     "id": "g5_instrucciones_11",
     "grade": 5,
     "category": "instrucciones",
     "difficulty": "avanzado",
-    "question": "Si queremos que Bity recolecte un objeto a 2 pasos y vuelva al inicio, ¿cuál es la secuencia correcta?",
+    "question": "Para que Bity avance 2 pasos hacia un objeto, lo recoja y regrese exactamente al punto de partida, ¿cuál es la secuencia correcta?",
     "options": [
       {
-        "text": "1. Avanzar 2 pasos. 2. Agarrar el objeto. 3. Girar 180°. 4. Avanzar 2 pasos.",
+        "text": "1. Avanzar 2 pasos. 2. Agarrar el objeto. 3. Girar 180° (media vuelta). 4. Avanzar 2 pasos.",
         "isCorrect": true
       },
       {
-        "text": "1. Avanzar 2 pasos. 2. Volver al inicio sin agarrar nada.",
+        "text": "1. Avanzar 2 pasos. 2. Girar. 3. Irse sin agarrar el objeto.",
         "isCorrect": false
       },
       {
-        "text": "1. Girar 180° antes de caminar y alejarse del objeto.",
+        "text": "1. Agarrar el objeto a la distancia. 2. Avanzar 4 pasos.",
         "isCorrect": false
       }
     ],
-    "explanation": "La secuencia recorre la distancia, recolecta la pieza, se da media vuelta y desanda los 2 pasos."
+    "explanation": "El retorno exacto requiere invertir la orientación (180°) y desandar la misma distancia previamente recorrida."
   },
   {
     "id": "g5_instrucciones_12",
@@ -4495,95 +4495,95 @@ const BITY_QUESTION_BANK = [
     "question": "Si una orden dice «Saltar a la derecha», ¿qué dos movimientos combinados está realizando Bity?",
     "options": [
       {
-        "text": "Un movimiento vertical de elevación y un movimiento horizontal hacia la derecha.",
+        "text": "Un movimiento vertical de elevación hacia arriba y un desplazamiento horizontal hacia su derecha.",
         "isCorrect": true
       },
       {
-        "text": "Un giro completo hacia abajo en el suelo.",
+        "text": "Dos saltos en el mismo lugar hacia abajo.",
         "isCorrect": false
       },
       {
-        "text": "Solo un movimiento hacia atrás.",
+        "text": "Un retroceso hacia la izquierda.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un salto diagonal combina energía ascensional en el eje vertical y desplazamiento horizontal."
+    "explanation": "El salto diagonal combina impulso vertical en Y con desplazamiento horizontal en X."
   },
   {
     "id": "g5_programacion_1",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "¿Qué es lo más importante que hace un programador antes de escribir código o bloques?",
+    "question": "¿Qué es lo más importante que hace un programador antes de escribir las instrucciones de un programa?",
     "options": [
       {
-        "text": "Analizar el problema, entender la meta y planificar la secuencia lógica de instrucciones.",
+        "text": "Analizar el problema con detenimiento y planificar en orden los pasos de la solución.",
         "isCorrect": true
       },
       {
-        "text": "Empezar a teclear sin saber qué hay que resolver.",
+        "text": "Colocar instrucciones al azar para ver qué pasa.",
         "isCorrect": false
       },
       {
-        "text": "Comprar una computadora más grande.",
+        "text": "Apagar la computadora y esperar que se resuelva solo.",
         "isCorrect": false
       }
     ],
-    "explanation": "El análisis previo y la planificación mental ahorran tiempo y aseguran soluciones eficaces."
+    "explanation": "La etapa de análisis y diseño previo es crucial para construir soluciones sólidas y correctas."
   },
   {
     "id": "g5_programacion_2",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "Si dos programas logran que Bity complete el mismo nivel, pero el Programa A usa 6 instrucciones y el Programa B usa 20 instrucciones innecesarias, ¿cuál preferimos?",
+    "question": "Si dos programas logran que Bity complete el mismo nivel, pero el Programa A usa 6 instrucciones y el Programa B usa 20 instrucciones innecesarias, ¿cuál preferimos y por qué?",
     "options": [
       {
-        "text": "El Programa A, porque es más claro, directo y eficiente al no desperdiciar pasos.",
+        "text": "El Programa A, porque es más claro, directo y no desperdicia pasos ni energía.",
         "isCorrect": true
       },
       {
-        "text": "El Programa B, porque mientras más órdenes tenga un programa siempre es mejor.",
+        "text": "El Programa B, porque mientras más órdenes tenga un programa, más inteligente es.",
         "isCorrect": false
       },
       {
-        "text": "Cualquiera, la cantidad de instrucciones no importa.",
+        "text": "Cualquiera, no existe ninguna diferencia entre usar 6 o 20 instrucciones.",
         "isCorrect": false
       }
     ],
-    "explanation": "La economía de instrucciones favorece programas más limpios, rápidos de ejecutar y fáciles de mantener."
+    "explanation": "La claridad y la economía de instrucciones reducen puntos de falla y optimizan recursos."
   },
   {
     "id": "g5_programacion_3",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "¿Qué significa que un programa tenga un error de lógica en las instrucciones?",
+    "question": "¿Qué significa que un programa tenga un error de lógica en sus instrucciones?",
     "options": [
       {
-        "text": "Que las órdenes están escritas pero el resultado que producen no es el que queríamos lograr.",
+        "text": "Que las instrucciones se ejecutan, pero el resultado final no es el que esperábamos para resolver la tarea.",
         "isCorrect": true
       },
       {
-        "text": "Que la computadora se quedó sin energía eléctrica.",
+        "text": "Que la computadora se prendió fuego.",
         "isCorrect": false
       },
       {
-        "text": "Que el teclado tiene polvo en las teclas.",
+        "text": "Que el monitor se quedó sin batería.",
         "isCorrect": false
       }
     ],
-    "explanation": "Un error lógico ocurre cuando la computadora sigue órdenes que no conducen al objetivo deseado."
+    "explanation": "Un error lógico ocurre cuando la secuencia de órdenes es válida sintácticamente pero no cumple el objetivo deseado."
   },
   {
     "id": "g5_programacion_4",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "Si un programa debe hacer que Bity recoja 3 repuestos y luego active el cohete, ¿cuál es la condición necesaria para activar el cohete?",
+    "question": "Si un programa debe hacer que Bity recoja 3 repuestos y luego active el cohete, ¿cuál es el requisito previo para activar el cohete?",
     "options": [
       {
-        "text": "Haber completado previamente la recolección de los 3 repuestos requeridos.",
+        "text": "Haber completado previamente la recolección de los 3 repuestos.",
         "isCorrect": true
       },
       {
@@ -4591,11 +4591,11 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "Dejar los repuestos en el suelo y festejar.",
+        "text": "Juntar solo 1 repuesto y dejar los otros 2.",
         "isCorrect": false
       }
     ],
-    "explanation": "El despegue exige haber satisfecho antes todos los pasos preparatorios."
+    "explanation": "La condición de activación exige la satisfacción íntegra de las premisas anteriores."
   },
   {
     "id": "g5_programacion_5",
@@ -4605,19 +4605,19 @@ const BITY_QUESTION_BANK = [
     "question": "¿Por qué decimos que la programación es una herramienta para resolver problemas?",
     "options": [
       {
-        "text": "Porque nos permite crear soluciones paso a paso para que las computadoras nos ayuden en tareas complejas.",
+        "text": "Porque nos permite diseñar soluciones paso a paso que las computadoras pueden ejecutar para ayudarnos.",
         "isCorrect": true
       },
       {
-        "text": "Porque reemplaza a las personas y no requiere pensar.",
+        "text": "Porque hace que las tareas se completen solas sin que nadie haga nada.",
         "isCorrect": false
       },
       {
-        "text": "Porque solo sirve para jugar a videojuegos.",
+        "text": "Porque solo sirve para romper computadoras.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación es el puente para instruir a la tecnología en la resolución de desafíos reales."
+    "explanation": "La programación traduce estrategias humanas de resolución en secuencias de acciones automatizables."
   },
   {
     "id": "g5_programacion_6",
@@ -4627,41 +4627,41 @@ const BITY_QUESTION_BANK = [
     "question": "Si probamos nuestro programa y Bity gira hacia el lado opuesto al cohete, ¿cómo razonamos para solucionarlo?",
     "options": [
       {
-        "text": "Identificamos la instrucción de giro errónea y la cambiamos por el giro en la dirección correcta.",
+        "text": "Identificamos la instrucción de giro que causó el desvío y la cambiamos por el giro correcto.",
         "isCorrect": true
       },
       {
-        "text": "Movemos el monitor con las manos para engañar a la pantalla.",
+        "text": "Dejamos el programa igual y esperamos que el cohete se mueva hacia Bity.",
         "isCorrect": false
       },
       {
-        "text": "Dejamos el error porque el cohete debería moverse.",
+        "text": "Borramos todo el juego y no intentamos corregirlo.",
         "isCorrect": false
       }
     ],
-    "explanation": "Localizar puntualmente el bloque desalineado y cambiar su sentido resuelve la desviación."
+    "explanation": "El análisis crítico localiza la orden divergente y aplica el ajuste puntual requerido."
   },
   {
     "id": "g5_programacion_7",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "¿Qué hace que un programa sea fácil de mantener y modificar si el juego cambia?",
+    "question": "¿Qué hace que un programa sea fácil de comprender y modificar en el futuro?",
     "options": [
       {
-        "text": "Que sus instrucciones estén ordenadas de forma clara, con partes bien diferenciadas para cada objetivo.",
+        "text": "Que sus instrucciones estén ordenadas de forma clara y sin pasos confusos ni sobrantes.",
         "isCorrect": true
       },
       {
-        "text": "Que todas las instrucciones estén amontonadas sin orden ni sentido.",
+        "text": "Que use órdenes mezcladas al azar sin ningún orden.",
         "isCorrect": false
       },
       {
-        "text": "Que nadie sepa qué hace cada orden.",
+        "text": "Que no tenga ningún paso y esté en blanco.",
         "isCorrect": false
       }
     ],
-    "explanation": "Una estructura limpia y modular permite ajustar tramos específicos sin romper el resto."
+    "explanation": "La claridad estructural y la modularidad facilitan la lectura y el mantenimiento del software."
   },
   {
     "id": "g5_programacion_8",
@@ -4671,41 +4671,41 @@ const BITY_QUESTION_BANK = [
     "question": "Al programar el despegue de la nave de Bity, ¿qué instrucciones deben cumplirse en orden?",
     "options": [
       {
-        "text": "1. Subir Bity a la cabina. 2. Cerrar la compuerta. 3. Encender propulsores. 4. Despegar.",
+        "text": "1. Subir Bity a la cabina. 2. Cerrar la compuerta. 3. Encender los propulsores.",
         "isCorrect": true
       },
       {
-        "text": "1. Despegar. 2. Subir Bity después en el espacio. 3. Cerrar compuerta.",
+        "text": "1. Encender los propulsores. 2. Subir a la cabina en pleno vuelo. 3. Cerrar la compuerta.",
         "isCorrect": false
       },
       {
-        "text": "1. Encender propulsores sin Bity adentro y dejarlo en tierra.",
+        "text": "1. Cerrar la compuerta con Bity afuera. 2. Despegar.",
         "isCorrect": false
       }
     ],
-    "explanation": "La tripulación debe abordar y sellar la cabina antes del encendido de motores y la partida."
+    "explanation": "La secuencia lógica de embarque y despegue exige que el piloto aborde y cierre la nave antes de la propulsión."
   },
   {
     "id": "g5_programacion_9",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "¿Por qué los programas educativos de Bity no usan trucos mágicos y solo usan instrucciones lógicas?",
+    "question": "¿Por qué las computadoras solo funcionan con instrucciones lógicas y no con deseos o magia?",
     "options": [
       {
-        "text": "Porque las computadoras reales funcionan únicamente con lógica e instrucciones humanas programadas.",
+        "text": "Porque son máquinas creadas para procesar órdenes precisas dadas por seres humanos.",
         "isCorrect": true
       },
       {
-        "text": "Porque la magia en las computadoras se cobra aparte.",
+        "text": "Porque las computadoras adivinan lo que queremos sin necesidad de instrucciones.",
         "isCorrect": false
       },
       {
-        "text": "Porque Bity no cree en la tecnología.",
+        "text": "Porque las computadoras inventan sus propias reglas al encenderse.",
         "isCorrect": false
       }
     ],
-    "explanation": "El aprendizaje computacional se fundamenta en reglas lógicas comprensibles y reproducibles."
+    "explanation": "El funcionamiento computacional se basa exclusivamente en la lógica electrónica y el código programado."
   },
   {
     "id": "g5_programacion_10",
@@ -4715,19 +4715,19 @@ const BITY_QUESTION_BANK = [
     "question": "Si queremos que Bity avise cuando llega a la meta, ¿qué instrucción agregamos al final del programa?",
     "options": [
       {
-        "text": "Una instrucción para mostrar el mensaje «¡Misión cumplida!» y celebrar la victoria.",
+        "text": "Una instrucción para mostrar el mensaje «¡Misión cumplida!».",
         "isCorrect": true
       },
       {
-        "text": "Una instrucción para reiniciar el juego sin avisar nada.",
+        "text": "Una instrucción de retroceder 100 pasos.",
         "isCorrect": false
       },
       {
-        "text": "Una orden para borrar todo el nivel.",
+        "text": "Una orden de apagar la computadora sin avisar nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "El mensaje final comunica claramente al jugador que el objetivo fue alcanzado."
+    "explanation": "Un mensaje de retroalimentación en el paso terminal confirma el cumplimiento exitoso del objetivo."
   },
   {
     "id": "g5_programacion_11",
@@ -4737,41 +4737,41 @@ const BITY_QUESTION_BANK = [
     "question": "¿Qué aprendemos cuando comparamos nuestra solución programada con la de un compañero?",
     "options": [
       {
-        "text": "Que un mismo problema puede resolverse con distintos caminos válidos y podemos aprender nuevas estrategias.",
+        "text": "Que un mismo problema puede resolverse con distintas combinaciones válidas de instrucciones lógicas.",
         "isCorrect": true
       },
       {
-        "text": "Que solo existe una única forma en el mundo de programar algo.",
+        "text": "Que solo existe una única forma correcta de programar en el mundo.",
         "isCorrect": false
       },
       {
-        "text": "Que no se debe compartir ideas con nadie.",
+        "text": "Que comparar soluciones no sirve para nada.",
         "isCorrect": false
       }
     ],
-    "explanation": "La programación admite múltiples recorridos válidos y enriquece el pensamiento divergente."
+    "explanation": "El intercambio entre pares enriquece la perspectiva y demuestra la pluralidad de caminos algorítmicos válidos."
   },
   {
     "id": "g5_programacion_12",
     "grade": 5,
     "category": "programacion",
     "difficulty": "avanzado",
-    "question": "En resumen, ¿qué significa programar en la escuela primaria?",
+    "question": "En conclusión, ¿qué significa aprender a programar en la escuela primaria?",
     "options": [
       {
-        "text": "Aprender a pensar de manera lógica, ordenada y creativa para darle instrucciones útiles a una computadora o robot.",
+        "text": "Aprender a pensar de manera lógica, ordenada y creativa para resolver desafíos con la tecnología.",
         "isCorrect": true
       },
       {
-        "text": "Aprender de memoria códigos difíciles sin entender qué hacen.",
+        "text": "Memorizar códigos difíciles sin entender qué hacen.",
         "isCorrect": false
       },
       {
-        "text": "Jugar sin pensar en las reglas de las máquinas.",
+        "text": "Convertirse en un robot que no habla con nadie.",
         "isCorrect": false
       }
     ],
-    "explanation": "Programar es desarrollar habilidades de pensamiento lógico para crear soluciones estructuradas."
+    "explanation": "La programación escolar desarrolla habilidades cognitivas fundamentales: lógica, orden y creatividad."
   },
   {
     "id": "g5_algoritmos_1",
@@ -4781,19 +4781,19 @@ const BITY_QUESTION_BANK = [
     "question": "¿Qué diferencia a un buen algoritmo de una simple lista de ideas desordenadas?",
     "options": [
       {
-        "text": "Que el algoritmo tiene un orden estricto de pasos pensados para alcanzar una meta concreta sin ambigüedades.",
+        "text": "Que el algoritmo tiene un orden estricto de pasos orientados a lograr un objetivo concreto.",
         "isCorrect": true
       },
       {
-        "text": "Que el algoritmo se escribe con lápices de colores especiales.",
+        "text": "Que el algoritmo no tiene ningún orden ni principio ni fin.",
         "isCorrect": false
       },
       {
-        "text": "Que no tiene ningún orden ni principio ni fin.",
+        "text": "Que una lista de ideas siempre resuelve los problemas automáticamente.",
         "isCorrect": false
       }
     ],
-    "explanation": "La estructura secuencial y el propósito definido diferencian al algoritmo del caos."
+    "explanation": "La estructura secuencial y el propósito definido diferencian al algoritmo del desorden."
   },
   {
     "id": "g5_algoritmos_2",
@@ -4803,7 +4803,7 @@ const BITY_QUESTION_BANK = [
     "question": "Si dos algoritmos para reparar el cohete de Bity llegan al mismo resultado, pero uno requiere 5 pasos y el otro 15 pasos con rodeos, ¿por qué elegimos el de 5 pasos?",
     "options": [
       {
-        "text": "Porque es más eficiente, ahorra tiempo y batería, y es más fácil de verificar sin errores.",
+        "text": "Porque es más eficiente, ahorra tiempo y batería, y es más fácil de verificar.",
         "isCorrect": true
       },
       {
@@ -4822,10 +4822,10 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "Bity sigue este algoritmo: 1. Caminar 4 pasos, 2. Si hay puerta cerrada: usar llave, 3. Entrar. ¿Qué pasaría si la puerta estuviese cerrada pero no tuviese llave?",
+    "question": "Bity sigue este algoritmo: 1. Caminar 4 pasos, 2. Si la puerta está con llave: usar la llave, 3. Entrar. ¿Qué sucede si la puerta está cerrada con llave pero Bity no tiene la llave?",
     "options": [
       {
-        "text": "El algoritmo se detendría en el paso 2 porque falta el elemento necesario para continuar.",
+        "text": "El algoritmo no puede continuar en el paso 2 porque falta el elemento necesario para abrir la puerta.",
         "isCorrect": true
       },
       {
@@ -4833,7 +4833,7 @@ const BITY_QUESTION_BANK = [
         "isCorrect": false
       },
       {
-        "text": "El cohete abre la puerta solo desde el espacio.",
+        "text": "La puerta se abre sola desde el espacio.",
         "isCorrect": false
       }
     ],
@@ -4844,10 +4844,10 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "Para ordenar una fila de 4 cajas por tamaño de menor a mayor: ¿qué procedimiento realiza un algoritmo de ordenamiento simple?",
+    "question": "Para ordenar 3 cajas por tamaño de menor a mayor: ¿qué procedimiento realiza un algoritmo de ordenamiento simple?",
     "options": [
       {
-        "text": "Compara las cajas de a pares y va colocando la más pequeña adelante hasta que todas estén en orden.",
+        "text": "Compara las cajas de a dos y va colocando la más pequeña adelante hasta que queden ordenadas.",
         "isCorrect": true
       },
       {
@@ -4866,14 +4866,14 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "¿Por qué un algoritmo no puede tener pasos infinitos que nunca terminen?",
+    "question": "¿Por qué un algoritmo debe tener una cantidad limitada de pasos que terminen en algún momento?",
     "options": [
       {
-        "text": "Porque nunca llegaría a resolver el problema ni a mostrar el resultado final.",
+        "text": "Porque si nunca terminara, jamás llegaría a resolver el problema ni a mostrar el resultado final.",
         "isCorrect": true
       },
       {
-        "text": "Porque a la computadora se le gasta la memoria a los 2 minutos.",
+        "text": "Porque a la computadora se le gasta la memoria a los dos minutos.",
         "isCorrect": false
       },
       {
@@ -4888,18 +4888,18 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "En un algoritmo para cruzar un río con piedras: Piedra 1, Piedra 2, Piedra 3... Si la Piedra 2 está rota, ¿qué debe prever el algoritmo?",
+    "question": "En un algoritmo para cruzar un arroyo sobre 3 piedras: Piedra 1, Piedra 2, Piedra 3. Si la Piedra 2 está resbalosa o rota, ¿qué debe prever el algoritmo?",
     "options": [
       {
-        "text": "Un paso alternativo para esquivar la piedra rota o saltar a una piedra segura contigua.",
+        "text": "Un paso alternativo para cruzar por otra piedra segura contigua.",
         "isCorrect": true
       },
       {
-        "text": "Pisar la piedra rota de todas formas aunque se caiga al agua.",
+        "text": "Pisar la piedra rota de todas formas aunque caiga al agua.",
         "isCorrect": false
       },
       {
-        "text": "Volver a casa sin intentar cruzar.",
+        "text": "Quedarse en la orilla sin intentar cruzar nunca más.",
         "isCorrect": false
       }
     ],
@@ -4957,7 +4957,7 @@ const BITY_QUESTION_BANK = [
     "question": "¿Cómo ayuda el pensamiento algorítmico a resolver problemas en la vida real?",
     "options": [
       {
-        "text": "Nos ayuda a descomponer problemas difíciles en pasos más simples y ordenados que podemos resolver uno a uno.",
+        "text": "Nos ayuda a dividir un problema complejo en pasos más pequeños y ordenados para resolverlos uno por uno.",
         "isCorrect": true
       },
       {
@@ -4976,14 +4976,14 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "Si comparamos el algoritmo para lavarse los dientes con el algoritmo para encender un televisor, ¿qué tienen en común?",
+    "question": "Si comparamos el algoritmo para lavarse las manos con el de armar una carpa de campamento, ¿qué tienen en común?",
     "options": [
       {
-        "text": "Ambos son secuencias ordenadas de pasos que deben cumplirse para lograr un objetivo específico.",
+        "text": "Ambos son secuencias ordenadas de pasos que deben seguirse para cumplir un objetivo con éxito.",
         "isCorrect": true
       },
       {
-        "text": "Los dos usan pasta dental y cepillo.",
+        "text": "Los dos usan jabón y toalla.",
         "isCorrect": false
       },
       {
@@ -4998,22 +4998,22 @@ const BITY_QUESTION_BANK = [
     "grade": 5,
     "category": "algoritmos",
     "difficulty": "avanzado",
-    "question": "¿Por qué un algoritmo debe probarse paso por paso antes de aplicarlo en una misión espacial real?",
+    "question": "Si probamos un algoritmo para que Bity alcance una batería y vemos que el robot choca contra una pared en el tercer paso, ¿cómo debemos actuar para corregirlo?",
     "options": [
       {
-        "text": "Para verificar que cada paso funcione como se esperaba y no ponga en riesgo la misión de la nave.",
+        "text": "Revisamos los pasos de la secuencia uno por uno, identificamos cuál instrucción estuvo equivocada y la cambiamos por el camino correcto.",
         "isCorrect": true
       },
       {
-        "text": "Para que los astronautas pasen el tiempo jugando.",
+        "text": "Borramos todo el juego y asumimos que la computadora ya no sirve.",
         "isCorrect": false
       },
       {
-        "text": "Porque en el espacio los algoritmos no funcionan.",
+        "text": "Dejamos las instrucciones iguales y esperamos que la pared se mueva sola.",
         "isCorrect": false
       }
     ],
-    "explanation": "Validar paso por paso previene catástrofes y certifica la seguridad del vuelo."
+    "explanation": "Cuando un algoritmo no da el resultado esperado, debemos revisar las instrucciones paso a paso con tranquilidad, encontrar el error y corregirlo."
   },
   {
     "id": "g5_algoritmos_12",
@@ -5023,7 +5023,7 @@ const BITY_QUESTION_BANK = [
     "question": "En conclusión, dominar las instrucciones, los programas y los algoritmos nos permite:",
     "options": [
       {
-        "text": "Ser creadores de tecnología capaces de decirle a las máquinas cómo ayudarnos a resolver desafíos.",
+        "text": "Ser creadores de tecnología capaces de indicarle a las máquinas cómo ayudarnos a resolver problemas.",
         "isCorrect": true
       },
       {
@@ -5311,7 +5311,6 @@ class BityQuestionManager {
 
   /**
    * Genera de forma segura una operación matemática adecuada al grado si fuese necesario
-   * Garantiza: divisiones exactas con divisor <= 5 y números apropiados a la edad.
    */
   generateSafeMathQuestion(grade = 1) {
     const targetGrade = parseInt(grade) || 1;
@@ -5423,6 +5422,7 @@ class BityQuestionManager {
       explanation: targetGrade === 1 ? explanation.toUpperCase() : explanation
     };
   }
+
   /**
    * Obtiene una pregunta aleatoria no repetida recientemente para el grado y categoría especificados.
    * @param {number} grade - Grado escolar (1 a 5)
@@ -5475,7 +5475,7 @@ class BityQuestionManager {
   }
 
   /**
-   * Formatea una pregunta mezclando las opciones y adaptando el texto a mayúsculas si es 1.° grado.
+   * Formatea una pregunta mezclando las opciones y adaptando el texto a mayúsculas si es 1.er grado.
    */
   _formatQuestion(rawQ, isGradeOne = false) {
     // Copiar y desordenar opciones (Fisher-Yates shuffle)
@@ -5487,33 +5487,29 @@ class BityQuestionManager {
 
     const labels = ['A', 'B', 'C'];
     const formattedOptions = shuffledOpts.map((opt, idx) => {
-      const label = labels[idx];
-      const text = isGradeOne ? opt.text.toUpperCase() : opt.text;
+      const rawText = opt.text;
+      const text = isGradeOne ? rawText.toUpperCase() : rawText;
       return {
-        id: `opt_${label.toLowerCase()}`,
-        label: label,
-        text: `${label}. ${text}`,
+        label: labels[idx],
+        text: `${labels[idx]}. ${text}`,
         isCorrect: opt.isCorrect === true
       };
     });
 
-    const questionText = isGradeOne ? rawQ.question.toUpperCase() : rawQ.question;
-    const explanationText = isGradeOne ? rawQ.explanation.toUpperCase() : rawQ.explanation;
+    const formattedQ = isGradeOne ? rawQ.question.toUpperCase() : rawQ.question;
+    const formattedExp = isGradeOne && rawQ.explanation ? rawQ.explanation.toUpperCase() : rawQ.explanation;
 
     return {
       id: rawQ.id,
       grade: rawQ.grade,
       category: rawQ.category,
       difficulty: rawQ.difficulty,
-      question: questionText,
+      question: formattedQ,
       options: formattedOptions,
-      explanation: explanationText
+      explanation: formattedExp
     };
   }
 
-  /**
-   * Limpia el historial de preguntas
-   */
   resetHistory() {
     this.history = [];
   }
@@ -5524,6 +5520,10 @@ if (typeof window !== 'undefined') {
   window.BITY_QUESTION_BANK = BITY_QUESTION_BANK;
   window.BityQuestionManager = BityQuestionManager;
 }
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { BITY_QUESTION_BANK, BityQuestionManager };
+  module.exports = {
+    BITY_QUESTION_BANK,
+    BityQuestionManager
+  };
 }
