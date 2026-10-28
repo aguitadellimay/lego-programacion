@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenCodingSyllabus = document.getElementById('screen-coding-syllabus');
     const screenCodingTopic = document.getElementById('screen-coding-topic');
     const screenCodingAdventure = document.getElementById('screen-coding-adventure');
+    const screenBityBlockly = document.getElementById('screen-bityblockly');
 
     const btnHomePlay = document.getElementById('btn-home-play');
     const bannerPlay = document.getElementById('banner-play');
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.teacherManager && targetScreen && targetScreen !== screenHome) {
         if (!window.teacherManager.canAccessScreen(targetScreen.id)) {
           // Si el módulo está bloqueado, permanecer o volver a screenHome
-          [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure].forEach(s => {
+          [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
             if (s) s.classList.remove('active');
           });
           if (screenHome) screenHome.classList.add('active');
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (codingManager && codingManager.stopBgm) {
         codingManager.stopBgm();
       }
-      [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure].forEach(s => {
+      [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
         if (s) s.classList.remove('active');
       });
       if (targetScreen) targetScreen.classList.add('active');

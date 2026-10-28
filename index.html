@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/minigame.css">
   <link rel="stylesheet" href="css/coding.css?v=20261013">
+  <link rel="stylesheet" href="css/bityblockly.css">
   
   <!-- Librería Konva.js para el área de dibujo interactivo -->
   <script src="https://unpkg.com/konva@9.3.16/konva.min.js"></script>
@@ -358,6 +359,31 @@
             </button>
           </article>
 
+          <!-- BityBlockly: Misión espacial (Exclusivo 1.er Grado) -->
+          <article id="topic-card-bityblockly" class="topic-card active" style="border-color: #06b6d4; cursor: pointer; display: none;">
+            <div class="topic-card-header">
+              <span class="topic-icon">🚀</span>
+              <span class="topic-status-tag status-active" style="background: #cffafe; color: #0891b2;">⭐ PROGRAMACIÓN POR BLOQUES</span>
+            </div>
+            <h4 class="topic-title" id="syllabus-bityblockly-title">BityBlockly: Misión espacial</h4>
+            <p class="topic-desc" id="syllabus-bityblockly-desc">
+              «¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé los desafíos y ayudalo a volver a casa».
+            </p>
+            <div class="topic-progress-box">
+              <div class="topic-progress-label">
+                <span id="syllabus-bityblockly-label">MISIÓN ESPACIAL</span>
+                <span id="syllabus-bityblockly-pct">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="syllabus-bityblockly-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #06b6d4, #3b82f6);"></div>
+              </div>
+            </div>
+            <button id="btn-start-bityblockly-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #06b6d4, #0284c7); box-shadow: 0 4px 0 #0369a1;">
+              <span>🚀</span> ¡Comenzar Misión!
+            </button>
+          </article>
+
+
           <!-- Tema 3: PATRONES (Bloqueado según requerimiento de 1.° a 5.° Grado) -->
           <article id="topic-card-patterns" class="topic-card locked" style="border-color: #cbd5e1; cursor: not-allowed;">
             <div class="topic-card-header">
@@ -512,6 +538,172 @@
 
     </div>
   </section>
+
+  <!-- ======================================================== -->
+  <!-- PANTALLA: BITYBLOCKLY — MISIÓN ESPACIAL (1.er Grado)     -->
+  <!-- ======================================================== -->
+  <section id="screen-bityblockly" class="screen">
+    <!-- Barra Superior -->
+    <header class="bityblockly-topbar">
+      <div class="bityblockly-topbar-left">
+        <button type="button" id="btn-bityblockly-back" class="btn-bityblockly-back" title="Volver al temario">
+          <span>⬅</span> Volver al Temario
+        </button>
+        <div class="bityblockly-title-wrap">
+          <h2 class="bityblockly-main-title">🚀 BityBlockly: Misión espacial</h2>
+          <span class="bityblockly-sub-badge">1.er Grado • Programación por Bloques</span>
+        </div>
+      </div>
+
+      <div class="bityblockly-levels-tabs">
+        <button type="button" class="bityblockly-tab-btn active" data-level="1">
+          <span>🪐</span> Nivel 1: Marte
+        </button>
+        <button type="button" class="bityblockly-tab-btn" data-level="2">
+          <span>🌙</span> Nivel 2: Luna
+        </button>
+        <button type="button" class="bityblockly-tab-btn" data-level="3">
+          <span>🛸</span> Nivel 3: Nave
+        </button>
+        <button type="button" id="btn-bityblockly-sound" class="btn-bityblockly-sound" title="Activar/Silenciar sonido">
+          🔊
+        </button>
+      </div>
+    </header>
+
+    <!-- Disposición Principal -->
+    <div class="bityblockly-layout">
+      <!-- Columna Izquierda: Laberinto y Misión -->
+      <div class="bityblockly-mission-col">
+        <!-- Briefing del Nivel -->
+        <div class="bityblockly-briefing-card">
+          <div class="bityblockly-level-header">
+            <h3 id="bityblockly-level-title" class="bityblockly-level-name">Nivel 1: El camino de Marte</h3>
+            <span id="bityblockly-badge-text" class="bityblockly-level-badge">Nivel 1 de 3</span>
+          </div>
+          <p id="bityblockly-story-text" class="bityblockly-story-text">
+            Bity terminó su exploración de Marte y necesita volver a la base de aterrizaje. ¡Programá sus movimientos para llegar a la nave espacial!
+          </p>
+          <p id="bityblockly-hint-text" class="bityblockly-hint-text">
+            💡 Tocá los bloques para armar tu programa. ¡Cada bloque es una instrucción de movimiento!
+          </p>
+        </div>
+
+        <!-- Canvas del Laberinto -->
+        <div class="bityblockly-canvas-card">
+          <canvas id="bityblockly-canvas" width="680" height="420"></canvas>
+        </div>
+
+        <!-- Banner de Estado en Vivo -->
+        <div id="bityblockly-status-banner" class="bityblockly-status-banner status-info">
+          <span>🤖</span> <span>¡Elegí cómo se mueve Bity! Agregá bloques para llevarlo a la nave espacial.</span>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Paleta de Bloques y Secuencia -->
+      <div class="bityblockly-coding-col">
+        <!-- Paleta de Bloques Disponibles -->
+        <div class="bityblockly-palette-card">
+          <h4 class="bityblockly-section-title">
+            <span>BLOQUES DE MOVIMIENTO</span>
+            <span style="font-size:0.8rem; color:#818cf8;">3 Disponibles</span>
+          </h4>
+          <div class="bityblockly-palette-grid">
+            <button type="button" id="btn-bityblockly-add-forward" class="btn-palette-block btn-palette-forward" title="Avanzar 1 casilla">
+              <span class="block-icon-badge">⬆️</span>
+              <span class="block-label-text">Avanzar</span>
+              <span class="block-add-hint">+ Agregar</span>
+            </button>
+            <button type="button" id="btn-bityblockly-add-left" class="btn-palette-block btn-palette-left" title="Girar 90° a la izquierda">
+              <span class="block-icon-badge">↩️</span>
+              <span class="block-label-text">Girar a la izquierda</span>
+              <span class="block-add-hint">+ Agregar</span>
+            </button>
+            <button type="button" id="btn-bityblockly-add-right" class="btn-palette-block btn-palette-right" title="Girar 90° a la derecha">
+              <span class="block-icon-badge">↪️</span>
+              <span class="block-label-text">Girar a la derecha</span>
+              <span class="block-add-hint">+ Agregar</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Área de Trabajo: Secuencia del Programa -->
+        <div class="bityblockly-workspace-card">
+          <h4 class="bityblockly-section-title">
+            <span>TU PROGRAMA</span>
+            <span id="bityblockly-blocks-count" style="font-size:0.8rem; color:#38bdf8;">(0 / 25 bloques)</span>
+          </h4>
+
+          <div id="bityblockly-steps-list" class="bityblockly-steps-list">
+            <!-- Los bloques agregados se renderizan aquí dinámicamente -->
+          </div>
+
+          <!-- Controles de Ejecución -->
+          <div class="bityblockly-control-actions">
+            <button type="button" id="btn-bityblockly-run" class="btn-blockly-run">
+              <span>▶️</span> ¡EJECUTAR PROGRAMA!
+            </button>
+            <div class="bityblockly-secondary-actions">
+              <button type="button" id="btn-bityblockly-reset" class="btn-blockly-reset" title="Volver Bity al inicio">
+                <span>🔄</span> Volver al inicio
+              </button>
+              <button type="button" id="btn-bityblockly-clear" class="btn-blockly-clear" title="Borrar todos los bloques">
+                <span>🗑️</span> Borrar todo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Desafío Matemático Obligatorio -->
+    <div id="bityblockly-math-modal" class="bityblockly-modal-overlay">
+      <div class="bityblockly-math-card">
+        <div class="math-door-icon-wrap">⚡</div>
+        <h3 class="math-door-title">PUERTA DE ENERGÍA ESPACIAL</h3>
+        <p id="bityblockly-math-story" class="math-door-story">
+          ¡Bity necesita revisar su batería! La batería puede almacenar 10 cargas. Bity ya usó 5. ¿Cuántas cargas le quedan?
+        </p>
+        
+        <div class="math-operation-box">
+          <div id="bityblockly-math-equation" class="math-equation-text">10 − 5 = ?</div>
+        </div>
+
+        <div class="math-visual-aid-box">
+          <div class="math-visual-label">AYUDA VISUAL DE ENERGÍA:</div>
+          <div id="bityblockly-math-visual" class="battery-cells-container">
+            <!-- Celdas de batería dinámicas -->
+          </div>
+        </div>
+
+        <div id="bityblockly-math-options" class="math-options-grid">
+          <!-- Opciones grandes dinámicas -->
+        </div>
+
+        <div id="bityblockly-math-feedback" class="math-feedback-box">
+          Seleccioná la respuesta correcta para abrir la puerta:
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Victoria de Nivel y Final -->
+    <div id="bityblockly-victory-modal" class="bityblockly-modal-overlay">
+      <div class="bityblockly-victory-card">
+        <div class="victory-avatar-wrap">🤖🏆</div>
+        <h3 id="bityblockly-victory-title" class="victory-title">¡NIVEL SUPERADO!</h3>
+        <p id="bityblockly-victory-subtitle" class="victory-subtitle">¡Excelente trabajo! Bity completó el recorrido con éxito.</p>
+        
+        <div id="bityblockly-reflection-box" class="classroom-reflection-card" style="display: none;">
+          <!-- Mensaje de reflexión en classroom para Nivel 3 -->
+        </div>
+
+        <div id="bityblockly-victory-actions" class="victory-actions">
+          <!-- Botones dinámicos según el nivel -->
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- PANTALLA 2: Mini-Juego de 3 Niveles (Estilo Minecraft) -->
   <section id="screen-game" class="screen">
@@ -1111,6 +1303,7 @@
   <script src="js/miniGame.js"></script>
   <script src="js/platformerQuestions.js"></script>
   <script src="js/platformerGame.js"></script>
+  <script src="js/bityBlockly.js"></script>
   <script src="js/codingModule.js?v=20261013"></script>
   <script src="js/teacherPanel.js"></script>
   <script src="js/app.js"></script>

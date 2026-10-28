@@ -1,0 +1,949 @@
+/* ========================================================
+   BITYBLOCKLY: MISIÓN ESPACIAL — ESTILOS VISUALES
+   Diseñado para 1.er Grado (6 a 7 años) en Lego Familiar
+   ======================================================== */
+
+#screen-bityblockly {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #1e1b4b 0%, #0f172a 50%, #030712 100%);
+  color: #f8fafc;
+  font-family: 'Fredoka', 'Quicksand', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+  padding: 16px 20px 40px;
+}
+
+#screen-bityblockly.active {
+  display: block;
+}
+
+/* Encabezado Superior de BityBlockly */
+.bityblockly-topbar {
+  max-width: 1200px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(56, 189, 248, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.bityblockly-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-bityblockly-back {
+  background: linear-gradient(180deg, #334155, #1e293b);
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 0 #0f172a;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.btn-bityblockly-back:hover {
+  background: linear-gradient(180deg, #475569, #334155);
+}
+
+.btn-bityblockly-back:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0f172a;
+}
+
+.bityblockly-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.bityblockly-main-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bityblockly-sub-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Selector de Niveles */
+.bityblockly-levels-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bityblockly-tab-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 2px solid #334155;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.bityblockly-tab-btn:hover:not(:disabled) {
+  border-color: #38bdf8;
+  color: #f8fafc;
+}
+
+.bityblockly-tab-btn.active {
+  background: linear-gradient(180deg, #0284c7, #0369a1);
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+}
+
+.bityblockly-tab-btn:disabled,
+.bityblockly-tab-btn.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #1e293b;
+}
+
+.btn-bityblockly-sound {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  font-size: 1.1rem;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Grilla Principal del Juego */
+.bityblockly-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .bityblockly-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Columna Izquierda: Laberinto y Misión */
+.bityblockly-mission-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bityblockly-briefing-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid rgba(56, 189, 248, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.bityblockly-level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bityblockly-level-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.bityblockly-level-badge {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid #38bdf8;
+  color: #7dd3fc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.bityblockly-story-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.bityblockly-hint-text {
+  font-size: 0.9rem;
+  color: #fde047;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* Canvas del Laberinto */
+.bityblockly-canvas-card {
+  background: #0f172a;
+  border: 3px solid #38bdf8;
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+#bityblockly-canvas {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #020617;
+}
+
+/* Banner de Estado / Mensajes en vivo */
+.bityblockly-status-banner {
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid #334155;
+  border-radius: 14px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  min-height: 48px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.bityblockly-status-banner.status-info {
+  border-color: #38bdf8;
+  color: #e0f2fe;
+}
+
+.bityblockly-status-banner.status-success {
+  border-color: #22c55e;
+  background: rgba(20, 83, 45, 0.8);
+  color: #bbf7d0;
+}
+
+.bityblockly-status-banner.status-warning {
+  border-color: #f59e0b;
+  background: rgba(120, 53, 15, 0.8);
+  color: #fef3c7;
+}
+
+.bityblockly-status-banner.status-error {
+  border-color: #ef4444;
+  background: rgba(127, 29, 29, 0.8);
+  color: #fecaca;
+}
+
+/* Columna Derecha: Panel de Bloques y Secuencia */
+.bityblockly-coding-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Paleta de Bloques */
+.bityblockly-palette-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid rgba(129, 140, 248, 0.35);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.bityblockly-section-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bityblockly-palette-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.btn-palette-block {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-align: left;
+  user-select: none;
+}
+
+.btn-palette-forward {
+  background: linear-gradient(180deg, #10b981, #059669);
+  box-shadow: 0 5px 0 #047857, 0 8px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-palette-forward:hover {
+  background: linear-gradient(180deg, #34d399, #059669);
+}
+
+.btn-palette-forward:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #047857;
+}
+
+.btn-palette-left {
+  background: linear-gradient(180deg, #6366f1, #4f46e5);
+  box-shadow: 0 5px 0 #3730a3, 0 8px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-palette-left:hover {
+  background: linear-gradient(180deg, #818cf8, #4f46e5);
+}
+
+.btn-palette-left:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #3730a3;
+}
+
+.btn-palette-right {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  box-shadow: 0 5px 0 #b45309, 0 8px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-palette-right:hover {
+  background: linear-gradient(180deg, #fbbf24, #d97706);
+}
+
+.btn-palette-right:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #b45309;
+}
+
+.block-icon-badge {
+  font-size: 1.35rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.block-label-text {
+  flex: 1;
+}
+
+.block-add-hint {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* Área de Secuencia / Programa */
+.bityblockly-workspace-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.bityblockly-steps-list {
+  min-height: 180px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+  margin-bottom: 14px;
+}
+
+/* Scrollbar personalizada */
+.bityblockly-steps-list::-webkit-scrollbar {
+  width: 6px;
+}
+.bityblockly-steps-list::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 4px;
+}
+.bityblockly-steps-list::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 4px;
+}
+
+.bityblockly-empty-program {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 16px;
+  color: #64748b;
+  border: 2px dashed #334155;
+  border-radius: 12px;
+  gap: 8px;
+}
+
+.bityblockly-empty-icon {
+  font-size: 2rem;
+}
+
+/* Ítems de la secuencia */
+.bityblockly-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.bityblockly-step-item.step-forward {
+  border-left: 5px solid #10b981;
+}
+
+.bityblockly-step-item.step-left {
+  border-left: 5px solid #6366f1;
+}
+
+.bityblockly-step-item.step-right {
+  border-left: 5px solid #f59e0b;
+}
+
+.bityblockly-step-item.active-step {
+  background: #0369a1;
+  border-color: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+  transform: scale(1.02);
+}
+
+.step-num-badge {
+  font-size: 0.8rem;
+  width: 22px;
+  height: 22px;
+  background: #0f172a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 800;
+}
+
+.step-name {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.step-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-step-move,
+.btn-step-remove {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-step-move:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.btn-step-remove:hover {
+  background: #ef4444;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+/* Botones de Acción de Control */
+.bityblockly-control-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-blockly-run {
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+  border: none;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 5px 0 #15803d, 0 8px 16px rgba(34, 197, 94, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.btn-blockly-run:hover:not(:disabled) {
+  background: linear-gradient(180deg, #4ade80, #16a34a);
+}
+
+.btn-blockly-run:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #15803d;
+}
+
+.btn-blockly-run:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.bityblockly-secondary-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn-blockly-reset,
+.btn-blockly-clear {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.btn-blockly-reset:hover {
+  background: #334155;
+}
+
+.btn-blockly-clear:hover {
+  background: #451a1a;
+  border-color: #ef4444;
+  color: #fca5a5;
+}
+
+/* ========================================================
+   MODAL DE DESAFÍO MATEMÁTICO (HABITACIÓN OBLIGATORIA)
+   ======================================================== */
+.bityblockly-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.bityblockly-modal-overlay.active {
+  display: flex;
+}
+
+.bityblockly-math-card {
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 24px;
+  max-width: 540px;
+  width: 100%;
+  padding: 28px;
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+  animation: bityModalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes bityModalPop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.math-door-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: -10px auto 14px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.math-door-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.math-door-story {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+/* Caja de la Operación Matemática */
+.math-operation-box {
+  background: #020617;
+  border: 2px solid #818cf8;
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin-bottom: 18px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.3);
+}
+
+.math-equation-text {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fde047;
+  margin: 0;
+  font-family: monospace;
+}
+
+/* Ayuda Visual de Baterías / Energía */
+.math-visual-aid-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.math-visual-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.battery-cells-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.battery-cell {
+  width: 38px;
+  height: 48px;
+  border-radius: 6px;
+  border: 2px solid #38bdf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.battery-cell.cell-active {
+  background: linear-gradient(180deg, #10b981, #059669);
+  border-color: #34d399;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  color: #ffffff;
+}
+
+.battery-cell.cell-spent {
+  background: rgba(51, 65, 85, 0.4);
+  border-color: #475569;
+  opacity: 0.4;
+  color: #ef4444;
+}
+
+.battery-cell.cell-added {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  border-color: #fbbf24;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  color: #ffffff;
+}
+
+/* Opciones de Respuesta */
+.math-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.btn-math-option {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 2px solid #38bdf8;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  padding: 14px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0284c7;
+  transition: transform 0.1s, background-color 0.2s;
+  user-select: none;
+}
+
+.btn-math-option:hover {
+  background: linear-gradient(180deg, #0284c7, #0369a1);
+}
+
+.btn-math-option:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #0284c7;
+}
+
+.btn-math-option.opt-correct {
+  background: linear-gradient(180deg, #22c55e, #16a34a) !important;
+  border-color: #86efac !important;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.8) !important;
+}
+
+.btn-math-option.opt-wrong {
+  animation: bityWobble 0.4s ease-in-out;
+  border-color: #ef4444 !important;
+  background: #7f1d1d !important;
+}
+
+@keyframes bityWobble {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.math-feedback-box {
+  min-height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.math-feedback-box.feedback-correct {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+  border: 1px solid #22c55e;
+}
+
+.math-feedback-box.feedback-wrong {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid #ef4444;
+}
+
+/* ========================================================
+   MODALES DE VICTORIA Y CIERRE DE MISIÓN
+   ======================================================== */
+.bityblockly-victory-card {
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+  border: 3px solid #22c55e;
+  border-radius: 24px;
+  max-width: 580px;
+  width: 100%;
+  padding: 32px 24px;
+  box-shadow: 0 0 50px rgba(34, 197, 94, 0.4);
+  text-align: center;
+  position: relative;
+  animation: bityModalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.victory-avatar-wrap {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 16px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 3px solid #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.6);
+}
+
+.victory-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #4ade80;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.victory-subtitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  margin: 0 0 16px 0;
+}
+
+.classroom-reflection-card {
+  background: #020617;
+  border: 2px dashed #fde047;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.classroom-reflection-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fde047;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.classroom-reflection-prompt {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.victory-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-victory-next,
+.btn-victory-retry,
+.btn-victory-syllabus {
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 12px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.1s;
+}
+
+.btn-victory-next {
+  background: linear-gradient(180deg, #22c55e, #16a34a);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #15803d;
+}
+
+.btn-victory-next:hover {
+  background: linear-gradient(180deg, #4ade80, #16a34a);
+}
+
+.btn-victory-retry {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #1e40af;
+}
+
+.btn-victory-syllabus {
+  background: linear-gradient(180deg, #64748b, #475569);
+  color: #ffffff;
+  box-shadow: 0 4px 0 #334155;
+}
+
+.btn-victory-next:active,
+.btn-victory-retry:active,
+.btn-victory-syllabus:active {
+  transform: translateY(2px);
+}

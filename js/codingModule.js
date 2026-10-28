@@ -7586,6 +7586,48 @@ class CodingModuleManager {
   /**
    * Sale del módulo independiente y vuelve de manera limpia al origen (Home o Temario)
    */
+  /**
+   * Inicia la actividad BityBlockly: Misión espacial (Exclusivo 1.er Grado)
+   */
+  startBityBlockly() {
+    // Verificación de disponibilidad por Panel Docente
+    if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.canAccessScreen('screen-bityblockly')) {
+      window.teacherManager.showBlockedNoticeForScreen('screen-bityblockly');
+      return;
+    }
+
+    this.cleanupCurrentActivity();
+
+    // Mostrar pantalla
+    const bityScreen = document.getElementById('screen-bityblockly');
+    if (this.onShowScreen && bityScreen) {
+      this.onShowScreen('screen-bityblockly');
+    } else if (bityScreen) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      bityScreen.classList.add('active');
+    }
+
+    // Inicializar o refrescar el juego
+    if (typeof window !== 'undefined' && window.BityBlocklyGame) {
+      if (!window.bityBlocklyGame) {
+        window.bityBlocklyGame = new window.BityBlocklyGame({
+          onBackToSyllabus: () => {
+            this.renderSyllabus();
+          },
+          onProgressUpdated: () => {
+            this.renderSyllabus();
+          }
+        });
+      } else {
+        window.bityBlocklyGame.onBackToSyllabus = () => {
+          this.renderSyllabus();
+        };
+        window.bityBlocklyGame.loadProgress();
+        window.bityBlocklyGame.loadLevel(window.bityBlocklyGame.currentLevelIndex || 1);
+      }
+    }
+  }
+
   exitPlatformerAdventure() {
     this.cleanupCurrentActivity();
     if (this.adventureReturnTo === 'syllabus') {
@@ -7659,6 +7701,9 @@ class CodingModuleManager {
     if (this.currentPlatformerGame) {
       this.currentPlatformerGame.destroy();
       this.currentPlatformerGame = null;
+    }
+    if (typeof window !== 'undefined' && window.bityBlocklyGame) {
+      window.bityBlocklyGame.stopProgram();
     }
     this.gridIsRunning = false;
   }
@@ -7767,8 +7812,22 @@ class CodingModuleManager {
     this.cleanupCurrentActivity();
     if (grade) {
       this.storage.resetGradeProgress(grade);
+      if (grade === 1 || grade === '1') {
+        try {
+          localStorage.removeItem('lego_bityblockly_progress');
+          if (typeof window !== 'undefined' && window.bityBlocklyGame) {
+            window.bityBlocklyGame.loadProgress();
+          }
+        } catch (e) {}
+      }
     } else {
       this.storage.resetAllProgress();
+      try {
+        localStorage.removeItem('lego_bityblockly_progress');
+        if (typeof window !== 'undefined' && window.bityBlocklyGame) {
+          window.bityBlocklyGame.loadProgress();
+        }
+      } catch (e) {}
     }
     this.renderSyllabus();
     this.showSessionNotification(
@@ -7971,6 +8030,58 @@ class CodingModuleManager {
         this.onPlaySound('pop');
         this.startPlatformerAdventure({ returnTo: 'syllabus' });
       };
+    }
+
+    // ========================================================
+    // BITYBLOCKLY: MISIÓN ESPACIAL (EXCLUSIVO 1.er GRADO)
+    // ========================================================
+    const bbCard = document.getElementById('topic-card-bityblockly');
+    const btnStartBb = document.getElementById('btn-start-bityblockly-topic');
+    const bbFillEl = document.getElementById('syllabus-bityblockly-progress');
+    const bbTextEl = document.getElementById('syllabus-bityblockly-pct');
+    const bbTitleEl = document.getElementById('syllabus-bityblockly-title');
+    const bbDescEl = document.getElementById('syllabus-bityblockly-desc');
+    const bbLabelEl = document.getElementById('syllabus-bityblockly-label');
+
+    if (this.currentGrade === 1 && bbCard) {
+      bbCard.style.display = 'flex';
+      bbCard.style.cursor = 'pointer';
+      bbCard.onclick = () => {
+        this.onPlaySound('pop');
+        this.startBityBlockly();
+      };
+
+      let bbData = null;
+      try {
+        const raw = localStorage.getItem('lego_bityblockly_progress');
+        if (raw) bbData = JSON.parse(raw);
+      } catch (e) {}
+
+      const bbCompleted = (bbData && Array.isArray(bbData.completedLevels)) ? bbData.completedLevels.length : 0;
+      const bbPct = Math.min(100, Math.round((bbCompleted / 3) * 100));
+
+      if (bbFillEl) bbFillEl.style.width = `${bbPct}%`;
+      if (bbTextEl) {
+        bbTextEl.textContent = (bbCompleted >= 3) ? '🎉 ¡100% COMPLETADO!' : `${bbPct}%`;
+      }
+      if (bbTitleEl) bbTitleEl.textContent = 'BityBlockly: Misión espacial';
+      if (bbLabelEl) bbLabelEl.textContent = 'MISIÓN ESPACIAL';
+      if (bbDescEl) {
+        bbDescEl.textContent = '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé los desafíos y ayudalo a volver a casa».';
+      }
+
+      if (btnStartBb) {
+        btnStartBb.innerHTML = (bbCompleted >= 3)
+          ? '<span>🔄</span> ¡REPASAR MISIÓN!'
+          : (bbCompleted > 0 ? '<span>▶️</span> ¡CONTINUAR MISIÓN!' : '<span>🚀</span> ¡COMENZAR MISIÓN!');
+        btnStartBb.onclick = (e) => {
+          if (e) e.stopPropagation();
+          this.onPlaySound('pop');
+          this.startBityBlockly();
+        };
+      }
+    } else if (bbCard) {
+      bbCard.style.display = 'none';
     }
 
     // ========================================================
