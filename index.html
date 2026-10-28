@@ -556,14 +556,20 @@
       </div>
 
       <div class="bityblockly-levels-tabs">
-        <button type="button" class="bityblockly-tab-btn active" data-level="1">
-          <span>🪐</span> Nivel 1: Marte
+        <button type="button" class="bityblockly-tab-btn active" data-level="1" title="Nivel 1: Marte">
+          <span>🪐</span> Nivel 1
         </button>
-        <button type="button" class="bityblockly-tab-btn" data-level="2">
-          <span>🌙</span> Nivel 2: Luna
+        <button type="button" class="bityblockly-tab-btn" data-level="2" title="Nivel 2: Luna">
+          <span>🌙</span> Nivel 2
         </button>
-        <button type="button" class="bityblockly-tab-btn" data-level="3">
-          <span>🛸</span> Nivel 3: Nave
+        <button type="button" class="bityblockly-tab-btn" data-level="3" title="Nivel 3: Cosmos">
+          <span>🌌</span> Nivel 3
+        </button>
+        <button type="button" class="bityblockly-tab-btn" data-level="4" title="Nivel 4: Estación">
+          <span>⚡</span> Nivel 4
+        </button>
+        <button type="button" class="bityblockly-tab-btn" data-level="5" title="Nivel 5: Nave">
+          <span>🚀</span> Nivel 5
         </button>
         <button type="button" id="btn-bityblockly-sound" class="btn-bityblockly-sound" title="Activar/Silenciar sonido">
           🔊
@@ -699,6 +705,38 @@
 
         <div id="bityblockly-victory-actions" class="victory-actions">
           <!-- Botones dinámicos según el nivel -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Cinemático de Cierre de Misión (Exclusivo Nivel 5) -->
+    <div id="bityblockly-cinematic-modal" class="bityblockly-modal-overlay">
+      <div class="bityblockly-cinematic-card">
+        <div class="cinematic-canvas-wrap">
+          <canvas id="bityblockly-cinematic-canvas" width="640" height="360"></canvas>
+          <div id="bityblockly-cinematic-subtitle" class="cinematic-subtitle-box">
+            ¡Lo lograste! ¡Bity encontró el camino de regreso!
+          </div>
+        </div>
+
+        <div id="bityblockly-final-celebration-card" class="bityblockly-final-celebration-card" style="display: none;">
+          <div class="victory-avatar-wrap">🤖🚀🏆</div>
+          <h2 class="victory-title">¡MISIÓN CUMPLIDA!</h2>
+          <h3 class="victory-subtitle">¡GRACIAS POR AYUDARME A VOLVER A CASA!</h3>
+          <div class="classroom-reflection-card">
+            <p class="classroom-reflection-prompt" style="font-size:1.1rem; line-height:1.5;">
+              PROGRAMASTE MIS MOVIMIENTOS, RESOLVISTE LOS DESAFÍOS Y ME AYUDASTE A REGRESAR A MI NAVE.<br>
+              <strong style="color: #fde047; font-size:1.25rem; display:block; margin-top:8px;">¡SOS UN GRAN EXPLORADOR ESPACIAL!</strong>
+            </p>
+          </div>
+          <div class="victory-actions">
+            <button type="button" class="btn-victory-retry" id="btn-final-replay-mission">
+              <span>🔄</span> Volver a jugar
+            </button>
+            <button type="button" class="btn-victory-syllabus" id="btn-final-back-grade1">
+              <span>🎒</span> Volver a 1.er grado
+            </button>
+          </div>
         </div>
       </div>
     </div>

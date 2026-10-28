@@ -7615,7 +7615,7 @@ class CodingModuleManager {
             this.renderSyllabus();
           },
           onProgressUpdated: () => {
-            this.renderSyllabus();
+            // No salir del juego al actualizar progreso entre niveles
           }
         });
       } else {
@@ -8058,11 +8058,11 @@ class CodingModuleManager {
       } catch (e) {}
 
       const bbCompleted = (bbData && Array.isArray(bbData.completedLevels)) ? bbData.completedLevels.length : 0;
-      const bbPct = Math.min(100, Math.round((bbCompleted / 3) * 100));
+      const bbPct = Math.min(100, Math.round((bbCompleted / 5) * 100));
 
       if (bbFillEl) bbFillEl.style.width = `${bbPct}%`;
       if (bbTextEl) {
-        bbTextEl.textContent = (bbCompleted >= 3) ? '🎉 ¡100% COMPLETADO!' : `${bbPct}%`;
+        bbTextEl.textContent = (bbCompleted >= 5) ? '🎉 ¡100% COMPLETADO!' : `${bbPct}%`;
       }
       if (bbTitleEl) bbTitleEl.textContent = 'BityBlockly: Misión espacial';
       if (bbLabelEl) bbLabelEl.textContent = 'MISIÓN ESPACIAL';
@@ -8071,7 +8071,7 @@ class CodingModuleManager {
       }
 
       if (btnStartBb) {
-        btnStartBb.innerHTML = (bbCompleted >= 3)
+        btnStartBb.innerHTML = (bbCompleted >= 5)
           ? '<span>🔄</span> ¡REPASAR MISIÓN!'
           : (bbCompleted > 0 ? '<span>▶️</span> ¡CONTINUAR MISIÓN!' : '<span>🚀</span> ¡COMENZAR MISIÓN!');
         btnStartBb.onclick = (e) => {

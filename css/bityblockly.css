@@ -947,3 +947,86 @@
 .btn-victory-syllabus:active {
   transform: translateY(2px);
 }
+
+
+/* ========================================================
+   MODAL CINEMÁTICO: FINAL DE LA MISIÓN (NIVEL 5)
+   ======================================================== */
+.bityblockly-cinematic-card {
+  background: linear-gradient(180deg, #090d16 0%, #1e1b4b 100%);
+  border: 3px solid #38bdf8;
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  animation: bityModalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cinematic-canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(56, 189, 248, 0.3);
+}
+
+#bityblockly-cinematic-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #020617;
+}
+
+.cinematic-subtitle-box {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid #facc15;
+  border-radius: 12px;
+  padding: 10px 16px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.bityblockly-final-celebration-card {
+  padding-top: 16px;
+  animation: bityFadeIn 0.5s ease-out;
+}
+
+@keyframes bityFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.final-speech-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+}
+
+.final-badge-honor {
+  display: inline-block;
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  padding: 6px 18px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
