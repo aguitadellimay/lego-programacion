@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lego Familiar - Regalo Día de la Familia</title>
+  <title>Informática Mágica - ¡Aprender, Programar y Crear en una Aventura de Halloween!</title>
   
   <!-- Estilos y fuentes -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/minigame.css">
   <link rel="stylesheet" href="css/coding.css?v=20261013">
   <link rel="stylesheet" href="css/bityblockly.css">
+  <link rel="stylesheet" href="css/halloween_theme.css">
   
   <!-- Librería Konva.js para el área de dibujo interactivo -->
   <script src="https://unpkg.com/konva@9.3.16/konva.min.js"></script>
@@ -24,8 +25,8 @@
         <img src="img/logo.png" alt="Logo de la Escuela" onerror="this.style.display='none'">
       </div>
       <div>
-        <h1 class="brand-title">Lego Familiar</h1>
-        <span class="brand-subtitle">🎁 Especial Día de la Familia</span>
+        <h1 class="brand-title">Informática Mágica</h1>
+        <span class="brand-subtitle">🎃 ¡Aprender, Programar y Crear!</span>
       </div>
     </div>
 
@@ -47,66 +48,199 @@
     </div>
   </header>
 
-  <!-- PANTALLA 1: Menú Inicial con Banners de Elección (Fase 3) -->
+    <!-- PANTALLA 1: Menú Inicial con Banners de Elección (Fase 3) -->
   <section id="screen-home" class="screen active">
     <div class="home-screen-wrapper">
       
-      <div class="home-hero-header">
-        <h2 class="home-main-title">¡Bienvenidos a Lego Familiar!</h2>
-        <p class="home-subtitle">Elige una de las tres opciones para comenzar tu experiencia:</p>
-      </div>
+      <!-- Escenario Principal de Halloween (Cielo, Luna, Castillo, Bosque, Murciélagos, Fantasmas y Código) -->
+      <div class="magic-backdrop" aria-hidden="true">
+        <!-- Luna Llena Enorme con Halo Luminoso y Cráteres -->
+        <div class="magic-moon-wrap">
+          <div class="magic-moon">
+            <span class="moon-crater crater-1"></span>
+            <span class="moon-crater crater-2"></span>
+            <span class="moon-crater crater-3"></span>
+          </div>
+        </div>
 
-      <div class="home-banners-grid">
-        <!-- Banner 1 (Opción A): Jugar y Aprender Matemática -->
-        <article id="banner-play" class="home-banner-card banner-game">
-          <span class="banner-badge">🎮 Misión Escolar • 5 Desafíos</span>
-          <div class="banner-icon-box">⛏️ 🧱 👾</div>
-          <h3 class="banner-title">¡Jugar y Aprender!</h3>
-          <p class="banner-desc">
-            Supera desafíos divertidos: esquiva slimes en movimiento, resuelve acertijos de lógica y responde preguntas matemáticas para conseguir los bloques mágicos.
+        <!-- Silueta del Castillo Encantado y Bosque Tenebroso -->
+        <div class="magic-castle-wrap">
+          <svg class="magic-castle-svg" viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <!-- Colinas misteriosas de fondo -->
+            <path d="M0,350 Q300,270 600,330 T1200,300 L1200,400 L0,400 Z" fill="#130c24"/>
+            <!-- Estructura del Castillo y Murallas -->
+            <g fill="#0b0817">
+              <!-- Torre Central -->
+              <rect x="520" y="160" width="160" height="180"/>
+              <polygon points="505,160 600,65 695,160" fill="#1c1133"/>
+              <!-- Torre Izquierda -->
+              <rect x="415" y="195" width="85" height="150"/>
+              <polygon points="400,195 457,110 515,195" fill="#1c1133"/>
+              <!-- Torre Derecha -->
+              <rect x="700" y="195" width="85" height="150"/>
+              <polygon points="685,195 742,110 800,195" fill="#1c1133"/>
+              <!-- Almenas superiores -->
+              <rect x="437" y="100" width="40" height="15" fill="#54258a"/>
+              <rect x="722" y="100" width="40" height="15" fill="#54258a"/>
+              <!-- Ventanas Iluminadas del Castillo -->
+              <rect x="585" y="180" width="30" height="46" rx="15" fill="#ffca28" class="window-glow"/>
+              <rect x="548" y="240" width="24" height="36" rx="10" fill="#ff9800" class="window-glow"/>
+              <rect x="628" y="240" width="24" height="36" rx="10" fill="#ff9800" class="window-glow"/>
+              <rect x="445" y="215" width="25" height="36" rx="12" fill="#ffeb3b" class="window-glow"/>
+              <rect x="730" y="215" width="25" height="36" rx="12" fill="#ffeb3b" class="window-glow"/>
+            </g>
+            <!-- Bosque Encantado: Árboles Retorcidos a los costados -->
+            <g fill="#0c0819">
+              <path d="M70,360 Q85,310 65,270 Q55,245 35,235 Q55,240 70,255 Q85,235 105,215 Q90,230 85,265 Q105,295 115,360 Z"/>
+              <path d="M170,370 Q180,320 160,280 Q140,260 130,250 Q145,258 165,275 Q185,255 200,235 Q188,250 185,285 Q200,320 210,370 Z"/>
+              <path d="M1030,370 Q1020,310 1040,270 Q1060,250 1070,240 Q1055,245 1040,260 Q1020,240 1000,220 Q1015,235 1020,270 Q1000,300 990,370 Z"/>
+              <path d="M1130,380 Q1120,330 1140,290 Q1155,270 1170,260 Q1155,265 1140,285 Q1125,260 1110,245 Q1120,260 1125,295 Q1110,330 1100,380 Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Niebla Encantada en la Base -->
+        <div class="magic-ground-fog"></div>
+
+        <!-- Telarañas Decorativas en las Esquinas -->
+        <div class="magic-corner-web web-tl">
+          <svg viewBox="0 0 100 100" class="web-svg">
+            <path d="M0,0 L100,0 M0,0 L85,45 M0,0 L60,80 M0,0 L0,100 M20,0 Q18,12 0,20 M45,0 Q38,25 0,45 M70,0 Q58,40 0,70 M95,0 Q78,58 0,95" stroke="rgba(169, 112, 255, 0.45)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <div class="magic-corner-web web-tr">
+          <svg viewBox="0 0 100 100" class="web-svg">
+            <path d="M100,0 L0,0 M100,0 L15,45 M100,0 L40,80 M100,0 L100,100 M80,0 Q82,12 100,20 M55,0 Q62,25 100,45 M30,0 Q42,40 100,70 M5,0 Q22,58 100,95" stroke="rgba(169, 112, 255, 0.45)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+
+        <!-- Murciélagos Volando de lado a lado -->
+        <div class="magic-flying-bat bat-flight-1">🦇</div>
+        <div class="magic-flying-bat bat-flight-2">🦇</div>
+        <div class="magic-flying-bat bat-flight-3">🦇</div>
+
+        <!-- Fantasmas Simpáticos Flotando -->
+        <div class="magic-floating-ghost ghost-float-1">👻</div>
+        <div class="magic-floating-ghost ghost-float-2">👻</div>
+
+        <!-- Símbolos de Código e Informática Integrados -->
+        <div class="magic-tech-glyph glyph-1">&lt;/&gt;</div>
+        <div class="magic-tech-glyph glyph-2">{ code }</div>
+        <div class="magic-tech-glyph glyph-3">0101</div>
+        <div class="magic-tech-glyph glyph-4">if (⚡)</div>
+        <div class="magic-tech-glyph glyph-5">λ</div>
+
+        <!-- Pequeños Monstruos Asomándose desde los Bordes -->
+        <div class="magic-peeking-monster monster-peek-left" title="¡Bienvenido a la aventura!">
+          <span>👾</span>
+        </div>
+        <div class="magic-peeking-monster monster-peek-right" title="¡Descubrí los portales!">
+          <span>👹</span>
+        </div>
+        <div class="magic-peeking-monster monster-peek-bottom" title="¡Aprender jugando!">
+          <span>🎃</span>
+        </div>
+      </div>
+      
+      <!-- Encabezado Central de la Portada -->
+      <header class="home-hero-header magic-hero-header">
+        <div class="magic-badge-pill">
+          <span class="pill-sparkle">✨</span>
+          <span>AVENTURA DIGITAL · INFORMÁTICA &amp; PROGRAMACIÓN</span>
+          <span class="pill-sparkle">✨</span>
+        </div>
+        <h1 class="magic-hero-title">INFORMÁTICA MÁGICA</h1>
+        <h2 class="magic-hero-subtitle">¡APRENDER, PROGRAMAR Y CREAR EN UNA AVENTURA DE HALLOWEEN!</h2>
+        <p class="magic-hero-invitation">
+          ¡Te damos la bienvenida al reino digital embrujado! Elegí uno de los cuatro portales mágicos para explorar laboratorios de código, resolver misterios matemáticos, volar por el espacio con Bity o armar tu propio recuerdo familiar.
+        </p>
+      </header>
+
+      <!-- Los 4 Portales Mágicos del Menú Principal -->
+      <div class="home-banners-grid magic-portals-grid">
+        
+        <!-- Portal 1: JUGAR Y APRENDER -->
+        <article id="banner-play" class="home-banner-card magic-portal portal-play">
+          <span class="banner-badge portal-badge">🧪 Laboratorio Mágico · 5 Desafíos</span>
+          <div class="portal-illustration-box">
+            <div class="portal-art-scene">
+              <span class="portal-icon-main">🔮</span>
+              <span class="portal-sparkle p-spark-1">✨</span>
+              <span class="portal-sparkle p-spark-2">📚</span>
+              <span class="portal-code-rune">12 + 5</span>
+            </div>
+          </div>
+          <h3 class="banner-title portal-title">JUGAR Y APRENDER</h3>
+          <h4 class="portal-subtitle">¡RESOLVÉ DESAFÍOS, DESCUBRÍ Y APRENDÉ JUGANDO!</h4>
+          <p class="banner-desc portal-desc">
+            Entrá al laboratorio de acertijos: esquivá slimes encantados, resolvé cuentas de matemáticas y descubrí bloques mágicos para superar cada nivel escolar.
           </p>
-          <button id="btn-home-play" class="btn-banner-action" type="button">
-            <span>🚀</span> ¡Comenzar la Aventura!
+          <button id="btn-home-play" class="btn-banner-action portal-btn" type="button">
+            <span>🔮</span> ¡Entrar al Laboratorio!
           </button>
         </article>
 
-        <!-- Banner 2 (Opción B): Módulo de Programación -->
-        <article id="banner-coding" class="home-banner-card banner-coding">
-          <span class="banner-badge">💻 Pensamiento Computacional • 1° a 5°</span>
-          <div class="banner-icon-box">🤖 💡 🚀</div>
-          <h3 class="banner-title">Módulo de Programación</h3>
-          <p class="banner-desc">
-            Aprende cómo piensan las computadoras junto a Byte el robot. Descubre qué son las instrucciones, ordena acciones cotidianas y supera divertidos desafíos interactivos.
+        <!-- Portal 2: MÓDULO DE PROGRAMACIÓN -->
+        <article id="banner-coding" class="home-banner-card magic-portal portal-coding">
+          <span class="banner-badge portal-badge">💻 Laboratorio de Código · 1.º a 5.º</span>
+          <div class="portal-illustration-box">
+            <div class="portal-art-scene">
+              <span class="portal-icon-main">⚡</span>
+              <span class="portal-sparkle p-spark-1">🤖</span>
+              <span class="portal-sparkle p-spark-2">🖥️</span>
+              <span class="portal-code-rune">&lt;code/&gt;</span>
+            </div>
+          </div>
+          <h3 class="banner-title portal-title">MÓDULO DE PROGRAMACIÓN</h3>
+          <h4 class="portal-subtitle">¡CREÁ INSTRUCCIONES Y CONVERTITE EN PROGRAMADOR!</h4>
+          <p class="banner-desc portal-desc">
+            Descubrí cómo piensan las computadoras junto a Byte el robot: aprendé algoritmos, ordená secuencias de pasos lógicos y superá desafíos interactivos.
           </p>
-          <button id="btn-home-coding" class="btn-banner-action" type="button">
+          <button id="btn-home-coding" class="btn-banner-action portal-btn" type="button">
             <span>💻</span> ¡Aprender a Programar!
           </button>
         </article>
 
-        <!-- Banner 3 (Módulo Independiente): Desafío Final: Instrucciones -->
-        <article id="banner-adventure" class="home-banner-card banner-adventure">
-          <span class="banner-badge">🎮 Videojuego Plataformas • Bity</span>
-          <div class="banner-icon-box">🤖 🍄 🚩 🪙</div>
-          <span class="banner-adventure-tag">DESAFÍO FINAL: INSTRUCCIONES</span>
-          <h3 class="banner-title">¡LA AVENTURA DE BITY!</h3>
-          <p class="banner-desc">
-            Ayudá a Bity a superar los obstáculos, responder preguntas y completar misiones. Usá lo que aprendiste sobre instrucciones y programación para llegar al final.
+        <!-- Portal 3: LA AVENTURA DE BITTY -->
+        <article id="banner-adventure" class="home-banner-card magic-portal portal-adventure">
+          <span class="banner-badge portal-badge">🚀 Odisea Espacial · Bity</span>
+          <span class="banner-adventure-tag portal-subtag">DESAFÍO FINAL: INSTRUCCIONES</span>
+          <div class="portal-illustration-box">
+            <div class="portal-art-scene">
+              <span class="portal-icon-main">🎃</span>
+              <span class="portal-sparkle p-spark-1">🚀</span>
+              <span class="portal-sparkle p-spark-2">🌌</span>
+              <span class="portal-code-rune">Byte 🛸</span>
+            </div>
+          </div>
+          <h3 class="banner-title portal-title">LA AVENTURA DE BITTY</h3>
+          <h4 class="portal-subtitle">¡AYUDÁ A BITTY A SUPERAR SUS MISIONES!</h4>
+          <p class="banner-desc portal-desc">
+            Viajá por el cosmos embrujado: saltá plataformas 2D, explorá laberintos espaciales, esquivá peligros y aplicá tus instrucciones para volver a casa.
           </p>
-          <button id="btn-home-adventure" class="btn-banner-action" type="button">
-            <span>🎮</span> COMENZAR AVENTURA
+          <button id="btn-home-adventure" class="btn-banner-action portal-btn" type="button">
+            <span>🎃</span> ¡Comenzar la Aventura!
           </button>
         </article>
 
-        <!-- Banner 4 (Opción C): Armar Regalo Directo -->
-        <article id="banner-editor" class="home-banner-card banner-editor">
-          <span class="banner-badge">🎁 Modo Creativo • Directo</span>
-          <div class="banner-icon-box">🖼️ 👨‍👩‍👧‍👦 ✨</div>
-          <h3 class="banner-title">Armar mi regalo familiar</h3>
-          <p class="banner-desc">
-            Pasa directamente al taller: sube la foto de tu familia, decórala con bloques y minifiguras Lego, escribe una dedicatoria y descárgala con el logo de tu escuela.
+        <!-- Portal 4: ARMAR MI REGALO FAMILIAR -->
+        <article id="banner-editor" class="home-banner-card magic-portal portal-editor">
+          <span class="banner-badge portal-badge">🎨 Taller Creativo · Edición Mágica</span>
+          <div class="portal-illustration-box">
+            <div class="portal-art-scene">
+              <span class="portal-icon-main">🎁</span>
+              <span class="portal-sparkle p-spark-1">🖼️</span>
+              <span class="portal-sparkle p-spark-2">✨</span>
+              <span class="portal-code-rune">Familia ❤️</span>
+            </div>
+          </div>
+          <h3 class="banner-title portal-title">Armar mi regalo familiar</h3>
+          <h4 class="portal-subtitle">¡DISEÑÁ, PERSONALIZÁ Y CREÁ TU RECUERDO!</h4>
+          <p class="banner-desc portal-desc">
+            Taller de creación digital: subí la foto de tu familia, recortá caras divertidas con stickers, escribí tu dedicatoria e imprimí o descargá tu regalo terminado.
           </p>
-          <button id="btn-home-editor" class="btn-banner-action" type="button">
-            <span>🎨</span> ¡Ir al Taller de Diseño!
+          <button id="btn-home-editor" class="btn-banner-action portal-btn" type="button">
+            <span>🎁</span> ¡Ir al Taller de Diseño!
           </button>
         </article>
       </div>
@@ -1332,7 +1466,7 @@
   <!-- Pie de página discreto con acceso a Modo Docente -->
   <footer class="app-footer-docente">
     <div class="footer-docente-inner">
-      <span class="footer-docente-brand">Lego Familiar • Plataforma Escolar</span>
+      <span class="footer-docente-brand">Informática Mágica · Plataforma Educativa Digital</span>
       <button id="btn-open-teacher-login" class="btn-docente-discrete" type="button" title="Acceso exclusivo para docentes">
         <span class="docente-lock-icon">🔒</span> Modo docente
       </button>

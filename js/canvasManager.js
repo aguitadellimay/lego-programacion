@@ -623,7 +623,7 @@ class CanvasManager {
       const textTitle = new Konva.Text({
         x: imgW + 14,
         y: 11,
-        text: 'Lego Familiar',
+        text: 'Informática Mágica',
         fontSize: 13,
         fontFamily: 'Fredoka, sans-serif',
         fontStyle: 'bold',
