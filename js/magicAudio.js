@@ -644,6 +644,82 @@
         twinkleOsc.stop(t0 + 0.58);
       } catch (e) {}
     }
+
+    /**
+     * Risa malévola traviesa y divertida del fantasma (Halloween)
+     * Síntesis procedimental Web Audio API: 4 pulsos vocálicos con formante resonante
+     * y eco sobrenatural amigable para primaria (duración ~1.4s).
+     */
+    playGhostLaugh() {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      try {
+        const t0 = ctx.currentTime;
+        const bursts = [
+          { fStart: 440, fEnd: 360, dur: 0.12, delay: 0.00, gain: 0.12 },
+          { fStart: 410, fEnd: 330, dur: 0.11, delay: 0.16, gain: 0.14 },
+          { fStart: 370, fEnd: 290, dur: 0.11, delay: 0.32, gain: 0.15 },
+          { fStart: 320, fEnd: 230, dur: 0.28, delay: 0.48, gain: 0.13 }
+        ];
+
+        // LFO de vibrato sobrenatural
+        const lfo = ctx.createOscillator();
+        const lfoGain = ctx.createGain();
+        lfo.frequency.setValueAtTime(6.5, t0);
+        lfoGain.gain.setValueAtTime(14, t0);
+        lfo.connect(lfoGain);
+
+        bursts.forEach(b => {
+          const bt = t0 + b.delay;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(b.fStart, bt);
+          osc.frequency.exponentialRampToValueAtTime(b.fEnd, bt + b.dur);
+          lfoGain.connect(osc.frequency);
+
+          filter.type = 'bandpass';
+          filter.frequency.setValueAtTime(950, bt);
+          filter.frequency.linearRampToValueAtTime(750, bt + b.dur);
+          filter.Q.setValueAtTime(4.5, bt);
+
+          gain.gain.setValueAtTime(0.001, bt);
+          gain.gain.linearRampToValueAtTime(b.gain, bt + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001, bt + b.dur);
+
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+
+          osc.start(bt);
+          osc.stop(bt + b.dur + 0.02);
+        });
+
+        // Tono grave espectral de fondo (eco de ultratumba suave)
+        const subOsc = ctx.createOscillator();
+        const subGain = ctx.createGain();
+        subOsc.type = 'sine';
+        subOsc.frequency.setValueAtTime(140, t0);
+        subOsc.frequency.exponentialRampToValueAtTime(95, t0 + 0.85);
+
+        subGain.gain.setValueAtTime(0.001, t0);
+        subGain.gain.linearRampToValueAtTime(0.06, t0 + 0.15);
+        subGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.9);
+
+        subOsc.connect(subGain);
+        subGain.connect(this.masterGain);
+
+        subOsc.start(t0);
+        subOsc.stop(t0 + 0.95);
+
+        lfo.start(t0);
+        lfo.stop(t0 + 0.95);
+      } catch (err) {}
+    }
   }
 
   // Instancia única global para toda la web

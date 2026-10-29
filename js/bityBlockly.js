@@ -269,14 +269,14 @@
             [1, 1, 1, 1, 1, 1, 1, 1]
           ],
           story: '¡Último tramo en el planeta de las calabazas! Programá los movimientos de Byte para esquivar telarañas y rocas, resolver la cerradura y llegar a la plataforma.',
-          hint: '💡 Programá a Byte con Avanzar y Girar. En la compuerta resolvé la cuenta para abrir el candado.',
+          hint: '💡 Programá a Byte con Avanzar y Girar. En la compuerta resolvé la cuenta para abrir la puerta de Halloween.',
           hints: [
             '💡 Pista 1: Avanzá y girá a la derecha para descender por el sendero iluminado.',
             '💡 Pista 2: Para abrir la puerta, sumá 25 + 8 = 33.',
             '💡 Pista 3: Tras cruzar la puerta, girá hacia el sur para llegar a la meta.'
           ],
           math: {
-            story: '¡Candado del templo calabaza! Para abrir la compuerta espacial:',
+            story: '¡Puerta misteriosa del templo calabaza! Para abrir la compuerta espacial:',
             operation: '25 + 8 = ?',
             type: 'addition',
             base: 25,
@@ -667,6 +667,26 @@
         gain.gain.linearRampToValueAtTime(0.01, t + 0.45);
         osc.start(t);
         osc.stop(t + 0.45);
+      } else if (type === 'ghostLaugh') {
+        if (typeof window !== 'undefined' && window.MagicAudioEngine && typeof window.MagicAudioEngine.playGhostLaugh === 'function') {
+          window.MagicAudioEngine.playGhostLaugh();
+        } else {
+          [440, 400, 360, 300].forEach((freq, idx) => {
+            const bt = t + idx * 0.16;
+            const bOsc = this.ctx.createOscillator();
+            const bGain = this.ctx.createGain();
+            bOsc.type = 'sawtooth';
+            bOsc.frequency.setValueAtTime(freq, bt);
+            bOsc.frequency.exponentialRampToValueAtTime(freq - 80, bt + 0.12);
+            bGain.gain.setValueAtTime(0.001, bt);
+            bGain.gain.linearRampToValueAtTime(0.12, bt + 0.02);
+            bGain.gain.exponentialRampToValueAtTime(0.001, bt + 0.12);
+            bOsc.connect(bGain);
+            bGain.connect(this.ctx.destination);
+            bOsc.start(bt);
+            bOsc.stop(bt + 0.13);
+          });
+        }
       } else if (type === 'wrong') {
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(220, t);
@@ -725,6 +745,18 @@
       this.missingNumberState = null;
       this.energyRouteState = null;
       this.secretCodeState = null;
+
+      // Estado del Fantasma de Halloween y Pistas de Orientación en el Laberinto
+      this.mazeGhost = {
+        active: false,
+        x: 0,
+        y: 0,
+        alpha: 0,
+        phase: 'idle',
+        timer: 0,
+        hasLaughed: false,
+        nextSpawnTime: Date.now() + 20000 + Math.random() * 12000
+      };
 
       // Estado del robot
       this.bityPos = { x: 1, y: 1, dir: 1 };
@@ -1435,6 +1467,7 @@
 
     // B. Desafío del Tren Fantasma Espacial (3.º Grado)
     renderGhostTrainStage(stage, config) {
+      this.audio.play('ghostLaugh');
       stage.innerHTML = `
         <div class="ghost-train-wrapper">
           <div class="train-track-view">
@@ -1857,7 +1890,7 @@
             ${config.codeChallenges.map((ch, i) => `
               <div class="code-dial-card ${i === 0 ? 'code-dial-active' : ''}" id="dial-card-${i}">
                 <span style="font-size:0.75rem; font-weight:800; color:#94a3b8;">${ch.label}</span>
-                <span id="dial-val-${i}" style="font-size:1.4rem; font-weight:900; color:#facc15;">🔒</span>
+                <span id="dial-val-${i}" style="font-size:1.4rem; font-weight:900; color:#facc15;">🗝️</span>
               </div>
             `).join('')}
           </div>
@@ -2170,7 +2203,7 @@
 
         if (cell === 2 && !this.doorOpen) {
           this.audio.play('bump');
-          this.setStatus('⚡ ¡La puerta espacial está bloqueada con un candado de energía! Resolvé la cuenta.', 'warning');
+          this.setStatus('⚡ ¡La puerta de Halloween está sellada con magia! Resolvé la cuenta para abrirla.', 'warning');
           this.triggerMathChallenge();
           return;
         }
@@ -2699,9 +2732,9 @@
           const y = offsetY + r * tileSize;
 
           if (cell === 1) {
-            this.drawWallTile(ctx, x, y, tileSize, config.theme);
+            this.drawWallTile(ctx, x, y, tileSize, config.theme, r, c);
           } else {
-            this.drawFloorTile(ctx, x, y, tileSize, config.theme);
+            this.drawFloorTile(ctx, x, y, tileSize, config.theme, r, c);
           }
 
           if (cell === 2) {
@@ -2716,75 +2749,481 @@
       const bx = offsetX + this.bityPos.x * tileSize + tileSize / 2;
       const by = offsetY + this.bityPos.y * tileSize + tileSize / 2;
       this.drawBity(ctx, bx, by, this.bityPos.dir, tileSize);
+
+      // Pistas de orientación intermitentes junto al robot (IZQUIERDA / DERECHA)
+      this.drawOrientationHints(ctx, bx, by, this.bityPos.dir, tileSize, w, h);
+
+      // Fantasma tenebroso de Halloween en el laberinto
+      this.drawMazeGhost(ctx, offsetX, offsetY, tileSize, cols, rows);
     }
 
-    drawWallTile(ctx, x, y, size, theme) {
-      if (theme === 'mars') {
-        ctx.fillStyle = '#831843';
-        ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#9d174d';
-        ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
-      } else if (theme === 'moon') {
-        ctx.fillStyle = '#334155';
-        ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#475569';
-        ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
-      } else if (theme === 'pumpkin_planet') {
-        ctx.fillStyle = '#431407';
-        ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#7c2d12';
-        ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
-        ctx.fillStyle = '#f97316';
-        ctx.fillRect(x + 4, y + 4, 3, 3);
-      } else {
-        ctx.fillStyle = '#1e1b4b';
-        ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#312e81';
-        ctx.fillRect(x + 2, y + 2, size - 4, size - 4);
+    // --- PISTAS DE ORIENTACIÓN DIDÁCTICAS (IZQUIERDA / DERECHA) ---
+    getOrientationCues(dir) {
+      // 0: Norte (UP), 1: Este (RIGHT), 2: Sur (DOWN), 3: Oeste (LEFT)
+      // Devuelve la posición relativa y las flechas para la izquierda y la derecha de Byte
+      switch (dir) {
+        case 0: // Mirando ARRIBA (Norte)
+          // Izquierda es a la izquierda de la pantalla; Derecha es a la derecha de la pantalla
+          return {
+            left:  { dx: -1, dy: 0, arrow: '←', text: '← IZQUIERDA', side: 'left' },
+            right: { dx: 1,  dy: 0, arrow: '→', text: 'DERECHA →',  side: 'right' }
+          };
+        case 1: // Mirando DERECHA (Este)
+          // Izquierda es hacia arriba de la pantalla; Derecha es hacia abajo de la pantalla
+          return {
+            left:  { dx: 0, dy: -1, arrow: '↑', text: '↑ IZQUIERDA', side: 'top' },
+            right: { dx: 0, dy: 1,  arrow: '↓', text: 'DERECHA ↓',  side: 'bottom' }
+          };
+        case 2: // Mirando ABAJO (Sur)
+          // Izquierda es a la derecha de la pantalla; Derecha es a la izquierda de la pantalla
+          return {
+            left:  { dx: 1,  dy: 0, arrow: '→', text: 'IZQUIERDA →', side: 'right' },
+            right: { dx: -1, dy: 0, arrow: '←', text: '← DERECHA',  side: 'left' }
+          };
+        case 3: // Mirando IZQUIERDA (Oeste)
+          // Izquierda es hacia abajo de la pantalla; Derecha es hacia arriba de la pantalla
+          return {
+            left:  { dx: 0, dy: 1,  arrow: '↓', text: '↓ IZQUIERDA', side: 'bottom' },
+            right: { dx: 0, dy: -1, arrow: '↑', text: '↑ DERECHA',  side: 'top' }
+          };
+        default:
+          return {
+            left:  { dx: -1, dy: 0, arrow: '←', text: '← IZQUIERDA', side: 'left' },
+            right: { dx: 1,  dy: 0, arrow: '→', text: 'DERECHA →',  side: 'right' }
+          };
       }
     }
 
-    drawFloorTile(ctx, x, y, size, theme) {
+    drawHintPill(ctx, cx, cy, text, side, alpha, tileSize) {
+      ctx.save();
+      const fontSize = Math.max(10, Math.min(13, Math.floor(tileSize * 0.22)));
+      ctx.font = `bold ${fontSize}px "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      const metrics = (typeof ctx.measureText === 'function') ? ctx.measureText(text) : null;
+      const textW = (metrics && typeof metrics.width === 'number' && metrics.width > 0) ? metrics.width : (text.length * fontSize * 0.62);
+      const paddingX = 7;
+      const paddingY = 4;
+      const pillW = textW + paddingX * 2;
+      const pillH = fontSize + paddingY * 2;
+      const rx = cx - pillW / 2;
+      const ry = cy - pillH / 2;
+      const radius = 5;
+
+      // Colores mágicos de Halloween diferenciados
+      const isLeft = (side === 'left');
+      // Izquierda: Verde Neón Mágico (#22c55e)
+      // Derecha: Naranja Calabaza Encantado (#f97316)
+      const bgStyle = isLeft 
+        ? `rgba(5, 46, 22, ${alpha * 0.90})` 
+        : `rgba(67, 20, 7, ${alpha * 0.90})`;
+      const borderStyle = isLeft 
+        ? `rgba(74, 222, 128, ${alpha})` 
+        : `rgba(251, 146, 60, ${alpha})`;
+      const glowStyle = isLeft 
+        ? `rgba(34, 197, 94, ${alpha * 0.75})` 
+        : `rgba(249, 115, 22, ${alpha * 0.75})`;
+      const textStyle = isLeft 
+        ? `rgba(240, 253, 244, ${alpha})` 
+        : `rgba(255, 247, 237, ${alpha})`;
+
+      // Brillo mágico (shadow)
+      ctx.shadowColor = glowStyle;
+      ctx.shadowBlur = 6;
+
+      // Fondo de la píldora
+      ctx.fillStyle = bgStyle;
+      ctx.beginPath();
+      if (typeof ctx.roundRect === 'function') {
+        ctx.roundRect(rx, ry, pillW, pillH, radius);
+      } else {
+        ctx.rect(rx, ry, pillW, pillH);
+      }
+      ctx.fill();
+
+      // Borde brillante
+      ctx.shadowBlur = 0;
+      ctx.strokeStyle = borderStyle;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      if (typeof ctx.roundRect === 'function') {
+        ctx.roundRect(rx, ry, pillW, pillH, radius);
+      } else {
+        ctx.strokeRect(rx, ry, pillW, pillH);
+      }
+      ctx.stroke();
+
+      // Texto nítido con flecha
+      ctx.fillStyle = textStyle;
+      ctx.fillText(text, cx, cy + 0.5);
+
+      ctx.restore();
+    }
+
+    drawOrientationHints(ctx, bx, by, dir, tileSize, canvasW, canvasH) {
+      const cues = this.getOrientationCues(dir);
+
+      // Suavidad intermitente (respiración mágica gradual sin parpadeo brusco)
+      const reducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let alpha = 0.88;
+      if (!reducedMotion) {
+        // Ciclo de 3.2 segundos: respiración suave entre 0.38 y 0.96
+        const cycle = (Date.now() % 3200) / 3200;
+        alpha = 0.38 + 0.58 * (0.5 + 0.5 * Math.sin(cycle * Math.PI * 2));
+      }
+
+      // Distancia a Byte: proporcional al tamaño del casillero sin taparlo
+      const offsetDist = tileSize * 0.92;
+
+      // Indicador IZQUIERDA
+      let leftX = bx + cues.left.dx * offsetDist;
+      let leftY = by + cues.left.dy * offsetDist;
+      leftX = Math.max(50, Math.min(canvasW - 50, leftX));
+      leftY = Math.max(20, Math.min(canvasH - 20, leftY));
+      this.drawHintPill(ctx, leftX, leftY, cues.left.text, 'left', alpha, tileSize);
+
+      // Indicador DERECHA
+      let rightX = bx + cues.right.dx * offsetDist;
+      let rightY = by + cues.right.dy * offsetDist;
+      rightX = Math.max(50, Math.min(canvasW - 50, rightX));
+      rightY = Math.max(20, Math.min(canvasH - 20, rightY));
+      this.drawHintPill(ctx, rightX, rightY, cues.right.text, 'right', alpha, tileSize);
+    }
+
+    // --- REPRODUCCIÓN Y CONTROL DEL FANTASMA ---
+    playGhostLaugh() {
+      this.audio.play('ghostLaugh');
+    }
+
+    triggerGhostAppearance(customX = null, customY = null) {
+      const config = this.getCurrentMissionConfig();
+      if (!config) return;
+      if (!this.mazeGhost) {
+        this.mazeGhost = { active: false, x: 0, y: 0, alpha: 0, phase: 'idle', timer: 0, hasLaughed: false, nextSpawnTime: 0 };
+      }
+      this.mazeGhost.active = true;
+      this.mazeGhost.phase = 'entering';
+      this.mazeGhost.alpha = 0;
+      this.mazeGhost.startTime = Date.now();
+      this.mazeGhost.hasLaughed = false;
+      this.mazeGhost.x = (customX !== null) ? customX : Math.floor(config.cols / 2);
+      this.mazeGhost.y = (customY !== null) ? customY : 1;
+    }
+
+    drawMazeGhost(ctx, offsetX, offsetY, tileSize, cols, rows) {
+      if (!this.mazeGhost) {
+        this.mazeGhost = {
+          active: false,
+          x: 1,
+          y: 1,
+          alpha: 0,
+          phase: 'idle',
+          timer: 0,
+          hasLaughed: false,
+          nextSpawnTime: Date.now() + 14000 + Math.random() * 8000
+        };
+      }
+
+      const now = Date.now();
+      const ghost = this.mazeGhost;
+
+      // Aparición periódica ambiental
+      if (!ghost.active) {
+        if (now >= ghost.nextSpawnTime) {
+          ghost.active = true;
+          ghost.phase = 'entering';
+          ghost.alpha = 0;
+          ghost.startTime = now;
+          ghost.hasLaughed = false;
+          ghost.x = Math.floor(Math.random() * Math.max(1, cols - 2)) + 1;
+          ghost.y = Math.floor(Math.random() * Math.max(1, rows - 2)) + 1;
+        } else {
+          return;
+        }
+      }
+
+      // Ciclo de vida y fases
+      const elapsed = now - (ghost.startTime || now);
+      if (ghost.phase === 'entering') {
+        ghost.alpha = Math.min(0.88, ghost.alpha + 0.04);
+        // La risa se reproduce UNA SOLA VEZ por aparición
+        if (ghost.alpha >= 0.35 && !ghost.hasLaughed) {
+          ghost.hasLaughed = true;
+          this.playGhostLaugh();
+        }
+        if (ghost.alpha >= 0.88) {
+          ghost.phase = 'hovering';
+        }
+      } else if (ghost.phase === 'hovering') {
+        if (elapsed > 4200) {
+          ghost.phase = 'leaving';
+        }
+      } else if (ghost.phase === 'leaving') {
+        ghost.alpha = Math.max(0, ghost.alpha - 0.035);
+        if (ghost.alpha <= 0) {
+          ghost.active = false;
+          ghost.phase = 'idle';
+          ghost.nextSpawnTime = now + 18000 + Math.random() * 12000;
+          return;
+        }
+      }
+
+      // Posición flotante con oscilación sinusoidal
+      const floatY = Math.sin(now * 0.0035) * (tileSize * 0.12);
+      const gx = offsetX + ghost.x * tileSize + tileSize / 2;
+      const gy = offsetY + ghost.y * tileSize + tileSize / 2 + floatY;
+
+      ctx.save();
+      // Halo místico púrpura y cian
+      if (typeof ctx.createRadialGradient === 'function') {
+        const haloGrad = ctx.createRadialGradient(gx, gy, 2, gx, gy, tileSize * 0.65);
+        haloGrad.addColorStop(0, `rgba(168, 85, 247, ${ghost.alpha * 0.45})`);
+        haloGrad.addColorStop(0.6, `rgba(56, 189, 248, ${ghost.alpha * 0.22})`);
+        haloGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = haloGrad;
+        ctx.beginPath();
+        ctx.arc(gx, gy, tileSize * 0.65, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Renderizado del fantasma
+      ctx.globalAlpha = ghost.alpha;
+      ctx.font = `${Math.floor(tileSize * 0.65)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('👻', gx, gy);
+
+      // Chispas mágicas alrededor
+      ctx.font = `${Math.floor(tileSize * 0.22)}px sans-serif`;
+      ctx.fillStyle = '#f0abfc';
+      ctx.fillText('✨', gx - tileSize * 0.35, gy - tileSize * 0.3);
+      ctx.fillText('✨', gx + tileSize * 0.35, gy - tileSize * 0.2);
+
+      ctx.restore();
+    }
+
+    // --- DECORACIÓN TEMÁTICA DEL TABLERO ---
+    drawWallTile(ctx, x, y, size, theme, r = 0, c = 0) {
+      ctx.save();
+      // Base de muro medieval de castillo encantado
       if (theme === 'pumpkin_planet') {
-        ctx.fillStyle = '#180a04';
+        ctx.fillStyle = '#3f1307';
         ctx.fillRect(x, y, size, size);
-        ctx.strokeStyle = '#7c2d12';
-        ctx.lineWidth = 1;
-        ctx.strokeRect(x, y, size, size);
+        ctx.fillStyle = '#65230c';
+        ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
+        ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
+      } else if (theme === 'mars') {
+        ctx.fillStyle = '#701a35';
+        ctx.fillRect(x, y, size, size);
+        ctx.fillStyle = '#881337';
+        ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
+        ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
+      } else {
+        ctx.fillStyle = '#1e1430';
+        ctx.fillRect(x, y, size, size);
+        ctx.fillStyle = '#291b3f';
+        ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
+        ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
+      }
+
+      // Juntas de mortero oscuro escalonadas
+      ctx.strokeStyle = '#0f0a1a';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x, y + Math.floor(size * 0.5));
+      ctx.lineTo(x + size, y + Math.floor(size * 0.5));
+      ctx.moveTo(x + Math.floor(size * 0.5), y);
+      ctx.lineTo(x + Math.floor(size * 0.5), y + Math.floor(size * 0.5));
+      ctx.moveTo(x + Math.floor(size * 0.25), y + Math.floor(size * 0.5));
+      ctx.lineTo(x + Math.floor(size * 0.25), y + size);
+      ctx.moveTo(x + Math.floor(size * 0.75), y + Math.floor(size * 0.5));
+      ctx.lineTo(x + Math.floor(size * 0.75), y + size);
+      ctx.stroke();
+
+      // Borde con sutil halo violeta/naranja místico
+      ctx.strokeStyle = 'rgba(168, 85, 247, 0.3)';
+      ctx.strokeRect(x + 0.5, y + 0.5, size - 1, size - 1);
+
+      // Adornos sutiles de Halloween en esquinas muertas y paredes perimetrales
+      const decorHash = (r * 17 + c * 31) % 9;
+      if (decorHash === 1) {
+        // Mini calabaza iluminada en la pared
+        ctx.font = `${Math.floor(size * 0.32)}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🎃', x + size / 2, y + size / 2);
+      } else if (decorHash === 3) {
+        // Telaraña en la esquina del muro
+        ctx.font = `${Math.floor(size * 0.28)}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🕸️', x + size / 2, y + size / 2);
+      } else if (decorHash === 5) {
+        // Runa mágica violeta en la pared
+        ctx.fillStyle = '#c084fc';
+        ctx.font = `bold ${Math.floor(size * 0.26)}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('✦', x + size / 2, y + size / 2);
+      }
+
+      ctx.restore();
+    }
+
+    drawFloorTile(ctx, x, y, size, theme, r = 0, c = 0) {
+      ctx.save();
+      // Sendero de cripta / losas de castillo oscuro (alta claridad de tránsito)
+      if (theme === 'pumpkin_planet') {
+        ctx.fillStyle = '#140803';
+        ctx.fillRect(x, y, size, size);
+        ctx.strokeStyle = 'rgba(124, 45, 18, 0.35)';
       } else {
         ctx.fillStyle = '#090d16';
         ctx.fillRect(x, y, size, size);
-        ctx.strokeStyle = '#1e293b';
-        ctx.lineWidth = 1;
-        ctx.strokeRect(x, y, size, size);
+        ctx.strokeStyle = 'rgba(99, 102, 241, 0.18)';
       }
+      ctx.lineWidth = 1;
+      ctx.strokeRect(x + 1, y + 1, size - 2, size - 2);
+
+      // Sutil junta interior de losa de piedra
+      ctx.strokeStyle = 'rgba(147, 51, 234, 0.08)';
+      ctx.strokeRect(x + 3, y + 3, size - 6, size - 6);
+      ctx.restore();
     }
 
+    // --- PUERTA TEMÁTICA DE HALLOWEEN ---
     drawDoorTile(ctx, x, y, size, isOpen) {
       ctx.save();
+      const p = 3;
+      const w = size - p * 2;
+      const h = size - p * 2;
+      const dx = x + p;
+      const dy = y + p;
+
       if (!isOpen) {
-        ctx.fillStyle = 'rgba(234, 88, 12, 0.4)';
-        ctx.fillRect(x + 4, y + 4, size - 8, size - 8);
-        ctx.strokeStyle = '#fb923c';
-        ctx.lineWidth = 2.5;
-        ctx.strokeRect(x + 4, y + 4, size - 8, size - 8);
+        // 1. Marco exterior de piedra gótica
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(dx, dy, w, h);
+        ctx.strokeStyle = '#475569';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(dx, dy, w, h);
 
-        ctx.fillStyle = '#fde047';
-        ctx.font = `bold ${Math.floor(size * 0.45)}px sans-serif`;
+        // Clave del arco gótico superior
+        ctx.fillStyle = '#334155';
+        ctx.beginPath();
+        ctx.moveTo(dx + w * 0.35, dy);
+        ctx.lineTo(dx + w * 0.5, dy + 5);
+        ctx.lineTo(dx + w * 0.65, dy);
+        ctx.closePath();
+        ctx.fill();
+
+        // 2. Tablas de madera oscura antigua de castillo
+        const doorInnerX = dx + 3;
+        const doorInnerY = dy + 4;
+        const doorInnerW = w - 6;
+        const doorInnerH = h - 6;
+        ctx.fillStyle = '#27170e';
+        ctx.fillRect(doorInnerX, doorInnerY, doorInnerW, doorInnerH);
+
+        // Líneas de tablas verticales
+        ctx.strokeStyle = '#180d07';
+        ctx.lineWidth = 1.5;
+        const plankW = doorInnerW / 3;
+        for (let i = 1; i < 3; i++) {
+          ctx.beginPath();
+          ctx.moveTo(doorInnerX + i * plankW, doorInnerY);
+          ctx.lineTo(doorInnerX + i * plankW, doorInnerY + doorInnerH);
+          ctx.stroke();
+        }
+
+        // 3. Herrajes de hierro forjado (bandas horizontales)
+        ctx.fillStyle = '#334155';
+        const bandH = Math.max(3, Math.floor(doorInnerH * 0.12));
+        ctx.fillRect(doorInnerX, doorInnerY + doorInnerH * 0.22, doorInnerW, bandH);
+        ctx.fillRect(doorInnerX, doorInnerY + doorInnerH * 0.72, doorInnerW, bandH);
+
+        // Remaches de bronce
+        ctx.fillStyle = '#94a3b8';
+        [0.2, 0.5, 0.8].forEach(pos => {
+          ctx.beginPath();
+          ctx.arc(doorInnerX + doorInnerW * pos, doorInnerY + doorInnerH * 0.22 + bandH / 2, 1.5, 0, Math.PI * 2);
+          ctx.arc(doorInnerX + doorInnerW * pos, doorInnerY + doorInnerH * 0.72 + bandH / 2, 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // 4. Aldaba / tirador dorado de castillo
+        ctx.fillStyle = '#eab308';
+        ctx.strokeStyle = '#ca8a04';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(doorInnerX + doorInnerW * 0.82, doorInnerY + doorInnerH * 0.48, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // 5. Telaraña sutil en la esquina superior izquierda
+        ctx.strokeStyle = 'rgba(241, 245, 249, 0.45)';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.moveTo(doorInnerX, doorInnerY + 8);
+        ctx.lineTo(doorInnerX + 8, doorInnerY);
+        ctx.moveTo(doorInnerX, doorInnerY + 14);
+        ctx.lineTo(doorInnerX + 14, doorInnerY);
+        ctx.moveTo(doorInnerX, doorInnerY);
+        ctx.lineTo(doorInnerX + 10, doorInnerY + 10);
+        ctx.stroke();
+
+        // 6. Sello mágico / runa de Halloween brillante (Calabaza mágica selladora)
+        const sealRadius = Math.min(14, Math.floor(doorInnerW * 0.28));
+        const cx = doorInnerX + doorInnerW * 0.48;
+        const cy = doorInnerY + doorInnerH * 0.48;
+
+        // Halo de resplandor místico pulsante
+        const auraAlpha = 0.45 + 0.3 * Math.sin(Date.now() * 0.004);
+        if (typeof ctx.createRadialGradient === 'function') {
+          const grad = ctx.createRadialGradient(cx, cy, 2, cx, cy, sealRadius * 1.5);
+          grad.addColorStop(0, `rgba(249, 115, 22, ${auraAlpha})`);
+          grad.addColorStop(0.7, `rgba(168, 85, 247, ${auraAlpha * 0.4})`);
+          grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(cx, cy, sealRadius * 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Runa de sello: icono de calabaza brillante
+        ctx.font = `${Math.floor(size * 0.36)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('🔒', x + size / 2, y + size / 2);
+        ctx.fillText('🎃', cx, cy);
+
       } else {
-        ctx.fillStyle = 'rgba(34, 197, 94, 0.35)';
-        ctx.fillRect(x + 4, y + 4, size - 8, size - 8);
-        ctx.strokeStyle = '#4ade80';
+        // --- PUERTA DE HALLOWEEN DESBLOQUEADA (PORTAL DE PASO MÁGICO) ---
+        // Marco de piedra del portal
+        ctx.fillStyle = '#064e3b';
+        ctx.fillRect(dx, dy, w, h);
+        ctx.strokeStyle = '#34d399';
         ctx.lineWidth = 2.5;
-        ctx.strokeRect(x + 4, y + 4, size - 8, size - 8);
+        ctx.strokeRect(dx, dy, w, h);
 
-        ctx.font = `bold ${Math.floor(size * 0.45)}px sans-serif`;
+        // Interior del portal místico abierto con luz esmeralda y cian
+        if (typeof ctx.createRadialGradient === 'function') {
+          const portalGrad = ctx.createRadialGradient(dx + w / 2, dy + h / 2, 3, dx + w / 2, dy + h / 2, w * 0.6);
+          portalGrad.addColorStop(0, 'rgba(110, 231, 183, 0.9)');
+          portalGrad.addColorStop(0.5, 'rgba(16, 185, 129, 0.6)');
+          portalGrad.addColorStop(1, 'rgba(6, 78, 59, 0.3)');
+          ctx.fillStyle = portalGrad;
+        } else {
+          ctx.fillStyle = 'rgba(16, 185, 129, 0.7)';
+        }
+        ctx.fillRect(dx + 2, dy + 2, w - 4, h - 4);
+
+        // Chispas mágicas de paso libre
+        ctx.fillStyle = '#ecfdf5';
+        ctx.font = `bold ${Math.floor(size * 0.42)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('⚡', x + size / 2, y + size / 2);
+        ctx.fillText('✨', dx + w / 2, dy + h / 2);
       }
       ctx.restore();
     }
