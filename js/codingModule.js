@@ -7589,7 +7589,7 @@ class CodingModuleManager {
   /**
    * Inicia la actividad BityBlockly: Misión espacial (Exclusivo 1.er Grado)
    */
-  startBityBlockly() {
+  startBityBlockly(targetGrade = null) {
     // Verificación de disponibilidad por Panel Docente
     if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.canAccessScreen('screen-bityblockly')) {
       window.teacherManager.showBlockedNoticeForScreen('screen-bityblockly');
@@ -7607,10 +7607,13 @@ class CodingModuleManager {
       bityScreen.classList.add('active');
     }
 
+    const effectiveGrade = targetGrade || this.currentGrade || 1;
+
     // Inicializar o refrescar el juego
     if (typeof window !== 'undefined' && window.BityBlocklyGame) {
       if (!window.bityBlocklyGame) {
         window.bityBlocklyGame = new window.BityBlocklyGame({
+          grade: effectiveGrade,
           onBackToSyllabus: () => {
             this.renderSyllabus();
           },
@@ -7618,12 +7621,13 @@ class CodingModuleManager {
             // No salir del juego al actualizar progreso entre niveles
           }
         });
+        window.bityBlocklyGame.selectGrade(effectiveGrade);
       } else {
         window.bityBlocklyGame.onBackToSyllabus = () => {
           this.renderSyllabus();
         };
         window.bityBlocklyGame.loadProgress();
-        window.bityBlocklyGame.loadLevel(window.bityBlocklyGame.currentLevelIndex || 1);
+        window.bityBlocklyGame.selectGrade(effectiveGrade);
       }
     }
   }
@@ -8033,7 +8037,7 @@ class CodingModuleManager {
     }
 
     // ========================================================
-    // BITYBLOCKLY: MISIÓN ESPACIAL (EXCLUSIVO 1.er GRADO)
+    // BITYBLOCKLY: MISIÓN ESPACIAL (1.º a 5.º Grado)
     // ========================================================
     const bbCard = document.getElementById('topic-card-bityblockly');
     const btnStartBb = document.getElementById('btn-start-bityblockly-topic');
@@ -8043,41 +8047,83 @@ class CodingModuleManager {
     const bbDescEl = document.getElementById('syllabus-bityblockly-desc');
     const bbLabelEl = document.getElementById('syllabus-bityblockly-label');
 
-    if (this.currentGrade === 1 && bbCard) {
+    if (bbCard && this.currentGrade >= 1 && this.currentGrade <= 5) {
       bbCard.style.display = 'flex';
       bbCard.style.cursor = 'pointer';
       bbCard.onclick = () => {
         this.onPlaySound('pop');
-        this.startBityBlockly();
+        this.startBityBlockly(this.currentGrade);
       };
 
-      let bbData = null;
+      const gradeHalloweenInfo = {
+        1: {
+          title: 'BityBlockly: Misión espacial',
+          label: 'MISIÓN ESPACIAL',
+          desc: '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé los desafíos y ayudalo a volver a casa».'
+        },
+        2: {
+          title: 'BityBlockly: El Planeta de las Calabazas 🎃',
+          label: 'HALLOWEEN • 2.º GRADO',
+          desc: '¡Aventura de Halloween! Recargá energía (17 + 6 = 23), encontrá las calabazas perdidas (22 − 7 = 15) y abrí la compuerta espacial con Byte.'
+        },
+        3: {
+          title: 'BityBlockly: El Tren Fantasma Espacial 🚂👻',
+          label: 'HALLOWEEN • 3.º GRADO',
+          desc: '¡El tren embrujado de 3 paradas! Calculá los pasajeros que suben y bajan (0 + 5 + 2 − 1 = 6), operaciones 35 + 3 = 38, 36 − 7 = 29 y laberinto.'
+        },
+        4: {
+          title: 'BityBlockly: Laboratorio de Hechizos 🧪🧙',
+          label: 'HALLOWEEN • 4.º GRADO',
+          desc: '¡Encontrá las 6 parejas de cartas que suman 100! Calibrá el reactor (45 + 9 = 54), estabilizá el escudo (53 − 8 = 45) y superá el laberinto mágico.'
+        },
+        5: {
+          title: 'BityBlockly: El Núcleo del Planeta Embrujado 🔮🌋',
+          label: 'HALLOWEEN • 5.º GRADO',
+          desc: '¡Desafíos de alto nivel! Activá las 4 turbinas, descubrí el número perdido (21 + ___ − 7 = 48), trazá la ruta de energía y descifrá el código secreto.'
+        }
+      };
+
+      const curInfo = gradeHalloweenInfo[this.currentGrade] || gradeHalloweenInfo[1];
+      if (bbTitleEl) bbTitleEl.textContent = curInfo.title;
+      if (bbLabelEl) bbLabelEl.textContent = curInfo.label;
+      if (bbDescEl) bbDescEl.textContent = curInfo.desc;
+
+      let bbCompleted = 0;
+      let totalLevels = (this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : 4);
+
       try {
-        const raw = localStorage.getItem('lego_bityblockly_progress');
-        if (raw) bbData = JSON.parse(raw);
+        if (this.currentGrade === 1) {
+          const raw = localStorage.getItem('lego_bityblockly_progress');
+          if (raw) {
+            const data = JSON.parse(raw);
+            bbCompleted = (data && Array.isArray(data.completedLevels)) ? data.completedLevels.length : 0;
+          }
+        } else {
+          const rawH = localStorage.getItem('lego_bittyblockly_halloween_progress');
+          if (rawH) {
+            const dataH = JSON.parse(rawH);
+            if (dataH && dataH[this.currentGrade] && Array.isArray(dataH[this.currentGrade].completed)) {
+              bbCompleted = dataH[this.currentGrade].completed.length;
+            }
+          }
+        }
       } catch (e) {}
 
-      const bbCompleted = (bbData && Array.isArray(bbData.completedLevels)) ? bbData.completedLevels.length : 0;
-      const bbPct = Math.min(100, Math.round((bbCompleted / 5) * 100));
+      const bbPct = Math.min(100, Math.round((bbCompleted / totalLevels) * 100));
 
       if (bbFillEl) bbFillEl.style.width = `${bbPct}%`;
       if (bbTextEl) {
-        bbTextEl.textContent = (bbCompleted >= 5) ? '🎉 ¡100% COMPLETADO!' : `${bbPct}%`;
-      }
-      if (bbTitleEl) bbTitleEl.textContent = 'BityBlockly: Misión espacial';
-      if (bbLabelEl) bbLabelEl.textContent = 'MISIÓN ESPACIAL';
-      if (bbDescEl) {
-        bbDescEl.textContent = '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé los desafíos y ayudalo a volver a casa».';
+        bbTextEl.textContent = (bbCompleted >= totalLevels) ? '🎉 ¡100% COMPLETADO!' : `${bbPct}%`;
       }
 
       if (btnStartBb) {
-        btnStartBb.innerHTML = (bbCompleted >= 5)
+        btnStartBb.innerHTML = (bbCompleted >= totalLevels)
           ? '<span>🔄</span> ¡REPASAR MISIÓN!'
           : (bbCompleted > 0 ? '<span>▶️</span> ¡CONTINUAR MISIÓN!' : '<span>🚀</span> ¡COMENZAR MISIÓN!');
         btnStartBb.onclick = (e) => {
           if (e) e.stopPropagation();
           this.onPlaySound('pop');
-          this.startBityBlockly();
+          this.startBityBlockly(this.currentGrade);
         };
       }
     } else if (bbCard) {

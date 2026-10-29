@@ -1030,3 +1030,708 @@
   letter-spacing: 1px;
   box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
 }
+
+
+/* ========================================================
+   EDICIÓN ESPECIAL DE HALLOWEEN: PORTADA Y ELEMENTOS CÓSMICOS
+   ======================================================== */
+
+.bityblockly-cover-view {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 16px 40px;
+  overflow: hidden;
+}
+
+/* Telarañas en las esquinas */
+.halloween-web {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.75;
+  filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.6));
+  pointer-events: none;
+  z-index: 10;
+  user-select: none;
+}
+.web-top-left { top: -6px; left: -6px; transform: rotate(0deg); }
+.web-top-right { top: -6px; right: -6px; transform: scaleX(-1); }
+.web-bottom-left { bottom: -6px; left: -6px; transform: scaleY(-1); }
+.web-bottom-right { bottom: -6px; right: -6px; transform: rotate(180deg); }
+
+/* Elementos animados flotantes */
+.halloween-floating-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.floating-item {
+  position: absolute;
+  font-size: 1.8rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.4));
+  animation: floatHalloween 6s ease-in-out infinite;
+}
+
+.float-bat-1 { top: 12%; left: 8%; animation-duration: 4.8s; }
+.float-ghost-1 { top: 18%; right: 10%; animation-duration: 5.5s; animation-delay: 1s; }
+.float-pumpkin-1 { bottom: 25%; left: 4%; animation-duration: 6.2s; animation-delay: 0.5s; }
+.float-bat-2 { top: 45%; right: 5%; animation-duration: 5s; animation-delay: 2s; }
+.float-ghost-2 { bottom: 15%; right: 12%; animation-duration: 6.5s; animation-delay: 1.5s; }
+.float-star-1 { top: 28%; left: 2%; animation-duration: 3s; animation-delay: 0.8s; }
+.float-star-2 { top: 60%; left: 92%; animation-duration: 3.5s; animation-delay: 1.2s; }
+.float-pumpkin-2 { bottom: 8%; left: 20%; animation-duration: 5.8s; animation-delay: 2.2s; }
+
+@keyframes floatHalloween {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(6deg);
+  }
+}
+
+/* Barra superior de la portada */
+.cover-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-cover-back {
+  background: linear-gradient(180deg, #334155, #1e293b);
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 #0f172a;
+  transition: all 0.2s;
+}
+.btn-cover-back:hover {
+  background: linear-gradient(180deg, #475569, #334155);
+  transform: translateY(-1px);
+}
+
+.cover-halloween-badge {
+  background: linear-gradient(90deg, #ea580c, #7c3aed);
+  border: 2px solid #facc15;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 16px rgba(234, 88, 12, 0.5);
+  text-transform: uppercase;
+}
+
+/* Encabezado hero de la portada */
+.cover-hero-header {
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.cover-sparkle-tag {
+  display: inline-block;
+  background: rgba(124, 58, 237, 0.35);
+  border: 1px solid #a855f7;
+  color: #c084fc;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.cover-main-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  margin: 0 0 6px 0;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fb923c, #facc15, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(251, 146, 60, 0.4));
+}
+
+.cover-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 800;
+  color: #fb923c;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.cover-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+  color: #cbd5e1;
+}
+
+/* Escaparate de animación del espacio y nave hacia planeta */
+.cover-space-showcase {
+  max-width: 840px;
+  margin: 0 auto 32px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #020617;
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.35), inset 0 0 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 5;
+}
+
+#bityblockly-cover-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cover-showcase-caption {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 8px 16px;
+  text-align: center;
+  color: #facc15;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-top: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+/* Grilla de selección de grados */
+.cover-grades-section {
+  position: relative;
+  z-index: 5;
+}
+
+.cover-grades-title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.halloween-grades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.h-grade-card {
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid #334155;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.h-grade-card:hover {
+  transform: translateY(-4px);
+  border-color: #fb923c;
+  box-shadow: 0 12px 28px rgba(251, 146, 60, 0.3);
+}
+
+.h-grade-badge {
+  background: rgba(56, 189, 248, 0.2);
+  border: 1px solid #38bdf8;
+  color: #7dd3fc;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.h-grade-2 .h-grade-badge { background: rgba(251, 146, 60, 0.2); border-color: #fb923c; color: #fdba74; }
+.h-grade-3 .h-grade-badge { background: rgba(168, 85, 247, 0.2); border-color: #a855f7; color: #d8b4fe; }
+.h-grade-4 .h-grade-badge { background: rgba(45, 212, 191, 0.2); border-color: #2dd4bf; color: #5eead4; }
+.h-grade-5 .h-grade-badge { background: rgba(244, 63, 94, 0.2); border-color: #f43f5e; color: #fda4af; }
+
+.h-grade-icon {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+.h-grade-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-grade-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+
+.h-grade-meta {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  background: rgba(30, 41, 59, 0.6);
+  border-radius: 8px;
+}
+
+.h-grade-tag { color: #facc15; }
+.h-grade-status { color: #4ade80; }
+
+.btn-h-grade-play {
+  width: 100%;
+  background: linear-gradient(180deg, #ea580c, #c2410c);
+  border: 1px solid #f97316;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 0 #9a3412;
+  transition: all 0.15s;
+}
+
+.btn-h-grade-play:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #9a3412;
+}
+
+.btn-h-grade-play:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #9a3412;
+}
+
+/* ========================================================
+   VISTA DE JUEGO / PLAY VIEW (HALLOWEEN THEME)
+   ======================================================== */
+
+.btn-bityblockly-hub {
+  background: linear-gradient(180deg, #ea580c, #c2410c);
+  border: 1px solid #fb923c;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 0 #9a3412;
+  transition: all 0.2s;
+}
+
+.btn-bityblockly-hub:hover {
+  background: linear-gradient(180deg, #f97316, #ea580c);
+  transform: translateY(-1px);
+}
+
+/* Sistema de Pistas Progresivas */
+.bityblockly-hints-action-wrap {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(251, 146, 60, 0.3);
+}
+
+.btn-bityblockly-hint {
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid #facc15;
+  color: #fef08a;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+}
+
+.btn-bityblockly-hint:hover {
+  background: rgba(51, 65, 85, 0.9);
+  border-color: #fde047;
+  transform: translateY(-1px);
+}
+
+.progressive-hints-box {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hint-bubble {
+  background: rgba(15, 23, 42, 0.9);
+  border-left: 4px solid #facc15;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #fef9c3;
+  animation: bityFadeIn 0.3s ease-out;
+}
+
+/* ========================================================
+   ESCENARIOS INTERACTIVOS ESPECIALES (2.º a 5.º GRADO)
+   ======================================================== */
+
+.bityblockly-interactive-stage {
+  background: rgba(15, 23, 42, 0.92);
+  border: 2px solid rgba(251, 146, 60, 0.4);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 1. Desafío del Tren Fantasma (3.º Grado) */
+.ghost-train-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.train-track-view {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(30, 41, 59, 0.7);
+  border: 2px dashed #a855f7;
+  border-radius: 14px;
+  padding: 16px 12px;
+  position: relative;
+}
+
+.train-station-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid #64748b;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 110px;
+  transition: all 0.3s;
+}
+
+.train-station-node.station-active {
+  border-color: #facc15;
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.4);
+}
+
+.station-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #94a3b8;
+}
+
+.station-icon {
+  font-size: 1.8rem;
+}
+
+.station-passengers-info {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.train-connector-line {
+  flex-grow: 1;
+  height: 4px;
+  background: linear-gradient(90deg, #a855f7, #38bdf8);
+  margin: 0 6px;
+  position: relative;
+}
+
+.train-locomotive {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
+  animation: trainBob 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes trainBob {
+  from { transform: translateY(0); }
+  to { transform: translateY(-4px); }
+}
+
+/* 2. Desafío de Cartas que suman 100 (4.º Grado) */
+.cards-100-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.cards-100-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+}
+
+.cards-counter-badge {
+  background: rgba(45, 212, 191, 0.2);
+  border: 1px solid #2dd4bf;
+  color: #5eead4;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.cards-100-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 580px;
+}
+
+.card-100-cell {
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  border: 2px solid #818cf8;
+  border-radius: 14px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #f8fafc;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.card-100-cell:hover:not(.card-matched) {
+  border-color: #facc15;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(250, 204, 21, 0.3);
+}
+
+.card-100-cell.card-selected {
+  border-color: #facc15;
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  box-shadow: 0 0 16px rgba(250, 204, 21, 0.6);
+  transform: scale(1.05);
+}
+
+.card-100-cell.card-matched {
+  background: linear-gradient(135deg, #065f46, #047857);
+  border-color: #34d399;
+  color: #a7f3d0;
+  cursor: default;
+  opacity: 0.85;
+}
+
+/* 3. Desafío de Turbinas de Motores (5.º Grado Nivel 1) */
+.engines-stage-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.engines-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.engine-pod {
+  background: rgba(30, 41, 59, 0.7);
+  border: 2px solid #475569;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s;
+}
+
+.engine-pod.pod-active {
+  border-color: #fb923c;
+  background: rgba(234, 88, 12, 0.2);
+}
+
+.engine-pod.pod-ignited {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.pod-flame {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.6));
+}
+
+/* 4. Desafío del Número Perdido (5.º Grado Nivel 2) */
+.missing-number-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.equation-card-large {
+  background: rgba(30, 41, 59, 0.8);
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.blank-box-highlight {
+  display: inline-block;
+  min-width: 50px;
+  border-bottom: 3px solid #facc15;
+  color: #facc15;
+  text-align: center;
+}
+
+/* 5. Desafío de Ruta de Energía (5.º Grado Nivel 3) */
+.energy-route-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.energy-gauge-box {
+  background: rgba(30, 41, 59, 0.85);
+  border: 2px solid #334155;
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.gauge-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.gauge-bar-bg {
+  width: 100%;
+  height: 18px;
+  background: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  transition: width 0.3s ease-out;
+}
+
+.energy-nodes-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-energy-node {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-energy-node:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* 6. Desafío de Código Secreto (5.º Grado Nivel 4) */
+.secret-code-dials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.code-dial-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 2px solid #475569;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.code-dial-card.dial-solved {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.15);
+}
