@@ -30,11 +30,15 @@
       </div>
     </div>
 
-    <!-- Controles Globales de la Plataforma (Sonido de Halloween) -->
+    <!-- Controles Globales de la Plataforma (Sonido y Vampiros de Halloween) -->
     <div class="header-global-controls">
       <button id="btn-global-sound-toggle" class="btn-sound-toggle" type="button" title="Activar o desactivar sonidos de Halloween" aria-pressed="false">
         <span class="sound-icon" id="global-sound-icon">🔇</span>
         <span class="sound-label" id="global-sound-label">SONIDOS DESACTIVADOS</span>
+      </button>
+      <button id="btn-global-vampire-toggle" class="btn-vampire-toggle vampire-active" type="button" title="Activar o desactivar apariciones sorpresa del vampiro" aria-pressed="true">
+        <span class="vampire-icon" id="global-vampire-icon">🧛</span>
+        <span class="vampire-label" id="global-vampire-label">VAMPIROS ACTIVADOS</span>
       </button>
     </div>
 
@@ -163,6 +167,138 @@
           ¡Te damos la bienvenida al reino digital embrujado! Elegí uno de los cuatro portales mágicos para explorar laboratorios de código, resolver misterios matemáticos, volar por el espacio con Bity o armar tu propio recuerdo familiar.
         </p>
       </header>
+
+      <!-- BANNER DESTACADO DE HALLOWEEN: BITTYBLOCKLY MISIÓN ESPACIAL -->
+      <section id="hero-halloween-banner" class="hero-halloween-banner" aria-label="Misión Especial de Halloween">
+        <div class="h-banner-backdrop-effects" aria-hidden="true">
+          <div class="h-banner-star star-b-1">✨</div>
+          <div class="h-banner-star star-b-2">⭐</div>
+          <div class="h-banner-star star-b-3">✨</div>
+          <div class="h-banner-star star-b-4">🌟</div>
+          <div class="h-banner-bat bat-b-1">🦇</div>
+          <div class="h-banner-bat bat-b-2">🦇</div>
+          <div class="h-banner-glow-orb"></div>
+        </div>
+
+        <div class="h-banner-container">
+          <!-- Columna Izquierda: Información, Títulos y Botón CTA -->
+          <div class="h-banner-content">
+            <div class="h-banner-tag-group">
+              <span class="h-banner-tag-badge">🎃 ¡DESAFÍO ESPECIAL DE HALLOWEEN!</span>
+              <span class="h-banner-tag-sub">✨ ¡ATRÉVETE A PROGRAMAR!</span>
+            </div>
+
+            <h3 class="h-banner-title">¡MISIÓN ESPECIAL DE HALLOWEEN!</h3>
+            <h4 class="h-banner-subtitle">BITTYBLOCKLY: PROGRAMACIÓN POR BLOQUES</h4>
+            <p class="h-banner-desc">
+              ¡Ayudá a Bitty a superar los desafíos más misteriosos! Programá, resolvé acertijos y completá la misión espacial de Halloween.
+            </p>
+
+            <div class="h-banner-action-area">
+              <button type="button" id="btn-banner-start-bityblockly" class="btn-banner-cta" title="Comenzar la Misión Espacial de Halloween">
+                <span class="btn-cta-icon">🎃</span>
+                <span class="btn-cta-text">¡COMENZAR LA MISIÓN!</span>
+                <span class="btn-cta-arrow">🚀</span>
+              </button>
+            </div>
+
+            <div class="h-banner-features-row">
+              <span class="h-feat-pill">🚀 5 Grados Escolares</span>
+              <span class="h-feat-pill">🧩 Programación por Bloques</span>
+              <span class="h-feat-pill">👻 Desafíos &amp; Acertijos</span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Bitty Astronauta en Ambientación Espacial Mágica -->
+          <div class="h-banner-visual" aria-hidden="true">
+            <div class="h-bitty-space-pod">
+              <!-- Luna Mágica con Halo -->
+              <div class="h-banner-moon">
+                <span class="moon-spot spot-1"></span>
+                <span class="moon-spot spot-2"></span>
+              </div>
+              
+              <!-- Bitty Robot Astronauta con Calabaza Espacial (SVG Nítido) -->
+              <div class="h-bitty-figure-wrapper">
+                <svg class="h-bitty-svg" viewBox="0 0 200 220" width="180" height="200" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Casco de Astronauta Transparente con Reflejo -->
+                  <defs>
+                    <radialGradient id="helmGlow" cx="40%" cy="40%" r="60%">
+                      <stop offset="0%" stop-color="#A970FF" stop-opacity="0.6"/>
+                      <stop offset="60%" stop-color="#54258A" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="#0B0A16" stop-opacity="0.8"/>
+                    </radialGradient>
+                    <linearGradient id="suitGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#FF7518"/>
+                      <stop offset="100%" stop-color="#B34700"/>
+                    </linearGradient>
+                    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#E2E8F0"/>
+                      <stop offset="100%" stop-color="#94A3B8"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- Antena con Estrella Mágica -->
+                  <line x1="100" y1="28" x2="100" y2="10" stroke="#FF7518" stroke-width="4" stroke-linecap="round"/>
+                  <polygon points="100,2 103,9 110,10 105,15 106,22 100,18 94,22 95,15 90,10 97,9" fill="#FACC15"/>
+                  <!-- Orejas / Comunicadores -->
+                  <rect x="52" y="52" width="10" height="24" rx="4" fill="#9BE564"/>
+                  <rect x="138" y="52" width="10" height="24" rx="4" fill="#9BE564"/>
+                  <!-- Cabeza Robot Bitty -->
+                  <rect x="60" y="30" width="80" height="68" rx="18" fill="url(#bodyGrad)" stroke="#17102B" stroke-width="3"/>
+                  <!-- Pantalla / Visor -->
+                  <rect x="68" y="42" width="64" height="42" rx="10" fill="#0B0A16" stroke="#9BE564" stroke-width="2"/>
+                  <!-- Ojos Brillantes de Bitty (Verde Neón) -->
+                  <circle cx="84" cy="62" r="7" fill="#9BE564">
+                    <animate attributeName="r" values="7;7;1;7;7" keyTimes="0;0.45;0.5;0.55;1" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="116" cy="62" r="7" fill="#9BE564">
+                    <animate attributeName="r" values="7;7;1;7;7" keyTimes="0;0.45;0.5;0.55;1" dur="4s" repeatCount="indefinite"/>
+                  </circle>
+                  <!-- Sonrisa Pixelada -->
+                  <path d="M 90 76 Q 100 83 110 76" stroke="#FF7518" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  <!-- Casco de Astronauta Exterior -->
+                  <ellipse cx="100" cy="64" rx="55" ry="50" fill="url(#helmGlow)" stroke="#A970FF" stroke-width="2.5" opacity="0.85"/>
+                  <!-- Cuello y Traje Espacial Calabaza -->
+                  <rect x="80" y="100" width="40" height="12" rx="4" fill="#54258A"/>
+                  <path d="M 62 112 Q 100 106 138 112 L 145 165 Q 100 172 55 165 Z" fill="url(#suitGrad)" stroke="#17102B" stroke-width="3"/>
+                  <!-- Insignia Cósmica en el Pecho -->
+                  <circle cx="100" cy="135" r="14" fill="#17102B" stroke="#FACC15" stroke-width="2"/>
+                  <text x="100" y="140" font-size="12" text-anchor="middle" fill="#9BE564" font-weight="bold">&lt;/&gt;</text>
+                  <!-- Cinturón de Herramientas Espaciales -->
+                  <rect x="65" y="154" width="70" height="10" rx="3" fill="#54258A"/>
+                  <rect x="94" y="152" width="12" height="14" rx="2" fill="#FACC15"/>
+                  <!-- Brazos con Guantes -->
+                  <path d="M 62 116 Q 40 135 48 152" stroke="url(#suitGrad)" stroke-width="12" stroke-linecap="round" fill="none"/>
+                  <circle cx="48" cy="154" r="8" fill="#9BE564"/>
+                  <!-- Brazo derecho sosteniendo calabaza mágica -->
+                  <path d="M 138 116 Q 160 135 154 150" stroke="url(#suitGrad)" stroke-width="12" stroke-linecap="round" fill="none"/>
+                  <!-- Calabaza linterna espacial que sostiene Bitty -->
+                  <g transform="translate(142, 140)">
+                    <ellipse cx="12" cy="14" rx="14" ry="12" fill="#FF7518" stroke="#17102B" stroke-width="1.5"/>
+                    <path d="M 12 2 Q 14 0 16 2" stroke="#22C55E" stroke-width="3" fill="none"/>
+                    <!-- Ojos y boca luminosa de la calabaza -->
+                    <polygon points="6,11 10,11 8,8" fill="#FEF08A"/>
+                    <polygon points="14,11 18,11 16,8" fill="#FEF08A"/>
+                    <path d="M 7 16 Q 12 21 17 16" stroke="#FEF08A" stroke-width="2" fill="none"/>
+                  </g>
+                  <!-- Propulsor Jetpack en la espalda con llamas -->
+                  <g class="h-jet-flame">
+                    <polygon points="76,168 84,195 92,168" fill="#FACC15"/>
+                    <polygon points="80,168 84,188 88,168" fill="#EF4444"/>
+                    <polygon points="108,168 116,195 124,168" fill="#FACC15"/>
+                    <polygon points="112,168 116,188 120,168" fill="#EF4444"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Mini elementos flotantes con órbitas -->
+              <div class="h-floating-mini-item item-pumpkin">🎃</div>
+              <div class="h-floating-mini-item item-ghost">👻</div>
+              <div class="h-floating-mini-item item-crystal">💎</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Los 4 Portales Mágicos del Menú Principal -->
       <div class="home-banners-grid magic-portals-grid">
@@ -1637,6 +1773,7 @@
 
   <!-- Scripts de la Aplicación -->
   <script src="js/magicAudio.js"></script>
+  <script src="js/magicVampire.js"></script>
   <script src="js/backgrounds.js"></script>
   <script src="js/legoBricks.js"></script>
   <script src="js/canvasManager.js"></script>

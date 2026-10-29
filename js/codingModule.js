@@ -7598,6 +7598,22 @@ class CodingModuleManager {
 
     this.cleanupCurrentActivity();
 
+    // Determinar opciones
+    let effectiveGrade = 1;
+    let shouldShowCover = false;
+    let returnTo = 'syllabus';
+
+    if (typeof targetGrade === 'number') {
+      effectiveGrade = targetGrade;
+    } else if (typeof targetGrade === 'object' && targetGrade !== null) {
+      if (typeof targetGrade.grade === 'number') effectiveGrade = targetGrade.grade;
+      else if (this.currentGrade) effectiveGrade = this.currentGrade;
+      if (targetGrade.showCover) shouldShowCover = true;
+      if (targetGrade.returnTo) returnTo = targetGrade.returnTo;
+    } else if (this.currentGrade) {
+      effectiveGrade = this.currentGrade;
+    }
+
     // Mostrar pantalla
     const bityScreen = document.getElementById('screen-bityblockly');
     if (this.onShowScreen && bityScreen) {
@@ -7607,26 +7623,38 @@ class CodingModuleManager {
       bityScreen.classList.add('active');
     }
 
-    const effectiveGrade = targetGrade || this.currentGrade || 1;
+    const handleBack = () => {
+      if (returnTo === 'home') {
+        const homeScreen = document.getElementById('screen-home');
+        if (this.onShowScreen && homeScreen) {
+          this.onShowScreen('screen-home');
+        } else if (homeScreen) {
+          document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+          homeScreen.classList.add('active');
+        }
+      } else {
+        this.renderSyllabus();
+      }
+    };
 
     // Inicializar o refrescar el juego
     if (typeof window !== 'undefined' && window.BityBlocklyGame) {
       if (!window.bityBlocklyGame) {
         window.bityBlocklyGame = new window.BityBlocklyGame({
           grade: effectiveGrade,
-          onBackToSyllabus: () => {
-            this.renderSyllabus();
-          },
+          onBackToSyllabus: handleBack,
           onProgressUpdated: () => {
             // No salir del juego al actualizar progreso entre niveles
           }
         });
-        window.bityBlocklyGame.selectGrade(effectiveGrade);
       } else {
-        window.bityBlocklyGame.onBackToSyllabus = () => {
-          this.renderSyllabus();
-        };
+        window.bityBlocklyGame.onBackToSyllabus = handleBack;
         window.bityBlocklyGame.loadProgress();
+      }
+
+      if (shouldShowCover) {
+        window.bityBlocklyGame.showCoverView();
+      } else {
         window.bityBlocklyGame.selectGrade(effectiveGrade);
       }
     }

@@ -589,6 +589,61 @@
         osc.stop(t0 + 0.04);
       } catch (e) {}
     }
+
+    /**
+     * Aparición sorpresa del vampiro: Aleteo juguetón y destello mágico misterioso
+     */
+    playVampireAppear() {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      try {
+        const t0 = ctx.currentTime;
+        
+        // 1. Aleteo juguetón suave (3 pulsos rápidos con filtro)
+        for (let i = 0; i < 3; i++) {
+          const pt = t0 + i * 0.08;
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const filter = ctx.createBiquadFilter();
+
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(140 + i * 20, pt);
+          osc.frequency.linearRampToValueAtTime(70, pt + 0.06);
+
+          filter.type = 'lowpass';
+          filter.frequency.setValueAtTime(350, pt);
+
+          gain.gain.setValueAtTime(0.08, pt);
+          gain.gain.exponentialRampToValueAtTime(0.001, pt + 0.07);
+
+          osc.connect(filter);
+          filter.connect(gain);
+          gain.connect(this.masterGain);
+
+          osc.start(pt);
+          osc.stop(pt + 0.075);
+        }
+
+        // 2. Destello mágico misterioso (Fa#5 -> La5 suave)
+        const twinkleOsc = ctx.createOscillator();
+        const twinkleGain = ctx.createGain();
+        twinkleOsc.type = 'sine';
+        twinkleOsc.frequency.setValueAtTime(739.99, t0 + 0.15); // F#5
+        twinkleOsc.frequency.exponentialRampToValueAtTime(880.0, t0 + 0.35); // A5
+
+        twinkleGain.gain.setValueAtTime(0.001, t0 + 0.15);
+        twinkleGain.gain.linearRampToValueAtTime(0.06, t0 + 0.22);
+        twinkleGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.55);
+
+        twinkleOsc.connect(twinkleGain);
+        twinkleGain.connect(this.masterGain);
+
+        twinkleOsc.start(t0 + 0.15);
+        twinkleOsc.stop(t0 + 0.58);
+      } catch (e) {}
+    }
   }
 
   // Instancia única global para toda la web

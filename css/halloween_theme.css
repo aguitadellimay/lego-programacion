@@ -142,6 +142,49 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* Botón Global de Apariciones de Vampiros */
+.btn-vampire-toggle {
+  background: rgba(23, 16, 43, 0.85);
+  border: 2px solid var(--hw-purple);
+  color: var(--hw-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-vampire-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--hw-purple-light);
+  color: var(--hw-text-light);
+  box-shadow: 0 0 15px rgba(169, 112, 255, 0.4);
+}
+
+.btn-vampire-toggle.vampire-active {
+  background: linear-gradient(135deg, rgba(84, 37, 138, 0.9), rgba(155, 229, 100, 0.85));
+  border-color: var(--hw-green);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(155, 229, 100, 0.45), 0 0 10px rgba(169, 112, 255, 0.4);
+}
+
+.vampire-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.vampire-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+}
+
 #btn-home-from-editor {
   background: #17102B !important;
   color: var(--hw-text-light) !important;
@@ -1414,7 +1457,563 @@ body {
 }
 
 /* --------------------------------------------------------
-   11. PREFERENCIA DE MOVIMIENTO REDUCIDO Y ACCESIBILIDAD
+   12. BANNER DESTACADO DE HALLOWEEN (BITTYBLOCKLY)
+   -------------------------------------------------------- */
+.hero-halloween-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto 36px auto;
+  padding: 32px 38px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(23, 16, 43, 0.96) 0%, rgba(42, 22, 77, 0.94) 50%, rgba(11, 10, 22, 0.98) 100%);
+  border: 2.5px solid var(--hw-orange);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 117, 24, 0.32), inset 0 0 24px rgba(169, 112, 255, 0.18);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.h-banner-backdrop-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.h-banner-star {
+  position: absolute;
+  color: #FACC15;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  animation: bannerStarTwinkle 3s ease-in-out infinite alternate;
+}
+
+.star-b-1 { top: 14%; left: 8%; animation-delay: 0.2s; font-size: 1.3rem; }
+.star-b-2 { top: 22%; right: 28%; animation-delay: 0.8s; font-size: 1rem; }
+.star-b-3 { bottom: 18%; left: 32%; animation-delay: 1.4s; font-size: 0.9rem; }
+.star-b-4 { top: 65%; right: 12%; animation-delay: 2.1s; font-size: 1.2rem; }
+
+.h-banner-bat {
+  position: absolute;
+  font-size: 1.25rem;
+  opacity: 0.6;
+  animation: bannerBatSway 4s ease-in-out infinite alternate;
+}
+
+.bat-b-1 { top: 18%; left: 45%; animation-delay: 0.5s; }
+.bat-b-2 { bottom: 25%; right: 40%; animation-delay: 1.8s; }
+
+.h-banner-glow-orb {
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(169, 112, 255, 0.25) 0%, rgba(255, 117, 24, 0.12) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+@keyframes bannerStarTwinkle {
+  0% { transform: scale(0.85); opacity: 0.4; }
+  100% { transform: scale(1.25); opacity: 1; text-shadow: 0 0 10px #FACC15; }
+}
+
+@keyframes bannerBatSway {
+  0% { transform: translateY(0) rotate(-6deg); }
+  100% { transform: translateY(-8px) rotate(8deg); }
+}
+
+.h-banner-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.h-banner-content {
+  flex: 1 1 65%;
+  min-width: 0;
+}
+
+.h-banner-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.h-banner-tag-badge {
+  background: rgba(255, 117, 24, 0.22);
+  border: 1.5px solid var(--hw-orange-light);
+  color: var(--hw-orange-light);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  box-shadow: 0 0 12px rgba(255, 117, 24, 0.3);
+}
+
+.h-banner-tag-sub {
+  background: rgba(169, 112, 255, 0.2);
+  border: 1.5px solid var(--hw-purple-light);
+  color: var(--hw-purple-light);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.h-banner-title {
+  margin: 0 0 8px 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--hw-orange-light);
+  text-shadow: 0 0 16px rgba(255, 117, 24, 0.65), 0 2px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+}
+
+.h-banner-subtitle {
+  margin: 0 0 14px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--hw-purple-light);
+  text-shadow: 0 0 12px rgba(169, 112, 255, 0.45);
+  letter-spacing: 0.5px;
+}
+
+.h-banner-desc {
+  margin: 0 0 22px 0;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--hw-text-light);
+  max-width: 640px;
+}
+
+.h-banner-action-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-banner-cta {
+  background: linear-gradient(135deg, #FF7518 0%, #D9480F 100%);
+  color: #ffffff;
+  border: 2px solid #FFAE42;
+  font-family: inherit;
+  font-size: 1.18rem;
+  font-weight: 900;
+  padding: 15px 32px;
+  border-radius: 36px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(255, 117, 24, 0.5), 0 0 18px rgba(255, 174, 66, 0.4);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-banner-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #FFF275;
+  box-shadow: 0 12px 32px rgba(255, 117, 24, 0.7), 0 0 26px rgba(255, 174, 66, 0.6);
+}
+
+.btn-banner-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-cta-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.btn-cta-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+}
+
+.btn-banner-cta:hover .btn-cta-arrow {
+  transform: translateX(4px);
+}
+
+.h-banner-features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.h-feat-pill {
+  background: rgba(23, 16, 43, 0.85);
+  border: 1px solid rgba(169, 112, 255, 0.35);
+  color: var(--hw-text-muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 14px;
+}
+
+/* Columna Derecha de Ilustración */
+.h-banner-visual {
+  flex: 0 0 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.h-bitty-space-pod {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-banner-moon {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F8FAFC 0%, #E2E8F0 50%, #94A3B8 100%);
+  box-shadow: 0 0 40px rgba(248, 250, 252, 0.6), 0 0 70px rgba(169, 112, 255, 0.35);
+  z-index: 1;
+}
+
+.moon-spot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.spot-1 { width: 22px; height: 22px; top: 25%; left: 22%; }
+.spot-2 { width: 14px; height: 14px; bottom: 30%; right: 28%; }
+
+.h-bitty-figure-wrapper {
+  position: relative;
+  z-index: 3;
+  animation: bittySpaceFloat 3.8s ease-in-out infinite alternate;
+}
+
+.h-bitty-svg {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.55));
+}
+
+@keyframes bittySpaceFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.h-floating-mini-item {
+  position: absolute;
+  z-index: 4;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  animation: miniItemFloat 3.2s ease-in-out infinite alternate;
+}
+
+.item-pumpkin { top: 10px; right: 10px; animation-delay: 0.3s; }
+.item-ghost { bottom: 15px; left: 10px; animation-delay: 1.2s; font-size: 1.3rem; }
+.item-crystal { top: 60px; left: -10px; animation-delay: 2s; font-size: 1.1rem; }
+
+@keyframes miniItemFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-4px, -8px) scale(1.1); }
+}
+
+.h-jet-flame {
+  animation: jetFlicker 0.4s ease-in-out infinite alternate;
+  transform-origin: 100px 168px;
+}
+
+@keyframes jetFlicker {
+  0% { opacity: 0.95; transform: scaleY(1); }
+  100% { opacity: 0.65; transform: scaleY(0.85); }
+}
+
+/* Responsividad del Banner */
+@media (max-width: 900px) {
+  .hero-halloween-banner {
+    padding: 24px 20px;
+    margin-bottom: 28px;
+  }
+  .h-banner-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 20px;
+  }
+  .h-banner-tag-group {
+    justify-content: center;
+  }
+  .h-banner-title {
+    font-size: 1.75rem;
+  }
+  .h-banner-subtitle {
+    font-size: 1.1rem;
+  }
+  .h-banner-desc {
+    font-size: 0.98rem;
+    margin: 0 auto 18px auto;
+  }
+  .h-banner-action-area {
+    justify-content: center;
+  }
+  .btn-banner-cta {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.05rem;
+    padding: 14px 20px;
+  }
+  .h-banner-features-row {
+    justify-content: center;
+  }
+  .h-banner-visual {
+    margin: 0 auto;
+  }
+}
+
+/* --------------------------------------------------------
+   13. SISTEMA DE APARICIONES SORPRESA DE VAMPIROS
+   -------------------------------------------------------- */
+.magic-vampire-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.magic-vampire-card {
+  position: absolute;
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100000;
+  user-select: none;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.75));
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.magic-vampire-card:hover {
+  filter: drop-shadow(0 14px 34px rgba(169, 112, 255, 0.5));
+}
+
+.vampire-speech-bubble {
+  position: relative;
+  background: #17102B;
+  border: 2.5px solid var(--hw-purple-light);
+  border-radius: 18px;
+  padding: 10px 18px;
+  color: #F5F0FF;
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 800;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.6), 0 0 16px rgba(169, 112, 255, 0.45);
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: bubblePop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bubble-icon {
+  font-size: 1.1rem;
+}
+
+.bubble-text {
+  color: #FFAE42;
+  letter-spacing: 0.4px;
+}
+
+.bubble-tail {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid var(--hw-purple-light);
+}
+
+@keyframes bubblePop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.vampire-character-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vampire-svg-figure {
+  display: block;
+}
+
+.vamp-hand-right {
+  transform-origin: 120px 95px;
+  animation: vampWaveHand 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes vampWaveHand {
+  0% { transform: rotate(-5deg); }
+  100% { transform: rotate(18deg); }
+}
+
+.bat-orbit-1 {
+  animation: batOrbit1 2.2s ease-in-out infinite alternate;
+}
+
+.bat-orbit-2 {
+  animation: batOrbit2 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes batOrbit1 {
+  0% { transform: translate(18px, 25px) scale(0.6) rotate(-10deg); }
+  100% { transform: translate(12px, 15px) scale(0.65) rotate(15deg); }
+}
+
+@keyframes batOrbit2 {
+  0% { transform: translate(125px, 30px) scale(0.5) rotate(10deg); }
+  100% { transform: translate(130px, 20px) scale(0.55) rotate(-12deg); }
+}
+
+.vampire-bat-transform .bat-wings {
+  animation: batFlap 0.28s ease-in-out infinite alternate;
+  transform-origin: 50px 45px;
+}
+
+@keyframes batFlap {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0.7); }
+}
+
+.vampire-smoke-cloud {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(169, 112, 255, 0.7) 0%, rgba(84, 37, 138, 0.4) 60%, transparent 80%);
+  filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vampire-smoke-cloud.puff-active {
+  animation: smokePuffAnim 0.7s ease-out forwards;
+}
+
+@keyframes smokePuffAnim {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  50% { transform: scale(1.4); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Animaciones específicas de aparición */
+
+/* 1. Fly Across: cruza volando la pantalla */
+.anim-fly-across {
+  top: 15vh;
+  left: 0;
+  animation: vampFlyAcross 4.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes vampFlyAcross {
+  0% { transform: translateX(-180px) translateY(0); opacity: 0; }
+  15% { transform: translateX(15vw) translateY(5vh); opacity: 1; }
+  50% { transform: translateX(45vw) translateY(-2vh); opacity: 1; }
+  85% { transform: translateX(75vw) translateY(6vh); opacity: 1; }
+  100% { transform: translateX(115vw) translateY(0); opacity: 0; }
+}
+
+/* 2. Peek Corner: se asoma desde la esquina inferior derecha */
+.anim-peek-corner {
+  bottom: 0;
+  right: 40px;
+  animation: vampPeekCorner 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes vampPeekCorner {
+  0% { transform: translateY(190px); opacity: 0; }
+  18% { transform: translateY(-10px); opacity: 1; }
+  25% { transform: translateY(0); opacity: 1; }
+  82% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(220px); opacity: 0; }
+}
+
+/* 3. Smoke Bat: aparece en humo y se transforma en murciélago */
+.anim-smoke-bat {
+  bottom: 80px;
+  left: 45px;
+  animation: vampSmokeBat 4s ease-in-out forwards;
+}
+
+@keyframes vampSmokeBat {
+  0% { transform: scale(0.4); opacity: 0; }
+  15% { transform: scale(1); opacity: 1; }
+  65% { transform: scale(1); opacity: 1; }
+  85% { transform: translateY(-60px) scale(0.85); opacity: 0.9; }
+  100% { transform: translateY(-160px) scale(0.5); opacity: 0; }
+}
+
+/* 4. Peek Behind: se asoma desde el borde lateral derecho */
+.anim-peek-behind {
+  top: 38%;
+  right: 0;
+  animation: vampPeekBehind 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes vampPeekBehind {
+  0% { transform: translateX(160px); opacity: 0; }
+  16% { transform: translateX(-15px); opacity: 1; }
+  24% { transform: translateX(0); opacity: 1; }
+  80% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(180px); opacity: 0; }
+}
+
+/* 5. Hover Float: desciende desde arriba con suave balanceo */
+.anim-hover-float {
+  top: 60px;
+  left: 50%;
+  margin-left: -90px;
+  animation: vampHoverFloat 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes vampHoverFloat {
+  0% { transform: translateY(-120px) scale(0.8); opacity: 0; }
+  18% { transform: translateY(20px) scale(1); opacity: 1; }
+  26% { transform: translateY(0) scale(1); opacity: 1; }
+  80% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-80px) scale(0.8); opacity: 0; }
+}
+
+/* Salida forzada o por clic */
+.vampire-exiting {
+  opacity: 0 !important;
+  transform: scale(0.6) !important;
+  transition: all 0.4s ease-out !important;
+}
+
+/* --------------------------------------------------------
+   14. PREFERENCIA DE MOVIMIENTO REDUCIDO Y ACCESIBILIDAD
    -------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .magic-moon-wrap,
@@ -1424,8 +2023,29 @@ body {
   .magic-peeking-monster,
   .window-glow,
   .portal-icon-main,
-  .portal-sparkle {
+  .portal-sparkle,
+  .h-bitty-figure-wrapper,
+  .h-floating-mini-item,
+  .h-banner-star,
+  .h-banner-bat,
+  .h-jet-flame {
     animation: none !important;
     transition: none !important;
   }
+
+  .anim-fly-across,
+  .anim-peek-corner,
+  .anim-smoke-bat,
+  .anim-peek-behind,
+  .anim-hover-float {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    top: auto !important;
+    left: auto !important;
+  }
 }
+

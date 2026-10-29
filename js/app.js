@@ -282,6 +282,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Exponer codingManager globalmente para interoperabilidad
     window.codingManager = codingManager;
 
+    // Acceso directo a BittyBlockly: Misión Espacial Halloween desde el Banner Destacado
+    const openBityBlocklyFromBanner = () => {
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
+      if (window.teacherManager && !window.teacherManager.canAccessScreen('screen-bityblockly')) {
+        window.teacherManager.showBlockedNoticeForScreen('screen-bityblockly');
+        return;
+      }
+      if (typeof game !== 'undefined' && game.stop) game.stop();
+      if (codingManager) {
+        codingManager.startBityBlockly({ showCover: true, returnTo: 'home' });
+      }
+      playClickSound();
+    };
+
+    const btnBannerBityBlockly = document.getElementById('btn-banner-start-bityblockly');
+    if (btnBannerBityBlockly) {
+      btnBannerBityBlockly.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openBityBlocklyFromBanner();
+      });
+    }
+
     // 3. Opción C: Ir directamente al taller de la foto (Modo Creativo)
     const goToEditor = () => {
       if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
