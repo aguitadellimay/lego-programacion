@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     codingManager = new CodingModuleManager({
       onPlaySound: (type) => {
+        if (window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) return;
         if (type === 'pop') playPopSound();
         else if (type === 'click') playClickSound();
         else if (type === 'coin') { playSnapSound(); playTone(880, 'triangle', 0.15); }
@@ -149,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar el motor del juego matemático con diferenciación de grados y clima
     const game = new MinecraftLegoGame('minigame-canvas', {
       onPlaySound: (type) => {
+        if (window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) return;
         if (type === 'jump') playTone(420, 'square', 0.08);
         else if (type === 'coin') { playSnapSound(); playTone(880, 'triangle', 0.15); }
         else if (type === 'hit') playTrashSound();
@@ -163,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Opción A: Ir a la selección de grados (1° a 5°) de Matemática o directo al juego
     const openPlayMode = () => {
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
       if (window.teacherManager && !window.teacherManager.isModuleEnabled('play')) {
         window.teacherManager.showBlockedNotice('Jugar y aprender');
         return;
@@ -213,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Opción B: MÓDULO DE PROGRAMACIÓN (1° a 5° Grado)
     const openCodingMode = () => {
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
       if (window.teacherManager && !window.teacherManager.isModuleEnabled('coding')) {
         window.teacherManager.showBlockedNotice('Módulo de programación');
         return;
@@ -257,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Opción: MÓDULO INDEPENDIENTE - DESAFÍO FINAL: INSTRUCCIONES (La Aventura de Bity)
     const openAdventureMode = () => {
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
       if (window.teacherManager && !window.teacherManager.isModuleEnabled('adventure')) {
         window.teacherManager.showBlockedNotice('La aventura de Bity');
         return;
@@ -279,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Opción C: Ir directamente al taller de la foto (Modo Creativo)
     const goToEditor = () => {
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
       if (window.teacherManager && !window.teacherManager.isModuleEnabled('editor')) {
         window.teacherManager.showBlockedNotice('Armar mi regalo familiar');
         return;
@@ -1222,6 +1228,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   function playTone(freq, type, duration) {
+    if (window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) return;
     try {
       if (audioCtx.state === 'suspended') audioCtx.resume();
       const osc = audioCtx.createOscillator();

@@ -30,6 +30,14 @@
       </div>
     </div>
 
+    <!-- Controles Globales de la Plataforma (Sonido de Halloween) -->
+    <div class="header-global-controls">
+      <button id="btn-global-sound-toggle" class="btn-sound-toggle" type="button" title="Activar o desactivar sonidos de Halloween" aria-pressed="false">
+        <span class="sound-icon" id="global-sound-icon">🔇</span>
+        <span class="sound-label" id="global-sound-label">SONIDOS DESACTIVADOS</span>
+      </button>
+    </div>
+
     <div class="header-actions" id="header-gift-actions" style="display: none;">
       <!-- Botón para volver al Menú Principal -->
       <button id="btn-home-from-editor" class="btn-secondary" style="border-radius: 20px; font-weight: 700; background: white; border: 2px solid #ffca28; padding: 8px 16px; cursor: pointer;" title="Volver al menú de inicio">
@@ -416,8 +424,8 @@
           </button>
         </div>
 
-        <h3 style="font-size: 1.6rem; color: #1e293b; margin-bottom: 6px;">📚 Ruta de Pensamiento Computacional</h3>
-        <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 20px;">Supera cada tema para desbloquear tu insignia de programador:</p>
+        <h3 class="syllabus-main-title">📚 Ruta de Pensamiento Computacional</h3>
+        <p class="syllabus-main-desc">Supera cada tema para desbloquear tu insignia de programador:</p>
 
         <!-- Grilla de Temas -->
         <div class="topics-grid">
@@ -1628,6 +1636,7 @@
   </div>
 
   <!-- Scripts de la Aplicación -->
+  <script src="js/magicAudio.js"></script>
   <script src="js/backgrounds.js"></script>
   <script src="js/legoBricks.js"></script>
   <script src="js/canvasManager.js"></script>

@@ -734,6 +734,12 @@ class BityPlatformerGame {
   }
 
   playSound(type) {
+    if (window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) return;
+    if (window.MagicAudioEngine && window.MagicAudioEngine.isEnabled()) {
+      if (type === 'fanfare' || type === 'levelComplete') { window.MagicAudioEngine.playVictory(); return; }
+      else if (type === 'wrong' || type === 'hit') { window.MagicAudioEngine.playIncorrect(); return; }
+      else if (type === 'coin' || type === 'pop') { window.MagicAudioEngine.playCorrect(); return; }
+    }
     if (!this.soundEnabled) return;
     if (this.onPlaySound) {
       try {

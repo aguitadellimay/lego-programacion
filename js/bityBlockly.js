@@ -609,6 +609,9 @@
     }
 
     play(type) {
+      if (typeof window !== 'undefined' && window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) {
+        return;
+      }
       if (!this.enabled) return;
       this.init();
       if (!this.ctx) return;

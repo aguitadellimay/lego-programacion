@@ -10,12 +10,15 @@
   --hw-bg-dark: #0B0A16;
   --hw-surface-dark: #17102B;
   --hw-surface-elevated: #22173d;
+  --hw-surface-card: #1c1236;
   --hw-purple: #54258A;
   --hw-purple-light: #A970FF;
+  --hw-purple-glow: rgba(169, 112, 255, 0.45);
   --hw-orange: #FF7518;
   --hw-orange-light: #FFA155;
+  --hw-orange-glow: rgba(255, 117, 24, 0.48);
   --hw-green: #9BE564;
-  --hw-green-glow: #70E000;
+  --hw-green-glow: rgba(155, 229, 100, 0.45);
   --hw-text-light: #F5F0FF;
   --hw-text-muted: #B3A9CE;
   --hw-border-subtle: rgba(169, 112, 255, 0.25);
@@ -23,6 +26,12 @@
   --hw-glow-purple: 0 0 28px rgba(169, 112, 255, 0.42);
   --hw-glow-green: 0 0 24px rgba(155, 229, 100, 0.42);
   --hw-glow-amber: 0 0 24px rgba(245, 158, 11, 0.42);
+
+  /* Overrides para selectores heredados */
+  --bg-color: #0B0A16;
+  --card-bg: #17102B;
+  --text-main: #F5F0FF;
+  --text-muted: #B3A9CE;
 }
 
 /* --------------------------------------------------------
@@ -35,7 +44,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Fondos oscuros para todas las pantallas principales */
+/* Fondos oscuros para todas las pantallas */
 .screen,
 .home-screen-wrapper,
 .coding-screen-wrapper,
@@ -47,13 +56,18 @@ body {
 }
 
 /* --------------------------------------------------------
-   2. CABECERA PRINCIPAL (APP HEADER)
+   2. CABECERA PRINCIPAL Y BOTÓN GLOBAL DE AUDIO
    -------------------------------------------------------- */
 .app-header {
   background: linear-gradient(135deg, #17102B 0%, #0B0A16 55%, #1c0e35 100%) !important;
   border-bottom: 3px solid var(--hw-orange) !important;
   box-shadow: 0 4px 20px rgba(255, 117, 24, 0.25), 0 0 15px rgba(169, 112, 255, 0.2) !important;
   padding: 10px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
 }
 
 .school-logo-badge {
@@ -77,6 +91,55 @@ body {
   font-weight: 700 !important;
   font-size: 0.92rem !important;
   box-shadow: 0 0 8px rgba(255, 117, 24, 0.25) !important;
+}
+
+/* Botón Global de Sonido de Halloween */
+.header-global-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-sound-toggle {
+  background: rgba(23, 16, 43, 0.85);
+  border: 2px solid var(--hw-purple);
+  color: var(--hw-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-sound-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--hw-purple-light);
+  color: var(--hw-text-light);
+  box-shadow: 0 0 15px rgba(169, 112, 255, 0.4);
+}
+
+.btn-sound-toggle.sound-active {
+  background: linear-gradient(135deg, rgba(84, 37, 138, 0.9), rgba(255, 117, 24, 0.85));
+  border-color: var(--hw-orange-light);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(255, 117, 24, 0.55), 0 0 10px rgba(169, 112, 255, 0.4);
+}
+
+.sound-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.sound-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
 }
 
 #btn-home-from-editor {
@@ -132,7 +195,6 @@ body {
   justify-content: flex-start;
 }
 
-/* Capa de fondo animada del escenario */
 .magic-backdrop {
   position: absolute;
   top: 0;
@@ -144,7 +206,6 @@ body {
   overflow: hidden;
 }
 
-/* Luna Llena Enorme con Halo y Cráteres */
 .magic-moon-wrap {
   position: absolute;
   top: 25px;
@@ -180,7 +241,6 @@ body {
   100% { transform: scale(1.04) translateY(-5px); filter: drop-shadow(0 0 35px rgba(255, 235, 59, 0.6)); }
 }
 
-/* Silueta del Castillo Encantado y Bosque */
 .magic-castle-wrap {
   position: absolute;
   bottom: 0;
@@ -206,7 +266,6 @@ body {
   50% { opacity: 1; filter: drop-shadow(0 0 10px #ffca28); }
 }
 
-/* Niebla Mágica sobre el Suelo */
 .magic-ground-fog {
   position: absolute;
   bottom: 0;
@@ -217,7 +276,6 @@ body {
   z-index: 3;
 }
 
-/* Telarañas en las esquinas */
 .magic-corner-web {
   position: absolute;
   width: 120px;
@@ -232,7 +290,6 @@ body {
 .web-br { bottom: 0; right: 0; }
 .web-svg { width: 100%; height: 100%; }
 
-/* Murciélagos Volando animados de lado a lado */
 .magic-flying-bat {
   position: absolute;
   font-size: 2.2rem;
@@ -275,7 +332,6 @@ body {
   100% { transform: translateX(-120vw) translateY(0) scaleX(-1); }
 }
 
-/* Fantasmas Flotantes Simpáticos */
 .magic-floating-ghost {
   position: absolute;
   font-size: 2.5rem;
@@ -293,7 +349,6 @@ body {
   100% { transform: translateY(-24px) rotate(6deg); opacity: 0.95; }
 }
 
-/* Símbolos Informáticos y de Código Integrados */
 .magic-tech-glyph {
   position: absolute;
   font-family: 'Consolas', 'Courier New', monospace;
@@ -319,7 +374,6 @@ body {
   100% { transform: translateY(-10px); opacity: 0.85; }
 }
 
-/* Monstruos Pequeños Asomándose desde los Bordes */
 .magic-peeking-monster {
   position: absolute;
   z-index: 5;
@@ -461,7 +515,6 @@ body {
   }
 }
 
-/* Tarjeta de Portal Común */
 .magic-portal {
   background: linear-gradient(180deg, #1d1238 0%, #120b24 100%) !important;
   border-radius: 24px !important;
@@ -483,7 +536,6 @@ body {
   box-shadow: 0 18px 40px var(--portal-glow), 0 0 25px var(--portal-glow) !important;
 }
 
-/* Badge Superior del Portal */
 .portal-badge {
   font-size: 0.78rem !important;
   font-weight: 800 !important;
@@ -505,7 +557,6 @@ body {
   margin-bottom: 8px !important;
 }
 
-/* Caja de Ilustración Propia por Módulo */
 .portal-illustration-box {
   width: 100%;
   height: 90px;
@@ -561,7 +612,6 @@ body {
   padding: 2px 6px;
 }
 
-/* Título, Subtítulo y Descripción */
 .portal-title {
   font-size: 1.35rem !important;
   font-weight: 800 !important;
@@ -588,7 +638,6 @@ body {
   flex: 1 !important;
 }
 
-/* Botón de Entrada al Portal */
 .portal-btn {
   width: 100% !important;
   padding: 12px 18px !important;
@@ -610,81 +659,66 @@ body {
   box-shadow: 0 6px 20px var(--portal-glow) !important;
 }
 
-/* Temas Diferenciados para cada uno de los 4 Portales */
-
-/* Portal 1: Jugar y Aprender (Verde Monstruo & Pociones) */
 .portal-play {
   --portal-border: var(--hw-green);
   --portal-glow: rgba(155, 229, 100, 0.4);
   --portal-accent: var(--hw-green);
 }
-
 .portal-play .portal-badge {
   background: rgba(155, 229, 100, 0.16) !important;
   color: var(--hw-green) !important;
   border: 1px solid var(--hw-green) !important;
 }
-
 .portal-play .portal-btn {
   background: linear-gradient(180deg, #9BE564, #70b83e) !important;
   color: #0B0A16 !important;
 }
 
-/* Portal 2: Módulo de Programación (Violeta Luminoso & Circuitos) */
 .portal-coding {
   --portal-border: var(--hw-purple-light);
   --portal-glow: rgba(169, 112, 255, 0.45);
   --portal-accent: #c49eff;
 }
-
 .portal-coding .portal-badge {
   background: rgba(169, 112, 255, 0.18) !important;
   color: #d1b3ff !important;
   border: 1px solid var(--hw-purple-light) !important;
 }
-
 .portal-coding .portal-btn {
   background: linear-gradient(180deg, #A970FF, #7835d6) !important;
   color: #ffffff !important;
 }
 
-/* Portal 3: La Aventura de Bitty (Naranja Calabaza & Odisea Espacial) */
 .portal-adventure {
   --portal-border: var(--hw-orange);
   --portal-glow: rgba(255, 117, 24, 0.5);
   --portal-accent: var(--hw-orange-light);
 }
-
 .portal-adventure .portal-badge {
   background: rgba(255, 117, 24, 0.2) !important;
   color: var(--hw-orange-light) !important;
   border: 1px solid var(--hw-orange) !important;
 }
-
 .portal-adventure .portal-btn {
   background: linear-gradient(180deg, #FF7518, #d45700) !important;
   color: #ffffff !important;
 }
 
-/* Portal 4: Armar mi Regalo Familiar (Ámbar Dorado & Taller Mágico) */
 .portal-editor {
   --portal-border: #F59E0B;
   --portal-glow: rgba(245, 158, 11, 0.4);
   --portal-accent: #FCD34D;
 }
-
 .portal-editor .portal-badge {
   background: rgba(245, 158, 11, 0.18) !important;
   color: #FCD34D !important;
   border: 1px solid #F59E0B !important;
 }
-
 .portal-editor .portal-btn {
   background: linear-gradient(180deg, #F59E0B, #c07804) !important;
   color: #0B0A16 !important;
 }
 
-/* Estado de Módulo Bloqueado por el Panel Docente */
 .magic-portal.module-blocked {
   opacity: 0.55 !important;
   filter: grayscale(0.7) !important;
@@ -703,7 +737,427 @@ body {
 }
 
 /* --------------------------------------------------------
-   6. PANTALLA DE SELECCIÓN DE GRADO (JUGAR Y APRENDER)
+   6. PANTALLAS DE PROGRAMACIÓN — REDISEÑO COMPLETO OSCURO
+   -------------------------------------------------------- */
+
+/* A. Pantalla de Selección de Grados (#screen-coding-grades) */
+.coding-header-box .coding-main-title {
+  color: var(--hw-text-light) !important;
+  text-shadow: 0 0 16px rgba(169, 112, 255, 0.7) !important;
+}
+
+.coding-header-box .coding-subtitle {
+  color: var(--hw-text-muted) !important;
+}
+
+/* Barra de Sesión de Grupo */
+.session-management-bar {
+  background: #17102B !important;
+  border: 2px dashed var(--hw-purple) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.session-title {
+  color: var(--hw-orange-light) !important;
+  font-weight: 800 !important;
+}
+
+.session-desc {
+  color: var(--hw-text-muted) !important;
+}
+
+.btn-session-reset {
+  background: #231642 !important;
+  border: 2px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+  border-radius: 20px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 10px rgba(169, 112, 255, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-session-reset:hover {
+  background: var(--hw-purple) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 16px rgba(169, 112, 255, 0.5) !important;
+}
+
+/* Tarjetas de Grado de Programación (.coding-grade-card) */
+.coding-grade-card {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-purple) !important;
+  border-radius: 22px !important;
+  color: var(--hw-text-light) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.coding-grade-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: var(--hw-purple-light) !important;
+  box-shadow: 0 16px 36px rgba(169, 112, 255, 0.4) !important;
+}
+
+.coding-grade-card .coding-grade-badge {
+  background: rgba(169, 112, 255, 0.2) !important;
+  color: var(--hw-purple-light) !important;
+  border: 1px solid var(--hw-purple-light) !important;
+}
+
+.coding-grade-card .coding-grade-title {
+  color: var(--hw-text-light) !important;
+}
+
+.coding-grade-card .coding-grade-desc {
+  color: var(--hw-text-muted) !important;
+}
+
+.coding-grade-card .btn-select-coding-grade {
+  background: linear-gradient(180deg, var(--hw-purple-light), #7835d6) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 18px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 15px rgba(169, 112, 255, 0.4) !important;
+}
+
+.btn-back-to-home {
+  background: #17102B !important;
+  border: 2px solid var(--hw-orange) !important;
+  color: var(--hw-orange-light) !important;
+  border-radius: 20px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 12px rgba(255, 117, 24, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-back-to-home:hover {
+  background: #231642 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 20px rgba(255, 117, 24, 0.6) !important;
+}
+
+/* B. Pantalla de Temario / Syllabus (#screen-coding-syllabus) */
+.syllabus-container {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-purple) !important;
+  border-radius: 26px !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.syllabus-top-info {
+  background: #0B0A16 !important;
+  border: 2px solid var(--hw-purple) !important;
+  border-radius: 18px !important;
+  padding: 10px 18px !important;
+}
+
+.syllabus-grade-badge {
+  background: rgba(169, 112, 255, 0.22) !important;
+  border: 1px solid var(--hw-purple-light) !important;
+  color: var(--hw-purple-light) !important;
+}
+
+.syllabus-score-badge {
+  background: rgba(255, 117, 24, 0.22) !important;
+  border: 1px solid var(--hw-orange) !important;
+  color: var(--hw-orange-light) !important;
+}
+
+.btn-hud-back {
+  background: #231642 !important;
+  border: 2px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+}
+
+.btn-hud-back:hover {
+  background: var(--hw-purple) !important;
+  box-shadow: 0 0 12px rgba(169, 112, 255, 0.5) !important;
+}
+
+.syllabus-main-title,
+.syllabus-container h3 {
+  color: var(--hw-text-light) !important;
+  text-shadow: 0 0 12px rgba(169, 112, 255, 0.6) !important;
+}
+
+.syllabus-main-desc,
+.syllabus-container p {
+  color: var(--hw-text-muted) !important;
+}
+
+/* Tarjetas de Temas (.topic-card y .coding-topic-card) */
+.coding-topic-card,
+.topic-card {
+  background: var(--hw-surface-card) !important;
+  border: 3px solid var(--hw-purple) !important;
+  border-radius: 22px !important;
+  color: var(--hw-text-light) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.25s ease !important;
+}
+
+.topic-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+.topic-card.active {
+  border-color: var(--hw-green) !important;
+  box-shadow: 0 8px 24px rgba(155, 229, 100, 0.25) !important;
+}
+
+.topic-card.active:hover {
+  box-shadow: 0 16px 36px rgba(155, 229, 100, 0.4) !important;
+}
+
+.topic-card.locked {
+  border-color: #38245c !important;
+  opacity: 0.55 !important;
+  filter: grayscale(0.65) !important;
+  background: #120a22 !important;
+}
+
+.topic-title {
+  color: var(--hw-text-light) !important;
+  font-weight: 800 !important;
+}
+
+.topic-desc {
+  color: var(--hw-text-muted) !important;
+}
+
+.topic-status-tag.status-active {
+  background: rgba(155, 229, 100, 0.18) !important;
+  color: var(--hw-green) !important;
+  border: 1px solid var(--hw-green) !important;
+}
+
+.topic-status-tag.status-locked {
+  background: rgba(56, 36, 92, 0.6) !important;
+  color: #94a3b8 !important;
+  border: 1px solid #475569 !important;
+}
+
+.progress-bar-bg {
+  background: #0B0A16 !important;
+  border: 1px solid var(--hw-purple) !important;
+  border-radius: 10px !important;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--hw-purple-light), var(--hw-orange)) !important;
+  border-radius: 10px !important;
+}
+
+.topic-progress-label {
+  color: var(--hw-text-muted) !important;
+  font-weight: 700 !important;
+}
+
+.btn-start-topic {
+  background: linear-gradient(180deg, var(--hw-orange), #cf5504) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 18px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 15px rgba(255, 117, 24, 0.4) !important;
+}
+
+.btn-start-topic:hover {
+  box-shadow: 0 0 20px rgba(255, 117, 24, 0.7) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Tarjetas específicas de temas */
+#topic-card-homework {
+  border-color: var(--hw-purple-light) !important;
+}
+#topic-card-homework:hover {
+  box-shadow: 0 14px 32px rgba(169, 112, 255, 0.45) !important;
+}
+
+#topic-card-adventure {
+  border-color: var(--hw-orange) !important;
+}
+#topic-card-adventure:hover {
+  box-shadow: 0 14px 32px rgba(255, 117, 24, 0.5) !important;
+}
+
+#topic-card-bityblockly {
+  border-color: #06b6d4 !important;
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3) !important;
+}
+#topic-card-bityblockly:hover {
+  box-shadow: 0 14px 35px rgba(6, 182, 212, 0.55) !important;
+}
+
+/* C. Pantalla de Actividad Interactiva (#screen-coding-topic) */
+.coding-app-container {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-purple-light) !important;
+  border-radius: 26px !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.coding-hud-bar {
+  background: #0B0A16 !important;
+  border: 2px solid var(--hw-purple) !important;
+  border-radius: 18px !important;
+  color: var(--hw-text-light) !important;
+}
+
+.hud-stage-badge {
+  background: rgba(169, 112, 255, 0.22) !important;
+  border: 1px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.hud-score-pill {
+  background: rgba(255, 117, 24, 0.2) !important;
+  border: 1px solid var(--hw-orange) !important;
+  color: var(--hw-orange-light) !important;
+}
+
+.hud-progress-bar {
+  background: #17102B !important;
+  border: 1px solid var(--hw-purple) !important;
+}
+
+.hud-progress-fill {
+  background: linear-gradient(90deg, var(--hw-green), var(--hw-purple-light)) !important;
+}
+
+/* Guía Robot Byte en actividades */
+.byte-guide-box {
+  background: #1c1236 !important;
+  border: 2px solid var(--hw-purple) !important;
+  border-radius: 20px !important;
+}
+
+.byte-bubble {
+  background: #231642 !important;
+  border: 2px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.byte-name-tag {
+  color: var(--hw-orange-light) !important;
+}
+
+.byte-speech-text {
+  color: var(--hw-text-light) !important;
+}
+
+.btn-byte-audio {
+  background: #17102B !important;
+  border: 1px solid var(--hw-orange) !important;
+  color: var(--hw-orange-light) !important;
+}
+
+/* Tarjetas de Contenido en Actividades (.stage-content-area) */
+.stage-content-area {
+  color: var(--hw-text-light) !important;
+}
+
+.theory-card {
+  background: #1f143b !important;
+  border: 2px solid var(--hw-purple) !important;
+  border-radius: 20px !important;
+  color: var(--hw-text-light) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.theory-card-title {
+  color: var(--hw-orange-light) !important;
+}
+
+.theory-card-desc {
+  color: var(--hw-text-light) !important;
+}
+
+.theory-example-box {
+  background: #0B0A16 !important;
+  border: 1px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.btn-theory-continue,
+.btn-confirm-choice {
+  background: linear-gradient(180deg, var(--hw-green), #70b83e) !important;
+  color: #0B0A16 !important;
+  font-weight: 800 !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 15px rgba(155, 229, 100, 0.4) !important;
+}
+
+/* Bloques y Slots de Secuencias */
+.sequence-slot {
+  background: #0B0A16 !important;
+  border: 2px dashed var(--hw-purple-light) !important;
+  color: var(--hw-text-muted) !important;
+}
+
+.seq-inst-card,
+.seq-draggable-pill {
+  background: #241846 !important;
+  border: 2px solid var(--hw-purple-light) !important;
+  color: var(--hw-text-light) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.seq-inst-card:hover,
+.seq-draggable-pill:hover {
+  border-color: var(--hw-orange) !important;
+  box-shadow: 0 0 15px rgba(255, 117, 24, 0.45) !important;
+}
+
+.coding-option-card {
+  background: #1f143b !important;
+  border: 2px solid var(--hw-purple) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.coding-option-card:hover {
+  border-color: var(--hw-orange) !important;
+  background: #271a4a !important;
+  box-shadow: 0 0 18px rgba(255, 117, 24, 0.4) !important;
+}
+
+/* Modales de Feedback y Tarjeta de Victoria */
+.feedback-modal-overlay {
+  background: rgba(11, 10, 22, 0.88) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.feedback-card {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-purple-light) !important;
+  box-shadow: 0 0 40px rgba(169, 112, 255, 0.5) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.coding-victory-card {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-orange) !important;
+  box-shadow: 0 0 45px rgba(255, 117, 24, 0.55) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.victory-title {
+  color: var(--hw-orange-light) !important;
+  text-shadow: 0 0 15px rgba(255, 117, 24, 0.6) !important;
+}
+
+/* --------------------------------------------------------
+   7. PANTALLAS DE JUGAR Y APRENDER (GRADOS Y MINIJUEGO)
    -------------------------------------------------------- */
 .grades-main-title {
   color: var(--hw-text-light) !important;
@@ -721,6 +1175,7 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   color: var(--hw-text-light) !important;
   border-radius: 20px !important;
+  transition: all 0.25s ease !important;
 }
 
 .grade-card:hover {
@@ -756,88 +1211,47 @@ body {
   border: 2px solid var(--hw-orange) !important;
   color: var(--hw-orange-light) !important;
   border-radius: 20px !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   box-shadow: 0 0 12px rgba(255, 117, 24, 0.3) !important;
 }
 
-/* --------------------------------------------------------
-   7. PANTALLAS DE PROGRAMACIÓN (GRADOS, TEMARIO Y EJERCICIOS)
-   -------------------------------------------------------- */
-.coding-main-title {
-  color: var(--hw-text-light) !important;
-  text-shadow: 0 0 15px rgba(169, 112, 255, 0.6) !important;
-}
-
-.coding-subtitle {
-  color: var(--hw-text-muted) !important;
-}
-
-.coding-grade-card {
-  background: var(--hw-surface-dark) !important;
-  border: 3px solid var(--hw-purple) !important;
-  color: var(--hw-text-light) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
-}
-
-.coding-grade-card:hover {
-  transform: translateY(-8px) !important;
-  box-shadow: 0 16px 32px rgba(155, 229, 100, 0.3) !important;
-  border-color: var(--hw-green) !important;
-}
-
-.coding-grade-card .btn-enter-grade {
-  background: linear-gradient(180deg, var(--hw-green), #70b83e) !important;
-  color: #0B0A16 !important;
-  border: none !important;
-  font-weight: 800 !important;
-}
-
-/* Tarjetas del Temario */
-.coding-topic-card {
-  background: var(--hw-surface-dark) !important;
-  border: 2px solid var(--hw-purple) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+/* HUD y Modales de Minijuego */
+.hud-container {
+  background: #17102B !important;
+  border-bottom: 2px solid var(--hw-green) !important;
   color: var(--hw-text-light) !important;
 }
 
-.coding-topic-card:hover {
-  border-color: var(--hw-purple-light) !important;
-  box-shadow: 0 14px 28px rgba(169, 112, 255, 0.35) !important;
-}
-
-.topic-title {
-  color: var(--hw-text-light) !important;
-}
-
-.topic-desc {
-  color: var(--hw-text-muted) !important;
-}
-
-.topic-progress-track {
+.hud-stat-box {
   background: #0B0A16 !important;
-  border: 1px solid rgba(169, 112, 255, 0.3) !important;
+  border: 1px solid var(--hw-purple) !important;
+  color: var(--hw-text-light) !important;
 }
 
-.topic-progress-fill {
-  background: linear-gradient(90deg, var(--hw-purple-light), var(--hw-orange)) !important;
-}
-
-.btn-start-topic {
-  background: linear-gradient(180deg, var(--hw-orange), #d45700) !important;
-  color: #ffffff !important;
-  border: none !important;
-  font-weight: 800 !important;
-}
-
-/* Tarjeta especial de BityBlockly dentro del temario */
-#topic-card-bityblockly {
-  border-color: var(--hw-orange) !important;
-  box-shadow: 0 8px 25px rgba(255, 117, 24, 0.35) !important;
+.hud-math-card {
+  background: var(--hw-surface-dark) !important;
+  border: 3px solid var(--hw-green) !important;
+  box-shadow: 0 0 35px rgba(155, 229, 100, 0.5) !important;
+  color: var(--hw-text-light) !important;
 }
 
 /* --------------------------------------------------------
    8. PANTALLA DE AVENTURA Y PLATAFORMAS (BITY)
    -------------------------------------------------------- */
+.adventure-top-header {
+  background: #0B0A16 !important;
+  border-bottom: 2px solid var(--hw-orange) !important;
+  color: var(--hw-text-light) !important;
+}
+
+.btn-adventure-back {
+  background: #231642 !important;
+  border: 2px solid var(--hw-orange) !important;
+  color: var(--hw-orange-light) !important;
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+}
+
 .adventure-hero-header .adventure-main-title {
   color: var(--hw-orange-light) !important;
   text-shadow: 0 0 20px rgba(255, 117, 24, 0.7) !important;
@@ -848,6 +1262,7 @@ body {
   border: 3px solid var(--hw-orange) !important;
   box-shadow: 0 8px 24px rgba(255, 117, 24, 0.25) !important;
   color: var(--hw-text-light) !important;
+  border-radius: 22px !important;
 }
 
 .adventure-level-card:hover {
@@ -855,7 +1270,6 @@ body {
   box-shadow: 0 16px 36px rgba(255, 117, 24, 0.5) !important;
 }
 
-/* HUD y Modales de Plataformas */
 .plat-hud-bar {
   background: rgba(23, 16, 43, 0.95) !important;
   border-bottom: 2px solid var(--hw-orange) !important;
@@ -927,7 +1341,6 @@ body {
   box-shadow: 0 0 10px rgba(169, 112, 255, 0.5) !important;
 }
 
-/* Modal de Recorte de Caras */
 .cropper-modal-card {
   background: var(--hw-surface-dark) !important;
   border: 3px solid var(--hw-purple-light) !important;
