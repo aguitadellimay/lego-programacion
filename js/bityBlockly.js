@@ -383,62 +383,13 @@
     4: {
       grade: 4,
       title: '4.º Grado: El Laboratorio de los Hechizos Matemáticos',
-      subtitle: 'Parejas que suman 100, reactor de energía y alquimia cósmica',
-      tag: '4 Desafíos • Cartas que suman 100 & Operaciones',
+      subtitle: '3 Laberintos espaciales, cartas que suman 100 y pociones cósmicas',
+      tag: '6 Desafíos • 3 Laberintos & Hechizos',
       icon: '🧪🧙',
       missions: [
         {
           id: 1,
-          name: 'Misión 1: Encontrá las parejas que suman 100',
-          type: 'card_match_100',
-          story: '¡Desafío central del Laboratorio! Encontrá las 6 parejas de cartas espaciales que suman exactamente 100. Tocá dos cartas para emparejarlas.',
-          pairs: [
-            { a: 42, b: 58 },
-            { a: 26, b: 74 },
-            { a: 33, b: 67 },
-            { a: 72, b: 28 },
-            { a: 50, b: 50 },
-            { a: 25, b: 75 }
-          ],
-          hints: [
-            '💡 Pista 1: Las unidades deben sumar 10: 2+8=10, 6+4=10, 3+7=10, 5+5=10.',
-            '💡 Pista 2: Las decenas más la que te llevás deben dar 10: 40 + 50 + 10 = 100 (42 y 58).',
-            '💡 Pista 3: 50 + 50 = 100 y 25 + 75 = 100 son parejas directas muy fáciles de ubicar.'
-          ]
-        },
-        {
-          id: 2,
-          name: 'Misión 2: El reactor de pociones',
-          type: 'math_story',
-          story: 'Byte necesita sintetizar la poción mágica sumando 9 esferas de energía a las 45 del reactor. ¿A cuánta potencia llega el reactor?',
-          equation: '45 + 9 = ?',
-          options: [52, 54, 56],
-          correctAnswer: 54,
-          explanation: '¡45 + 9 = 54! El reactor de pociones mágicas alcanza 54 de potencia.',
-          hints: [
-            '💡 Pista 1: Para sumar 9 mentalmente, podés sumar 10 y luego restar 1.',
-            '💡 Pista 2: 45 + 10 = 55. Ahora 55 − 1 = 54.',
-            '💡 Pista 3: ¡El resultado es 54! Seleccionalo para encender el reactor.'
-          ]
-        },
-        {
-          id: 3,
-          name: 'Misión 3: Estabilizar el escudo magnético',
-          type: 'math_story',
-          story: 'El escudo del laboratorio estaba en 53 unidades de radiación y el disipador redujo 8 unidades. ¿En cuánto quedó estabilizado?',
-          equation: '53 − 8 = ?',
-          options: [43, 45, 47],
-          correctAnswer: 45,
-          explanation: '¡53 − 8 = 45! El escudo magnético quedó perfectamente calibrado en 45 unidades.',
-          hints: [
-            '💡 Pista 1: Para restar 8 mentalmente, podés restar 3 primero: 53 − 3 = 50.',
-            '💡 Pista 2: Ahora de 50 restás los 5 que faltaban: 50 − 5.',
-            '💡 Pista 3: 50 − 5 = 45. ¡Seleccioná 45!'
-          ]
-        },
-        {
-          id: 4,
-          name: 'Misión 4: Laberinto del alquimista cósmico',
+          name: 'Laberinto 1: El alquimista cósmico',
           type: 'maze',
           theme: 'magic_lab',
           cols: 9,
@@ -472,7 +423,7 @@
           }
         },
         {
-          id: 5,
+          id: 2,
           name: 'Laberinto 2: El cementerio de las calabazas',
           type: 'maze',
           theme: 'pumpkin_planet',
@@ -508,7 +459,7 @@
           }
         },
         {
-          id: 6,
+          id: 3,
           name: 'Laberinto 3: La puerta del castillo encantado',
           type: 'maze',
           theme: 'haunted_castle',
@@ -542,6 +493,55 @@
             correctAnswer: 63,
             explanation: '¡100 − 37 = 63! (100 − 30 = 70; 70 − 7 = 63). El portal del castillo encantado se ilumina.'
           }
+        },
+        {
+          id: 4,
+          name: 'Misión 4: Encontrá las parejas que suman 100',
+          type: 'card_match_100',
+          story: '¡Desafío central del Laboratorio! Encontrá las 6 parejas de cartas espaciales que suman exactamente 100. Tocá dos cartas para emparejarlas.',
+          pairs: [
+            { a: 42, b: 58 },
+            { a: 26, b: 74 },
+            { a: 33, b: 67 },
+            { a: 72, b: 28 },
+            { a: 50, b: 50 },
+            { a: 25, b: 75 }
+          ],
+          hints: [
+            '💡 Pista 1: Las unidades deben sumar 10: 2+8=10, 6+4=10, 3+7=10, 5+5=10.',
+            '💡 Pista 2: Las decenas más la que te llevás deben dar 10: 40 + 50 + 10 = 100 (42 y 58).',
+            '💡 Pista 3: 50 + 50 = 100 y 25 + 75 = 100 son parejas directas muy fáciles de ubicar.'
+          ]
+        },
+        {
+          id: 5,
+          name: 'Misión 5: El reactor de pociones',
+          type: 'math_story',
+          story: 'Byte necesita sintetizar la poción mágica sumando 9 esferas de energía a las 45 del reactor. ¿A cuánta potencia llega el reactor?',
+          equation: '45 + 9 = ?',
+          options: [52, 54, 56],
+          correctAnswer: 54,
+          explanation: '¡45 + 9 = 54! El reactor de pociones mágicas alcanza 54 de potencia.',
+          hints: [
+            '💡 Pista 1: Para sumar 9 mentalmente, podés sumar 10 y luego restar 1.',
+            '💡 Pista 2: 45 + 10 = 55. Ahora 55 − 1 = 54.',
+            '💡 Pista 3: ¡El resultado es 54! Seleccionalo para encender el reactor.'
+          ]
+        },
+        {
+          id: 6,
+          name: 'Misión 6: Estabilizar el escudo magnético',
+          type: 'math_story',
+          story: 'El escudo del laboratorio estaba en 53 unidades de radiación y el disipador redujo 8 unidades. ¿En cuánto quedó estabilizado?',
+          equation: '53 − 8 = ?',
+          options: [43, 45, 47],
+          correctAnswer: 45,
+          explanation: '¡53 − 8 = 45! El escudo magnético quedó perfectamente calibrado en 45 unidades.',
+          hints: [
+            '💡 Pista 1: Para restar 8 mentalmente, podés restar 3 primero: 53 − 3 = 50.',
+            '💡 Pista 2: Ahora de 50 restás los 5 que faltaban: 50 − 5.',
+            '💡 Pista 3: 50 − 5 = 45. ¡Seleccioná 45!'
+          ]
         }
       ]
     },
@@ -554,109 +554,6 @@
       missions: [
         {
           id: 1,
-          name: 'Nivel 1: Activar los motores',
-          type: 'multi_engine_unlock',
-          story: 'Para descender al núcleo del planeta embrujado, Byte debe calibrar las 4 turbinas principales resolviendo operaciones progresivas. Cada acierto enciende una turbina.',
-          steps: [
-            {
-              equation: '67 + 21 = ?',
-              options: [86, 88, 90],
-              correctAnswer: 88,
-              turbineName: 'Turbina 1 (Propulsión Alfa)'
-            },
-            {
-              equation: '72 + 9 = ?',
-              options: [79, 81, 83],
-              correctAnswer: 81,
-              turbineName: 'Turbina 2 (Compresión Beta)'
-            },
-            {
-              equation: '12 + 7 − 9 = ?',
-              options: [9, 10, 12],
-              correctAnswer: 10,
-              turbineName: 'Turbina 3 (Flujo Gamma)'
-            },
-            {
-              equation: '(12 + 21) − 7 = ?',
-              options: [24, 26, 28],
-              correctAnswer: 26,
-              turbineName: 'Turbina 4 (Estabilizador Delta)'
-            }
-          ],
-          hints: [
-            '💡 Pista 1: Resolvé las operaciones combinadas de izquierda a derecha respetando los paréntesis.',
-            '💡 Pista 2: Para (12 + 21) − 7, primero sumá lo de adentro: 12 + 21 = 33. Luego 33 − 7 = 26.',
-            '💡 Pista 3: 12 + 7 = 19; 19 − 9 = 10. ¡Comprobá cada cálculo antes de responder!'
-          ]
-        },
-        {
-          id: 2,
-          name: 'Nivel 2: El número perdido',
-          type: 'missing_number_solver',
-          story: '¡Desafío con incógnita! Descubrí el número que falta en la ecuación para que el resultado final sea 48: 21 + ___ − 7 = 48',
-          equationDisplay: '21 + ___ − 7 = 48',
-          correctAnswer: 34,
-          options: [28, 34, 40],
-          hints: [
-            '💡 Pista 1: Primero, pensá qué número debe quedar antes de restar 7 para terminar en 48. (Pista: 48 + 7 = 55).',
-            '💡 Pista 2: Después, averiguá qué número tenés que sumar a 21 para llegar a ese valor. (Pista: 55 − 21 = 34).',
-            '💡 Pista 3: Comprobá el resultado reemplazando el espacio vacío: 21 + 34 − 7 = 55 − 7 = 48. ¡El número perdido es 34!'
-          ]
-        },
-        {
-          id: 3,
-          name: 'Nivel 3: La ruta de energía',
-          type: 'energy_route_planner',
-          story: 'Byte necesita reunir energía exacta para llegar al núcleo del planeta. Inicia con 30 unidades y la meta es alcanzar exactamente 75 unidades de energía. Elegí la secuencia de nodos para lograr el objetivo.',
-          initialEnergy: 30,
-          targetEnergy: 75,
-          nodes: [
-            { id: 'n1', label: '+25 Energía', value: 25 },
-            { id: 'n2', label: '+30 Energía', value: 30 },
-            { id: 'n3', label: '−10 Desvío', value: -10 },
-            { id: 'n4', label: '+15 Recarga', value: 15 },
-            { id: 'n5', label: '−5 Consumo', value: -5 }
-          ],
-          hints: [
-            '💡 Pista 1: Partís de 30 y querés llegar a 75. La diferencia total necesaria es 75 − 30 = 45 unidades.',
-            '💡 Pista 2: Probá combinar nodos positivos y negativos: por ejemplo +25, luego −10 (quedan +15 agregados), y finalmente +30 (+15 + 30 = +45).',
-            '💡 Pista 3: ¡30 + 25 = 55; 55 − 10 = 45; 45 + 30 = 75! Esa secuencia da exactamente la meta.'
-          ]
-        },
-        {
-          id: 4,
-          name: 'Nivel 4: El código secreto del planeta',
-          type: 'secret_code_maze',
-          story: '¡Misión final hacia el núcleo embrujado! Descifrá los 4 dígitos del código secreto resolviendo las operaciones en orden lógico. Luego programá a Byte a través del laberinto para activar el núcleo central.',
-          codeChallenges: [
-            { label: 'Cifra 1 (Suma)', q: '46 + 28 = ?', answer: 74, options: [72, 74, 76] },
-            { label: 'Cifra 2 (Resta)', q: '85 − 39 = ?', answer: 46, options: [44, 46, 48] },
-            { label: 'Cifra 3 (Paréntesis)', q: '100 − (25 + 35) = ?', answer: 40, options: [35, 40, 45] },
-            { label: 'Cifra 4 (Incógnita)', q: '(15 + ___) − 10 = 35', answer: 30, options: [25, 30, 35] }
-          ],
-          theme: 'haunted_core',
-          cols: 10,
-          rows: 7,
-          start: { x: 1, y: 1, dir: 1 },
-          goal: { x: 8, y: 5 },
-          door: { x: 5, y: 3 },
-          grid: [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-            [1, 0, 0, 0, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 0, 0, 2, 0, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 0, 0, 3, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-          ],
-          hints: [
-            '💡 Pista 1: En 100 − (25 + 35), resolvé el paréntesis primero: 25 + 35 = 60. Luego 100 − 60 = 40.',
-            '💡 Pista 2: Para (15 + ___) − 10 = 35, pensá qué número menos 10 da 35 (es 45). Luego 15 + ___ = 45 (el número es 30).',
-            '💡 Pista 3: Una vez descifrado el código secreto, programá a Byte esquivando las telarañas hasta el núcleo central.'
-          ]
-        },
-        {
-          id: 5,
           name: 'Laberinto 1: El castillo de los caminos secretos',
           type: 'maze',
           theme: 'haunted_castle',
@@ -693,7 +590,7 @@
           }
         },
         {
-          id: 6,
+          id: 2,
           name: 'Laberinto 2: El bosque encantado de las rutas alternativas',
           type: 'maze',
           theme: 'enchanted_forest',
@@ -730,7 +627,7 @@
           }
         },
         {
-          id: 7,
+          id: 3,
           name: 'Laberinto 3: La misión final de Halloween',
           type: 'maze',
           theme: 'haunted_core',
@@ -765,6 +662,109 @@
             correctAnswer: 45,
             explanation: '¡(45 + 35) = 80; (20 + 15) = 35; 80 − 35 = 45! El portal del núcleo final se desbloquea.'
           }
+        },
+        {
+          id: 4,
+          name: 'Misión 4: Activar los motores',
+          type: 'multi_engine_unlock',
+          story: 'Para descender al núcleo del planeta embrujado, Byte debe calibrar las 4 turbinas principales resolviendo operaciones progresivas. Cada acierto enciende una turbina.',
+          steps: [
+            {
+              equation: '67 + 21 = ?',
+              options: [86, 88, 90],
+              correctAnswer: 88,
+              turbineName: 'Turbina 1 (Propulsión Alfa)'
+            },
+            {
+              equation: '72 + 9 = ?',
+              options: [79, 81, 83],
+              correctAnswer: 81,
+              turbineName: 'Turbina 2 (Compresión Beta)'
+            },
+            {
+              equation: '12 + 7 − 9 = ?',
+              options: [9, 10, 12],
+              correctAnswer: 10,
+              turbineName: 'Turbina 3 (Flujo Gamma)'
+            },
+            {
+              equation: '(12 + 21) − 7 = ?',
+              options: [24, 26, 28],
+              correctAnswer: 26,
+              turbineName: 'Turbina 4 (Estabilizador Delta)'
+            }
+          ],
+          hints: [
+            '💡 Pista 1: Resolvé las operaciones combinadas de izquierda a derecha respetando los paréntesis.',
+            '💡 Pista 2: Para (12 + 21) − 7, primero sumá lo de adentro: 12 + 21 = 33. Luego 33 − 7 = 26.',
+            '💡 Pista 3: 12 + 7 = 19; 19 − 9 = 10. ¡Comprobá cada cálculo antes de responder!'
+          ]
+        },
+        {
+          id: 5,
+          name: 'Misión 5: El número perdido',
+          type: 'missing_number_solver',
+          story: '¡Desafío con incógnita! Descubrí el número que falta en la ecuación para que el resultado final sea 48: 21 + ___ − 7 = 48',
+          equationDisplay: '21 + ___ − 7 = 48',
+          correctAnswer: 34,
+          options: [28, 34, 40],
+          hints: [
+            '💡 Pista 1: Primero, pensá qué número debe quedar antes de restar 7 para terminar en 48. (Pista: 48 + 7 = 55).',
+            '💡 Pista 2: Después, averiguá qué número tenés que sumar a 21 para llegar a ese valor. (Pista: 55 − 21 = 34).',
+            '💡 Pista 3: Comprobá el resultado reemplazando el espacio vacío: 21 + 34 − 7 = 55 − 7 = 48. ¡El número perdido es 34!'
+          ]
+        },
+        {
+          id: 6,
+          name: 'Misión 6: La ruta de energía',
+          type: 'energy_route_planner',
+          story: 'Byte necesita reunir energía exacta para llegar al núcleo del planeta. Inicia con 30 unidades y la meta es alcanzar exactamente 75 unidades de energía. Elegí la secuencia de nodos para lograr el objetivo.',
+          initialEnergy: 30,
+          targetEnergy: 75,
+          nodes: [
+            { id: 'n1', label: '+25 Energía', value: 25 },
+            { id: 'n2', label: '+30 Energía', value: 30 },
+            { id: 'n3', label: '−10 Desvío', value: -10 },
+            { id: 'n4', label: '+15 Recarga', value: 15 },
+            { id: 'n5', label: '−5 Consumo', value: -5 }
+          ],
+          hints: [
+            '💡 Pista 1: Partís de 30 y querés llegar a 75. La diferencia total necesaria es 75 − 30 = 45 unidades.',
+            '💡 Pista 2: Probá combinar nodos positivos y negativos: por ejemplo +25, luego −10 (quedan +15 agregados), y finalmente +30 (+15 + 30 = +45).',
+            '💡 Pista 3: ¡30 + 25 = 55; 55 − 10 = 45; 45 + 30 = 75! Esa secuencia da exactamente la meta.'
+          ]
+        },
+        {
+          id: 7,
+          name: 'Misión 7: El código secreto del planeta',
+          type: 'secret_code_maze',
+          story: '¡Misión final hacia el núcleo embrujado! Descifrá los 4 dígitos del código secreto resolviendo las operaciones en orden lógico. Luego programá a Byte a través del laberinto para activar el núcleo central.',
+          codeChallenges: [
+            { label: 'Cifra 1 (Suma)', q: '46 + 28 = ?', answer: 74, options: [72, 74, 76] },
+            { label: 'Cifra 2 (Resta)', q: '85 − 39 = ?', answer: 46, options: [44, 46, 48] },
+            { label: 'Cifra 3 (Paréntesis)', q: '100 − (25 + 35) = ?', answer: 40, options: [35, 40, 45] },
+            { label: 'Cifra 4 (Incógnita)', q: '(15 + ___) − 10 = 35', answer: 30, options: [25, 30, 35] }
+          ],
+          theme: 'haunted_core',
+          cols: 10,
+          rows: 7,
+          start: { x: 1, y: 1, dir: 1 },
+          goal: { x: 8, y: 5 },
+          door: { x: 5, y: 3 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
+            [1, 1, 1, 0, 0, 2, 0, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 0, 0, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          hints: [
+            '💡 Pista 1: En 100 − (25 + 35), resolvé el paréntesis primero: 25 + 35 = 60. Luego 100 − 60 = 40.',
+            '💡 Pista 2: Para (15 + ___) − 10 = 35, pensá qué número menos 10 da 35 (es 45). Luego 15 + ___ = 45 (el número es 30).',
+            '💡 Pista 3: Una vez descifrado el código secreto, programá a Byte esquivando las telarañas hasta el núcleo central.'
+          ]
         }
       ]
     }
@@ -772,14 +772,14 @@
 
   // Exposición explícita de laberintos por grado para acceso directo
   BITYBLOCKLY_GRADES_DATA[4].mazes = [
-    BITYBLOCKLY_GRADES_DATA[4].missions[3],
-    BITYBLOCKLY_GRADES_DATA[4].missions[4],
-    BITYBLOCKLY_GRADES_DATA[4].missions[5]
+    BITYBLOCKLY_GRADES_DATA[4].missions[0],
+    BITYBLOCKLY_GRADES_DATA[4].missions[1],
+    BITYBLOCKLY_GRADES_DATA[4].missions[2]
   ];
   BITYBLOCKLY_GRADES_DATA[5].mazes = [
-    BITYBLOCKLY_GRADES_DATA[5].missions[4],
-    BITYBLOCKLY_GRADES_DATA[5].missions[5],
-    BITYBLOCKLY_GRADES_DATA[5].missions[6]
+    BITYBLOCKLY_GRADES_DATA[5].missions[0],
+    BITYBLOCKLY_GRADES_DATA[5].missions[1],
+    BITYBLOCKLY_GRADES_DATA[5].missions[2]
   ];
 
   // -------------------------------------------------------------
@@ -1043,7 +1043,8 @@
     }
 
     getProgressSummary() {
-      const total = (this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : 4);
+      const gData = BITYBLOCKLY_GRADES_DATA[this.currentGrade];
+      const total = gData ? gData.missions.length : ((this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : 4));
       let count = 0;
       if (this.currentGrade === 1) {
         count = this.completedLevels.length;
@@ -1223,14 +1224,25 @@
         btn.dataset.level = lvlNum;
         btn.title = m.name || m.title;
 
-        let icon = '🚀';
-        if (this.currentGrade === 2) icon = ['⚡', '🎃', '🚪'][idx] || '🎃';
-        else if (this.currentGrade === 3) icon = ['🚂', '⚡', '💎', '🧭'][idx] || '👻';
-        else if (this.currentGrade === 4) icon = ['🃏', '🧪', '🛡️', '🧙', '🎃', '🏰'][idx] || '🧪';
-        else if (this.currentGrade === 5) icon = ['🔥', '❓', '⚡', '🗝️', '🏰', '🌲', '🎃'][idx] || '🔮';
-        else icon = ['🪐', '🌙', '🌌', '⚡', '🚀'][idx] || '🚀';
+        let label = `Nivel ${lvlNum}`;
+        if (this.currentGrade === 4) {
+          const g4Labels = ['🧙 Laberinto 1', '🎃 Laberinto 2', '🏰 Laberinto 3', '🃏 Cartas 100', '🧪 Reactor', '🛡️ Escudo'];
+          label = g4Labels[idx] || `Nivel ${lvlNum}`;
+        } else if (this.currentGrade === 5) {
+          const g5Labels = ['🏰 Laberinto 1', '🌲 Laberinto 2', '🎃 Laberinto 3', '🔥 Turbinas', '❓ Incógnita', '⚡ Energía', '🗝️ Código'];
+          label = g5Labels[idx] || `Nivel ${lvlNum}`;
+        } else if (this.currentGrade === 2) {
+          const g2Labels = ['⚡ Baterías', '🎃 Laberinto', '🚪 Compuerta'];
+          label = g2Labels[idx] || `Nivel ${lvlNum}`;
+        } else if (this.currentGrade === 3) {
+          const g3Labels = ['🚂 Parada 1', '⚡ Parada 2', '💎 Parada 3', '👻 Laberinto'];
+          label = g3Labels[idx] || `Nivel ${lvlNum}`;
+        } else {
+          const g1Icons = ['🪐', '🌙', '🌌', '⚡', '🚀'];
+          label = `${g1Icons[idx] || '🚀'} Nivel ${lvlNum}`;
+        }
 
-        btn.innerHTML = `<span>${icon}</span> Nivel ${lvlNum}`;
+        btn.innerHTML = `<span>${label}</span>`;
         btn.onclick = () => {
           this.loadLevel(lvlNum);
           this.audio.play('click');

@@ -82,10 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnSkipMission = document.getElementById('btn-skip-mission');
     const btnStartWorkshop = document.getElementById('btn-start-workshop');
 
+    // Función para informar que un módulo se encuentra no disponible
+    const showDisabledModuleNotice = (moduleName) => {
+      if (window.teacherManager && typeof window.teacherManager.showBlockedNotice === 'function') {
+        window.teacherManager.showBlockedNotice(
+          moduleName,
+          `El módulo "<strong>${moduleName}</strong>" se encuentra <strong>temporalmente no disponible</strong>.<br>¡Estará habilitado próximamente!`
+        );
+      }
+    };
+    window.showDisabledModuleNotice = showDisabledModuleNotice;
+
     // Inicializar el gestor de Programación
     let codingManager;
     const showScreen = (targetScreen) => {
-      // Bloqueo definitivo de acceso en la web a "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR"
+      // Bloqueo de acceso en la web a "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR" (NO DISPONIBLE)
       const permanentlyBlockedIds = ['screen-grades', 'screen-game', 'screen-editor'];
       if (targetScreen && permanentlyBlockedIds.includes(targetScreen.id)) {
         [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
@@ -97,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (typeof window !== 'undefined') {
           window.location.hash = '';
         }
+        showDisabledModuleNotice(targetScreen.id === 'screen-editor' ? 'Armar mi regalo familiar' : 'Jugar y aprender');
         return;
       }
 
@@ -179,8 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 1. Opción A: JUGAR Y APRENDER (Bloqueado definitivamente para alumnos)
+    // 1. Opción A: JUGAR Y APRENDER (Módulo No Disponible)
     const openPlayMode = () => {
+      showDisabledModuleNotice('Jugar y aprender');
       showScreen(screenHome);
     };
 
@@ -309,8 +322,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 3. Opción C: ARMAR MI REGALO FAMILIAR (Bloqueado definitivamente para alumnos)
+    // 3. Opción C: ARMAR MI REGALO FAMILIAR (Módulo No Disponible)
     const goToEditor = () => {
+      showDisabledModuleNotice('Armar mi regalo familiar');
       showScreen(screenHome);
     };
 

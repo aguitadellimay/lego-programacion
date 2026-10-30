@@ -8102,12 +8102,12 @@ class CodingModuleManager {
         4: {
           title: 'BityBlockly: Laboratorio de Hechizos 🧪🧙',
           label: 'HALLOWEEN • 4.º GRADO',
-          desc: '¡Encontrá las 6 parejas de cartas que suman 100! Calibrá el reactor (45 + 9 = 54), estabilizá el escudo (53 − 8 = 45) y superá el laberinto mágico.'
+          desc: '¡3 grandes laberintos espaciales (Alquimista, Cementerio y Castillo), más cartas que suman 100, reactor de pociones y escudo magnético!'
         },
         5: {
           title: 'BityBlockly: El Núcleo del Planeta Embrujado 🔮🌋',
           label: 'HALLOWEEN • 5.º GRADO',
-          desc: '¡Desafíos de alto nivel! Activá las 4 turbinas, descubrí el número perdido (21 + ___ − 7 = 48), trazá la ruta de energía y descifrá el código secreto.'
+          desc: '¡3 grandes laberintos cósmicos (Caminos Secretos, Bosque Encantado y Misión Final), más turbinas, incógnitas y código secreto!'
         }
       };
 
@@ -8117,7 +8117,12 @@ class CodingModuleManager {
       if (bbDescEl) bbDescEl.textContent = curInfo.desc;
 
       let bbCompleted = 0;
-      let totalLevels = (this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : 4);
+      let totalLevels = 5;
+      if (typeof window !== 'undefined' && window.BITYBLOCKLY_GRADES_DATA && window.BITYBLOCKLY_GRADES_DATA[this.currentGrade]) {
+        totalLevels = window.BITYBLOCKLY_GRADES_DATA[this.currentGrade].missions.length;
+      } else {
+        totalLevels = (this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : (this.currentGrade === 4 ? 6 : (this.currentGrade === 5 ? 7 : 4)));
+      }
 
       try {
         if (this.currentGrade === 1) {

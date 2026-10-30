@@ -533,31 +533,77 @@ body {
 }
 
 /* --------------------------------------------------------
-   5. REDISEÑO DEL MENÚ PRINCIPAL (PORTALES MÁGICOS HABILITADOS)
+   5. REDISEÑO DEL MENÚ PRINCIPAL (LOS 4 PORTALES MÁGICOS)
    -------------------------------------------------------- */
 .magic-portals-grid {
   position: relative;
   z-index: 10;
   display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 26px !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 22px !important;
   width: 100% !important;
-  max-width: 960px !important;
+  max-width: 1320px !important;
   margin: 0 auto !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding: 0 16px !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1240px) {
   .magic-portals-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, minmax(280px, 460px)) !important;
+    max-width: 960px !important;
+    justify-content: center !important;
+    gap: 22px !important;
   }
 }
 
-/* Bloqueo definitivo de acceso en la navegación para "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR" */
-.magic-portal.portal-play,
-.magic-portal.portal-editor,
-#banner-play,
-#banner-editor {
-  display: none !important;
+@media (max-width: 680px) {
+  .magic-portals-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 440px !important;
+  }
+}
+
+/* Portales Mágicos Marcados como NO DISPONIBLE */
+.magic-portal.portal-disabled {
+  filter: grayscale(0.5) brightness(0.85);
+  opacity: 0.85;
+  cursor: not-allowed !important;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+  background: linear-gradient(180deg, #181128 0%, #0e081c 100%) !important;
+}
+
+.magic-portal.portal-disabled:hover {
+  transform: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+}
+
+.magic-portal.portal-disabled .portal-illustration-box {
+  filter: grayscale(0.55) opacity(0.8);
+}
+
+.portal-disabled-badge {
+  background: rgba(239, 68, 68, 0.22) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(239, 68, 68, 0.5) !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.6px !important;
+}
+
+.portal-btn.btn-disabled {
+  background: rgba(51, 65, 85, 0.6) !important;
+  color: #94a3b8 !important;
+  border: 1px solid rgba(148, 163, 184, 0.3) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.portal-btn.btn-disabled:hover {
+  background: rgba(51, 65, 85, 0.6) !important;
+  transform: none !important;
 }
 
 .magic-portal {
