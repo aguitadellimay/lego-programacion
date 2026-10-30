@@ -533,29 +533,31 @@ body {
 }
 
 /* --------------------------------------------------------
-   5. REDISEÑO DEL MENÚ PRINCIPAL (LOS 4 PORTALES MÁGICOS)
+   5. REDISEÑO DEL MENÚ PRINCIPAL (PORTALES MÁGICOS HABILITADOS)
    -------------------------------------------------------- */
 .magic-portals-grid {
   position: relative;
   z-index: 10;
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 22px !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 26px !important;
   width: 100% !important;
-  max-width: 1320px !important;
+  max-width: 960px !important;
   margin: 0 auto !important;
 }
 
-@media (max-width: 1140px) {
-  .magic-portals-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .magic-portals-grid {
     grid-template-columns: 1fr !important;
   }
+}
+
+/* Bloqueo definitivo de acceso en la navegación para "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR" */
+.magic-portal.portal-play,
+.magic-portal.portal-editor,
+#banner-play,
+#banner-editor {
+  display: none !important;
 }
 
 .magic-portal {

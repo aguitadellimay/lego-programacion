@@ -303,8 +303,8 @@
       <!-- Los 4 Portales Mágicos del Menú Principal -->
       <div class="home-banners-grid magic-portals-grid">
         
-        <!-- Portal 1: JUGAR Y APRENDER -->
-        <article id="banner-play" class="home-banner-card magic-portal portal-play">
+        <!-- Portal 1: JUGAR Y APRENDER (Acceso bloqueado en la web para alumnos) -->
+        <article id="banner-play" class="home-banner-card magic-portal portal-play" style="display: none !important;" aria-hidden="true">
           <span class="banner-badge portal-badge">🧪 Laboratorio Mágico · 5 Desafíos</span>
           <div class="portal-illustration-box">
             <div class="portal-art-scene">
@@ -319,7 +319,7 @@
           <p class="banner-desc portal-desc">
             Entrá al laboratorio de acertijos: esquivá slimes encantados, resolvé cuentas de matemáticas y descubrí bloques mágicos para superar cada nivel escolar.
           </p>
-          <button id="btn-home-play" class="btn-banner-action portal-btn" type="button">
+          <button id="btn-home-play" class="btn-banner-action portal-btn" type="button" tabindex="-1">
             <span>🔮</span> ¡Entrar al Laboratorio!
           </button>
         </article>
@@ -367,8 +367,8 @@
           </button>
         </article>
 
-        <!-- Portal 4: ARMAR MI REGALO FAMILIAR -->
-        <article id="banner-editor" class="home-banner-card magic-portal portal-editor">
+        <!-- Portal 4: ARMAR MI REGALO FAMILIAR (Acceso bloqueado en la web para alumnos) -->
+        <article id="banner-editor" class="home-banner-card magic-portal portal-editor" style="display: none !important;" aria-hidden="true">
           <span class="banner-badge portal-badge">🎨 Taller Creativo · Edición Mágica</span>
           <div class="portal-illustration-box">
             <div class="portal-art-scene">
@@ -383,7 +383,7 @@
           <p class="banner-desc portal-desc">
             Taller de creación digital: subí la foto de tu familia, recortá caras divertidas con stickers, escribí tu dedicatoria e imprimí o descargá tu regalo terminado.
           </p>
-          <button id="btn-home-editor" class="btn-banner-action portal-btn" type="button">
+          <button id="btn-home-editor" class="btn-banner-action portal-btn" type="button" tabindex="-1">
             <span>🎁</span> ¡Ir al Taller de Diseño!
           </button>
         </article>
@@ -931,9 +931,9 @@
               <div class="h-grade-badge">4.º Grado</div>
               <div class="h-grade-icon">🧪🧙</div>
               <h4 class="h-grade-name">El Laboratorio de Hechizos</h4>
-              <p class="h-grade-desc">Juego de cartas: encontrá las 6 parejas que suman 100, activá el reactor (45 + 9 = 54) y estabilizá el escudo (53 − 8 = 45).</p>
+              <p class="h-grade-desc">Cartas que suman 100, pociones, escudo y 3 laberintos espaciales con rutas alternativas: Alquimista, Cementerio y Castillo.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">4 Misiones</span>
+                <span class="h-grade-tag">6 Misiones • 3 Laberintos</span>
                 <span class="h-grade-status" id="cover-status-g4">🧪 Disponible</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="4">
@@ -946,9 +946,9 @@
               <div class="h-grade-badge">5.º Grado</div>
               <div class="h-grade-icon">🔮🌋</div>
               <h4 class="h-grade-name">El Núcleo del Planeta Embrujado</h4>
-              <p class="h-grade-desc">Encendé 4 turbinas, descubrí el número perdido (21 + ___ − 7 = 48), planificá la ruta de energía y descifrá el código secreto.</p>
+              <p class="h-grade-desc">Turbinas, incógnitas, energía, código secreto y 3 grandes laberintos cósmicos: Caminos Secretos, Bosque Encantado y Misión Final.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">4 Misiones</span>
+                <span class="h-grade-tag">7 Misiones • 3 Laberintos</span>
                 <span class="h-grade-status" id="cover-status-g5">🔮 Desafío Maestro</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="5">

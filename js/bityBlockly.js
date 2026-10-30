@@ -470,14 +470,86 @@
             correctAnswer: 36,
             explanation: '¡64 + 36 = 100! La cerradura cuántica se desbloquea.'
           }
+        },
+        {
+          id: 5,
+          name: 'Laberinto 2: El cementerio de las calabazas',
+          type: 'maze',
+          theme: 'pumpkin_planet',
+          cols: 10,
+          rows: 8,
+          start: { x: 1, y: 1, dir: 1 },
+          door: { x: 8, y: 5 },
+          goal: { x: 8, y: 6 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 1, 1, 1, 1, 0, 1, 1],
+            [1, 0, 0, 1, 0, 0, 1, 0, 1, 1],
+            [1, 0, 1, 1, 1, 0, 1, 0, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 2, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          story: '¡Cruzá el cementerio de las calabazas luminosas! Tenés dos caminos posibles: por el sendero superior o por las criptas inferiores. Abrí la puerta de Halloween resolviendo la suma para llegar a la nave.',
+          hint: '💡 Podés elegir la ruta superior (derecha y luego abajo) o la ruta izquierda (abajo y luego derecha).',
+          hints: [
+            '💡 Pista 1: En la primera bifurcación podés seguir recto al este o bajar por el sendero oeste.',
+            '💡 Pista 2: Para abrir la puerta de Halloween, sumá las decenas (50 + 20 = 70) y las unidades (2 + 8 = 10): 70 + 10 = 80.',
+            '💡 Pista 3: Luego de abrir la puerta en (8, 5), avanzá un paso hacia el sur para alcanzar la nave meta.'
+          ],
+          math: {
+            story: '¡La puerta de Halloween del cementerio está sellada! Calculá la suma para abrirla:',
+            operation: '52 + 28 = ?',
+            type: 'addition',
+            options: [78, 80, 82],
+            correctAnswer: 80,
+            explanation: '¡52 + 28 = 80! (50 + 20 = 70; 2 + 8 = 10; 70 + 10 = 80). La puerta del cementerio se abre.'
+          }
+        },
+        {
+          id: 6,
+          name: 'Laberinto 3: La puerta del castillo encantado',
+          type: 'maze',
+          theme: 'haunted_castle',
+          cols: 11,
+          rows: 8,
+          start: { x: 1, y: 1, dir: 1 },
+          door: { x: 9, y: 4 },
+          goal: { x: 9, y: 6 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1],
+            [1, 0, 0, 0, 1, 1, 0, 0, 0, 2, 1],
+            [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          story: '¡Ingresá al castillo encantado! El patio central tiene múltiples bifurcaciones y murallas. Podés rodear por las almenas altas o atravesar el pasillo central. ¡Planificá tus giros antes de ejecutar!',
+          hint: '💡 Observá los dos caminos principales: el pasaje alto o el cruce del patio.',
+          hints: [
+            '💡 Pista 1: Podés bordear por el pasaje norte o descender al cruce central en (5, 3).',
+            '💡 Pista 2: Para desbloquear el portal gótico en (9, 4), calculá: 100 − 37 = 63.',
+            '💡 Pista 3: Tras desbloquear la puerta, bajá por el corredor este hasta la nave meta en (9, 6).'
+          ],
+          math: {
+            story: '¡El portal del castillo encantado requiere un cálculo de resta para disipar la niebla:',
+            operation: '100 − 37 = ?',
+            type: 'subtraction',
+            options: [63, 67, 73],
+            correctAnswer: 63,
+            explanation: '¡100 − 37 = 63! (100 − 30 = 70; 70 − 7 = 63). El portal del castillo encantado se ilumina.'
+          }
         }
       ]
     },
     5: {
       grade: 5,
       title: '5.º Grado: El Núcleo del Planeta Embrujado',
-      subtitle: 'Cálculos de varios pasos, incógnitas y código secreto del núcleo',
-      tag: '4 Desafíos • Razonamiento Matemático Avanzado',
+      subtitle: 'Cálculos combinados, incógnitas y 3 grandes laberintos cósmicos',
+      tag: '7 Desafíos • 3 Laberintos & Núcleo',
       icon: '🔮🌋',
       missions: [
         {
@@ -582,10 +654,133 @@
             '💡 Pista 2: Para (15 + ___) − 10 = 35, pensá qué número menos 10 da 35 (es 45). Luego 15 + ___ = 45 (el número es 30).',
             '💡 Pista 3: Una vez descifrado el código secreto, programá a Byte esquivando las telarañas hasta el núcleo central.'
           ]
+        },
+        {
+          id: 5,
+          name: 'Laberinto 1: El castillo de los caminos secretos',
+          type: 'maze',
+          theme: 'haunted_castle',
+          cols: 11,
+          rows: 9,
+          start: { x: 1, y: 1, dir: 1 },
+          door: { x: 8, y: 5 },
+          goal: { x: 9, y: 7 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+            [1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1],
+            [1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 1, 2, 1, 1],
+            [1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1],
+            [1, 0, 0, 0, 1, 1, 0, 0, 0, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          story: '¡Primer gran laberinto de 5.º grado! El castillo posee pasadizos secretos y callejones sin salida. Existen múltiples rutas válidas para llegar a la puerta mágica. Analizá cada giro cuidadosamente.',
+          hint: '💡 Compará la galería superior con el pasillo intermedio: ambas rutas evitan los callejones sin salida.',
+          hints: [
+            '💡 Pista 1: Podés avanzar por la galería alta (norte) o bajar por el corredor intermedio hacia el este.',
+            '💡 Pista 2: Cuidado con la entrada en (3, 2): termina en una pared cerrada.',
+            '💡 Pista 3: En la puerta en (8, 5), resolvé 35 + 25 − 18 = 42 para habilitar el tramo final hacia la nave.'
+          ],
+          math: {
+            story: '¡Sello mágico del castillo! Resolvé la operación combinada para abrir la compuerta:',
+            operation: '35 + 25 − 18 = ?',
+            type: 'combined',
+            options: [40, 42, 44],
+            correctAnswer: 42,
+            explanation: '¡35 + 25 = 60; 60 − 18 = 42! El sello mágico del castillo se desactiva.'
+          }
+        },
+        {
+          id: 6,
+          name: 'Laberinto 2: El bosque encantado de las rutas alternativas',
+          type: 'maze',
+          theme: 'enchanted_forest',
+          cols: 12,
+          rows: 9,
+          start: { x: 1, y: 1, dir: 1 },
+          door: { x: 9, y: 5 },
+          goal: { x: 10, y: 7 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+            [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 0, 0, 0, 0, 1, 2, 1, 1],
+            [1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          story: '¡El bosque encantado está lleno de senderos engañosos! Algunas bifurcaciones parecen atajos directos pero terminan en callejones oscuros. Descubrí una de las dos rutas válidas hasta la puerta de salida.',
+          hint: '💡 Cuidado con la ruta que va directo hacia el este al final del norte: termina en un callejón en (10, 1). Bajá por el cruce central o por el río de sombras.',
+          hints: [
+            '💡 Pista 1: El sendero norte parece continuar hacia (10, 1) pero está cerrado. Girá al sur en (5, 1) hacia el cruce central.',
+            '💡 Pista 2: La segunda ruta alternativa desciende por el río de sombras: (1, 1)->(1, 3)->(3, 3)->(3, 5)->(7, 5).',
+            '💡 Pista 3: En la puerta (9, 5), calculá el paréntesis primero: 28 + 32 = 60, luego 100 − 60 = 40.'
+          ],
+          math: {
+            story: '¡Runa vegetal del bosque! Resolvé la cuenta con paréntesis para continuar:',
+            operation: '100 − (28 + 32) = ?',
+            type: 'combined',
+            options: [35, 40, 45],
+            correctAnswer: 40,
+            explanation: '¡28 + 32 = 60; 100 − 60 = 40! La runa vegetal del bosque encantado se ilumina.'
+          }
+        },
+        {
+          id: 7,
+          name: 'Laberinto 3: La misión final de Halloween',
+          type: 'maze',
+          theme: 'haunted_core',
+          cols: 13,
+          rows: 9,
+          start: { x: 1, y: 1, dir: 1 },
+          door: { x: 10, y: 5 },
+          goal: { x: 11, y: 7 },
+          grid: [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1],
+            [1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1],
+            [1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1],
+            [1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1],
+            [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1, 1],
+            [1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 3, 1],
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+          ],
+          story: '¡El desafío maestro de Halloween! Este gran laberinto cuenta con múltiples decisiones, obstáculos en las esquinas y dos rutas alternativas reales. Demostrá tu maestría planificando la secuencia completa.',
+          hint: '💡 Podés rodear por las almenas altas (norte y este) o avanzar por el gran salón central y la galería inferior. Ambas secuencias superan la puerta.',
+          hints: [
+            '💡 Pista 1: Las almenas altas requieren giros precisos en (8, 1) y (10, 1) descendiendo hacia la puerta.',
+            '💡 Pista 2: La ruta del salón central avanza por (1, 5)->(5, 5)->(5, 3)->(8, 3)->(10, 4) hasta la puerta.',
+            '💡 Pista 3: En el portal final (10, 5), calculá ambos términos: 45 + 35 = 80, 20 + 15 = 35; 80 − 35 = 45.'
+          ],
+          math: {
+            story: '¡El portal del núcleo final está sellado con magia arcana! Resolvé el desafío final:',
+            operation: '(45 + 35) − (20 + 15) = ?',
+            type: 'combined',
+            options: [45, 50, 55],
+            correctAnswer: 45,
+            explanation: '¡(45 + 35) = 80; (20 + 15) = 35; 80 − 35 = 45! El portal del núcleo final se desbloquea.'
+          }
         }
       ]
     }
   };
+
+  // Exposición explícita de laberintos por grado para acceso directo
+  BITYBLOCKLY_GRADES_DATA[4].mazes = [
+    BITYBLOCKLY_GRADES_DATA[4].missions[3],
+    BITYBLOCKLY_GRADES_DATA[4].missions[4],
+    BITYBLOCKLY_GRADES_DATA[4].missions[5]
+  ];
+  BITYBLOCKLY_GRADES_DATA[5].mazes = [
+    BITYBLOCKLY_GRADES_DATA[5].missions[4],
+    BITYBLOCKLY_GRADES_DATA[5].missions[5],
+    BITYBLOCKLY_GRADES_DATA[5].missions[6]
+  ];
 
   // -------------------------------------------------------------
   // 3. Motor de Audio Sintetizado
@@ -764,7 +959,7 @@
 
       // Programa de bloques construido por el alumno
       this.blocks = [];
-      this.maxBlocks = 35;
+      this.maxBlocks = 40;
 
       // Estado de ejecución
       this.isRunning = false;
@@ -1031,8 +1226,8 @@
         let icon = '🚀';
         if (this.currentGrade === 2) icon = ['⚡', '🎃', '🚪'][idx] || '🎃';
         else if (this.currentGrade === 3) icon = ['🚂', '⚡', '💎', '🧭'][idx] || '👻';
-        else if (this.currentGrade === 4) icon = ['🃏', '🧪', '🛡️', '🧙'][idx] || '🧪';
-        else if (this.currentGrade === 5) icon = ['🔥', '❓', '⚡', '🗝️'][idx] || '🔮';
+        else if (this.currentGrade === 4) icon = ['🃏', '🧪', '🛡️', '🧙', '🎃', '🏰'][idx] || '🧪';
+        else if (this.currentGrade === 5) icon = ['🔥', '❓', '⚡', '🗝️', '🏰', '🌲', '🎃'][idx] || '🔮';
         else icon = ['🪐', '🌙', '🌌', '⚡', '🚀'][idx] || '🚀';
 
         btn.innerHTML = `<span>${icon}</span> Nivel ${lvlNum}`;

@@ -85,6 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar el gestor de Programación
     let codingManager;
     const showScreen = (targetScreen) => {
+      // Bloqueo definitivo de acceso en la web a "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR"
+      const permanentlyBlockedIds = ['screen-grades', 'screen-game', 'screen-editor'];
+      if (targetScreen && permanentlyBlockedIds.includes(targetScreen.id)) {
+        [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
+          if (s) s.classList.remove('active');
+        });
+        if (screenHome) screenHome.classList.add('active');
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname);
+        } else if (typeof window !== 'undefined') {
+          window.location.hash = '';
+        }
+        return;
+      }
+
       // Verificación de disponibilidad por Panel Docente
       if (window.teacherManager && targetScreen && targetScreen !== screenHome) {
         if (!window.teacherManager.canAccessScreen(targetScreen.id)) {
@@ -121,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (exportBtn) exportBtn.style.setProperty('display', isEditor ? 'flex' : 'none', 'important');
       if (homeFromEditor) homeFromEditor.style.setProperty('display', isEditor ? 'inline-flex' : 'none', 'important');
     };
+    window.appShowScreen = showScreen;
 
     codingManager = new CodingModuleManager({
       onPlaySound: (type) => {
@@ -163,20 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // 1. Opción A: Ir a la selección de grados (1° a 5°) de Matemática o directo al juego
+    // 1. Opción A: JUGAR Y APRENDER (Bloqueado definitivamente para alumnos)
     const openPlayMode = () => {
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
-      if (window.teacherManager && !window.teacherManager.isModuleEnabled('play')) {
-        window.teacherManager.showBlockedNotice('Jugar y aprender');
-        return;
-      }
-      if (screenGrades) {
-        showScreen(screenGrades);
-      } else if (screenGame) {
-        showScreen(screenGame);
-        if (typeof game !== 'undefined' && game.start) game.start();
-      }
-      playClickSound();
+      showScreen(screenHome);
     };
 
     if (btnHomePlay) btnHomePlay.addEventListener('click', (e) => { e.stopPropagation(); openPlayMode(); });
@@ -304,21 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // 3. Opción C: Ir directamente al taller de la foto (Modo Creativo)
+    // 3. Opción C: ARMAR MI REGALO FAMILIAR (Bloqueado definitivamente para alumnos)
     const goToEditor = () => {
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
-      if (window.teacherManager && !window.teacherManager.isModuleEnabled('editor')) {
-        window.teacherManager.showBlockedNotice('Armar mi regalo familiar');
-        return;
-      }
-      if (typeof game !== 'undefined' && game.stop) {
-        game.stop();
-      }
-      showScreen(screenEditor);
-      playCheerSound();
-      if (typeof canvasManager !== 'undefined' && canvasManager.stage) {
-        canvasManager.stage.batchDraw();
-      }
+      showScreen(screenHome);
     };
 
     if (btnHomeEditor) btnHomeEditor.addEventListener('click', (e) => { e.stopPropagation(); goToEditor(); });
@@ -347,12 +340,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Botón saltar misión e ir al taller
+    // Botón saltar misión e ir al taller (redirige a Home)
     if (btnSkipMission) {
       btnSkipMission.addEventListener('click', goToEditor);
     }
 
-    // Botón tras superar los 5 desafíos
+    // Botón tras superar los 5 desafíos (redirige a Home)
     if (btnStartWorkshop) {
       btnStartWorkshop.addEventListener('click', () => {
         const victoryOverlay = document.getElementById('victory-overlay');
@@ -360,6 +353,26 @@ document.addEventListener('DOMContentLoaded', () => {
         goToEditor();
       });
     }
+
+    // Control de rutas directas para evitar acceso pegando URLs o hashes en el navegador
+    const enforceWebAccessRestrictions = () => {
+      if (typeof window === 'undefined') return;
+      const hash = (window.location.hash || '').replace('#', '').toLowerCase();
+      const blockedRoutes = ['play', 'editor', 'screen-grades', 'screen-game', 'screen-editor', 'jugar', 'regalo', 'taller'];
+      if (blockedRoutes.some(r => hash.includes(r))) {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', window.location.pathname);
+        } else {
+          window.location.hash = '';
+        }
+        showScreen(screenHome);
+      }
+    };
+    if (typeof window !== 'undefined' && window.addEventListener) {
+      window.addEventListener('hashchange', enforceWebAccessRestrictions);
+      enforceWebAccessRestrictions();
+    }
+    window.enforceWebAccessRestrictions = enforceWebAccessRestrictions;
   }
 
   /**
