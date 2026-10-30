@@ -8085,9 +8085,9 @@ class CodingModuleManager {
 
       const gradeHalloweenInfo = {
         1: {
-          title: 'BityBlockly: Misión espacial',
+          title: 'BITYBLOCKLY: MISIÓN ESPACIAL',
           label: 'MISIÓN ESPACIAL',
-          desc: '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé las compuertas matemáticas y superá el Desafío Especial de Instrucciones».'
+          desc: '«¡BITY NECESITA AYUDA! EXPLORÓ MARTE Y AHORA TIENE QUE REGRESAR A SU NAVE. PROGRAMÁ SUS MOVIMIENTOS, RESOLVÉ LAS COMPUERTAS MATEMÁTICAS Y SUPERÁ EL DESAFÍO ESPECIAL DE INSTRUCCIONES».'
         },
         2: {
           title: 'BityBlockly: El Planeta de las Calabazas 🎃',
