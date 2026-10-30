@@ -8087,27 +8087,27 @@ class CodingModuleManager {
         1: {
           title: 'BityBlockly: Misión espacial',
           label: 'MISIÓN ESPACIAL',
-          desc: '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé los desafíos y ayudalo a volver a casa».'
+          desc: '«¡Bity necesita ayuda! Exploró Marte y ahora tiene que regresar a su nave. Programá sus movimientos, resolvé las compuertas matemáticas y superá el Desafío Especial de Instrucciones».'
         },
         2: {
           title: 'BityBlockly: El Planeta de las Calabazas 🎃',
           label: 'HALLOWEEN • 2.º GRADO',
-          desc: '¡Aventura de Halloween! Recargá energía (17 + 6 = 23), encontrá las calabazas perdidas (22 − 7 = 15) y abrí la compuerta espacial con Byte.'
+          desc: '¡Aventura de Halloween! Recargá energía, encontrá las calabazas perdidas, compuertas matemáticas y el Desafío Especial de Instrucciones con 2 rutas.'
         },
         3: {
           title: 'BityBlockly: El Tren Fantasma Espacial 🚂👻',
           label: 'HALLOWEEN • 3.º GRADO',
-          desc: '¡El tren embrujado de 3 paradas! Calculá los pasajeros que suben y bajan (0 + 5 + 2 − 1 = 6), operaciones 35 + 3 = 38, 36 − 7 = 29 y laberinto.'
+          desc: '¡El tren embrujado de 3 paradas! Pasajeros, acumuladores de energía, cristales, laberinto ferroviario y el Desafío Especial de Instrucciones con 3 rutas.'
         },
         4: {
           title: 'BityBlockly: Laboratorio de Hechizos 🧪🧙',
           label: 'HALLOWEEN • 4.º GRADO',
-          desc: '¡3 grandes laberintos espaciales (Alquimista, Cementerio y Castillo), más cartas que suman 100, reactor de pociones y escudo magnético!'
+          desc: '¡4 laberintos espaciales con tablas de multiplicar y factores faltantes, cartas que suman 100, reactor, escudo y el Desafío Especial de Instrucciones!'
         },
         5: {
           title: 'BityBlockly: El Núcleo del Planeta Embrujado 🔮🌋',
           label: 'HALLOWEEN • 5.º GRADO',
-          desc: '¡3 grandes laberintos cósmicos (Caminos Secretos, Bosque Encantado y Misión Final), más turbinas, incógnitas y código secreto!'
+          desc: '¡4 laberintos cósmicos con multiplicaciones y divisiones exactas, turbinas, incógnitas, código secreto y el Desafío Especial de Instrucciones!'
         }
       };
 
@@ -8117,11 +8117,11 @@ class CodingModuleManager {
       if (bbDescEl) bbDescEl.textContent = curInfo.desc;
 
       let bbCompleted = 0;
-      let totalLevels = 5;
+      let totalLevels = 6;
       if (typeof window !== 'undefined' && window.BITYBLOCKLY_GRADES_DATA && window.BITYBLOCKLY_GRADES_DATA[this.currentGrade]) {
         totalLevels = window.BITYBLOCKLY_GRADES_DATA[this.currentGrade].missions.length;
       } else {
-        totalLevels = (this.currentGrade === 1) ? 5 : (this.currentGrade === 2 ? 3 : (this.currentGrade === 4 ? 6 : (this.currentGrade === 5 ? 7 : 4)));
+        totalLevels = (this.currentGrade === 1) ? 6 : (this.currentGrade === 2 ? 4 : (this.currentGrade === 3 ? 5 : (this.currentGrade === 4 ? 7 : (this.currentGrade === 5 ? 8 : 6))));
       }
 
       try {
