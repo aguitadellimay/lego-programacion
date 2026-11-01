@@ -1934,147 +1934,276 @@
 }
 
 /* =========================================================
-   9. MODAL RESUMEN Y CELEBRACIÓN DE HALLOWEEN (DESAFÍO FINAL)
-   Diseño compacto, proporcional, 2 columnas en desktop,
-   botones siempre visibles sin scroll, y efectos temáticos.
+   9. ESCENARIO INMERSIVO DE HALLOWEEN: CEMENTERIO Y CASTILLO
+   Diorama completo con cielo nocturno, gran luna, nubes,
+   castillo con ventanas iluminadas y vampiro, árboles secos,
+   rejas, lápidas góticas, fantasmas animados, calabazas cálidas,
+   niebla, relámpagos y panel integrado como lápida encantada.
    ========================================================= */
 
-.summary-halloween-fx {
+/* Overlay a pantalla completa con atmósfera nocturna */
+.bityblockly-cemetery-celebration {
+  background: radial-gradient(ellipse at 50% 30%, rgba(20, 8, 45, 0.92) 0%, rgba(5, 2, 12, 0.98) 100%) !important;
+  backdrop-filter: blur(4px);
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.bityblockly-cemetery-celebration.active {
+  display: flex !important;
+}
+
+/* Contenedor del Diorama Escénico de Fondo */
+.cemetery-diorama-backdrop {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 5;
+  z-index: 1;
 }
 
-.summary-fx-bat {
+.cemetery-vector-scene {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Relámpago ocasional de tormenta */
+.cemetery-lightning-overlay {
   position: absolute;
-  font-size: 2rem;
-  opacity: 0.85;
-  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.7));
+  inset: 0;
+  background: rgba(224, 231, 255, 0.45);
   pointer-events: none;
+  opacity: 0;
+  z-index: 3;
+  animation: lightningAtmosphere 14s infinite;
 }
 
-.bat-top-left {
-  top: 8%;
-  left: 6%;
-  animation: batFlutterLeft 4s ease-in-out infinite alternate;
+@keyframes lightningAtmosphere {
+  0%, 94%, 100% { opacity: 0; }
+  94.5% { opacity: 0.75; }
+  95% { opacity: 0.15; }
+  95.8% { opacity: 0.9; }
+  96.5% { opacity: 0.1; }
+  97.2% { opacity: 0.4; }
+  98% { opacity: 0; }
 }
 
-.bat-top-right {
-  top: 10%;
-  right: 7%;
-  animation: batFlutterRight 4.5s ease-in-out infinite alternate;
-}
-
-.bat-mid-fly {
-  top: 25%;
-  left: -50px;
-  animation: batFlyAcross 6s linear infinite;
-}
-
-.summary-fx-ghost {
+/* Niebla volumétrica en movimiento continuo sobre el cementerio */
+.cemetery-fog-stream {
   position: absolute;
-  font-size: 2.2rem;
-  opacity: 0.65;
-  filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.8));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
   pointer-events: none;
+  z-index: 4;
 }
 
-.ghost-float-left {
-  bottom: 12%;
-  left: 4%;
-  animation: ghostHover 4s ease-in-out infinite;
+.fog-layer-back {
+  background: radial-gradient(ellipse at 30% 80%, rgba(168, 85, 247, 0.18) 0%, transparent 65%),
+              radial-gradient(ellipse at 70% 90%, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+  animation: fogDriftBack 22s ease-in-out infinite alternate;
 }
 
-.ghost-float-right {
-  bottom: 14%;
-  right: 5%;
-  animation: ghostHover 4.5s ease-in-out infinite 1s;
+.fog-layer-front {
+  background: radial-gradient(ellipse at 50% 95%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 85% 85%, rgba(147, 197, 253, 0.14) 0%, transparent 65%);
+  animation: fogDriftFront 16s ease-in-out infinite alternate;
 }
 
-.summary-fx-sparkle {
-  position: absolute;
-  font-size: 1.4rem;
-  opacity: 0.75;
-  animation: sparkleTwinkle 2.5s ease-in-out infinite alternate;
-}
-.s-1 { top: 15%; left: 20%; animation-delay: 0.2s; }
-.s-2 { top: 18%; right: 22%; animation-delay: 0.7s; }
-.s-3 { bottom: 18%; left: 25%; animation-delay: 1.2s; }
-.s-4 { bottom: 15%; right: 20%; animation-delay: 1.7s; }
-
-@keyframes batFlutterLeft {
-  0% { transform: translate(0, 0) rotate(-6deg) scale(0.9); }
-  50% { transform: translate(25px, -15px) rotate(4deg) scale(1.05); }
-  100% { transform: translate(10px, 20px) rotate(-8deg) scale(0.95); }
+@keyframes fogDriftBack {
+  0% { transform: translateX(-40px) scaleY(0.9); }
+  50% { transform: translateX(30px) scaleY(1.1); }
+  100% { transform: translateX(-40px) scaleY(0.9); }
 }
 
-@keyframes batFlutterRight {
-  0% { transform: translate(0, 0) rotate(6deg) scale(1); }
-  50% { transform: translate(-30px, 18px) rotate(-6deg) scale(0.9); }
-  100% { transform: translate(-15px, -18px) rotate(8deg) scale(1.05); }
+@keyframes fogDriftFront {
+  0% { transform: translateX(40px) scaleY(1); }
+  50% { transform: translateX(-35px) scaleY(1.15); }
+  100% { transform: translateX(40px) scaleY(1); }
 }
 
-@keyframes batFlyAcross {
-  0% { transform: translate(-60px, 0) scale(0.8) rotate(5deg); opacity: 0; }
-  15% { opacity: 0.85; }
-  85% { opacity: 0.85; }
-  100% { transform: translate(calc(100vw + 80px), -60px) scale(1.1) rotate(-5deg); opacity: 0; }
+/* Animaciones de los Elementos Vectoriales en el Escenario */
+/* 1. Titileo de estrellas */
+.star-twinkle-1 { animation: starPulse 2.4s ease-in-out infinite alternate; }
+.star-twinkle-2 { animation: starPulse 3.1s ease-in-out infinite alternate 0.7s; }
+.star-twinkle-3 { animation: starPulse 2.8s ease-in-out infinite alternate 1.4s; }
+
+@keyframes starPulse {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.3); filter: drop-shadow(0 0 4px #fde047); }
 }
 
-@keyframes ghostHover {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.55; }
-  50% { transform: translateY(-16px) scale(1.08); opacity: 0.8; }
+/* 2. Nubes desplazándose suavemente */
+.cloud-path-1 { animation: cloudsDriftSlow 35s linear infinite; }
+.cloud-path-2 { animation: cloudsDriftFast 25s linear infinite; }
+
+@keyframes cloudsDriftSlow {
+  0% { transform: translateX(-50px); }
+  50% { transform: translateX(40px); }
+  100% { transform: translateX(-50px); }
 }
 
-@keyframes sparkleTwinkle {
-  0% { transform: scale(0.7) rotate(0deg); opacity: 0.3; }
-  50% { transform: scale(1.2) rotate(45deg); opacity: 0.95; filter: drop-shadow(0 0 8px #fde047); }
-  100% { transform: scale(0.8) rotate(90deg); opacity: 0.4; }
+@keyframes cloudsDriftFast {
+  0% { transform: translateX(30px); }
+  50% { transform: translateX(-45px); }
+  100% { transform: translateX(30px); }
 }
 
-@keyframes pumpkinCandleGlow {
-  0% { filter: drop-shadow(0 0 4px #f59e0b); transform: scale(1); }
-  50% { filter: drop-shadow(0 0 12px #fbbf24); transform: scale(1.1); }
-  100% { filter: drop-shadow(0 0 6px #ea580c); transform: scale(0.98); }
+/* 3. Parpadeo de luz de vela en ventanas del castillo */
+.window-candle-flicker { animation: candleFlicker 1.8s ease-in-out infinite alternate; }
+.window-candle-flicker-1 { animation: candleFlicker 2.2s ease-in-out infinite alternate 0.4s; }
+.window-candle-flicker-2 { animation: candleFlicker 1.5s ease-in-out infinite alternate 0.8s; }
+.window-candle-flicker-3 { animation: candleFlicker 2.5s ease-in-out infinite alternate 1.1s; }
+
+@keyframes candleFlicker {
+  0% { opacity: 0.65; fill: #d97706; }
+  35% { opacity: 0.95; fill: #fde047; }
+  70% { opacity: 0.75; fill: #f59e0b; }
+  100% { opacity: 1; fill: #fef08a; filter: drop-shadow(0 0 6px #fde047); }
 }
 
-@keyframes goldGlowPulse {
-  0% { opacity: 0.6; text-shadow: 0 0 4px #facc15; }
-  100% { opacity: 1; text-shadow: 0 0 12px #fde047; }
+/* 4. Vampiro en la torre saludando */
+.vampire-hand-wave {
+  transform-origin: 38px 22px;
+  animation: vampireWaveHand 1.6s ease-in-out infinite alternate;
 }
 
-@keyframes bityCelebrationHop {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-8px) rotate(-4deg); }
-  50% { transform: translateY(0) rotate(0deg); }
-  75% { transform: translateY(-6px) rotate(4deg); }
+@keyframes vampireWaveHand {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(-25deg) translateY(-2px); }
+  100% { transform: rotate(10deg); }
 }
 
-/* Tarjeta Principal Compacta y Equilibrada */
-.bityblockly-instruction-summary-card {
-  background: linear-gradient(155deg, #070414 0%, #150b28 50%, #0a061b 100%);
-  border: 2px solid #f59e0b;
+/* 5. Arañita balanceándose del hilo */
+.spider-thread {
+  transform-origin: 140px 310px;
+  animation: spiderSwing 3.5s ease-in-out infinite alternate;
+}
+.cem-spider {
+  transform-origin: 140px 380px;
+  animation: spiderSwing 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes spiderSwing {
+  0% { transform: translate(140px, 380px) rotate(-14deg); }
+  50% { transform: translate(140px, 395px) rotate(0deg); }
+  100% { transform: translate(140px, 380px) rotate(14deg); }
+}
+
+/* 6. Fantasma que sube de la tumba celebrando */
+.cem-ghost-rising {
+  animation: ghostRiseFromTomb 4.2s ease-in-out infinite;
+}
+
+@keyframes ghostRiseFromTomb {
+  0%, 100% { transform: translate(48px, 20px) scale(0.65); opacity: 0.2; }
+  40% { transform: translate(48px, -24px) scale(1.05); opacity: 0.95; }
+  60% { transform: translate(48px, -20px) scale(1) rotate(-4deg); opacity: 0.95; }
+  85% { transform: translate(48px, -15px) scale(0.95) rotate(4deg); opacity: 0.8; }
+}
+
+/* 7. Fantasma planeando por el cielo */
+.cem-ghost-flying-sky {
+  animation: ghostFlyAcrossSky 18s linear infinite;
+}
+
+@keyframes ghostFlyAcrossSky {
+  0% { transform: translate(1050px, 240px) scale(0.8); opacity: 0; }
+  10% { opacity: 0.85; }
+  50% { transform: translate(500px, 210px) scale(1); opacity: 0.85; }
+  90% { opacity: 0.85; }
+  100% { transform: translate(-80px, 250px) scale(0.85); opacity: 0; }
+}
+
+/* 8. Murciélagos cruzando la luna */
+.bat-fly-1 { animation: batMoonFly 9s ease-in-out infinite; }
+.bat-fly-2 { animation: batMoonFly 11s ease-in-out infinite 1.2s; }
+.bat-fly-3 { animation: batMoonFly 8.5s ease-in-out infinite 2.5s; }
+.bat-fly-4 { animation: batMoonFly 10s ease-in-out infinite 3.8s; }
+
+@keyframes batMoonFly {
+  0% { transform: translate(1100px, 140px) scale(0.5); opacity: 0; }
+  10% { opacity: 0.85; }
+  50% { transform: translate(650px, 90px) scale(0.65) rotate(-6deg); opacity: 0.9; }
+  90% { opacity: 0.85; }
+  100% { transform: translate(150px, 160px) scale(0.45) rotate(8deg); opacity: 0; }
+}
+
+/* 9. Calabazas brillando con luz cálida */
+.pumpkin-eye-glow,
+.pumpkin-mouth-glow {
+  animation: pumpkinInnerFire 2s ease-in-out infinite alternate;
+}
+
+@keyframes pumpkinInnerFire {
+  0% { opacity: 0.75; filter: drop-shadow(0 0 3px #f59e0b); }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px #fbbf24); }
+  100% { opacity: 0.85; filter: drop-shadow(0 0 6px #ea580c); }
+}
+
+.wisp-pulse-green {
+  animation: wispFloatPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes wispFloatPulse {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+  50% { transform: translateY(-8px) scale(1.15); opacity: 0.9; }
+  100% { transform: translateY(0) scale(0.9); opacity: 0.4; }
+}
+
+/* =========================================================
+   PANEL CENTRAL INTEGRADO: LÁPIDA / PERGAMINO ENCANTADO
+   ========================================================= */
+
+.enchanted-tomb-plaque {
+  background: linear-gradient(155deg, rgba(8, 4, 18, 0.93) 0%, rgba(22, 10, 42, 0.91) 50%, rgba(10, 5, 24, 0.94) 100%) !important;
+  border: 2px solid #f59e0b !important;
   border-radius: 24px;
-  max-width: 840px;
-  width: 95%;
-  max-height: min(92vh, 650px);
+  max-width: 820px;
+  width: 94%;
+  max-height: min(90vh, 580px);
   padding: 16px 22px 14px 22px;
-  box-shadow: 0 0 45px rgba(245, 158, 11, 0.35), 0 0 70px rgba(139, 92, 246, 0.22), inset 0 0 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 50px rgba(245, 158, 11, 0.38), 0 0 85px rgba(139, 92, 246, 0.28), inset 0 0 30px rgba(0, 0, 0, 0.75);
   position: relative;
   z-index: 10;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  animation: bityModalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: bityModalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
+  backdrop-filter: blur(8px);
 }
+
+/* Esquinas ornamentales talladas */
+.plaque-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid #f59e0b;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.plaque-corner.top-left { top: 6px; left: 6px; border-right: none; border-bottom: none; border-top-left-radius: 6px; }
+.plaque-corner.top-right { top: 6px; right: 6px; border-left: none; border-bottom: none; border-top-right-radius: 6px; }
+.plaque-corner.bottom-left { bottom: 6px; left: 6px; border-right: none; border-top: none; border-bottom-left-radius: 6px; }
+.plaque-corner.bottom-right { bottom: 6px; right: 6px; border-left: none; border-top: none; border-bottom-right-radius: 6px; }
 
 /* Encabezado */
 .summary-modal-header {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   flex-shrink: 0;
 }
 
@@ -2082,34 +2211,35 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.18);
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
   border-radius: 20px;
-  padding: 2px 12px;
-  margin-bottom: 3px;
+  padding: 2px 14px;
+  margin-bottom: 4px;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.3);
 }
 
 .summary-badge-pumpkin {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   display: inline-block;
   animation: pumpkinCandleGlow 2s ease-in-out infinite alternate;
 }
 
 .summary-badge-text {
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-size: 0.84rem;
+  font-weight: 900;
   color: #fde047;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .summary-modal-title {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 900;
   color: #fde047;
   margin: 0;
   line-height: 1.2;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 14px rgba(253, 224, 71, 0.5);
+  letter-spacing: 0.8px;
+  text-shadow: 0 0 16px rgba(253, 224, 71, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
 }
 
 .summary-modal-subtitle {
@@ -2124,39 +2254,26 @@
   color: #fde047;
   font-weight: 900;
   font-size: 1.15rem;
-  text-shadow: 0 0 10px rgba(253, 224, 71, 0.6);
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.65);
 }
 
 /* Cuerpo en 2 Columnas */
 .summary-modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
   align-items: stretch;
   flex: 1;
   overflow-y: auto;
-  padding: 2px 4px 6px 4px;
+  padding: 2px 4px 4px 4px;
   box-sizing: border-box;
-}
-
-/* Scrollbar estética */
-.summary-modal-body::-webkit-scrollbar {
-  width: 6px;
-}
-.summary-modal-body::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
-  border-radius: 4px;
-}
-.summary-modal-body::-webkit-scrollbar-thumb {
-  background: rgba(168, 85, 247, 0.6);
-  border-radius: 4px;
 }
 
 .summary-col-left,
 .summary-col-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   justify-content: space-between;
 }
 
@@ -2165,16 +2282,16 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(30, 27, 75, 0.45);
-  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  background: rgba(30, 27, 75, 0.5);
+  border: 1.5px solid rgba(168, 85, 247, 0.45);
   border-radius: 14px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   box-sizing: border-box;
 }
 
 .summary-avatar-holder {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
   animation: bityCelebrationHop 1.4s ease-in-out infinite;
 }
@@ -2191,7 +2308,7 @@
 }
 
 .summary-bity-speech-text {
-  font-size: 0.86rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: #e0e7ff;
   margin: 0;
@@ -2203,7 +2320,7 @@
   top: -8px;
   right: -2px;
   font-size: 0.85rem;
-  animation: sparkleTwinkle 2s infinite alternate;
+  animation: starPulse 2s infinite alternate;
 }
 
 /* Contador Principal */
@@ -2217,7 +2334,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.4);
   position: relative;
 }
 
@@ -2226,7 +2343,6 @@
   letter-spacing: 3px;
   margin-bottom: 2px;
   color: #facc15;
-  animation: goldGlowPulse 2s infinite alternate;
 }
 
 .instruction-count-number {
@@ -2234,7 +2350,7 @@
   font-weight: 900;
   color: #fde047;
   line-height: 1;
-  text-shadow: 0 0 16px rgba(253, 224, 71, 0.65);
+  text-shadow: 0 0 18px rgba(253, 224, 71, 0.7);
 }
 
 .instruction-count-label {
@@ -2285,12 +2401,12 @@
 
 /* Columna Derecha: Classroom Callout */
 .classroom-share-callout {
-  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45) 0%, rgba(20, 83, 45, 0.35) 100%);
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.5) 0%, rgba(20, 83, 45, 0.38) 100%);
   border: 2px solid #10b981;
   border-radius: 14px;
   padding: 10px 12px;
   text-align: left;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.28);
 }
 
 .classroom-callout-header {
@@ -2315,7 +2431,7 @@
 }
 
 .callout-msg {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 900;
   color: #ecfdf5;
   line-height: 1.25;
@@ -2332,7 +2448,7 @@
 
 /* Pregunta de Reflexión */
 .classroom-reflection-box {
-  background: rgba(76, 29, 149, 0.3);
+  background: rgba(76, 29, 149, 0.32);
   border: 1.5px dashed #a855f7;
   border-radius: 14px;
   padding: 10px 12px;
@@ -2356,7 +2472,10 @@
   margin: 0;
 }
 
-/* Acciones Inferiores (Siempre Visibles) */
+/* =========================================================
+   BOTONES TEMÁTICOS: PORTAL MÁGICO Y PUERTA DEL CASTILLO
+   ========================================================= */
+
 .summary-modal-actions {
   display: flex;
   justify-content: center;
@@ -2364,51 +2483,79 @@
   flex-shrink: 0;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
   width: 100%;
   box-sizing: border-box;
 }
 
 .btn-summary-action {
   border: none;
-  border-radius: 12px;
-  padding: 11px 24px;
-  font-size: 0.95rem;
+  border-radius: 14px;
+  padding: 11px 26px;
+  font-size: 0.96rem;
   font-weight: 900;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
+  gap: 9px;
+  letter-spacing: 0.6px;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-summary-retry {
-  background: linear-gradient(135deg, #334155, #1e293b);
-  color: #f1f5f9;
-  border: 2px solid #64748b;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+.btn-action-icon {
+  font-size: 1.25rem;
+  display: inline-block;
+  transition: transform 0.25s ease;
 }
 
-.btn-summary-retry:hover {
-  background: linear-gradient(135deg, #475569, #334155);
+/* Botón 1: Portal Mágico Místico (Probar otro camino) */
+.btn-portal-magic {
+  background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 60%, #065f46 100%);
+  color: #f0fdf4;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.btn-portal-magic:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #312e81 60%, #047857 100%);
   border-color: #38bdf8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.55), inset 0 0 15px rgba(168, 85, 247, 0.35);
 }
 
-.btn-summary-next {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+.btn-portal-magic:hover .btn-action-icon {
+  transform: rotate(180deg);
+}
+
+.btn-portal-magic:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Botón 2: Gran Puerta del Castillo (Finalizar Grado) */
+.btn-castle-door {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 60%, #b45309 100%);
   color: #ffffff;
   border: 2px solid #fde047;
-  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.5), inset 0 0 10px rgba(254, 240, 138, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.btn-summary-next:hover {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.55);
+.btn-castle-door:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 60%, #c2410c 100%);
+  border-color: #ffffff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 32px rgba(245, 158, 11, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.btn-castle-door:hover .btn-action-icon {
+  transform: translateY(-2px) scale(1.15);
+}
+
+.btn-castle-door:active {
+  transform: translateY(1px) scale(0.98);
 }
 
 /* =========================================================
@@ -2416,7 +2563,7 @@
    ========================================================= */
 
 @media (max-width: 800px) {
-  .bityblockly-instruction-summary-card {
+  .enchanted-tomb-plaque {
     max-width: 96%;
     padding: 14px 16px 12px 16px;
     max-height: 94vh;
@@ -2435,7 +2582,7 @@
 }
 
 @media (max-width: 520px) {
-  .bityblockly-instruction-summary-card {
+  .enchanted-tomb-plaque {
     padding: 12px 12px 10px 12px;
   }
   .summary-modal-title {
@@ -2466,12 +2613,24 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .summary-fx-bat,
-  .summary-fx-ghost,
-  .summary-fx-sparkle,
-  .summary-avatar-holder,
-  .summary-badge-pumpkin,
-  .counter-stars-decor {
+  .cemetery-lightning-overlay,
+  .fog-layer-back,
+  .fog-layer-front,
+  .cloud-path-1,
+  .cloud-path-2,
+  .star-twinkle-1,
+  .star-twinkle-2,
+  .star-twinkle-3,
+  .bat-fly-1,
+  .bat-fly-2,
+  .bat-fly-3,
+  .bat-fly-4,
+  .cem-ghost-rising,
+  .cem-ghost-flying-sky,
+  .spider-thread,
+  .cem-spider,
+  .vampire-hand-wave,
+  .summary-avatar-holder {
     animation: none !important;
   }
 }

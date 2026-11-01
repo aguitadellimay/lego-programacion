@@ -1619,28 +1619,84 @@
 
       const celebGain = this.ctx.createGain();
       celebGain.gain.setValueAtTime(0.18, t0);
-      celebGain.gain.setValueAtTime(0.18, t0 + 2.5);
-      celebGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 3.4);
+      celebGain.gain.setValueAtTime(0.18, t0 + 2.7);
+      celebGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 3.6);
       celebGain.connect(this.ctx.destination);
       this.celebrationGain = celebGain;
 
-      // 1. Melodía alegre y misteriosa de Halloween (tipo Danza Mágica)
+      // 1. Trueno suave y distante al abrir la escena del cementerio (Low-frequency rumble)
+      try {
+        const bufferSize = Math.floor(this.ctx.sampleRate * 1.5);
+        const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        let lastOut = 0.0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          output[i] = (lastOut + (0.02 * white)) / 1.02; // Brown noise
+          lastOut = output[i];
+          output[i] *= 2.5;
+        }
+
+        const whiteNoise = this.ctx.createBufferSource();
+        whiteNoise.buffer = noiseBuffer;
+
+        const filter = this.ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(140, t0);
+        filter.frequency.exponentialRampToValueAtTime(60, t0 + 1.2);
+
+        const thunderGain = this.ctx.createGain();
+        thunderGain.gain.setValueAtTime(0.001, t0);
+        thunderGain.gain.linearRampToValueAtTime(0.15, t0 + 0.08);
+        thunderGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.4);
+
+        whiteNoise.connect(filter);
+        filter.connect(thunderGain);
+        thunderGain.connect(celebGain);
+
+        whiteNoise.start(t0 + 0.1);
+        whiteNoise.stop(t0 + 1.5);
+        this.activeCelebrationOscs.push(whiteNoise);
+      } catch (e) {}
+
+      // 2. Viento misterioso sutil
+      try {
+        const windOsc = this.ctx.createOscillator();
+        const windGain = this.ctx.createGain();
+        windOsc.type = 'sine';
+        windOsc.frequency.setValueAtTime(220, t0);
+        windOsc.frequency.exponentialRampToValueAtTime(380, t0 + 0.6);
+        windOsc.frequency.exponentialRampToValueAtTime(180, t0 + 1.5);
+
+        windGain.gain.setValueAtTime(0.001, t0);
+        windGain.gain.linearRampToValueAtTime(0.04, t0 + 0.3);
+        windGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.5);
+
+        windOsc.connect(windGain);
+        windGain.connect(celebGain);
+
+        windOsc.start(t0);
+        windOsc.stop(t0 + 1.5);
+        this.activeCelebrationOscs.push(windOsc);
+      } catch (e) {}
+
+      // 3. Melodía alegre y misteriosa de Halloween (tipo Celesta / Danza Mágica)
       const melody = [
-        { freq: 587.33, t: 0.00, dur: 0.14 }, // D5
-        { freq: 698.46, t: 0.16, dur: 0.14 }, // F5
-        { freq: 880.00, t: 0.32, dur: 0.14 }, // A5
-        { freq: 830.61, t: 0.48, dur: 0.14 }, // G#5 (tensión traviesa de Halloween)
-        { freq: 880.00, t: 0.64, dur: 0.20 }, // A5
-        { freq: 698.46, t: 0.88, dur: 0.14 }, // F5
-        { freq: 587.33, t: 1.04, dur: 0.14 }, // D5
-        { freq: 554.37, t: 1.20, dur: 0.14 }, // C#5
-        { freq: 587.33, t: 1.36, dur: 0.24 }, // D5
+        { freq: 587.33, t: 0.45, dur: 0.14 }, // D5
+        { freq: 698.46, t: 0.61, dur: 0.14 }, // F5
+        { freq: 880.00, t: 0.77, dur: 0.14 }, // A5
+        { freq: 830.61, t: 0.93, dur: 0.14 }, // G#5 (tensión traviesa de Halloween)
+        { freq: 880.00, t: 1.09, dur: 0.20 }, // A5
+        { freq: 698.46, t: 1.33, dur: 0.14 }, // F5
+        { freq: 587.33, t: 1.49, dur: 0.14 }, // D5
+        { freq: 554.37, t: 1.65, dur: 0.14 }, // C#5
+        { freq: 587.33, t: 1.81, dur: 0.24 }, // D5
         // Arpegio estelar ascendente
-        { freq: 587.33, t: 1.65, dur: 0.12 }, // D5
-        { freq: 698.46, t: 1.77, dur: 0.12 }, // F5
-        { freq: 880.00, t: 1.89, dur: 0.12 }, // A5
-        { freq: 1174.66, t: 2.01, dur: 0.15 }, // D6
-        { freq: 1396.91, t: 2.16, dur: 0.35 }  // F6
+        { freq: 587.33, t: 2.10, dur: 0.12 }, // D5
+        { freq: 698.46, t: 2.22, dur: 0.12 }, // F5
+        { freq: 880.00, t: 2.34, dur: 0.12 }, // A5
+        { freq: 1174.66, t: 2.46, dur: 0.15 }, // D6
+        { freq: 1396.91, t: 2.61, dur: 0.35 }  // F6
       ];
 
       melody.forEach(note => {
@@ -1663,14 +1719,14 @@
         this.activeCelebrationOscs.push(osc);
       });
 
-      // 2. Bajo staccato juguetón
+      // 4. Bajo staccato juguetón
       const bassNotes = [
-        { freq: 146.83, t: 0.00 }, // D3
-        { freq: 146.83, t: 0.32 }, // D3
-        { freq: 110.00, t: 0.64 }, // A2
-        { freq: 146.83, t: 0.88 }, // D3
-        { freq: 146.83, t: 1.20 }, // D3
-        { freq: 146.83, t: 1.65 }  // D3
+        { freq: 146.83, t: 0.45 }, // D3
+        { freq: 146.83, t: 0.77 }, // D3
+        { freq: 110.00, t: 1.09 }, // A2
+        { freq: 146.83, t: 1.33 }, // D3
+        { freq: 146.83, t: 1.65 }, // D3
+        { freq: 146.83, t: 2.10 }  // D3
       ];
 
       bassNotes.forEach(b => {
@@ -1682,7 +1738,7 @@
         bOsc.frequency.setValueAtTime(b.freq, startT);
 
         bGain.gain.setValueAtTime(0.001, startT);
-        bGain.gain.linearRampToValueAtTime(0.20, startT + 0.02);
+        bGain.gain.linearRampToValueAtTime(0.18, startT + 0.02);
         bGain.gain.exponentialRampToValueAtTime(0.001, startT + 0.16);
 
         bOsc.connect(bGain);
@@ -1693,10 +1749,10 @@
         this.activeCelebrationOscs.push(bOsc);
       });
 
-      // 3. Campanillas mágicas de cierre
+      // 5. Campanillas mágicas de cierre
       const chimes = [1760, 2093, 2637, 3135.96]; // A6, C7, E7, G7
       chimes.forEach((freq, idx) => {
-        const startT = t0 + 2.15 + idx * 0.1;
+        const startT = t0 + 2.65 + idx * 0.1;
         const cOsc = this.ctx.createOscillator();
         const cGain = this.ctx.createGain();
 
@@ -1705,13 +1761,13 @@
 
         cGain.gain.setValueAtTime(0.001, startT);
         cGain.gain.linearRampToValueAtTime(0.07, startT + 0.02);
-        cGain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.9);
+        cGain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.85);
 
         cOsc.connect(cGain);
         cGain.connect(celebGain);
 
         cOsc.start(startT);
-        cOsc.stop(startT + 0.95);
+        cOsc.stop(startT + 0.9);
         this.activeCelebrationOscs.push(cOsc);
       });
     }
