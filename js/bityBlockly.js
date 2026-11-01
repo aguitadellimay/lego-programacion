@@ -226,29 +226,29 @@
     },
     {
       id: 6,
-      name: 'Nivel 6: Desafío Especial de Instrucciones',
+      name: 'NIVEL 6: DESAFÍO ESPECIAL DE INSTRUCCIONES',
       theme: 'mothership',
       type: 'maze',
       isFinalChallenge: true,
       cols: 8,
       rows: 6,
       start: { x: 1, y: 1, dir: 1 },
-      goal: { x: 6, y: 4 },
-      doors: [{ x: 3, y: 1 }, { x: 6, y: 3 }],
+      goal: { x: 4, y: 3 },
+      doors: [{ x: 4, y: 1 }, { x: 3, y: 4 }],
       grid: [
         [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 2, 0, 0, 1],
+        [1, 0, 1, 1, 0, 1, 0, 1],
+        [1, 0, 1, 1, 3, 1, 0, 1],
         [1, 0, 0, 2, 0, 0, 0, 1],
-        [1, 0, 1, 1, 1, 1, 0, 1],
-        [1, 0, 0, 0, 0, 1, 2, 1],
-        [1, 1, 1, 1, 0, 0, 3, 1],
         [1, 1, 1, 1, 1, 1, 1, 1]
       ],
-      story: '¡Desafío Especial de Instrucciones! Hay dos caminos hacia la nave: Camino A (9 instrucciones) o Camino B (12 instrucciones). ¿Cuál elegirás?',
-      hint: '💡 Recordá: cada bloque ejecutado es una instrucción. ¡Contá tus pasos hasta la meta!',
+      story: '¡DESAFÍO ESPECIAL DE INSTRUCCIONES! HAY TRES CAMINOS HACIA LA NAVE: CAMINO ÓPTIMO (6 INSTRUCCIONES), ALTERNATIVA 1 (10 INSTRUCCIONES) O ALTERNATIVA 2 (14 INSTRUCCIONES). ¿CUÁL ELEGIRÁS?',
+      hint: '💡 RECORDÁ: CADA BLOQUE EJECUTADO ES UNA INSTRUCCIÓN. ¡CONTÁ TUS PASOS HASTA LA META!',
       hints: [
-        '💡 Pista 1: Podés avanzar directo hacia el este (Camino A) o descender por el oeste (Camino B).',
-        '💡 Pista 2: Cada puerta requiere resolver una suma o resta.',
-        '💡 Pista 3: Al llegar a la meta, verás exactamente cuántas instrucciones utilizaste.'
+        '💡 PISTA 1: EL CAMINO ÓPTIMO VA DIRECTO AL ESTE Y LUEGO AL SUR (6 INSTRUCCIONES).',
+        '💡 PISTA 2: LA ALTERNATIVA 1 BAJA Y AVANZA POR EL CENTRO (10 INSTRUCCIONES).',
+        '💡 PISTA 3: LA ALTERNATIVA 2 BORDEA POR EL EXTERIOR (14 INSTRUCCIONES).'
       ]
     }
   ];
@@ -343,23 +343,23 @@
           cols: 9,
           rows: 7,
           start: { x: 1, y: 1, dir: 1 },
-          goal: { x: 7, y: 5 },
-          doors: [{ x: 4, y: 1 }, { x: 7, y: 4 }],
+          goal: { x: 5, y: 4 },
+          doors: [{ x: 4, y: 1 }, { x: 2, y: 3 }],
           grid: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 2, 0, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 1, 0, 1],
-            [1, 1, 1, 1, 1, 0, 1, 2, 1],
-            [1, 1, 1, 1, 1, 0, 0, 3, 1],
+            [1, 0, 1, 1, 1, 0, 1, 0, 1],
+            [1, 0, 2, 0, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 0, 3, 1, 0, 1],
+            [1, 1, 1, 1, 1, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Gran Desafío de Instrucciones del Planeta Calabaza! Hay dos rutas independientes hacia la plataforma final: Ruta A (11 instrucciones) o Ruta B (14 instrucciones). ¡Elegí la tuya!',
+          story: '¡Gran Desafío de Instrucciones del Planeta Calabaza! Podés elegir entre tres recorridos independientes hacia la plataforma: Camino Óptimo (8 instrucciones), Alternativa 1 (11 instrucciones) o Alternativa 2 (16 instrucciones). ¡Elegí tu estrategia!',
           hint: '💡 Analizá los giros y avances necesarios para cada camino.',
           hints: [
-            '💡 Pista 1: Podés bordear por el pasillo superior norte o descender por la galería oeste.',
-            '💡 Pista 2: Cada compuerta mágica requiere resolver una suma o resta.',
-            '💡 Pista 3: Comprobá cuántas instrucciones te llevó llegar a la meta.'
+            '💡 Pista 1: El camino óptimo baja directo hacia la plataforma final (8 instrucciones).',
+            '💡 Pista 2: La Alternativa 1 atraviesa la galería central (11 instrucciones).',
+            '💡 Pista 3: La Alternativa 2 recorre el perímetro exterior (16 instrucciones).'
           ]
         }
       ]
@@ -453,24 +453,24 @@
           cols: 10,
           rows: 8,
           start: { x: 1, y: 1, dir: 1 },
-          goal: { x: 8, y: 6 },
-          doors: [{ x: 4, y: 1 }, { x: 8, y: 4 }],
+          goal: { x: 6, y: 5 },
+          doors: [{ x: 4, y: 1 }, { x: 3, y: 3 }],
           grid: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 2, 0, 0, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-            [1, 0, 1, 1, 1, 1, 0, 1, 2, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 3, 1],
+            [1, 0, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 0, 0, 2, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 0, 1, 0, 1, 0, 1],
+            [1, 1, 1, 1, 0, 0, 3, 1, 0, 1],
+            [1, 1, 1, 1, 1, 1, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Desafío Maestro del Tren Fantasma! Existen tres caminos independientes para llegar al andén secreto (13, 15 y 17 instrucciones). ¡Programá tu ruta favorita!',
-          hint: '💡 Podés elegir la vía superior (Ruta A), la vía central (Ruta B) o la vía baja (Ruta C).',
+          story: '¡Desafío Maestro del Tren Fantasma! Existen tres caminos independientes para llegar al andén secreto: Camino Óptimo (10 instrucciones), Alternativa 1 (15 instrucciones) y Alternativa 2 (18 instrucciones). ¡Programá tu ruta favorita!',
+          hint: '💡 Podés elegir la vía directa norte, la vía central con curvas o la vía perimetral sur.',
           hints: [
-            '💡 Pista 1: La Ruta A va directo por arriba (13 instrucciones).',
-            '💡 Pista 2: La Ruta B atraviesa el andén central (15 instrucciones).',
-            '💡 Pista 3: La Ruta C baja por el fondo (17 instrucciones). ¡Todas son válidas!'
+            '💡 Pista 1: La Vía Directa va por el norte (10 instrucciones).',
+            '💡 Pista 2: La Vía Central atraviesa los andenes interiores (15 instrucciones).',
+            '💡 Pista 3: La Vía Perimetral rodea por el andén exterior (18 instrucciones).'
           ]
         }
       ]
@@ -623,24 +623,24 @@
           cols: 11,
           rows: 8,
           start: { x: 1, y: 1, dir: 1 },
-          goal: { x: 9, y: 6 },
-          doors: [{ x: 5, y: 1 }, { x: 9, y: 4 }],
+          goal: { x: 7, y: 6 },
+          doors: [{ x: 5, y: 1 }, { x: 1, y: 3 }],
           grid: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 0, 1, 2, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1],
+            [1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 2, 1, 0, 0, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1, 0, 0, 3, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Gran Desafío de Instrucciones del Laboratorio! Tenés tres rutas con diferente cantidad de instrucciones (14, 16 y 18 instrucciones) y compuertas con tablas de multiplicar.',
+          story: '¡Gran Desafío de Instrucciones del Laboratorio! Tenés tres rutas con diferente cantidad de instrucciones: Camino Óptimo (12 instrucciones), Alternativa 1 (17 instrucciones) y Alternativa 2 (23 instrucciones). ¡Planificá tu estrategia!',
           hint: '💡 Planificá el recorrido y resolvé las tablas para abrir las compuertas.',
           hints: [
-            '💡 Pista 1: La galería norte requiere 14 instrucciones en total.',
-            '💡 Pista 2: El pasillo central requiere 16 instrucciones.',
-            '💡 Pista 3: La galería baja requiere 18 instrucciones.'
+            '💡 Pista 1: La Galería Norte requiere 12 instrucciones en total.',
+            '💡 Pista 2: La Galería Este requiere 17 instrucciones.',
+            '💡 Pista 3: La Galería Sudoeste con curvas requiere 23 instrucciones.'
           ]
         }
       ]
@@ -831,25 +831,25 @@
           cols: 12,
           rows: 9,
           start: { x: 1, y: 1, dir: 1 },
-          goal: { x: 10, y: 7 },
-          doors: [{ x: 6, y: 1 }, { x: 10, y: 5 }],
+          goal: { x: 8, y: 7 },
+          doors: [{ x: 6, y: 1 }, { x: 1, y: 3 }],
           grid: [
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1],
-            [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
             [1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
-            [1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 2, 1],
-            [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1],
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1],
+            [1, 2, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1],
+            [1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1],
+            [1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 1, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Desafío Cumbre de 5.º Grado! Tres rutas alternativas con 16, 20 y 22 instrucciones. Resolvé multiplicaciones, divisiones exactas e incógnitas en las compuertas espaciales.',
-          hint: '💡 Comprobá cada camino: Ruta A (16 instrs), Ruta B (20 instrs) y Ruta C (22 instrs).',
+          story: '¡Desafío Cumbre de 5.º Grado! Tres rutas alternativas con marcadas diferencias estratégicas: Camino Óptimo (14 instrucciones), Alternativa 1 (20 instrucciones) y Alternativa 2 (27 instrucciones). Resolvé los desafíos matemáticos para abrir las compuertas espaciales.',
+          hint: '💡 Comprobá cada camino: Camino Óptimo (14 instrs), Alternativa 1 (20 instrs) y Alternativa 2 (27 instrs).',
           hints: [
-            '💡 Pista 1: La Ruta A bordea por arriba y derecha (16 instrucciones).',
-            '💡 Pista 2: La Ruta B desciende al patio central (20 instrucciones).',
-            '💡 Pista 3: La Ruta C recorre el canal bajo (22 instrucciones).'
+            '💡 Pista 1: La Ruta de las Almenas Norte va directo (14 instrucciones).',
+            '💡 Pista 2: La Ruta del Portal Este bordea por el ala derecha (20 instrucciones).',
+            '💡 Pista 3: La Ruta del Laberinto Profundo atraviesa la galería sudoeste (27 instrucciones).'
           ]
         }
       ]
@@ -2283,8 +2283,29 @@
 
       let routeName = `Camino completado (${total} instrucciones)`;
       if (this.currentGrade === 1) {
-        if (total === 9) routeName = 'Camino A (Ruta Directa • 9 instrucciones)';
-        else if (total === 12) routeName = 'Camino B (Ruta Alternativa • 12 instrucciones)';
+        if (total === 6) routeName = 'Camino Óptimo (Ruta Directa • 6 instrucciones)';
+        else if (total === 10) routeName = 'Alternativa 1 (Camino Central • 10 instrucciones)';
+        else if (total === 14) routeName = 'Alternativa 2 (Camino Exterior • 14 instrucciones)';
+        else routeName = `Ruta Personalizada (${total} instrucciones)`;
+      } else if (this.currentGrade === 2) {
+        if (total === 8) routeName = 'Camino Óptimo (Ruta Directa • 8 instrucciones)';
+        else if (total === 11) routeName = 'Alternativa 1 (Camino Central • 11 instrucciones)';
+        else if (total === 16) routeName = 'Alternativa 2 (Rodeo Exterior • 16 instrucciones)';
+        else routeName = `Ruta Personalizada (${total} instrucciones)`;
+      } else if (this.currentGrade === 3) {
+        if (total === 10) routeName = 'Camino Óptimo (Vía Rápida • 10 instrucciones)';
+        else if (total === 15) routeName = 'Alternativa 1 (Vía Central • 15 instrucciones)';
+        else if (total === 18) routeName = 'Alternativa 2 (Vía Perimetral • 18 instrucciones)';
+        else routeName = `Ruta Personalizada (${total} instrucciones)`;
+      } else if (this.currentGrade === 4) {
+        if (total === 12) routeName = 'Camino Óptimo (Galería Norte • 12 instrucciones)';
+        else if (total === 17) routeName = 'Alternativa 1 (Galería Este • 17 instrucciones)';
+        else if (total === 23) routeName = 'Alternativa 2 (Galería Sudoeste • 23 instrucciones)';
+        else routeName = `Ruta Personalizada (${total} instrucciones)`;
+      } else if (this.currentGrade === 5) {
+        if (total === 14) routeName = 'Camino Óptimo (Ruta de las Almenas • 14 instrucciones)';
+        else if (total === 20) routeName = 'Alternativa 1 (Ruta del Portal Este • 20 instrucciones)';
+        else if (total === 27) routeName = 'Alternativa 2 (Ruta del Laberinto Profundo • 27 instrucciones)';
         else routeName = `Ruta Personalizada (${total} instrucciones)`;
       } else if (this.currentGrade === 2) {
         if (total === 11) routeName = 'Camino A (Ruta Directa • 11 instrucciones)';
