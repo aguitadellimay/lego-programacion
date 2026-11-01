@@ -1934,357 +1934,546 @@
 }
 
 /* =========================================================
-   9. MODAL RESUMEN: DESAFÍO ESPECIAL DE INSTRUCCIONES
+   9. MODAL RESUMEN Y CELEBRACIÓN DE HALLOWEEN (DESAFÍO FINAL)
+   Diseño compacto, proporcional, 2 columnas en desktop,
+   botones siempre visibles sin scroll, y efectos temáticos.
    ========================================================= */
+
+.summary-halloween-fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.summary-fx-bat {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.7));
+  pointer-events: none;
+}
+
+.bat-top-left {
+  top: 8%;
+  left: 6%;
+  animation: batFlutterLeft 4s ease-in-out infinite alternate;
+}
+
+.bat-top-right {
+  top: 10%;
+  right: 7%;
+  animation: batFlutterRight 4.5s ease-in-out infinite alternate;
+}
+
+.bat-mid-fly {
+  top: 25%;
+  left: -50px;
+  animation: batFlyAcross 6s linear infinite;
+}
+
+.summary-fx-ghost {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.65;
+  filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.8));
+  pointer-events: none;
+}
+
+.ghost-float-left {
+  bottom: 12%;
+  left: 4%;
+  animation: ghostHover 4s ease-in-out infinite;
+}
+
+.ghost-float-right {
+  bottom: 14%;
+  right: 5%;
+  animation: ghostHover 4.5s ease-in-out infinite 1s;
+}
+
+.summary-fx-sparkle {
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0.75;
+  animation: sparkleTwinkle 2.5s ease-in-out infinite alternate;
+}
+.s-1 { top: 15%; left: 20%; animation-delay: 0.2s; }
+.s-2 { top: 18%; right: 22%; animation-delay: 0.7s; }
+.s-3 { bottom: 18%; left: 25%; animation-delay: 1.2s; }
+.s-4 { bottom: 15%; right: 20%; animation-delay: 1.7s; }
+
+@keyframes batFlutterLeft {
+  0% { transform: translate(0, 0) rotate(-6deg) scale(0.9); }
+  50% { transform: translate(25px, -15px) rotate(4deg) scale(1.05); }
+  100% { transform: translate(10px, 20px) rotate(-8deg) scale(0.95); }
+}
+
+@keyframes batFlutterRight {
+  0% { transform: translate(0, 0) rotate(6deg) scale(1); }
+  50% { transform: translate(-30px, 18px) rotate(-6deg) scale(0.9); }
+  100% { transform: translate(-15px, -18px) rotate(8deg) scale(1.05); }
+}
+
+@keyframes batFlyAcross {
+  0% { transform: translate(-60px, 0) scale(0.8) rotate(5deg); opacity: 0; }
+  15% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { transform: translate(calc(100vw + 80px), -60px) scale(1.1) rotate(-5deg); opacity: 0; }
+}
+
+@keyframes ghostHover {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.55; }
+  50% { transform: translateY(-16px) scale(1.08); opacity: 0.8; }
+}
+
+@keyframes sparkleTwinkle {
+  0% { transform: scale(0.7) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.2) rotate(45deg); opacity: 0.95; filter: drop-shadow(0 0 8px #fde047); }
+  100% { transform: scale(0.8) rotate(90deg); opacity: 0.4; }
+}
+
+@keyframes pumpkinCandleGlow {
+  0% { filter: drop-shadow(0 0 4px #f59e0b); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 12px #fbbf24); transform: scale(1.1); }
+  100% { filter: drop-shadow(0 0 6px #ea580c); transform: scale(0.98); }
+}
+
+@keyframes goldGlowPulse {
+  0% { opacity: 0.6; text-shadow: 0 0 4px #facc15; }
+  100% { opacity: 1; text-shadow: 0 0 12px #fde047; }
+}
+
+@keyframes bityCelebrationHop {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-4deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-6px) rotate(4deg); }
+}
+
+/* Tarjeta Principal Compacta y Equilibrada */
 .bityblockly-instruction-summary-card {
-  background: linear-gradient(180deg, #020617 0%, #17102b 100%);
-  border: 3px solid #f59e0b;
-  border-radius: 26px;
-  max-width: 640px;
-  width: 100%;
-  padding: 30px;
-  box-shadow: 0 0 50px rgba(245, 158, 11, 0.4), inset 0 0 25px rgba(0, 0, 0, 0.6);
-  text-align: center;
+  background: linear-gradient(155deg, #070414 0%, #150b28 50%, #0a061b 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 24px;
+  max-width: 840px;
+  width: 95%;
+  max-height: min(92vh, 650px);
+  padding: 16px 22px 14px 22px;
+  box-shadow: 0 0 45px rgba(245, 158, 11, 0.35), 0 0 70px rgba(139, 92, 246, 0.22), inset 0 0 30px rgba(0, 0, 0, 0.7);
   position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   animation: bityModalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
 }
 
+/* Encabezado */
 .summary-modal-header {
-  margin-bottom: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
-.summary-modal-icon {
-  font-size: 2.8rem;
+.summary-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 20px;
+  padding: 2px 12px;
+  margin-bottom: 3px;
+}
+
+.summary-badge-pumpkin {
+  font-size: 1.05rem;
   display: inline-block;
-  margin-bottom: 6px;
+  animation: pumpkinCandleGlow 2s ease-in-out infinite alternate;
 }
 
-.summary-modal-title {
-  font-size: 1.8rem;
-  font-weight: 900;
+.summary-badge-text {
+  font-size: 0.78rem;
+  font-weight: 800;
   color: #fde047;
-  margin: 0;
   letter-spacing: 1px;
 }
 
-.summary-modal-subtitle {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #38bdf8;
-  margin: 4px 0 0 0;
-}
-
-.instruction-counter-highlight {
-  background: rgba(15, 23, 42, 0.9);
-  border: 3px solid #38bdf8;
-  border-radius: 20px;
-  padding: 16px;
-  margin: 16px auto;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 200px;
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.45);
-}
-
-.instruction-count-number {
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: #fde047;
-  line-height: 1;
-}
-
-.instruction-count-label {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: #94a3b8;
-  letter-spacing: 1.5px;
-  margin-top: 4px;
-}
-
-.instruction-breakdown-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 18px 0;
-}
-
-@media (max-width: 550px) {
-  .instruction-breakdown-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.instruction-breakdown-card {
-  background: rgba(30, 41, 59, 0.7);
-  border: 2px solid #64748b;
-  border-radius: 14px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.breakdown-icon {
-  font-size: 1.5rem;
-}
-
-.breakdown-val {
+.summary-modal-title {
   font-size: 1.35rem;
   font-weight: 900;
-  color: #f1f5f9;
+  color: #fde047;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 14px rgba(253, 224, 71, 0.5);
 }
 
-.breakdown-lbl {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #94a3b8;
-  text-align: center;
+.summary-modal-subtitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #38bdf8;
+  margin: 2px 0 0 0;
+  line-height: 1.2;
 }
 
-.classroom-reflection-box {
-  background: rgba(76, 29, 149, 0.25);
-  border: 2px dashed #a855f7;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 18px 0;
+.summary-subtitle-highlight {
+  color: #fde047;
+  font-weight: 900;
+  font-size: 1.15rem;
+  text-shadow: 0 0 10px rgba(253, 224, 71, 0.6);
+}
+
+/* Cuerpo en 2 Columnas */
+.summary-modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+  flex: 1;
+  overflow-y: auto;
+  padding: 2px 4px 6px 4px;
+  box-sizing: border-box;
+}
+
+/* Scrollbar estética */
+.summary-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.summary-modal-body::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 4px;
+}
+.summary-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.6);
+  border-radius: 4px;
+}
+
+.summary-col-left,
+.summary-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Bity Hero & Speech */
+.summary-bity-hero {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(30, 27, 75, 0.45);
+  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  border-radius: 14px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+.summary-avatar-holder {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  animation: bityCelebrationHop 1.4s ease-in-out infinite;
+}
+
+.summary-avatar-holder svg {
+  width: 100%;
+  height: 100%;
+}
+
+.summary-speech-bubble {
+  position: relative;
+  flex: 1;
   text-align: left;
 }
 
-.reflection-tag {
-  font-size: 0.85rem;
-  font-weight: 900;
-  color: #c084fc;
-  letter-spacing: 0.8px;
-  margin-bottom: 6px;
+.summary-bity-speech-text {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #e0e7ff;
+  margin: 0;
+  line-height: 1.25;
 }
 
-.reflection-text {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #f1f5f9;
-  line-height: 1.5;
+.speech-sparkle {
+  position: absolute;
+  top: -8px;
+  right: -2px;
+  font-size: 0.85rem;
+  animation: sparkleTwinkle 2s infinite alternate;
+}
+
+/* Contador Principal */
+.instruction-counter-highlight {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 14px;
+  padding: 8px 12px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  position: relative;
+}
+
+.counter-stars-decor {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  margin-bottom: 2px;
+  color: #facc15;
+  animation: goldGlowPulse 2s infinite alternate;
+}
+
+.instruction-count-number {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #fde047;
+  line-height: 1;
+  text-shadow: 0 0 16px rgba(253, 224, 71, 0.65);
+}
+
+.instruction-count-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Desglose de 3 Fichas */
+.instruction-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
   margin: 0;
 }
 
+.instruction-breakdown-card {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1.5px solid rgba(100, 116, 139, 0.5);
+  border-radius: 10px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.breakdown-icon {
+  font-size: 1.1rem;
+}
+
+.breakdown-val {
+  font-size: 0.98rem;
+  font-weight: 900;
+  color: #f1f5f9;
+  line-height: 1.1;
+}
+
+.breakdown-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  line-height: 1.1;
+}
+
+/* Columna Derecha: Classroom Callout */
+.classroom-share-callout {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45) 0%, rgba(20, 83, 45, 0.35) 100%);
+  border: 2px solid #10b981;
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: left;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+}
+
+.classroom-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.callout-icon {
+  font-size: 1.05rem;
+}
+
+.callout-badge {
+  font-size: 0.72rem;
+  font-weight: 900;
+  background: #10b981;
+  color: #022c22;
+  padding: 2px 7px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.callout-msg {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: #ecfdf5;
+  line-height: 1.25;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.35);
+  margin-bottom: 3px;
+}
+
+.callout-submsg {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #a7f3d0;
+  line-height: 1.2;
+}
+
+/* Pregunta de Reflexión */
+.classroom-reflection-box {
+  background: rgba(76, 29, 149, 0.3);
+  border: 1.5px dashed #a855f7;
+  border-radius: 14px;
+  padding: 10px 12px;
+  text-align: left;
+  margin: 0;
+}
+
+.reflection-tag {
+  font-size: 0.74rem;
+  font-weight: 900;
+  color: #c084fc;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.reflection-text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Acciones Inferiores (Siempre Visibles) */
 .summary-modal-actions {
   display: flex;
   justify-content: center;
   gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .btn-summary-action {
   border: none;
-  border-radius: 14px;
-  padding: 12px 22px;
-  font-size: 1.05rem;
-  font-weight: 800;
+  border-radius: 12px;
+  padding: 11px 24px;
+  font-size: 0.95rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  letter-spacing: 0.5px;
 }
 
 .btn-summary-retry {
-  background: #334155;
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #334155, #1e293b);
+  color: #f1f5f9;
   border: 2px solid #64748b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .btn-summary-retry:hover {
-  background: #475569;
-  border-color: #94a3b8;
+  background: linear-gradient(135deg, #475569, #334155);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.3);
 }
 
 .btn-summary-next {
   background: linear-gradient(135deg, #f59e0b, #d97706);
   color: #ffffff;
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  border: 2px solid #fde047;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
 }
 
 .btn-summary-next:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.55);
 }
 
+/* =========================================================
+   ADAPTACIÓN A DIFERENTES PANTALLAS (RESPONSIVE)
+   ========================================================= */
 
-/* ========================================================
-   PERSONAJE GUÍA PERMANENTE (BITY) Y ASISTENCIA PEDAGÓGICA
-   ======================================================== */
-
-.bity-guide-companion-box {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 12px;
-  padding: 12px 16px;
-  background: rgba(15, 23, 42, 0.88);
-  border: 2px solid rgba(56, 189, 248, 0.35);
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-  position: relative;
-  transition: all 0.3s ease;
+@media (max-width: 800px) {
+  .bityblockly-instruction-summary-card {
+    max-width: 96%;
+    padding: 14px 16px 12px 16px;
+    max-height: 94vh;
+  }
+  .summary-modal-body {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .summary-col-left,
+  .summary-col-right {
+    gap: 8px;
+  }
+  .instruction-count-number {
+    font-size: 2.1rem;
+  }
 }
 
-.bity-guide-avatar-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 76px;
-  flex-shrink: 0;
+@media (max-width: 520px) {
+  .bityblockly-instruction-summary-card {
+    padding: 12px 12px 10px 12px;
+  }
+  .summary-modal-title {
+    font-size: 1.15rem;
+  }
+  .summary-modal-subtitle {
+    font-size: 0.85rem;
+  }
+  .instruction-breakdown-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .breakdown-val {
+    font-size: 0.85rem;
+  }
+  .breakdown-lbl {
+    font-size: 0.62rem;
+  }
+  .summary-modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn-summary-action {
+    width: 100%;
+    padding: 9px 16px;
+    font-size: 0.88rem;
+  }
 }
 
-.bity-guide-avatar-container {
-  width: 72px;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  animation: bityGuideHover 3.2s ease-in-out infinite alternate;
-}
-
-.bity-guide-avatar-container.bounce {
-  animation: bityGuideBounce 0.6s ease-out;
-}
-
-.bity-mascot-svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
-  overflow: visible;
-}
-
-/* Animaciones SVG internas */
-.antenna-wave.wave-1 {
-  animation: bityAntennaSignal 1.8s ease-out infinite;
-  transform-origin: 50px 9px;
-}
-
-.antenna-wave.wave-2 {
-  animation: bityAntennaSignal 1.8s ease-out 0.6s infinite;
-  transform-origin: 50px 9px;
-}
-
-.bity-eye.left-eye,
-.bity-eye.right-eye {
-  animation: bityEyeBlink 3.8s ease-in-out infinite;
-  transform-origin: 50px 46px;
-}
-
-.bity-core {
-  animation: bityCorePulse 2s ease-in-out infinite alternate;
-}
-
-.bity-guide-nametag {
-  margin-top: 4px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #38bdf8;
-  background: #090d16;
-  padding: 2px 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  text-transform: uppercase;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.bity-guide-dialog-container {
-  flex: 1;
-  min-width: 0;
-  position: relative;
-}
-
-.bity-guide-bubble {
-  position: relative;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-  border: 1.5px solid rgba(56, 189, 248, 0.45);
-  border-radius: 12px;
-  padding: 10px 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  transition: border-color 0.3s, transform 0.2s;
-}
-
-.bity-guide-bubble::before {
-  content: '';
-  position: absolute;
-  left: -9px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-right: 9px solid rgba(56, 189, 248, 0.45);
-}
-
-.bity-guide-bubble-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 6px;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.bity-guide-speaker-badge {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #7dd3fc;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.btn-bity-ask-hint {
-  background: linear-gradient(180deg, #f59e0b, #d97706);
-  border: 1px solid #fde047;
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 800;
-  padding: 5px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s;
-}
-
-.btn-bity-ask-hint:hover {
-  background: linear-gradient(180deg, #fbbf24, #f59e0b);
-  transform: scale(1.04);
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
-}
-
-.btn-bity-ask-hint:active {
-  transform: scale(0.98);
-}
-
-.bity-guide-message-text {
-  font-size: 0.95rem;
-  line-height: 1.48;
-  color: #f8fafc;
-  font-weight: 600;
-  margin: 0;
-  word-break: break-word;
-  animation: bityTextFadeIn 0.3s ease-out;
-}
-
-/* Keyframes de animación */
-@keyframes bityGuideHover {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(2px); }
+@media (prefers-reduced-motion: reduce) {
+  .summary-fx-bat,
+  .summary-fx-ghost,
+  .summary-fx-sparkle,
+  .summary-avatar-holder,
+  .summary-badge-pumpkin,
+  .counter-stars-decor {
+    animation: none !important;
+  }
 }
 
 @keyframes bityGuideBounce {

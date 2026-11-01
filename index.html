@@ -1252,67 +1252,110 @@
         </div>
       </div>
 
-      <!-- Modal de Cierre y Reflexión: Desafío Especial de Instrucciones -->
+      <!-- Modal de Cierre y Celebración de Halloween: Desafío Especial de Instrucciones -->
       <div id="bityblockly-instruction-summary-modal" class="bityblockly-modal-overlay">
+        <!-- Efectos de Celebración de Halloween (Murciélagos, Fantasmas y Chispas mágicas) -->
+        <div class="summary-halloween-fx" aria-hidden="true">
+          <div class="summary-fx-bat bat-top-left">🦇</div>
+          <div class="summary-fx-bat bat-top-right">🦇</div>
+          <div class="summary-fx-bat bat-mid-fly">🦇</div>
+          <div class="summary-fx-ghost ghost-float-left">👻</div>
+          <div class="summary-fx-ghost ghost-float-right">👻</div>
+          <div class="summary-fx-sparkle s-1">✨</div>
+          <div class="summary-fx-sparkle s-2">🌟</div>
+          <div class="summary-fx-sparkle s-3">⭐</div>
+          <div class="summary-fx-sparkle s-4">✨</div>
+        </div>
+
         <div class="bityblockly-instruction-summary-card">
+          <!-- Encabezado Compacto y Celebratorio -->
           <div class="summary-modal-header">
-            <span class="summary-modal-icon">🎯🏆</span>
+            <div class="summary-header-badge">
+              <span class="summary-badge-pumpkin">🎃</span>
+              <span class="summary-badge-text">¡MISIÓN DE HALLOWEEN COMPLETADA!</span>
+              <span class="summary-badge-pumpkin">🎃</span>
+            </div>
             <h3 id="bityblockly-summary-title" class="summary-modal-title">¡FELICITACIONES! ¡BITY LLEGÓ A LA META!</h3>
             <h4 id="bityblockly-summary-subtitle" class="summary-modal-subtitle">
               UTILIZASTE <span id="bityblockly-summary-subtitle-count" class="summary-subtitle-highlight">0</span> INSTRUCCIONES PARA COMPLETAR EL RECORRIDO.
             </h4>
           </div>
+
+          <!-- Contenedor en 2 Columnas Horizontales en Desktop -->
           <div class="summary-modal-body">
-            <div class="instruction-counter-highlight">
-              <span class="instruction-count-number" id="bityblockly-summary-total-count">0</span>
-              <span class="instruction-count-label">INSTRUCCIONES TOTALES</span>
-            </div>
-            <div class="instruction-breakdown-grid">
-              <div class="instruction-breakdown-card">
-                <span class="breakdown-icon">⬆️</span>
-                <span class="breakdown-val" id="bityblockly-summary-moves-count">0</span>
-                <span class="breakdown-lbl">Movimientos (Avanzar)</span>
+            <!-- Columna Izquierda: Bity Celebrando + Contador Principal + Desglose de Movimientos/Giros -->
+            <div class="summary-col-left">
+              <!-- Bity Celebrando y Mensaje Pedagógico -->
+              <div class="summary-bity-hero">
+                <div id="bityblockly-summary-avatar" class="summary-avatar-holder"></div>
+                <div class="summary-speech-bubble">
+                  <div class="speech-sparkle">✨</div>
+                  <p id="bityblockly-summary-bity-speech" class="summary-bity-speech-text">
+                    ¡LO LOGRASTE! ¡AYUDASTE A BITY A LLEGAR A LA META!
+                  </p>
+                </div>
               </div>
-              <div class="instruction-breakdown-card">
-                <span class="breakdown-icon">🔄</span>
-                <span class="breakdown-val" id="bityblockly-summary-turns-count">0</span>
-                <span class="breakdown-lbl">Giros (Der / Izq)</span>
+
+              <!-- Bloque Destacado de Instrucciones Totales -->
+              <div class="instruction-counter-highlight">
+                <div class="counter-stars-decor">⭐ ✨ ⭐</div>
+                <span class="instruction-count-number" id="bityblockly-summary-total-count">0</span>
+                <span class="instruction-count-label">INSTRUCCIONES TOTALES</span>
               </div>
-              <div class="instruction-breakdown-card">
-                <span class="breakdown-icon">🗺️</span>
-                <span class="breakdown-val" id="bityblockly-summary-route-name">Ruta A</span>
-                <span class="breakdown-lbl">Camino elegido</span>
+
+              <!-- Desglose Compacto de Pasos y Giros -->
+              <div class="instruction-breakdown-grid">
+                <div class="instruction-breakdown-card">
+                  <span class="breakdown-icon">⬆️</span>
+                  <span class="breakdown-val" id="bityblockly-summary-moves-count">0</span>
+                  <span class="breakdown-lbl">Pasos adelante</span>
+                </div>
+                <div class="instruction-breakdown-card">
+                  <span class="breakdown-icon">🔄</span>
+                  <span class="breakdown-val" id="bityblockly-summary-turns-count">0</span>
+                  <span class="breakdown-lbl">Giros realizados</span>
+                </div>
+                <div class="instruction-breakdown-card">
+                  <span class="breakdown-icon">🗺️</span>
+                  <span class="breakdown-val" id="bityblockly-summary-route-name">Camino Óptimo</span>
+                  <span class="breakdown-lbl">Ruta completada</span>
+                </div>
               </div>
             </div>
 
-            <!-- Registro obligatorio y visible en Classroom -->
-            <div class="classroom-share-callout">
-              <div class="classroom-callout-header">
-                <span class="callout-icon">📋🎒</span>
-                <span class="callout-badge" id="summary-classroom-badge">REGISTRO EN CLASSROOM</span>
+            <!-- Columna Derecha: Registro en Classroom y Pregunta de Reflexión -->
+            <div class="summary-col-right">
+              <!-- Registro en Classroom -->
+              <div class="classroom-share-callout">
+                <div class="classroom-callout-header">
+                  <span class="callout-icon">📋🎒</span>
+                  <span class="callout-badge" id="summary-classroom-badge">REGISTRO EN CLASSROOM</span>
+                </div>
+                <div class="callout-msg" id="summary-classroom-callout-msg">
+                  AHORA ANOTÁ TU RESULTADO Y PUBLICALO EN CLASSROOM, EN LA SECCIÓN TAREAS.
+                </div>
+                <div class="callout-submsg" id="summary-classroom-callout-submsg">
+                  Compartí con tu docente y tus compañeros cuántas instrucciones utilizaste y qué camino recorriste.
+                </div>
               </div>
-              <div class="callout-msg" id="summary-classroom-callout-msg">
-                AHORA ANOTÁ TU RESULTADO Y PUBLICALO EN CLASSROOM, EN LA SECCIÓN TAREAS.
-              </div>
-              <div class="callout-submsg" id="summary-classroom-callout-submsg">
-                Compartí con tu docente y tus compañeros cuántas instrucciones utilizaste y qué camino recorriste.
-              </div>
-            </div>
 
-            <!-- Reflexión pedagógica sobre múltiples soluciones -->
-            <div class="classroom-reflection-box">
-              <div class="reflection-tag">💬 PREGUNTA PARA REFLEXIONAR EN EL AULA:</div>
-              <p class="reflection-text" id="bityblockly-summary-reflection-text">
-                ¿Pudiste haber llegado a la meta con menos instrucciones? ¿Qué camino fue más corto y cuál más largo? ¡Compartí tu estrategia con tus compañeros y tu profe!
-              </p>
+              <!-- Reflexión Pedagógica -->
+              <div class="classroom-reflection-box">
+                <div class="reflection-tag">💬 PREGUNTA PARA REFLEXIONAR EN EL AULA:</div>
+                <p class="reflection-text" id="bityblockly-summary-reflection-text">
+                  ¿Pudiste haber llegado a la meta con menos instrucciones? ¿Qué camino fue más corto y cuál más largo? ¡Compartí tu estrategia con tus compañeros y tu profe!
+                </p>
+              </div>
             </div>
           </div>
+
+          <!-- Acciones Inferiores: Siempre Visibles y Accesibles sin Scroll en Desktop -->
           <div class="summary-modal-actions">
             <button type="button" id="btn-bityblockly-summary-retry" class="btn-summary-action btn-summary-retry">
-              <span>🔄</span> Probar otro camino
+              <span>🔄</span> PROBAR OTRO CAMINO
             </button>
             <button type="button" id="btn-bityblockly-summary-next" class="btn-summary-action btn-summary-next">
-              <span>🌟</span> ¡Finalizar Grado!
+              <span>🌟</span> FINALIZAR GRADO
             </button>
           </div>
         </div>

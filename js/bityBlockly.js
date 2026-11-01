@@ -1468,6 +1468,8 @@
     constructor() {
       this.ctx = null;
       this.enabled = true;
+      this.activeCelebrationOscs = [];
+      this.celebrationGain = null;
       try {
         const stored = localStorage.getItem('lego_bityblockly_sound');
         if (stored !== null) this.enabled = stored === 'true';
@@ -1594,8 +1596,146 @@
       }
     }
 
+    /**
+     * Melodía original de celebración festiva de Halloween
+     * Sintetizada con Web Audio API (timbre celesta / glockenspiel en Re menor + campanas mágicas).
+     */
+    playHalloweenCelebration() {
+      if (typeof window !== 'undefined' && window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) {
+        return;
+      }
+      if (!this.enabled) return;
+
+      this.init();
+      if (!this.ctx) return;
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume().catch(() => {});
+      }
+
+      this.stopCelebration();
+
+      const t0 = this.ctx.currentTime;
+      this.activeCelebrationOscs = [];
+
+      const celebGain = this.ctx.createGain();
+      celebGain.gain.setValueAtTime(0.18, t0);
+      celebGain.gain.setValueAtTime(0.18, t0 + 2.5);
+      celebGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 3.4);
+      celebGain.connect(this.ctx.destination);
+      this.celebrationGain = celebGain;
+
+      // 1. Melodía alegre y misteriosa de Halloween (tipo Danza Mágica)
+      const melody = [
+        { freq: 587.33, t: 0.00, dur: 0.14 }, // D5
+        { freq: 698.46, t: 0.16, dur: 0.14 }, // F5
+        { freq: 880.00, t: 0.32, dur: 0.14 }, // A5
+        { freq: 830.61, t: 0.48, dur: 0.14 }, // G#5 (tensión traviesa de Halloween)
+        { freq: 880.00, t: 0.64, dur: 0.20 }, // A5
+        { freq: 698.46, t: 0.88, dur: 0.14 }, // F5
+        { freq: 587.33, t: 1.04, dur: 0.14 }, // D5
+        { freq: 554.37, t: 1.20, dur: 0.14 }, // C#5
+        { freq: 587.33, t: 1.36, dur: 0.24 }, // D5
+        // Arpegio estelar ascendente
+        { freq: 587.33, t: 1.65, dur: 0.12 }, // D5
+        { freq: 698.46, t: 1.77, dur: 0.12 }, // F5
+        { freq: 880.00, t: 1.89, dur: 0.12 }, // A5
+        { freq: 1174.66, t: 2.01, dur: 0.15 }, // D6
+        { freq: 1396.91, t: 2.16, dur: 0.35 }  // F6
+      ];
+
+      melody.forEach(note => {
+        const startT = t0 + note.t;
+        const osc = this.ctx.createOscillator();
+        const noteGain = this.ctx.createGain();
+
+        osc.type = 'triangle'; // Timbre celesta / campana mágica
+        osc.frequency.setValueAtTime(note.freq, startT);
+
+        noteGain.gain.setValueAtTime(0.001, startT);
+        noteGain.gain.linearRampToValueAtTime(0.18, startT + 0.015);
+        noteGain.gain.exponentialRampToValueAtTime(0.001, startT + note.dur + 0.15);
+
+        osc.connect(noteGain);
+        noteGain.connect(celebGain);
+
+        osc.start(startT);
+        osc.stop(startT + note.dur + 0.2);
+        this.activeCelebrationOscs.push(osc);
+      });
+
+      // 2. Bajo staccato juguetón
+      const bassNotes = [
+        { freq: 146.83, t: 0.00 }, // D3
+        { freq: 146.83, t: 0.32 }, // D3
+        { freq: 110.00, t: 0.64 }, // A2
+        { freq: 146.83, t: 0.88 }, // D3
+        { freq: 146.83, t: 1.20 }, // D3
+        { freq: 146.83, t: 1.65 }  // D3
+      ];
+
+      bassNotes.forEach(b => {
+        const startT = t0 + b.t;
+        const bOsc = this.ctx.createOscillator();
+        const bGain = this.ctx.createGain();
+
+        bOsc.type = 'sine';
+        bOsc.frequency.setValueAtTime(b.freq, startT);
+
+        bGain.gain.setValueAtTime(0.001, startT);
+        bGain.gain.linearRampToValueAtTime(0.20, startT + 0.02);
+        bGain.gain.exponentialRampToValueAtTime(0.001, startT + 0.16);
+
+        bOsc.connect(bGain);
+        bGain.connect(celebGain);
+
+        bOsc.start(startT);
+        bOsc.stop(startT + 0.18);
+        this.activeCelebrationOscs.push(bOsc);
+      });
+
+      // 3. Campanillas mágicas de cierre
+      const chimes = [1760, 2093, 2637, 3135.96]; // A6, C7, E7, G7
+      chimes.forEach((freq, idx) => {
+        const startT = t0 + 2.15 + idx * 0.1;
+        const cOsc = this.ctx.createOscillator();
+        const cGain = this.ctx.createGain();
+
+        cOsc.type = 'sine';
+        cOsc.frequency.setValueAtTime(freq, startT);
+
+        cGain.gain.setValueAtTime(0.001, startT);
+        cGain.gain.linearRampToValueAtTime(0.07, startT + 0.02);
+        cGain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.9);
+
+        cOsc.connect(cGain);
+        cGain.connect(celebGain);
+
+        cOsc.start(startT);
+        cOsc.stop(startT + 0.95);
+        this.activeCelebrationOscs.push(cOsc);
+      });
+    }
+
+    stopCelebration() {
+      if (this.celebrationGain && this.ctx) {
+        try {
+          this.celebrationGain.gain.cancelScheduledValues(this.ctx.currentTime);
+          this.celebrationGain.gain.setValueAtTime(0, this.ctx.currentTime);
+        } catch (e) {}
+      }
+      if (this.activeCelebrationOscs) {
+        this.activeCelebrationOscs.forEach(o => {
+          try { o.stop(); o.disconnect(); } catch (e) {}
+        });
+        this.activeCelebrationOscs = [];
+      }
+    }
+
     toggle() {
       this.enabled = !this.enabled;
+      if (!this.enabled) {
+        this.stopCelebration();
+      }
       try {
         localStorage.setItem('lego_bityblockly_sound', this.enabled ? 'true' : 'false');
       } catch (e) {}
@@ -2263,11 +2403,14 @@
       const classroomMsgEl = document.getElementById('summary-classroom-callout-msg');
       const classroomSubmsgEl = document.getElementById('summary-classroom-callout-submsg');
       const reflectionEl = document.getElementById('bityblockly-summary-reflection-text');
+      const avatarEl = document.getElementById('bityblockly-summary-avatar');
+      const speechEl = document.getElementById('bityblockly-summary-bity-speech');
 
       const total = this.instructionsExecuted || 0;
       const moves = this.movesExecuted || 0;
       const turns = this.turnsExecuted || 0;
 
+      // 1. Título y Subtítulo
       if (titleEl) {
         titleEl.textContent = this.formatForGrade('¡FELICITACIONES! ¡BITY LLEGÓ A LA META!');
       }
@@ -2277,10 +2420,34 @@
         subtitleCountEl.textContent = total;
       }
 
+      // 2. Avatar de Bity en modo Celebración
+      if (avatarEl) {
+        avatarEl.innerHTML = createBityGuideSvg('celebrating');
+      }
+
+      // 3. Mensaje festivo de Bity adaptado por grado
+      let bityCelebrationMsg = '¡LO LOGRASTE! ¡AYUDASTE A BITY A LLEGAR A LA META!';
+      if (this.currentGrade === 1) {
+        bityCelebrationMsg = '¡LO LOGRASTE! ¡AYUDASTE A BITY A LLEGAR A LA META!';
+      } else if (this.currentGrade === 2) {
+        bityCelebrationMsg = '¡Gran trabajo! Byte y las calabazas luminosas festejan tu llegada a la plataforma.';
+      } else if (this.currentGrade === 3) {
+        bityCelebrationMsg = '¡Misión cumplida! El tren fantasma completó su recorrido por las vías cósmicas.';
+      } else if (this.currentGrade === 4) {
+        bityCelebrationMsg = '¡Desafío superado! Resolviste las compuertas mágicas y guiaste a Bity con éxito.';
+      } else if (this.currentGrade === 5) {
+        bityCelebrationMsg = '¡Estrategia brillante! Dominaste el laberinto cumbre del planeta embrujado.';
+      }
+      if (speechEl) {
+        speechEl.textContent = this.formatForGrade(bityCelebrationMsg);
+      }
+
+      // 4. Conteo Principal y Desglose
       if (totalEl) totalEl.textContent = total;
       if (movesEl) movesEl.textContent = moves;
       if (turnsEl) turnsEl.textContent = turns;
 
+      // 5. Identificación exacta de la ruta elegida
       let routeName = `Camino completado (${total} instrucciones)`;
       if (this.currentGrade === 1) {
         if (total === 6) routeName = 'Camino Óptimo (Ruta Directa • 6 instrucciones)';
@@ -2307,29 +2474,11 @@
         else if (total === 20) routeName = 'Alternativa 1 (Ruta del Portal Este • 20 instrucciones)';
         else if (total === 27) routeName = 'Alternativa 2 (Ruta del Laberinto Profundo • 27 instrucciones)';
         else routeName = `Ruta Personalizada (${total} instrucciones)`;
-      } else if (this.currentGrade === 2) {
-        if (total === 11) routeName = 'Camino A (Ruta Directa • 11 instrucciones)';
-        else if (total === 14) routeName = 'Camino B (Ruta Alternativa • 14 instrucciones)';
-        else routeName = `Ruta Personalizada (${total} instrucciones)`;
-      } else if (this.currentGrade === 3) {
-        if (total === 13) routeName = 'Ruta A (Vía Directa • 13 instrucciones)';
-        else if (total === 15) routeName = 'Ruta B (Vía Central • 15 instrucciones)';
-        else if (total === 17) routeName = 'Ruta C (Vía Baja • 17 instrucciones)';
-        else routeName = `Ruta Personalizada (${total} instrucciones)`;
-      } else if (this.currentGrade === 4) {
-        if (total === 14) routeName = 'Ruta A (Galería Norte • 14 instrucciones)';
-        else if (total === 16) routeName = 'Ruta B (Pasillo Central • 16 instrucciones)';
-        else if (total === 18) routeName = 'Ruta C (Galería Baja • 18 instrucciones)';
-        else routeName = `Ruta Personalizada (${total} instrucciones)`;
-      } else if (this.currentGrade === 5) {
-        if (total === 16) routeName = 'Ruta A (Almenas Altas • 16 instrucciones)';
-        else if (total === 20) routeName = 'Ruta B (Patio Central • 20 instrucciones)';
-        else if (total === 22) routeName = 'Ruta C (Canal de Sombras • 22 instrucciones)';
-        else routeName = `Ruta Personalizada (${total} instrucciones)`;
       }
 
       if (routeEl) routeEl.textContent = this.formatForGrade(routeName);
 
+      // 6. Registro en Classroom y Reflexión Pedagógica
       if (classroomBadgeEl) {
         classroomBadgeEl.textContent = this.formatForGrade('REGISTRO EN CLASSROOM');
       }
@@ -2344,9 +2493,14 @@
         reflectionEl.textContent = this.formatForGrade(consignaData.reflectionText);
       }
 
+      // Guardar intento para comparación si prueba otro camino
+      this.previousAttemptInstructions = total;
+
+      // 7. Acciones Inferiores (Inmediatamente accesibles y funcionales)
       const btnRetry = document.getElementById('btn-bityblockly-summary-retry');
       if (btnRetry) {
         btnRetry.onclick = () => {
+          this.audio.stopCelebration();
           modal.classList.remove('active');
           this.loadLevel(this.currentLevelIndex);
         };
@@ -2355,12 +2509,17 @@
       const btnNext = document.getElementById('btn-bityblockly-summary-next');
       if (btnNext) {
         btnNext.onclick = () => {
+          this.audio.stopCelebration();
           modal.classList.remove('active');
           this.showCoverView();
         };
       }
 
+      // Mostrar modal
       modal.classList.add('active');
+
+      // 8. Iniciar Celebración Sonora de Halloween (Original, breve y respetando mute)
+      this.audio.playHalloweenCelebration();
     }
 
     renderLevelTabs() {

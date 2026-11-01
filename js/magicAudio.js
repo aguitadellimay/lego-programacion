@@ -324,6 +324,9 @@
      */
     stopAll() {
       this.stopAmbient();
+      if (typeof window !== 'undefined' && window.bityBlocklyGame && window.bityBlocklyGame.audio) {
+        try { window.bityBlocklyGame.audio.stopCelebration(); } catch (e) {}
+      }
       const ctx = this.getAudioContext();
       if (ctx && this.masterGain) {
         try {
