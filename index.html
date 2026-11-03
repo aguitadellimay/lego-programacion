@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/minigame.css">
   <link rel="stylesheet" href="css/coding.css?v=20261013">
   <link rel="stylesheet" href="css/bityblockly.css">
+  <link rel="stylesheet" href="css/algorithms.css">
   <link rel="stylesheet" href="css/halloween_theme.css">
   
   <!-- Librería Konva.js para el área de dibujo interactivo -->
@@ -674,14 +675,28 @@
             </p>
           </article>
 
-          <!-- Tema 2: Algoritmos (Futuro para otros grados) -->
-          <article id="topic-card-algorithms" class="topic-card locked">
+          <!-- Tema: ALGORITMOS (Activo para 1.° a 5.° Grado) -->
+          <article id="topic-card-algorithms" class="topic-card active" style="border-color: #8b5cf6; cursor: pointer;">
             <div class="topic-card-header">
               <span class="topic-icon">🧩</span>
-              <span class="topic-status-tag status-locked">🔒 Próximamente</span>
+              <span id="syllabus-algorithms-status" class="topic-status-tag status-active" style="background: #ede9fe; color: #6d28d9;">🟢 DISPONIBLE</span>
             </div>
-            <h4 class="topic-title">2. Algoritmos</h4>
-            <p class="topic-desc">Conjuntos de pasos ordenados para resolver problemas paso a paso.</p>
+            <h4 id="syllabus-algorithms-title" class="topic-title">2. Algoritmos</h4>
+            <p id="syllabus-algorithms-desc" class="topic-desc">
+              Descubrí qué es un algoritmo, cómo ordenar secuencias de pasos lógicos y creá tus propios algoritmos.
+            </p>
+            <div class="topic-progress-box">
+              <div class="topic-progress-label">
+                <span id="syllabus-algorithms-label">CLASE N.º 1</span>
+                <span id="syllabus-algorithms-pct">0%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div id="syllabus-algorithms-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #8b5cf6, #3b82f6);"></div>
+              </div>
+            </div>
+            <button id="btn-start-algorithms-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 0 #5b21b6;">
+              <span>🧩</span> ¡Comenzar Algoritmos!
+            </button>
           </article>
 
           <!-- Tema 3: Secuencias (Futuro) -->
@@ -771,6 +786,16 @@
 
       </div>
 
+    </div>
+  </section>
+
+  <!-- PANTALLA: ALGORITMOS — CLASE N.º 1: ¿QUÉ ES UN ALGORITMO? (1.º a 5.º Grado) -->
+  <section id="screen-coding-algorithms" class="screen">
+    <div class="algorithms-bg-stars" aria-hidden="true"></div>
+    <div class="algorithms-app-container">
+      <div id="algorithms-content-mount">
+        <!-- Renderizado dinámicamente por algorithmsModule.js -->
+      </div>
     </div>
   </section>
 
@@ -2379,6 +2404,7 @@
   <script src="js/platformerQuestions.js"></script>
   <script src="js/platformerGame.js"></script>
   <script src="js/bityBlockly.js"></script>
+  <script src="js/algorithmsModule.js"></script>
   <script src="js/codingModule.js?v=20261013"></script>
   <script src="js/teacherPanel.js"></script>
   <script src="js/app.js"></script>

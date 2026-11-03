@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenCodingTopic = document.getElementById('screen-coding-topic');
     const screenCodingAdventure = document.getElementById('screen-coding-adventure');
     const screenBityBlockly = document.getElementById('screen-bityblockly');
+    const screenCodingAlgorithms = document.getElementById('screen-coding-algorithms');
 
     const btnHomePlay = document.getElementById('btn-home-play');
     const bannerPlay = document.getElementById('banner-play');

@@ -7687,6 +7687,20 @@ class CodingModuleManager {
   /**
    * Inicia el tema "Instrucciones" en el grado actual
    */
+  /**
+   * Inicia el módulo de Algoritmos (Clase N.º 1) para el grado seleccionado
+   */
+  startAlgorithmsTopic() {
+    this.cleanupCurrentActivity();
+    if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.canAccessScreen('screen-coding-algorithms')) {
+      window.teacherManager.showBlockedNoticeForScreen('screen-coding-algorithms');
+      return;
+    }
+    if (typeof window !== 'undefined' && window.algorithmsModule) {
+      window.algorithmsModule.startClass(this.currentGrade, 1);
+    }
+  }
+
   startInstructionsTopic() {
     this.cleanupCurrentActivity();
     this.currentTopic = 'instructions';
@@ -8161,6 +8175,81 @@ class CodingModuleManager {
       }
     } else if (bbCard) {
       bbCard.style.display = 'none';
+    }
+
+    // ========================================================
+    // TEMA: ALGORITMOS (CLASE N.º 1 — 1.º a 5.º Grado)
+    // ========================================================
+    const algCard = document.getElementById('topic-card-algorithms');
+    const btnStartAlg = document.getElementById('btn-start-algorithms-topic');
+    const algFillEl = document.getElementById('syllabus-algorithms-progress');
+    const algTextEl = document.getElementById('syllabus-algorithms-pct');
+    const algLabelEl = document.getElementById('syllabus-algorithms-label');
+    const algTitleEl = document.getElementById('syllabus-algorithms-title');
+    const algDescEl = document.getElementById('syllabus-algorithms-desc');
+    const algStatusEl = document.getElementById('syllabus-algorithms-status');
+
+    if (algCard) {
+      algCard.style.display = 'flex';
+      algCard.className = 'topic-card active';
+      algCard.style.borderColor = '#8b5cf6';
+      algCard.style.cursor = 'pointer';
+      algCard.onclick = () => {
+        this.onPlaySound('pop');
+        this.startAlgorithmsTopic();
+      };
+    }
+
+    let algCompletedParts = 0;
+    let isAlgCompleted = false;
+    try {
+      const rawProg = localStorage.getItem(`lego_algorithms_class1_progress_g${this.currentGrade}`);
+      if (rawProg) {
+        const progData = JSON.parse(rawProg);
+        if (progData && Array.isArray(progData.completedSteps)) {
+          algCompletedParts = progData.completedSteps.length;
+        }
+        isAlgCompleted = !!(progData && progData.isCompleted);
+      }
+    } catch (e) {}
+
+    const algPct = isAlgCompleted ? 100 : Math.min(100, Math.round((algCompletedParts / 7) * 100));
+
+    if (algFillEl) algFillEl.style.width = `${algPct}%`;
+    if (algTextEl) {
+      algTextEl.textContent = isAlgCompleted ? (isGradeOne ? '🎉 ¡100% COMPLETADO!' : '🎉 ¡100% Completado!') : `${algPct}%`;
+    }
+    if (algStatusEl) {
+      algStatusEl.className = 'topic-status-tag status-active';
+      algStatusEl.textContent = isGradeOne ? '🟢 DISPONIBLE' : '🟢 Disponible';
+    }
+    if (algTitleEl) {
+      algTitleEl.textContent = isGradeOne ? '2. ALGORITMOS' : '2. Algoritmos';
+    }
+    if (algLabelEl) {
+      algLabelEl.textContent = isGradeOne ? 'CLASE N.º 1' : 'Clase N.º 1';
+    }
+    if (algDescEl) {
+      algDescEl.textContent = isGradeOne
+        ? 'DESCUBRÍ QUÉ ES UN ALGORITMO, CÓMO ORDENAR SECUENCIAS DE PASOS LÓGICOS Y CREÁ TUS PROPIOS ALGORITMOS.'
+        : 'Descubrí qué es un algoritmo, cómo ordenar secuencias de pasos lógicos y creá tus propios algoritmos.';
+    }
+
+    if (btnStartAlg) {
+      if (isGradeOne) {
+        btnStartAlg.innerHTML = isAlgCompleted
+          ? '<span>🔄</span> ¡REPASAR CLASE 1!'
+          : (algCompletedParts > 0 ? '<span>▶️</span> ¡CONTINUAR CLASE 1!' : '<span>🚀</span> ¡COMENZAR CLASE 1!');
+      } else {
+        btnStartAlg.innerHTML = isAlgCompleted
+          ? '<span>🔄</span> ¡Repasar Clase 1!'
+          : (algCompletedParts > 0 ? '<span>▶️</span> ¡Continuar Clase 1!' : '<span>🚀</span> ¡Comenzar Clase 1!');
+      }
+      btnStartAlg.onclick = (e) => {
+        if (e) e.stopPropagation();
+        this.onPlaySound('pop');
+        this.startAlgorithmsTopic();
+      };
     }
 
     // ========================================================
