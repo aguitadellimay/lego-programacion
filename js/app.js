@@ -96,11 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inicializar el gestor de Programación
     let codingManager;
+    const allScreens = [
+      screenHome, screenGrades, screenGame, screenEditor,
+      screenCodingGrades, screenCodingSyllabus, screenCodingTopic,
+      screenCodingAdventure, screenBityBlockly, screenCodingAlgorithms
+    ];
+
     const showScreen = (targetScreen) => {
       // Bloqueo de acceso en la web a "JUGAR Y APRENDER" y "ARMAR MI REGALO FAMILIAR" (NO DISPONIBLE)
       const permanentlyBlockedIds = ['screen-grades', 'screen-game', 'screen-editor'];
       if (targetScreen && permanentlyBlockedIds.includes(targetScreen.id)) {
-        [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
+        allScreens.forEach(s => {
           if (s) s.classList.remove('active');
         });
         if (screenHome) screenHome.classList.add('active');
@@ -117,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.teacherManager && targetScreen && targetScreen !== screenHome) {
         if (!window.teacherManager.canAccessScreen(targetScreen.id)) {
           // Si el módulo está bloqueado, permanecer o volver a screenHome
-          [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
+          allScreens.forEach(s => {
             if (s) s.classList.remove('active');
           });
           if (screenHome) screenHome.classList.add('active');
@@ -132,10 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
       if (codingManager && codingManager.stopBgm) {
         codingManager.stopBgm();
       }
-      [screenHome, screenGrades, screenGame, screenEditor, screenCodingGrades, screenCodingSyllabus, screenCodingTopic, screenCodingAdventure, screenBityBlockly].forEach(s => {
+      allScreens.forEach(s => {
         if (s) s.classList.remove('active');
       });
       if (targetScreen) targetScreen.classList.add('active');
+
+      // Persistencia de pantalla activa para recargas seguras (F5)
+      if (targetScreen === screenCodingAlgorithms) {
+        try {
+          sessionStorage.setItem('lego_active_screen', 'screen-coding-algorithms');
+          const curG = (codingManager && codingManager.currentGrade) || parseInt(localStorage.getItem('lego_current_grade')) || 1;
+          sessionStorage.setItem('lego_active_grade', String(curG));
+        } catch (e) {}
+      } else {
+        try {
+          sessionStorage.removeItem('lego_active_screen');
+        } catch (e) {}
+      }
 
       // Control estricto de visibilidad de botones del editor de regalos
       const isEditor = (targetScreen === screenEditor);
@@ -173,8 +192,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Inicializar estado del encabezado en la pantalla de inicio
-    showScreen(screenHome);
+    // Inicializar estado del encabezado y restaurar sesión si hubo recarga (F5) dentro de un módulo
+    let sessionRestored = false;
+    try {
+      const activeSc = sessionStorage.getItem('lego_active_screen');
+      const savedG = parseInt(sessionStorage.getItem('lego_active_grade')) || parseInt(localStorage.getItem('lego_current_grade')) || 1;
+      if (activeSc === 'screen-coding-algorithms') {
+        if (codingManager) {
+          codingManager.currentGrade = savedG;
+          codingManager.startAlgorithmsTopic();
+          sessionRestored = true;
+        } else if (window.algorithmsModule) {
+          window.algorithmsModule.startClass(savedG, 1);
+          sessionRestored = true;
+        }
+      }
+    } catch (e) {}
+
+    if (!sessionRestored) {
+      showScreen(screenHome);
+    }
 
     // Inicializar el motor del juego matemático con diferenciación de grados y clima
     const game = new MinecraftLegoGame('minigame-canvas', {
@@ -263,11 +300,30 @@ document.addEventListener('DOMContentLoaded', () => {
           window.teacherManager.showBlockedNotice('Módulo de programación');
           return;
         }
-        const grade = card.getAttribute('data-cgrade');
+        const grade = parseInt(card.getAttribute('data-cgrade')) || 1;
+        try {
+          localStorage.setItem('lego_current_grade', String(grade));
+        } catch (e) {}
         codingManager.loadGrade(grade);
         playClickSound();
       });
     });
+
+    // Acceso directo y robusto a ALGORITMOS (1.º a 5.º Grado)
+    const algCardEl = document.getElementById('topic-card-algorithms');
+    const btnStartAlgEl = document.getElementById('btn-start-algorithms-topic');
+    const handleOpenAlgorithmsTopic = (e) => {
+      if (e) e.stopPropagation();
+      playClickSound();
+      if (codingManager) {
+        codingManager.startAlgorithmsTopic();
+      } else if (window.algorithmsModule) {
+        const curG = parseInt(localStorage.getItem('lego_current_grade')) || 1;
+        window.algorithmsModule.startClass(curG, 1);
+      }
+    };
+    if (algCardEl) algCardEl.addEventListener('click', handleOpenAlgorithmsTopic);
+    if (btnStartAlgEl) btnStartAlgEl.addEventListener('click', handleOpenAlgorithmsTopic);
 
     // Volver desde Selección de Grados de Programación a Home
     const btnBackToHomeFromCoding = document.getElementById('btn-back-to-home-from-coding');
@@ -381,6 +437,14 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.hash = '';
         }
         showScreen(screenHome);
+      } else if (hash === 'algoritmos' || hash === 'screen-coding-algorithms') {
+        const savedG = parseInt(localStorage.getItem('lego_current_grade')) || 1;
+        if (codingManager) {
+          codingManager.currentGrade = savedG;
+          codingManager.startAlgorithmsTopic();
+        } else if (window.algorithmsModule) {
+          window.algorithmsModule.startClass(savedG, 1);
+        }
       }
     };
     if (typeof window !== 'undefined' && window.addEventListener) {

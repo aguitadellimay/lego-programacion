@@ -7681,6 +7681,9 @@ class CodingModuleManager {
   loadGrade(grade) {
     this.cleanupCurrentActivity();
     this.currentGrade = parseInt(grade) || 1;
+    try {
+      localStorage.setItem('lego_current_grade', String(this.currentGrade));
+    } catch (e) {}
     this.renderSyllabus();
   }
 
@@ -7695,6 +7698,17 @@ class CodingModuleManager {
     if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.canAccessScreen('screen-coding-algorithms')) {
       window.teacherManager.showBlockedNoticeForScreen('screen-coding-algorithms');
       return;
+    }
+    const grade = this.currentGrade || parseInt(localStorage.getItem('lego_current_grade')) || 1;
+    this.currentGrade = grade;
+    try {
+      localStorage.setItem('lego_current_grade', String(this.currentGrade));
+      sessionStorage.setItem('lego_active_screen', 'screen-coding-algorithms');
+      sessionStorage.setItem('lego_active_grade', String(this.currentGrade));
+    } catch (e) {}
+    this.hideGiftButtons();
+    if (this.onShowScreen) {
+      this.onShowScreen('screen-coding-algorithms');
     }
     if (typeof window !== 'undefined' && window.algorithmsModule) {
       window.algorithmsModule.startClass(this.currentGrade, 1);

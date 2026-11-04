@@ -689,8 +689,12 @@
     showScreen() {
       const screen = document.getElementById('screen-coding-algorithms');
       if (screen) {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        screen.classList.add('active');
+        if (typeof window !== 'undefined' && window.appShowScreen) {
+          window.appShowScreen(screen);
+        } else {
+          document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+          screen.classList.add('active');
+        }
         screen.classList.toggle('grade-1-active', this.currentGrade === 1);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -701,11 +705,18 @@
      */
     exitToSyllabus() {
       if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
+      try {
+        if (typeof sessionStorage !== 'undefined') {
+          sessionStorage.removeItem('lego_active_screen');
+        }
+      } catch (e) {}
       if (window.codingManager) {
         window.codingManager.loadGrade(this.currentGrade);
       } else {
         const syl = document.getElementById('screen-coding-syllabus');
-        if (syl) {
+        if (typeof window !== 'undefined' && window.appShowScreen && syl) {
+          window.appShowScreen(syl);
+        } else if (syl) {
           document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
           syl.classList.add('active');
         }
