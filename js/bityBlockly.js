@@ -138,11 +138,11 @@
         [1, 1, 1, 1, 1, 1, 1, 1]
       ],
       story: 'Bity llegó a una base de investigación lunar para recargar sus equipos. ¡Guialo por los pasillos resolviendo las compuertas de seguridad hasta el vehículo espacial!',
-      hint: '💡 Pensá bien cada giro. Recordá que girar a la izquierda o derecha cambia hacia dónde mira Bity sin cambiar de casilla.',
+      hint: '💡 Usá las cuatro flechas de dirección: ARRIBA, ABAJO, IZQUIERDA y DERECHA para guiar a Bity por el camino.',
       hints: [
         '💡 Pista 1: Subí en línea recta por el pasillo lunar hasta la primera compuerta.',
         '💡 Pista 2: En cada compuerta, sumá o restá los módulos de energía para abrirla.',
-        '💡 Pista 3: Continuá por los pasillos alternando giros hacia la nave lunar.'
+        '💡 Pista 3: Continuá por los pasillos utilizando las flechas hacia la nave lunar.'
       ]
     },
     {
@@ -190,7 +190,7 @@
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
       ],
       story: 'Bity llegó a una estación espacial que se encuentra entre Marte y la nave. Necesita atravesar sus pasillos, abrir las dos compuertas y encontrar la salida.',
-      hint: '💡 Este laberinto tiene más pasillos y curvas. Pensá qué giro necesitás antes de avanzar hacia cada compuerta.',
+      hint: '💡 Este laberinto tiene más pasillos. Elegí la dirección correcta en cada intersección hacia cada compuerta.',
       hints: [
         '💡 Pista 1: Seguí el pasillo descendente hasta la compuerta intermedia.',
         '💡 Pista 2: Atravesá la compuerta inferior resolviendo la operación matemática.',
@@ -219,7 +219,7 @@
       story: '¡Bity está frente a la gran nave nodriza! Atravesá los pasillos de aterrizaje y abrí las compuertas de seguridad para volver a casa.',
       hint: '💡 ¡Misión de la nave! Organizá toda la secuencia de instrucciones con calma. ¡La nave espacial te está esperando!',
       hints: [
-        '💡 Pista 1: Avanzá con paciencia planificando los giros en cada curva.',
+        '💡 Pista 1: Avanzá con paciencia planificando las direcciones en cada curva.',
         '💡 Pista 2: Abrí las dos compuertas respondiendo las preguntas matemáticas.',
         '💡 Pista 3: ¡Tramo final hacia la plataforma de despegue interestelar!'
       ]
@@ -327,11 +327,11 @@
             [1, 1, 1, 1, 1, 1, 1, 1]
           ],
           story: '¡Último tramo en el planeta de las calabazas! Programá los movimientos de Byte para esquivar telarañas y rocas, resolver las compuertas y llegar a la plataforma.',
-          hint: '💡 Programá a Byte con Avanzar y Girar. En cada compuerta resolvé la cuenta para abrir la puerta de Halloween.',
+          hint: '💡 Programá a Bity con las 4 direcciones (Arriba, Abajo, Izquierda y Derecha). En cada compuerta resolvé el cálculo para abrir la puerta.',
           hints: [
-            '💡 Pista 1: Avanzá y girá hacia la primera compuerta en (2, 2).',
+            '💡 Pista 1: Avanzá hacia la primera compuerta en (2, 2).',
             '💡 Pista 2: Continuá por el corredor hacia la segunda compuerta en (4, 2).',
-            '💡 Pista 3: Tras cruzar la puerta, girá hacia el sur para llegar a la meta.'
+            '💡 Pista 3: Tras cruzar la puerta, bajá hacia el sur para llegar a la meta.'
           ]
         },
         {
@@ -355,7 +355,7 @@
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
           story: '¡Gran Desafío de Instrucciones del Planeta Calabaza! Podés elegir entre tres recorridos independientes hacia la plataforma: Camino Óptimo (8 instrucciones), Alternativa 1 (11 instrucciones) o Alternativa 2 (16 instrucciones). ¡Elegí tu estrategia!',
-          hint: '💡 Analizá los giros y avances necesarios para cada camino.',
+          hint: '💡 Analizá las direcciones necesarias para cada camino alternativo.',
           hints: [
             '💡 Pista 1: El camino óptimo baja directo hacia la plataforma final (8 instrucciones).',
             '💡 Pista 2: La Alternativa 1 atraviesa la galería central (11 instrucciones).',
@@ -437,11 +437,11 @@
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
           story: '¡Ayudá a Byte a llegar al andén C! Programá su recorrido esquivando las telarañas y abrí las dos compuertas de las vías ferroviarias.',
-          hint: '💡 Organizá tus instrucciones de Avanzar y Girar para llegar al andén final.',
+          hint: '💡 Organizá tus instrucciones de dirección para llegar al andén final.',
           hints: [
             '💡 Pista 1: Avanzá hasta la primera compuerta en el pasillo superior.',
-            '💡 Pista 2: Girá para descender y resolvé la segunda compuerta ferroviaria.',
-            '💡 Pista 3: ¡Girá hacia la derecha para ingresar al andén de la estación!'
+            '💡 Pista 2: Descendé y resolvé la segunda compuerta ferroviaria.',
+            '💡 Pista 3: ¡Avanzá hacia la derecha para ingresar al andén de la estación!'
           ]
         },
         {
@@ -502,7 +502,7 @@
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
           story: '¡Guiá a Byte por el laboratorio embrujado hasta la cápsula mágica! Abrí las dos compuertas resolviendo las tablas y cálculos cuánticos.',
-          hint: '💡 Programá los giros y avances con precisión.',
+          hint: '💡 Programá las direcciones con precisión.',
           hints: [
             '💡 Pista 1: Bajá hacia la primera compuerta en (2, 2).',
             '💡 Pista 2: En la segunda compuerta en (4, 3), resolvé el desafío matemático.',
@@ -557,7 +557,7 @@
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Ingresá al castillo encantado! El patio central tiene compuertas góticas y murallas. ¡Planificá tus giros antes de ejecutar!',
+          story: '¡Ingresá al castillo encantado! El patio central tiene compuertas góticas y murallas. ¡Planificá tus direcciones antes de ejecutar!',
           hint: '💡 Observá los dos caminos principales: el pasaje alto o el cruce del patio.',
           hints: [
             '💡 Pista 1: La primera compuerta se encuentra en el pasaje alto en (4, 1).',
@@ -673,7 +673,7 @@
             [1, 0, 0, 0, 1, 1, 0, 0, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Primer gran laberinto de 5.º grado! El castillo posee pasadizos secretos y compuertas mágicas. Analizá cada giro cuidadosamente.',
+          story: '¡Primer gran laberinto de 5.º grado! El castillo posee pasadizos secretos y compuertas mágicas. Analizá cada movimiento cuidadosamente.',
           hint: '💡 Compará la galería superior con el pasillo intermedio: ambas rutas evitan los callejones sin salida.',
           hints: [
             '💡 Pista 1: La primera compuerta está en el pasillo superior en (4, 1).',
@@ -1044,7 +1044,7 @@
         {
           icon: '🧩',
           label: 'CADA PASO ES UNA INSTRUCCIÓN:',
-          text: 'RECORDÁ: CADA MOVIMIENTO O GIRO QUE LE DAS A BITY CUENTA COMO UNA INSTRUCCIÓN.'
+          text: 'RECORDÁ: CADA MOVIMIENTO QUE LE DAS A BITY (ARRIBA, ABAJO, IZQUIERDA O DERECHA) CUENTA COMO UNA INSTRUCCIÓN.'
         },
         {
           icon: '🗺️',
@@ -1075,7 +1075,7 @@
         {
           icon: '🧩',
           label: 'Cada paso cuenta:',
-          text: 'Recordá: cada movimiento o giro que le indicás a Bity cuenta como una instrucción.'
+          text: 'Recordá: cada movimiento que le indicás a Bity (arriba, abajo, izquierda o derecha) cuenta como una instrucción.'
         },
         {
           icon: '🗺️',
@@ -1105,8 +1105,8 @@
         },
         {
           icon: '🧩',
-          label: 'Contar pasos y giros:',
-          text: 'Recordá: cada paso que le indicás a Bity (tanto avanzar como girar) cuenta como una instrucción.'
+          label: 'Contar instrucciones:',
+          text: 'Recordá: cada flecha que le indicás a Bity (arriba, abajo, izquierda o derecha) cuenta como una instrucción.'
         },
         {
           icon: '🗺️',
@@ -1123,7 +1123,7 @@
       buttonText: '¡Entendí! Comenzar el desafío',
       summaryClassroomMsg: 'Ahora anotá tu resultado y publicalo en Classroom, en la sección Tareas.',
       summaryClassroomSub: 'Compartí en Classroom qué recorrido elegiste y cuántas instrucciones necesitaste en total.',
-      reflectionText: '¡Gran análisis! Al comparar diferentes recorridos, descubrimos que no todos los caminos requieren la misma cantidad de pasos y giros.'
+      reflectionText: '¡Gran análisis! Al comparar diferentes recorridos, descubrimos que no todos los caminos requieren la misma cantidad de instrucciones.'
     },
     4: {
       title: '¡Atención, Programadores!',
@@ -1137,7 +1137,7 @@
         {
           icon: '🧩',
           label: 'Métrica de instrucciones:',
-          text: 'Recordá: cada bloque de movimiento o giro ejecutado cuenta como una instrucción.'
+          text: 'Recordá: cada bloque de dirección (arriba, abajo, izquierda o derecha) cuenta como una instrucción.'
         },
         {
           icon: '🗺️',
@@ -1153,7 +1153,7 @@
       motto: '¡Preparate, pensá tu camino y ayudá a Bity a llegar!',
       buttonText: '¡Entendí! Comenzar el desafío',
       summaryClassroomMsg: 'Ahora anotá tu resultado y publicalo en Classroom, en la sección Tareas.',
-      summaryClassroomSub: 'Publicá tu resultado en Classroom detallando la cantidad de avances, giros e instrucciones totales que utilizaste.',
+      summaryClassroomSub: 'Publicá tu resultado en Classroom detallando la cantidad total de instrucciones que utilizaste para llegar a la meta.',
       reflectionText: '¡Excelente resolución! En programación existen múltiples soluciones válidas para un mismo problema. ¿Qué camino elegiste?'
     },
     5: {
@@ -1168,7 +1168,7 @@
         {
           icon: '🧩',
           label: 'Instrucciones ejecutadas:',
-          text: 'Recordá: cada bloque de movimiento o giro ejecutado en tu solución cuenta como una instrucción.'
+          text: 'Recordá: cada bloque de dirección utilizado en tu solución cuenta como una instrucción.'
         },
         {
           icon: '🗺️',
@@ -1195,30 +1195,36 @@
         '¡HOLA! HOY TENEMOS UNA NUEVA MISIÓN.',
         'OBSERVÁ EL CAMINO ANTES DE COMENZAR.',
         'PENSEMOS JUNTOS CÓMO LLEGAR A LA META.',
-        'PRIMERO PENSÁ. DESPUÉS ELEGÍ LOS BLOQUES.'
+        'PRIMERO PENSÁ. DESPUÉS ELEGÍ LAS FLECHAS.'
       ],
       coding: [
-        'RECORDÁ QUE CADA BLOQUE REPRESENTA UNA INSTRUCCIÓN.',
-        'SI ELEGÍS AVANZAR, EL ROBOT SE MUEVE UN CASILLERO.',
-        'PENSÁ QUÉ MOVIMIENTO NECESITÁS PARA SEGUIR.',
-        'OBSERVÁ HACIA DÓNDE ESTÁ MIRANDO EL ROBOT.'
+        'RECORDÁ QUE CADA BLOQUE ES UNA DIRECCIÓN: ARRIBA, ABAJO, IZQUIERDA O DERECHA.',
+        'CADA FLECHA MUEVE A BITY DIRECTAMENTE UN CASILLERO.',
+        'PENSÁ QUÉ DIRECCIÓN NECESITÁS PARA SEGUIR.',
+        'OBSERVÁ EL MAPA Y ELEGÍ LA FLECHA CORRECTA.'
       ],
       turn: [
-        '¡ATENCIÓN! EL CAMINO CAMBIA DE DIRECCIÓN.',
-        'PARA SEGUIR, QUIZÁS NECESITES GIRAR.',
-        'RECORDÁ QUE GIRAR NO ES LO MISMO QUE AVANZAR.',
-        '¡MIRÁ! EL CAMINO DOBLA. NECESITAMOS GIRAR.'
+        '¡ATENCIÓN! USÁ LAS CUATRO FLECHAS PARA MOVERTE POR EL CAMINO.',
+        'ARRIBA SUBE, ABAJO BAJA, IZQUIERDA VA A LA IZQUIERDA Y DERECHA A LA DERECHA.',
+        'RECORDÁ: CADA FLECHA MUEVE A BITY UN CASILLERO.',
+        '¡MIRÁ! EL CAMINO DOBLA. ELEGÍ LA FLECHA HACIA EL PASILLO LIBRE.'
+      ],
+      direction: [
+        '¡ATENCIÓN! USÁ LAS CUATRO FLECHAS PARA MOVERTE POR EL CAMINO.',
+        'ARRIBA SUBE, ABAJO BAJA, IZQUIERDA VA A LA IZQUIERDA Y DERECHA A LA DERECHA.',
+        'RECORDÁ: CADA FLECHA MUEVE A BITY UN CASILLERO.',
+        '¡MIRÁ! EL CAMINO DOBLA. ELEGÍ LA FLECHA HACIA EL PASILLO LIBRE.'
       ],
       error: [
         '¡NO TE PREOCUPES! PODEMOS INTENTARLO OTRA VEZ.',
-        'OBSERVÁ QUÉ PASÓ CON EL ROBOT.',
-        '¿QUÉ INSTRUCCIÓN PODRÍAS CAMBIAR?',
+        'OBSERVÁ DÓNDE SE DETUVO BITY.',
+        '¿QUÉ FLECHA PODRÍAS CAMBIAR?',
         '¡CADA INTENTO NOS AYUDA A APRENDER!'
       ],
       repeated_error: [
-        'REVISÁ EL ORDEN: PRIMERO GIRAR Y LUEGO AVANZAR.',
-        'MIRÁ BIEN LA FLECHA DEL ROBOT: ¿HACIA DÓNDE MIRA?',
-        'CONTÁ LOS PASOS LIBRES HASTA LA COMPUERTA O CURVA.'
+        'REVISÁ EL ORDEN DE TUS FLECHAS DE DIRECCIÓN.',
+        'MIRÁ BIEN EL TABLERO: ¿HACIA DÓNDE ESTÁ EL CAMINO LIBRE?',
+        'CONTÁ LOS CASILLEROS LIBRES HASTA LA COMPUERTA O CURVA.'
       ],
       success: [
         '¡MUY BIEN! ¡LO ESTÁS LOGRANDO!',
@@ -1237,11 +1243,11 @@
       ],
       idle: [
         '¿NECESITÁS AYUDA? OBSERVÁ EL MAPA Y TOCÁ "PEDIR UNA PISTA".',
-        'RECORDÁ QUE PODÉS TOCAR "AVANZAR" O "GIRAR".'
+        'RECORDÁ QUE PODÉS TOCAR ARRIBA, ABAJO, IZQUIERDA O DERECHA.'
       ],
       pedagogical_hints: [
-        'RECORDÁ: EL ROBOT AVANZA HACIA DONDE MIRA SU FLECHA.',
-        'GIRAR NO CAMBIA DE CASILLERO, SOLO CAMBIA LA DIRECCIÓN.',
+        'RECORDÁ: CADA FLECHA MUEVE A BITY UN CASILLERO EN ESA DIRECCIÓN.',
+        'LAS 4 DIRECCIONES SON FIJAS: ARRIBA, ABAJO, IZQUIERDA Y DERECHA.',
         'PLANIFICÁ EL CAMINO PASO A PASO ANTES DE EJECUTAR.'
       ]
     },
@@ -1252,28 +1258,33 @@
         'Mirá el mapa y planificá la secuencia paso a paso.'
       ],
       coding: [
-        '¿Qué movimiento debería hacer primero el robot?',
+        '¿Qué dirección debería tomar primero Bity?',
         'Revisá el orden de tus instrucciones.',
-        'Antes de ejecutar, pensá qué camino vas a seguir.',
-        'Cada bloque debe estar colocado en la secuencia correcta.'
+        'Antes de ejecutar, planificá qué flechas vas a usar.',
+        'Cada bloque mueve a Bity un casillero en esa dirección.'
       ],
       turn: [
-        '¡Atención a la curva! Comprobá hacia qué lado debe girar Byte.',
-        'Girar cambia la orientación; luego necesitás avanzar para moverte.',
-        'Recordá que girar no es lo mismo que avanzar.'
+        '¡Atención a la esquina! Elegí la flecha hacia donde continúa el camino.',
+        'Las 4 direcciones son fijas: Arriba, Abajo, Izquierda y Derecha.',
+        'Cada flecha representa un desplazamiento directo.'
+      ],
+      direction: [
+        '¡Atención a la esquina! Elegí la flecha hacia donde continúa el camino.',
+        'Las 4 direcciones son fijas: Arriba, Abajo, Izquierda y Derecha.',
+        'Cada flecha representa un desplazamiento directo.'
       ],
       error: [
         '¡Casi! Revisá el orden de las instrucciones para no chocar.',
-        'Observá dónde se detuvo Byte y qué bloque cambiarías.',
+        'Observá dónde se detuvo Bity y qué bloque cambiarías.',
         '¡No te preocupes! Revisemos juntos el recorrido.'
       ],
       repeated_error: [
-        'Verificá cuántos avances diste antes de doblar.',
-        'Comprobá si Byte quedó mirando hacia una pared o hacia el pasillo.',
-        'Probá ejecutar mentalmente paso por paso.'
+        'Verificá cuántos casilleros avanzaste antes de cambiar de dirección.',
+        'Comprobá si la flecha apunta hacia el pasillo despejado.',
+        'Probá recorrer mentalmente paso por paso.'
       ],
       success: [
-        '¡Muy bien! ¡El robot siguió la ruta planeada!',
+        '¡Muy bien! ¡Bity siguió la ruta planeada!',
         '¡Excelente! Tus instrucciones funcionaron.',
         '¡Seguí así!'
       ],
@@ -1289,12 +1300,12 @@
       ],
       idle: [
         '¿Pensando el próximo paso? Recordá que podés pedir una pista si la necesitás.',
-        'Mirá la orientación de Byte y elegí el siguiente movimiento.'
+        'Elegí la flecha que mueva a Bity hacia la casilla libre.'
       ],
       pedagogical_hints: [
         'Anticipá los movimientos: trazá mentalmente la ruta antes de programar.',
-        'Verificá si el giro fue a la izquierda o a la derecha según el robot.',
-        'Cada casillero requiere una instrucción de avanzar.'
+        'Verificá si necesitás moverte hacia arriba, abajo, izquierda o derecha.',
+        'Cada casillero requiere una instrucción de dirección.'
       ]
     },
     3: {
@@ -1305,22 +1316,27 @@
       ],
       coding: [
         'Revisá si tus instrucciones son suficientes.',
-        'Anticipá los movimientos necesarios antes de ejecutar.',
+        'Anticipá las direcciones necesarias antes de ejecutar.',
         'Compará las posibles alternativas de paso.'
       ],
       turn: [
-        'Verificá la orientación del robot antes del siguiente paso.',
-        'Tené en cuenta los límites del pasillo al girar.',
-        'Recordá verificar la orientación antes del siguiente avance.'
+        'Verificá la dirección del pasillo antes de colocar el siguiente bloque.',
+        'Tené en cuenta los límites del laberinto al cambiar de dirección.',
+        'Recordá que las direcciones son fijas en el tablero.'
+      ],
+      direction: [
+        'Verificá la dirección del pasillo antes de colocar el siguiente bloque.',
+        'Tené en cuenta los límites del laberinto al cambiar de dirección.',
+        'Recordá que las direcciones son fijas en el tablero.'
       ],
       error: [
-        'Observá dónde se detuvo el robot y comparalo con tu plan.',
+        'Observá dónde se detuvo Bity y comparalo con tu plan.',
         '¿En qué paso de la secuencia se produjo el desvío?',
         'Cada error nos muestra qué instrucción debemos corregir.'
       ],
       repeated_error: [
-        'Detectá en qué casillero específico se desvió Byte.',
-        'Comprobá si sobró algún paso de avance antes de una bifurcación.',
+        'Detectá en qué casillero específico se desvió Bity.',
+        'Comprobá si sobró algún paso antes de una bifurcación.',
         'Revisá el orden secuencial de tus bloques.'
       ],
       success: [
@@ -1343,8 +1359,8 @@
       ],
       pedagogical_hints: [
         'Buscá puntos de referencia en el mapa como esquinas y compuertas.',
-        'Comprobá que el número de avances coincida con las baldosas libres.',
-        'Al encontrar bifurcaciones, compará cuál ruta tiene menos giros.'
+        'Comprobá que el número de flechas coincida con las baldosas libres.',
+        'Al encontrar bifurcaciones, compará cuál ruta tiene menos instrucciones.'
       ]
     },
     4: {
@@ -1359,9 +1375,14 @@
         'Verificá la lógica de la secuencia paso por paso.'
       ],
       turn: [
-        'Asegurate de orientar al robot exactamente hacia el pasillo libre.',
-        'Recordá que los giros innecesarios suman instrucciones a tu total.',
-        'Detectá la orientación exacta tras el giro para no avanzar contra una pared.'
+        'Asegurate de colocar la flecha que apunta exactamente hacia el pasillo libre.',
+        'Recordá que cada paso suma una instrucción a tu total.',
+        'Detectá la dirección exacta para no moverte contra una pared.'
+      ],
+      direction: [
+        'Asegurate de colocar la flecha que apunta exactamente hacia el pasillo libre.',
+        'Recordá que cada paso suma una instrucción a tu total.',
+        'Detectá la dirección exacta para no moverte contra una pared.'
       ],
       error: [
         'Depurá tu código: identificá qué bloque causó la colisión.',
@@ -1369,7 +1390,7 @@
         'Analizá el fallo y ajustá la secuencia.'
       ],
       repeated_error: [
-        'Revisá el punto exacto de la colisión: ¿faltó un giro o sobró un avance?',
+        'Revisá el punto exacto de la colisión: ¿faltó una dirección o sobró un paso?',
         'Contá casilleros con precisión para no golpear las paredes.',
         'Analizá la trayectoria bloque por bloque.'
       ],
@@ -1394,7 +1415,7 @@
       pedagogical_hints: [
         'En los laberintos avanzados, planificá primero la llegada a cada compuerta.',
         'Optimizá tu ruta evitando rodeos innecesarios.',
-        'Verificá que cada avance tenga espacio libre antes de colocarlo.'
+        'Verificá que cada paso tenga espacio libre antes de colocarlo.'
       ]
     },
     5: {
@@ -1405,17 +1426,22 @@
       ],
       coding: [
         '¿Podés alcanzar el mismo objetivo utilizando menos instrucciones?',
-        'Optimizá tu algoritmo: evitá giros y avances redundantes.',
+        'Optimizá tu algoritmo: evitá desvíos y pasos redundantes.',
         'Comprobá la coherencia del flujo de instrucciones.'
       ],
       turn: [
-        'Optimizá la orientación: calculá el giro más directo hacia la meta.',
-        'Cada giro cuenta como una instrucción en tu métrica final.',
-        'Compará si girar antes o después te ahorra movimientos.'
+        'Optimizá las direcciones: calculá la ruta más directa hacia la meta.',
+        'Cada flecha cuenta como una instrucción en tu métrica final.',
+        'Compará si tomar una ruta alternativa te ahorra movimientos.'
+      ],
+      direction: [
+        'Optimizá las direcciones: calculá la ruta más directa hacia la meta.',
+        'Cada flecha cuenta como una instrucción en tu métrica final.',
+        'Compará si tomar una ruta alternativa te ahorra movimientos.'
       ],
       error: [
         'Analizá el resultado y detectá dónde podrías mejorar el algoritmo.',
-        'Depuración analítica: ¿fue un error de distancia o de orientación?',
+        'Depuración analítica: ¿fue un error de distancia o de dirección?',
         'Ajustá la secuencia para alcanzar la máxima eficiencia.'
       ],
       repeated_error: [
@@ -1442,8 +1468,8 @@
         'Analizá cuál de las rutas posibles minimiza la cantidad total de bloques.'
       ],
       pedagogical_hints: [
-        'Compará las rutas: la más corta en casilleros a veces tiene más giros.',
-        'Un algoritmo óptimo equilibra la cantidad de avances y giros mínimos.',
+        'Compará las rutas: analizá cuál alternativa requiere menos instrucciones totales.',
+        'Un algoritmo óptimo minimiza la cantidad total de bloques en el tablero.',
         'Revisá el estado del tablero y calculá mentalmente el costo de cada bifurcación.'
       ]
     }
@@ -1456,7 +1482,7 @@
     ],
     vampire: [
       '¡Excelente vuelo cósmico! Mis murciélagos me dicen que vas por buen camino.',
-      '¡Saludos estelares! Revisá bien la orientación de tus pasos antes de despegar.'
+      '¡Saludos estelares! Revisá bien las direcciones de tus pasos antes de despegar.'
     ],
     frankenstein: [
       '¡Arrrg! ¡Frankie te alienta! ¡Un paso más y lográs la meta!',
@@ -1804,6 +1830,10 @@
   // -------------------------------------------------------------
   class BityBlocklyGame {
     constructor(options = {}) {
+      if (typeof window !== 'undefined') {
+        window.bityBlockly = this;
+        window.bityBlocklyGame = this;
+      }
       this.options = options;
       this.onBackToSyllabus = options.onBackToSyllabus || (() => {});
       this.onProgressUpdated = options.onProgressUpdated || (() => {});
@@ -2049,15 +2079,24 @@
         };
       });
 
-      // Botones de paleta de bloques
-      const btnFwd = document.getElementById('btn-bityblockly-add-forward');
-      if (btnFwd) btnFwd.onclick = () => this.addBlock('forward');
+      // Botones de paleta de bloques (4 direcciones fijas)
+      const btnUp = document.getElementById('btn-bityblockly-add-up');
+      if (btnUp) btnUp.onclick = () => this.addBlock('up');
+
+      const btnDown = document.getElementById('btn-bityblockly-add-down');
+      if (btnDown) btnDown.onclick = () => this.addBlock('down');
 
       const btnLeft = document.getElementById('btn-bityblockly-add-left');
       if (btnLeft) btnLeft.onclick = () => this.addBlock('left');
 
       const btnRight = document.getElementById('btn-bityblockly-add-right');
       if (btnRight) btnRight.onclick = () => this.addBlock('right');
+
+      // Compatibilidad con botón anterior
+      const btnFwd = document.getElementById('btn-bityblockly-add-forward');
+      if (btnFwd) btnFwd.onclick = () => this.addBlock('up');
+
+      this.updateBlockLabelsForGrade();
 
       // Botones de control de ejecución
       const btnRun = document.getElementById('btn-bityblockly-run');
@@ -2139,32 +2178,51 @@
         btnAskHintText.textContent = isG1 ? 'PEDIR UNA PISTA' : 'Pedir una pista';
       }
 
-      // Paleta de bloques
-      const btnFwd = document.getElementById('btn-bityblockly-add-forward');
-      if (btnFwd) {
-        const lbl = btnFwd.querySelector('.block-label-text');
-        const add = btnFwd.querySelector('.block-add-hint');
-        if (lbl) lbl.textContent = isG1 ? 'AVANZAR' : 'Avanzar';
+      // Paleta de bloques de movimiento (4 direcciones fijas)
+      const btnUp = document.getElementById('btn-bityblockly-add-up');
+      if (btnUp) {
+        const lbl = btnUp.querySelector('.block-label-text');
+        const add = btnUp.querySelector('.block-add-hint');
+        if (lbl) lbl.textContent = isG1 ? 'ARRIBA' : 'Arriba';
         if (add) add.textContent = isG1 ? '+ AGREGAR' : '+ Agregar';
-        btnFwd.title = isG1 ? 'AVANZAR 1 CASILLA' : 'Avanzar 1 casilla';
+        btnUp.title = isG1 ? 'MOVER 1 CASILLA HACIA ARRIBA' : 'Mover 1 casilla hacia arriba';
+      }
+
+      const btnDown = document.getElementById('btn-bityblockly-add-down');
+      if (btnDown) {
+        const lbl = btnDown.querySelector('.block-label-text');
+        const add = btnDown.querySelector('.block-add-hint');
+        if (lbl) lbl.textContent = isG1 ? 'ABAJO' : 'Abajo';
+        if (add) add.textContent = isG1 ? '+ AGREGAR' : '+ Agregar';
+        btnDown.title = isG1 ? 'MOVER 1 CASILLA HACIA ABAJO' : 'Mover 1 casilla hacia abajo';
       }
 
       const btnLeft = document.getElementById('btn-bityblockly-add-left');
       if (btnLeft) {
         const lbl = btnLeft.querySelector('.block-label-text');
         const add = btnLeft.querySelector('.block-add-hint');
-        if (lbl) lbl.textContent = isG1 ? 'GIRAR A LA IZQUIERDA' : 'Girar a la izquierda';
+        if (lbl) lbl.textContent = isG1 ? 'IZQUIERDA' : 'Izquierda';
         if (add) add.textContent = isG1 ? '+ AGREGAR' : '+ Agregar';
-        btnLeft.title = isG1 ? 'GIRAR 90° A LA IZQUIERDA' : 'Girar 90° a la izquierda';
+        btnLeft.title = isG1 ? 'MOVER 1 CASILLA HACIA LA IZQUIERDA' : 'Mover 1 casilla hacia la izquierda';
       }
 
       const btnRight = document.getElementById('btn-bityblockly-add-right');
       if (btnRight) {
         const lbl = btnRight.querySelector('.block-label-text');
         const add = btnRight.querySelector('.block-add-hint');
-        if (lbl) lbl.textContent = isG1 ? 'GIRAR A LA DERECHA' : 'Girar a la derecha';
+        if (lbl) lbl.textContent = isG1 ? 'DERECHA' : 'Derecha';
         if (add) add.textContent = isG1 ? '+ AGREGAR' : '+ Agregar';
-        btnRight.title = isG1 ? 'GIRAR 90° A LA DERECHA' : 'Girar 90° a la derecha';
+        btnRight.title = isG1 ? 'MOVER 1 CASILLA HACIA LA DERECHA' : 'Mover 1 casilla hacia la derecha';
+      }
+
+      // Compatibilidad botón forward
+      const btnFwd = document.getElementById('btn-bityblockly-add-forward');
+      if (btnFwd) {
+        const lbl = btnFwd.querySelector('.block-label-text');
+        const add = btnFwd.querySelector('.block-add-hint');
+        if (lbl) lbl.textContent = isG1 ? 'ARRIBA' : 'Arriba';
+        if (add) add.textContent = isG1 ? '+ AGREGAR' : '+ Agregar';
+        btnFwd.title = isG1 ? 'MOVER 1 CASILLA HACIA ARRIBA' : 'Mover 1 casilla hacia arriba';
       }
 
       // Botones de ejecución
@@ -2501,7 +2559,7 @@
       // 4. Conteo Principal y Desglose
       if (totalEl) totalEl.textContent = total;
       if (movesEl) movesEl.textContent = moves;
-      if (turnsEl) turnsEl.textContent = turns;
+      if (turnsEl) turnsEl.textContent = this.formatForGrade('¡Éxito!');
 
       // 5. Identificación exacta de la ruta elegida
       let routeName = `Camino completado (${total} instrucciones)`;
@@ -2892,7 +2950,7 @@
 
         this.bityPos = { x: config.start.x, y: config.start.y, dir: config.start.dir };
         this.renderWorkspace();
-        this.setStatus('¡Elegí cómo se mueve Byte! Agregá bloques para llevarlo a la nave espacial.', 'info');
+        this.setStatus(this.formatForGrade('¡Elegí las direcciones para guiar a Bity! Agregá bloques para llevarlo a la meta.'), 'info');
         this.renderCanvas();
       } else {
         // Modo Desafío Interactivo Especial
@@ -3602,31 +3660,26 @@
         this.blocks = [];
       }
       this.renderWorkspace();
-      this.setStatus('Byte volvió al punto de partida. ¡Listo para probar otra vez!', 'info');
+      this.setStatus(this.formatForGrade('Bity volvió al punto de partida. ¡Listo para probar otra vez!'), 'info');
       this.renderCanvas();
     }
 
     addBlock(type) {
       if (this.isRunning) return;
       if (this.blocks.length >= this.maxBlocks) {
-        this.setStatus('¡Llegaste al límite de bloques! Probá optimizar tu recorrido.', 'warning');
+        this.setStatus(this.formatForGrade('¡Llegaste al límite de bloques! Probá optimizar tu recorrido.'), 'warning');
         this.audio.play('bump');
         return;
       }
       this.blocks.push(type);
       this.audio.play('add');
       this.renderWorkspace();
-      this.setStatus(`Agregaste un bloque de ${this.getBlockLabel(type).toLowerCase()}.`, 'info');
+      const label = this.getBlockLabel(type);
+      this.setStatus(this.formatForGrade(`Agregaste un bloque de ${label.toLowerCase()}.`), 'info');
 
-      if (type === 'left' || type === 'right') {
-        const turnList = (BITY_GUIDE_MESSAGES[this.currentGrade] && BITY_GUIDE_MESSAGES[this.currentGrade].turn) || [];
-        const turnMsg = turnList[Math.floor(Math.random() * turnList.length)] || '¡El camino cambia de dirección! Para seguir, quizás necesites girar.';
-        this.speakGuide(turnMsg, { mood: 'thinking' });
-      } else {
-        const codeList = (BITY_GUIDE_MESSAGES[this.currentGrade] && BITY_GUIDE_MESSAGES[this.currentGrade].coding) || [];
-        const codeMsg = codeList[Math.floor(Math.random() * codeList.length)] || 'Recordá que cada bloque representa una instrucción.';
-        this.speakGuide(codeMsg, { mood: 'idle' });
-      }
+      const dirList = (BITY_GUIDE_MESSAGES[this.currentGrade] && (BITY_GUIDE_MESSAGES[this.currentGrade].direction || BITY_GUIDE_MESSAGES[this.currentGrade].coding)) || [];
+      const dirMsg = dirList[Math.floor(Math.random() * dirList.length)] || 'Recordá que cada flecha mueve a Bity un casillero en esa dirección.';
+      this.speakGuide(dirMsg, { mood: 'idle' });
     }
 
     removeBlock(index) {
@@ -3659,16 +3712,21 @@
     }
 
     getBlockLabel(type) {
-      if (type === 'forward') return 'Avanzar';
-      if (type === 'left') return 'Girar a la izquierda';
-      if (type === 'right') return 'Girar a la derecha';
+      const isG1 = this.currentGrade === 1;
+      if (type === 'up') return isG1 ? 'ARRIBA' : 'Arriba';
+      if (type === 'down') return isG1 ? 'ABAJO' : 'Abajo';
+      if (type === 'left') return isG1 ? 'IZQUIERDA' : 'Izquierda';
+      if (type === 'right') return isG1 ? 'DERECHA' : 'Derecha';
+      if (type === 'forward') return isG1 ? 'ARRIBA' : 'Arriba';
       return type;
     }
 
     getBlockIcon(type) {
+      if (type === 'up') return '⬆️';
+      if (type === 'down') return '⬇️';
+      if (type === 'left') return '⬅️';
+      if (type === 'right') return '➡️';
       if (type === 'forward') return '⬆️';
-      if (type === 'left') return '↩️';
-      if (type === 'right') return '↪️';
       return '🧩';
     }
 
@@ -3684,8 +3742,8 @@
         listEl.innerHTML = `
           <div class="bityblockly-empty-program">
             <span class="bityblockly-empty-icon">👆</span>
-            <strong>Tu programa está vacío</strong>
-            <span>Tocá los botones de arriba para agregar instrucciones a Byte.</span>
+            <strong>${this.formatForGrade('Tu programa está vacío')}</strong>
+            <span>${this.formatForGrade('Tocá las flechas de arriba para agregar instrucciones a Bity.')}</span>
           </div>
         `;
         return;
@@ -3797,62 +3855,79 @@
       const config = this.getCurrentMissionConfig();
 
       this.instructionsExecuted = (this.instructionsExecuted || 0) + 1;
+      this.movesExecuted = (this.movesExecuted || 0) + 1;
 
-      if (action === 'left') {
-        this.turnsExecuted = (this.turnsExecuted || 0) + 1;
-        this.bityPos.dir = (this.bityPos.dir + 3) % 4;
-        this.audio.play('turn');
-        this.setStatus('↩️ Byte giró a la izquierda.', 'info');
-        this.advanceStepDelay();
+      let nextX = this.bityPos.x;
+      let nextY = this.bityPos.y;
+      let newDir = this.bityPos.dir;
+      let stepMsg = '';
+
+      // Cuatro direcciones fijas absolutas
+      // 0: Norte (Arriba), 1: Este (Derecha), 2: Sur (Abajo), 3: Oeste (Izquierda)
+      if (action === 'up') {
+        nextY = this.bityPos.y - 1;
+        newDir = 0; // Mirar arriba
+        stepMsg = '⬆️ Bity se movió hacia arriba.';
+      } else if (action === 'down') {
+        nextY = this.bityPos.y + 1;
+        newDir = 2; // Mirar abajo
+        stepMsg = '⬇️ Bity se movió hacia abajo.';
+      } else if (action === 'left') {
+        nextX = this.bityPos.x - 1;
+        newDir = 3; // Mirar izquierda
+        stepMsg = '⬅️ Bity se movió hacia la izquierda.';
       } else if (action === 'right') {
-        this.turnsExecuted = (this.turnsExecuted || 0) + 1;
-        this.bityPos.dir = (this.bityPos.dir + 1) % 4;
-        this.audio.play('turn');
-        this.setStatus('↪️ Byte giró a la derecha.', 'info');
-        this.advanceStepDelay();
+        nextX = this.bityPos.x + 1;
+        newDir = 1; // Mirar derecha
+        stepMsg = '➡️ Bity se movió hacia la derecha.';
       } else if (action === 'forward') {
-        this.movesExecuted = (this.movesExecuted || 0) + 1;
+        // Compatibilidad retroactiva
         const deltas = [
           { dx: 0, dy: -1 }, // 0: N
           { dx: 1, dy: 0 },  // 1: E
           { dx: 0, dy: 1 },  // 2: S
           { dx: -1, dy: 0 }  // 3: W
         ];
-        const d = deltas[this.bityPos.dir];
-        const nextX = this.bityPos.x + d.dx;
-        const nextY = this.bityPos.y + d.dy;
-
-        if (nextX < 0 || nextX >= config.cols || nextY < 0 || nextY >= config.rows) {
-          this.handleWallHit();
-          return;
-        }
-
-        const cell = config.grid[nextY][nextX];
-
-        if (cell === 1) {
-          this.handleWallHit();
-          return;
-        }
-
-        if (cell === 2 && !this.isDoorOpen(nextX, nextY)) {
-          this.audio.play('bump');
-          this.setStatus('⚡ ¡La compuerta está sellada con magia! Resolvé el cálculo para abrirla.', 'warning');
-          this.triggerMathChallengeForDoor(nextX, nextY);
-          return;
-        }
-
-        this.bityPos.x = nextX;
-        this.bityPos.y = nextY;
-        this.audio.play('step');
-
-        if (cell === 3) {
-          this.stopProgram();
-          this.triggerVictory();
-          return;
-        }
-
-        this.advanceStepDelay();
+        const d = deltas[this.bityPos.dir] || deltas[0];
+        nextX = this.bityPos.x + d.dx;
+        nextY = this.bityPos.y + d.dy;
+        stepMsg = '⬆️ Bity avanzó.';
       }
+
+      // La orientación visual gira a Bity hacia la dirección de avance
+      this.bityPos.dir = newDir;
+
+      if (nextX < 0 || nextX >= config.cols || nextY < 0 || nextY >= config.rows) {
+        this.handleWallHit();
+        return;
+      }
+
+      const cell = config.grid[nextY][nextX];
+
+      if (cell === 1) {
+        this.handleWallHit();
+        return;
+      }
+
+      if (cell === 2 && !this.isDoorOpen(nextX, nextY)) {
+        this.audio.play('bump');
+        this.setStatus(this.formatForGrade('⚡ ¡La compuerta está sellada con magia! Resolvé el cálculo para abrirla.'), 'warning');
+        this.triggerMathChallengeForDoor(nextX, nextY);
+        return;
+      }
+
+      this.bityPos.x = nextX;
+      this.bityPos.y = nextY;
+      this.audio.play('step');
+      this.setStatus(this.formatForGrade(stepMsg), 'info');
+
+      if (cell === 3) {
+        this.stopProgram();
+        this.triggerVictory();
+        return;
+      }
+
+      this.advanceStepDelay();
     }
 
     advanceStepDelay() {
@@ -3873,7 +3948,7 @@
       const errList = (BITY_GUIDE_MESSAGES[this.currentGrade] && BITY_GUIDE_MESSAGES[this.currentGrade][key]) || [];
       const errMsg = errList[Math.floor(Math.random() * errList.length)] || '¡No te preocupes! Podemos intentarlo otra vez.';
       this.speakGuide(errMsg, { mood: 'alert', force: true });
-      this.setStatus('Byte chocó con un obstáculo. Revisá tus bloques y probá de nuevo.', 'error');
+      this.setStatus(this.formatForGrade('Bity chocó con un obstáculo. Revisá tus bloques y probá de nuevo.'), 'error');
     }
 
     setStatus(message, type = 'info') {
@@ -4463,8 +4538,7 @@
       const by = offsetY + this.bityPos.y * tileSize + tileSize / 2;
       this.drawBity(ctx, bx, by, this.bityPos.dir, tileSize);
 
-      // Pistas de orientación intermitentes junto al robot (IZQUIERDA / DERECHA)
-      this.drawOrientationHints(ctx, bx, by, this.bityPos.dir, tileSize, w, h);
+      // Pistas de orientación desactivadas (movimiento por 4 direcciones fijas absolutas)
 
       // Fantasma tenebroso de Halloween en el laberinto
       this.drawMazeGhost(ctx, offsetX, offsetY, tileSize, cols, rows);
@@ -4575,6 +4649,7 @@
     }
 
     drawOrientationHints(ctx, bx, by, dir, tileSize, canvasW, canvasH) {
+      return; // Reemplazado por 4 direcciones fijas absolutas
       const cues = this.getOrientationCues(dir);
 
       // Suavidad intermitente (respiración mágica gradual sin parpadeo brusco)

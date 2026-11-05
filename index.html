@@ -1101,22 +1101,27 @@
           <div class="bityblockly-palette-card">
             <h4 class="bityblockly-section-title">
               <span>BLOQUES DE MOVIMIENTO</span>
-              <span style="font-size:0.8rem; color:#818cf8;">3 Disponibles</span>
+              <span style="font-size:0.8rem; color:#818cf8;">4 Disponibles</span>
             </h4>
             <div class="bityblockly-palette-grid">
-              <button type="button" id="btn-bityblockly-add-forward" class="btn-palette-block btn-palette-forward" title="Avanzar 1 casilla">
+              <button type="button" id="btn-bityblockly-add-up" class="btn-palette-block btn-palette-up" title="Mover 1 casilla hacia arriba">
                 <span class="block-icon-badge">⬆️</span>
-                <span class="block-label-text">Avanzar</span>
+                <span class="block-label-text">Arriba</span>
                 <span class="block-add-hint">+ Agregar</span>
               </button>
-              <button type="button" id="btn-bityblockly-add-left" class="btn-palette-block btn-palette-left" title="Girar 90° a la izquierda">
-                <span class="block-icon-badge">↩️</span>
-                <span class="block-label-text">Girar a la izquierda</span>
+              <button type="button" id="btn-bityblockly-add-down" class="btn-palette-block btn-palette-down" title="Mover 1 casilla hacia abajo">
+                <span class="block-icon-badge">⬇️</span>
+                <span class="block-label-text">Abajo</span>
                 <span class="block-add-hint">+ Agregar</span>
               </button>
-              <button type="button" id="btn-bityblockly-add-right" class="btn-palette-block btn-palette-right" title="Girar 90° a la derecha">
-                <span class="block-icon-badge">↪️</span>
-                <span class="block-label-text">Girar a la derecha</span>
+              <button type="button" id="btn-bityblockly-add-left" class="btn-palette-block btn-palette-left" title="Mover 1 casilla hacia la izquierda">
+                <span class="block-icon-badge">⬅️</span>
+                <span class="block-label-text">Izquierda</span>
+                <span class="block-add-hint">+ Agregar</span>
+              </button>
+              <button type="button" id="btn-bityblockly-add-right" class="btn-palette-block btn-palette-right" title="Mover 1 casilla hacia la derecha">
+                <span class="block-icon-badge">➡️</span>
+                <span class="block-label-text">Derecha</span>
                 <span class="block-add-hint">+ Agregar</span>
               </button>
             </div>
@@ -1685,7 +1690,7 @@
 
           <!-- Contenedor en 2 Columnas Horizontales en Desktop -->
           <div class="summary-modal-body">
-            <!-- Columna Izquierda: Bity Celebrando + Contador Principal + Desglose de Movimientos/Giros -->
+            <!-- Columna Izquierda: Bity Celebrando + Contador Principal + Desglose de Instrucciones -->
             <div class="summary-col-left">
               <!-- Bity Celebrando y Mensaje Pedagógico -->
               <div class="summary-bity-hero">
@@ -1705,17 +1710,17 @@
                 <span class="instruction-count-label">INSTRUCCIONES TOTALES</span>
               </div>
 
-              <!-- Desglose Compacto de Pasos y Giros -->
+              <!-- Desglose Compacto de Pasos y Ruta -->
               <div class="instruction-breakdown-grid">
                 <div class="instruction-breakdown-card">
-                  <span class="breakdown-icon">⬆️</span>
+                  <span class="breakdown-icon">🧭</span>
                   <span class="breakdown-val" id="bityblockly-summary-moves-count">0</span>
-                  <span class="breakdown-lbl">Pasos adelante</span>
+                  <span class="breakdown-lbl">Pasos en el tablero</span>
                 </div>
                 <div class="instruction-breakdown-card">
-                  <span class="breakdown-icon">🔄</span>
-                  <span class="breakdown-val" id="bityblockly-summary-turns-count">0</span>
-                  <span class="breakdown-lbl">Giros realizados</span>
+                  <span class="breakdown-icon">🎯</span>
+                  <span class="breakdown-val" id="bityblockly-summary-turns-count">¡Éxito!</span>
+                  <span class="breakdown-lbl">Meta alcanzada</span>
                 </div>
                 <div class="instruction-breakdown-card">
                   <span class="breakdown-icon">🗺️</span>

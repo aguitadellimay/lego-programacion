@@ -1709,3 +1709,296 @@
     display: none;
   }
 }
+
+
+/* ========================================================
+   ESTILOS DE ACTIVIDADES PRÁCTICAS CON ESPACIOS VACÍOS
+   (1.º a 5.º Grado)
+   ======================================================== */
+
+.alg-activity-card {
+  background: rgba(20, 11, 46, 0.88);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+  margin-bottom: 26px;
+  backdrop-filter: blur(8px);
+}
+
+.alg-activity-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1.5px solid rgba(168, 85, 247, 0.25);
+}
+
+.alg-activity-icon {
+  font-size: 2.6rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1.5px solid #8b5cf6;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  flex-shrink: 0;
+}
+
+.alg-activity-title-group {
+  flex: 1;
+}
+
+.alg-activity-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  padding: 3px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.alg-activity-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #fef08a;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.alg-activity-context {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border-left: 4px solid #38bdf8;
+}
+
+.alg-activity-consigna-box {
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.25) 0%, rgba(88, 28, 135, 0.35) 100%);
+  border: 2px solid #a855f7;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(168, 85, 247, 0.2);
+}
+
+.consigna-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #fde047;
+  background: rgba(253, 224, 71, 0.15);
+  padding: 4px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(253, 224, 71, 0.4);
+}
+
+.consigna-text {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Pistas Orientativas de Bity (sin soluciones) */
+.alg-activity-hints-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px dashed rgba(250, 204, 21, 0.45);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+}
+
+.hints-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #facc15;
+  margin-bottom: 8px;
+}
+
+.hints-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.hints-list li {
+  margin-bottom: 4px;
+}
+
+/* Espacio de Edición del Algoritmo */
+.alg-editor-workspace {
+  background: rgba(10, 5, 24, 0.85);
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.workspace-heading {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #38bdf8;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.workspace-subheading {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin: 0 0 16px;
+}
+
+.alg-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* Botones de acción del editor */
+.alg-editor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-alg-add-step {
+  background: linear-gradient(180deg, #7e22ce, #581c87);
+  border: 1.5px solid #a855f7;
+  color: #f5f3ff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 11px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #3b0764;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.btn-alg-add-step:hover {
+  background: linear-gradient(180deg, #9333ea, #6b21a8);
+  transform: translateY(-1px);
+}
+
+.btn-alg-save-activity {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  border: 2px solid #fde047;
+  color: #1e1145;
+  font-size: 1.05rem;
+  font-weight: 900;
+  padding: 11px 26px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #92400e;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.btn-alg-save-activity:hover {
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #92400e;
+}
+
+/* Retroalimentación Pedagógica de Bity */
+.alg-feedback-box {
+  margin-top: 20px;
+  border-radius: 16px;
+  padding: 18px 22px;
+  animation: fadeInStep 0.3s ease;
+}
+
+.alg-feedback-box.feedback-success {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.9) 0%, rgba(19, 78, 74, 0.9) 100%);
+  border: 2px solid #34d399;
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.25);
+}
+
+.alg-feedback-box.feedback-hint {
+  background: linear-gradient(135deg, rgba(120, 53, 15, 0.9) 0%, rgba(146, 64, 14, 0.9) 100%);
+  border: 2px solid #fbbf24;
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.25);
+}
+
+.feedback-bity-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feedback-bity-avatar {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.feedback-bity-content {
+  flex: 1;
+}
+
+.feedback-bity-title {
+  font-size: 1.12rem;
+  font-weight: 900;
+  color: #fef08a;
+  margin: 0 0 6px;
+}
+
+.feedback-bity-text {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 0 12px;
+  line-height: 1.45;
+}
+
+.feedback-next-action {
+  margin-top: 10px;
+}
+
+.btn-feedback-next {
+  background: linear-gradient(180deg, #10b981, #059669);
+  border: 1.5px solid #34d399;
+  color: white;
+  font-size: 0.98rem;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #047857;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-feedback-next:hover {
+  background: linear-gradient(180deg, #34d399, #10b981);
+}

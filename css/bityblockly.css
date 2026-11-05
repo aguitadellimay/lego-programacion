@@ -334,46 +334,75 @@
   user-select: none;
 }
 
-.btn-palette-forward {
-  background: linear-gradient(180deg, #10b981, #059669);
-  box-shadow: 0 5px 0 #047857, 0 8px 12px rgba(16, 185, 129, 0.3);
+.btn-palette-up {
+  background: linear-gradient(180deg, #0284c7, #0369a1);
+  box-shadow: 0 5px 0 #075985, 0 8px 12px rgba(2, 132, 199, 0.35);
 }
 
-.btn-palette-forward:hover {
-  background: linear-gradient(180deg, #34d399, #059669);
+.btn-palette-up:hover {
+  background: linear-gradient(180deg, #38bdf8, #0284c7);
 }
 
-.btn-palette-forward:active {
+.btn-palette-up:active {
   transform: translateY(4px);
-  box-shadow: 0 1px 0 #047857;
+  box-shadow: 0 1px 0 #075985;
+}
+
+.btn-palette-down {
+  background: linear-gradient(180deg, #8b5cf6, #6d28d9);
+  box-shadow: 0 5px 0 #5b21b6, 0 8px 12px rgba(139, 92, 246, 0.35);
+}
+
+.btn-palette-down:hover {
+  background: linear-gradient(180deg, #a78bfa, #6d28d9);
+}
+
+.btn-palette-down:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #5b21b6;
 }
 
 .btn-palette-left {
-  background: linear-gradient(180deg, #6366f1, #4f46e5);
-  box-shadow: 0 5px 0 #3730a3, 0 8px 12px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  box-shadow: 0 5px 0 #b45309, 0 8px 12px rgba(245, 158, 11, 0.35);
 }
 
 .btn-palette-left:hover {
-  background: linear-gradient(180deg, #818cf8, #4f46e5);
+  background: linear-gradient(180deg, #fbbf24, #d97706);
 }
 
 .btn-palette-left:active {
   transform: translateY(4px);
-  box-shadow: 0 1px 0 #3730a3;
+  box-shadow: 0 1px 0 #b45309;
 }
 
 .btn-palette-right {
-  background: linear-gradient(180deg, #f59e0b, #d97706);
-  box-shadow: 0 5px 0 #b45309, 0 8px 12px rgba(245, 158, 11, 0.3);
+  background: linear-gradient(180deg, #10b981, #059669);
+  box-shadow: 0 5px 0 #047857, 0 8px 12px rgba(16, 185, 129, 0.35);
 }
 
 .btn-palette-right:hover {
-  background: linear-gradient(180deg, #fbbf24, #d97706);
+  background: linear-gradient(180deg, #34d399, #059669);
 }
 
 .btn-palette-right:active {
   transform: translateY(4px);
-  box-shadow: 0 1px 0 #b45309;
+  box-shadow: 0 1px 0 #047857;
+}
+
+/* Compatibilidad */
+.btn-palette-forward {
+  background: linear-gradient(180deg, #0284c7, #0369a1);
+  box-shadow: 0 5px 0 #075985, 0 8px 12px rgba(2, 132, 199, 0.35);
+}
+
+.btn-palette-forward:hover {
+  background: linear-gradient(180deg, #38bdf8, #0284c7);
+}
+
+.btn-palette-forward:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #075985;
 }
 
 .block-icon-badge {
@@ -466,16 +495,24 @@
   user-select: none;
 }
 
-.bityblockly-step-item.step-forward {
-  border-left: 5px solid #10b981;
+.bityblockly-step-item.step-up {
+  border-left: 5px solid #0284c7;
+}
+
+.bityblockly-step-item.step-down {
+  border-left: 5px solid #8b5cf6;
 }
 
 .bityblockly-step-item.step-left {
-  border-left: 5px solid #6366f1;
+  border-left: 5px solid #f59e0b;
 }
 
 .bityblockly-step-item.step-right {
-  border-left: 5px solid #f59e0b;
+  border-left: 5px solid #10b981;
+}
+
+.bityblockly-step-item.step-forward {
+  border-left: 5px solid #0284c7;
 }
 
 .bityblockly-step-item.active-step {
