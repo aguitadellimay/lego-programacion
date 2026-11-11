@@ -1,8 +1,8 @@
 /**
  * ========================================================
- * ALGORITMOS — CLASE N.º 1: CONSTRUCCIÓN PRÁCTICA
- * Módulo de Pensamiento Computacional para 1.º a 5.º Grado
- * Informática Mágica — Edición Halloween
+ * ALGORITMOS — APRENDIZAJE VISUAL, BLOQUES Y DESAFÍOS
+ * Pensamiento Computacional para 1.º a 5.º Grado
+ * Informática Mágica — Edición Especial Interactiva
  * ========================================================
  */
 
@@ -13,98 +13,256 @@
   // 1. REPOSITORIO DE ILUSTRACIONES VECTORIALES SVG
   // ============================================================
   const ALGORITHM_SVGS = {
-    hero_routine: `
-      <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" class="alg-svg-hero" aria-label="Rutina diaria">
-        <defs>
-          <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2e1065"/>
-            <stop offset="100%" stop-color="#0f0728"/>
-          </linearGradient>
-          <linearGradient id="sunGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#fef08a"/>
-            <stop offset="100%" stop-color="#f59e0b"/>
-          </linearGradient>
-        </defs>
-        <rect width="400" height="240" rx="16" fill="url(#heroSky)"/>
-        <circle cx="50" cy="40" r="1.5" fill="#fde047"/>
-        <circle cx="120" cy="30" r="2" fill="#ffffff"/>
-        <circle cx="340" cy="45" r="1.8" fill="#fef08a"/>
-        <circle cx="80" cy="80" r="28" fill="url(#sunGlow)" opacity="0.85"/>
-        <rect x="55" y="55" width="50" height="60" rx="6" fill="none" stroke="#6b21a8" stroke-width="2.5"/>
-        <line x1="80" y1="55" x2="80" y2="115" stroke="#6b21a8" stroke-width="2"/>
-        <line x1="55" y1="85" x2="105" y2="85" stroke="#6b21a8" stroke-width="2"/>
-        <g transform="translate(130, 95)">
-          <circle cx="12" cy="12" r="12" fill="#8b5cf6"/>
-          <text x="12" y="16" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">1</text>
-          <text x="12" y="38" fill="#e2e8f0" font-size="9" font-weight="700" text-anchor="middle">Despertar</text>
-        </g>
-        <path d="M 160 107 Q 185 90 210 107" stroke="#facc15" stroke-width="2.5" stroke-dasharray="4,4" fill="none"/>
-        <g transform="translate(210, 95)">
-          <circle cx="12" cy="12" r="12" fill="#38bdf8"/>
-          <text x="12" y="16" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">2</text>
-          <text x="12" y="38" fill="#e2e8f0" font-size="9" font-weight="700" text-anchor="middle">Desayunar</text>
-        </g>
-        <path d="M 240 107 Q 265 90 290 107" stroke="#facc15" stroke-width="2.5" stroke-dasharray="4,4" fill="none"/>
-        <g transform="translate(290, 95)">
-          <circle cx="12" cy="12" r="12" fill="#10b981"/>
-          <text x="12" y="16" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">3</text>
-          <text x="12" y="38" fill="#e2e8f0" font-size="9" font-weight="700" text-anchor="middle">Aprender</text>
-        </g>
-      </svg>`,
+    // 1.1. Persona Caminando (Acción)
+    caminar: `<svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Persona caminando">
+      <defs>
+        <linearGradient id="walkSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#312e81"/>
+          <stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+        <linearGradient id="sneakerGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#38bdf8"/>
+          <stop offset="100%" stop-color="#2563eb"/>
+        </linearGradient>
+      </defs>
+      <rect width="340" height="220" rx="16" fill="url(#walkSky)"/>
+      <ellipse cx="170" cy="195" rx="120" ry="12" fill="rgba(0,0,0,0.35)"/>
+      <line x1="20" y1="195" x2="320" y2="195" stroke="#475569" stroke-width="3" stroke-dasharray="8,6"/>
+      <!-- Líneas de viento / movimiento -->
+      <path d="M 60 110 Q 80 110 95 115" stroke="#facc15" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M 50 130 Q 75 130 90 135" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M 70 90 Q 85 90 95 95" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <!-- Persona caminando -->
+      <g transform="translate(135, 20)">
+        <circle cx="30" cy="24" r="18" fill="#fed7aa"/>
+        <!-- Gorra deportiva -->
+        <path d="M 12 20 Q 30 10 48 20 Q 55 18 58 22 Q 46 25 30 25 Z" fill="#ec4899"/>
+        <circle cx="36" cy="22" r="2.5" fill="#1e293b"/>
+        <path d="M 32 30 Q 38 34 42 30" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Torso -->
+        <path d="M 18 42 L 44 42 L 48 95 L 14 95 Z" fill="#8b5cf6" rx="6"/>
+        <circle cx="31" cy="65" r="8" fill="#facc15"/>
+        <!-- Brazo izquierdo atrás -->
+        <path d="M 20 48 L 5 70 L 2 85" stroke="#fed7aa" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <!-- Brazo derecho adelante -->
+        <path d="M 42 48 L 56 68 L 65 78" stroke="#fed7aa" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <!-- Pierna izquierda atrás -->
+        <path d="M 22 95 L 10 135 L 2 165" stroke="#1e293b" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <rect x="-6" y="162" width="22" height="10" rx="4" fill="url(#sneakerGrad)"/>
+        <!-- Pierna derecha adelante en paso -->
+        <path d="M 40 95 L 55 130 L 72 160" stroke="#1e293b" stroke-width="9" stroke-linecap="round" fill="none"/>
+        <rect x="65" y="156" width="24" height="11" rx="4" fill="url(#sneakerGrad)"/>
+      </g>
+    </svg>`,
 
-    hero_teeth: `
-      <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" class="alg-svg-hero" aria-label="Lavado de dientes">
-        <rect width="400" height="200" rx="16" fill="#0f172a"/>
-        <circle cx="200" cy="100" r="70" fill="rgba(56, 189, 248, 0.1)"/>
-        <!-- Cepillo de dientes con pasta -->
-        <g transform="translate(100, 80)">
-          <rect x="0" y="15" width="160" height="14" rx="7" fill="#38bdf8"/>
-          <rect x="150" y="8" width="40" height="14" rx="4" fill="#0284c7"/>
-          <path d="M 152 8 Q 170 -6 190 8 Z" fill="#f43f5e"/>
-          <!-- Cerdas -->
-          <rect x="155" y="0" width="4" height="8" fill="#ffffff"/>
-          <rect x="163" y="0" width="4" height="8" fill="#ffffff"/>
-          <rect x="171" y="0" width="4" height="8" fill="#ffffff"/>
-          <rect x="179" y="0" width="4" height="8" fill="#ffffff"/>
-          <rect x="187" y="0" width="4" height="8" fill="#ffffff"/>
-        </g>
-        <!-- Diente sonriente brillante -->
-        <g transform="translate(290, 65)">
-          <path d="M 20 10 C 5 10 0 25 0 40 C 0 65 15 80 20 80 C 25 80 28 65 30 65 C 32 65 35 80 40 80 C 45 80 60 65 60 40 C 60 25 55 10 40 10 C 35 10 32 18 30 18 C 28 18 25 10 20 10 Z" fill="#ffffff" stroke="#38bdf8" stroke-width="2.5"/>
-          <circle cx="20" cy="35" r="3" fill="#0f172a"/>
-          <circle cx="40" cy="35" r="3" fill="#0f172a"/>
-          <path d="M 22 45 Q 30 52 38 45" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
-          <polygon points="50,15 54,23 62,25 56,31 58,39 50,35 42,39 44,31 38,25 46,23" fill="#facc15" transform="scale(0.5) translate(40, -10)"/>
-        </g>
-      </svg>`,
+    // 1.2. Pasos del Almacén
+    almacen_1_bolsa: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <path d="M 42 35 C 42 20 78 20 78 35" fill="none" stroke="#facc15" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 32 40 L 88 40 L 82 100 L 38 100 Z" fill="#10b981" rx="6"/>
+      <path d="M 42 50 L 78 50" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="72" r="12" fill="#fef08a"/>
+      <path d="M 54 72 L 66 72 M 60 66 L 60 78" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
 
-    scrambled: `
-      <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" class="alg-svg-hero" aria-label="Error de secuencia">
-        <rect width="400" height="160" rx="16" fill="#1e1145"/>
-        <circle cx="100" cy="80" r="45" fill="rgba(239, 68, 68, 0.15)"/>
-        <text x="100" y="90" font-size="44" text-anchor="middle">❌</text>
-        <g transform="translate(160, 45)">
-          <rect x="0" y="0" width="210" height="70" rx="12" fill="rgba(255, 255, 255, 0.05)" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="16" y="28" fill="#fca5a5" font-size="13" font-weight="800">¿CEPILLARSE SIN PASTA?</text>
-          <text x="16" y="48" fill="#cbd5e1" font-size="11">Si cambiamos el orden, el</text>
-          <text x="16" y="62" fill="#cbd5e1" font-size="11">resultado no se alcanza.</text>
-        </g>
-      </svg>`
+    almacen_2_salir: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <!-- Marco de puerta -->
+      <rect x="25" y="20" width="70" height="85" fill="#334155" rx="4"/>
+      <!-- Luz exterior -->
+      <rect x="32" y="26" width="56" height="75" fill="#fef08a"/>
+      <!-- Puerta abierta -->
+      <polygon points="32,26 70,36 70,95 32,101" fill="#8b5cf6" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="64" cy="65" r="3" fill="#fde047"/>
+      <!-- Felpudo -->
+      <ellipse cx="60" cy="103" rx="26" ry="6" fill="#f59e0b"/>
+    </svg>`,
+
+    almacen_3_camino: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <!-- Vereda con perspectiva -->
+      <polygon points="15,110 105,110 75,45 45,45" fill="#475569"/>
+      <line x1="60" y1="110" x2="60" y2="45" stroke="#facc15" stroke-width="2.5" stroke-dasharray="6,4"/>
+      <!-- Almacén al fondo -->
+      <rect x="42" y="25" width="36" height="25" fill="#0284c7" rx="3"/>
+      <polygon points="38,25 60,12 82,25" fill="#ef4444"/>
+      <rect x="52" y="34" width="16" height="16" fill="#fef08a"/>
+      <!-- Árbol en vereda -->
+      <rect x="22" y="55" width="6" height="18" fill="#78350f"/>
+      <circle cx="25" cy="50" r="14" fill="#10b981"/>
+    </svg>`,
+
+    almacen_4_productos: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <!-- Canasta de compras -->
+      <ellipse cx="60" cy="85" rx="36" ry="16" fill="#b45309"/>
+      <path d="M 28 85 L 36 50 L 84 50 L 92 85 Z" fill="#d97706" rx="4"/>
+      <!-- Asa de canasta -->
+      <path d="M 38 50 Q 60 18 82 50" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
+      <!-- Productos adentro -->
+      <rect x="42" y="34" width="14" height="22" rx="3" fill="#38bdf8"/>
+      <circle cx="68" cy="42" r="10" fill="#ef4444"/>
+      <rect x="54" y="26" width="12" height="28" rx="2" fill="#facc15"/>
+    </svg>`,
+
+    almacen_5_pagar: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <!-- Mostrador -->
+      <rect x="15" y="70" width="90" height="38" rx="4" fill="#334155"/>
+      <!-- Caja registradora -->
+      <rect x="45" y="44" width="38" height="28" rx="4" fill="#0284c7"/>
+      <rect x="52" y="48" width="24" height="10" rx="2" fill="#0f172a"/>
+      <text x="64" y="56" fill="#38bdf8" font-size="7" font-weight="900" text-anchor="middle">$100</text>
+      <!-- Billetes / monedas entregándose -->
+      <rect x="22" y="50" width="20" height="12" rx="2" fill="#10b981" transform="rotate(-15 22 50)"/>
+      <circle cx="34" cy="54" r="2.5" fill="#047857"/>
+      <circle cx="36" cy="64" r="5" fill="#facc15"/>
+    </svg>`,
+
+    almacen_6_regresar: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
+      <!-- Casa acogedora -->
+      <rect x="30" y="45" width="60" height="58" rx="4" fill="#6366f1"/>
+      <polygon points="20,48 60,18 100,48" fill="#ec4899"/>
+      <!-- Puerta y ventana encendida -->
+      <rect x="50" y="65" width="20" height="38" fill="#fbbf24" rx="3"/>
+      <circle cx="66" cy="85" r="2" fill="#78350f"/>
+      <rect x="34" y="54" width="12" height="12" fill="#fef08a" rx="2"/>
+      <rect x="74" y="54" width="12" height="12" fill="#fef08a" rx="2"/>
+      <!-- Destellos de bienvenida -->
+      <polygon points="60,8 62,12 66,13 62,15 60,19 58,15 54,13 58,12" fill="#fde047"/>
+    </svg>`,
+
+    // 1.3. Secuencia desordenada (Demostración de error pedagógico)
+    secuencia_desordenada: `<svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Error por desorden">
+      <rect width="340" height="180" rx="16" fill="#2d122d" stroke="#f43f5e" stroke-width="2"/>
+      <!-- Fondo y señal de alerta -->
+      <circle cx="65" cy="85" r="35" fill="rgba(244, 63, 94, 0.2)"/>
+      <text x="65" y="98" font-size="38" text-anchor="middle">❌</text>
+      <!-- Mostrador con dinero antes de comprar -->
+      <rect x="120" y="35" width="200" height="110" rx="12" fill="rgba(15, 23, 42, 0.75)" stroke="#fda4af" stroke-width="1.5"/>
+      <text x="220" y="62" fill="#fca5a5" font-size="13" font-weight="900" text-anchor="middle">¿PAGAR ANTES DE ELEGIR?</text>
+      <text x="220" y="85" fill="#fecdd3" font-size="11" text-anchor="middle">¡No sabemos qué compramos</text>
+      <text x="220" y="103" fill="#fecdd3" font-size="11" text-anchor="middle">ni cuánto cuesta!</text>
+      <path d="M 140 125 L 300 125" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,4"/>
+      <text x="220" y="138" fill="#fda4af" font-size="10" font-weight="700" text-anchor="middle">El orden de los pasos es fundamental.</text>
+    </svg>`,
+
+    // 1.4. Tarjeta del Concepto Central de Algoritmo
+    algoritmo_concepto: `<svg viewBox="0 0 360 170" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Concepto de algoritmo">
+      <defs>
+        <linearGradient id="concBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1e1b4b"/>
+          <stop offset="100%" stop-color="#311042"/>
+        </linearGradient>
+      </defs>
+      <rect width="360" height="170" rx="16" fill="url(#concBg)" stroke="#a855f7" stroke-width="2"/>
+      <!-- Bloques encastrados en orden hacia la meta -->
+      <g transform="translate(25, 45)">
+        <!-- Bloque 1 -->
+        <rect x="0" y="15" width="75" height="50" rx="8" fill="#3b82f6"/>
+        <text x="37" y="38" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">1. INICIO</text>
+        <path d="M 75 35 L 85 40 L 75 45 Z" fill="#3b82f6"/>
+        <!-- Flecha 1 -->
+        <path d="M 85 40 L 105 40" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="105,40 98,35 98,45" fill="#facc15"/>
+        <!-- Bloque 2 -->
+        <rect x="110" y="15" width="85" height="50" rx="8" fill="#8b5cf6"/>
+        <text x="152" y="38" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">2. PASOS</text>
+        <!-- Flecha 2 -->
+        <path d="M 195 40 L 215 40" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+        <polygon points="215,40 208,35 208,45" fill="#facc15"/>
+        <!-- Bloque 3: Meta -->
+        <rect x="220" y="10" width="85" height="60" rx="8" fill="#10b981" stroke="#34d399" stroke-width="2"/>
+        <text x="262" y="36" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">⭐ META</text>
+        <text x="262" y="55" fill="#d1fae5" font-size="9" font-weight="700" text-anchor="middle">RESUELTO</text>
+      </g>
+      <!-- Destellos de estrellas -->
+      <polygon points="40,25 43,30 48,31 44,34 45,39 40,36 35,39 36,34 32,31 37,30" fill="#fde047"/>
+      <polygon points="330,120 332,124 336,125 333,128 334,132 330,129 326,132 327,128 324,125 328,124" fill="#38bdf8"/>
+    </svg>`,
+
+    // 1.5. Ilustración de Gran Meta: Taller Mecánico
+    mecanico_taller: `<svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
+      <rect width="160" height="120" rx="14" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+      <!-- Taller con herramientas -->
+      <rect x="15" y="25" width="130" height="85" rx="8" fill="#1e293b"/>
+      <text x="80" y="42" fill="#fde047" font-size="10" font-weight="900" text-anchor="middle">🔧 TALLER MECÁNICO</text>
+      <!-- Mecánico sonriente y herramientas -->
+      <g transform="translate(62, 48)">
+        <circle cx="18" cy="14" r="12" fill="#fed7aa"/>
+        <path d="M 6 12 Q 18 4 30 12 L 36 12" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="22" cy="14" r="1.5" fill="#0f172a"/>
+        <rect x="8" y="26" width="20" height="32" rx="4" fill="#0284c7"/>
+        <line x1="12" y1="26" x2="12" y2="38" stroke="#facc15" stroke-width="2"/>
+        <line x1="24" y1="26" x2="24" y2="38" stroke="#facc15" stroke-width="2"/>
+        <path d="M 28 32 L 40 24" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="42" cy="22" r="4" fill="none" stroke="#94a3b8" stroke-width="2"/>
+      </g>
+    </svg>`,
+
+    // 1.6. Mini-íconos SVG para Bloques Cotidianos
+    taza: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#4c1d95"/><path d="M10 14 L12 32 Q20 35 28 32 L30 14 Z" fill="#8b5cf6"/><path d="M29 18 Q36 18 36 24 Q36 30 28 30" stroke="#8b5cf6" stroke-width="2.5" fill="none"/><line x1="16" y1="10" x2="16" y2="6" stroke="#facc15" stroke-width="1.5"/></svg>`,
+    cafe_polvo: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#451a03"/><circle cx="20" cy="20" r="12" fill="#78350f"/><path d="M15 20 Q20 14 25 20" stroke="#facc15" stroke-width="2" fill="none"/></svg>`,
+    pava: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1e293b"/><path d="M12 18 L10 32 L30 32 L28 18 Z" fill="#94a3b8"/><path d="M14 18 Q20 10 26 18" stroke="#f59e0b" stroke-width="2.5" fill="none"/><line x1="28" y1="22" x2="35" y2="18" stroke="#94a3b8" stroke-width="2.5"/></svg>`,
+    agua_caliente: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0369a1"/><path d="M20 8 Q28 20 28 28 A8 8 0 0 1 12 28 Q12 20 20 8 Z" fill="#38bdf8"/><path d="M16 6 Q20 2 24 6" stroke="#facc15" stroke-width="1.5" fill="none"/></svg>`,
+    cuchara: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#334155"/><ellipse cx="15" cy="15" rx="6" ry="8" fill="#cbd5e1" transform="rotate(-30 15 15)"/><line x1="19" y1="20" x2="32" y2="33" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/></svg>`,
+    servir_taza: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#15803d"/><rect x="6" y="28" width="28" height="4" rx="2" fill="#e2e8f0"/><rect x="12" y="16" width="16" height="12" rx="3" fill="#8b5cf6"/></svg>`,
+    sal: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#ef4444"/><rect x="14" y="14" width="12" height="18" rx="3" fill="#ffffff"/><text x="20" y="27" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">SAL</text></svg>`,
+    pijama: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#6366f1"/><path d="M12 12 L28 12 L32 30 L8 30 Z" fill="#a5b4fc"/><line x1="20" y1="12" x2="20" y2="30" stroke="#4f46e5" stroke-width="2"/></svg>`,
+    cartuchera: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0284c7"/><rect x="8" y="14" width="24" height="14" rx="5" fill="#38bdf8"/><line x1="8" y1="18" x2="32" y2="18" stroke="#facc15" stroke-width="2"/></svg>`,
+
+    jarra: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0e7490"/><path d="M14 10 L12 32 Q20 36 28 32 L26 10 Z" fill="#22d3ee" opacity="0.8"/></svg>`,
+    frutas: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#ea580c"/><circle cx="16" cy="22" r="8" fill="#f97316"/><circle cx="26" cy="20" r="7" fill="#ef4444"/></svg>`,
+    lavar_fruta: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0284c7"/><circle cx="20" cy="24" r="8" fill="#f97316"/><path d="M20 8 L20 14" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    cortar_fruta: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#b45309"/><ellipse cx="20" cy="26" rx="10" ry="6" fill="#f97316"/><line x1="12" y1="12" x2="28" y2="28" stroke="#cbd5e1" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    exprimir: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#f59e0b"/><polygon points="20,10 14,24 26,24" fill="#ea580c"/><rect x="16" y="24" width="8" height="8" fill="#78350f"/></svg>`,
+    jarra_agua: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0369a1"/><path d="M14 12 L12 30 Q20 34 28 30 L26 12 Z" fill="#38bdf8"/></svg>`,
+    servir_jugo: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#15803d"/><rect x="12" y="16" width="16" height="20" rx="3" fill="#ea580c"/><line x1="16" y1="10" x2="24" y2="10" stroke="#facc15" stroke-width="2"/></svg>`,
+    pimienta: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1e293b"/><circle cx="20" cy="20" r="10" fill="#0f172a"/><circle cx="18" cy="18" r="1" fill="#ffffff"/><circle cx="22" cy="22" r="1" fill="#ffffff"/></svg>`,
+    bicicleta: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0369a1"/><circle cx="13" cy="26" r="6" stroke="#38bdf8" stroke-width="2" fill="none"/><circle cx="27" cy="26" r="6" stroke="#38bdf8" stroke-width="2" fill="none"/><path d="M13 26 L20 18 L27 26" stroke="#38bdf8" stroke-width="2" fill="none"/></svg>`,
+    zapatilla: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#7c3aed"/><path d="M10 26 L14 18 L24 20 L30 26 Z" fill="#a78bfa"/><line x1="16" y1="20" x2="22" y2="24" stroke="#ffffff" stroke-width="1.5"/></svg>`,
+
+    mochila: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1d4ed8"/><rect x="10" y="12" width="20" height="22" rx="5" fill="#3b82f6"/><path d="M14 12 Q20 6 26 12" stroke="#1d4ed8" stroke-width="2.5" fill="none"/></svg>`,
+    horario: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0f766e"/><rect x="10" y="10" width="20" height="22" rx="3" fill="#ccfbf1"/><line x1="14" y1="16" x2="26" y2="16" stroke="#0f766e" stroke-width="1.5"/><line x1="14" y1="22" x2="26" y2="22" stroke="#0f766e" stroke-width="1.5"/></svg>`,
+    cuadernos: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#b91c1c"/><rect x="12" y="10" width="16" height="22" rx="3" fill="#ef4444"/><line x1="14" y1="10" x2="14" y2="32" stroke="#ffffff" stroke-width="2"/></svg>`,
+    guardar_libros: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1e3a8a"/><rect x="10" y="12" width="20" height="20" rx="4" fill="#3b82f6"/><path d="M20 8 L20 20 M16 16 L20 20 L24 16" stroke="#facc15" stroke-width="2" stroke-linecap="round"/></svg>`,
+    mochila_cerrada: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1e40af"/><rect x="10" y="12" width="20" height="22" rx="5" fill="#2563eb"/><line x1="20" y1="14" x2="20" y2="26" stroke="#facc15" stroke-width="2"/><circle cx="20" cy="18" r="2.5" fill="#facc15"/></svg>`,
+    cepillo: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#38bdf8"/><rect x="8" y="18" width="24" height="4" rx="2" fill="#ffffff"/><rect x="24" y="14" width="8" height="4" fill="#38bdf8"/></svg>`,
+    sarten: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#475569"/><circle cx="18" cy="20" r="10" fill="#1e293b"/><line x1="26" y1="24" x2="34" y2="28" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/></svg>`,
+    auto: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#b91c1c"/><rect x="10" y="18" width="20" height="10" rx="2" fill="#ef4444"/><circle cx="14" cy="28" r="3" fill="#0f172a"/><circle cx="26" cy="28" r="3" fill="#0f172a"/></svg>`,
+
+    juguetes: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#b45309"/><circle cx="16" cy="24" r="6" fill="#ef4444"/><rect x="22" y="18" width="10" height="10" fill="#3b82f6"/></svg>`,
+    canasto: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#a16207"/><path d="M10 16 L13 32 L27 32 L30 16 Z" fill="#ca8a04"/><line x1="12" y1="16" x2="28" y2="16" stroke="#713f12" stroke-width="2"/></svg>`,
+    repisa: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#581c87"/><line x1="6" y1="28" x2="34" y2="28" stroke="#e2e8f0" stroke-width="3"/><rect x="10" y="14" width="5" height="14" fill="#ec4899"/><rect x="17" y="12" width="6" height="16" fill="#3b82f6"/><rect x="25" y="15" width="5" height="13" fill="#10b981"/></svg>`,
+    ropa: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#1e1b4b"/><path d="M12 14 L28 14 L30 28 L10 28 Z" fill="#ec4899"/><path d="M16 14 Q20 18 24 14" stroke="#ffffff" stroke-width="1.5" fill="none"/></svg>`,
+    cama: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#065f46"/><rect x="8" y="18" width="24" height="14" rx="2" fill="#10b981"/><rect x="9" y="16" width="8" height="6" rx="2" fill="#ffffff"/></svg>`,
+    regar: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#0284c7"/><rect x="12" y="18" width="14" height="12" rx="3" fill="#0284c7"/><path d="M26 22 L32 18" stroke="#38bdf8" stroke-width="2"/></svg>`,
+    futbol: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#15803d"/><circle cx="20" cy="20" r="10" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/><circle cx="20" cy="20" r="3" fill="#0f172a"/></svg>`,
+    paraguas: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#701a75"/><path d="M10 22 Q20 10 30 22 Z" fill="#ec4899"/><line x1="20" y1="22" x2="20" y2="32" stroke="#ffffff" stroke-width="2"/><path d="M20 32 Q23 35 25 32" stroke="#ffffff" stroke-width="2" fill="none"/></svg>`
   };
 
+  // 1.7. Avatar de Bity con expresiones
   function getBitySvg(mood = 'happy') {
-    const eyeColor = mood === 'thinking' ? '#facc15' : (mood === 'celebrating' ? '#34d399' : '#38bdf8');
+    const eyeColor = mood === 'thinking' ? '#facc15' : (mood === 'celebrating' ? '#34d399' : (mood === 'alert' ? '#f87171' : '#38bdf8'));
     return `
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="bity-svg-avatar" aria-label="Bity el robot">
       <circle cx="50" cy="50" r="46" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="3"/>
+      <!-- Antena -->
       <rect x="47" y="10" width="6" height="14" fill="#a855f7" rx="3"/>
       <circle cx="50" cy="9" r="6" fill="#facc15"/>
+      <!-- Cabeza -->
       <rect x="25" y="24" width="50" height="42" rx="12" fill="#312e81" stroke="#6366f1" stroke-width="2.5"/>
       <rect x="32" y="32" width="36" height="24" rx="6" fill="#0f172a"/>
       ${mood === 'thinking' ? `
         <circle cx="40" cy="44" r="4" fill="${eyeColor}"/>
         <circle cx="60" cy="44" r="4" fill="${eyeColor}"/>
         <line x1="34" y1="38" x2="45" y2="40" stroke="#facc15" stroke-width="2" stroke-linecap="round"/>
+      ` : mood === 'alert' ? `
+        <circle cx="40" cy="44" r="4.5" fill="${eyeColor}"/>
+        <circle cx="60" cy="44" r="4.5" fill="${eyeColor}"/>
+        <line x1="34" y1="38" x2="44" y2="42" stroke="#f87171" stroke-width="2"/>
+        <line x1="66" y1="38" x2="56" y2="42" stroke="#f87171" stroke-width="2"/>
       ` : `
         <circle cx="40" cy="44" r="4.5" fill="${eyeColor}"/>
         <circle cx="60" cy="44" r="4.5" fill="${eyeColor}"/>
@@ -118,1590 +276,1629 @@
   }
 
   // ============================================================
-  // 2. ACTIVIDADES PEDAGÓGICAS POR GRADO (1.º A 5.º)
-  // Espacios de respuesta completamente vacíos, sin soluciones
+  // 2. ACTIVIDADES COTIDIANAS (PARTE 2)
   // ============================================================
-  const GRADE_ALGORITHMS_ACTIVITIES = {
-    1: [
-      {
-        id: 'g1_act1_mochila',
-        num: 1,
-        shortName: 'Mochila',
-        title: 'Preparar la mochila para ir al colegio',
-        context: '¡Una nueva mañana de clases! Para que la jornada sea genial y no te olvides de nada, necesitás preparar tu mochila con anticipación.',
-        prompt: 'Pensá qué cosas tenés que hacer para preparar tu mochila antes de ir al colegio. Escribí los pasos en orden.',
-        icon: '🎒',
-        initialStepsCount: 4,
-        hints: [
-          '¿Revisaste tu cuaderno o el horario para saber qué materias tenés hoy?',
-          'Recordá abrir la mochila antes de guardar los útiles y cuadernos.',
-          'No te olvides de cerrar bien el cierre cuando termines de guardar todo.'
-        ],
-        keywords: {
-          open: ['abrir', 'abro', 'abrí', 'mochila'],
-          items: ['cuaderno', 'libro', 'cartuchera', 'lapiz', 'lápiz', 'lapicera', 'util', 'útil', 'carpeta', 'merienda'],
-          close: ['cerrar', 'cierro', 'cerrá', 'cierre', 'guardar'],
-          carry: ['poner', 'colgar', 'espalda', 'llevar', 'listo', 'lista', 'hombro']
-        }
-      },
-      {
-        id: 'g1_act2_manos',
-        num: 2,
-        shortName: 'Manos',
-        title: 'Lavarse las manos',
-        context: 'Lavarse las manos elimina bacterias y nos mantiene sanos antes de comer o después de jugar.',
-        prompt: 'Imaginá que tenés que explicarle a un compañero cómo lavarse las manos. Escribí las instrucciones en orden.',
-        icon: '🧼',
-        initialStepsCount: 4,
-        hints: [
-          'Pensá qué hacés primero: ¿mojás las manos antes o después del jabón?',
-          '¿Cuánto tiempo te frotás las manos para que queden con mucha espuma limpia?',
-          'Recordá qué paso es fundamental al final para no dejar todo mojado.'
-        ],
-        keywords: {
-          water: ['abrir', 'canilla', 'agua', 'mojar', 'mojo', 'mojate'],
-          soap: ['jabon', 'jabón', 'poner', 'frotar', 'espuma', 'lavar'],
-          rinse: ['enjuagar', 'enjuago', 'sacar', 'quitar'],
-          dry: ['secar', 'seco', 'toalla', 'cerrar']
-        }
-      },
-      {
-        id: 'g1_act3_dormir',
-        num: 3,
-        shortName: 'Dormir',
-        title: 'Prepararse para ir a dormir',
-        context: 'Terminó el día y el cuerpo necesita descansar para tener energía mañana.',
-        prompt: '¿Qué cosas hacés antes de acostarte? Escribí los pasos que seguirías.',
-        icon: '🌙',
-        initialStepsCount: 4,
-        hints: [
-          'Pensá en tu rutina nocturna: cepillarte los dientes, ponerte el pijama...',
-          '¿Apagás la luz antes o después de meterte en la cama?',
-          '¡Un buen descanso empieza con una rutina ordenada!'
-        ],
-        keywords: {
-          hygiene: ['dientes', 'lavar', 'cepillar', 'bañar', 'pijama', 'ropa'],
-          bed: ['cama', 'acostar', 'acuesto', 'meter', 'tapar'],
-          lights: ['apagar', 'luz', 'dormir', 'ojos', 'descansar', 'velador']
-        }
-      }
-    ],
-
-    2: [
-      {
-        id: 'g2_act1_desayuno',
-        num: 1,
-        shortName: 'Desayuno',
-        title: 'Preparar el desayuno',
-        context: 'El desayuno nos da la energía necesaria para aprender y jugar toda la mañana.',
-        prompt: 'Pensá en todos los pasos necesarios para preparar un desayuno rico y saludable. Escribí las acciones en el orden correcto.',
-        icon: '🥣',
-        initialStepsCount: 4,
-        hints: [
-          'Pensá qué alimentos vas a desayunar y qué utensilios necesitás (taza, cuchara, plato).',
-          'Para servir la leche o untar tostadas, necesitás tener primero los recipientes listos.',
-          '¿Qué hacés cuando terminás de desayunar? (Limpiar la mesa, llevar la taza a la bacha).'
-        ],
-        keywords: {
-          prep: ['taza', 'plato', 'sacar', 'buscar', 'vaso', 'mesa'],
-          serve: ['leche', 'cereal', 'pan', 'tostada', 'servir', 'poner', 'calentar', 'untar', 'manteca', 'mermelada', 'fruta'],
-          eat: ['comer', 'tomar', 'desayunar', 'beber'],
-          cleanup: ['guardar', 'limpiar', 'lavar', 'ordenar']
-        }
-      },
-      {
-        id: 'g2_act2_utiles',
-        num: 2,
-        shortName: 'Útiles',
-        title: 'Organizar los útiles antes de comenzar una clase',
-        context: 'Tener la mesa despejada y los materiales listos nos ayuda a concentrarnos mejor.',
-        prompt: 'Para trabajar cómodo y no olvidar nada, necesitás ordenar tu mesa. Escribí los pasos para organizar tus útiles escolares.',
-        icon: '✏️',
-        initialStepsCount: 4,
-        hints: [
-          'Primero sentate cómodo y abrí tu mochila para sacar solo lo necesario de esta materia.',
-          'Ubicá el cuaderno frente a vos y la cartuchera a un costado donde no estorbe.',
-          'Verificá tener lápiz con punta, goma y regla antes de que comience la explicación.'
-        ],
-        keywords: {
-          open: ['mochila', 'sacar', 'abrir'],
-          place: ['cuaderno', 'libro', 'cartuchera', 'mesa', 'banco', 'ubicar', 'apoyar'],
-          prepare: ['lapiz', 'lápiz', 'goma', 'punta', 'regla', 'color'],
-          ready: ['sentar', 'atento', 'escuchar', 'listo', 'lista']
-        }
-      },
-      {
-        id: 'g2_act3_planta',
-        num: 3,
-        shortName: 'Planta',
-        title: 'Regar una planta correctamente',
-        context: 'Las plantas necesitan agua, pero regarlas de más o de menos puede marchitarlas.',
-        prompt: 'Una planta necesita cuidado y agua en la cantidad justa. Escribí la secuencia de pasos para regarla sin inundarla.',
-        icon: '🌱',
-        initialStepsCount: 4,
-        hints: [
-          'Antes de regar, tocá suavemente la tierra para comprobar si está seca o húmeda.',
-          'Buscá una regadera o jarrito con agua limpia a temperatura ambiente.',
-          'Verté el agua despacio sobre la tierra cerca de las raíces, sin ahogar las hojas.'
-        ],
-        keywords: {
-          check: ['tierra', 'mirar', 'tocar', 'revisar', 'seca', 'humeda', 'húmeda'],
-          getWater: ['regadera', 'agua', 'llenar', 'canilla', 'vaso'],
-          water: ['regar', 'echar', 'tirar', 'verter', 'despacio', 'suave', 'raiz', 'raíz'],
-          finish: ['dejar', 'guardar', 'luz', 'sol', 'limpiar']
-        }
-      }
-    ],
-
-    3: [
-      {
-        id: 'g3_act1_parque',
-        num: 1,
-        shortName: 'Parque',
-        title: 'Organizar una salida al parque',
-        context: 'Ir a jugar al parque con amigos o familia requiere coordinar varias tareas previas.',
-        prompt: 'Querés pasar una linda tarde con amigos en el parque. Escribí el algoritmo con los pasos que debés seguir antes y durante la salida.',
-        icon: '🌳',
-        initialStepsCount: 5,
-        hints: [
-          'Pensá en coordinar el horario y pedir permiso a los adultos responsables.',
-          '¿Qué vas a llevar? Botella con agua, gorra, pelota, merienda...',
-          'Recordá el camino, jugar con cuidado y juntar tus pertenencias antes de regresar.'
-        ],
-        keywords: {
-          plan: ['permiso', 'amigos', 'horario', 'acordar', 'avisar'],
-          pack: ['botella', 'agua', 'pelota', 'gorra', 'mochila', 'guardar'],
-          go: ['caminar', 'ir', 'llegar', 'plaza', 'parque'],
-          play: ['jugar', 'correr', 'divertirse'],
-          return: ['juntar', 'guardar', 'volver', 'regresar']
-        }
-      },
-      {
-        id: 'g3_act2_receta',
-        num: 2,
-        shortName: 'Receta',
-        title: 'Preparar una receta sencilla',
-        context: 'Una receta de cocina es el ejemplo clásico de algoritmo: ingredientes (datos de entrada) e instrucciones paso a paso.',
-        prompt: 'Elegí una receta sencilla (como una ensalada de frutas o un sándwich) y escribí el algoritmo paso a paso con los ingredientes y la preparación.',
-        icon: '🥪',
-        initialStepsCount: 5,
-        hints: [
-          'Lavate las manos y reuní todos los ingredientes e implementos sobre la mesada.',
-          'Escribí las instrucciones de corte, untado o mezclado en el orden exacto.',
-          'Finalizá con la presentación del plato y el orden de la cocina.'
-        ],
-        keywords: {
-          hygiene: ['manos', 'lavar', 'limpiar'],
-          ingredients: ['ingredientes', 'pan', 'fruta', 'queso', 'sacar', 'juntar'],
-          prep: ['cortar', 'pelar', 'untar', 'mezclar', 'colocar', 'poner', 'armar'],
-          serve: ['servir', 'plato', 'comer', 'disfrutar', 'ordenar']
-        }
-      },
-      {
-        id: 'g3_act3_tiempo_escuela',
-        num: 3,
-        shortName: 'A tiempo',
-        title: 'Resolver el problema de llegar a tiempo a la escuela',
-        context: 'Llegar puntual a la escuela requiere coordinar tiempos, levantarse con margen y evitar distracciones.',
-        prompt: 'A veces nos demoramos por la mañana. Escribí un algoritmo con los pasos organizados para no llegar tarde a la escuela.',
-        icon: '⏰',
-        initialStepsCount: 5,
-        hints: [
-          'Pensá en dejar lista la ropa y la mochila la noche anterior.',
-          'Fijá una alarma con tiempo suficiente para desayunar sin apuro.',
-          'Calculá el tiempo de traslado desde casa hasta la puerta del colegio.'
-        ],
-        keywords: {
-          alarm: ['alarma', 'despertador', 'despertar', 'levantar', 'temprano', 'hora'],
-          routine: ['lavar', 'vestir', 'cambiar', 'ropa', 'uniforme', 'desayuno', 'desayunar'],
-          pack: ['mochila', 'verificar', 'agarrar'],
-          travel: ['salir', 'caminar', 'auto', 'colectivo', 'viajar', 'llegar', 'escuela', 'colegio', 'tiempo', 'puntual']
-        }
-      }
-    ],
-
-    4: [
-      {
-        id: 'g4_act1_ropa_clima',
-        num: 1,
-        shortName: 'Clima',
-        title: '¿Qué ropa usar según el clima? (Decisiones)',
-        context: 'Los algoritmos inteligentes toman decisiones analizando condiciones. Según la temperatura elegimos qué ponernos.',
-        prompt: 'Mirá por la ventana: el clima puede cambiar. Diseñá un algoritmo que incluya decisiones del tipo: SI hace frío, ENTONCES abrigarse; SI hace calor, ENTONCES ropa liviana.',
-        icon: '⛅',
-        initialStepsCount: 5,
-        hints: [
-          'Paso 1: Mirar por la ventana o consultar la temperatura.',
-          'Paso 2: Condición: SI hace frío (o menos de 18 grados)...',
-          'Paso 3: Acción: ...ENTONCES ponerse campera o abrigo.',
-          'Paso 4: Alternativa: SINO (si hace calor)... ENTONCES usar remera y ropa liviana.',
-          'Paso 5: SI llueve, ENTONCES llevar paraguas o piloto.'
-        ],
-        keywords: {
-          check: ['mirar', 'clima', 'tiempo', 'temperatura', 'pronostico', 'pronóstico'],
-          ifCold: ['si', 'frio', 'frío', 'entonces', 'campera', 'abrigo', 'buzo', 'pantalon', 'pantalón'],
-          ifHot: ['si', 'calor', 'sino', 'entonces', 'remera', 'liviana', 'fresca', 'short'],
-          ifRain: ['llueve', 'lluvia', 'paraguas', 'piloto', 'botas']
-        }
-      },
-      {
-        id: 'g4_act2_salida_lluvia_sol',
-        num: 2,
-        shortName: 'Lluvia / Sol',
-        title: 'Organizar una salida considerando si llueve o hace sol',
-        context: 'Al planificar una salida debemos tener un plan A y un plan B según el clima.',
-        prompt: 'Planeá una salida de fin de semana analizando alternativas: SI llueve, ENTONCES elegir una actividad bajo techo; SI hay sol, ENTONCES ir al aire libre.',
-        icon: '🌦️',
-        initialStepsCount: 5,
-        hints: [
-          'Definí dos opciones de salida (ej: cine/museo vs parque/cancha).',
-          'Escribí la instrucción condicional: SI llueve el sábado, ENTONCES...',
-          'Escribí la instrucción alternativa: SINO (si hace sol), ENTONCES...',
-          'Avisale a tus amigos cuál es el plan elegido según el resultado.'
-        ],
-        keywords: {
-          plan: ['planear', 'salida', 'proponer', 'amigos', 'fin de semana'],
-          ifRain: ['si', 'llueve', 'lluvia', 'entonces', 'cine', 'museo', 'casa', 'adentro', 'techo', 'juegos'],
-          ifSun: ['sino', 'si', 'sol', 'despejado', 'entonces', 'parque', 'plaza', 'aire libre', 'bicicleta'],
-          confirm: ['avisar', 'confirmar', 'horario', 'salir', 'disfrutar']
-        }
-      },
-      {
-        id: 'g4_act3_decision_resultado',
-        num: 3,
-        shortName: 'Decisión',
-        title: 'Decidir según el resultado de una acción',
-        context: 'En programación, muchas instrucciones dependen del resultado inmediato de una acción previa (éxito o fallo).',
-        prompt: 'Imaginá que estás buscando un libro en la biblioteca o intentando abrir una puerta con una llave. Escribí un algoritmo donde tomes una decisión según si encontrás lo que buscabas o no.',
-        icon: '🔑',
-        initialStepsCount: 5,
-        hints: [
-          'Paso 1: Realizar la acción de búsqueda o prueba (probar la llave / buscar en el estante).',
-          'Paso 2: Condición de éxito: SI la llave gira (o encontré el libro), ENTONCES...',
-          'Paso 3: Condición alternativa: SINO (la llave no entra o no está el libro), ENTONCES...',
-          'Paso 4: Finalizar alcanzando el objetivo.'
-        ],
-        keywords: {
-          action: ['buscar', 'probar', 'llave', 'libro', 'intentar', 'cerradura', 'estante'],
-          ifSuccess: ['si', 'abre', 'gira', 'encuentro', 'encontre', 'encontré', 'esta', 'está', 'entonces', 'entrar', 'leer'],
-          ifFail: ['sino', 'si no', 'no abre', 'no esta', 'no está', 'entonces', 'otra', 'llave', 'pedir', 'ayuda', 'bibliotecario'],
-          finish: ['abrir', 'guardar', 'listo', 'logrado']
-        }
-      }
-    ],
-
-    5: [
-      {
-        id: 'g5_act1_trivia_juego',
-        num: 1,
-        shortName: 'Trivia',
-        title: 'Juego de preguntas y respuestas (Decisión y Bucle)',
-        context: 'Los videojuegos de preguntas y respuestas evalúan cada respuesta con condiciones y repiten el ciclo para cada jugador.',
-        prompt: 'Diseñá el algoritmo de un juego de trivia: mostrar la pregunta, leer la respuesta, SI es correcta sumar puntos, SINO mostrar la respuesta correcta, y REPETIR para la siguiente pregunta.',
-        icon: '🎮',
-        initialStepsCount: 5,
-        hints: [
-          'Inicialización: Empezar con el puntaje en 0.',
-          'Bucle principal: REPETIR para cada una de las preguntas:',
-          'Mostrar la pregunta en pantalla y esperar la respuesta del jugador.',
-          'Condición: SI la respuesta es correcta, ENTONCES sumar 10 puntos. SINO, mostrar la respuesta correcta.',
-          'Cierre: Al terminar todas las preguntas, mostrar el puntaje final.'
-        ],
-        keywords: {
-          init: ['iniciar', 'empezar', 'puntaje', 'puntos', 'cero', '0'],
-          show: ['mostrar', 'pregunta', 'pantalla', 'leer', 'ingresar', 'respuesta'],
-          ifCorrect: ['si', 'correcta', 'acierta', 'igual', 'entonces', 'sumar', 'punto', 'puntos', 'felicitar'],
-          ifWrong: ['sino', 'incorrecta', 'falla', 'entonces', 'mostrar', 'correcta', 'perder'],
-          repeat: ['repetir', 'siguiente', 'pregunta', 'bucle', 'mientras', 'final', 'resultado', 'ganador']
-        }
-      },
-      {
-        id: 'g5_act2_par_impar',
-        num: 2,
-        shortName: 'Par / Impar',
-        title: 'Determinar si un número es par o impar (Regla Matemática)',
-        context: 'Un algoritmo matemático recibe un dato de entrada y mediante una regla lógica determina si pertenece a los pares o impares.',
-        prompt: 'Diseñá un algoritmo para determinar si un número es par o impar. Pensá en la regla matemática (dividir por 2 o mirar la última cifra) y la decisión final.',
-        icon: '🔢',
-        initialStepsCount: 5,
-        hints: [
-          'Paso 1: Ingresar o elegir el número a comprobar.',
-          'Paso 2: Dividir el número entre 2 y calcular el resto (residuo), O mirar si su última cifra es 0, 2, 4, 6 u 8.',
-          'Paso 3: SI el resto es 0 (o termina en 0, 2, 4, 6, 8), ENTONCES informar que es PAR.',
-          'Paso 4: SINO, informar que es IMPAR.',
-          'Paso 5: Fin del algoritmo.'
-        ],
-        keywords: {
-          input: ['pedir', 'ingresar', 'elegir', 'numero', 'número', 'leer', 'dato'],
-          mathCheck: ['dividir', 'resto', 'residuo', '2', 'dos', 'ultima', 'última', 'cifra', 'termina'],
-          ifEven: ['si', 'resto', '0', 'cero', 'par', 'entonces', 'mensaje', 'es par'],
-          ifOdd: ['sino', 'resto', '1', 'impar', 'entonces', 'es impar'],
-          finish: ['mostrar', 'resultado', 'fin', 'terminar']
-        }
-      },
-      {
-        id: 'g5_act3_repetir_bucle',
-        num: 3,
-        shortName: 'Repetición',
-        title: 'Secuencia con repetición hasta alcanzar un objetivo',
-        context: 'Los bucles o repeticiones permiten que una persona o computadora ejecute una acción varias veces sin reescribirla, hasta cumplir una meta.',
-        prompt: 'Diseñá un algoritmo que utilice un bucle o repetición (por ejemplo: inflar un globo hasta que esté del tamaño deseado, llenar un balde con vasos de agua, o dar pasos hasta llegar a una meta).',
-        icon: '🔁',
-        initialStepsCount: 5,
-        hints: [
-          'Definí cuál es la acción que se repite (ej: soplar aire / echar un vaso de agua / dar un paso).',
-          'Escribí la condición de parada: REPETIR... HASTA QUE el objetivo se cumpla.',
-          'En cada ciclo: ejecutar la acción y verificar si ya se alcanzó la meta.',
-          'Al salir del bucle: realizar la acción final (atar el globo / cerrar la canilla / festejar).'
-        ],
-        keywords: {
-          setup: ['empezar', 'globo', 'balde', 'agua', 'paso', 'meta', 'objetivo'],
-          loop: ['repetir', 'mientras', 'hasta', 'bucle', 'soplar', 'echar', 'vaso', 'avanzar', 'caminar'],
-          checkCondition: ['verificar', 'medir', 'mirar', 'lleno', 'tamaño', 'llegar', 'distancia'],
-          finish: ['atar', 'nudo', 'frenar', 'detener', 'cerrar', 'terminar', 'listo', 'festejar']
-        }
-      }
+  const EVERYDAY_ACTIVITIES = {
+  cafe: {
+    id: 'cafe',
+    title: 'Preparamos un café',
+    titleG1: '¡AYUDÁ A PREPARAR UN CAFÉ!',
+    subtitle: 'Ordená los bloques con las instrucciones para preparar un café caliente.',
+    subtitleG1: 'ORDENÁ LOS BLOQUES PARA PREPARAR UN CAFÉ CALIENTE.',
+    safety: '⚠️ El agua caliente y la cocina deben ser manipuladas siempre por un adulto.',
+    safetyG1: '⚠️ EL AGUA CALIENTE DEBE SER MANIPULADA SIEMPRE POR UN ADULTO.',
+    iconSvg: 'cafe_taza',
+    steps: {
+      1: [
+        { id: 'taza', text: 'Buscar una taza limpia', textG1: 'BUSCAR UNA TAZA', svg: 'taza' },
+        { id: 'cafe', text: 'Poner café en la taza', textG1: 'PONER CAFÉ EN LA TAZA', svg: 'cafe_polvo' },
+        { id: 'agua', text: 'Agregar agua caliente con un adulto', textG1: 'AGREGAR AGUA CON UN ADULTO', svg: 'agua_caliente' },
+        { id: 'mezclar', text: 'Mezclar con una cuchara', textG1: 'MEZCLAR CON UNA CUCHARA', svg: 'cuchara' }
+      ],
+      2: [
+        { id: 'taza', text: 'Buscar una taza limpia', textG1: 'BUSCAR UNA TAZA LIMPIA', svg: 'taza' },
+        { id: 'cafe', text: 'Colocar café en la taza', textG1: 'COLOCAR CAFÉ EN LA TAZA', svg: 'cafe_polvo' },
+        { id: 'calentar', text: 'Calentar agua con ayuda de un adulto', textG1: 'CALENTAR AGUA CON UN ADULTO', svg: 'pava' },
+        { id: 'agua', text: 'Agregar el agua caliente con un adulto', textG1: 'AGREGAR AGUA CALIENTE CON ADULTO', svg: 'agua_caliente' },
+        { id: 'mezclar', text: 'Mezclar con una cuchara', textG1: 'MEZCLAR CON CUCHARA', svg: 'cuchara' }
+      ],
+      3: [
+        { id: 'taza', text: 'Buscar una taza limpia', textG1: 'BUSCAR UNA TAZA LIMPIA', svg: 'taza' },
+        { id: 'cafe', text: 'Colocar café en la taza', textG1: 'COLOCAR CAFÉ EN LA TAZA', svg: 'cafe_polvo' },
+        { id: 'calentar', text: 'Calentar agua con ayuda de un adulto', textG1: 'CALENTAR AGUA CON ADULTO', svg: 'pava' },
+        { id: 'agua', text: 'Agregar el agua caliente con un adulto', textG1: 'AGREGAR AGUA CALIENTE', svg: 'agua_caliente' },
+        { id: 'mezclar', text: 'Mezclar bien con la cuchara', textG1: 'MEZCLAR BIEN CON CUCHARA', svg: 'cuchara' },
+        { id: 'servir', text: 'Servir en la mesa con cuidado', textG1: 'SERVIR EN LA MESA CON CUIDADO', svg: 'servir_taza' }
+      ],
+      4: [
+        { id: 'taza', text: 'Buscar una taza limpia', textG1: 'BUSCAR UNA TAZA LIMPIA', svg: 'taza' },
+        { id: 'cafe', text: 'Colocar café en la taza', textG1: 'COLOCAR CAFÉ EN LA TAZA', svg: 'cafe_polvo' },
+        { id: 'calentar', text: 'Calentar agua con ayuda de un adulto', textG1: 'CALENTAR AGUA CON ADULTO', svg: 'pava' },
+        { id: 'agua', text: 'Agregar el agua caliente con un adulto', textG1: 'AGREGAR EL AGUA CALIENTE', svg: 'agua_caliente' },
+        { id: 'mezclar', text: 'Mezclar con una cuchara', textG1: 'MEZCLAR CON UNA CUCHARA', svg: 'cuchara' },
+        { id: 'servir', text: 'Servir en la mesa con cuidado', textG1: 'SERVIR EN LA MESA CON CUIDADO', svg: 'servir_taza' }
+      ],
+      5: [
+        { id: 'taza', text: 'Buscar una taza limpia', textG1: 'BUSCAR UNA TAZA LIMPIA', svg: 'taza' },
+        { id: 'cafe', text: 'Colocar café en la taza', textG1: 'COLOCAR CAFÉ EN LA TAZA', svg: 'cafe_polvo' },
+        { id: 'calentar', text: 'Calentar agua con ayuda de un adulto', textG1: 'CALENTAR AGUA CON ADULTO', svg: 'pava' },
+        { id: 'agua', text: 'Agregar el agua caliente con un adulto', textG1: 'AGREGAR EL AGUA CALIENTE', svg: 'agua_caliente' },
+        { id: 'mezclar', text: 'Mezclar con una cuchara', textG1: 'MEZCLAR CON UNA CUCHARA', svg: 'cuchara' },
+        { id: 'servir', text: 'Servir en la mesa con cuidado', textG1: 'SERVIR EN LA MESA CON CUIDADO', svg: 'servir_taza' }
+      ]
+    },
+    distractors: [
+      { id: 'dist_sal', text: 'Poner sal en la taza', textG1: 'PONER SAL EN LA TAZA', svg: 'sal' },
+      { id: 'dist_pijama', text: 'Ponerse el pijama para dormir', textG1: 'PONERSE EL PIJAMA', svg: 'pijama' },
+      { id: 'dist_mochila', text: 'Guardar la cartuchera', textG1: 'GUARDAR LA CARTUCHERA', svg: 'cartuchera' }
     ]
-  };
+  },
+
+  jugo: {
+    id: 'jugo',
+    title: 'Preparamos un jugo',
+    titleG1: '¡PREPARAMOS UN JUGO FRESCO!',
+    subtitle: 'Construí el algoritmo para preparar una rica jarra de jugo.',
+    subtitleG1: 'CONSTRUÍ EL ALGORITMO PARA PREPARAR UN RICO JUGO.',
+    safety: '⚠️ El cuchillo y la licuadora requieren supervisión y ayuda de un adulto.',
+    safetyG1: '⚠️ EL CUCHILLO Y LA LICUADORA REQUIEREN AYUDA DE UN ADULTO.',
+    iconSvg: 'jugo_jarra',
+    steps: {
+      1: [
+        { id: 'jarra', text: 'Buscar una jarra limpia', textG1: 'BUSCAR UNA JARRA', svg: 'jarra' },
+        { id: 'frutas', text: 'Elegir las frutas frescas', textG1: 'ELEGIR LAS FRUTAS', svg: 'frutas' },
+        { id: 'exprimir', text: 'Exprimir las frutas con un adulto', textG1: 'EXPRIMIR CON UN ADULTO', svg: 'exprimir' },
+        { id: 'servir', text: 'Servir el jugo en vasos', textG1: 'SERVIR EL JUGO EN VASOS', svg: 'servir_jugo' }
+      ],
+      2: [
+        { id: 'jarra', text: 'Buscar una jarra limpia', textG1: 'BUSCAR UNA JARRA LIMPIA', svg: 'jarra' },
+        { id: 'frutas', text: 'Elegir las frutas frescas', textG1: 'ELEGIR LAS FRUTAS', svg: 'frutas' },
+        { id: 'lavar', text: 'Lavar muy bien las frutas', textG1: 'LAVAR BIEN LAS FRUTAS', svg: 'lavar_fruta' },
+        { id: 'exprimir', text: 'Exprimir con supervisión de un adulto', textG1: 'EXPRIMIR CON UN ADULTO', svg: 'exprimir' },
+        { id: 'servir', text: 'Servir en vasos con cuidado', textG1: 'SERVIR EN VASOS CON CUIDADO', svg: 'servir_jugo' }
+      ],
+      3: [
+        { id: 'jarra', text: 'Buscar una jarra limpia', textG1: 'BUSCAR UNA JARRA LIMPIA', svg: 'jarra' },
+        { id: 'frutas', text: 'Elegir las frutas frescas', textG1: 'ELEGIR LAS FRUTAS', svg: 'frutas' },
+        { id: 'lavar', text: 'Lavar muy bien las frutas', textG1: 'LAVAR BIEN LAS FRUTAS', svg: 'lavar_fruta' },
+        { id: 'cortar', text: 'Cortar las frutas con ayuda de un adulto', textG1: 'CORTAR FRUTAS CON UN ADULTO', svg: 'cortar_fruta' },
+        { id: 'exprimir', text: 'Exprimir o licuar con supervisión', textG1: 'EXPRIMIR O LICUAR CON ADULTO', svg: 'exprimir' },
+        { id: 'agua', text: 'Agregar agua fresca y mezclar', textG1: 'AGREGAR AGUA Y MEZCLAR', svg: 'jarra_agua' },
+        { id: 'servir', text: 'Servir en vasos para disfrutar', textG1: 'SERVIR EN VASOS', svg: 'servir_jugo' }
+      ],
+      4: [
+        { id: 'jarra', text: 'Buscar una jarra limpia', textG1: 'BUSCAR UNA JARRA LIMPIA', svg: 'jarra' },
+        { id: 'frutas', text: 'Elegir las frutas frescas', textG1: 'ELEGIR LAS FRUTAS', svg: 'frutas' },
+        { id: 'lavar', text: 'Lavar muy bien las frutas', textG1: 'LAVAR BIEN LAS FRUTAS', svg: 'lavar_fruta' },
+        { id: 'cortar', text: 'Cortar las frutas con ayuda de un adulto', textG1: 'CORTAR FRUTAS CON UN ADULTO', svg: 'cortar_fruta' },
+        { id: 'exprimir', text: 'Exprimir o licuar con supervisión', textG1: 'EXPRIMIR O LICUAR CON ADULTO', svg: 'exprimir' },
+        { id: 'agua', text: 'Agregar agua fresca y mezclar', textG1: 'AGREGAR AGUA Y MEZCLAR', svg: 'jarra_agua' },
+        { id: 'servir', text: 'Servir en vasos para disfrutar', textG1: 'SERVIR EN VASOS', svg: 'servir_jugo' }
+      ],
+      5: [
+        { id: 'jarra', text: 'Buscar una jarra limpia', textG1: 'BUSCAR UNA JARRA LIMPIA', svg: 'jarra' },
+        { id: 'frutas', text: 'Elegir las frutas frescas', textG1: 'ELEGIR LAS FRUTAS', svg: 'frutas' },
+        { id: 'lavar', text: 'Lavar muy bien las frutas', textG1: 'LAVAR BIEN LAS FRUTAS', svg: 'lavar_fruta' },
+        { id: 'cortar', text: 'Cortar las frutas con ayuda de un adulto', textG1: 'CORTAR FRUTAS CON UN ADULTO', svg: 'cortar_fruta' },
+        { id: 'exprimir', text: 'Exprimir o licuar con supervisión', textG1: 'EXPRIMIR O LICUAR CON ADULTO', svg: 'exprimir' },
+        { id: 'agua', text: 'Agregar agua fresca y mezclar', textG1: 'AGREGAR AGUA Y MEZCLAR', svg: 'jarra_agua' },
+        { id: 'servir', text: 'Servir en vasos para disfrutar', textG1: 'SERVIR EN VASOS', svg: 'servir_jugo' }
+      ]
+    },
+    distractors: [
+      { id: 'dist_pimienta', text: 'Agregarle pimienta molida', textG1: 'AGREGAR PIMIENTA', svg: 'pimienta' },
+      { id: 'dist_bici', text: 'Salir a andar en bicicleta', textG1: 'ANDAR EN BICICLETA', svg: 'bicicleta' },
+      { id: 'dist_cordones', text: 'Atarse los cordones', textG1: 'ATARSE LOS CORDONES', svg: 'zapatilla' }
+    ]
+  },
+
+  mochila: {
+    id: 'mochila',
+    title: 'Preparamos la mochila',
+    titleG1: '¡PREPARAMOS LA MOCHILA!',
+    subtitle: 'Organizá los bloques para tener la mochila lista para el colegio.',
+    subtitleG1: 'ORGANIZÁ LOS BLOQUES PARA PREPARAR LA MOCHILA.',
+    safety: '💡 ¡Tener la mochila lista a tiempo te permite llegar tranquilo al colegio!',
+    safetyG1: '💡 ¡TENER LA MOCHILA LISTA TE AYUDA A NO OLVIDAR NADA!',
+    iconSvg: 'mochila',
+    steps: {
+      1: [
+        { id: 'buscar_m', text: 'Buscar la mochila escolar', textG1: 'BUSCAR LA MOCHILA', svg: 'mochila' },
+        { id: 'cuadernos', text: 'Buscar los cuadernos', textG1: 'BUSCAR LOS CUADERNOS', svg: 'cuadernos' },
+        { id: 'guardar', text: 'Guardar la cartuchera y útiles', textG1: 'GUARDAR LA CARTUCHERA', svg: 'cartuchera' },
+        { id: 'cerrar', text: 'Cerrar el cierre de la mochila', textG1: 'CERRAR LA MOCHILA', svg: 'mochila_cerrada' }
+      ],
+      2: [
+        { id: 'buscar_m', text: 'Buscar la mochila escolar', textG1: 'BUSCAR LA MOCHILA', svg: 'mochila' },
+        { id: 'horario', text: 'Revisar el horario de clases', textG1: 'REVISAR EL HORARIO', svg: 'horario' },
+        { id: 'cuadernos', text: 'Buscar los cuadernos del día', textG1: 'BUSCAR LOS CUADERNOS', svg: 'cuadernos' },
+        { id: 'guardar', text: 'Guardar la cartuchera y los libros', textG1: 'GUARDAR CARTUCHERA Y LIBROS', svg: 'cartuchera' },
+        { id: 'cerrar', text: 'Cerrar el cierre de la mochila', textG1: 'CERRAR LA MOCHILA', svg: 'mochila_cerrada' }
+      ],
+      3: [
+        { id: 'buscar_m', text: 'Buscar la mochila escolar', textG1: 'BUSCAR LA MOCHILA', svg: 'mochila' },
+        { id: 'horario', text: 'Revisar el horario de clases', textG1: 'REVISAR EL HORARIO', svg: 'horario' },
+        { id: 'cuadernos', text: 'Buscar los cuadernos y libros', textG1: 'BUSCAR CUADERNOS Y LIBROS', svg: 'cuadernos' },
+        { id: 'guardar_libros', text: 'Guardar los libros en la mochila', textG1: 'GUARDAR LOS LIBROS', svg: 'guardar_libros' },
+        { id: 'cartuchera', text: 'Guardar la cartuchera con lápices', textG1: 'GUARDAR LA CARTUCHERA', svg: 'cartuchera' },
+        { id: 'cerrar', text: 'Cerrar el cierre de la mochila', textG1: 'CERRAR LA MOCHILA', svg: 'mochila_cerrada' }
+      ],
+      4: [
+        { id: 'buscar_m', text: 'Buscar la mochila escolar', textG1: 'BUSCAR LA MOCHILA', svg: 'mochila' },
+        { id: 'horario', text: 'Revisar el horario de clases', textG1: 'REVISAR EL HORARIO', svg: 'horario' },
+        { id: 'cuadernos', text: 'Buscar los cuadernos necesarios', textG1: 'BUSCAR LOS CUADERNOS', svg: 'cuadernos' },
+        { id: 'guardar_libros', text: 'Guardar los libros ordenados', textG1: 'GUARDAR LOS LIBROS', svg: 'guardar_libros' },
+        { id: 'cartuchera', text: 'Guardar la cartuchera completa', textG1: 'GUARDAR LA CARTUCHERA', svg: 'cartuchera' },
+        { id: 'cerrar', text: 'Cerrar el cierre de la mochila', textG1: 'CERRAR LA MOCHILA', svg: 'mochila_cerrada' }
+      ],
+      5: [
+        { id: 'buscar_m', text: 'Buscar la mochila escolar', textG1: 'BUSCAR LA MOCHILA', svg: 'mochila' },
+        { id: 'horario', text: 'Revisar el horario de clases', textG1: 'REVISAR EL HORARIO', svg: 'horario' },
+        { id: 'cuadernos', text: 'Buscar los cuadernos necesarios', textG1: 'BUSCAR LOS CUADERNOS', svg: 'cuadernos' },
+        { id: 'guardar_libros', text: 'Guardar los libros ordenados', textG1: 'GUARDAR LOS LIBROS', svg: 'guardar_libros' },
+        { id: 'cartuchera', text: 'Guardar la cartuchera completa', textG1: 'GUARDAR LA CARTUCHERA', svg: 'cartuchera' },
+        { id: 'cerrar', text: 'Cerrar el cierre de la mochila', textG1: 'CERRAR LA MOCHILA', svg: 'mochila_cerrada' }
+      ]
+    },
+    distractors: [
+      { id: 'dist_dientes', text: 'Cepillarse los dientes', textG1: 'CEPILLARSE LOS DIENTES', svg: 'cepillo' },
+      { id: 'dist_sarten', text: 'Poner una sartén en la mochila', textG1: 'PONER UNA SARTÉN', svg: 'sarten' },
+      { id: 'dist_auto', text: 'Lavar el auto familiar', textG1: 'LAVAR EL AUTO', svg: 'auto' }
+    ]
+  },
+
+  habitacion: {
+    id: 'habitacion',
+    title: 'Ordenamos una habitación',
+    titleG1: '¡ORDENAMOS LA HABITACIÓN!',
+    subtitle: 'Armá la secuencia lógica de bloques para dejar la habitación impecable.',
+    subtitleG1: 'ARMÁ LA SECUENCIA PARA ORDENAR LA HABITACIÓN.',
+    safety: '💡 ¡Un espacio ordenado nos ayuda a encontrar todo rápido y descansar mejor!',
+    safetyG1: '💡 ¡ORDENAR NOS AYUDA A JUGAR Y ESTUDIAR MEJOR!',
+    iconSvg: 'habitacion',
+    steps: {
+      1: [
+        { id: 'juguetes', text: 'Juntar los juguetes del piso', textG1: 'JUNTAR LOS JUGUETES', svg: 'juguetes' },
+        { id: 'canasto', text: 'Guardar los juguetes en el canasto', textG1: 'GUARDAR EN EL CANASTO', svg: 'canasto' },
+        { id: 'ropa', text: 'Acomodar la ropa en el placard', textG1: 'ACOMODAR LA ROPA', svg: 'ropa' },
+        { id: 'cama', text: 'Hacer la cama prolija', textG1: 'HACER LA CAMA', svg: 'cama' }
+      ],
+      2: [
+        { id: 'juguetes', text: 'Juntar los juguetes del piso', textG1: 'JUNTAR LOS JUGUETES', svg: 'juguetes' },
+        { id: 'canasto', text: 'Guardar los juguetes en el canasto', textG1: 'GUARDAR EN EL CANASTO', svg: 'canasto' },
+        { id: 'libros', text: 'Ordenar los libros en la repisa', textG1: 'ORDENAR LOS LIBROS', svg: 'repisa' },
+        { id: 'ropa', text: 'Acomodar la ropa en el placard', textG1: 'ACOMODAR LA ROPA', svg: 'ropa' },
+        { id: 'cama', text: 'Hacer la cama prolija', textG1: 'HACER LA CAMA', svg: 'cama' }
+      ],
+      3: [
+        { id: 'juguetes', text: 'Juntar los juguetes del piso', textG1: 'JUNTAR LOS JUGUETES', svg: 'juguetes' },
+        { id: 'canasto', text: 'Guardar los juguetes en el canasto', textG1: 'GUARDAR EN EL CANASTO', svg: 'canasto' },
+        { id: 'libros', text: 'Ordenar los libros en la repisa', textG1: 'ORDENAR LOS LIBROS', svg: 'repisa' },
+        { id: 'ropa', text: 'Acomodar la ropa en el placard', textG1: 'ACOMODAR LA ROPA', svg: 'ropa' },
+        { id: 'cama', text: 'Hacer la cama prolija', textG1: 'HACER LA CAMA', svg: 'cama' }
+      ],
+      4: [
+        { id: 'juguetes', text: 'Juntar los juguetes del piso', textG1: 'JUNTAR LOS JUGUETES', svg: 'juguetes' },
+        { id: 'canasto', text: 'Guardar los juguetes en el canasto', textG1: 'GUARDAR EN EL CANASTO', svg: 'canasto' },
+        { id: 'libros', text: 'Ordenar los libros en la repisa', textG1: 'ORDENAR LOS LIBROS', svg: 'repisa' },
+        { id: 'ropa', text: 'Acomodar la ropa en el placard', textG1: 'ACOMODAR LA ROPA', svg: 'ropa' },
+        { id: 'cama', text: 'Hacer la cama prolija', textG1: 'HACER LA CAMA', svg: 'cama' }
+      ],
+      5: [
+        { id: 'juguetes', text: 'Juntar los juguetes del piso', textG1: 'JUNTAR LOS JUGUETES', svg: 'juguetes' },
+        { id: 'canasto', text: 'Guardar los juguetes en el canasto', textG1: 'GUARDAR EN EL CANASTO', svg: 'canasto' },
+        { id: 'libros', text: 'Ordenar los libros en la repisa', textG1: 'ORDENAR LOS LIBROS', svg: 'repisa' },
+        { id: 'ropa', text: 'Acomodar la ropa en el placard', textG1: 'ACOMODAR LA ROPA', svg: 'ropa' },
+        { id: 'cama', text: 'Hacer la cama prolija', textG1: 'HACER LA CAMA', svg: 'cama' }
+      ]
+    },
+    distractors: [
+      { id: 'dist_alfombra', text: 'Regar la alfombra con agua', textG1: 'REGAR LA ALFOMBRA', svg: 'regar' },
+      { id: 'dist_plaza', text: 'Salir a jugar al fútbol', textG1: 'JUGAR AL FÚTBOL', svg: 'futbol' },
+      { id: 'dist_paraguas', text: 'Abrir un paraguas adentro', textG1: 'ABRIR UN PARAGUAS', svg: 'paraguas' }
+    ]
+  }
+};
 
   // ============================================================
-  // 3. CLASE PRINCIPAL: ALGORITHMS MODULE
+  // 3. LABERINTOS DE PROGRAMACIÓN EN BLOQUES (PARTES 3 Y 4)
+  // ============================================================
+  const ALL_MAZES = {
+  // ================= 1.º GRADO =================
+  1: {
+    d1_mecanico: {
+      title: '¡AYUDÁ A BITY A LLEGAR AL MECÁNICO!',
+      hint: 'USÁ LAS FLECHAS PARA MOVER A BITY: ARRIBA, ABAJO, IZQUIERDA Y DERECHA.',
+      cols: 5, rows: 4,
+      start: { x: 1, y: 1 },
+      goal: { x: 3, y: 2 },
+      grid: [
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1],
+        [1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1]
+      ]
+    },
+    d2_caminos: {
+      title: 'DESAFÍO 2: ENCONTRÁ EL CAMINO',
+      hint: '¡HAY MÁS DE UN CAMINO VÁLIDO! PODÉS IR POR ARRIBA O POR EL CENTRO.',
+      cols: 5, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 3, y: 3 },
+      grid: [
+        [1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1],
+        [1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1]
+      ]
+    },
+    d3_optimizacion: {
+      title: 'DESAFÍO 3: ¿QUÉ CAMINO CONVIENE?',
+      hint: 'HAY UN CAMINO CORTO (4 PASOS) Y OTRO MÁS LARGO (8 PASOS). ¡DESCUBRILOS!',
+      cols: 6, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 1 },
+      optimalSteps: 3,
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d4_laberinto: {
+      title: 'DESAFÍO 4: RESOLVÉ EL LABERINTO',
+      hint: 'OBSERVÁ EL MAPA Y PLANIFICÁ LAS FLECHAS ANTES DE EJECUTAR.',
+      cols: 6, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 3 },
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1, 1],
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    }
+  },
+
+  // ================= 2.º GRADO =================
+  2: {
+    d1_mecanico: {
+      title: 'Desafío 1: Ayudá a Bity a llegar al mecánico',
+      hint: 'Planificá los pasos con las flechas de dirección para llegar al taller.',
+      cols: 6, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 3 },
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d2_caminos: {
+      title: 'Desafío 2: Encontrá el camino',
+      hint: 'Probá diferentes rutas para alcanzar la meta esquivando los asteroides.',
+      cols: 6, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 3 },
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d3_optimizacion: {
+      title: 'Desafío 3: ¿Qué camino conviene?',
+      hint: 'Compará los caminos: el camino directo requiere menos instrucciones que el rodeo.',
+      cols: 7, rows: 5,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 1 },
+      optimalSteps: 4,
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d4_laberinto: {
+      title: 'Desafío 4: Resolvé el laberinto',
+      hint: 'Guiá a Bity a través de los pasillos espaciales hasta la meta.',
+      cols: 6, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 1],
+        [1, 1, 1, 0, 1, 1],
+        [1, 0, 0, 0, 1, 1],
+        [1, 0, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    }
+  },
+
+  // ================= 3.º GRADO =================
+  3: {
+    d1_mecanico: {
+      title: 'Desafío 1: Ayudá a Bity a llegar al mecánico',
+      hint: 'Utilizá el botón "Paso a paso" para probar y depurar cada instrucción.',
+      cols: 6, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 4, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 1, 1, 1],
+        [1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d2_caminos: {
+      title: 'Desafío 2: Encontrá el camino',
+      hint: 'Descubrí al menos dos caminos alternativos para llegar al destino.',
+      cols: 7, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d3_optimizacion: {
+      title: 'Desafío 3: ¿Qué camino conviene?',
+      hint: 'El camino óptimo usa 5 instrucciones. ¿Cuántas usaste vos?',
+      cols: 7, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 2 },
+      optimalSteps: 5,
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 1, 0, 1],
+        [1, 1, 1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d4_laberinto: {
+      title: 'Desafío 4: Resolvé el laberinto',
+      hint: 'Planificá con anticipación: evitá callejones sin salida.',
+      cols: 7, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1, 0, 1],
+        [1, 0, 1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    }
+  },
+
+  // ================= 4.º GRADO =================
+  4: {
+    d1_mecanico: {
+      title: 'Desafío 1: Ayudá a Bity a llegar al mecánico',
+      hint: 'Secuencia algorítmica autónoma: trazá la ruta completa hacia el taller.',
+      cols: 7, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d2_caminos: {
+      title: 'Desafío 2: Encontrá el camino',
+      hint: 'Existen múltiples soluciones válidas. Comprobá que Bity esquive los obstáculos.',
+      cols: 7, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 5, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d3_optimizacion: {
+      title: 'Desafío 3: ¿Qué camino conviene?',
+      hint: 'Camino óptimo (6 pasos) vs alternativo (10 pasos). ¡Optimizá tus bloques!',
+      cols: 8, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 2 },
+      optimalSteps: 6,
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 1, 0, 1],
+        [1, 1, 1, 1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d4_laberinto: {
+      title: 'Desafío 4: Resolvé el laberinto',
+      hint: 'Laberinto con bifurcaciones. Evaluá el costo de cada bifurcación.',
+      cols: 8, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 0, 0, 1],
+        [1, 1, 1, 0, 1, 0, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    }
+  },
+
+  // ================= 5.º GRADO =================
+  5: {
+    d1_mecanico: {
+      title: 'Desafío 1: Ayudá a Bity a llegar al mecánico',
+      hint: 'Misión cumbre: analizá la trayectoria e implementá el algoritmo.',
+      cols: 8, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 1, 0, 1, 1, 1],
+        [1, 1, 1, 1, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d2_caminos: {
+      title: 'Desafío 2: Encontrá el camino',
+      hint: 'Comprobá las rutas posibles y elegí la que mejor se adapte a tu estrategia.',
+      cols: 8, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 4 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 0, 1, 1, 0, 1],
+        [1, 0, 1, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 1, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d3_optimizacion: {
+      title: 'Desafío 3: ¿Qué camino conviene?',
+      hint: 'Camino óptimo (7 pasos) vs alternativa (12 pasos). Evaluá la eficiencia.',
+      cols: 8, rows: 6,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 2 },
+      optimalSteps: 6,
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 0, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    },
+    d4_laberinto: {
+      title: 'Desafío 4: Resolvé el laberinto',
+      hint: 'Resolución algorítmica de máxima eficiencia. ¡Guiá a Bity a la meta!',
+      cols: 8, rows: 7,
+      start: { x: 1, y: 1 },
+      goal: { x: 6, y: 5 },
+      grid: [
+        [1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 1, 0, 0, 1],
+        [1, 1, 1, 0, 1, 0, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 0, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    }
+  }
+};
+
+  // ============================================================
+  // 4. CLASE CONTROLADORA: AlgorithmsModule
   // ============================================================
   class AlgorithmsModule {
     constructor() {
       this.currentGrade = 1;
-      this.currentClass = 1;
-      this.currentStep = 1; // 1 a 7
+      this.currentStep = 1;
+      this.totalSteps = 7;
       this.completedSteps = new Set();
+      
+      // Estado de actividades cotidianas
+      this.selectedEverydayAct = 'cafe';
+      this.everydayState = {
+        cafe: { placed: [], selectedBlock: null, completed: false, errorMsg: null },
+        jugo: { placed: [], selectedBlock: null, completed: false, errorMsg: null },
+        mochila: { placed: [], selectedBlock: null, completed: false, errorMsg: null },
+        habitacion: { placed: [], selectedBlock: null, completed: false, errorMsg: null }
+      };
 
-      // Almacenamiento de actividades prácticas por grado
-      this.activitiesData = {};
+      // Estado de programación de laberintos
+      this.program = [];
+      this.bityPos = { x: 1, y: 1 };
+      this.bityFacing = 'right';
+      this.isExecuting = false;
+      this.activeExecutingIndex = -1;
+      this.stepByStepActive = false;
+      this.stepByStepIndex = 0;
+      this.mazeResult = null; // null | 'reached' | 'collision'
 
-      // Estado de reflexión de Parte 2
-      this.reflectionAnswered = false;
+      // Estado de Pregunta de Parte 1
+      this.orderQuestionAnswered = false;
+      this.orderQuestionAnswer = null;
 
-      // Estado de Pizarra Digital (Parte 6)
-      this.blackboardTitle = '';
-      this.blackboardSteps = ['', '', ''];
-
-      this.isInitialized = false;
+      // Pista interactiva de Bity
+      this.activeHint = null;
     }
 
-    /**
-     * Formatea el texto según el grado escolar
-     * En 1.º Grado: TODO texto en MAYÚSCULAS
-     */
-    formatForGrade(text) {
-      if (!text) return '';
-      if (this.currentGrade === 1) {
-        return text.toUpperCase();
-      }
-      return text;
-    }
-
-    escapeHtml(str) {
+    // Adaptación textual según grado: 1.º Grado TODO EN MAYÚSCULAS
+    txt(str) {
       if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    /**
-     * Inicia la Clase N.º 1 para el grado especificado
-     */
-    startClass(grade = 1, classNum = 1) {
-      this.currentGrade = parseInt(grade) || 1;
-      this.currentClass = parseInt(classNum) || 1;
-
-      this.loadSavedProgress();
-      this.initDom();
-      this.showScreen();
-      this.renderStep(this.currentStep);
-    }
-
-    /**
-     * Muestra la pantalla screen-coding-algorithms
-     */
-    showScreen() {
-      const screen = document.getElementById('screen-coding-algorithms');
-      if (screen) {
-        if (typeof window !== 'undefined' && window.appShowScreen) {
-          window.appShowScreen(screen);
-        } else {
-          document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-          screen.classList.add('active');
-        }
-        screen.classList.toggle('grade-1-active', this.currentGrade === 1);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (this.currentGrade === 1) {
+        return str.toUpperCase();
       }
+      return str;
     }
 
-    /**
-     * Regresa al temario de Programación (Syllabus)
-     */
-    exitToSyllabus() {
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
+    playSound(name) {
       try {
-        if (typeof sessionStorage !== 'undefined') {
-          sessionStorage.removeItem('lego_active_screen');
-        }
-      } catch (e) {}
-
-      if (window.codingManager) {
-        window.codingManager.loadGrade(this.currentGrade);
-      } else {
-        const syl = document.getElementById('screen-coding-syllabus');
-        if (typeof window !== 'undefined' && window.appShowScreen && syl) {
-          window.appShowScreen(syl);
-        } else if (syl) {
-          document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-          syl.classList.add('active');
-        }
-      }
-    }
-
-    /**
-     * Carga el progreso y las actividades guardadas desde localStorage
-     */
-    loadSavedProgress() {
-      try {
-        const rawProg = localStorage.getItem(`lego_algorithms_class1_progress_g${this.currentGrade}`);
-        if (rawProg) {
-          const p = JSON.parse(rawProg);
-          this.currentStep = p.currentStep || 1;
-          this.completedSteps = new Set(Array.isArray(p.completedSteps) ? p.completedSteps : []);
-        } else {
-          this.currentStep = 1;
-          this.completedSteps = new Set();
-        }
-
-        // Cargar las 3 actividades del grado actual
-        const gradeActs = GRADE_ALGORITHMS_ACTIVITIES[this.currentGrade] || GRADE_ALGORITHMS_ACTIVITIES[1];
-        gradeActs.forEach((act, idx) => {
-          const savedDraft = localStorage.getItem(`lego_alg_draft_g${this.currentGrade}_${act.id}`);
-          const savedFinished = localStorage.getItem(`lego_alg_act_g${this.currentGrade}_${act.id}`);
-          
-          if (savedFinished) {
-            const data = JSON.parse(savedFinished);
-            this.activitiesData[act.id] = Array.isArray(data.steps) ? data.steps : new Array(act.initialStepsCount).fill('');
-            this.completedSteps.add(3 + idx); // Step 3, 4 o 5
-          } else if (savedDraft) {
-            const draftSteps = JSON.parse(savedDraft);
-            this.activitiesData[act.id] = Array.isArray(draftSteps) ? draftSteps : new Array(act.initialStepsCount).fill('');
-          } else {
-            // ESPACIOS COMPLETAMENTE VACÍOS AL INICIAR
-            this.activitiesData[act.id] = new Array(act.initialStepsCount).fill('');
+        if (typeof window !== 'undefined' && window.MagicAudioEngine) {
+          if (name === 'victory' && typeof window.MagicAudioEngine.playVictory === 'function') {
+            window.MagicAudioEngine.playVictory();
+            return;
           }
-        });
-
-        // Cargar Pizarra Digital
-        const rawBb = localStorage.getItem(`lego_alg_blackboard_g${this.currentGrade}`);
-        if (rawBb) {
-          const bbData = JSON.parse(rawBb);
-          this.blackboardTitle = bbData.title || '';
-          this.blackboardSteps = Array.isArray(bbData.steps) ? bbData.steps : ['', '', ''];
-        } else {
-          this.blackboardTitle = '';
-          this.blackboardSteps = ['', '', ''];
+          if (name === 'pop' && typeof window.MagicAudioEngine.playPop === 'function') {
+            window.MagicAudioEngine.playPop();
+            return;
+          }
+          if (name === 'trash' && typeof window.MagicAudioEngine.playTrash === 'function') {
+            window.MagicAudioEngine.playTrash();
+            return;
+          }
+          if (name === 'error' && typeof window.MagicAudioEngine.playError === 'function') {
+            window.MagicAudioEngine.playError();
+            return;
+          }
+          if (typeof window.MagicAudioEngine.playClick === 'function') {
+            window.MagicAudioEngine.playClick();
+            return;
+          }
         }
       } catch (e) {
-        console.warn('Error al cargar progreso de Algoritmos:', e);
+        // Audio fallback safe
       }
     }
 
-    /**
-     * Guarda el progreso global de la clase en localStorage
-     */
+    startClass(grade = 1, classNum = 1) {
+      this.currentGrade = parseInt(grade) || 1;
+      this.loadSavedProgress();
+      this.resetMazeState();
+      this.orderQuestionAnswered = false;
+      this.orderQuestionAnswer = null;
+      this.activeHint = null;
+
+      // Iniciar en el primer paso pendiente o en el paso 1
+      if (!this.currentStep || this.currentStep < 1 || this.currentStep > 7) {
+        this.currentStep = 1;
+      }
+
+      this.render();
+      window.scrollTo(0, 0);
+    }
+
+    loadSavedProgress() {
+      try {
+        const raw = localStorage.getItem(`lego_algorithms_class1_progress_g${this.currentGrade}`);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed.completedSteps)) {
+            this.completedSteps = new Set(parsed.completedSteps);
+          }
+        } else {
+          this.completedSteps = new Set();
+        }
+      } catch (e) {
+        this.completedSteps = new Set();
+      }
+    }
+
     saveProgress() {
       try {
-        const isDone = this.completedSteps.size >= 5;
-        localStorage.setItem(`lego_algorithms_class1_progress_g${this.currentGrade}`, JSON.stringify({
-          currentStep: this.currentStep,
+        const isCompleted = this.completedSteps.size >= this.totalSteps;
+        const data = {
+          grade: this.currentGrade,
+          classNum: 1,
           completedSteps: Array.from(this.completedSteps),
-          isCompleted: isDone
-        }));
-        this.updateProgressUi();
+          isCompleted: isCompleted,
+          updatedAt: new Date().toISOString()
+        };
+        localStorage.setItem(`lego_algorithms_class1_progress_g${this.currentGrade}`, JSON.stringify(data));
+        
+        // Notificar al syllabus si codingManager está disponible
+        if (typeof window !== 'undefined' && window.codingManager && typeof window.codingManager.renderSyllabus === 'function') {
+          window.codingManager.renderSyllabus();
+        }
       } catch (e) {}
     }
 
-    /**
-     * Guarda el borrador mientras el alumno tipea
-     */
-    saveActivityDraft(actId) {
-      try {
-        const steps = this.activitiesData[actId] || [];
-        localStorage.setItem(`lego_alg_draft_g${this.currentGrade}_${actId}`, JSON.stringify(steps));
-      } catch (e) {}
-    }
-
-    /**
-     * Inicializa los listeners y estructura de la pantalla en el DOM
-     */
-    initDom() {
-      const container = document.getElementById('algorithms-content-mount');
-      if (!container) return;
-
-      container.innerHTML = this.buildClassMarkup();
-      this.attachEventListeners();
+    selectStep(stepNum) {
+      if (this.isExecuting) return;
+      this.currentStep = stepNum;
+      this.activeHint = null;
+      this.playSound('click');
       
-      // Renderizar los renglones vacíos o guardados de cada actividad
-      const gradeActs = GRADE_ALGORITHMS_ACTIVITIES[this.currentGrade] || GRADE_ALGORITHMS_ACTIVITIES[1];
-      gradeActs.forEach(act => {
-        this.renderActivitySteps(act.id);
-      });
-      this.renderBlackboardRows();
+      // Configurar actividad cotidiana activa según el paso
+      if (stepNum === 2) {
+        this.selectedEverydayAct = 'cafe';
+      } else if (stepNum === 3) {
+        this.selectedEverydayAct = 'mochila';
+      } else if (stepNum >= 4) {
+        this.program = [];
+        this.resetMazeState();
+      }
 
-      this.isInitialized = true;
+      this.render();
+      window.scrollTo(0, 0);
     }
 
-    /**
-     * Genera el HTML de las 7 partes de la Clase N.º 1
-     */
-    buildClassMarkup() {
-      const isG1 = this.currentGrade === 1;
-      const gradeLabel = isG1 ? '1.º GRADO 🐣' : `${this.currentGrade}.º Grado 💻`;
-      const gradeActs = GRADE_ALGORITHMS_ACTIVITIES[this.currentGrade] || GRADE_ALGORITHMS_ACTIVITIES[1];
-
-      return `
-        <!-- HUD Superior -->
-        <div class="algorithms-topbar">
-          <div class="algorithms-nav-left">
-            <button type="button" id="btn-alg-back-syllabus" class="btn-algorithms-back">
-              <span>⬅️</span> ${this.formatForGrade('VOLVER AL TEMARIO')}
-            </button>
-            <div class="algorithms-breadcrumb">
-              <span>💻 ${this.formatForGrade('PROGRAMACIÓN')}</span>
-              <span class="breadcrumb-sep">→</span>
-              <span>🧩 ${this.formatForGrade('ALGORITMOS')}</span>
-              <span class="breadcrumb-sep">→</span>
-              <span class="breadcrumb-current">📖 ${this.formatForGrade('CLASE N.º 1: ¿QUÉ ES UN ALGORITMO?')}</span>
-            </div>
-          </div>
-          <span class="algorithms-grade-badge">${gradeLabel}</span>
-        </div>
-
-        <!-- Barra de Progreso de la Clase (7 Partes) -->
-        <div class="algorithms-progress-card">
-          <div class="progress-header-row">
-            <div class="progress-header-title">
-              <span>🎯 ${this.formatForGrade('PROGRESO DE LA CLASE')}</span>
-              <span id="alg-current-step-label" style="color: #facc15;">${this.formatForGrade('PASO 1 DE 7')}</span>
-            </div>
-            <span id="alg-progress-pct" class="progress-pct-badge">14%</span>
-          </div>
-          <div class="algorithms-steps-pills">
-            <div class="step-pill" data-step="1">
-              <span class="pill-num">1</span>
-              <span class="pill-name">${this.formatForGrade('¿Qué es?')}</span>
-            </div>
-            <div class="step-pill" data-step="2">
-              <span class="pill-num">2</span>
-              <span class="pill-name">${this.formatForGrade('El orden')}</span>
-            </div>
-            <div class="step-pill" data-step="3">
-              <span class="pill-num">3</span>
-              <span class="pill-name">${this.formatForGrade('Act. 1: ' + gradeActs[0].shortName)}</span>
-            </div>
-            <div class="step-pill" data-step="4">
-              <span class="pill-num">4</span>
-              <span class="pill-name">${this.formatForGrade('Act. 2: ' + gradeActs[1].shortName)}</span>
-            </div>
-            <div class="step-pill" data-step="5">
-              <span class="pill-num">5</span>
-              <span class="pill-name">${this.formatForGrade('Act. 3: ' + gradeActs[2].shortName)}</span>
-            </div>
-            <div class="step-pill" data-step="6">
-              <span class="pill-num">6</span>
-              <span class="pill-name">${this.formatForGrade('Mi Pizarra')}</span>
-            </div>
-            <div class="step-pill" data-step="7">
-              <span class="pill-num">7</span>
-              <span class="pill-name">${this.formatForGrade('Compartir')}</span>
-            </div>
-          </div>
-          <div class="progress-bar-track">
-            <div id="alg-progress-bar-fill" class="progress-bar-fill" style="width: 14%;"></div>
-          </div>
-        </div>
-
-        <!-- ========================================================
-             PARTE 1: ¿QUÉ ES UN ALGORITMO?
-             ======================================================== -->
-        <section id="alg-section-1" class="class-section">
-          <div class="section-header-box">
-            <span class="section-tag-badge">✨ ${this.formatForGrade('PENSAMIENTO COMPUTACIONAL')}</span>
-            <h2 class="section-title">${this.formatForGrade('¿QUÉ ES UN ALGORITMO?')}</h2>
-            <p class="section-subtitle">
-              ${this.formatForGrade('Descubrí cómo las personas y las computadoras resolvemos tareas paso a paso.')}
-            </p>
-          </div>
-
-          <!-- Bity Guía Saludo -->
-          <div class="bity-guide-card">
-            <div class="bity-guide-avatar-holder">${getBitySvg('happy')}</div>
-            <div class="bity-guide-speech">
-              <div class="bity-guide-badge">🤖 BITY EL ROBOT GUÍA:</div>
-              <p class="bity-guide-speech-text">
-                ${this.getBityIntroMessage()}
-              </p>
-            </div>
-          </div>
-
-          <div class="hero-concept-layout">
-            <div class="concept-illustration-card">
-              <div class="concept-svg-holder">
-                ${ALGORITHM_SVGS.hero_routine}
-              </div>
-              <p class="concept-illustration-caption">
-                ${this.formatForGrade('En la vida diaria, seguimos secuencias ordenadas de pasos sin darnos cuenta.')}
-              </p>
-            </div>
-
-            <div class="concept-text-column">
-              <div class="definition-golden-box">
-                <div class="definition-badge">📖 ${this.formatForGrade('DEFINICIÓN FUNDAMENTAL:')}</div>
-                <blockquote class="definition-quote">
-                  "${this.formatForGrade('Un algoritmo es un conjunto de instrucciones paso a paso para resolver un problema o completar una tarea.')}"
-                </blockquote>
-              </div>
-
-              <div class="concept-key-ideas-grid">
-                <div class="key-idea-card">
-                  <div class="idea-icon">📋</div>
-                  <div class="idea-title">${this.formatForGrade('1. Secuencia de pasos')}</div>
-                  <p class="idea-desc">${this.formatForGrade('Cada acción se realiza una detrás de otra.')}</p>
-                </div>
-                <div class="key-idea-card">
-                  <div class="idea-icon">🔢</div>
-                  <div class="idea-title">${this.formatForGrade('2. Orden obligatorio')}</div>
-                  <p class="idea-desc">${this.formatForGrade('Si cambiamos el orden, el resultado no funciona.')}</p>
-                </div>
-                <div class="key-idea-card">
-                  <div class="idea-icon">🎯</div>
-                  <div class="idea-title">${this.formatForGrade('3. Objetivo claro')}</div>
-                  <p class="idea-desc">${this.formatForGrade('Tiene un punto de partida y una meta definida.')}</p>
-                </div>
-                <div class="key-idea-card">
-                  <div class="idea-icon">🔍</div>
-                  <div class="idea-title">${this.formatForGrade('4. Sin dudas')}</div>
-                  <p class="idea-desc">${this.formatForGrade('Las instrucciones deben ser precisas y claras.')}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="section-actions-row">
-            <div></div>
-            <button type="button" class="btn-section-nav btn-nav-primary" data-goto="2">
-              ${this.formatForGrade('CONTINUAR')} <span>▶️</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ========================================================
-             PARTE 2: ¿POR QUÉ IMPORTA EL ORDEN? (REFLEXIÓN)
-             ======================================================== -->
-        <section id="alg-section-2" class="class-section" style="display: none;">
-          <div class="section-header-box">
-            <span class="section-tag-badge">🧼 ${this.formatForGrade('EL VALOR DEL ORDEN')}</span>
-            <h2 class="section-title">${this.formatForGrade('¿POR QUÉ IMPORTA EL ORDEN?')}</h2>
-            <p class="section-subtitle">
-              ${this.formatForGrade('Analicemos qué ocurre si alteramos la secuencia de una rutina diaria.')}
-            </p>
-          </div>
-
-          <div class="hero-concept-layout">
-            <div class="concept-illustration-card">
-              <div class="concept-svg-holder">
-                ${ALGORITHM_SVGS.hero_teeth}
-              </div>
-              <p class="concept-illustration-caption">
-                ${this.formatForGrade('Ejemplo cotidiano: el algoritmo para lavarse los dientes.')}
-              </p>
-            </div>
-
-            <div class="reflection-interactive-card">
-              <div class="reflection-question-header">
-                <span class="reflection-badge">🤔 ${this.formatForGrade('PREGUNTA DE REFLEXIÓN:')}</span>
-                <h3 class="reflection-question-title">
-                  ${this.formatForGrade('¿Podemos cepillarnos los dientes y después ponerle la pasta al cepillo?')}
-                </h3>
-              </div>
-
-              <div class="reflection-options-row">
-                <button type="button" id="btn-reflection-yes" class="btn-reflection-choice">
-                  <span>👍</span> ${this.formatForGrade('SÍ, DA LO MISMO')}
-                </button>
-                <button type="button" id="btn-reflection-no" class="btn-reflection-choice btn-choice-correct">
-                  <span>👎</span> ${this.formatForGrade('NO, NO FUNCIONA')}
-                </button>
-              </div>
-
-              <div id="reflection-feedback-box" class="reflection-feedback-box" style="display: none;">
-                <!-- Respuesta dinámica con Bity -->
-              </div>
-            </div>
-          </div>
-
-          <div class="section-actions-row">
-            <button type="button" class="btn-section-nav btn-nav-secondary" data-goto="1">
-              <span>◀️</span> ${this.formatForGrade('ANTERIOR')}
-            </button>
-            <button type="button" class="btn-section-nav btn-nav-primary" data-goto="3">
-              ${this.formatForGrade('¡COMENZAR ACTIVIDAD 1!')} <span>▶️</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ========================================================
-             PARTE 3: ACTIVIDAD 1 DEL GRADO (ESPACIOS VACÍOS)
-             ======================================================== -->
-        <section id="alg-section-3" class="class-section" style="display: none;">
-          ${this.renderActivityCardHtml(gradeActs[0], 3, 4)}
-        </section>
-
-        <!-- ========================================================
-             PARTE 4: ACTIVIDAD 2 DEL GRADO (ESPACIOS VACÍOS)
-             ======================================================== -->
-        <section id="alg-section-4" class="class-section" style="display: none;">
-          ${this.renderActivityCardHtml(gradeActs[1], 4, 5)}
-        </section>
-
-        <!-- ========================================================
-             PARTE 5: ACTIVIDAD 3 DEL GRADO (ESPACIOS VACÍOS)
-             ======================================================== -->
-        <section id="alg-section-5" class="class-section" style="display: none;">
-          ${this.renderActivityCardHtml(gradeActs[2], 5, 6)}
-        </section>
-
-        <!-- ========================================================
-             PARTE 6: MI PIZARRA DIGITAL DE ALGORITMOS
-             ======================================================== -->
-        <section id="alg-section-6" class="class-section" style="display: none;">
-          <div class="section-header-box">
-            <span class="section-tag-badge">🎨 ${this.formatForGrade('ESPACIO LIBRE')}</span>
-            <h2 class="section-title">${this.formatForGrade('MI PIZARRA DIGITAL')}</h2>
-            <p class="section-subtitle">
-              ${this.formatForGrade('Escribí cualquier algoritmo que quieras crear o pulir libremente.')}
-            </p>
-          </div>
-
-          <div class="algorithm-blackboard">
-            <div class="blackboard-chalk-title-bar">
-              <span class="chalk-icon">🖍️</span>
-              <input type="text" id="blackboard-title-input" class="blackboard-title-input" 
-                     value="${this.escapeHtml(this.blackboardTitle)}" 
-                     placeholder="${this.formatForGrade('TÍTULO DE MI ALGORITMO...')}">
-            </div>
-
-            <div id="blackboard-instructions-list" class="blackboard-instructions-list">
-              <!-- Renglones de pizarra -->
-            </div>
-
-            <div class="blackboard-bottom-bar">
-              <button type="button" id="btn-blackboard-add-row" class="btn-blackboard-action">
-                <span>➕</span> ${this.formatForGrade('AGREGAR INSTRUCCIÓN')}
-              </button>
-              <button type="button" id="btn-blackboard-save" class="btn-blackboard-action btn-blackboard-primary">
-                <span>💾</span> ${this.formatForGrade('GUARDAR EN PIZARRA')}
-              </button>
-            </div>
-          </div>
-
-          <div class="section-actions-row">
-            <button type="button" class="btn-section-nav btn-nav-secondary" data-goto="5">
-              <span>◀️</span> ${this.formatForGrade('ACTIVIDAD 3')}
-            </button>
-            <button type="button" class="btn-section-nav btn-nav-primary" data-goto="7">
-              ${this.formatForGrade('COMPARTIR EN EL AULA')} <span>▶️</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ========================================================
-             PARTE 7: COMPARTIR Y EXPOSICIÓN EN EL AULA
-             ======================================================== -->
-        <section id="alg-section-7" class="class-section" style="display: none;">
-          <div class="section-header-box">
-            <span class="section-tag-badge">📢 ${this.formatForGrade('PRESENTACIÓN Y CELEBRACIÓN')}</span>
-            <h2 class="section-title">${this.formatForGrade('¡COMPARTÍ TUS ALGORITMOS!')}</h2>
-            <p class="section-subtitle">
-              ${this.formatForGrade('Elegí cuál de tus algoritmos querés proyectar, copiar o imprimir para el aula.')}
-            </p>
-          </div>
-
-          <div class="presentation-selector-card">
-            <h3 class="selector-title">🎓 ${this.formatForGrade('SELECCIONÁ EL ALGORITMO PARA COMPARTIR:')}</h3>
-            <div class="presentation-buttons-grid">
-              <button type="button" class="btn-pres-pick" data-pick-src="act1">
-                <span>🎒</span> ${this.formatForGrade(gradeActs[0].title)}
-              </button>
-              <button type="button" class="btn-pres-pick" data-pick-src="act2">
-                <span>🧼</span> ${this.formatForGrade(gradeActs[1].title)}
-              </button>
-              <button type="button" class="btn-pres-pick" data-pick-src="act3">
-                <span>⭐</span> ${this.formatForGrade(gradeActs[2].title)}
-              </button>
-              <button type="button" class="btn-pres-pick" data-pick-src="blackboard">
-                <span>🖍️</span> ${this.formatForGrade('Mi Pizarra Digital')}
-              </button>
-            </div>
-          </div>
-
-          <div class="section-actions-row">
-            <button type="button" class="btn-section-nav btn-nav-secondary" data-goto="6">
-              <span>◀️</span> ${this.formatForGrade('MI PIZARRA')}
-            </button>
-            <button type="button" id="btn-alg-finish-class" class="btn-section-nav btn-nav-primary">
-              <span>🏁</span> ${this.formatForGrade('FINALIZAR CLASE Y VOLVER')}
-            </button>
-          </div>
-        </section>
-
-        <!-- MODAL DE PRESENTACIÓN PARA EL AULA -->
-        <div id="modal-algorithm-presentation" class="modal-presentation-overlay" style="display: none;" aria-hidden="true">
-          <div class="modal-presentation-card">
-            <div class="modal-presentation-header">
-              <div class="modal-header-info">
-                <span class="modal-badge">📢 ${this.formatForGrade('EXPOSICIÓN EN EL AULA')}</span>
-                <h2 id="pres-modal-title" class="modal-title">MI ALGORITMO</h2>
-              </div>
-              <button type="button" id="btn-close-presentation-modal" class="btn-modal-close" title="Cerrar ventana">✖</button>
-            </div>
-
-            <div id="pres-modal-steps-list" class="modal-presentation-steps">
-              <!-- Pasos presentados -->
-            </div>
-
-            <div class="modal-presentation-footer">
-              <button type="button" id="btn-modal-copy-text" class="btn-modal-action btn-copy-action">
-                <span>📋</span> ${this.formatForGrade('COPIAR TEXTO')}
-              </button>
-              <button type="button" id="btn-modal-print" class="btn-modal-action btn-print-action">
-                <span>🖨️</span> ${this.formatForGrade('IMPRIMIR')}
-              </button>
-              <button type="button" id="btn-modal-dismiss" class="btn-modal-action btn-dismiss-action">
-                ${this.formatForGrade('CERRAR')}
-              </button>
-            </div>
-          </div>
-        </div>
-      `;
+    nextStep() {
+      if (this.currentStep < this.totalSteps) {
+        this.selectStep(this.currentStep + 1);
+      }
     }
 
-    /**
-     * Devuelve el mensaje inicial de Bity adaptado por grado
-     */
-    getBityIntroMessage() {
-      if (this.currentGrade === 1) {
-        return this.formatForGrade('¡HOLA! HOY VAMOS A APRENDER A DAR INSTRUCCIONES EN EL ORDEN CORRECTO. EN LAS ACTIVIDADES, LOS PASOS ESTÁN VACÍOS PARA QUE VOS LOS ESCRIBAS.');
-      } else if (this.currentGrade === 2) {
-        return this.formatForGrade('¡Bienvenidos! Un algoritmo es como una receta: si nos salteamos un paso o cambiamos el orden, el resultado no sale bien. ¡A escribir tus propias secuencias!');
-      } else if (this.currentGrade === 3) {
-        return this.formatForGrade('¡Hola, programadores de 3.º! Resolver problemas requiere planificar acciones precisas. Hoy van a crear algoritmos completos con sus propios pasos.');
-      } else if (this.currentGrade === 4) {
-        return this.formatForGrade('¡Atención 4.º grado! Hoy damos un paso clave: incorporamos DECISIONES con "SI ocurre esto, ENTONCES aquello". ¡A escribir algoritmos inteligentes!');
+    prevStep() {
+      if (this.currentStep > 1) {
+        this.selectStep(this.currentStep - 1);
+      }
+    }
+
+    exitModule() {
+      this.playSound('click');
+      this.saveProgress();
+      if (typeof window !== 'undefined') {
+        if (window.MagicApp && typeof window.MagicApp.navigate === 'function') {
+          window.MagicApp.navigate('coding');
+        } else if (window.codingManager && typeof window.codingManager.showCodingAppScreen === 'function') {
+          window.codingManager.renderSyllabus();
+        }
+      }
+    }
+
+    // ============================================================
+    // 5. INTERACCIONES PARTE 1
+    // ============================================================
+    handleOrderQuestion(answer) {
+      this.orderQuestionAnswered = true;
+      this.orderQuestionAnswer = answer;
+      this.playSound(answer === 'si' ? 'victory' : 'pop');
+      this.completedSteps.add(1);
+      this.saveProgress();
+      this.render();
+    }
+
+    // ============================================================
+    // 6. INTERACCIONES PARTE 2: BLOQUES COTIDIANOS
+    // ============================================================
+    switchEverydayAct(actId) {
+      this.selectedEverydayAct = actId;
+      this.activeHint = null;
+      this.playSound('pop');
+      this.render();
+    }
+
+    handleBlockClick(actId, blockId) {
+      const state = this.everydayState[actId];
+      if (state.completed) return;
+
+      const actConfig = EVERYDAY_ACTIVITIES[actId];
+      const targetCount = actConfig.steps[this.currentGrade].length;
+
+      // Si ya está colocado, no hacer nada aquí (se quita desde el casillero)
+      if (state.placed.includes(blockId)) return;
+
+      // Si hay espacio libre, colocarlo directamente en el primer casillero vacío
+      if (state.placed.length < targetCount) {
+        state.placed.push(blockId);
+        state.errorMsg = null;
+        this.playSound('pop');
+        this.render();
+      }
+    }
+
+    removePlacedBlock(actId, index) {
+      const state = this.everydayState[actId];
+      if (state.completed) return;
+      if (index >= 0 && index < state.placed.length) {
+        state.placed.splice(index, 1);
+        state.errorMsg = null;
+        this.playSound('trash');
+        this.render();
+      }
+    }
+
+    resetEverydayAct(actId) {
+      const state = this.everydayState[actId];
+      state.placed = [];
+      state.selectedBlock = null;
+      state.completed = false;
+      state.errorMsg = null;
+      this.activeHint = null;
+      this.playSound('trash');
+      this.render();
+    }
+
+    checkEverydayAct(actId) {
+      const state = this.everydayState[actId];
+      const actConfig = EVERYDAY_ACTIVITIES[actId];
+      const targetSteps = actConfig.steps[this.currentGrade];
+
+      if (state.placed.length < targetSteps.length) {
+        state.errorMsg = this.txt('¡Faltan pasos! Completá todos los casilleros antes de comprobar.');
+        this.playSound('error');
+        this.render();
+        return;
+      }
+
+      // Comprobar secuencia exacta
+      let isCorrect = true;
+      for (let i = 0; i < targetSteps.length; i++) {
+        if (state.placed[i] !== targetSteps[i].id) {
+          isCorrect = false;
+          break;
+        }
+      }
+
+      if (isCorrect) {
+        state.completed = true;
+        state.errorMsg = null;
+        this.playSound('victory');
+        
+        // Comprobar si ambas actividades del paso están completas
+        if (this.currentStep === 2) {
+          if (this.everydayState.cafe.completed && this.everydayState.jugo.completed) {
+            this.completedSteps.add(2);
+            this.saveProgress();
+          }
+        } else if (this.currentStep === 3) {
+          if (this.everydayState.mochila.completed && this.everydayState.habitacion.completed) {
+            this.completedSteps.add(3);
+            this.saveProgress();
+          }
+        }
+        this.render();
       } else {
-        return this.formatForGrade('¡Bienvenidos, maestros de 5.º! Hoy programamos algoritmos avanzados que combinan DECISIONES lógicas y REPETICIONES (bucles). ¡A pensar y construir!');
+        // Analizar qué falló para dar pista pedagógica
+        const distractorFound = actConfig.distractors.find(d => state.placed.includes(d.id));
+        if (distractorFound) {
+          state.errorMsg = this.txt('¡Atención! Hay un bloque que no pertenece a esta tarea. Revisá bien qué acción sobra.');
+        } else {
+          state.errorMsg = this.txt('El orden no es el correcto. Pensá qué acción debe realizarse primero y qué paso viene después.');
+        }
+        this.playSound('error');
+        this.render();
       }
     }
 
-    /**
-     * Genera la tarjeta HTML para una de las actividades prácticas con espacios vacíos
-     */
-    renderActivityCardHtml(act, stepNum, nextStepNum) {
-      const isG1 = this.currentGrade === 1;
-      const gradeLabel = isG1 ? '1.º GRADO 🐣' : `${this.currentGrade}.º Grado 💻`;
+    // ============================================================
+    // 7. INTERACCIONES PARTES 3 Y 4: LABERINTOS DE PROGRAMACIÓN
+    // ============================================================
+    getCurrentMazeKey() {
+      if (this.currentStep === 4) return 'd1_mecanico';
+      if (this.currentStep === 5) return 'd2_caminos';
+      if (this.currentStep === 6) return 'd3_optimizacion';
+      if (this.currentStep === 7) return 'd4_laberinto';
+      return 'd1_mecanico';
+    }
 
-      return `
-        <div class="section-header-box">
-          <span class="section-tag-badge">✏️ ${this.formatForGrade('ACTIVIDAD ' + act.num)}</span>
-          <h2 class="section-title">${this.formatForGrade(act.title)}</h2>
-          <p class="section-subtitle">
-            ${this.formatForGrade('Construí tu propia secuencia de pasos ordenados.')}
-          </p>
-        </div>
+    getCurrentMazeConfig() {
+      const gradeMazes = ALL_MAZES[this.currentGrade] || ALL_MAZES[1];
+      const key = this.getCurrentMazeKey();
+      return gradeMazes[key];
+    }
 
-        <article class="alg-activity-card">
-          <div class="alg-activity-header">
-            <div class="alg-activity-icon">${act.icon}</div>
-            <div class="alg-activity-title-group">
-              <span class="alg-activity-tag">${this.formatForGrade('ACTIVIDAD ' + act.num + ' • ' + gradeLabel)}</span>
-              <h3 class="alg-activity-title">${this.formatForGrade(act.title)}</h3>
-            </div>
-          </div>
+    resetMazeState() {
+      const cfg = this.getCurrentMazeConfig();
+      if (cfg) {
+        this.bityPos = { x: cfg.start.x, y: cfg.start.y };
+      }
+      this.bityFacing = 'right';
+      this.isExecuting = false;
+      this.activeExecutingIndex = -1;
+      this.stepByStepActive = false;
+      this.stepByStepIndex = 0;
+      this.mazeResult = null;
+    }
 
-          <div class="alg-activity-context">
-            <p>${this.formatForGrade(act.context)}</p>
-          </div>
+    addDirectionToProgram(dir) {
+      if (this.isExecuting) return;
+      if (this.program.length >= 24) return;
+      this.program.push(dir);
+      this.playSound('pop');
+      this.render();
+    }
 
-          <div class="alg-activity-consigna-box">
-            <span class="consigna-badge">📋 ${this.formatForGrade('CONSIGNA:')}</span>
-            <p class="consigna-text">${this.formatForGrade(act.prompt)}</p>
-          </div>
+    removeInstruction(index) {
+      if (this.isExecuting) return;
+      if (index >= 0 && index < this.program.length) {
+        this.program.splice(index, 1);
+        this.playSound('trash');
+        this.render();
+      }
+    }
 
-          <!-- Pistas de Bity fuera de los renglones (sin respuestas completadas) -->
-          <div class="alg-activity-hints-box">
-            <div class="hints-header">
-              <span class="hints-icon">💡</span>
-              <strong>${this.formatForGrade('Pistas orientativas de Bity (pensá antes de escribir):')}</strong>
-            </div>
-            <ul class="hints-list">
-              ${act.hints.map(h => `<li>${this.formatForGrade(h)}</li>`).join('')}
-            </ul>
-          </div>
+    clearProgram() {
+      if (this.isExecuting) return;
+      this.program = [];
+      this.resetMazeState();
+      this.playSound('trash');
+      this.render();
+    }
 
-          <!-- Espacio de Edición: ESPACIOS VACÍOS -->
-          <div class="alg-editor-workspace">
-            <h4 class="workspace-heading">✏️ ${this.formatForGrade('COMPLETÁ TU ALGORITMO:')}</h4>
-            <p class="workspace-subheading">
-              ${this.formatForGrade('Escribí cada instrucción en orden lógico. Podés agregar o eliminar pasos cuando lo necesites.')}
-            </p>
+    resetMaze() {
+      if (this.isExecuting) return;
+      this.resetMazeState();
+      this.playSound('click');
+      this.render();
+    }
 
-            <div class="alg-steps-list" id="steps-list-${act.id}">
-              <!-- Los renglones vacíos se montan dinámicamente -->
-            </div>
+    executeSingleMove(dir) {
+      const cfg = this.getCurrentMazeConfig();
+      let nx = this.bityPos.x;
+      let ny = this.bityPos.y;
 
-            <div class="alg-editor-actions">
-              <button type="button" class="btn-alg-add-step" data-act-id="${act.id}">
-                <span>➕</span> ${this.formatForGrade('Agregar otro paso')}
-              </button>
-              <button type="button" class="btn-alg-save-activity" data-act-id="${act.id}">
-                <span>💾</span> ${this.formatForGrade('Guardar y Comprobar Algoritmo')}
-              </button>
-            </div>
+      if (dir === 'up') { ny--; this.bityFacing = 'up'; }
+      else if (dir === 'down') { ny++; this.bityFacing = 'down'; }
+      else if (dir === 'left') { nx--; this.bityFacing = 'left'; }
+      else if (dir === 'right') { nx++; this.bityFacing = 'right'; }
 
-            <!-- Feedback pedagógico formativo de Bity -->
-            <div class="alg-feedback-box" id="feedback-${act.id}" style="display: none;"></div>
-          </div>
-        </article>
+      // Verificar colisión con bordes o paredes (1 = pared)
+      if (nx < 0 || nx >= cfg.cols || ny < 0 || ny >= cfg.rows || cfg.grid[ny][nx] === 1) {
+        this.mazeResult = 'collision';
+        this.playSound('error');
+        return false;
+      }
 
-        <div class="section-actions-row">
-          <button type="button" class="btn-section-nav btn-nav-secondary" data-goto="${stepNum - 1}">
-            <span>◀️</span> ${this.formatForGrade('ANTERIOR')}
-          </button>
-          <button type="button" class="btn-section-nav btn-nav-primary" data-goto="${nextStepNum}">
-            ${this.formatForGrade('SIGUIENTE')} <span>▶️</span>
-          </button>
+      this.bityPos = { x: nx, y: ny };
+      this.playSound('click');
+
+      // Verificar si llegó a la meta
+      if (nx === cfg.goal.x && ny === cfg.goal.y) {
+        this.mazeResult = 'reached';
+        this.completedSteps.add(this.currentStep);
+        this.saveProgress();
+        this.playSound('victory');
+        return true;
+      }
+
+      return true;
+    }
+
+    runStepByStep() {
+      if (this.isExecuting) return;
+      if (this.program.length === 0) {
+        alert(this.txt('Agregá instrucciones al programa usando las flechas de dirección.'));
+        return;
+      }
+
+      // Si terminó o chocó, reiniciar posición para nueva prueba
+      if (this.mazeResult !== null || this.stepByStepIndex >= this.program.length) {
+        this.resetMazeState();
+      }
+
+      this.stepByStepActive = true;
+      const currentDir = this.program[this.stepByStepIndex];
+      this.activeExecutingIndex = this.stepByStepIndex;
+
+      const ok = this.executeSingleMove(currentDir);
+      this.stepByStepIndex++;
+
+      this.render();
+    }
+
+    runProgram() {
+      if (this.isExecuting) return;
+      if (this.program.length === 0) {
+        alert(this.txt('Agregá instrucciones al programa usando las flechas de dirección.'));
+        return;
+      }
+
+      this.resetMazeState();
+      this.isExecuting = true;
+      this.stepByStepActive = false;
+      this.render();
+
+      let stepIdx = 0;
+      const interval = setInterval(() => {
+        if (stepIdx >= this.program.length) {
+          clearInterval(interval);
+          this.isExecuting = false;
+          this.activeExecutingIndex = -1;
+          this.render();
+          return;
+        }
+
+        this.activeExecutingIndex = stepIdx;
+        const dir = this.program[stepIdx];
+        const ok = this.executeSingleMove(dir);
+
+        stepIdx++;
+        this.render();
+
+        if (!ok || this.mazeResult === 'reached' || this.mazeResult === 'collision') {
+          clearInterval(interval);
+          this.isExecuting = false;
+          this.activeExecutingIndex = -1;
+          this.render();
+        }
+      }, 380);
+    }
+
+    // ============================================================
+    // 8. RENDERIZADORES DE VISTA
+    // ============================================================
+    render() {
+      const mount = document.getElementById('algorithms-content-mount');
+      if (!mount) return;
+
+      mount.innerHTML = `
+        <div class="alg-fullscreen-layout ${this.currentGrade === 1 ? 'grade-1-uppercase' : ''}">
+          ${this.renderTopBar()}
+          ${this.renderStepPills()}
+          <main class="alg-main-body">
+            ${this.renderCurrentStepContent()}
+          </main>
         </div>
       `;
     }
 
-    /**
-     * Renderiza los renglones de pasos de una actividad en el DOM
-     */
-    renderActivitySteps(actId) {
-      const container = document.getElementById(`steps-list-${actId}`);
-      if (!container) return;
-
-      const steps = this.activitiesData[actId] || [];
-      container.innerHTML = '';
-
-      steps.forEach((stepText, idx) => {
-        const row = document.createElement('div');
-        row.className = 'step-input-row';
-        row.innerHTML = `
-          <span class="step-input-label">${this.formatForGrade('PASO')} ${idx + 1}</span>
-          <input type="text" 
-                 class="step-text-input" 
-                 data-act-id="${actId}" 
-                 data-step-idx="${idx}" 
-                 value="${this.escapeHtml(stepText)}" 
-                 placeholder="${this.formatForGrade('Escribí este paso...')}" 
-                 autocomplete="off">
-          ${steps.length > 2 ? `
-            <button type="button" 
-                    class="btn-remove-step" 
-                    data-act-id="${actId}" 
-                    data-remove-idx="${idx}" 
-                    title="${this.formatForGrade('Eliminar este paso')}">
-              🗑️
+    renderTopBar() {
+      return `
+        <header class="alg-header-bar">
+          <div class="alg-header-left">
+            <button class="btn-alg-back" onclick="window.algorithmsModule.exitModule()" title="${this.txt('Volver a Programación')}">
+              <span class="btn-icon">⬅️</span>
+              <span class="btn-text">${this.txt('Volver')}</span>
             </button>
-          ` : ''}
-        `;
-
-        // Tipeo del alumno: autosave en tiempo real
-        const input = row.querySelector('.step-text-input');
-        input.oninput = (e) => {
-          this.activitiesData[actId][idx] = e.target.value;
-          this.saveActivityDraft(actId);
-        };
-
-        // Eliminar paso
-        const removeBtn = row.querySelector('.btn-remove-step');
-        if (removeBtn) {
-          removeBtn.onclick = () => {
-            this.removeActivityStep(actId, idx);
-          };
-        }
-
-        container.appendChild(row);
-      });
+            <div class="alg-header-title-box">
+              <span class="alg-header-badge">⭐ ${this.txt('PROGRAMACIÓN')} ➔ ${this.txt('ALGORITMOS')}</span>
+              <h1 class="alg-header-title">${this.txt('CLASE N.º 1: ¿QUÉ ES UN ALGORITMO?')}</h1>
+            </div>
+          </div>
+          <div class="alg-header-right">
+            <div class="alg-grade-pill">
+              <span>🎒</span> ${this.currentGrade}.º ${this.txt('Grado')}
+            </div>
+          </div>
+        </header>
+      `;
     }
 
-    /**
-     * Agrega un paso nuevo completamente vacío
-     */
-    addActivityStep(actId) {
-      if (!this.activitiesData[actId]) {
-        this.activitiesData[actId] = [];
-      }
-      this.activitiesData[actId].push('');
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
-      this.renderActivitySteps(actId);
-      this.saveActivityDraft(actId);
+    renderStepPills() {
+      const stepNames = [
+        { num: 1, label: this.txt('1. ¿Qué es?') },
+        { num: 2, label: this.txt('2. Bloques I') },
+        { num: 3, label: this.txt('3. Bloques II') },
+        { num: 4, label: this.txt('4. Bity Desafío 1') },
+        { num: 5, label: this.txt('5. Caminos') },
+        { num: 6, label: this.txt('6. Optimizar') },
+        { num: 7, label: this.txt('7. Laberinto Final') }
+      ];
 
-      // Enfocar el nuevo renglón vacío
-      const container = document.getElementById(`steps-list-${actId}`);
-      if (container) {
-        const inputs = container.querySelectorAll('.step-text-input');
-        const lastInput = inputs[inputs.length - 1];
-        if (lastInput) lastInput.focus();
-      }
+      return `
+        <nav class="alg-steps-nav">
+          <div class="alg-steps-scroll">
+            ${stepNames.map(s => `
+              <button class="alg-step-tab ${this.currentStep === s.num ? 'active' : ''} ${this.completedSteps.has(s.num) ? 'completed' : ''}"
+                onclick="window.algorithmsModule.selectStep(${s.num})">
+                <span class="tab-indicator">${this.completedSteps.has(s.num) ? '✓' : s.num}</span>
+                <span class="tab-label">${s.label}</span>
+              </button>
+            `).join('')}
+          </div>
+        </nav>
+      `;
     }
 
-    /**
-     * Elimina un paso
-     */
-    removeActivityStep(actId, idx) {
-      if (!this.activitiesData[actId]) return;
-      this.activitiesData[actId].splice(idx, 1);
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playTrash();
-      this.renderActivitySteps(actId);
-      this.saveActivityDraft(actId);
+    renderCurrentStepContent() {
+      if (this.currentStep === 1) return this.renderStep1();
+      if (this.currentStep === 2 || this.currentStep === 3) return this.renderStepEveryday();
+      if (this.currentStep >= 4 && this.currentStep <= 7) return this.renderStepMaze();
+      return '';
     }
 
-    /**
-     * Evalúa pedagógicamente el algoritmo construido por el estudiante
-     * No exige respuestas exactas: evalúa sentido, orden, objetivo y claridad
-     */
-    evaluateAlgorithm(act, steps) {
-      const cleanSteps = steps.map(s => (s || '').trim()).filter(s => s.length > 0);
+    // ------------------------------------------------------------
+    // PARTE 1: ¿QUÉ ES UN ALGORITMO?
+    // ------------------------------------------------------------
+    renderStep1() {
+      return `
+        <section class="alg-section alg-step1-section animate-fade-in">
+          <!-- Banner Superior con Bity -->
+          <div class="alg-bity-speech-card">
+            <div class="speech-avatar">${getBitySvg('happy')}</div>
+            <div class="speech-bubble">
+              <h3>${this.txt('¡HOLA! SOY BITY')} 👋</h3>
+              <p>${this.txt('Hoy vamos a descubrir qué es un ALGORITMO y por qué el orden de las instrucciones es tan importante.')}</p>
+            </div>
+          </div>
 
-      if (cleanSteps.length === 0) {
-        return {
-          success: false,
-          mood: 'thinking',
-          title: '¡Los pasos están vacíos!',
-          message: 'Pensá qué hacés primero y qué hacés después, y escribí cada instrucción en los renglones correspondientes.'
-        };
-      }
+          <!-- 1. Una sola acción: CAMINAR -->
+          <div class="alg-card alg-single-action-card">
+            <div class="card-tag">📍 ${this.txt('UNA SOLA ACCIÓN')}</div>
+            <h2 class="card-title">${this.txt('CAMINAR')}</h2>
+            <div class="card-content-split">
+              <div class="card-svg-col">${ALGORITHM_SVGS.caminar}</div>
+              <div class="card-text-col">
+                <p class="concept-def-quote">
+                  " ${this.txt('Es una acción que podemos realizar siguiendo instrucciones.')} "
+                </p>
+                <div class="hint-bullet">
+                  <span>👣</span>
+                  <p>${this.txt('Para dar un paso, movemos un pie hacia adelante, apoyamos la suela y mantenemos el equilibrio.')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      if (cleanSteps.length < 2) {
-        return {
-          success: false,
-          mood: 'thinking',
-          title: 'Faltan instrucciones',
-          message: 'Un algoritmo es una secuencia de varias instrucciones ordenadas. Escribí al menos 2 o 3 pasos para completar la tarea.'
-        };
-      }
+          <!-- 2. Secuencia de acciones: IR AL ALMACÉN (6 pasos conectados) -->
+          <div class="alg-card alg-sequence-card">
+            <div class="card-tag">🛒 ${this.txt('SECUENCIA DE ACCIONES')}</div>
+            <h2 class="card-title">${this.txt('IR A COMPRAR AL ALMACÉN')}</h2>
+            <p class="card-subtitle">${this.txt('Para completar una tarea más compleja, necesitamos una secuencia de pasos ordenados:')}</p>
 
-      // Verificar longitud mínima de claridad
-      const hasTooShort = cleanSteps.some(s => s.length < 3);
-      if (hasTooShort) {
-        return {
-          success: false,
-          mood: 'thinking',
-          title: 'Instrucciones poco claras',
-          message: 'Algunos de tus pasos son muy cortitos. Explicá con mayor claridad qué acción debe realizarse (usando verbos como abrir, guardar, lavar, poner, etc.).'
-        };
-      }
+            <div class="alg-steps-flow-grid">
+              <!-- Paso 1 -->
+              <div class="flow-step-box">
+                <div class="flow-num">1</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_1_bolsa}</div>
+                <div class="flow-text">${this.txt('Tomar una bolsa de compras')}</div>
+              </div>
+              <div class="flow-arrow">➔</div>
 
-      const allText = cleanSteps.join(' ').toLowerCase();
+              <!-- Paso 2 -->
+              <div class="flow-step-box">
+                <div class="flow-num">2</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_2_salir}</div>
+                <div class="flow-text">${this.txt('Salir de casa')}</div>
+              </div>
+              <div class="flow-arrow">➔</div>
 
-      // Reglas pedagógicas específicas por grado y actividad:
-      if (act.id.includes('mochila')) {
-        // ¿Cerró antes de guardar?
-        const closeIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('cerrar'));
-        const putIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('guardar') || s.toLowerCase().includes('meter') || s.toLowerCase().includes('poner'));
-        if (closeIdx !== -1 && putIdx !== -1 && closeIdx < putIdx) {
-          return {
-            success: false,
-            mood: 'thinking',
-            title: 'Revisá el orden lógico',
-            message: '💡 Pista para reflexionar: ¿Tiene sentido cerrar la mochila antes de guardar los cuadernos? Fijate si te conviene cambiar el orden de esos pasos.'
-          };
-        }
-      } else if (act.id.includes('manos')) {
-        // ¿Secó antes de lavar/enjabonar?
-        const dryIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('secar') || s.toLowerCase().includes('toalla'));
-        const soapIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('jabon') || s.toLowerCase().includes('jabón') || s.toLowerCase().includes('lavar'));
-        if (dryIdx !== -1 && soapIdx !== -1 && dryIdx < soapIdx) {
-          return {
-            success: false,
-            mood: 'thinking',
-            title: 'Revisá el orden de los pasos',
-            message: '💡 Pista para reflexionar: ¿Nos secamos las manos antes de ponernos el jabón o al final con la toalla? ¡Revisá el orden!'
-          };
-        }
-      } else if (act.id.includes('dormir')) {
-        // ¿Dormir como primer paso?
-        const sleepIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('dormir'));
-        const brushIdx = cleanSteps.findIndex(s => s.toLowerCase().includes('diente') || s.toLowerCase().includes('cepill'));
-        if (sleepIdx === 0 && brushIdx > 0) {
-          return {
-            success: false,
-            mood: 'thinking',
-            title: 'Revisá la secuencia',
-            message: '💡 Pista para reflexionar: Si ya te dormiste, ¿podés cepillarte los dientes después? ¡Pensá qué cosas hacés antes de acostarte!'
-          };
-        }
-      } else if (act.id.includes('clima') || act.id.includes('lluvia') || act.id.includes('decision')) {
-        // 4.º Grado: Decisiones condicionales
-        const hasIfThen = allText.includes('si ') || allText.includes('si,') || allText.includes('entonces') || allText.includes('sino') || allText.includes('depende') || allText.includes('frio') || allText.includes('frío') || allText.includes('calor') || allText.includes('llueve');
-        if (!hasIfThen) {
-          return {
-            success: false,
-            mood: 'thinking',
-            title: '¡Agregá una decisión!',
-            message: '💡 En 4.º grado aprendemos a incluir DECISIONES. Probá incluir frases como "SI hace frío, ENTONCES..." o "SI llueve, ENTONCES..." para contemplar diferentes situaciones.'
-          };
-        }
-      } else if (act.id.includes('trivia') || act.id.includes('par_impar') || act.id.includes('repetir')) {
-        // 5.º Grado: Condiciones y repeticiones
-        if (act.id.includes('par_impar')) {
-          const hasMathLogic = allText.includes('2') || allText.includes('dos') || allText.includes('divid') || allText.includes('resto') || allText.includes('residuo') || allText.includes('termina') || allText.includes('cifra') || allText.includes('par');
-          if (!hasMathLogic) {
-            return {
-              success: false,
-              mood: 'thinking',
-              title: 'Pensá en la regla matemática',
-              message: '💡 ¿Cómo sabemos si un número es par? Pensá en dividir entre 2 (y ver si el resto es 0) o mirar la última cifra (0, 2, 4, 6, 8).'
-            };
-          }
-        } else if (act.id.includes('repetir')) {
-          const hasLoop = allText.includes('repetir') || allText.includes('hasta') || allText.includes('mientras') || allText.includes('otra vez') || allText.includes('bucle') || allText.includes('cada vez');
-          if (!hasLoop) {
-            return {
-              success: false,
-              mood: 'thinking',
-              title: 'Incluí la repetición',
-              message: '💡 En este desafío es fundamental usar un BUCLE o REPETICIÓN. Escribí una instrucción como "REPETIR [la acción] HASTA QUE [se cumpla la meta]".'
-            };
-          }
-        }
-      }
+              <!-- Paso 3 -->
+              <div class="flow-step-box">
+                <div class="flow-num">3</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_3_camino}</div>
+                <div class="flow-text">${this.txt('Caminar hacia el almacén')}</div>
+              </div>
+              <div class="flow-arrow flow-arrow-break">➔</div>
 
-      // Si supera las comprobaciones, es un algoritmo válido y creativo
-      return {
-        success: true,
-        mood: 'celebrating',
-        title: '¡Excelente algoritmo!',
-        message: '¡Gran trabajo! Creaste una secuencia de instrucciones ordenada, clara y que cumple con el objetivo. ¡Tus pasos tienen pleno sentido lógico!'
-      };
-    }
+              <!-- Paso 4 -->
+              <div class="flow-step-box">
+                <div class="flow-num">4</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_4_productos}</div>
+                <div class="flow-text">${this.txt('Elegir los productos')}</div>
+              </div>
+              <div class="flow-arrow">➔</div>
 
-    /**
-     * Guarda y comprueba la actividad
-     */
-    saveAndCheckActivity(actId) {
-      const gradeActs = GRADE_ALGORITHMS_ACTIVITIES[this.currentGrade] || GRADE_ALGORITHMS_ACTIVITIES[1];
-      const act = gradeActs.find(a => a.id === actId);
-      if (!act) return;
+              <!-- Paso 5 -->
+              <div class="flow-step-box">
+                <div class="flow-num">5</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_5_pagar}</div>
+                <div class="flow-text">${this.txt('Pagar la compra')}</div>
+              </div>
+              <div class="flow-arrow">➔</div>
 
-      const steps = this.activitiesData[actId] || [];
-      const evalResult = this.evaluateAlgorithm(act, steps);
+              <!-- Paso 6 -->
+              <div class="flow-step-box">
+                <div class="flow-num">6</div>
+                <div class="flow-svg">${ALGORITHM_SVGS.almacen_6_regresar}</div>
+                <div class="flow-text">${this.txt('Regresar a casa')}</div>
+              </div>
+            </div>
+          </div>
 
-      const feedbackBox = document.getElementById(`feedback-${actId}`);
-      if (!feedbackBox) return;
+          <!-- 3. Pregunta interactiva: ¿IMPORTA EL ORDEN? -->
+          <div class="alg-card alg-quiz-card">
+            <div class="quiz-header">
+              <span class="quiz-badge">❓ ${this.txt('PREGUNTA PARA VOS')}</span>
+              <h2 class="quiz-question">${this.txt('¿IMPORTA EL ORDEN DE ESTOS PASOS?')}</h2>
+            </div>
+            
+            <div class="quiz-buttons-row">
+              <button class="btn-quiz-opt btn-quiz-yes ${this.orderQuestionAnswer === 'si' ? 'selected' : ''}" 
+                onclick="window.algorithmsModule.handleOrderQuestion('si')">
+                <span class="btn-check-icon">👍</span> ${this.txt('SÍ, IMPORTA')}
+              </button>
+              <button class="btn-quiz-opt btn-quiz-no ${this.orderQuestionAnswer === 'no' ? 'selected' : ''}" 
+                onclick="window.algorithmsModule.handleOrderQuestion('no')">
+                <span class="btn-check-icon">👎</span> ${this.txt('NO, DA LO MISMO')}
+              </button>
+            </div>
 
-      feedbackBox.style.display = 'block';
-      feedbackBox.className = `alg-feedback-box ${evalResult.success ? 'feedback-success' : 'feedback-hint'}`;
+            <!-- Feedback pedagógico y demostración desordenada -->
+            ${this.orderQuestionAnswered ? `
+              <div class="quiz-feedback-box animate-scale-up">
+                <div class="feedback-speech">
+                  <div class="feedback-avatar">${getBitySvg(this.orderQuestionAnswer === 'si' ? 'celebrating' : 'thinking')}</div>
+                  <div class="feedback-text">
+                    <h4>${this.orderQuestionAnswer === 'si' ? this.txt('¡EXACTO! ¡MUY BIEN!') : this.txt('¡PENSÉMOSLO JUNTOS!')}</h4>
+                    <p>${this.txt('¡El orden es fundamental! Si cambiamos el orden de las instrucciones, la tarea no se puede cumplir.')}</p>
+                  </div>
+                </div>
 
-      const cleanSteps = steps.map(s => (s || '').trim()).filter(s => s.length > 0);
-      const stepIdxInClass = gradeActs.findIndex(a => a.id === actId); // 0, 1, 2 -> correspond to step 3, 4, 5
+                <!-- Demostración visual de la secuencia desordenada -->
+                <div class="disordered-demo-box">
+                  <div class="disordered-svg">${ALGORITHM_SVGS.secuencia_desordenada}</div>
+                  <div class="disordered-explanation">
+                    <p><strong>${this.txt('¿Qué pasa si intentamos pagar antes de elegir los productos o antes de salir de casa?')}</strong></p>
+                    <p>${this.txt('¡No sabemos qué estamos comprando ni cuánto dinero necesitamos! Cada paso depende del anterior.')}</p>
+                  </div>
+                </div>
 
-      feedbackBox.innerHTML = `
-        <div class="feedback-bity-row">
-          <div class="feedback-bity-avatar">${getBitySvg(evalResult.mood)}</div>
-          <div class="feedback-bity-content">
-            <h4 class="feedback-bity-title">${this.formatForGrade(evalResult.title)}</h4>
-            <p class="feedback-bity-text">${this.formatForGrade(evalResult.message)}</p>
-            ${evalResult.success ? `
-              <div class="feedback-next-action">
-                <button type="button" class="btn-feedback-next" data-goto="${stepIdxInClass + 4}">
-                  <span>▶️</span> ${this.formatForGrade('¡CONTINUAR AL SIGUIENTE PASO!')}
-                </button>
+                <!-- Recuadro visual destacado: CONCEPTO DE ALGORITMO -->
+                <div class="concept-gold-card">
+                  <div class="gold-badge">💡 ${this.txt('CONCEPTO CENTRAL')}</div>
+                  <h3 class="gold-definition">
+                    ${this.txt('UN ALGORITMO ES UNA SECUENCIA DE INSTRUCCIONES ORDENADAS PARA RESOLVER UN PROBLEMA O REALIZAR UNA TAREA.')}
+                  </h3>
+                  <div class="gold-svg-wrapper">${ALGORITHM_SVGS.algoritmo_concepto}</div>
+                </div>
+
+                <div class="alg-nav-buttons-bottom">
+                  <button class="btn-alg-continue" onclick="window.algorithmsModule.selectStep(2)">
+                    ${this.txt('CONTINUAR A LA PARTE 2: CONSTRUIR CON BLOQUES')} ➔
+                  </button>
+                </div>
               </div>
             ` : ''}
           </div>
+        </section>
+      `;
+    }
+
+    // ------------------------------------------------------------
+    // PARTE 2: CONSTRUIMOS ALGORITMOS CON BLOQUES (Manipulativo)
+    // ------------------------------------------------------------
+    renderStepEveryday() {
+      const actId = this.selectedEverydayAct;
+      const act = EVERYDAY_ACTIVITIES[actId];
+      const targetSteps = act.steps[this.currentGrade];
+      const state = this.everydayState[actId];
+
+      const actsInThisStep = this.currentStep === 2 ? ['cafe', 'jugo'] : ['mochila', 'habitacion'];
+
+      // Preparar banco de bloques (los target + distractores)
+      const allAvailableBlocks = [
+        ...targetSteps,
+        ...act.distractors
+      ];
+
+      return `
+        <section class="alg-section alg-everyday-section animate-fade-in">
+          <!-- Selector de Actividad dentro del Paso -->
+          <div class="everyday-subnav">
+            ${actsInThisStep.map(k => {
+              const a = EVERYDAY_ACTIVITIES[k];
+              const s = this.everydayState[k];
+              return `
+                <button class="everyday-tab ${this.selectedEverydayAct === k ? 'active' : ''}" 
+                  onclick="window.algorithmsModule.switchEverydayAct('${k}')">
+                  <span class="tab-icon">${k === 'cafe' ? '☕' : (k === 'jugo' ? '🧃' : (k === 'mochila' ? '🎒' : '🛏️'))}</span>
+                  <span class="tab-title">${this.txt(a.title)}</span>
+                  ${s.completed ? '<span class="check-pill">✓</span>' : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Tarjeta de la Actividad -->
+          <div class="alg-card everyday-activity-card">
+            <div class="activity-header">
+              <div>
+                <span class="activity-tag">🧩 ${this.txt('CONSTRUCCIÓN CON BLOQUES')}</span>
+                <h2 class="activity-title">${this.txt(act.title)}</h2>
+                <p class="activity-subtitle">${this.txt(act.subtitle)}</p>
+              </div>
+              <div class="safety-badge">
+                ${this.txt(act.safety)}
+              </div>
+            </div>
+
+            <!-- Mensaje de error / advertencia -->
+            ${state.errorMsg ? `
+              <div class="alert-box-warning animate-shake">
+                <span>⚠️</span> <strong>${state.errorMsg}</strong>
+              </div>
+            ` : ''}
+
+            <!-- Felicitación de éxito -->
+            ${state.completed ? `
+              <div class="alert-box-success animate-scale-up">
+                <div class="success-avatar">${getBitySvg('celebrating')}</div>
+                <div>
+                  <h3>🎉 ${this.txt('¡EXCELENTE TRABAJO!')}</h3>
+                  <p>${this.txt('El algoritmo está perfectamente ordenado. ¡Cada instrucción está en su lugar!')}</p>
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Área de Construcción: Casilleros Vacíos Numerados -->
+            <div class="everyday-workspace">
+              <div class="workspace-col-slots">
+                <div class="slots-header">
+                  <h3>${this.txt('TU ALGORITMO')} (${state.placed.length} / ${targetSteps.length} ${this.txt('pasos')})</h3>
+                  <p class="slots-instruction">${this.txt('Hacé clic en los bloques de la derecha para ubicarlos en orden en los casilleros.')}</p>
+                </div>
+
+                <div class="slots-grid">
+                  ${targetSteps.map((st, idx) => {
+                    const placedBlockId = state.placed[idx];
+                    const placedBlock = placedBlockId ? allAvailableBlocks.find(b => b.id === placedBlockId) : null;
+                    return `
+                      <div class="slot-box ${placedBlock ? 'filled' : 'empty'}">
+                        <div class="slot-number">${this.txt('Paso')} ${idx + 1}</div>
+                        ${placedBlock ? `
+                          <div class="slot-block-content">
+                            <div class="block-icon">${ALGORITHM_SVGS[placedBlock.svg] || '🔹'}</div>
+                            <span class="block-text">${this.txt(this.currentGrade === 1 ? placedBlock.textG1 : placedBlock.text)}</span>
+                            ${!state.completed ? `
+                              <button class="btn-remove-slot" onclick="window.algorithmsModule.removePlacedBlock('${actId}', ${idx})" title="${this.txt('Quitar bloque')}">✕</button>
+                            ` : ''}
+                          </div>
+                        ` : `
+                          <div class="slot-placeholder">
+                            <span>📥</span>
+                            <span>${this.txt('Vacío')}</span>
+                          </div>
+                        `}
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+
+                <!-- Botones de Acción de la Actividad -->
+                <div class="everyday-actions-row">
+                  ${!state.completed ? `
+                    <button class="btn-alg-check" onclick="window.algorithmsModule.checkEverydayAct('${actId}')">
+                      <span>✓</span> ${this.txt('COMPROBAR ALGORITMO')}
+                    </button>
+                    <button class="btn-alg-reset" onclick="window.algorithmsModule.resetEverydayAct('${actId}')">
+                      <span>🔄</span> ${this.txt('REINICIAR')}
+                    </button>
+                  ` : `
+                    <button class="btn-alg-continue" onclick="${
+                      this.selectedEverydayAct === 'cafe' ? "window.algorithmsModule.switchEverydayAct('jugo')" :
+                      (this.selectedEverydayAct === 'jugo' ? "window.algorithmsModule.selectStep(3)" :
+                      (this.selectedEverydayAct === 'mochila' ? "window.algorithmsModule.switchEverydayAct('habitacion')" :
+                      "window.algorithmsModule.selectStep(4)"))
+                    }">
+                      ${this.txt('CONTINUAR')} ➔
+                    </button>
+                  `}
+                </div>
+              </div>
+
+              <!-- Banco de Bloques Disponibles (con Distractores) -->
+              <div class="workspace-col-pool">
+                <div class="pool-header">
+                  <h3>📦 ${this.txt('BLOQUES DISPONIBLES')}</h3>
+                  <span class="pool-hint">${this.txt('¡Atención a los distractores!')}</span>
+                </div>
+
+                <div class="pool-blocks-list">
+                  ${allAvailableBlocks.map(b => {
+                    const isPlaced = state.placed.includes(b.id);
+                    return `
+                      <button class="block-item-btn ${isPlaced ? 'placed' : ''}" 
+                        ${isPlaced || state.completed ? 'disabled' : ''}
+                        onclick="window.algorithmsModule.handleBlockClick('${actId}', '${b.id}')">
+                        <div class="block-icon">${ALGORITHM_SVGS[b.svg] || '🔹'}</div>
+                        <span class="block-label">${this.txt(this.currentGrade === 1 ? b.textG1 : b.text)}</span>
+                        ${isPlaced ? '<span class="placed-badge">✓</span>' : ''}
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    // ------------------------------------------------------------
+    // PARTES 3 Y 4: DESAFÍOS DE PROGRAMACIÓN CON BITY (Laberintos)
+    // ------------------------------------------------------------
+    renderStepMaze() {
+      const cfg = this.getCurrentMazeConfig();
+      const isCompleted = this.completedSteps.has(this.currentStep);
+
+      return `
+        <section class="alg-section alg-maze-section animate-fade-in">
+          <!-- Título y Consigna del Desafío -->
+          <div class="maze-header-card">
+            <div class="maze-header-content">
+              <span class="challenge-badge">🚀 ${this.txt('DESAFÍO')} ${this.currentStep - 3} ${this.txt('DE')} 4</span>
+              <h2 class="challenge-title">${this.txt(cfg.title)}</h2>
+              <p class="challenge-hint">${this.txt(cfg.hint)}</p>
+            </div>
+            <div class="maze-header-avatar">${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : (this.mazeResult === 'collision' ? 'alert' : 'happy'))}</div>
+          </div>
+
+          <!-- Mensajes de Estado del Desafío -->
+          ${this.mazeResult === 'collision' ? `
+            <div class="alert-box-warning animate-shake">
+              <span>💥</span> <strong>${this.txt('¡Bity chocó contra un obstáculo! Revisá las instrucciones y volvé a intentar.')}</strong>
+            </div>
+          ` : ''}
+
+          ${this.mazeResult === 'reached' ? `
+            <div class="alert-box-success animate-scale-up">
+              <div class="success-avatar">${getBitySvg('celebrating')}</div>
+              <div class="success-body">
+                <h3>🎉 ${this.txt('¡MISIÓN CUMPLIDA!')}</h3>
+                <p>${this.currentStep === 4 ? this.txt('¡Bity llegó al taller mecánico y reparó sus circuitos!') :
+                     (this.currentStep === 5 ? this.txt('¡Excelente! Encontraste un camino válido sorteando todos los asteroides.') :
+                     (this.currentStep === 6 ? this.txt('¡Llegaste a la meta! Mirá la reflexión de optimización más abajo.') :
+                     this.txt('¡Completaste con éxito el último gran laberinto algorítmico!')))}</p>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Interfaz de 3 ZONAS -->
+          <div class="maze-coding-layout">
+            <!-- ZONA 1: TABLERO / LABERINTO -->
+            <div class="maze-zone-board">
+              <div class="zone-tag">🗺️ ${this.txt('ZONA 1: LABERINTO')}</div>
+              <div class="maze-grid-wrapper" style="--cols: ${cfg.cols}; --rows: ${cfg.rows};">
+                ${this.renderMazeGrid(cfg)}
+              </div>
+              <div class="maze-legend">
+                <span>🤖 ${this.txt('Bity')}</span>
+                <span>${this.currentStep === 4 ? '🔧 ' + this.txt('Mecánico') : '⭐ ' + this.txt('Meta')}</span>
+                <span>🪨 ${this.txt('Pared / Asteroide')}</span>
+              </div>
+            </div>
+
+            <!-- ZONA 2: PALETA DE BLOQUES (4 DIRECCIONES) -->
+            <div class="maze-zone-palette">
+              <div class="zone-tag">🕹️ ${this.txt('ZONA 2: BLOQUES')}</div>
+              <p class="palette-hint">${this.txt('Hacé clic para agregar instrucciones:')}</p>
+              
+              <div class="palette-buttons-grid">
+                <button class="btn-dir-block btn-dir-up" onclick="window.algorithmsModule.addDirectionToProgram('up')" ${this.isExecuting ? 'disabled' : ''}>
+                  <span class="dir-icon">⬆️</span>
+                  <span class="dir-text">${this.txt('ARRIBA')}</span>
+                </button>
+                <div class="palette-row-middle">
+                  <button class="btn-dir-block btn-dir-left" onclick="window.algorithmsModule.addDirectionToProgram('left')" ${this.isExecuting ? 'disabled' : ''}>
+                    <span class="dir-icon">⬅️</span>
+                    <span class="dir-text">${this.txt('IZQUIERDA')}</span>
+                  </button>
+                  <button class="btn-dir-block btn-dir-right" onclick="window.algorithmsModule.addDirectionToProgram('right')" ${this.isExecuting ? 'disabled' : ''}>
+                    <span class="dir-icon">➡️</span>
+                    <span class="dir-text">${this.txt('DERECHA')}</span>
+                  </button>
+                </div>
+                <button class="btn-dir-block btn-dir-down" onclick="window.algorithmsModule.addDirectionToProgram('down')" ${this.isExecuting ? 'disabled' : ''}>
+                  <span class="dir-icon">⬇️</span>
+                  <span class="dir-text">${this.txt('ABAJO')}</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- ZONA 3: ESPACIO DEL PROGRAMA -->
+            <div class="maze-zone-program">
+              <div class="zone-tag">📜 ${this.txt('ZONA 3: PROGRAMA')} (${this.program.length} ${this.txt('instrucciones')})</div>
+              
+              <div class="program-blocks-container">
+                ${this.program.length === 0 ? `
+                  <div class="empty-program-notice">
+                    <span>👈</span>
+                    <p>${this.txt('Elegí bloques de dirección para construir la secuencia.')}</p>
+                  </div>
+                ` : `
+                  <div class="program-list">
+                    ${this.program.map((dir, idx) => {
+                      const isExecutingActive = this.activeExecutingIndex === idx;
+                      return `
+                        <div class="program-step-badge ${isExecutingActive ? 'is-executing' : ''}">
+                          <span class="badge-num">${idx + 1}.</span>
+                          <span class="badge-arrow">${dir === 'up' ? '⬆️' : (dir === 'down' ? '⬇️' : (dir === 'left' ? '⬅️' : '➡️'))}</span>
+                          <span class="badge-name">${this.txt(dir.toUpperCase())}</span>
+                          ${!this.isExecuting ? `
+                            <button class="btn-del-inst" onclick="window.algorithmsModule.removeInstruction(${idx})" title="${this.txt('Eliminar')}">✕</button>
+                          ` : ''}
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                `}
+              </div>
+
+              <!-- Controles de Ejecución -->
+              <div class="program-controls-row">
+                <button class="btn-action-run" onclick="window.algorithmsModule.runProgram()" ${this.isExecuting ? 'disabled' : ''}>
+                  <span>▶️</span> ${this.txt('EJECUTAR')}
+                </button>
+                <button class="btn-action-step" onclick="window.algorithmsModule.runStepByStep()" ${this.isExecuting ? 'disabled' : ''}>
+                  <span>👣</span> ${this.txt('PASO A PASO')}
+                </button>
+                <button class="btn-action-reset" onclick="window.algorithmsModule.resetMaze()" ${this.isExecuting ? 'disabled' : ''}>
+                  <span>🔄</span> ${this.txt('REINICIAR')}
+                </button>
+                <button class="btn-action-clear" onclick="window.algorithmsModule.clearProgram()" ${this.isExecuting ? 'disabled' : ''}>
+                  <span>🗑️</span> ${this.txt('BORRAR')}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA ESPECIAL DE OPTIMIZACIÓN (DESAFÍO 3) -->
+          ${this.currentStep === 6 && this.mazeResult === 'reached' ? this.renderOptimizationCard() : ''}
+
+          <!-- TARJETA ESPECIAL DE CELEBRACIÓN FINAL (DESAFÍO 4) -->
+          ${this.currentStep === 7 && this.mazeResult === 'reached' ? this.renderFinalCelebration() : ''}
+
+          <!-- Botón de avance entre desafíos -->
+          ${this.mazeResult === 'reached' && this.currentStep < 7 ? `
+            <div class="alg-nav-buttons-bottom">
+              <button class="btn-alg-continue" onclick="window.algorithmsModule.nextStep()">
+                ${this.txt('SIGUIENTE DESAFÍO')} ➔
+              </button>
+            </div>
+          ` : ''}
+        </section>
+      `;
+    }
+
+    renderMazeGrid(cfg) {
+      let html = '';
+      for (let r = 0; r < cfg.rows; r++) {
+        for (let c = 0; c < cfg.cols; c++) {
+          const isWall = cfg.grid[r][c] === 1;
+          const isStart = r === cfg.start.y && c === cfg.start.x;
+          const isGoal = r === cfg.goal.y && c === cfg.goal.x;
+          const isBity = r === this.bityPos.y && c === this.bityPos.x;
+
+          let cellClass = isWall ? 'cell-wall' : 'cell-path';
+          if (isStart) cellClass += ' cell-start';
+          if (isGoal) cellClass += ' cell-goal';
+
+          html += `
+            <div class="maze-cell ${cellClass}" data-x="${c}" data-y="${r}">
+              ${isWall ? '<span class="cell-obstacle">🪨</span>' : ''}
+              ${isGoal ? (this.currentStep === 4 ? '<span class="cell-goal-icon">🔧</span>' : '<span class="cell-goal-icon">⭐</span>') : ''}
+              ${isBity ? `
+                <div class="bity-cell-sprite facing-${this.bityFacing}">
+                  ${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : (this.mazeResult === 'collision' ? 'alert' : 'happy'))}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }
+      }
+      return html;
+    }
+
+    renderOptimizationCard() {
+      const cfg = this.getCurrentMazeConfig();
+      const usedSteps = this.program.length;
+      const optimal = cfg.optimalSteps || 4;
+
+      return `
+        <div class="alg-card comparison-reflection-card animate-scale-up">
+          <div class="comp-badge">📊 ${this.txt('REFLEXIÓN PEDAGÓGICA')}</div>
+          <h3 class="comp-title">${this.txt('¿PODRÍAS LLEGAR A LA META UTILIZANDO MENOS INSTRUCCIONES?')}</h3>
+          
+          <div class="comp-stats-row">
+            <div class="stat-box stat-student">
+              <div class="stat-number">${usedSteps}</div>
+              <div class="stat-label">${this.txt('Tus instrucciones')}</div>
+            </div>
+            <div class="stat-vs">VS</div>
+            <div class="stat-box stat-optimal">
+              <div class="stat-number">${optimal}</div>
+              <div class="stat-label">${this.txt('Camino óptimo')}</div>
+            </div>
+          </div>
+
+          <div class="comp-message-box">
+            <div class="comp-avatar">${getBitySvg('happy')}</div>
+            <div class="comp-text">
+              <p>
+                ${usedSteps === optimal ? 
+                  this.txt('¡FANTÁSTICO! Encontraste el camino más corto posible. Tu algoritmo es 100% eficiente.') :
+                  this.txt('¡Muy bien! Lograste resolver el laberinto. Pero en programación, resolver un problema usando menos pasos ahorra tiempo y memoria. ¿Te animás a buscar el camino más corto?')
+                }
+              </p>
+            </div>
+          </div>
+
+          <div class="comp-buttons-row">
+            <button class="btn-alg-reset" onclick="window.algorithmsModule.clearProgram()">
+              <span>🔄</span> ${this.txt('PROBAR OTRO CAMINO')}
+            </button>
+            <button class="btn-alg-continue" onclick="window.algorithmsModule.nextStep()">
+              ${this.txt('CONTINUAR')} ➔
+            </button>
+          </div>
         </div>
       `;
-
-      // Listener para el botón siguiente dentro del feedback
-      const nextBtn = feedbackBox.querySelector('.btn-feedback-next');
-      if (nextBtn) {
-        nextBtn.onclick = () => {
-          const nextStep = parseInt(nextBtn.getAttribute('data-goto'));
-          if (nextStep) this.goToStep(nextStep);
-        };
-      }
-
-      if (evalResult.success) {
-        if (window.MagicAudioEngine) window.MagicAudioEngine.playVictory();
-        
-        // Guardar actividad completada
-        try {
-          localStorage.setItem(`lego_alg_act_g${this.currentGrade}_${actId}`, JSON.stringify({
-            steps: cleanSteps,
-            isCompleted: true,
-            savedAt: Date.now()
-          }));
-        } catch (e) {}
-
-        this.completedSteps.add(stepIdxInClass + 3);
-        this.saveProgress();
-      } else {
-        if (window.MagicAudioEngine) window.MagicAudioEngine.playPop();
-      }
     }
 
-    /**
-     * Renderiza los renglones de la Pizarra Digital (Parte 6)
-     */
-    renderBlackboardRows() {
-      const container = document.getElementById('blackboard-instructions-list');
-      if (!container) return;
+    renderFinalCelebration() {
+      return `
+        <div class="alg-card final-celebration-card animate-scale-up">
+          <div class="celebration-confetti">✨ ⭐ 🌟 🏆 🌟 ⭐ ✨</div>
+          <h2 class="celebration-title">🎓 ${this.txt('¡FELICITACIONES, PROGRAMADOR/A!')}</h2>
+          <p class="celebration-subtitle">${this.txt('Completaste con éxito la Clase N.º 1 de Algoritmos.')}</p>
 
-      container.innerHTML = '';
-      this.blackboardSteps.forEach((stepText, idx) => {
-        const row = document.createElement('div');
-        row.className = 'blackboard-instruction-row';
-        row.innerHTML = `
-          <span class="chalk-num">${idx + 1}</span>
-          <input type="text" class="chalk-instruction-input" 
-                 value="${this.escapeHtml(stepText)}" 
-                 placeholder="${this.formatForGrade('Escribí la instrucción...')}" 
-                 data-b-idx="${idx}">
-          ${this.blackboardSteps.length > 2 ? `
-            <button type="button" class="btn-remove-step" data-b-remove="${idx}" title="${this.formatForGrade('Eliminar esta instrucción')}">
-              🗑️
+          <div class="celebration-trophy-box">
+            ${ALGORITHM_SVGS.algoritmo_concepto}
+          </div>
+
+          <div class="celebration-summary-box">
+            <h4>${this.txt('LO QUE APRENDIMOS HOY:')}</h4>
+            <ul>
+              <li>✅ <strong>${this.txt('Qué es un algoritmo:')}</strong> ${this.txt('Una secuencia de instrucciones ordenadas para resolver un problema.')}</li>
+              <li>✅ <strong>${this.txt('La importancia del orden:')}</strong> ${this.txt('Si cambiamos el orden, el resultado no se alcanza.')}</li>
+              <li>✅ <strong>${this.txt('Construcción con bloques:')}</strong> ${this.txt('Identificamos los pasos necesarios y descartamos distractores.')}</li>
+              <li>✅ <strong>${this.txt('Programación en 4 direcciones:')}</strong> ${this.txt('Guiamos a Bity con Arriba, Abajo, Izquierda y Derecha.')}</li>
+              <li>✅ <strong>${this.txt('Eficiencia algorítmica:')}</strong> ${this.txt('Descubrimos que un mismo problema puede resolverse con diferentes cantidades de instrucciones.')}</li>
+            </ul>
+          </div>
+
+          <div class="celebration-btn-row">
+            <button class="btn-alg-finish" onclick="window.algorithmsModule.exitModule()">
+              <span>⭐</span> ${this.txt('FINALIZAR CLASE Y GUARDAR')}
             </button>
-          ` : ''}
-        `;
-
-        row.querySelector('.chalk-instruction-input').oninput = (e) => {
-          this.blackboardSteps[idx] = e.target.value;
-          this.saveBlackboardDraft();
-        };
-
-        const removeBtn = row.querySelector('.btn-remove-step');
-        if (removeBtn) {
-          removeBtn.onclick = () => {
-            this.blackboardSteps.splice(idx, 1);
-            this.renderBlackboardRows();
-            this.saveBlackboardDraft();
-          };
-        }
-
-        container.appendChild(row);
-      });
-    }
-
-    blackboardAddRow() {
-      this.blackboardSteps.push('');
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
-      this.renderBlackboardRows();
-      this.saveBlackboardDraft();
-    }
-
-    saveBlackboardDraft() {
-      try {
-        const titleInput = document.getElementById('blackboard-title-input');
-        if (titleInput) this.blackboardTitle = titleInput.value;
-        localStorage.setItem(`lego_alg_blackboard_g${this.currentGrade}`, JSON.stringify({
-          title: this.blackboardTitle,
-          steps: this.blackboardSteps
-        }));
-      } catch (e) {}
-    }
-
-    saveBlackboard() {
-      this.saveBlackboardDraft();
-      const cleanSteps = this.blackboardSteps.map(s => (s || '').trim()).filter(s => s.length > 0);
-      if (cleanSteps.length < 2) {
-        alert(this.formatForGrade('Por favor escribí al menos 2 instrucciones en tu pizarra digital antes de guardar.'));
-        return;
-      }
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playVictory();
-      this.completedSteps.add(6);
-      this.saveProgress();
-      alert(this.formatForGrade('¡Tu algoritmo fue guardado exitosamente en la pizarra digital!'));
-    }
-
-    /**
-     * Vincula listeners de eventos
-     */
-    attachEventListeners() {
-      // Volver al temario
-      const btnBackSyllabus = document.getElementById('btn-alg-back-syllabus');
-      if (btnBackSyllabus) {
-        btnBackSyllabus.onclick = () => this.exitToSyllabus();
-      }
-
-      // Píldoras de progreso
-      document.querySelectorAll('.step-pill').forEach(pill => {
-        pill.onclick = () => {
-          const step = parseInt(pill.getAttribute('data-step'));
-          if (step) {
-            if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
-            this.goToStep(step);
-          }
-        };
-      });
-
-      // Botones de navegación siguiente/anterior
-      document.querySelectorAll('.btn-section-nav[data-goto]').forEach(btn => {
-        btn.onclick = () => {
-          const targetStep = parseInt(btn.getAttribute('data-goto'));
-          if (targetStep) {
-            if (window.MagicAudioEngine) window.MagicAudioEngine.playClick();
-            this.goToStep(targetStep);
-          }
-        };
-      });
-
-      // Pregunta de reflexión Parte 2
-      const btnReflectYes = document.getElementById('btn-reflection-yes');
-      const btnReflectNo = document.getElementById('btn-reflection-no');
-      if (btnReflectYes && btnReflectNo) {
-        btnReflectYes.onclick = () => this.handleReflection('yes');
-        btnReflectNo.onclick = () => this.handleReflection('no');
-      }
-
-      // Botones de agregar paso en actividades
-      document.querySelectorAll('.btn-alg-add-step').forEach(btn => {
-        btn.onclick = () => {
-          const actId = btn.getAttribute('data-act-id');
-          if (actId) this.addActivityStep(actId);
-        };
-      });
-
-      // Botones de guardar y comprobar actividad
-      document.querySelectorAll('.btn-alg-save-activity').forEach(btn => {
-        btn.onclick = () => {
-          const actId = btn.getAttribute('data-act-id');
-          if (actId) this.saveAndCheckActivity(actId);
-        };
-      });
-
-      // Pizarra Digital
-      const btnBbAdd = document.getElementById('btn-blackboard-add-row');
-      const btnBbSave = document.getElementById('btn-blackboard-save');
-      if (btnBbAdd) btnBbAdd.onclick = () => this.blackboardAddRow();
-      if (btnBbSave) btnBbSave.onclick = () => this.saveBlackboard();
-
-      // Botones de selección de algoritmo para presentar (Parte 7)
-      document.querySelectorAll('.btn-pres-pick').forEach(btn => {
-        btn.onclick = () => {
-          const src = btn.getAttribute('data-pick-src');
-          this.openPresentationModal(src);
-        };
-      });
-
-      // Finalizar clase y volver
-      const btnFinish = document.getElementById('btn-alg-finish-class');
-      if (btnFinish) {
-        btnFinish.onclick = () => {
-          this.completedSteps.add(7);
-          this.saveProgress();
-          this.exitToSyllabus();
-        };
-      }
-
-      // Modal de presentación
-      const btnCloseModal = document.getElementById('btn-close-presentation-modal');
-      const btnDismissModal = document.getElementById('btn-modal-dismiss');
-      const btnCopyModal = document.getElementById('btn-modal-copy-text');
-      const btnPrintModal = document.getElementById('btn-modal-print');
-
-      if (btnCloseModal) btnCloseModal.onclick = () => this.closePresentationModal();
-      if (btnDismissModal) btnDismissModal.onclick = () => this.closePresentationModal();
-      if (btnCopyModal) btnCopyModal.onclick = () => this.copyPresentationText();
-      if (btnPrintModal) btnPrintModal.onclick = () => window.print();
-    }
-
-    /**
-     * Navega a un paso específico (1 a 7)
-     */
-    goToStep(step) {
-      if (step < 1 || step > 7) return;
-      this.currentStep = step;
-      this.saveProgress();
-      this.renderStep(step);
-    }
-
-    /**
-     * Muestra la sección correspondiente al paso y actualiza la UI
-     */
-    renderStep(step) {
-      for (let s = 1; s <= 7; s++) {
-        const sec = document.getElementById(`alg-section-${s}`);
-        if (sec) {
-          sec.style.display = (s === step) ? 'block' : 'none';
-        }
-      }
-
-      // Marcar paso 1 y 2 completados al ser visitados
-      if (step >= 2) this.completedSteps.add(1);
-      if (step >= 3) this.completedSteps.add(2);
-
-      this.updateProgressUi();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    /**
-     * Actualiza la barra de progreso y las píldoras
-     */
-    updateProgressUi() {
-      const stepLabel = document.getElementById('alg-current-step-label');
-      const pctBadge = document.getElementById('alg-progress-pct');
-      const barFill = document.getElementById('alg-progress-bar-fill');
-
-      if (stepLabel) {
-        stepLabel.textContent = this.formatForGrade(`PASO ${this.currentStep} DE 7`);
-      }
-
-      const totalSteps = 7;
-      const count = this.completedSteps.size;
-      const pct = Math.min(100, Math.max(14, Math.round((count / totalSteps) * 100)));
-
-      if (pctBadge) pctBadge.textContent = `${pct}%`;
-      if (barFill) barFill.style.width = `${pct}%`;
-
-      document.querySelectorAll('.step-pill').forEach(pill => {
-        const s = parseInt(pill.getAttribute('data-step'));
-        pill.classList.toggle('active', s === this.currentStep);
-        pill.classList.toggle('completed', this.completedSteps.has(s));
-      });
-    }
-
-    /**
-     * Maneja la pregunta de reflexión en Parte 2
-     */
-    handleReflection(choice) {
-      const fb = document.getElementById('reflection-feedback-box');
-      if (!fb) return;
-
-      fb.style.display = 'block';
-      if (choice === 'no') {
-        if (window.MagicAudioEngine) window.MagicAudioEngine.playVictory();
-        fb.innerHTML = `
-          <div class="feedback-bity-row">
-            <div class="feedback-bity-avatar">${getBitySvg('happy')}</div>
-            <div class="feedback-bity-content">
-              <h4 class="feedback-bity-title">${this.formatForGrade('¡EXACTO! EL ORDEN ES INDISPENSABLE')}</h4>
-              <p class="feedback-bity-text">${this.formatForGrade('¡Muy bien pensado! La pasta debe estar en el cepillo ANTES de cepillarse los dientes. Si cambiamos el orden, el cepillo seco no limpia igual y desperdiciamos la pasta.')}</p>
-            </div>
           </div>
-        `;
-        this.completedSteps.add(2);
-        this.saveProgress();
-      } else {
-        if (window.MagicAudioEngine) window.MagicAudioEngine.playPop();
-        fb.innerHTML = `
-          <div class="feedback-bity-row">
-            <div class="feedback-bity-avatar">${getBitySvg('thinking')}</div>
-            <div class="feedback-bity-content">
-              <h4 class="feedback-bity-title">${this.formatForGrade('PENSÉMOSLO UN SEGUNDO...')}</h4>
-              <p class="feedback-bity-text">${this.formatForGrade('Imaginá que te cepillás con el cepillo seco y recién después le ponés pasta... ¡La pasta te quedaría en la boca sin frotar! En los algoritmos, el orden es obligatorio.')}</p>
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    /**
-     * Abre el modal de presentación para el aula
-     */
-    openPresentationModal(sourceKey = 'act1') {
-      const modal = document.getElementById('modal-algorithm-presentation');
-      const titleEl = document.getElementById('pres-modal-title');
-      const stepsListEl = document.getElementById('pres-modal-steps-list');
-
-      if (!modal || !titleEl || !stepsListEl) return;
-
-      let title = '';
-      let steps = [];
-
-      const gradeActs = GRADE_ALGORITHMS_ACTIVITIES[this.currentGrade] || GRADE_ALGORITHMS_ACTIVITIES[1];
-
-      if (sourceKey === 'act1') {
-        title = gradeActs[0].title;
-        steps = this.activitiesData[gradeActs[0].id] || [];
-      } else if (sourceKey === 'act2') {
-        title = gradeActs[1].title;
-        steps = this.activitiesData[gradeActs[1].id] || [];
-      } else if (sourceKey === 'act3') {
-        title = gradeActs[2].title;
-        steps = this.activitiesData[gradeActs[2].id] || [];
-      } else if (sourceKey === 'blackboard') {
-        title = this.blackboardTitle || 'Mi Pizarra Digital';
-        steps = this.blackboardSteps || [];
-      }
-
-      const cleanSteps = steps.map(s => (s || '').trim()).filter(s => s.length > 0);
-
-      if (cleanSteps.length === 0) {
-        alert(this.formatForGrade('Este algoritmo no tiene pasos escritos todavía. ¡Completá los pasos en su actividad antes de presentarlo!'));
-        return;
-      }
-
-      this.currentPresentationText = `${title}\n\n` + cleanSteps.map((s, idx) => `${idx + 1}. ${s}`).join('\n');
-
-      titleEl.textContent = this.formatForGrade(title);
-      stepsListEl.innerHTML = cleanSteps.map((s, idx) => `
-        <div class="presentation-step-card">
-          <span class="presentation-step-num">${idx + 1}</span>
-          <span class="presentation-step-text">${this.formatForGrade(s)}</span>
         </div>
-      `).join('');
-
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-
-      if (window.MagicAudioEngine) window.MagicAudioEngine.playVictory();
-      this.completedSteps.add(7);
-      this.saveProgress();
-    }
-
-    closePresentationModal() {
-      const modal = document.getElementById('modal-algorithm-presentation');
-      if (modal) {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-      }
-    }
-
-    copyPresentationText() {
-      if (!this.currentPresentationText) return;
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(this.currentPresentationText).then(() => {
-          alert(this.formatForGrade('¡Copiado con éxito! Ahora podés pegarlo en cualquier aplicación o documento para compartirlo.'));
-        }).catch(() => {
-          this.fallbackCopy(this.currentPresentationText);
-        });
-      } else {
-        this.fallbackCopy(this.currentPresentationText);
-      }
-    }
-
-    fallbackCopy(text) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      alert(this.formatForGrade('¡Copiado con éxito!'));
+      `;
     }
   }
 
-  // Exportar globalmente
-  global.AlgorithmsModule = AlgorithmsModule;
-  global.algorithmsModule = new AlgorithmsModule();
+  // Exportar instancia global
+  const algorithmsModuleInstance = new AlgorithmsModule();
+  algorithmsModuleInstance.EVERYDAY_ACTIVITIES = EVERYDAY_ACTIVITIES;
+  algorithmsModuleInstance.ALL_MAZES = ALL_MAZES;
+  algorithmsModuleInstance.ALGORITHM_SVGS = ALGORITHM_SVGS;
+  global.algorithmsModule = algorithmsModuleInstance;
 
-})(typeof window !== 'undefined' ? window : this);
+  // Si existe codingManager o MagicApp, sincronizar
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+      // Configuración lista
+    });
+  }
+
+})(typeof window !== 'undefined' ? window : global);
