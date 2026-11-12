@@ -8227,7 +8227,7 @@ class CodingModuleManager {
       }
     } catch (e) {}
 
-    const algPct = isAlgCompleted ? 100 : Math.min(100, Math.round((algCompletedParts / 7) * 100));
+    const algPct = isAlgCompleted ? 100 : Math.min(100, Math.round((algCompletedParts / 8) * 100));
 
     if (algFillEl) algFillEl.style.width = `${algPct}%`;
     if (algTextEl) {
