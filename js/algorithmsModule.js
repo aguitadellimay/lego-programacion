@@ -28,28 +28,20 @@
       <rect width="340" height="220" rx="16" fill="url(#walkSky)"/>
       <ellipse cx="170" cy="195" rx="120" ry="12" fill="rgba(0,0,0,0.35)"/>
       <line x1="20" y1="195" x2="320" y2="195" stroke="#475569" stroke-width="3" stroke-dasharray="8,6"/>
-      <!-- Líneas de viento / movimiento -->
       <path d="M 60 110 Q 80 110 95 115" stroke="#facc15" stroke-width="3" stroke-linecap="round" fill="none"/>
       <path d="M 50 130 Q 75 130 90 135" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none"/>
       <path d="M 70 90 Q 85 90 95 95" stroke="#f472b6" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <!-- Persona caminando -->
       <g transform="translate(135, 20)">
         <circle cx="30" cy="24" r="18" fill="#fed7aa"/>
-        <!-- Gorra deportiva -->
         <path d="M 12 20 Q 30 10 48 20 Q 55 18 58 22 Q 46 25 30 25 Z" fill="#ec4899"/>
         <circle cx="36" cy="22" r="2.5" fill="#1e293b"/>
         <path d="M 32 30 Q 38 34 42 30" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <!-- Torso -->
         <path d="M 18 42 L 44 42 L 48 95 L 14 95 Z" fill="#8b5cf6" rx="6"/>
         <circle cx="31" cy="65" r="8" fill="#facc15"/>
-        <!-- Brazo izquierdo atrás -->
         <path d="M 20 48 L 5 70 L 2 85" stroke="#fed7aa" stroke-width="7" stroke-linecap="round" fill="none"/>
-        <!-- Brazo derecho adelante -->
         <path d="M 42 48 L 56 68 L 65 78" stroke="#fed7aa" stroke-width="7" stroke-linecap="round" fill="none"/>
-        <!-- Pierna izquierda atrás -->
         <path d="M 22 95 L 10 135 L 2 165" stroke="#1e293b" stroke-width="9" stroke-linecap="round" fill="none"/>
         <rect x="-6" y="162" width="22" height="10" rx="4" fill="url(#sneakerGrad)"/>
-        <!-- Pierna derecha adelante en paso -->
         <path d="M 40 95 L 55 130 L 72 160" stroke="#1e293b" stroke-width="9" stroke-linecap="round" fill="none"/>
         <rect x="65" y="156" width="24" height="11" rx="4" fill="url(#sneakerGrad)"/>
       </g>
@@ -67,39 +59,29 @@
 
     almacen_2_salir: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
-      <!-- Marco de puerta -->
       <rect x="25" y="20" width="70" height="85" fill="#334155" rx="4"/>
-      <!-- Luz exterior -->
       <rect x="32" y="26" width="56" height="75" fill="#fef08a"/>
-      <!-- Puerta abierta -->
       <polygon points="32,26 70,36 70,95 32,101" fill="#8b5cf6" stroke="#c084fc" stroke-width="2"/>
       <circle cx="64" cy="65" r="3" fill="#fde047"/>
-      <!-- Felpudo -->
       <ellipse cx="60" cy="103" rx="26" ry="6" fill="#f59e0b"/>
     </svg>`,
 
     almacen_3_camino: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
-      <!-- Vereda con perspectiva -->
       <polygon points="15,110 105,110 75,45 45,45" fill="#475569"/>
       <line x1="60" y1="110" x2="60" y2="45" stroke="#facc15" stroke-width="2.5" stroke-dasharray="6,4"/>
-      <!-- Almacén al fondo -->
       <rect x="42" y="25" width="36" height="25" fill="#0284c7" rx="3"/>
       <polygon points="38,25 60,12 82,25" fill="#ef4444"/>
       <rect x="52" y="34" width="16" height="16" fill="#fef08a"/>
-      <!-- Árbol en vereda -->
       <rect x="22" y="55" width="6" height="18" fill="#78350f"/>
       <circle cx="25" cy="50" r="14" fill="#10b981"/>
     </svg>`,
 
     almacen_4_productos: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
-      <!-- Canasta de compras -->
       <ellipse cx="60" cy="85" rx="36" ry="16" fill="#b45309"/>
       <path d="M 28 85 L 36 50 L 84 50 L 92 85 Z" fill="#d97706" rx="4"/>
-      <!-- Asa de canasta -->
       <path d="M 38 50 Q 60 18 82 50" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
-      <!-- Productos adentro -->
       <rect x="42" y="34" width="14" height="22" rx="3" fill="#38bdf8"/>
       <circle cx="68" cy="42" r="10" fill="#ef4444"/>
       <rect x="54" y="26" width="12" height="28" rx="2" fill="#facc15"/>
@@ -107,13 +89,10 @@
 
     almacen_5_pagar: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
-      <!-- Mostrador -->
       <rect x="15" y="70" width="90" height="38" rx="4" fill="#334155"/>
-      <!-- Caja registradora -->
       <rect x="45" y="44" width="38" height="28" rx="4" fill="#0284c7"/>
       <rect x="52" y="48" width="24" height="10" rx="2" fill="#0f172a"/>
       <text x="64" y="56" fill="#38bdf8" font-size="7" font-weight="900" text-anchor="middle">$100</text>
-      <!-- Billetes / monedas entregándose -->
       <rect x="22" y="50" width="20" height="12" rx="2" fill="#10b981" transform="rotate(-15 22 50)"/>
       <circle cx="34" cy="54" r="2.5" fill="#047857"/>
       <circle cx="36" cy="64" r="5" fill="#facc15"/>
@@ -121,25 +100,20 @@
 
     almacen_6_regresar: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="120" height="120" rx="14" fill="#1e1b4b"/>
-      <!-- Casa acogedora -->
       <rect x="30" y="45" width="60" height="58" rx="4" fill="#6366f1"/>
       <polygon points="20,48 60,18 100,48" fill="#ec4899"/>
-      <!-- Puerta y ventana encendida -->
       <rect x="50" y="65" width="20" height="38" fill="#fbbf24" rx="3"/>
       <circle cx="66" cy="85" r="2" fill="#78350f"/>
       <rect x="34" y="54" width="12" height="12" fill="#fef08a" rx="2"/>
       <rect x="74" y="54" width="12" height="12" fill="#fef08a" rx="2"/>
-      <!-- Destellos de bienvenida -->
       <polygon points="60,8 62,12 66,13 62,15 60,19 58,15 54,13 58,12" fill="#fde047"/>
     </svg>`,
 
     // 1.3. Secuencia desordenada (Demostración de error pedagógico)
     secuencia_desordenada: `<svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Error por desorden">
       <rect width="340" height="180" rx="16" fill="#2d122d" stroke="#f43f5e" stroke-width="2"/>
-      <!-- Fondo y señal de alerta -->
       <circle cx="65" cy="85" r="35" fill="rgba(244, 63, 94, 0.2)"/>
       <text x="65" y="98" font-size="38" text-anchor="middle">❌</text>
-      <!-- Mostrador con dinero antes de comprar -->
       <rect x="120" y="35" width="200" height="110" rx="12" fill="rgba(15, 23, 42, 0.75)" stroke="#fda4af" stroke-width="1.5"/>
       <text x="220" y="62" fill="#fca5a5" font-size="13" font-weight="900" text-anchor="middle">¿PAGAR ANTES DE ELEGIR?</text>
       <text x="220" y="85" fill="#fecdd3" font-size="11" text-anchor="middle">¡No sabemos qué compramos</text>
@@ -157,27 +131,20 @@
         </linearGradient>
       </defs>
       <rect width="360" height="170" rx="16" fill="url(#concBg)" stroke="#a855f7" stroke-width="2"/>
-      <!-- Bloques encastrados en orden hacia la meta -->
       <g transform="translate(25, 45)">
-        <!-- Bloque 1 -->
         <rect x="0" y="15" width="75" height="50" rx="8" fill="#3b82f6"/>
         <text x="37" y="38" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">1. INICIO</text>
         <path d="M 75 35 L 85 40 L 75 45 Z" fill="#3b82f6"/>
-        <!-- Flecha 1 -->
         <path d="M 85 40 L 105 40" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
         <polygon points="105,40 98,35 98,45" fill="#facc15"/>
-        <!-- Bloque 2 -->
         <rect x="110" y="15" width="85" height="50" rx="8" fill="#8b5cf6"/>
         <text x="152" y="38" fill="#ffffff" font-size="11" font-weight="900" text-anchor="middle">2. PASOS</text>
-        <!-- Flecha 2 -->
         <path d="M 195 40 L 215 40" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
         <polygon points="215,40 208,35 208,45" fill="#facc15"/>
-        <!-- Bloque 3: Meta -->
         <rect x="220" y="10" width="85" height="60" rx="8" fill="#10b981" stroke="#34d399" stroke-width="2"/>
         <text x="262" y="36" fill="#ffffff" font-size="12" font-weight="900" text-anchor="middle">⭐ META</text>
         <text x="262" y="55" fill="#d1fae5" font-size="9" font-weight="700" text-anchor="middle">RESUELTO</text>
       </g>
-      <!-- Destellos de estrellas -->
       <polygon points="40,25 43,30 48,31 44,34 45,39 40,36 35,39 36,34 32,31 37,30" fill="#fde047"/>
       <polygon points="330,120 332,124 336,125 333,128 334,132 330,129 326,132 327,128 324,125 328,124" fill="#38bdf8"/>
     </svg>`,
@@ -185,10 +152,8 @@
     // 1.5. Ilustración de Gran Meta: Taller Mecánico
     mecanico_taller: `<svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" class="alg-step-svg">
       <rect width="160" height="120" rx="14" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
-      <!-- Taller con herramientas -->
       <rect x="15" y="25" width="130" height="85" rx="8" fill="#1e293b"/>
       <text x="80" y="42" fill="#fde047" font-size="10" font-weight="900" text-anchor="middle">🔧 TALLER MECÁNICO</text>
-      <!-- Mecánico sonriente y herramientas -->
       <g transform="translate(62, 48)">
         <circle cx="18" cy="14" r="12" fill="#fed7aa"/>
         <path d="M 6 12 Q 18 4 30 12 L 36 12" stroke="#ea580c" stroke-width="4" stroke-linecap="round" fill="none"/>
@@ -846,11 +811,12 @@
       this.program = [];
       this.bityPos = { x: 1, y: 1 };
       this.bityFacing = 'right';
-      this.isExecuting = false;
-      this.activeExecutingIndex = -1;
-      this.stepByStepActive = false;
-      this.stepByStepIndex = 0;
+      this.isMoving = false;
+      this.inputQueue = [];
       this.mazeResult = null; // null | 'reached' | 'collision'
+
+      // Transición animada
+      this.isTransitioning = false;
 
       // Estado de Pregunta de Parte 1
       this.orderQuestionAnswered = false;
@@ -905,6 +871,9 @@
       this.orderQuestionAnswered = false;
       this.orderQuestionAnswer = null;
       this.activeHint = null;
+      this.isTransitioning = false;
+      this.inputQueue = [];
+      this.isMoving = false;
 
       // Iniciar en el primer paso pendiente o en el paso 1
       if (!this.currentStep || this.currentStep < 1 || this.currentStep > 7) {
@@ -931,6 +900,7 @@
       }
     }
 
+    // Guardar progreso SIN salir del módulo (NO llama a renderSyllabus)
     saveProgress() {
       try {
         const isCompleted = this.completedSteps.size >= this.totalSteps;
@@ -942,16 +912,15 @@
           updatedAt: new Date().toISOString()
         };
         localStorage.setItem(`lego_algorithms_class1_progress_g${this.currentGrade}`, JSON.stringify(data));
-        
-        // Notificar al syllabus si codingManager está disponible
-        if (typeof window !== 'undefined' && window.codingManager && typeof window.codingManager.renderSyllabus === 'function') {
-          window.codingManager.renderSyllabus();
-        }
       } catch (e) {}
     }
 
     selectStep(stepNum) {
-      if (this.isExecuting) return;
+      const oldModal = document.getElementById('alg-transition-modal');
+      if (oldModal) oldModal.remove();
+      this.isTransitioning = false;
+      this.inputQueue = [];
+      this.isMoving = false;
       this.currentStep = stepNum;
       this.activeHint = null;
       this.playSound('click');
@@ -988,14 +957,76 @@
       if (typeof window !== 'undefined') {
         if (window.MagicApp && typeof window.MagicApp.navigate === 'function') {
           window.MagicApp.navigate('coding');
-        } else if (window.codingManager && typeof window.codingManager.showCodingAppScreen === 'function') {
+        } else if (window.codingManager && typeof window.codingManager.renderSyllabus === 'function') {
           window.codingManager.renderSyllabus();
         }
       }
     }
 
     // ============================================================
-    // 5. INTERACCIONES PARTE 1
+    // 5. TRANSICIONES ANIMADAS (HALLOWEEN THEMED)
+    // ============================================================
+    showAnimatedTransition(message, onComplete) {
+      if (this.isTransitioning) return;
+      this.isTransitioning = true;
+      this.inputQueue = [];
+      this.isMoving = false;
+      this.playSound('pop');
+
+      const mount = document.getElementById('algorithms-content-mount');
+      if (!mount) {
+        this.isTransitioning = false;
+        if (typeof onComplete === 'function') onComplete();
+        return;
+      }
+
+      // Remover modal previo si existiera
+      const oldModal = document.getElementById('alg-transition-modal');
+      if (oldModal) oldModal.remove();
+
+      const overlay = document.createElement('div');
+      overlay.className = 'alg-transition-overlay';
+      overlay.id = 'alg-transition-modal';
+      overlay.innerHTML = `
+        <div class="transition-modal-box animate-scale-up">
+          <div class="transition-halloween-decor">
+            <span class="decor-bat decor-bat-1">🦇</span>
+            <span class="decor-pumpkin">🎃</span>
+            <span class="decor-bat decor-bat-2">🦇</span>
+          </div>
+          
+          <div class="transition-bity-stage">
+            <div class="transition-bity-sprite">
+              ${getBitySvg('celebrating')}
+            </div>
+          </div>
+          
+          <h2 class="transition-title">${this.txt('¡DESAFÍO COMPLETADO!')}</h2>
+          <p class="transition-subtitle">${this.txt(message || 'ESTAMOS PREPARANDO EL PRÓXIMO DESAFÍO...')}</p>
+          
+          <div class="transition-progress-bar-container">
+            <div class="transition-progress-bar-fill"></div>
+          </div>
+        </div>
+      `;
+
+      mount.appendChild(overlay);
+
+      // Espera de 2 segundos con animación
+      setTimeout(() => {
+        overlay.classList.add('transition-fade-out');
+        setTimeout(() => {
+          overlay.remove();
+          this.isTransitioning = false;
+          if (typeof onComplete === 'function') {
+            onComplete();
+          }
+        }, 220);
+      }, 1900);
+    }
+
+    // ============================================================
+    // 6. INTERACCIONES PARTE 1
     // ============================================================
     handleOrderQuestion(answer) {
       this.orderQuestionAnswered = true;
@@ -1007,9 +1038,12 @@
     }
 
     // ============================================================
-    // 6. INTERACCIONES PARTE 2: BLOQUES COTIDIANOS
+    // 7. INTERACCIONES PARTE 2: BLOQUES COTIDIANOS
     // ============================================================
     switchEverydayAct(actId) {
+      const oldModal = document.getElementById('alg-transition-modal');
+      if (oldModal) oldModal.remove();
+      this.isTransitioning = false;
       this.selectedEverydayAct = actId;
       this.activeHint = null;
       this.playSound('pop');
@@ -1023,10 +1057,8 @@
       const actConfig = EVERYDAY_ACTIVITIES[actId];
       const targetCount = actConfig.steps[this.currentGrade].length;
 
-      // Si ya está colocado, no hacer nada aquí (se quita desde el casillero)
       if (state.placed.includes(blockId)) return;
 
-      // Si hay espacio libre, colocarlo directamente en el primer casillero vacío
       if (state.placed.length < targetCount) {
         state.placed.push(blockId);
         state.errorMsg = null;
@@ -1083,21 +1115,39 @@
         state.errorMsg = null;
         this.playSound('victory');
         
-        // Comprobar si ambas actividades del paso están completas
+        // Transición automática al siguiente desafío sin salir del módulo
         if (this.currentStep === 2) {
-          if (this.everydayState.cafe.completed && this.everydayState.jugo.completed) {
+          if (actId === 'cafe') {
+            this.render();
+            this.showAnimatedTransition('¡EXCELENTE! AHORA PREPAREMOS UN JUGO FRESCO...', () => {
+              this.switchEverydayAct('jugo');
+            });
+          } else if (actId === 'jugo') {
             this.completedSteps.add(2);
             this.saveProgress();
+            this.render();
+            this.showAnimatedTransition('¡GENIAL! PREPARANDO LA MOCHILA ESCOLAR...', () => {
+              this.selectStep(3);
+            });
           }
         } else if (this.currentStep === 3) {
-          if (this.everydayState.mochila.completed && this.everydayState.habitacion.completed) {
+          if (actId === 'mochila') {
+            this.render();
+            this.showAnimatedTransition('¡MUY BIEN! AHORA ORDENEMOS LA HABITACIÓN...', () => {
+              this.switchEverydayAct('habitacion');
+            });
+          } else if (actId === 'habitacion') {
             this.completedSteps.add(3);
             this.saveProgress();
+            this.render();
+            this.showAnimatedTransition('¡FANTÁSTICO! PREPARANDO LOS DESAFÍOS DE PROGRAMACIÓN CON BITY...', () => {
+              this.selectStep(4);
+            });
           }
+        } else {
+          this.render();
         }
-        this.render();
       } else {
-        // Analizar qué falló para dar pista pedagógica
         const distractorFound = actConfig.distractors.find(d => state.placed.includes(d.id));
         if (distractorFound) {
           state.errorMsg = this.txt('¡Atención! Hay un bloque que no pertenece a esta tarea. Revisá bien qué acción sobra.');
@@ -1110,7 +1160,7 @@
     }
 
     // ============================================================
-    // 7. INTERACCIONES PARTES 3 Y 4: LABERINTOS DE PROGRAMACIÓN
+    // 8. INTERACCIONES PARTES 3 Y 4: LABERINTOS DE PROGRAMACIÓN
     // ============================================================
     getCurrentMazeKey() {
       if (this.currentStep === 4) return 'd1_mecanico';
@@ -1132,139 +1182,247 @@
         this.bityPos = { x: cfg.start.x, y: cfg.start.y };
       }
       this.bityFacing = 'right';
-      this.isExecuting = false;
-      this.activeExecutingIndex = -1;
-      this.stepByStepActive = false;
-      this.stepByStepIndex = 0;
+      this.isMoving = false;
+      this.inputQueue = [];
       this.mazeResult = null;
     }
 
-    addDirectionToProgram(dir) {
-      if (this.isExecuting) return;
-      if (this.program.length >= 24) return;
-      this.program.push(dir);
-      this.playSound('pop');
-      this.render();
+    // ============================================================
+    // NUEVA MECÁNICA: MOVIMIENTO INMEDIATO CON COLA (SIN PARPADEO)
+    // ============================================================
+    handleDirectionInput(dir) {
+      if (this.isTransitioning) return;
+      if (this.mazeResult === 'reached') return;
+
+      // Agregar a la cola de movimientos
+      this.inputQueue.push(dir);
+      this.processMovementQueue();
     }
 
-    removeInstruction(index) {
-      if (this.isExecuting) return;
-      if (index >= 0 && index < this.program.length) {
-        this.program.splice(index, 1);
-        this.playSound('trash');
-        this.render();
-      }
-    }
+    processMovementQueue() {
+      if (this.isMoving || this.inputQueue.length === 0) return;
+      const dir = this.inputQueue.shift();
+      this.isMoving = true;
 
-    clearProgram() {
-      if (this.isExecuting) return;
-      this.program = [];
-      this.resetMazeState();
-      this.playSound('trash');
-      this.render();
-    }
-
-    resetMaze() {
-      if (this.isExecuting) return;
-      this.resetMazeState();
-      this.playSound('click');
-      this.render();
-    }
-
-    executeSingleMove(dir) {
       const cfg = this.getCurrentMazeConfig();
       let nx = this.bityPos.x;
       let ny = this.bityPos.y;
 
-      if (dir === 'up') { ny--; this.bityFacing = 'up'; }
-      else if (dir === 'down') { ny++; this.bityFacing = 'down'; }
-      else if (dir === 'left') { nx--; this.bityFacing = 'left'; }
-      else if (dir === 'right') { nx++; this.bityFacing = 'right'; }
+      if (dir === 'up') ny--;
+      else if (dir === 'down') ny++;
+      else if (dir === 'left') nx--;
+      else if (dir === 'right') nx++;
 
-      // Verificar colisión con bordes o paredes (1 = pared)
+      this.bityFacing = dir;
+
+      // Colisión con límites o paredes (1 = pared)
       if (nx < 0 || nx >= cfg.cols || ny < 0 || ny >= cfg.rows || cfg.grid[ny][nx] === 1) {
-        this.mazeResult = 'collision';
         this.playSound('error');
-        return false;
+        this.animateCollision(dir, () => {
+          this.isMoving = false;
+          this.processMovementQueue();
+        });
+        return;
       }
 
+      // Movimiento válido
+      const oldPos = { ...this.bityPos };
       this.bityPos = { x: nx, y: ny };
+      this.program.push(dir);
       this.playSound('click');
 
-      // Verificar si llegó a la meta
-      if (nx === cfg.goal.x && ny === cfg.goal.y) {
-        this.mazeResult = 'reached';
-        this.completedSteps.add(this.currentStep);
-        this.saveProgress();
-        this.playSound('victory');
-        return true;
-      }
-
-      return true;
-    }
-
-    runStepByStep() {
-      if (this.isExecuting) return;
-      if (this.program.length === 0) {
-        alert(this.txt('Agregá instrucciones al programa usando las flechas de dirección.'));
-        return;
-      }
-
-      // Si terminó o chocó, reiniciar posición para nueva prueba
-      if (this.mazeResult !== null || this.stepByStepIndex >= this.program.length) {
-        this.resetMazeState();
-      }
-
-      this.stepByStepActive = true;
-      const currentDir = this.program[this.stepByStepIndex];
-      this.activeExecutingIndex = this.stepByStepIndex;
-
-      const ok = this.executeSingleMove(currentDir);
-      this.stepByStepIndex++;
-
-      this.render();
-    }
-
-    runProgram() {
-      if (this.isExecuting) return;
-      if (this.program.length === 0) {
-        alert(this.txt('Agregá instrucciones al programa usando las flechas de dirección.'));
-        return;
-      }
-
-      this.resetMazeState();
-      this.isExecuting = true;
-      this.stepByStepActive = false;
-      this.render();
-
-      let stepIdx = 0;
-      const interval = setInterval(() => {
-        if (stepIdx >= this.program.length) {
-          clearInterval(interval);
-          this.isExecuting = false;
-          this.activeExecutingIndex = -1;
-          this.render();
+      this.animateStepMove(oldPos, this.bityPos, dir, () => {
+        // Verificar meta
+        if (nx === cfg.goal.x && ny === cfg.goal.y) {
+          this.handleGoalReached();
           return;
         }
+        this.isMoving = false;
+        this.processMovementQueue();
+      });
+    }
 
-        this.activeExecutingIndex = stepIdx;
-        const dir = this.program[stepIdx];
-        const ok = this.executeSingleMove(dir);
+    animateStepMove(oldPos, newPos, dir, callback) {
+      const oldCell = document.querySelector(`.maze-cell[data-x="${oldPos.x}"][data-y="${oldPos.y}"]`);
+      const newCell = document.querySelector(`.maze-cell[data-x="${newPos.x}"][data-y="${newPos.y}"]`);
 
-        stepIdx++;
-        this.render();
-
-        if (!ok || this.mazeResult === 'reached' || this.mazeResult === 'collision') {
-          clearInterval(interval);
-          this.isExecuting = false;
-          this.activeExecutingIndex = -1;
-          this.render();
+      if (oldCell && newCell) {
+        let sprite = oldCell.querySelector('.bity-cell-sprite');
+        if (!sprite) {
+          sprite = document.createElement('div');
+          sprite.className = `bity-cell-sprite facing-${dir}`;
+          sprite.innerHTML = getBitySvg('happy');
         }
-      }, 380);
+
+        // Desplazamiento visual suave
+        let startTransform = '';
+        if (dir === 'right') startTransform = 'translateX(-100%)';
+        else if (dir === 'left') startTransform = 'translateX(100%)';
+        else if (dir === 'down') startTransform = 'translateY(-100%)';
+        else if (dir === 'up') startTransform = 'translateY(100%)';
+
+        sprite.className = `bity-cell-sprite facing-${dir}`;
+        sprite.style.transform = startTransform;
+        sprite.style.transition = 'none';
+
+        newCell.appendChild(sprite);
+        void sprite.offsetHeight; // Forzar reflow
+
+        sprite.style.transition = 'transform 0.16s cubic-bezier(0.25, 1, 0.5, 1)';
+        sprite.style.transform = 'translate(0, 0)';
+
+        // Actualizar lista de instrucciones en Zona 3 de forma directa (sin re-renderizar la página)
+        this.appendInstructionDOM(dir, this.program.length);
+
+        setTimeout(() => {
+          sprite.style.transition = '';
+          if (typeof callback === 'function') callback();
+        }, 160);
+      } else {
+        if (typeof callback === 'function') callback();
+      }
+    }
+
+    animateCollision(dir, callback) {
+      const cell = document.querySelector(`.maze-cell[data-x="${this.bityPos.x}"][data-y="${this.bityPos.y}"]`);
+      const sprite = cell ? cell.querySelector('.bity-cell-sprite') : null;
+
+      if (sprite) {
+        sprite.innerHTML = getBitySvg('alert');
+        sprite.classList.add(`bity-bump-${dir}`);
+        if (cell) cell.classList.add('cell-collision-halo');
+
+        setTimeout(() => {
+          sprite.classList.remove(`bity-bump-${dir}`);
+          if (cell) cell.classList.remove('cell-collision-halo');
+          sprite.innerHTML = getBitySvg('happy');
+          if (typeof callback === 'function') callback();
+        }, 220);
+      } else {
+        if (typeof callback === 'function') callback();
+      }
+    }
+
+    appendInstructionDOM(dir, index) {
+      const container = document.querySelector('.program-blocks-container');
+      if (!container) return;
+
+      let list = container.querySelector('.program-list');
+      if (!list) {
+        container.innerHTML = '<div class="program-list"></div>';
+        list = container.querySelector('.program-list');
+      }
+
+      const badge = document.createElement('div');
+      badge.className = 'program-step-badge animate-scale-up';
+      badge.innerHTML = `
+        <span class="badge-num">${index}.</span>
+        <span class="badge-arrow">${dir === 'up' ? '⬆️' : (dir === 'down' ? '⬇️' : (dir === 'left' ? '⬅️' : '➡️'))}</span>
+        <span class="badge-name">${this.txt(dir.toUpperCase())}</span>
+      `;
+      list.appendChild(badge);
+
+      container.scrollTop = container.scrollHeight;
+
+      const tag = document.querySelector('.maze-zone-program .zone-tag');
+      if (tag) {
+        tag.textContent = `📜 ${this.txt('ZONA 3: PROGRAMA')} (${this.program.length} ${this.txt('instrucciones')})`;
+      }
+    }
+
+    handleGoalReached() {
+      this.mazeResult = 'reached';
+      this.completedSteps.add(this.currentStep);
+      this.saveProgress();
+      this.playSound('victory');
+      this.inputQueue = [];
+      this.isMoving = false;
+
+      // Celebración visual en Bity
+      const cell = document.querySelector(`.maze-cell[data-x="${this.bityPos.x}"][data-y="${this.bityPos.y}"]`);
+      const sprite = cell ? cell.querySelector('.bity-cell-sprite') : null;
+      if (sprite) {
+        sprite.innerHTML = getBitySvg('celebrating');
+        sprite.classList.add('bity-spin-celebration');
+      }
+
+      // Transición según el desafío
+      if (this.currentStep === 4) {
+        setTimeout(() => {
+          this.showAnimatedTransition('¡BITY LLEGÓ AL TALLER MECÁNICO! PREPARANDO EL DESAFÍO 2...', () => {
+            this.selectStep(5);
+          });
+        }, 700);
+      } else if (this.currentStep === 5) {
+        setTimeout(() => {
+          this.showAnimatedTransition('¡CAMINO ENCONTRADO! PREPARANDO EL DESAFÍO DE OPTIMIZACIÓN...', () => {
+            this.selectStep(6);
+          });
+        }, 700);
+      } else if (this.currentStep === 6) {
+        // En el Desafío 3, mostrar la tarjeta de optimización y reflexión
+        setTimeout(() => {
+          const mount = document.querySelector('.alg-maze-section');
+          if (mount) {
+            const oldCard = document.querySelector('.comparison-reflection-card');
+            if (oldCard) oldCard.remove();
+            
+            const cardDiv = document.createElement('div');
+            cardDiv.innerHTML = this.renderOptimizationCard().trim();
+            mount.appendChild(cardDiv.firstElementChild);
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+          }
+        }, 300);
+      } else if (this.currentStep === 7) {
+        // En el Desafío 4, mostrar la pantalla de celebración final
+        setTimeout(() => {
+          const mount = document.querySelector('.alg-maze-section');
+          if (mount) {
+            const oldCard = document.querySelector('.final-celebration-card');
+            if (oldCard) oldCard.remove();
+
+            const cardDiv = document.createElement('div');
+            cardDiv.innerHTML = this.renderFinalCelebration().trim();
+            mount.appendChild(cardDiv.firstElementChild);
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+          }
+        }, 300);
+      }
+    }
+
+    // Reiniciar posición del laberinto sin parpadear la pantalla
+    resetMaze() {
+      if (this.isTransitioning) return;
+      this.inputQueue = [];
+      this.isMoving = false;
+      this.program = [];
+      this.resetMazeState();
+      this.playSound('click');
+
+      const boardWrapper = document.querySelector('.maze-grid-wrapper');
+      if (boardWrapper) {
+        boardWrapper.innerHTML = this.renderMazeGrid(this.getCurrentMazeConfig());
+      }
+      const progContainer = document.querySelector('.program-blocks-container');
+      if (progContainer) {
+        progContainer.innerHTML = `
+          <div class="empty-program-notice">
+            <span>👈</span>
+            <p>${this.txt('Presioná las flechas para mover a Bity inmediatamente.')}</p>
+          </div>
+        `;
+      }
+      const tag = document.querySelector('.maze-zone-program .zone-tag');
+      if (tag) {
+        tag.textContent = `📜 ${this.txt('ZONA 3: PROGRAMA')} (0 ${this.txt('instrucciones')})`;
+      }
+
+      const compCard = document.querySelector('.comparison-reflection-card');
+      if (compCard) compCard.remove();
     }
 
     // ============================================================
-    // 8. RENDERIZADORES DE VISTA
+    // 9. RENDERIZADORES DE VISTA
     // ============================================================
     render() {
       const mount = document.getElementById('algorithms-content-mount');
@@ -1285,7 +1443,7 @@
       return `
         <header class="alg-header-bar">
           <div class="alg-header-left">
-            <button class="btn-alg-back" onclick="window.algorithmsModule.exitModule()" title="${this.txt('Volver a Programación')}">
+            <button class="btn-alg-back" type="button" onclick="window.algorithmsModule.exitModule()" title="${this.txt('Volver a Programación')}">
               <span class="btn-icon">⬅️</span>
               <span class="btn-text">${this.txt('Volver')}</span>
             </button>
@@ -1319,6 +1477,7 @@
           <div class="alg-steps-scroll">
             ${stepNames.map(s => `
               <button class="alg-step-tab ${this.currentStep === s.num ? 'active' : ''} ${this.completedSteps.has(s.num) ? 'completed' : ''}"
+                type="button"
                 onclick="window.algorithmsModule.selectStep(${s.num})">
                 <span class="tab-indicator">${this.completedSteps.has(s.num) ? '✓' : s.num}</span>
                 <span class="tab-label">${s.label}</span>
@@ -1342,7 +1501,6 @@
     renderStep1() {
       return `
         <section class="alg-section alg-step1-section animate-fade-in">
-          <!-- Banner Superior con Bity -->
           <div class="alg-bity-speech-card">
             <div class="speech-avatar">${getBitySvg('happy')}</div>
             <div class="speech-bubble">
@@ -1351,7 +1509,6 @@
             </div>
           </div>
 
-          <!-- 1. Una sola acción: CAMINAR -->
           <div class="alg-card alg-single-action-card">
             <div class="card-tag">📍 ${this.txt('UNA SOLA ACCIÓN')}</div>
             <h2 class="card-title">${this.txt('CAMINAR')}</h2>
@@ -1369,14 +1526,12 @@
             </div>
           </div>
 
-          <!-- 2. Secuencia de acciones: IR AL ALMACÉN (6 pasos conectados) -->
           <div class="alg-card alg-sequence-card">
             <div class="card-tag">🛒 ${this.txt('SECUENCIA DE ACCIONES')}</div>
             <h2 class="card-title">${this.txt('IR A COMPRAR AL ALMACÉN')}</h2>
             <p class="card-subtitle">${this.txt('Para completar una tarea más compleja, necesitamos una secuencia de pasos ordenados:')}</p>
 
             <div class="alg-steps-flow-grid">
-              <!-- Paso 1 -->
               <div class="flow-step-box">
                 <div class="flow-num">1</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_1_bolsa}</div>
@@ -1384,7 +1539,6 @@
               </div>
               <div class="flow-arrow">➔</div>
 
-              <!-- Paso 2 -->
               <div class="flow-step-box">
                 <div class="flow-num">2</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_2_salir}</div>
@@ -1392,7 +1546,6 @@
               </div>
               <div class="flow-arrow">➔</div>
 
-              <!-- Paso 3 -->
               <div class="flow-step-box">
                 <div class="flow-num">3</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_3_camino}</div>
@@ -1400,7 +1553,6 @@
               </div>
               <div class="flow-arrow flow-arrow-break">➔</div>
 
-              <!-- Paso 4 -->
               <div class="flow-step-box">
                 <div class="flow-num">4</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_4_productos}</div>
@@ -1408,7 +1560,6 @@
               </div>
               <div class="flow-arrow">➔</div>
 
-              <!-- Paso 5 -->
               <div class="flow-step-box">
                 <div class="flow-num">5</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_5_pagar}</div>
@@ -1416,7 +1567,6 @@
               </div>
               <div class="flow-arrow">➔</div>
 
-              <!-- Paso 6 -->
               <div class="flow-step-box">
                 <div class="flow-num">6</div>
                 <div class="flow-svg">${ALGORITHM_SVGS.almacen_6_regresar}</div>
@@ -1425,7 +1575,6 @@
             </div>
           </div>
 
-          <!-- 3. Pregunta interactiva: ¿IMPORTA EL ORDEN? -->
           <div class="alg-card alg-quiz-card">
             <div class="quiz-header">
               <span class="quiz-badge">❓ ${this.txt('PREGUNTA PARA VOS')}</span>
@@ -1434,16 +1583,17 @@
             
             <div class="quiz-buttons-row">
               <button class="btn-quiz-opt btn-quiz-yes ${this.orderQuestionAnswer === 'si' ? 'selected' : ''}" 
+                type="button"
                 onclick="window.algorithmsModule.handleOrderQuestion('si')">
                 <span class="btn-check-icon">👍</span> ${this.txt('SÍ, IMPORTA')}
               </button>
               <button class="btn-quiz-opt btn-quiz-no ${this.orderQuestionAnswer === 'no' ? 'selected' : ''}" 
+                type="button"
                 onclick="window.algorithmsModule.handleOrderQuestion('no')">
                 <span class="btn-check-icon">👎</span> ${this.txt('NO, DA LO MISMO')}
               </button>
             </div>
 
-            <!-- Feedback pedagógico y demostración desordenada -->
             ${this.orderQuestionAnswered ? `
               <div class="quiz-feedback-box animate-scale-up">
                 <div class="feedback-speech">
@@ -1454,7 +1604,6 @@
                   </div>
                 </div>
 
-                <!-- Demostración visual de la secuencia desordenada -->
                 <div class="disordered-demo-box">
                   <div class="disordered-svg">${ALGORITHM_SVGS.secuencia_desordenada}</div>
                   <div class="disordered-explanation">
@@ -1463,7 +1612,6 @@
                   </div>
                 </div>
 
-                <!-- Recuadro visual destacado: CONCEPTO DE ALGORITMO -->
                 <div class="concept-gold-card">
                   <div class="gold-badge">💡 ${this.txt('CONCEPTO CENTRAL')}</div>
                   <h3 class="gold-definition">
@@ -1473,7 +1621,7 @@
                 </div>
 
                 <div class="alg-nav-buttons-bottom">
-                  <button class="btn-alg-continue" onclick="window.algorithmsModule.selectStep(2)">
+                  <button class="btn-alg-continue" type="button" onclick="window.algorithmsModule.showAnimatedTransition('PREPARANDO LA ACTIVIDAD: PREPARAMOS UN CAFÉ...', () => window.algorithmsModule.selectStep(2))">
                     ${this.txt('CONTINUAR A LA PARTE 2: CONSTRUIR CON BLOQUES')} ➔
                   </button>
                 </div>
@@ -1495,7 +1643,6 @@
 
       const actsInThisStep = this.currentStep === 2 ? ['cafe', 'jugo'] : ['mochila', 'habitacion'];
 
-      // Preparar banco de bloques (los target + distractores)
       const allAvailableBlocks = [
         ...targetSteps,
         ...act.distractors
@@ -1503,13 +1650,13 @@
 
       return `
         <section class="alg-section alg-everyday-section animate-fade-in">
-          <!-- Selector de Actividad dentro del Paso -->
           <div class="everyday-subnav">
             ${actsInThisStep.map(k => {
               const a = EVERYDAY_ACTIVITIES[k];
               const s = this.everydayState[k];
               return `
                 <button class="everyday-tab ${this.selectedEverydayAct === k ? 'active' : ''}" 
+                  type="button"
                   onclick="window.algorithmsModule.switchEverydayAct('${k}')">
                   <span class="tab-icon">${k === 'cafe' ? '☕' : (k === 'jugo' ? '🧃' : (k === 'mochila' ? '🎒' : '🛏️'))}</span>
                   <span class="tab-title">${this.txt(a.title)}</span>
@@ -1519,7 +1666,6 @@
             }).join('')}
           </div>
 
-          <!-- Tarjeta de la Actividad -->
           <div class="alg-card everyday-activity-card">
             <div class="activity-header">
               <div>
@@ -1532,14 +1678,12 @@
               </div>
             </div>
 
-            <!-- Mensaje de error / advertencia -->
             ${state.errorMsg ? `
               <div class="alert-box-warning animate-shake">
                 <span>⚠️</span> <strong>${state.errorMsg}</strong>
               </div>
             ` : ''}
 
-            <!-- Felicitación de éxito -->
             ${state.completed ? `
               <div class="alert-box-success animate-scale-up">
                 <div class="success-avatar">${getBitySvg('celebrating')}</div>
@@ -1550,7 +1694,6 @@
               </div>
             ` : ''}
 
-            <!-- Área de Construcción: Casilleros Vacíos Numerados -->
             <div class="everyday-workspace">
               <div class="workspace-col-slots">
                 <div class="slots-header">
@@ -1570,7 +1713,7 @@
                             <div class="block-icon">${ALGORITHM_SVGS[placedBlock.svg] || '🔹'}</div>
                             <span class="block-text">${this.txt(this.currentGrade === 1 ? placedBlock.textG1 : placedBlock.text)}</span>
                             ${!state.completed ? `
-                              <button class="btn-remove-slot" onclick="window.algorithmsModule.removePlacedBlock('${actId}', ${idx})" title="${this.txt('Quitar bloque')}">✕</button>
+                              <button class="btn-remove-slot" type="button" onclick="window.algorithmsModule.removePlacedBlock('${actId}', ${idx})" title="${this.txt('Quitar bloque')}">✕</button>
                             ` : ''}
                           </div>
                         ` : `
@@ -1584,17 +1727,16 @@
                   }).join('')}
                 </div>
 
-                <!-- Botones de Acción de la Actividad -->
                 <div class="everyday-actions-row">
                   ${!state.completed ? `
-                    <button class="btn-alg-check" onclick="window.algorithmsModule.checkEverydayAct('${actId}')">
+                    <button class="btn-alg-check" type="button" onclick="window.algorithmsModule.checkEverydayAct('${actId}')">
                       <span>✓</span> ${this.txt('COMPROBAR ALGORITMO')}
                     </button>
-                    <button class="btn-alg-reset" onclick="window.algorithmsModule.resetEverydayAct('${actId}')">
+                    <button class="btn-alg-reset" type="button" onclick="window.algorithmsModule.resetEverydayAct('${actId}')">
                       <span>🔄</span> ${this.txt('REINICIAR')}
                     </button>
                   ` : `
-                    <button class="btn-alg-continue" onclick="${
+                    <button class="btn-alg-continue" type="button" onclick="${
                       this.selectedEverydayAct === 'cafe' ? "window.algorithmsModule.switchEverydayAct('jugo')" :
                       (this.selectedEverydayAct === 'jugo' ? "window.algorithmsModule.selectStep(3)" :
                       (this.selectedEverydayAct === 'mochila' ? "window.algorithmsModule.switchEverydayAct('habitacion')" :
@@ -1606,7 +1748,6 @@
                 </div>
               </div>
 
-              <!-- Banco de Bloques Disponibles (con Distractores) -->
               <div class="workspace-col-pool">
                 <div class="pool-header">
                   <h3>📦 ${this.txt('BLOQUES DISPONIBLES')}</h3>
@@ -1618,6 +1759,7 @@
                     const isPlaced = state.placed.includes(b.id);
                     return `
                       <button class="block-item-btn ${isPlaced ? 'placed' : ''}" 
+                        type="button"
                         ${isPlaced || state.completed ? 'disabled' : ''}
                         onclick="window.algorithmsModule.handleBlockClick('${actId}', '${b.id}')">
                         <div class="block-icon">${ALGORITHM_SVGS[b.svg] || '🔹'}</div>
@@ -1639,41 +1781,18 @@
     // ------------------------------------------------------------
     renderStepMaze() {
       const cfg = this.getCurrentMazeConfig();
-      const isCompleted = this.completedSteps.has(this.currentStep);
 
       return `
         <section class="alg-section alg-maze-section animate-fade-in">
-          <!-- Título y Consigna del Desafío -->
           <div class="maze-header-card">
             <div class="maze-header-content">
               <span class="challenge-badge">🚀 ${this.txt('DESAFÍO')} ${this.currentStep - 3} ${this.txt('DE')} 4</span>
               <h2 class="challenge-title">${this.txt(cfg.title)}</h2>
               <p class="challenge-hint">${this.txt(cfg.hint)}</p>
             </div>
-            <div class="maze-header-avatar">${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : (this.mazeResult === 'collision' ? 'alert' : 'happy'))}</div>
+            <div class="maze-header-avatar">${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : 'happy')}</div>
           </div>
 
-          <!-- Mensajes de Estado del Desafío -->
-          ${this.mazeResult === 'collision' ? `
-            <div class="alert-box-warning animate-shake">
-              <span>💥</span> <strong>${this.txt('¡Bity chocó contra un obstáculo! Revisá las instrucciones y volvé a intentar.')}</strong>
-            </div>
-          ` : ''}
-
-          ${this.mazeResult === 'reached' ? `
-            <div class="alert-box-success animate-scale-up">
-              <div class="success-avatar">${getBitySvg('celebrating')}</div>
-              <div class="success-body">
-                <h3>🎉 ${this.txt('¡MISIÓN CUMPLIDA!')}</h3>
-                <p>${this.currentStep === 4 ? this.txt('¡Bity llegó al taller mecánico y reparó sus circuitos!') :
-                     (this.currentStep === 5 ? this.txt('¡Excelente! Encontraste un camino válido sorteando todos los asteroides.') :
-                     (this.currentStep === 6 ? this.txt('¡Llegaste a la meta! Mirá la reflexión de optimización más abajo.') :
-                     this.txt('¡Completaste con éxito el último gran laberinto algorítmico!')))}</p>
-              </div>
-            </div>
-          ` : ''}
-
-          <!-- Interfaz de 3 ZONAS -->
           <div class="maze-coding-layout">
             <!-- ZONA 1: TABLERO / LABERINTO -->
             <div class="maze-zone-board">
@@ -1688,34 +1807,34 @@
               </div>
             </div>
 
-            <!-- ZONA 2: PALETA DE BLOQUES (4 DIRECCIONES) -->
+            <!-- ZONA 2: PALETA DE MOVIMIENTO INMEDIATO -->
             <div class="maze-zone-palette">
-              <div class="zone-tag">🕹️ ${this.txt('ZONA 2: BLOQUES')}</div>
-              <p class="palette-hint">${this.txt('Hacé clic para agregar instrucciones:')}</p>
+              <div class="zone-tag">🕹️ ${this.txt('ZONA 2: CONTROL')}</div>
+              <p class="palette-hint">${this.txt('Presioná las flechas para mover a Bity inmediatamente:')}</p>
               
               <div class="palette-buttons-grid">
-                <button class="btn-dir-block btn-dir-up" onclick="window.algorithmsModule.addDirectionToProgram('up')" ${this.isExecuting ? 'disabled' : ''}>
+                <button class="btn-dir-block btn-dir-up" type="button" onclick="window.algorithmsModule.handleDirectionInput('up')">
                   <span class="dir-icon">⬆️</span>
                   <span class="dir-text">${this.txt('ARRIBA')}</span>
                 </button>
                 <div class="palette-row-middle">
-                  <button class="btn-dir-block btn-dir-left" onclick="window.algorithmsModule.addDirectionToProgram('left')" ${this.isExecuting ? 'disabled' : ''}>
+                  <button class="btn-dir-block btn-dir-left" type="button" onclick="window.algorithmsModule.handleDirectionInput('left')">
                     <span class="dir-icon">⬅️</span>
                     <span class="dir-text">${this.txt('IZQUIERDA')}</span>
                   </button>
-                  <button class="btn-dir-block btn-dir-right" onclick="window.algorithmsModule.addDirectionToProgram('right')" ${this.isExecuting ? 'disabled' : ''}>
+                  <button class="btn-dir-block btn-dir-right" type="button" onclick="window.algorithmsModule.handleDirectionInput('right')">
                     <span class="dir-icon">➡️</span>
                     <span class="dir-text">${this.txt('DERECHA')}</span>
                   </button>
                 </div>
-                <button class="btn-dir-block btn-dir-down" onclick="window.algorithmsModule.addDirectionToProgram('down')" ${this.isExecuting ? 'disabled' : ''}>
+                <button class="btn-dir-block btn-dir-down" type="button" onclick="window.algorithmsModule.handleDirectionInput('down')">
                   <span class="dir-icon">⬇️</span>
                   <span class="dir-text">${this.txt('ABAJO')}</span>
                 </button>
               </div>
             </div>
 
-            <!-- ZONA 3: ESPACIO DEL PROGRAMA -->
+            <!-- ZONA 3: REGISTRO DEL PROGRAMA EJECUTADO -->
             <div class="maze-zone-program">
               <div class="zone-tag">📜 ${this.txt('ZONA 3: PROGRAMA')} (${this.program.length} ${this.txt('instrucciones')})</div>
               
@@ -1723,59 +1842,29 @@
                 ${this.program.length === 0 ? `
                   <div class="empty-program-notice">
                     <span>👈</span>
-                    <p>${this.txt('Elegí bloques de dirección para construir la secuencia.')}</p>
+                    <p>${this.txt('Presioná las flechas para mover a Bity inmediatamente.')}</p>
                   </div>
                 ` : `
                   <div class="program-list">
-                    ${this.program.map((dir, idx) => {
-                      const isExecutingActive = this.activeExecutingIndex === idx;
-                      return `
-                        <div class="program-step-badge ${isExecutingActive ? 'is-executing' : ''}">
-                          <span class="badge-num">${idx + 1}.</span>
-                          <span class="badge-arrow">${dir === 'up' ? '⬆️' : (dir === 'down' ? '⬇️' : (dir === 'left' ? '⬅️' : '➡️'))}</span>
-                          <span class="badge-name">${this.txt(dir.toUpperCase())}</span>
-                          ${!this.isExecuting ? `
-                            <button class="btn-del-inst" onclick="window.algorithmsModule.removeInstruction(${idx})" title="${this.txt('Eliminar')}">✕</button>
-                          ` : ''}
-                        </div>
-                      `;
-                    }).join('')}
+                    ${this.program.map((dir, idx) => `
+                      <div class="program-step-badge">
+                        <span class="badge-num">${idx + 1}.</span>
+                        <span class="badge-arrow">${dir === 'up' ? '⬆️' : (dir === 'down' ? '⬇️' : (dir === 'left' ? '⬅️' : '➡️'))}</span>
+                        <span class="badge-name">${this.txt(dir.toUpperCase())}</span>
+                      </div>
+                    `).join('')}
                   </div>
                 `}
               </div>
 
-              <!-- Controles de Ejecución -->
+              <!-- Control de Reinicio -->
               <div class="program-controls-row">
-                <button class="btn-action-run" onclick="window.algorithmsModule.runProgram()" ${this.isExecuting ? 'disabled' : ''}>
-                  <span>▶️</span> ${this.txt('EJECUTAR')}
-                </button>
-                <button class="btn-action-step" onclick="window.algorithmsModule.runStepByStep()" ${this.isExecuting ? 'disabled' : ''}>
-                  <span>👣</span> ${this.txt('PASO A PASO')}
-                </button>
-                <button class="btn-action-reset" onclick="window.algorithmsModule.resetMaze()" ${this.isExecuting ? 'disabled' : ''}>
-                  <span>🔄</span> ${this.txt('REINICIAR')}
-                </button>
-                <button class="btn-action-clear" onclick="window.algorithmsModule.clearProgram()" ${this.isExecuting ? 'disabled' : ''}>
-                  <span>🗑️</span> ${this.txt('BORRAR')}
+                <button class="btn-action-reset" type="button" onclick="window.algorithmsModule.resetMaze()">
+                  <span>🔄</span> ${this.txt('REINICIAR POSICIÓN')}
                 </button>
               </div>
             </div>
           </div>
-
-          <!-- TARJETA ESPECIAL DE OPTIMIZACIÓN (DESAFÍO 3) -->
-          ${this.currentStep === 6 && this.mazeResult === 'reached' ? this.renderOptimizationCard() : ''}
-
-          <!-- TARJETA ESPECIAL DE CELEBRACIÓN FINAL (DESAFÍO 4) -->
-          ${this.currentStep === 7 && this.mazeResult === 'reached' ? this.renderFinalCelebration() : ''}
-
-          <!-- Botón de avance entre desafíos -->
-          ${this.mazeResult === 'reached' && this.currentStep < 7 ? `
-            <div class="alg-nav-buttons-bottom">
-              <button class="btn-alg-continue" onclick="window.algorithmsModule.nextStep()">
-                ${this.txt('SIGUIENTE DESAFÍO')} ➔
-              </button>
-            </div>
-          ` : ''}
         </section>
       `;
     }
@@ -1799,7 +1888,7 @@
               ${isGoal ? (this.currentStep === 4 ? '<span class="cell-goal-icon">🔧</span>' : '<span class="cell-goal-icon">⭐</span>') : ''}
               ${isBity ? `
                 <div class="bity-cell-sprite facing-${this.bityFacing}">
-                  ${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : (this.mazeResult === 'collision' ? 'alert' : 'happy'))}
+                  ${getBitySvg(this.mazeResult === 'reached' ? 'celebrating' : 'happy')}
                 </div>
               ` : ''}
             </div>
@@ -1844,10 +1933,10 @@
           </div>
 
           <div class="comp-buttons-row">
-            <button class="btn-alg-reset" onclick="window.algorithmsModule.clearProgram()">
+            <button class="btn-alg-reset" type="button" onclick="window.algorithmsModule.resetMaze()">
               <span>🔄</span> ${this.txt('PROBAR OTRO CAMINO')}
             </button>
-            <button class="btn-alg-continue" onclick="window.algorithmsModule.nextStep()">
+            <button class="btn-alg-continue" type="button" onclick="window.algorithmsModule.showAnimatedTransition('¡INCREÍBLE! PREPARANDO EL GRAN LABERINTO FINAL...', () => window.algorithmsModule.selectStep(7))">
               ${this.txt('CONTINUAR')} ➔
             </button>
           </div>
@@ -1878,7 +1967,7 @@
           </div>
 
           <div class="celebration-btn-row">
-            <button class="btn-alg-finish" onclick="window.algorithmsModule.exitModule()">
+            <button class="btn-alg-finish" type="button" onclick="window.algorithmsModule.exitModule()">
               <span>⭐</span> ${this.txt('FINALIZAR CLASE Y GUARDAR')}
             </button>
           </div>
@@ -1893,12 +1982,5 @@
   algorithmsModuleInstance.ALL_MAZES = ALL_MAZES;
   algorithmsModuleInstance.ALGORITHM_SVGS = ALGORITHM_SVGS;
   global.algorithmsModule = algorithmsModuleInstance;
-
-  // Si existe codingManager o MagicApp, sincronizar
-  if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
-      // Configuración lista
-    });
-  }
 
 })(typeof window !== 'undefined' ? window : global);
