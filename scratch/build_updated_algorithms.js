@@ -30,6 +30,106 @@ const fullModuleJs = `/**
   // 1. REPOSITORIO DE ILUSTRACIONES VECTORIALES SVG
   // ============================================================
   const ALGORITHM_SVGS = {
+    // 1.0. Ilustración de Varios Pasos Ordenados (Definición de Algoritmo)
+    definicion_algoritmo_pasos: \`<svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Pasos ordenados de un algoritmo">
+      <defs>
+        <linearGradient id="defSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1e1145"/>
+          <stop offset="100%" stop-color="#0c0721"/>
+        </linearGradient>
+        <linearGradient id="step1Grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#38bdf8"/>
+          <stop offset="100%" stop-color="#0284c7"/>
+        </linearGradient>
+        <linearGradient id="step2Grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#a855f7"/>
+          <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+        <linearGradient id="step3Grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f59e0b"/>
+          <stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+        <linearGradient id="stepGoalGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#34d399"/>
+          <stop offset="100%" stop-color="#059669"/>
+        </linearGradient>
+      </defs>
+      <rect width="420" height="220" rx="18" fill="url(#defSky)" stroke="#8b5cf6" stroke-width="2"/>
+      
+      <circle cx="30" cy="30" r="1.5" fill="#facc15"/>
+      <circle cx="100" cy="20" r="1.2" fill="#ffffff"/>
+      <circle cx="210" cy="15" r="1.5" fill="#facc15"/>
+      <circle cx="320" cy="25" r="1.2" fill="#ffffff"/>
+      <circle cx="390" cy="40" r="2" fill="#facc15"/>
+
+      <rect x="110" y="14" width="200" height="24" rx="12" fill="rgba(168,85,247,0.25)" stroke="rgba(168,85,247,0.5)" stroke-width="1"/>
+      <text x="210" y="30" fill="#e9d5ff" font-size="11" font-weight="900" text-anchor="middle">PASOS ORDENADOS 1 ➔ 2 ➔ 3 ➔ ⭐</text>
+
+      <g transform="translate(15, 52)">
+        <!-- Paso 1 -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="76" height="92" rx="12" fill="url(#step1Grad)" stroke="#7dd3fc" stroke-width="2"/>
+          <circle cx="38" cy="22" r="13" fill="#0369a1"/>
+          <text x="38" y="27" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">1</text>
+          <text x="38" y="54" font-size="20" text-anchor="middle">💡</text>
+          <rect x="8" y="66" width="60" height="18" rx="5" fill="rgba(15,23,42,0.45)"/>
+          <text x="38" y="79" fill="#ffffff" font-size="9" font-weight="900" text-anchor="middle">PASO 1</text>
+        </g>
+
+        <!-- Flecha 1 -->
+        <g transform="translate(80, 36)">
+          <path d="M 0 10 L 14 10" stroke="#facc15" stroke-width="3.5" stroke-linecap="round"/>
+          <polygon points="18,10 11,5 11,15" fill="#facc15"/>
+        </g>
+
+        <!-- Paso 2 -->
+        <g transform="translate(102, 0)">
+          <rect x="0" y="0" width="76" height="92" rx="12" fill="url(#step2Grad)" stroke="#c084fc" stroke-width="2"/>
+          <circle cx="38" cy="22" r="13" fill="#581c87"/>
+          <text x="38" y="27" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">2</text>
+          <text x="38" y="54" font-size="20" text-anchor="middle">⚙️</text>
+          <rect x="8" y="66" width="60" height="18" rx="5" fill="rgba(15,23,42,0.45)"/>
+          <text x="38" y="79" fill="#ffffff" font-size="9" font-weight="900" text-anchor="middle">PASO 2</text>
+        </g>
+
+        <!-- Flecha 2 -->
+        <g transform="translate(182, 36)">
+          <path d="M 0 10 L 14 10" stroke="#facc15" stroke-width="3.5" stroke-linecap="round"/>
+          <polygon points="18,10 11,5 11,15" fill="#facc15"/>
+        </g>
+
+        <!-- Paso 3 -->
+        <g transform="translate(204, 0)">
+          <rect x="0" y="0" width="76" height="92" rx="12" fill="url(#step3Grad)" stroke="#fde047" stroke-width="2"/>
+          <circle cx="38" cy="22" r="13" fill="#92400e"/>
+          <text x="38" y="27" fill="#ffffff" font-size="13" font-weight="900" text-anchor="middle">3</text>
+          <text x="38" y="54" font-size="20" text-anchor="middle">🧩</text>
+          <rect x="8" y="66" width="60" height="18" rx="5" fill="rgba(15,23,42,0.45)"/>
+          <text x="38" y="79" fill="#ffffff" font-size="9" font-weight="900" text-anchor="middle">PASO 3</text>
+        </g>
+
+        <!-- Flecha 3 -->
+        <g transform="translate(284, 36)">
+          <path d="M 0 10 L 14 10" stroke="#facc15" stroke-width="3.5" stroke-linecap="round"/>
+          <polygon points="18,10 11,5 11,15" fill="#facc15"/>
+        </g>
+
+        <!-- Paso 4: Objetivo Logrado -->
+        <g transform="translate(306, 0)">
+          <rect x="0" y="0" width="84" height="92" rx="12" fill="url(#stepGoalGrad)" stroke="#6ee7b7" stroke-width="2.5"/>
+          <circle cx="42" cy="22" r="13" fill="#065f46"/>
+          <text x="42" y="27" fill="#fef08a" font-size="13" font-weight="900" text-anchor="middle">⭐</text>
+          <text x="42" y="55" font-size="22" text-anchor="middle">🎯</text>
+          <rect x="6" y="66" width="72" height="18" rx="5" fill="rgba(6,95,70,0.7)"/>
+          <text x="42" y="79" fill="#d1fae5" font-size="9" font-weight="900" text-anchor="middle">OBJETIVO</text>
+        </g>
+      </g>
+
+      <rect x="25" y="162" width="370" height="42" rx="12" fill="rgba(15,23,42,0.75)" stroke="#6366f1" stroke-width="1.2"/>
+      <text x="48" y="188" font-size="20">🤖</text>
+      <text x="75" y="188" fill="#e2e8f0" font-size="11" font-weight="800">Seguimos las instrucciones paso a paso para cumplir la meta.</text>
+    </svg>\`,
+
     // 1.1. Persona Caminando (Acción)
     caminar: \`<svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg" class="alg-svg-illustr" aria-label="Persona caminando">
       <defs>
@@ -985,6 +1085,29 @@ const fullModuleJs = `/**
             <div class="speech-bubble">
               <h3>\${this.txt('¡HOLA! SOY BITY')} 👋</h3>
               <p>\${this.txt('Hoy vamos a descubrir qué es un ALGORITMO y por qué el orden de las instrucciones es tan importante.')}</p>
+            </div>
+          </div>
+
+          <!-- DEFINICIÓN CLARA AL COMIENZO DE LA ACTIVIDAD -->
+          <div class="alg-card alg-definition-hero-card">
+            <div class="card-tag">💡 \${this.txt('CONCEPTO FUNDAMENTAL')}</div>
+            <h2 class="card-title alg-definition-main-title">\${this.txt('¿QUÉ ES UN ALGORITMO?')}</h2>
+            
+            <div class="card-content-split alg-def-split">
+              <div class="card-svg-col">
+                \${ALGORITHM_SVGS.definicion_algoritmo_pasos}
+              </div>
+              <div class="card-text-col">
+                <p class="concept-def-quote alg-def-quote">
+                  "\${this.txt('Un algoritmo es un conjunto de pasos ordenados que seguimos para resolver un problema o realizar una tarea')}."
+                </p>
+                <div class="hint-bullet alg-objective-bullet">
+                  <span class="bullet-icon">🎯</span>
+                  <p class="alg-objective-text">
+                    "\${this.txt('Cada paso es una instrucción y debemos respetar el orden para lograr nuestro objetivo')}."
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

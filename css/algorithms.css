@@ -2286,6 +2286,73 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
+/* ========================================================
+   TARJETA DE DEFINICIÓN INICIAL: ¿QUÉ ES UN ALGORITMO?
+   ======================================================== */
+.alg-definition-hero-card {
+  border: 2px solid #a855f7;
+  background: linear-gradient(180deg, rgba(38, 18, 76, 0.95) 0%, rgba(18, 10, 42, 0.98) 100%);
+  box-shadow: 0 0 32px rgba(168, 85, 247, 0.28), 0 10px 30px rgba(0, 0, 0, 0.45);
+  margin-bottom: 24px;
+}
+
+.alg-definition-main-title {
+  color: #fde047;
+  font-size: 1.85rem;
+  font-weight: 900;
+  margin: 6px 0 16px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.alg-def-split {
+  grid-template-columns: 420px 1fr;
+}
+
+@media (max-width: 960px) {
+  .alg-def-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.alg-def-split .alg-svg-illustr {
+  max-width: 420px;
+}
+
+.alg-def-quote {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fef08a;
+  background: rgba(168, 85, 247, 0.2);
+  border-left: 5px solid #facc15;
+  padding: 16px 20px;
+  border-radius: 0 16px 16px 0;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.alg-objective-bullet {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1.5px solid rgba(16, 185, 129, 0.45);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alg-objective-bullet .bullet-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.alg-objective-text {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #a7f3d0;
+  margin: 0;
+  line-height: 1.45;
+}
+
 .concept-def-quote {
   font-size: 1.35rem;
   font-weight: 800;
