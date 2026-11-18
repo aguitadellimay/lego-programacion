@@ -731,7 +731,7 @@
       items: [
         { id: 'item_g2_1', type: 'door', x: 3, y: 1, name: 'Puerta Encantada' },
         { id: 'item_g2_2', type: 'window', x: 1, y: 3, name: 'Ventana Luminosa' },
-        { id: 'item_g2_3', type: 'pumpkin', x: 3, y: 3, name: 'Calabaza Mágica' }
+        { id: 'item_g2_3', type: 'gift', x: 3, y: 3, name: 'Regalo Navideño' }
       ]
     }
   },
@@ -814,7 +814,7 @@
         { id: 'item_g3_1', type: 'door', x: 3, y: 1, name: 'Puerta del Orden' },
         { id: 'item_g3_2', type: 'window', x: 1, y: 3, name: 'Ventana Cotidiana' },
         { id: 'item_g3_3', type: 'chest', x: 4, y: 3, name: 'Cofre del Saber' },
-        { id: 'item_g3_4', type: 'pumpkin', x: 6, y: 2, name: 'Calabaza Misteriosa' }
+        { id: 'item_g3_4', type: 'gift', x: 6, y: 2, name: 'Caja Festiva' }
       ]
     }
   },
@@ -900,7 +900,7 @@
         { id: 'item_g4_1', type: 'door', x: 3, y: 1, name: 'Puerta de Depuración' },
         { id: 'item_g4_2', type: 'window', x: 1, y: 3, name: 'Ventana de Errores' },
         { id: 'item_g4_3', type: 'chest', x: 5, y: 3, name: 'Cofre de Eficiencia' },
-        { id: 'item_g4_4', type: 'pumpkin', x: 7, y: 2, name: 'Calabaza Estratégica' }
+        { id: 'item_g4_4', type: 'bell', x: 7, y: 2, name: 'Campana Dorada' }
       ]
     }
   },
@@ -989,7 +989,7 @@
         { id: 'item_g5_1', type: 'door', x: 3, y: 1, name: 'Puerta de la Complejidad' },
         { id: 'item_g5_2', type: 'window', x: 1, y: 3, name: 'Ventana del Determinismo' },
         { id: 'item_g5_3', type: 'chest', x: 6, y: 3, name: 'Cofre de la Descomposición' },
-        { id: 'item_g5_4', type: 'pumpkin', x: 3, y: 5, name: 'Calabaza de Finitud' },
+        { id: 'item_g5_4', type: 'tree', x: 3, y: 5, name: 'Pino Navideño' },
         { id: 'item_g5_5', type: 'door', x: 8, y: 3, name: 'Puerta de Optimización' }
       ]
     }
@@ -1346,11 +1346,13 @@ function shuffleArray(array) {
       this.activeHint = null;
       this.playSound('click');
       
-      // Configurar actividad cotidiana activa según el paso
+      // Configurar actividad cotidiana activa según el paso y el grado
       if (stepNum === 2) {
-        this.selectedEverydayAct = 'cafe';
+        // Bloque I: Café para 1°/2°, Jugo para 3°/4°/5°
+        this.selectedEverydayAct = (this.currentGrade >= 3) ? 'jugo' : 'cafe';
       } else if (stepNum === 3) {
-        this.selectedEverydayAct = 'mochila';
+        // Bloque II: Mochila para 1°/2°, Habitación para 3°/4°/5°
+        this.selectedEverydayAct = (this.currentGrade >= 3) ? 'habitacion' : 'mochila';
       } else if (stepNum >= 4) {
         this.program = [];
         this.resetMazeState();
@@ -1399,6 +1401,64 @@ function shuffleArray(array) {
       }, 2200);
     }
 
+    handleBackButton() {
+      if (this.currentStep > 1) {
+        this.selectStep(1);
+      } else {
+        this.exitModule();
+      }
+    }
+
+    getEverydayActivityData(actKey) {
+      const act = EVERYDAY_ACTIVITIES[actKey] || EVERYDAY_ACTIVITIES.cafe;
+      const grade = this.currentGrade || 1;
+      const targetSteps = (act.steps && act.steps[grade]) ? act.steps[grade] : (act.steps ? act.steps[1] : []);
+      const distractors = act.distractors || [];
+      const isG1 = (grade === 1);
+
+      const mapBlock = (b) => ({
+        id: b.id,
+        text: isG1 && b.textG1 ? b.textG1 : b.text,
+        svg: b.svg
+      });
+
+      const targetBlocks = targetSteps.map(mapBlock);
+      const distractorBlocks = distractors.map(mapBlock);
+      const allBlocks = [...targetBlocks, ...distractorBlocks];
+
+      if (!this._shuffledPools) this._shuffledPools = {};
+      const poolKey = `${actKey}_g${grade}`;
+      if (!this._shuffledPools[poolKey]) {
+        const copy = [...allBlocks];
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor((Math.sin(i * 997 + grade * 17) * 0.5 + 0.5) * (i + 1));
+          [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        this._shuffledPools[poolKey] = copy;
+      }
+
+      const emojiMap = {
+        cafe: '☕',
+        jugo: '🧃',
+        mochila: '🎒',
+        habitacion: '🛏️'
+      };
+
+      return {
+        id: act.id,
+        title: isG1 && act.titleG1 ? act.titleG1 : act.title,
+        desc: isG1 && act.subtitleG1 ? act.subtitleG1 : act.subtitle,
+        subtitle: isG1 && act.subtitleG1 ? act.subtitleG1 : act.subtitle,
+        safety: isG1 && act.safetyG1 ? act.safetyG1 : act.safety,
+        iconSvg: act.iconSvg,
+        emoji: emojiMap[actKey] || '📦',
+        expectedSequence: targetSteps.map(s => s.id),
+        targetBlocks: targetBlocks,
+        distractors: distractorBlocks,
+        availableBlocks: this._shuffledPools[poolKey]
+      };
+    }
+
     // ============================================================
     // ACTIVIDADES COTIDIANAS (PASOS 2 Y 3)
     // ============================================================
@@ -1426,11 +1486,11 @@ function shuffleArray(array) {
       const st = this.everydayState[this.selectedEverydayAct];
       if (!st.selectedBlock || st.completed) return;
 
-      const actConfig = EVERYDAY_ACTIVITIES[this.selectedEverydayAct];
+      const actConfig = this.getEverydayActivityData(this.selectedEverydayAct);
       const maxSlots = actConfig.expectedSequence.length;
 
       if (st.placed.length >= maxSlots) {
-        st.errorMsg = this.txt('Ya colocaste todos los bloques disponibles.');
+        st.errorMsg = this.txt('Ya colocaste todos los bloques requeridos.');
         this.playSound('error');
         this.render();
         return;
@@ -1470,7 +1530,7 @@ function shuffleArray(array) {
 
     verifyEverydayAlgorithm() {
       const st = this.everydayState[this.selectedEverydayAct];
-      const actConfig = EVERYDAY_ACTIVITIES[this.selectedEverydayAct];
+      const actConfig = this.getEverydayActivityData(this.selectedEverydayAct);
       const expected = actConfig.expectedSequence;
 
       if (st.placed.length < expected.length) {
@@ -1492,6 +1552,9 @@ function shuffleArray(array) {
         st.completed = true;
         st.errorMsg = null;
         this.playSound('victory');
+        if (typeof window !== 'undefined' && window.magicAudioManager && typeof window.magicAudioManager.playGiftOpen === 'function') {
+          window.magicAudioManager.playGiftOpen();
+        }
         
         // Verificar si completó el paso 2 (cafe y jugo) o paso 3 (mochila y habitacion)
         if (this.currentStep === 2) {
@@ -1499,15 +1562,18 @@ function shuffleArray(array) {
             this.completedSteps.add(2);
             this.saveProgress();
             setTimeout(() => {
-              this.showAnimatedTransition('¡GENIAL! COMPLETAS LA PARTE 2. PREPARANDO LA SIGUIENTE ACTIVIDAD...', () => {
+              this.showAnimatedTransition('¡GENIAL! COMPLETAS EL BLOQUE I. PREPARANDO EL BLOQUE II...', () => {
                 this.selectStep(3);
               });
             }, 600);
           } else {
             this.render();
-            setTimeout(() => {
-              this.switchEverydayAct('jugo');
-            }, 900);
+            const nextKey = this.selectedEverydayAct === 'cafe' ? 'jugo' : 'cafe';
+            if (!this.everydayState[nextKey].completed) {
+              setTimeout(() => {
+                this.switchEverydayAct(nextKey);
+              }, 900);
+            }
           }
         } else if (this.currentStep === 3) {
           if (this.everydayState.mochila.completed && this.everydayState.habitacion.completed) {
@@ -1520,9 +1586,12 @@ function shuffleArray(array) {
             }, 600);
           } else {
             this.render();
-            setTimeout(() => {
-              this.switchEverydayAct('habitacion');
-            }, 900);
+            const nextKey = this.selectedEverydayAct === 'mochila' ? 'habitacion' : 'mochila';
+            if (!this.everydayState[nextKey].completed) {
+              setTimeout(() => {
+                this.switchEverydayAct(nextKey);
+              }, 900);
+            }
           }
         }
       } else {
@@ -1755,7 +1824,7 @@ function shuffleArray(array) {
       const oldModal = document.getElementById('alg-question-modal');
       if (oldModal) oldModal.remove();
 
-      const itemEmoji = item.type === 'door' ? '🚪' : (item.type === 'window' ? '🪟' : (item.type === 'chest' ? '🎁' : '🎃'));
+      const itemEmoji = item.type === 'door' ? '🚪' : (item.type === 'window' ? '🪟' : (item.type === 'chest' ? '🎁' : (item.type === 'bell' ? '🔔' : (item.type === 'tree' ? '🎄' : '🎁'))));
 
       const modal = document.createElement('div');
       modal.id = 'alg-question-modal';
@@ -2013,9 +2082,9 @@ function shuffleArray(array) {
       return `
         <header class="alg-header-bar">
           <div class="alg-header-left">
-            <button class="btn-alg-back" type="button" onclick="window.algorithmsModule.exitModule()" title="${this.txt('Volver a Programación')}">
+            <button class="btn-alg-back" type="button" onclick="window.algorithmsModule.handleBackButton()" title="${this.currentStep > 1 ? this.txt('Volver a la introducción de Algoritmos') : this.txt('Volver a Programación')}">
               <span class="btn-icon">⬅️</span>
-              <span class="btn-text">${this.txt('Volver')}</span>
+              <span class="btn-text">${this.currentStep > 1 ? this.txt('Inicio Algoritmos') : this.txt('Volver')}</span>
             </button>
             <div class="alg-header-title-box">
               <span class="alg-header-sub">${this.txt('INFORMÁTICA MÁGICA')} • ${this.currentGrade}.º ${this.txt('GRADO')}</span>
@@ -2218,10 +2287,29 @@ function shuffleArray(array) {
             </div>
           </div>
 
+          <!-- ACCESO DIRECTO A BLOQUE I Y BLOQUE II -->
+          <div class="everyday-blocks-overview-grid">
+            <div class="block-gateway-card card-bloque-1" onclick="window.algorithmsModule.selectStep(2)" role="button" tabindex="0">
+              <span class="gateway-badge">⭐ ${this.txt('ACTIVIDAD PRÁCTICA')}</span>
+              <div class="gateway-icon">☕ 🧃</div>
+              <h3 class="gateway-title">${this.txt('BLOQUE I: ALGORITMOS COTIDIANOS')}</h3>
+              <p class="gateway-desc">${this.txt(this.currentGrade >= 3 ? 'Construí el algoritmo paso a paso para preparar un delicioso jugo de frutas natural.' : 'Ayudá a armar la secuencia ordenada de instrucciones para preparar un café caliente.')}</p>
+              <button class="btn-gateway" type="button">${this.txt('INGRESAR AL BLOQUE I')} ➔</button>
+            </div>
+
+            <div class="block-gateway-card card-bloque-2" onclick="window.algorithmsModule.selectStep(3)" role="button" tabindex="0">
+              <span class="gateway-badge">⭐ ${this.txt('ACTIVIDAD PRÁCTICA')}</span>
+              <div class="gateway-icon">🎒 🛏️</div>
+              <h3 class="gateway-title">${this.txt('BLOQUE II: ORDEN Y ORGANIZACIÓN')}</h3>
+              <p class="gateway-desc">${this.txt(this.currentGrade >= 3 ? 'Diseñá la secuencia de pasos lógicos para acomodar y dejar impecable una habitación.' : 'Armá el algoritmo para tener la mochila lista con todos los útiles para el colegio.')}</p>
+              <button class="btn-gateway" type="button">${this.txt('INGRESAR AL BLOQUE II')} ➔</button>
+            </div>
+          </div>
+
           <!-- BOTÓN CONTINUAR -->
           <div class="step-footer-actions">
             <button class="btn-alg-continue" type="button" onclick="window.algorithmsModule.nextStep()">
-              ${this.txt('CONTINUAR A LA PARTE 2: CONSTRUCCIÓN CON BLOQUES')} ➔
+              ${this.txt('CONTINUAR AL BLOQUE I')} ➔
             </button>
           </div>
         </section>
@@ -2247,7 +2335,7 @@ function shuffleArray(array) {
     // ------------------------------------------------------------
     renderStepEveryday() {
       const actKey = this.selectedEverydayAct;
-      const actConfig = EVERYDAY_ACTIVITIES[actKey];
+      const actConfig = this.getEverydayActivityData(actKey);
       const st = this.everydayState[actKey];
 
       const isStep2 = this.currentStep === 2;
@@ -2255,10 +2343,20 @@ function shuffleArray(array) {
 
       return `
         <section class="alg-section alg-everyday-section animate-fade-in">
+          <!-- BARRA SUPERIOR DE NAVEGACIÓN DENTRO DEL BLOQUE -->
+          <div class="everyday-top-nav">
+            <button class="btn-block-back" type="button" onclick="window.algorithmsModule.selectStep(1)" title="${this.txt('Volver a ¿Qué es un Algoritmo?')}">
+              <span>⬅️</span> ${this.txt('Volver a ¿Qué es un Algoritmo?')}
+            </button>
+            <span class="block-section-indicator">
+              ${isStep2 ? this.txt('BLOQUE I: ALGORITMOS COTIDIANOS') : this.txt('BLOQUE II: ORDEN Y ORGANIZACIÓN')}
+            </span>
+          </div>
+
           <!-- SELECTOR DE ACTIVIDAD -->
           <div class="everyday-tabs-bar">
             ${availableActs.map(key => {
-              const cfg = EVERYDAY_ACTIVITIES[key];
+              const cfg = this.getEverydayActivityData(key);
               const isDone = this.everydayState[key].completed;
               return `
                 <button class="btn-everyday-tab ${actKey === key ? 'active' : ''} ${isDone ? 'done' : ''}"
@@ -2278,7 +2376,10 @@ function shuffleArray(array) {
             <div class="inst-text">
               <h3 class="inst-title">${this.txt(actConfig.title)}</h3>
               <p class="inst-desc">${this.txt(actConfig.desc)}</p>
-              <p class="inst-alert">⚠️ ${this.txt('¡ATENCIÓN! Hay bloques tramposos que no corresponden. Elegí solo los necesarios y ordenalos correctamente.')}</p>
+              ${actConfig.safety ? `<p class="inst-alert">${this.txt(actConfig.safety)}</p>` : ''}
+              <p class="inst-alert" style="background: rgba(248,178,41,0.15); border-color: rgba(248,178,41,0.45); color: #ffd700;">
+                💡 ${this.txt('¡ATENCIÓN! Hay bloques tramposos que no corresponden. Elegí solo los necesarios y ordenalos correctamente.')}
+              </p>
             </div>
           </div>
 
@@ -2337,8 +2438,8 @@ function shuffleArray(array) {
                       return `
                         <div class="placed-step-card animate-scale-up">
                           <span class="step-index">${idx + 1}</span>
-                          <div class="placed-step-svg">${ALGORITHM_SVGS[block.svg] || '📦'}</div>
-                          <span class="placed-step-text">${this.txt(block.text)}</span>
+                          <div class="placed-step-svg">${ALGORITHM_SVGS[block ? block.svg : ''] || '📦'}</div>
+                          <span class="placed-step-text">${this.txt(block ? block.text : '')}</span>
 
                           <div class="step-order-controls">
                             ${idx > 0 && !st.completed ? `
@@ -2511,9 +2612,9 @@ function shuffleArray(array) {
           let itemEmoji = '';
           if (item) {
             if (isUnlocked) {
-              itemEmoji = item.type === 'door' ? '🚪⭐' : (item.type === 'window' ? '🪟⭐' : (item.type === 'chest' ? '🎁⭐' : '🎃⭐'));
+              itemEmoji = item.type === 'door' ? '🚪⭐' : (item.type === 'window' ? '🪟⭐' : (item.type === 'chest' ? '🎁⭐' : (item.type === 'bell' ? '🔔⭐' : (item.type === 'tree' ? '🎄⭐' : '🎁⭐'))));
             } else {
-              itemEmoji = item.type === 'door' ? '🚪' : (item.type === 'window' ? '🪟' : (item.type === 'chest' ? '🎁' : '🎃'));
+              itemEmoji = item.type === 'door' ? '🚪' : (item.type === 'window' ? '🪟' : (item.type === 'chest' ? '🎁' : (item.type === 'bell' ? '🔔' : (item.type === 'tree' ? '🎄' : '🎁'))));
             }
           }
 
@@ -2582,28 +2683,26 @@ function shuffleArray(array) {
 
     renderFinalCelebration() {
       const totalStars = this.getStarsCount();
+      if (typeof window !== 'undefined' && window.magicAudioManager && typeof window.magicAudioManager.playActivityComplete === 'function') {
+        window.magicAudioManager.playActivityComplete();
+      }
 
       return `
         <div class="alg-card final-celebration-card animate-scale-up">
-          <div class="celebration-confetti">✨ 🦇 ⭐ 🎃 🏆 🎃 ⭐ 🦇 ✨</div>
+          <div class="celebration-confetti">✨ 🎄 ⭐ 🎁 🏆 🎁 ⭐ 🎄 ✨</div>
           
-          <!-- AMBIENTACIÓN INMERSIVA DE HALLOWEEN -->
-          <div class="halloween-celebration-hero">
-            <div class="halloween-spooky-scene">
-              <div class="halloween-moon"></div>
-              <div class="halloween-bats">🦇 🦇</div>
-              <div class="halloween-castle">🏰</div>
-            </div>
-            
-            <div class="halloween-stars-banner">
-              ⭐ ${this.txt('RECOLECTASTE')} ${totalStars} ${this.txt('ESTRELLAS MÁGICAS EN EL CASTILLO')} ⭐
+          <!-- AMBIENTACIÓN NAVIDEÑA -->
+          <div class="christmas-celebration-hero" style="text-align: center; margin: 16px 0;">
+            <div style="font-size: 3.5rem; margin-bottom: 8px;">🎅 🎄 🎁</div>
+            <div class="halloween-stars-banner" style="background: linear-gradient(135deg, rgba(22,91,51,0.6), rgba(212,36,38,0.6)); border-color: #ffd700; color: #ffd700;">
+              ⭐ ${this.txt('RECOLECTASTE')} ${totalStars} ${this.txt('ESTRELLAS MÁGICAS EN EL REINO NAVIDEÑO')} ⭐
             </div>
           </div>
 
-          <h2 class="celebration-title">🎃 ${this.txt('¡FELICITACIONES, GRAN PROGRAMADOR/A!')} 🎃</h2>
+          <h2 class="celebration-title">🎄 ${this.txt('¡FELICITACIONES, GRAN PROGRAMADOR/A NAVIDEÑO/A!')} 🎄</h2>
           <p class="celebration-subtitle">${this.txt('Completaste con éxito todos los desafíos de la Clase N.º 1 de Algoritmos.')}</p>
 
-          <div class="celebration-trophy-box">
+          <div class="celebration-trophy-box" style="display: flex; justify-content: center; margin: 16px 0;">
             ${ALGORITHM_SVGS.algoritmo_concepto || ''}
           </div>
 

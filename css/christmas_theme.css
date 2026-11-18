@@ -1,0 +1,712 @@
+/* ========================================================
+   INFORMÁTICA MÁGICA — EDICIÓN ESPECIAL DE NAVIDAD 🎄⭐
+   Paleta Navideña:
+     #071524 (Noche invernal oscura), #0d2238 (Azul noche polar),
+     #d42426 (Rojo Navidad cálido), #ea3638 (Rojo festivo brillante),
+     #165b33 (Verde pino navideño), #228b4d (Verde abeto brillante),
+     #f8b229 (Dorado campana / Champagne), #ffd700 (Oro estrella),
+     #ffffff (Blanco nieve pura), #e0f2fe (Azul hielo escarchado)
+   ======================================================== */
+
+:root {
+  /* Paleta Navideña Principal */
+  --xmas-bg-dark: #071524;
+  --xmas-surface-dark: #0d2238;
+  --xmas-surface-elevated: #132e4c;
+  --xmas-surface-card: #0f263e;
+  --xmas-red: #d42426;
+  --xmas-red-bright: #ea3638;
+  --xmas-red-glow: rgba(212, 36, 38, 0.45);
+  --xmas-green: #165b33;
+  --xmas-green-bright: #228b4d;
+  --xmas-green-glow: rgba(22, 91, 51, 0.45);
+  --xmas-gold: #f8b229;
+  --xmas-gold-bright: #ffd700;
+  --xmas-gold-glow: rgba(248, 178, 41, 0.45);
+  --xmas-snow: #ffffff;
+  --xmas-ice: #e0f2fe;
+  --xmas-text-light: #ffffff;
+  --xmas-text-muted: #cbd5e1;
+  --xmas-border-subtle: rgba(248, 178, 41, 0.28);
+  --xmas-glow-gold: 0 0 25px rgba(248, 178, 41, 0.45);
+  --xmas-glow-red: 0 0 25px rgba(212, 36, 38, 0.45);
+  --xmas-glow-green: 0 0 24px rgba(34, 139, 77, 0.42);
+
+  /* Compatibilidad con variables previas de tema */
+  --hw-bg-dark: var(--xmas-bg-dark);
+  --hw-surface-dark: var(--xmas-surface-dark);
+  --hw-surface-elevated: var(--xmas-surface-elevated);
+  --hw-surface-card: var(--xmas-surface-card);
+  --hw-purple: var(--xmas-green);
+  --hw-purple-light: var(--xmas-green-bright);
+  --hw-purple-glow: var(--xmas-green-glow);
+  --hw-orange: var(--xmas-red);
+  --hw-orange-light: var(--xmas-red-bright);
+  --hw-orange-glow: var(--xmas-red-glow);
+  --hw-green: var(--xmas-gold);
+  --hw-green-glow: var(--xmas-gold-glow);
+  --hw-text-light: var(--xmas-text-light);
+  --hw-text-muted: var(--xmas-text-muted);
+  --hw-border-subtle: var(--xmas-border-subtle);
+
+  --bg-color: var(--xmas-bg-dark);
+  --card-bg: var(--xmas-surface-dark);
+  --text-main: var(--xmas-text-light);
+  --text-muted: var(--xmas-text-muted);
+}
+
+/* --------------------------------------------------------
+   1. BASES GLOBALES Y REGLAS DE ALTO NIVEL
+   -------------------------------------------------------- */
+body {
+  background-color: var(--xmas-bg-dark) !important;
+  color: var(--xmas-text-light) !important;
+  font-family: 'Fredoka', 'Quicksand', 'Comic Neue', system-ui, sans-serif !important;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondos invernales para todas las pantallas */
+.screen,
+.home-screen-wrapper,
+.coding-screen-wrapper,
+.grades-screen-wrapper,
+.game-screen-wrapper,
+.adventure-screen-wrapper {
+  background: radial-gradient(ellipse at 50% 12%, #143454 0%, #0d2238 50%, #071524 95%) !important;
+  color: var(--xmas-text-light) !important;
+}
+
+/* --------------------------------------------------------
+   2. NIEVE CAYENDO SUAVEMENTE (EFECTO AMBIENTAL)
+   -------------------------------------------------------- */
+.christmas-snow-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: 
+    radial-gradient(3px 3px at 20px 30px, #ffffff, rgba(255,255,255,0)),
+    radial-gradient(2px 2px at 80px 120px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
+    radial-gradient(3px 3px at 150px 70px, rgba(255,255,255,0.85), rgba(255,255,255,0)),
+    radial-gradient(2.5px 2.5px at 220px 180px, #ffffff, rgba(255,255,255,0)),
+    radial-gradient(3px 3px at 310px 90px, rgba(255,255,255,0.95), rgba(255,255,255,0)),
+    radial-gradient(2px 2px at 400px 150px, #ffffff, rgba(255,255,255,0)),
+    radial-gradient(3.5px 3.5px at 500px 50px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
+    radial-gradient(2px 2px at 600px 190px, #ffffff, rgba(255,255,255,0)),
+    radial-gradient(3px 3px at 720px 110px, rgba(255,255,255,0.85), rgba(255,255,255,0)),
+    radial-gradient(2.5px 2.5px at 850px 160px, #ffffff, rgba(255,255,255,0)),
+    radial-gradient(3px 3px at 980px 80px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
+    radial-gradient(2px 2px at 1120px 140px, #ffffff, rgba(255,255,255,0));
+  background-size: 650px 650px;
+  animation: snowDrift 18s linear infinite;
+  opacity: 0.55;
+}
+
+@keyframes snowDrift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(325px) translateX(15px); }
+  100% { transform: translateY(650px) translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-snow-layer {
+    animation: none !important;
+    opacity: 0.25;
+  }
+}
+
+/* --------------------------------------------------------
+   3. CABECERA PRINCIPAL CON GUIRNALDA Y LUCES NAVIDEÑAS
+   -------------------------------------------------------- */
+.app-header {
+  background: linear-gradient(135deg, #0d2238 0%, #071524 55%, #163628 100%) !important;
+  border-bottom: 3.5px solid var(--xmas-gold) !important;
+  box-shadow: 0 4px 20px rgba(212, 36, 38, 0.3), 0 0 18px rgba(248, 178, 41, 0.25) !important;
+  padding: 10px 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* Cadena de luces navideñas titilantes en el borde inferior */
+.app-header::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-image: radial-gradient(circle, #ea3638 35%, transparent 40%),
+                    radial-gradient(circle, #228b4d 35%, transparent 40%),
+                    radial-gradient(circle, #ffd700 35%, transparent 40%),
+                    radial-gradient(circle, #38bdf8 35%, transparent 40%);
+  background-size: 40px 6px;
+  background-position: 0 0, 10px 0, 20px 0, 30px 0;
+  animation: fairyLights 2.4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes fairyLights {
+  0% { opacity: 0.6; filter: drop-shadow(0 0 3px #ea3638); }
+  50% { opacity: 0.95; filter: drop-shadow(0 0 6px #ffd700); }
+  100% { opacity: 0.7; filter: drop-shadow(0 0 4px #228b4d); }
+}
+
+.school-logo-badge {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 2px solid var(--xmas-gold) !important;
+  box-shadow: 0 0 14px rgba(248, 178, 41, 0.45) !important;
+}
+
+.brand-title {
+  font-size: 1.85rem !important;
+  font-weight: 800 !important;
+  color: var(--xmas-text-light) !important;
+  text-shadow: 0 0 14px rgba(248, 178, 41, 0.75), 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+  letter-spacing: 0.8px !important;
+}
+
+.brand-subtitle {
+  background: rgba(212, 36, 38, 0.25) !important;
+  border: 1px solid var(--xmas-red-bright) !important;
+  color: #ffcdd2 !important;
+  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  box-shadow: 0 0 10px rgba(212, 36, 38, 0.35) !important;
+  border-radius: 12px !important;
+  padding: 4px 10px !important;
+}
+
+/* --------------------------------------------------------
+   4. BOTONES GLOBALES DE LA CABECERA (SONIDO Y PAPÁ NOEL)
+   -------------------------------------------------------- */
+.header-global-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Botón Global de Sonido Navideño */
+.btn-sound-toggle {
+  background: rgba(13, 34, 56, 0.88);
+  border: 2px solid rgba(248, 178, 41, 0.5);
+  color: var(--xmas-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.btn-sound-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--xmas-gold);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(248, 178, 41, 0.45);
+}
+
+.btn-sound-toggle.sound-active {
+  background: linear-gradient(135deg, rgba(212, 36, 38, 0.95), rgba(22, 91, 51, 0.92));
+  border-color: var(--xmas-gold-bright);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(248, 178, 41, 0.55), 0 0 10px rgba(212, 36, 38, 0.5);
+}
+
+/* Botón Global de Papá Noel (compatible con selector vampiro previo) */
+.btn-santa-toggle,
+.btn-vampire-toggle {
+  background: rgba(13, 34, 56, 0.88);
+  border: 2px solid rgba(22, 91, 51, 0.6);
+  color: var(--xmas-text-muted);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.btn-santa-toggle:hover,
+.btn-vampire-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--xmas-green-bright);
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(34, 139, 77, 0.45);
+}
+
+.btn-santa-toggle.santa-active,
+.btn-vampire-toggle.vampire-active {
+  background: linear-gradient(135deg, rgba(22, 91, 51, 0.92), rgba(212, 36, 38, 0.95));
+  border-color: var(--xmas-gold-bright);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(212, 36, 38, 0.55), 0 0 10px rgba(34, 139, 77, 0.45);
+}
+
+/* --------------------------------------------------------
+   5. PORTADA Y ESCENARIO PRINCIPAL HERO DE NAVIDAD
+   -------------------------------------------------------- */
+.home-screen-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 20px 60px 20px !important;
+  min-height: calc(100vh - 78px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.magic-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Gran Estrella Polar Navideña (reemplaza la luna tenebrosa) */
+.magic-moon-wrap {
+  position: absolute;
+  top: 25px;
+  right: 8%;
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+  animation: starShimmer 5s ease-in-out infinite alternate;
+}
+
+.magic-moon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 45% 45%, #ffffff 0%, #fffbeb 40%, #fef08a 70%, #f59e0b 100%) !important;
+  box-shadow: 0 0 50px rgba(254, 240, 138, 0.65), 0 0 100px rgba(248, 178, 41, 0.45) !important;
+  position: relative;
+}
+
+.magic-moon::after {
+  content: "⭐";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  filter: drop-shadow(0 0 15px #ffd700);
+}
+
+.moon-crater {
+  display: none !important;
+}
+
+@keyframes starShimmer {
+  0% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 20px rgba(254, 240, 138, 0.4)); }
+  100% { transform: scale(1.06) translateY(-4px); filter: drop-shadow(0 0 40px rgba(254, 240, 138, 0.8)); }
+}
+
+/* Aldea Navideña y Pinos Nevados (reemplaza el castillo encantado) */
+.magic-castle-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  z-index: 2;
+  opacity: 0.85;
+}
+
+.magic-castle-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Quitar telarañas, murciélagos y niebla siniestra */
+.magic-corner-web,
+.magic-bat-flying,
+.magic-ghost-wrap,
+.halloween-web,
+.magic-ground-fog {
+  display: none !important;
+}
+
+/* Título de bienvenida de Navidad */
+.magic-hero-subtitle {
+  color: #ffd700 !important;
+  font-size: 1.55rem !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 14px rgba(248, 178, 41, 0.65), 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+  margin-bottom: 8px !important;
+  text-align: center;
+}
+
+.magic-hero-desc {
+  color: #e2e8f0 !important;
+  font-size: 1.05rem !important;
+  max-width: 680px !important;
+  text-align: center;
+  margin: 0 auto 24px !important;
+}
+
+/* --------------------------------------------------------
+   6. BANNER DESTACADO DE NAVIDAD: BITY EN SU MISIÓN NAVIDEÑA
+   -------------------------------------------------------- */
+.hero-halloween-banner,
+.hero-christmas-banner {
+  background: linear-gradient(135deg, rgba(13, 34, 56, 0.92) 0%, rgba(22, 91, 51, 0.88) 50%, rgba(212, 36, 38, 0.85) 100%) !important;
+  border: 2.5px solid var(--xmas-gold) !important;
+  box-shadow: 0 10px 32px rgba(248, 178, 41, 0.35), 0 0 20px rgba(212, 36, 38, 0.3) !important;
+  border-radius: 24px !important;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.hero-halloween-banner::before,
+.hero-christmas-banner::before {
+  content: "❄️ 🎄 ⭐ 🎁 ❄️";
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  font-size: 1.2rem;
+  letter-spacing: 8px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.h-banner-tag-badge {
+  background: linear-gradient(90deg, #ea3638, #d42426) !important;
+  border: 1px solid #ffd700 !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 12px rgba(212, 36, 38, 0.5) !important;
+}
+
+.h-banner-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(248, 178, 41, 0.5) !important;
+}
+
+.btn-banner-cta {
+  background: linear-gradient(135deg, #f8b229, #ffd700) !important;
+  color: #071524 !important;
+  font-weight: 900 !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 4px 16px rgba(248, 178, 41, 0.6) !important;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.btn-banner-cta:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.8) !important;
+}
+
+/* --------------------------------------------------------
+   7. TARJETAS DE MÓDULOS EN EL HOME (PORTALES FESTIVOS)
+   -------------------------------------------------------- */
+.module-card,
+.choice-card {
+  background: linear-gradient(180deg, rgba(13, 34, 56, 0.94) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
+  border: 2px solid rgba(248, 178, 41, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 14px rgba(248, 178, 41, 0.15) !important;
+  border-radius: 22px !important;
+  position: relative !important;
+  transition: all 0.28s ease !important;
+}
+
+.module-card:hover,
+.choice-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--xmas-gold) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 25px rgba(248, 178, 41, 0.45) !important;
+}
+
+/* Gorro / copo de nieve decorativo en la esquina superior */
+.module-card::before,
+.choice-card::before {
+  content: "🎄";
+  position: absolute;
+  top: -12px;
+  right: 14px;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+  z-index: 10;
+}
+
+/* Colores temáticos por tarjeta */
+#btn-choice-coding::before { content: "⭐"; }
+#btn-choice-bity::before { content: "🎅"; }
+#btn-choice-game::before { content: "🎁"; }
+#btn-choice-lego::before { content: "🔔"; }
+
+.module-card-title,
+.choice-card-title {
+  color: #ffd700 !important;
+  font-weight: 900 !important;
+}
+
+.module-card-desc,
+.choice-card-desc {
+  color: #e2e8f0 !important;
+}
+
+/* --------------------------------------------------------
+   8. PANTALLA DE SELECCIÓN DE GRADOS Y TEMARIO (PROGRAMACIÓN)
+   -------------------------------------------------------- */
+.coding-grade-card {
+  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
+  border: 2px solid rgba(34, 139, 77, 0.45) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.coding-grade-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--xmas-gold) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(248, 178, 41, 0.4) !important;
+}
+
+.coding-grade-badge {
+  background: linear-gradient(135deg, #165b33, #228b4d) !important;
+  color: #ffffff !important;
+  border: 1px solid #ffd700 !important;
+}
+
+.coding-topic-card,
+.topic-card {
+  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
+  border: 2px solid rgba(248, 178, 41, 0.35) !important;
+  border-radius: 20px !important;
+  transition: all 0.25s ease !important;
+}
+
+.coding-topic-card:hover,
+.topic-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--xmas-gold-bright) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 22px rgba(248, 178, 41, 0.45) !important;
+}
+
+/* Tarjeta especial del módulo Algoritmos */
+.topic-card-algorithms {
+  border-color: #ffd700 !important;
+  background: linear-gradient(180deg, rgba(22, 91, 51, 0.25) 0%, rgba(13, 34, 56, 0.95) 100%) !important;
+  box-shadow: 0 0 22px rgba(248, 178, 41, 0.35) !important;
+}
+
+/* --------------------------------------------------------
+   9. BITTYBLOCKLY: MISIÓN ESPACIAL NAVIDEÑA
+   -------------------------------------------------------- */
+.cover-halloween-badge {
+  background: linear-gradient(90deg, #d42426, #165b33) !important;
+  border: 1px solid #ffd700 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(248, 178, 41, 0.45) !important;
+}
+
+.concept-halloween-badge {
+  background: linear-gradient(90deg, #165b33, #d42426) !important;
+  border: 1px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+
+.h-grade-card {
+  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
+  border: 2px solid rgba(248, 178, 41, 0.4) !important;
+}
+
+.h-grade-card:hover {
+  border-color: #ffd700 !important;
+  box-shadow: 0 0 20px rgba(248, 178, 41, 0.45) !important;
+}
+
+/* --------------------------------------------------------
+   10. MODALES, CELEBRACIONES Y PREMIOS NAVIDEÑOS
+   -------------------------------------------------------- */
+.final-celebration-card {
+  background: linear-gradient(180deg, rgba(13, 34, 56, 0.96) 0%, rgba(22, 91, 51, 0.92) 50%, rgba(7, 21, 36, 0.98) 100%) !important;
+  border: 3px solid #ffd700 !important;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(248, 178, 41, 0.5) !important;
+  border-radius: 26px !important;
+  color: #ffffff !important;
+}
+
+.celebration-title {
+  color: #ffd700 !important;
+  font-size: 1.85rem !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 16px rgba(248, 178, 41, 0.7), 0 2px 6px rgba(0,0,0,0.8) !important;
+}
+
+.celebration-confetti {
+  font-size: 1.6rem !important;
+  letter-spacing: 10px !important;
+  margin-bottom: 12px !important;
+  animation: confettiBounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes confettiBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+.celebration-summary-box {
+  background: rgba(13, 34, 56, 0.75) !important;
+  border: 1.5px solid rgba(248, 178, 41, 0.4) !important;
+  border-radius: 18px !important;
+  padding: 18px 22px !important;
+}
+
+.celebration-summary-box h4 {
+  color: #ffd700 !important;
+  margin-top: 0 !important;
+}
+
+.celebration-summary-box li {
+  color: #f1f5f9 !important;
+  margin-bottom: 6px !important;
+}
+
+/* --------------------------------------------------------
+   11. ANIMACIÓN DE PAPÁ NOEL EN SU TRINEO
+   -------------------------------------------------------- */
+.santa-flight-wrapper {
+  position: fixed;
+  top: 15px;
+  left: 0;
+  width: 100vw;
+  height: 180px;
+  pointer-events: none;
+  z-index: 99998;
+  overflow: visible;
+}
+
+.santa-flight-container {
+  position: absolute;
+  top: 10px;
+  left: -480px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.santa-speech-bubble {
+  background: rgba(255, 255, 255, 0.96);
+  border: 2.5px solid var(--xmas-red);
+  color: #071524;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 10px 18px;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 12px rgba(248, 178, 41, 0.5);
+  white-space: nowrap;
+  position: relative;
+  animation: bubbleWobble 2s ease-in-out infinite alternate;
+}
+
+.santa-speech-bubble::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.96);
+}
+
+@keyframes bubbleWobble {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-4px) rotate(1deg); }
+}
+
+.santa-sleigh-svg {
+  width: 320px;
+  height: 110px;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+}
+
+.rudolph-nose {
+  animation: rudolphGlow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes rudolphGlow {
+  0% { fill: #ea3638; filter: drop-shadow(0 0 3px #ea3638); }
+  100% { fill: #ff1100; filter: drop-shadow(0 0 12px #ff1100); }
+}
+
+/* --------------------------------------------------------
+   12. BOTONES GLOBALES DE ACCIÓN
+   -------------------------------------------------------- */
+.btn-primary,
+.btn-alg-continue,
+.btn-alg-finish {
+  background: linear-gradient(135deg, #165b33 0%, #228b4d 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: 0 4px 14px rgba(22, 91, 51, 0.45) !important;
+  font-weight: 800 !important;
+  border-radius: 14px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-primary:hover,
+.btn-alg-continue:hover,
+.btn-alg-finish:hover {
+  background: linear-gradient(135deg, #228b4d 0%, #165b33 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(248, 178, 41, 0.6) !important;
+}
+
+.btn-secondary,
+.btn-alg-back,
+.btn-block-back,
+.btn-everyday-reset {
+  background: linear-gradient(180deg, #132e4c, #0d2238) !important;
+  border: 1.5px solid rgba(248, 178, 41, 0.45) !important;
+  color: #f8fafc !important;
+  font-weight: 800 !important;
+  border-radius: 14px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-secondary:hover,
+.btn-alg-back:hover,
+.btn-block-back:hover,
+.btn-everyday-reset:hover {
+  border-color: #ffd700 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 14px rgba(248, 178, 41, 0.35) !important;
+}
+
+/* Ocultar cualquier elemento remanente de Halloween */
+.halloween-pumpkin,
+.halloween-ghost,
+.halloween-bat,
+.halloween-spider {
+  display: none !important;
+}

@@ -1,13 +1,14 @@
 /**
  * magicAudio.js
- * Sistema de Audio Compartido para "Informática Mágica" — Edición de Halloween.
+ * Sistema de Audio Compartido para "Informática Mágica" — Edición Navideña.
  * 
  * Proporciona:
- * - Sonido ambiental tenebroso (viento nocturno suave, castillo misterioso y campanillas mágicas).
- * - Secuencia de apertura de puerta antigua al ingresar a los módulos.
- * - Efectos de interacción interactivos (aciertos, errores suaves, desbloqueos, victoria, clics).
+ * - Música ambiental navideña instrumental y alegre (sintetizada mediante Web Audio API).
+ * - Tintineo suave y periódico de cascabeles navideños y campanas.
+ * - Efectos de sonido temáticos: regalos mágicos, estrellas, campanas, aciertos y victorias.
  * - Botón global sincronizado de activación/desactivación con persistencia en localStorage.
  * - Respeto estricto de las restricciones de autoplay de los navegadores.
+ * - Corte inmediato de audio al desactivar el sonido.
  */
 
 (function(global) {
@@ -23,8 +24,9 @@
       this.ambientTimer = null;
       this.ambientPlaying = false;
       this.lastDoorTime = 0;
+      this.melodyInterval = null;
 
-      // Lectura de preferencia guardada (por defecto desactivado hasta interacción)
+      // Lectura de preferencia guardada (por defecto desactivado hasta interacción del usuario)
       this.enabled = false;
       try {
         const saved = localStorage.getItem(this.STORAGE_KEY);
@@ -102,7 +104,6 @@
       document.addEventListener('click', unlockHandler, { once: false });
       document.addEventListener('keydown', unlockHandler, { once: false });
 
-      // Si ya estaba guardado como activado, intentar iniciar
       if (this.enabled) {
         setTimeout(() => {
           this.getAudioContext();
@@ -139,7 +140,7 @@
           }
         }
         this.playAmbient();
-        this.playCorrect(); // Feedback sonoro de confirmación
+        this.playStarReward(); // Sonido navideño de confirmación
       } else {
         this.stopAll();
       }
@@ -169,18 +170,18 @@
       btn.setAttribute('aria-pressed', this.enabled ? 'true' : 'false');
 
       if (icon) {
-        icon.textContent = this.enabled ? '🔊' : '🔇';
+        icon.textContent = this.enabled ? '🔔' : '🔇';
       }
       if (label) {
-        label.textContent = this.enabled ? 'SONIDOS ACTIVADOS' : 'SONIDOS DESACTIVADOS';
+        label.textContent = this.enabled ? 'SONIDO NAVIDEÑO ACTIVADO' : 'SONIDO DESACTIVADO';
       }
       btn.title = this.enabled 
-        ? 'Sonidos activados (Clic para silenciar)' 
-        : 'Sonidos desactivados (Clic para activar)';
+        ? 'Sonido navideño activado (Clic para silenciar)' 
+        : 'Sonido desactivado (Clic para activar)';
     }
 
     /**
-     * Inicia el sonido ambiental tenebroso
+     * Música y ambiente navideño suave e instrumental
      */
     playAmbient() {
       if (!this.enabled || this.ambientPlaying) return;
@@ -189,116 +190,189 @@
 
       this.stopAmbient();
       this.ambientNodes = [];
+      this.ambientPlaying = true;
 
-      try {
-        // 1. Generador de Viento Nocturno Suave (Ruido blanco filtrado con barrido LFO)
-        const bufferSize = ctx.sampleRate * 3;
-        const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        let b0 = 0, b1 = 0, b2 = 0;
-        for (let i = 0; i < bufferSize; i++) {
-          const white = Math.random() * 2 - 1;
-          b0 = 0.99 * b0 + white * 0.05;
-          b1 = 0.96 * b1 + white * 0.08;
-          b2 = 0.92 * b2 + white * 0.12;
-          output[i] = (b0 + b1 + b2) * 0.18;
-        }
+      // 1. Tocar una melodía suave de campanas navideñas periódicamente
+      const playMelodyCycle = () => {
+        if (!this.enabled || !this.ambientPlaying) return;
+        this.playChristmasMelody();
+        
+        // Siguiente frase musical en 22 a 32 segundos
+        const nextDelay = 22000 + Math.random() * 10000;
+        this.ambientTimer = setTimeout(() => {
+          if (this.enabled && this.ambientPlaying) {
+            playMelodyCycle();
+          }
+        }, nextDelay);
+      };
 
-        const noiseNode = ctx.createBufferSource();
-        noiseNode.buffer = noiseBuffer;
-        noiseNode.loop = true;
-
-        const windFilter = ctx.createBiquadFilter();
-        windFilter.type = 'bandpass';
-        windFilter.frequency.setValueAtTime(320, ctx.currentTime);
-        windFilter.Q.setValueAtTime(3.5, ctx.currentTime);
-
-        // Modulación suave de la frecuencia de viento (LFO)
-        const lfo = ctx.createOscillator();
-        lfo.frequency.setValueAtTime(0.15, ctx.currentTime); // Ciclo lento de 6.6 segundos
-        const lfoGain = ctx.createGain();
-        lfoGain.gain.setValueAtTime(180, ctx.currentTime);
-        lfo.connect(lfoGain);
-        lfoGain.connect(windFilter.frequency);
-
-        noiseNode.connect(windFilter);
-        windFilter.connect(this.ambientGain);
-
-        noiseNode.start();
-        lfo.start();
-
-        this.ambientNodes.push(noiseNode, lfo);
-
-        // 2. Drone Misterioso de Castillo (Frecuencias bajas armónicas muy suaves)
-        const droneOsc1 = ctx.createOscillator();
-        const droneOsc2 = ctx.createOscillator();
-        const droneGain = ctx.createGain();
-
-        droneOsc1.type = 'sine';
-        droneOsc1.frequency.setValueAtTime(65.4, ctx.currentTime); // Do2
-
-        droneOsc2.type = 'sine';
-        droneOsc2.frequency.setValueAtTime(98.0, ctx.currentTime); // Sol2
-
-        droneGain.gain.setValueAtTime(0.045, ctx.currentTime);
-
-        droneOsc1.connect(droneGain);
-        droneOsc2.connect(droneGain);
-        droneGain.connect(this.ambientGain);
-
-        droneOsc1.start();
-        droneOsc2.start();
-
-        this.ambientNodes.push(droneOsc1, droneOsc2);
-
-        this.ambientPlaying = true;
-
-        // 3. Campanillas Mágicas Ocasionales (Ecos lejanos cada 9-16 segundos)
-        const scheduleNextChime = () => {
-          if (!this.enabled || !this.ambientPlaying) return;
-          const delay = 9000 + Math.random() * 7000;
-          this.ambientTimer = setTimeout(() => {
-            if (this.enabled && this.ambientPlaying) {
-              this.playEerieChime();
-              scheduleNextChime();
-            }
-          }, delay);
-        };
-        scheduleNextChime();
-
-      } catch (err) {
-        console.warn('[MagicAudio] Error al reproducir ambiente:', err);
-      }
+      // Iniciar el primer ciclo musical tras breve pausa
+      setTimeout(playMelodyCycle, 800);
     }
 
     /**
-     * Campanilla misteriosa suave de fondo
+     * Toca una breve frase instrumental navideña (celesta / campanas glockenspiel)
      */
-    playEerieChime() {
+    playChristmasMelody() {
       if (!this.enabled) return;
       const ctx = this.getAudioContext();
       if (!ctx || !this.ambientGain) return;
 
-      const freqs = [587.3, 659.2, 783.9, 880.0, 1046.5]; // Re, Mi, Sol, La, Do
-      const f = freqs[Math.floor(Math.random() * freqs.length)];
+      // Frase navideña tradicional estilo Jingle Bells / Villancico festivo
+      // E5, E5, E5, E5, E5, E5, E5, G5, C5, D5, E5
+      const notes = [
+        { f: 659.25, dur: 0.22, delay: 0.00 }, // Mi
+        { f: 659.25, dur: 0.22, delay: 0.28 }, // Mi
+        { f: 659.25, dur: 0.44, delay: 0.56 }, // Mi (larga)
+        { f: 659.25, dur: 0.22, delay: 1.10 }, // Mi
+        { f: 659.25, dur: 0.22, delay: 1.38 }, // Mi
+        { f: 659.25, dur: 0.44, delay: 1.66 }, // Mi (larga)
+        { f: 659.25, dur: 0.22, delay: 2.20 }, // Mi
+        { f: 783.99, dur: 0.22, delay: 2.48 }, // Sol
+        { f: 523.25, dur: 0.22, delay: 2.76 }, // Do
+        { f: 587.33, dur: 0.22, delay: 3.04 }, // Re
+        { f: 659.25, dur: 0.65, delay: 3.32 }  // Mi (final brillante)
+      ];
 
-      try {
+      const t0 = ctx.currentTime;
+      notes.forEach(n => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
+        const noteTime = t0 + n.delay;
 
+        // Sonido tipo campanilla / celesta (senoidal pura con ataque rápido y decaimiento suave)
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(f, ctx.currentTime);
+        osc.frequency.setValueAtTime(n.f, noteTime);
 
-        gain.gain.setValueAtTime(0.001, ctx.currentTime);
-        gain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 0.15);
-        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 2.2);
+        gain.gain.setValueAtTime(0.0001, noteTime);
+        gain.gain.linearRampToValueAtTime(0.065, noteTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + n.dur);
 
         osc.connect(gain);
         gain.connect(this.ambientGain);
 
-        osc.start();
-        osc.stop(ctx.currentTime + 2.3);
+        osc.start(noteTime);
+        osc.stop(noteTime + n.dur + 0.05);
+      });
+
+      // Toque suave de cascabeles al finalizar la frase
+      setTimeout(() => {
+        if (this.enabled && this.ambientPlaying) {
+          this.playJingleBells(0.04);
+        }
+      }, 4200);
+    }
+
+    /**
+     * Tintineo de cascabeles de trineo navideño (Sleigh Bells)
+     */
+    playJingleBells(volume = 0.09) {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      const clusterFreqs = [2200, 2640, 3168, 3800, 4500];
+      const hits = [0.00, 0.12, 0.24, 0.40];
+
+      try {
+        const t0 = ctx.currentTime;
+        hits.forEach(delay => {
+          const hitTime = t0 + delay;
+          clusterFreqs.forEach(f => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(f + (Math.random() * 80 - 40), hitTime);
+
+            gain.gain.setValueAtTime(0.0001, hitTime);
+            gain.gain.linearRampToValueAtTime(volume * (0.8 + Math.random() * 0.4), hitTime + 0.008);
+            gain.gain.exponentialRampToValueAtTime(0.0001, hitTime + 0.08);
+
+            osc.connect(gain);
+            gain.connect(this.masterGain);
+
+            osc.start(hitTime);
+            osc.stop(hitTime + 0.09);
+          });
+        });
       } catch (e) {}
+    }
+
+    /**
+     * Sonido de Regalo Mágico que se abre
+     */
+    playGiftOpen() {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      try {
+        const t0 = ctx.currentTime;
+        const notes = [587.33, 739.99, 880.00, 1174.66, 1479.98]; // Re mayor festivo
+        notes.forEach((f, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const noteT = t0 + i * 0.05;
+
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(f, noteT);
+
+          gain.gain.setValueAtTime(0.001, noteT);
+          gain.gain.linearRampToValueAtTime(0.12, noteT + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, noteT + 0.35);
+
+          osc.connect(gain);
+          gain.connect(this.masterGain);
+
+          osc.start(noteT);
+          osc.stop(noteT + 0.38);
+        });
+      } catch (e) {}
+    }
+
+    /**
+     * Sonido especial de Estrella / Recompensa navideña
+     */
+    playStarReward() {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      try {
+        const chord = [659.25, 783.99, 987.77, 1318.51, 1567.98]; // Mi menor pentatónico mágico
+        const t0 = ctx.currentTime;
+
+        chord.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          const startT = t0 + idx * 0.04;
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, startT);
+
+          gain.gain.setValueAtTime(0.001, startT);
+          gain.gain.linearRampToValueAtTime(0.14, startT + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.55);
+
+          osc.connect(gain);
+          gain.connect(this.masterGain);
+
+          osc.start(startT);
+          osc.stop(startT + 0.58);
+        });
+      } catch (e) {}
+    }
+
+    /**
+     * Sonido especial de Actividad o Nivel Completado
+     */
+    playActivityComplete() {
+      if (!this.enabled) return;
+      this.playVictory();
+      setTimeout(() => {
+        if (this.enabled) this.playJingleBells(0.1);
+      }, 400);
     }
 
     /**
@@ -337,7 +411,7 @@
     }
 
     /**
-     * Secuencia de apertura de puerta antigua de castillo al ingresar a un módulo
+     * Secuencia de apertura de puerta mágica al ingresar a un módulo
      */
     playDoorSequence(callback) {
       if (!this.enabled) {
@@ -347,82 +421,13 @@
 
       const now = Date.now();
       if (now - this.lastDoorTime < 600) {
-        // Evitar superposición accidental si hay clics rápidos
         if (typeof callback === 'function') callback();
         return;
       }
       this.lastDoorTime = now;
 
-      const ctx = this.getAudioContext();
-      if (!ctx || !this.masterGain) {
-        if (typeof callback === 'function') callback();
-        return;
-      }
-
-      try {
-        const t0 = ctx.currentTime;
-
-        // Fase 1: Golpe suave / movimiento de picaporte de madera
-        const latchOsc = ctx.createOscillator();
-        const latchGain = ctx.createGain();
-        latchOsc.type = 'triangle';
-        latchOsc.frequency.setValueAtTime(140, t0);
-        latchOsc.frequency.exponentialRampToValueAtTime(45, t0 + 0.08);
-
-        latchGain.gain.setValueAtTime(0.25, t0);
-        latchGain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.09);
-
-        latchOsc.connect(latchGain);
-        latchGain.connect(this.masterGain);
-        latchOsc.start(t0);
-        latchOsc.stop(t0 + 0.1);
-
-        // Fase 2: Chirrido de puerta antigua de madera abriéndose (Fricción modulada)
-        const creakOsc = ctx.createOscillator();
-        const creakGain = ctx.createGain();
-        const creakFilter = ctx.createBiquadFilter();
-
-        creakOsc.type = 'sawtooth';
-        creakOsc.frequency.setValueAtTime(360, t0 + 0.06);
-        creakOsc.frequency.linearRampToValueAtTime(190, t0 + 0.28);
-        creakOsc.frequency.linearRampToValueAtTime(260, t0 + 0.44);
-
-        creakFilter.type = 'bandpass';
-        creakFilter.frequency.setValueAtTime(650, t0 + 0.06);
-        creakFilter.Q.setValueAtTime(6.0, t0 + 0.06);
-
-        creakGain.gain.setValueAtTime(0.001, t0 + 0.06);
-        creakGain.gain.linearRampToValueAtTime(0.18, t0 + 0.14);
-        creakGain.gain.linearRampToValueAtTime(0.14, t0 + 0.32);
-        creakGain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.52);
-
-        creakOsc.connect(creakFilter);
-        creakFilter.connect(creakGain);
-        creakGain.connect(this.masterGain);
-
-        creakOsc.start(t0 + 0.06);
-        creakOsc.stop(t0 + 0.53);
-
-        // Fase 3: Eco y destello mágico corto
-        const magicOsc = ctx.createOscillator();
-        const magicGain = ctx.createGain();
-        magicOsc.type = 'sine';
-        magicOsc.frequency.setValueAtTime(659.2, t0 + 0.30); // Mi5
-        magicOsc.frequency.exponentialRampToValueAtTime(987.7, t0 + 0.65); // Si5
-
-        magicGain.gain.setValueAtTime(0.001, t0 + 0.30);
-        magicGain.gain.linearRampToValueAtTime(0.12, t0 + 0.38);
-        magicGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.75);
-
-        magicOsc.connect(magicGain);
-        magicGain.connect(this.masterGain);
-
-        magicOsc.start(t0 + 0.30);
-        magicOsc.stop(t0 + 0.76);
-
-      } catch (err) {
-        console.warn('[MagicAudio] Error en secuencia de puerta:', err);
-      }
+      // Sonido alegre de campanas de bienvenida
+      this.playStarReward();
 
       if (typeof callback === 'function') {
         setTimeout(callback, 120);
@@ -430,40 +435,14 @@
     }
 
     /**
-     * Respuesta correcta: Campanilla mágica con destello sonoro
+     * Respuesta correcta: Campanillas navideñas alegres
      */
     playCorrect() {
-      if (!this.enabled) return;
-      const ctx = this.getAudioContext();
-      if (!ctx || !this.masterGain) return;
-
-      try {
-        const notes = [523.25, 659.25, 783.99, 1046.5]; // Do5, Mi5, Sol5, Do6
-        const t0 = ctx.currentTime;
-
-        notes.forEach((freq, idx) => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          const noteTime = t0 + idx * 0.07;
-
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, noteTime);
-
-          gain.gain.setValueAtTime(0.001, noteTime);
-          gain.gain.linearRampToValueAtTime(0.15, noteTime + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + 0.38);
-
-          osc.connect(gain);
-          gain.connect(this.masterGain);
-
-          osc.start(noteTime);
-          osc.stop(noteTime + 0.4);
-        });
-      } catch (e) {}
+      this.playStarReward();
     }
 
     /**
-     * Respuesta incorrecta: Sonido suave de error mágico (amable y no punitivo)
+     * Respuesta incorrecta: Tono suave y amable de reintento
      */
     playIncorrect() {
       if (!this.enabled) return;
@@ -474,66 +453,31 @@
         const t0 = ctx.currentTime;
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
-        const filter = ctx.createBiquadFilter();
 
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(329.63, t0); // Mi4
-        osc.frequency.linearRampToValueAtTime(261.63, t0 + 0.22); // Do4
+        osc.frequency.setValueAtTime(349.23, t0); // Fa4
+        osc.frequency.linearRampToValueAtTime(293.66, t0 + 0.18); // Re4
 
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(600, t0);
+        gain.gain.setValueAtTime(0.12, t0);
+        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.22);
 
-        gain.gain.setValueAtTime(0.15, t0);
-        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.26);
-
-        osc.connect(filter);
-        filter.connect(gain);
+        osc.connect(gain);
         gain.connect(this.masterGain);
 
         osc.start(t0);
-        osc.stop(t0 + 0.28);
+        osc.stop(t0 + 0.24);
       } catch (e) {}
     }
 
     /**
-     * Mecanismo de cerradura mágica / cofre desbloqueado
+     * Cerradura mágica / regalo desbloqueado
      */
     playUnlock() {
-      if (!this.enabled) return;
-      const ctx = this.getAudioContext();
-      if (!ctx || !this.masterGain) return;
-
-      try {
-        const t0 = ctx.currentTime;
-        // Clic metálico 1
-        const osc1 = ctx.createOscillator();
-        const gain1 = ctx.createGain();
-        osc1.type = 'square';
-        osc1.frequency.setValueAtTime(800, t0);
-        gain1.gain.setValueAtTime(0.12, t0);
-        gain1.gain.exponentialRampToValueAtTime(0.001, t0 + 0.04);
-        osc1.connect(gain1);
-        gain1.connect(this.masterGain);
-        osc1.start(t0);
-        osc1.stop(t0 + 0.05);
-
-        // Clic metálico 2 + brillo armónico
-        const osc2 = ctx.createOscillator();
-        const gain2 = ctx.createGain();
-        osc2.type = 'sine';
-        osc2.frequency.setValueAtTime(987.77, t0 + 0.08);
-        osc2.frequency.exponentialRampToValueAtTime(1318.51, t0 + 0.35);
-        gain2.gain.setValueAtTime(0.15, t0 + 0.08);
-        gain2.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.45);
-        osc2.connect(gain2);
-        gain2.connect(this.masterGain);
-        osc2.start(t0 + 0.08);
-        osc2.stop(t0 + 0.46);
-      } catch (e) {}
+      this.playGiftOpen();
     }
 
     /**
-     * Completar misión: Efecto de triunfo misterioso
+     * Completar misión: Triunfo festivo brillante
      */
     playVictory() {
       if (!this.enabled) return;
@@ -541,26 +485,26 @@
       if (!ctx || !this.masterGain) return;
 
       try {
-        const chord = [523.25, 659.25, 783.99, 1046.5, 1318.5]; // Do, Mi, Sol, Do, Mi
+        const chord = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98]; // Do, Mi, Sol, Do, Mi, Sol
         const t0 = ctx.currentTime;
 
         chord.forEach((freq, idx) => {
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
-          const startT = t0 + idx * 0.08;
+          const startT = t0 + idx * 0.07;
 
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, startT);
 
           gain.gain.setValueAtTime(0.001, startT);
-          gain.gain.linearRampToValueAtTime(0.14, startT + 0.03);
-          gain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.65);
+          gain.gain.linearRampToValueAtTime(0.15, startT + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.75);
 
           osc.connect(gain);
           gain.connect(this.masterGain);
 
           osc.start(startT);
-          osc.stop(startT + 0.68);
+          osc.stop(startT + 0.78);
         });
       } catch (e) {}
     }
@@ -579,149 +523,74 @@
         const gain = ctx.createGain();
 
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(480, t0);
-        osc.frequency.exponentialRampToValueAtTime(120, t0 + 0.03);
+        osc.frequency.setValueAtTime(600, t0);
+        osc.frequency.exponentialRampToValueAtTime(300, t0 + 0.025);
 
-        gain.gain.setValueAtTime(0.09, t0);
-        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.035);
+        gain.gain.setValueAtTime(0.08, t0);
+        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.03);
 
         osc.connect(gain);
         gain.connect(this.masterGain);
 
         osc.start(t0);
-        osc.stop(t0 + 0.04);
+        osc.stop(t0 + 0.035);
       } catch (e) {}
     }
 
     /**
-     * Aparición sorpresa del vampiro: Aleteo juguetón y destello mágico misterioso
+     * Sonido Pop para selección de bloques
      */
+    playPop() {
+      this.playClick();
+    }
+
+    /**
+     * Sonido de descarte o papelera
+     */
+    playTrash() {
+      if (!this.enabled) return;
+      const ctx = this.getAudioContext();
+      if (!ctx || !this.masterGain) return;
+
+      try {
+        const t0 = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(300, t0);
+        osc.frequency.exponentialRampToValueAtTime(120, t0 + 0.05);
+
+        gain.gain.setValueAtTime(0.09, t0);
+        gain.gain.exponentialRampToValueAtTime(0.001, t0 + 0.06);
+
+        osc.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc.start(t0);
+        osc.stop(t0 + 0.07);
+      } catch (e) {}
+    }
+
+    /**
+     * Sonido de error suave
+     */
+    playError() {
+      this.playIncorrect();
+    }
+
+    // Métodos de compatibilidad hacia atrás
+    playEerieChime() {
+      this.playStarReward();
+    }
     playVampireAppear() {
-      if (!this.enabled) return;
-      const ctx = this.getAudioContext();
-      if (!ctx || !this.masterGain) return;
-
-      try {
-        const t0 = ctx.currentTime;
-        
-        // 1. Aleteo juguetón suave (3 pulsos rápidos con filtro)
-        for (let i = 0; i < 3; i++) {
-          const pt = t0 + i * 0.08;
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          const filter = ctx.createBiquadFilter();
-
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(140 + i * 20, pt);
-          osc.frequency.linearRampToValueAtTime(70, pt + 0.06);
-
-          filter.type = 'lowpass';
-          filter.frequency.setValueAtTime(350, pt);
-
-          gain.gain.setValueAtTime(0.08, pt);
-          gain.gain.exponentialRampToValueAtTime(0.001, pt + 0.07);
-
-          osc.connect(filter);
-          filter.connect(gain);
-          gain.connect(this.masterGain);
-
-          osc.start(pt);
-          osc.stop(pt + 0.075);
-        }
-
-        // 2. Destello mágico misterioso (Fa#5 -> La5 suave)
-        const twinkleOsc = ctx.createOscillator();
-        const twinkleGain = ctx.createGain();
-        twinkleOsc.type = 'sine';
-        twinkleOsc.frequency.setValueAtTime(739.99, t0 + 0.15); // F#5
-        twinkleOsc.frequency.exponentialRampToValueAtTime(880.0, t0 + 0.35); // A5
-
-        twinkleGain.gain.setValueAtTime(0.001, t0 + 0.15);
-        twinkleGain.gain.linearRampToValueAtTime(0.06, t0 + 0.22);
-        twinkleGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.55);
-
-        twinkleOsc.connect(twinkleGain);
-        twinkleGain.connect(this.masterGain);
-
-        twinkleOsc.start(t0 + 0.15);
-        twinkleOsc.stop(t0 + 0.58);
-      } catch (e) {}
+      this.playJingleBells(0.08);
     }
-
-    /**
-     * Risa malévola traviesa y divertida del fantasma (Halloween)
-     * Síntesis procedimental Web Audio API: 4 pulsos vocálicos con formante resonante
-     * y eco sobrenatural amigable para primaria (duración ~1.4s).
-     */
     playGhostLaugh() {
-      if (!this.enabled) return;
-      const ctx = this.getAudioContext();
-      if (!ctx || !this.masterGain) return;
-
-      try {
-        const t0 = ctx.currentTime;
-        const bursts = [
-          { fStart: 440, fEnd: 360, dur: 0.12, delay: 0.00, gain: 0.12 },
-          { fStart: 410, fEnd: 330, dur: 0.11, delay: 0.16, gain: 0.14 },
-          { fStart: 370, fEnd: 290, dur: 0.11, delay: 0.32, gain: 0.15 },
-          { fStart: 320, fEnd: 230, dur: 0.28, delay: 0.48, gain: 0.13 }
-        ];
-
-        // LFO de vibrato sobrenatural
-        const lfo = ctx.createOscillator();
-        const lfoGain = ctx.createGain();
-        lfo.frequency.setValueAtTime(6.5, t0);
-        lfoGain.gain.setValueAtTime(14, t0);
-        lfo.connect(lfoGain);
-
-        bursts.forEach(b => {
-          const bt = t0 + b.delay;
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          const filter = ctx.createBiquadFilter();
-
-          osc.type = 'sawtooth';
-          osc.frequency.setValueAtTime(b.fStart, bt);
-          osc.frequency.exponentialRampToValueAtTime(b.fEnd, bt + b.dur);
-          lfoGain.connect(osc.frequency);
-
-          filter.type = 'bandpass';
-          filter.frequency.setValueAtTime(950, bt);
-          filter.frequency.linearRampToValueAtTime(750, bt + b.dur);
-          filter.Q.setValueAtTime(4.5, bt);
-
-          gain.gain.setValueAtTime(0.001, bt);
-          gain.gain.linearRampToValueAtTime(b.gain, bt + 0.02);
-          gain.gain.exponentialRampToValueAtTime(0.001, bt + b.dur);
-
-          osc.connect(filter);
-          filter.connect(gain);
-          gain.connect(this.masterGain);
-
-          osc.start(bt);
-          osc.stop(bt + b.dur + 0.02);
-        });
-
-        // Tono grave espectral de fondo (eco de ultratumba suave)
-        const subOsc = ctx.createOscillator();
-        const subGain = ctx.createGain();
-        subOsc.type = 'sine';
-        subOsc.frequency.setValueAtTime(140, t0);
-        subOsc.frequency.exponentialRampToValueAtTime(95, t0 + 0.85);
-
-        subGain.gain.setValueAtTime(0.001, t0);
-        subGain.gain.linearRampToValueAtTime(0.06, t0 + 0.15);
-        subGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.9);
-
-        subOsc.connect(subGain);
-        subGain.connect(this.masterGain);
-
-        subOsc.start(t0);
-        subOsc.stop(t0 + 0.95);
-
-        lfo.start(t0);
-        lfo.stop(t0 + 0.95);
-      } catch (err) {}
+      this.playJingleBells(0.08);
+    }
+    playDoorCreak() {
+      this.playStarReward();
     }
   }
 

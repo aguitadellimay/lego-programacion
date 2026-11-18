@@ -267,8 +267,8 @@
     },
     2: {
       grade: 2,
-      title: '2.º Grado: El Planeta de las Calabazas',
-      subtitle: 'Energía para la nave, calabazas perdidas y compuerta espacial',
+      title: '2.º Grado: El Planeta de los Regalos',
+      subtitle: 'Energía para la nave, regalos perdidos y compuerta espacial',
       tag: '4 Desafíos • Sumas y Restas (2 cifras)',
       icon: '🎃',
       missions: [
@@ -292,7 +292,7 @@
         },
         {
           id: 2,
-          name: 'Misión 2: Las calabazas perdidas',
+          name: 'Misión 2: Los regalos perdidos',
           type: 'math_story',
           story: 'La nave detectó 22 calabazas luminosas en el valle embrujado, pero 7 desaparecieron dentro de una cueva misteriosa. ¿Cuántas calabazas quedan afuera?',
           equation: '22 − 7 = ?',
@@ -366,7 +366,7 @@
     },
     3: {
       grade: 3,
-      title: '3.º Grado: El Tren Fantasma Espacial',
+      title: '3.º Grado: El Expreso Polar Espacial',
       subtitle: 'Pasajeros de la estación embrujada y rutas cósmicas',
       tag: '5 Desafíos • Tren, Pasajeros & Cristales',
       icon: '🚂👻',
@@ -511,7 +511,7 @@
         },
         {
           id: 2,
-          name: 'Laberinto 2: El cementerio de las calabazas',
+          name: 'Laberinto 2: El Valle de los Regalos Navideños',
           type: 'maze',
           theme: 'pumpkin_planet',
           cols: 10,
