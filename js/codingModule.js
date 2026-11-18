@@ -5277,7 +5277,7 @@ const CODING_DATA = {
     5: {
       number: 5,
       name: 'Maestros del Código',
-      badge: '5.º Grado 🔮',
+      badge: '5.º Grado ⭐',
       colorClass: 'coding-g-5',
       accentColor: '#9c27b0',
       description: 'Programación estructurada, repeticiones (bucles), debugging, optimización y reglas compuestas.',
@@ -7178,53 +7178,71 @@ class CodingProgressStorage {
 }
 
 // ========================================================
-// GENERADOR DE AVATAR SVG DE BYTE
+// GENERADOR DE AVATAR SVG DE BYTE / BITY (VESTIMENTA NAVIDEÑA)
 // ========================================================
 function getByteAvatarSvg(expression = 'normal') {
-  let eyes = '<circle cx="38" cy="42" r="5" fill="#38bdf8"/><circle cx="62" cy="42" r="5" fill="#38bdf8"/>';
-  let mouth = '<rect x="42" y="56" width="16" height="4" rx="2" fill="#38bdf8"/>';
+  let eyes = '<circle cx="38" cy="44" r="5" fill="#38bdf8"/><circle cx="62" cy="44" r="5" fill="#38bdf8"/>' +
+             '<circle cx="39.5" cy="42.5" r="1.5" fill="#ffffff"/><circle cx="63.5" cy="42.5" r="1.5" fill="#ffffff"/>';
+  let mouth = '<rect x="42" y="57" width="16" height="4" rx="2" fill="#38bdf8"/>';
 
   if (expression === 'happy') {
-    eyes = '<path d="M 33 44 Q 38 38 43 44" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>' +
-           '<path d="M 57 44 Q 62 38 67 44" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
-    mouth = '<path d="M 40 54 Q 50 63 60 54" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    eyes = '<path d="M 33 46 Q 38 40 43 46" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>' +
+           '<path d="M 57 46 Q 62 40 67 46" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    mouth = '<path d="M 40 55 Q 50 64 60 55" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
   } else if (expression === 'thinking') {
-    eyes = '<circle cx="38" cy="39" r="4.5" fill="#38bdf8"/><circle cx="62" cy="39" r="4.5" fill="#38bdf8"/>';
-    mouth = '<circle cx="50" cy="57" r="3" fill="#38bdf8"/>';
+    eyes = '<circle cx="38" cy="41" r="4.5" fill="#38bdf8"/><circle cx="62" cy="41" r="4.5" fill="#38bdf8"/>';
+    mouth = '<circle cx="50" cy="58" r="3" fill="#38bdf8"/>';
   } else if (expression === 'worried') {
-    eyes = '<circle cx="38" cy="44" r="5" fill="#f59e0b"/><circle cx="62" cy="44" r="5" fill="#f59e0b"/>';
-    mouth = '<path d="M 40 60 Q 50 53 60 60" stroke="#f59e0b" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    eyes = '<circle cx="38" cy="45" r="5" fill="#f59e0b"/><circle cx="62" cy="45" r="5" fill="#f59e0b"/>';
+    mouth = '<path d="M 40 61 Q 50 54 60 61" stroke="#f59e0b" stroke-width="3" fill="none" stroke-linecap="round"/>';
   } else if (expression === 'crying') {
-    eyes = '<circle cx="38" cy="42" r="4.5" fill="#38bdf8"/><circle cx="62" cy="42" r="4.5" fill="#38bdf8"/>' +
-           '<path d="M 38 48 C 38 53 34 54 38 58 C 42 54 38 53 38 48 Z" fill="#60a5fa" class="bity-tear-anim"/>' +
-           '<path d="M 62 48 C 62 53 58 54 62 58 C 66 54 62 53 62 48 Z" fill="#60a5fa" class="bity-tear-anim"/>';
-    mouth = '<path d="M 42 62 Q 50 56 58 62" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    eyes = '<circle cx="38" cy="44" r="4.5" fill="#38bdf8"/><circle cx="62" cy="44" r="4.5" fill="#38bdf8"/>' +
+           '<path d="M 38 50 C 38 55 34 56 38 60 C 42 56 38 55 38 50 Z" fill="#60a5fa" class="bity-tear-anim"/>' +
+           '<path d="M 62 50 C 62 55 58 56 62 60 C 66 56 62 55 62 50 Z" fill="#60a5fa" class="bity-tear-anim"/>';
+    mouth = '<path d="M 42 63 Q 50 57 58 63" stroke="#38bdf8" stroke-width="3" fill="none" stroke-linecap="round"/>';
   }
 
   return `
     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Antena con luz -->
-      <line x1="50" y1="20" x2="50" y2="8" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
-      <circle cx="50" cy="7" r="6" fill="#facc15" filter="drop-shadow(0 0 6px #facc15)"/>
+      <!-- Antena con luz dorada asomando -->
+      <line x1="50" y1="22" x2="50" y2="9" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="50" cy="8" r="5.5" fill="#facc15" filter="drop-shadow(0 0 6px #facc15)"/>
       
       <!-- Orejas tuercas -->
-      <rect x="16" y="38" width="6" height="16" rx="3" fill="#94a3b8"/>
-      <rect x="78" y="38" width="6" height="16" rx="3" fill="#94a3b8"/>
+      <rect x="16" y="40" width="6" height="16" rx="3" fill="#94a3b8"/>
+      <rect x="78" y="40" width="6" height="16" rx="3" fill="#94a3b8"/>
 
-      <!-- Cabeza robot con marco pantalla -->
-      <rect x="22" y="20" width="56" height="52" rx="14" fill="#0f172a" stroke="#0284c7" stroke-width="4"/>
-      <rect x="27" y="25" width="46" height="42" rx="10" fill="#1e293b"/>
+      <!-- Cabeza robot con marco pantalla (Identidad original intacta) -->
+      <rect x="22" y="22" width="56" height="50" rx="14" fill="#0f172a" stroke="#0284c7" stroke-width="4"/>
+      <rect x="27" y="27" width="46" height="40" rx="10" fill="#1e293b"/>
       
       ${eyes}
       ${mouth}
 
+      <!-- Gorro rojo de Papá Noel con borde blanco y pompón -->
+      <path d="M 21 25 Q 48 2 80 20 Q 88 25 85 33 L 72 26 Z" fill="#d42426" stroke="#991b1b" stroke-width="1.5"/>
+      <rect x="19" y="20" width="62" height="8" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="85" cy="32" r="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <!-- Acebo navideño pequeño -->
+      <circle cx="29" cy="22" r="3" fill="#16a34a"/>
+      <circle cx="33" cy="23" r="3" fill="#15803d"/>
+      <circle cx="31" cy="24" r="2" fill="#ef4444"/>
+
       <!-- Cuello -->
       <rect x="42" y="72" width="16" height="8" rx="2" fill="#64748b"/>
 
-      <!-- Torso con botones -->
+      <!-- Torso con botones navideños -->
       <path d="M 30 80 L 70 80 L 76 100 L 24 100 Z" fill="#0284c7"/>
-      <circle cx="42" cy="88" r="3" fill="#38bdf8"/>
-      <circle cx="58" cy="88" r="3" fill="#facc15"/>
+      <circle cx="42" cy="90" r="3" fill="#16a34a" stroke="#ffffff" stroke-width="0.8"/>
+      <circle cx="58" cy="90" r="3" fill="#ffd700"/>
+
+      <!-- Bufanda navideña roja, verde y dorada -->
+      <rect x="26" y="71" width="48" height="9" rx="4.5" fill="#d42426" stroke="#991b1b" stroke-width="1.2"/>
+      <rect x="34" y="71" width="6" height="9" fill="#165b33"/>
+      <rect x="47" y="71" width="6" height="9" fill="#ffd700"/>
+      <rect x="60" y="71" width="6" height="9" fill="#165b33"/>
+      <path d="M 59 78 L 68 78 L 70 95 L 58 95 Z" fill="#d42426" stroke="#991b1b" stroke-width="1"/>
+      <rect x="58.5" y="90" width="11" height="3" fill="#ffd700"/>
     </svg>
   `;
 }
@@ -9665,7 +9683,7 @@ class CodingModuleManager {
 
             <div class="byte-welcome-illustration">
               <div class="byte-hero-avatar-box">
-                <div class="byte-hero-avatar">🤖</div>
+                <div class="byte-hero-avatar" style="width:68px; height:68px; display:inline-flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</div>
                 <div class="byte-hero-name">BYTE</div>
               </div>
 
@@ -9921,9 +9939,10 @@ class CodingModuleManager {
           }
 
           if (isPlayer) {
+            const isDefaultRobot = !act.characterIcon || act.characterIcon === '🤖';
             cell.innerHTML = `
               <div class="byte-actor face-${playerFacing} ${byteAnim}" title="${act.characterName || 'Byte'}">
-                ${act.characterIcon || '🤖'}
+                ${isDefaultRobot ? `<div style="width:42px; height:42px; display:flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</div>` : act.characterIcon}
               </div>
             `;
           }
@@ -10578,7 +10597,7 @@ class CodingModuleManager {
             const arrow = deltas[playerFacing].arrow;
             content = `
               <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
-                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-robot" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</span>
                 <span class="bity-actor-pointer">${arrow}</span>
               </div>
             `;
@@ -10957,7 +10976,7 @@ class CodingModuleManager {
             const arrow = deltas[playerFacing].arrow;
             content = `
               <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
-                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-robot" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</span>
                 <span class="bity-actor-pointer">${arrow}</span>
               </div>
             `;
@@ -11480,7 +11499,7 @@ class CodingModuleManager {
             const arrow = deltas[playerFacing].arrow;
             content = `
               <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
-                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-robot" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</span>
                 <span class="bity-actor-pointer">${arrow}</span>
               </div>
             `;
@@ -12370,7 +12389,7 @@ class CodingModuleManager {
             const arrow = deltas[playerFacing].arrow;
             content = `
               <div class="bity-avatar-actor" style="transform: rotate(${rot}deg);">
-                <span class="bity-actor-robot">🤖</span>
+                <span class="bity-actor-robot" style="width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center;">${getByteAvatarSvg('happy')}</span>
                 <span class="bity-actor-pointer">${arrow}</span>
               </div>
             `;

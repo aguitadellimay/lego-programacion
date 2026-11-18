@@ -307,38 +307,63 @@
     paraguas: `<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="6" fill="#701a75"/><path d="M10 22 Q20 10 30 22 Z" fill="#ec4899"/><line x1="20" y1="22" x2="20" y2="32" stroke="#ffffff" stroke-width="2"/><path d="M20 32 Q23 35 25 32" stroke="#ffffff" stroke-width="2" fill="none"/></svg>`
   };
 
-  // 1.7. Avatar de Bity con expresiones
+  // 1.7. Avatar de Bity con expresiones y vestimenta navideña
 
-  // Bity SVG helper
+  // Bity SVG helper (Conservando su rostro, proporciones e identidad con gorro de Papá Noel y bufanda navideña)
   function getBitySvg(mood = 'happy') {
     const eyeColor = mood === 'thinking' ? '#facc15' : (mood === 'celebrating' ? '#34d399' : (mood === 'alert' ? '#f87171' : '#38bdf8'));
     return `
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="bity-svg-avatar" aria-label="Bity el robot">
-      <circle cx="50" cy="50" r="46" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="3"/>
-      <!-- Antena -->
-      <rect x="47" y="10" width="6" height="14" fill="#a855f7" rx="3"/>
-      <circle cx="50" cy="9" r="6" fill="#facc15"/>
-      <!-- Cabeza -->
-      <rect x="25" y="24" width="50" height="42" rx="12" fill="#312e81" stroke="#6366f1" stroke-width="2.5"/>
-      <rect x="32" y="32" width="36" height="24" rx="6" fill="#0f172a"/>
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="bity-svg-avatar" aria-label="Bity el robot navideño">
+      <!-- Halo festivo de fondo -->
+      <circle cx="50" cy="52" r="45" fill="#0c1e35" stroke="#ffd700" stroke-width="2.5"/>
+      <!-- Antena luminosa asomando -->
+      <rect x="47" y="14" width="6" height="14" fill="#94a3b8" rx="3"/>
+      <circle cx="50" cy="12" r="5" fill="#facc15"/>
+      <!-- Orejas / Sensores laterales -->
+      <rect x="19" y="39" width="6" height="16" rx="3" fill="#0284c7" stroke="#bae6fd" stroke-width="1.5"/>
+      <rect x="75" y="39" width="6" height="16" rx="3" fill="#0284c7" stroke="#bae6fd" stroke-width="1.5"/>
+      <!-- Cabeza original de Bity -->
+      <rect x="25" y="28" width="50" height="40" rx="12" fill="#0ea5e9" stroke="#bae6fd" stroke-width="2.5"/>
+      <!-- Visor facial -->
+      <rect x="31" y="35" width="38" height="24" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
       ${mood === 'thinking' ? `
-        <circle cx="40" cy="44" r="4" fill="${eyeColor}"/>
-        <circle cx="60" cy="44" r="4" fill="${eyeColor}"/>
-        <line x1="34" y1="38" x2="45" y2="40" stroke="#facc15" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="41" cy="46" r="4" fill="${eyeColor}"/>
+        <circle cx="59" cy="46" r="4" fill="${eyeColor}"/>
+        <line x1="35" y1="40" x2="46" y2="42" stroke="#facc15" stroke-width="2" stroke-linecap="round"/>
       ` : mood === 'alert' ? `
-        <circle cx="40" cy="44" r="4.5" fill="${eyeColor}"/>
-        <circle cx="60" cy="44" r="4.5" fill="${eyeColor}"/>
-        <line x1="34" y1="38" x2="44" y2="42" stroke="#f87171" stroke-width="2"/>
-        <line x1="66" y1="38" x2="56" y2="42" stroke="#f87171" stroke-width="2"/>
+        <circle cx="41" cy="46" r="4.5" fill="${eyeColor}"/>
+        <circle cx="59" cy="46" r="4.5" fill="${eyeColor}"/>
+        <line x1="35" y1="40" x2="45" y2="43" stroke="#f87171" stroke-width="2"/>
+        <line x1="65" y1="40" x2="55" y2="43" stroke="#f87171" stroke-width="2"/>
       ` : `
-        <circle cx="40" cy="44" r="4.5" fill="${eyeColor}"/>
-        <circle cx="60" cy="44" r="4.5" fill="${eyeColor}"/>
+        <circle cx="41" cy="46" r="4.5" fill="${eyeColor}"/>
+        <circle cx="59" cy="46" r="4.5" fill="${eyeColor}"/>
+        <circle cx="42.5" cy="44.5" r="1.5" fill="#ffffff"/>
+        <circle cx="60.5" cy="44.5" r="1.5" fill="#ffffff"/>
       `}
       ${mood === 'celebrating' || mood === 'happy' ? `
-        <path d="M 44 54 Q 50 58 56 54" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 43 53 Q 50 58 57 53" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
       ` : `
-        <line x1="46" y1="54" x2="54" y2="54" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+        <line x1="45" y1="54" x2="55" y2="54" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
       `}
+      <!-- Gorro rojo de Papá Noel con borde blanco y pompón -->
+      <path d="M 24 30 Q 48 6 78 24 Q 86 28 84 36 L 72 30 Z" fill="#d42426" stroke="#991b1b" stroke-width="1.5"/>
+      <rect x="22" y="25" width="56" height="8" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <circle cx="84" cy="35" r="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <!-- Detalle de acebo navideño en el gorro -->
+      <circle cx="32" cy="27" r="3" fill="#16a34a"/>
+      <circle cx="36" cy="28" r="3" fill="#15803d"/>
+      <circle cx="34" cy="29" r="2" fill="#ef4444"/>
+      <!-- Torso / Pecho con detalle dorado -->
+      <rect x="31" y="69" width="38" height="20" rx="7" fill="#0284c7" stroke="#bae6fd" stroke-width="2"/>
+      <rect x="40" y="76" width="20" height="9" rx="3" fill="#165b33" stroke="#ffd700" stroke-width="1.2"/>
+      <!-- Bufanda navideña roja, verde y dorada -->
+      <rect x="26" y="65" width="48" height="9" rx="4.5" fill="#d42426" stroke="#991b1b" stroke-width="1.2"/>
+      <rect x="34" y="65" width="6" height="9" fill="#165b33"/>
+      <rect x="48" y="65" width="6" height="9" fill="#ffd700"/>
+      <rect x="60" y="65" width="6" height="9" fill="#165b33"/>
+      <path d="M 58 72 L 67 72 L 69 88 L 57 88 Z" fill="#d42426" stroke="#991b1b" stroke-width="1"/>
+      <rect x="57.5" y="83" width="11" height="3" fill="#ffd700"/>
     </svg>`;
   }
 
@@ -1699,7 +1724,7 @@ function shuffleArray(array) {
       this.playSound('click');
 
       this.animateStepMove(oldPos, this.bityPos, dir, () => {
-        // 1. Verificar elementos interactivos (puertas, ventanas, cofres, calabazas)
+        // 1. Verificar elementos interactivos (puertas, ventanas, regalos, campanas)
         const interactiveItem = this.getInteractiveItemAt(nx, ny);
         if (interactiveItem && !this.answeredItems.has(interactiveItem.id)) {
           this.inputQueue = [];
@@ -2006,12 +2031,12 @@ function shuffleArray(array) {
       } else if (this.currentStep === 7) {
         // En el Desafío 4, transición animada al Gran Desafío 5
         setTimeout(() => {
-          this.showAnimatedTransition('¡DESAFÍO 4 SUPERADO! PREPARANDO EL GRAN CASTILLO DE LAS PUERTAS Y VENTANAS ENCANTADAS...', () => {
+          this.showAnimatedTransition('¡DESAFÍO 4 SUPERADO! PREPARANDO EL GRAN TALLER NAVIDEÑO DE PUERTAS Y VENTANAS MÁGICAS...', () => {
             this.selectStep(8);
           });
         }, 700);
       } else if (this.currentStep === 8) {
-        // En el Desafío 5, ¡Gran Celebración Final de Halloween!
+        // En el Desafío 5, ¡Gran Celebración Final de Navidad!
         setTimeout(() => {
           const mount = document.querySelector('.alg-maze-section');
           if (mount) {

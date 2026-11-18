@@ -26,13 +26,15 @@
       this.lastDoorTime = 0;
       this.melodyInterval = null;
 
-      // Lectura de preferencia guardada (por defecto desactivado hasta interacción del usuario)
-      this.enabled = false;
+      // Lectura de preferencia guardada (por defecto activado en la edición navideña)
+      this.enabled = true;
       try {
         const saved = localStorage.getItem(this.STORAGE_KEY);
-        this.enabled = (saved === 'true');
+        if (saved !== null) {
+          this.enabled = (saved === 'true');
+        }
       } catch (e) {
-        this.enabled = false;
+        this.enabled = true;
       }
     }
 
@@ -52,7 +54,7 @@
           this.masterGain.connect(this.ctx.destination);
 
           this.ambientGain = this.ctx.createGain();
-          this.ambientGain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+          this.ambientGain.gain.setValueAtTime(0.32, this.ctx.currentTime);
           this.ambientGain.connect(this.masterGain);
         } catch (err) {
           console.warn('[MagicAudio] No se pudo inicializar AudioContext:', err);
@@ -83,31 +85,35 @@
         });
       }
 
-      // Desbloquear audio en la primera interacción si el usuario lo tenía habilitado
+      // Desbloquear audio en la primera interacción si el usuario lo tiene habilitado
       const unlockHandler = () => {
         if (this.enabled) {
           const ctx = this.getAudioContext();
-          if (ctx && ctx.state === 'suspended') {
-            ctx.resume().then(() => {
-              if (!this.ambientPlaying) {
-                this.playAmbient();
-              }
-            }).catch(() => {});
-          } else if (ctx && !this.ambientPlaying) {
-            this.playAmbient();
+          if (ctx) {
+            if (ctx.state === 'suspended') {
+              ctx.resume().then(() => {
+                if (!this.ambientPlaying) {
+                  this.playAmbient();
+                }
+              }).catch(() => {});
+            } else if (!this.ambientPlaying) {
+              this.playAmbient();
+            }
           }
         }
-        document.removeEventListener('click', unlockHandler);
-        document.removeEventListener('keydown', unlockHandler);
       };
 
-      document.addEventListener('click', unlockHandler, { once: false });
-      document.addEventListener('keydown', unlockHandler, { once: false });
+      document.addEventListener('click', unlockHandler, { passive: true });
+      document.addEventListener('keydown', unlockHandler, { passive: true });
+      document.addEventListener('touchstart', unlockHandler, { passive: true });
 
       if (this.enabled) {
         setTimeout(() => {
-          this.getAudioContext();
-        }, 100);
+          const ctx = this.getAudioContext();
+          if (ctx && ctx.state === 'running' && !this.ambientPlaying) {
+            this.playAmbient();
+          }
+        }, 150);
       }
     }
 
@@ -173,15 +179,15 @@
         icon.textContent = this.enabled ? '🔔' : '🔇';
       }
       if (label) {
-        label.textContent = this.enabled ? 'SONIDO NAVIDEÑO ACTIVADO' : 'SONIDO DESACTIVADO';
+        label.textContent = this.enabled ? 'MÚSICA NAVIDEÑA ACTIVADA' : 'SONIDO DESACTIVADO';
       }
       btn.title = this.enabled 
-        ? 'Sonido navideño activado (Clic para silenciar)' 
-        : 'Sonido desactivado (Clic para activar)';
+        ? 'Música navideña activada (Clic para silenciar)' 
+        : 'Sonido desactivado (Clic para activar música navideña)';
     }
 
     /**
-     * Música y ambiente navideño suave e instrumental
+     * Música y ambiente navideño suave e instrumental continuo
      */
     playAmbient() {
       if (!this.enabled || this.ambientPlaying) return;
@@ -192,13 +198,15 @@
       this.ambientNodes = [];
       this.ambientPlaying = true;
 
-      // 1. Tocar una melodía suave de campanas navideñas periódicamente
+      // Ciclo continuo de melodías navideñas alegres (Jingle Bells y We Wish You a Merry Christmas)
+      let phraseIndex = 0;
       const playMelodyCycle = () => {
         if (!this.enabled || !this.ambientPlaying) return;
-        this.playChristmasMelody();
+        const durationMs = this.playChristmasMelody(phraseIndex % 2);
+        phraseIndex++;
         
-        // Siguiente frase musical en 22 a 32 segundos
-        const nextDelay = 22000 + Math.random() * 10000;
+        // Siguiente frase musical con pausa breve y natural de 3.5 segundos
+        const nextDelay = (durationMs || 7000) + 3500;
         this.ambientTimer = setTimeout(() => {
           if (this.enabled && this.ambientPlaying) {
             playMelodyCycle();
@@ -206,33 +214,83 @@
         }, nextDelay);
       };
 
-      // Iniciar el primer ciclo musical tras breve pausa
-      setTimeout(playMelodyCycle, 800);
+      // Iniciar inmediatamente la melodía navideña
+      setTimeout(playMelodyCycle, 120);
     }
 
     /**
-     * Toca una breve frase instrumental navideña (celesta / campanas glockenspiel)
+     * Toca una frase instrumental navideña cálida y audible (celesta / glockenspiel + armónicos)
      */
-    playChristmasMelody() {
-      if (!this.enabled) return;
+    playChristmasMelody(variant = 0) {
+      if (!this.enabled) return 6000;
       const ctx = this.getAudioContext();
-      if (!ctx || !this.ambientGain) return;
+      if (!ctx || !this.ambientGain) return 6000;
 
-      // Frase navideña tradicional estilo Jingle Bells / Villancico festivo
-      // E5, E5, E5, E5, E5, E5, E5, G5, C5, D5, E5
-      const notes = [
-        { f: 659.25, dur: 0.22, delay: 0.00 }, // Mi
-        { f: 659.25, dur: 0.22, delay: 0.28 }, // Mi
-        { f: 659.25, dur: 0.44, delay: 0.56 }, // Mi (larga)
-        { f: 659.25, dur: 0.22, delay: 1.10 }, // Mi
-        { f: 659.25, dur: 0.22, delay: 1.38 }, // Mi
-        { f: 659.25, dur: 0.44, delay: 1.66 }, // Mi (larga)
-        { f: 659.25, dur: 0.22, delay: 2.20 }, // Mi
-        { f: 783.99, dur: 0.22, delay: 2.48 }, // Sol
-        { f: 523.25, dur: 0.22, delay: 2.76 }, // Do
-        { f: 587.33, dur: 0.22, delay: 3.04 }, // Re
-        { f: 659.25, dur: 0.65, delay: 3.32 }  // Mi (final brillante)
+      // Frase 0: Jingle Bells (Navidad clásica alegre)
+      const phrase0 = [
+        { f: 659.25, bass: 261.63, dur: 0.26, delay: 0.00 }, // E5
+        { f: 659.25, bass: 0,      dur: 0.26, delay: 0.30 }, // E5
+        { f: 659.25, bass: 392.00, dur: 0.52, delay: 0.60 }, // E5
+        { f: 659.25, bass: 261.63, dur: 0.26, delay: 1.20 }, // E5
+        { f: 659.25, bass: 0,      dur: 0.26, delay: 1.50 }, // E5
+        { f: 659.25, bass: 392.00, dur: 0.52, delay: 1.80 }, // E5
+        { f: 659.25, bass: 261.63, dur: 0.26, delay: 2.40 }, // E5
+        { f: 783.99, bass: 0,      dur: 0.26, delay: 2.70 }, // G5
+        { f: 523.25, bass: 329.63, dur: 0.38, delay: 3.00 }, // C5
+        { f: 587.33, bass: 392.00, dur: 0.20, delay: 3.42 }, // D5
+        { f: 659.25, bass: 261.63, dur: 0.85, delay: 3.66 }, // E5
+        // Segunda mitad de Jingle Bells
+        { f: 698.46, bass: 349.23, dur: 0.26, delay: 4.80 }, // F5
+        { f: 698.46, bass: 0,      dur: 0.26, delay: 5.10 }, // F5
+        { f: 698.46, bass: 440.00, dur: 0.38, delay: 5.40 }, // F5
+        { f: 698.46, bass: 0,      dur: 0.20, delay: 5.82 }, // F5
+        { f: 698.46, bass: 349.23, dur: 0.26, delay: 6.06 }, // F5
+        { f: 659.25, bass: 261.63, dur: 0.26, delay: 6.36 }, // E5
+        { f: 659.25, bass: 0,      dur: 0.26, delay: 6.66 }, // E5
+        { f: 659.25, bass: 329.63, dur: 0.26, delay: 6.96 }, // E5
+        { f: 659.25, bass: 293.66, dur: 0.26, delay: 7.26 }, // E5
+        { f: 587.33, bass: 0,      dur: 0.26, delay: 7.56 }, // D5
+        { f: 587.33, bass: 392.00, dur: 0.26, delay: 7.86 }, // D5
+        { f: 659.25, bass: 0,      dur: 0.26, delay: 8.16 }, // E5
+        { f: 587.33, bass: 293.66, dur: 0.50, delay: 8.46 }, // D5
+        { f: 783.99, bass: 392.00, dur: 0.70, delay: 9.02 }  // G5
       ];
+
+      // Frase 1: We Wish You a Merry Christmas
+      const phrase1 = [
+        { f: 523.25, bass: 261.63, dur: 0.32, delay: 0.00 }, // C5
+        { f: 698.46, bass: 349.23, dur: 0.32, delay: 0.36 }, // F5
+        { f: 698.46, bass: 0,      dur: 0.18, delay: 0.72 }, // F5
+        { f: 783.99, bass: 440.00, dur: 0.18, delay: 0.92 }, // G5
+        { f: 698.46, bass: 0,      dur: 0.18, delay: 1.12 }, // F5
+        { f: 659.25, bass: 329.63, dur: 0.18, delay: 1.32 }, // E5
+        { f: 587.33, bass: 293.66, dur: 0.32, delay: 1.54 }, // D5
+        { f: 587.33, bass: 0,      dur: 0.32, delay: 1.90 }, // D5
+        { f: 587.33, bass: 392.00, dur: 0.32, delay: 2.26 }, // D5
+        { f: 783.99, bass: 392.00, dur: 0.32, delay: 2.62 }, // G5
+        { f: 783.99, bass: 0,      dur: 0.18, delay: 2.98 }, // G5
+        { f: 880.00, bass: 440.00, dur: 0.18, delay: 3.18 }, // A5
+        { f: 783.99, bass: 0,      dur: 0.18, delay: 3.38 }, // G5
+        { f: 698.46, bass: 349.23, dur: 0.18, delay: 3.58 }, // F5
+        { f: 659.25, bass: 261.63, dur: 0.36, delay: 3.80 }, // E5
+        { f: 523.25, bass: 329.63, dur: 0.36, delay: 4.20 }, // C5
+        { f: 523.25, bass: 0,      dur: 0.22, delay: 4.60 }, // C5
+        { f: 880.00, bass: 349.23, dur: 0.34, delay: 4.86 }, // A5
+        { f: 880.00, bass: 0,      dur: 0.18, delay: 5.24 }, // A5
+        { f: 932.33, bass: 466.16, dur: 0.18, delay: 5.44 }, // Bb5
+        { f: 880.00, bass: 0,      dur: 0.18, delay: 5.64 }, // A5
+        { f: 783.99, bass: 392.00, dur: 0.18, delay: 5.84 }, // G5
+        { f: 698.46, bass: 349.23, dur: 0.36, delay: 6.06 }, // F5
+        { f: 587.33, bass: 293.66, dur: 0.36, delay: 6.46 }, // D5
+        { f: 523.25, bass: 261.63, dur: 0.20, delay: 6.86 }, // C5
+        { f: 523.25, bass: 0,      dur: 0.20, delay: 7.08 }, // C5
+        { f: 587.33, bass: 293.66, dur: 0.34, delay: 7.30 }, // D5
+        { f: 783.99, bass: 392.00, dur: 0.34, delay: 7.68 }, // G5
+        { f: 659.25, bass: 329.63, dur: 0.34, delay: 8.06 }, // E5
+        { f: 698.46, bass: 349.23, dur: 0.85, delay: 8.44 }  // F5
+      ];
+
+      const notes = (variant === 1) ? phrase1 : phrase0;
 
       const t0 = ctx.currentTime;
       notes.forEach(n => {
@@ -240,27 +298,52 @@
         const gain = ctx.createGain();
         const noteTime = t0 + n.delay;
 
-        // Sonido tipo campanilla / celesta (senoidal pura con ataque rápido y decaimiento suave)
-        osc.type = 'sine';
+        // Timbre cálido de caja musical / celesta navideña (triangle + envolvente clara)
+        osc.type = 'triangle';
         osc.frequency.setValueAtTime(n.f, noteTime);
 
         gain.gain.setValueAtTime(0.0001, noteTime);
-        gain.gain.linearRampToValueAtTime(0.065, noteTime + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + n.dur);
+        gain.gain.linearRampToValueAtTime(0.18, noteTime + 0.025);
+        gain.gain.exponentialRampToValueAtTime(0.0001, noteTime + n.dur + 0.12);
 
         osc.connect(gain);
         gain.connect(this.ambientGain);
 
         osc.start(noteTime);
-        osc.stop(noteTime + n.dur + 0.05);
+        osc.stop(noteTime + n.dur + 0.15);
+        this.ambientNodes.push(osc);
+
+        // Armonía suave de acompañamiento en registro medio-bajo
+        if (n.bass && n.bass > 0) {
+          const bOsc = ctx.createOscillator();
+          const bGain = ctx.createGain();
+          bOsc.type = 'sine';
+          bOsc.frequency.setValueAtTime(n.bass, noteTime);
+
+          bGain.gain.setValueAtTime(0.0001, noteTime);
+          bGain.gain.linearRampToValueAtTime(0.09, noteTime + 0.03);
+          bGain.gain.exponentialRampToValueAtTime(0.0001, noteTime + n.dur + 0.25);
+
+          bOsc.connect(bGain);
+          bGain.connect(this.ambientGain);
+
+          bOsc.start(noteTime);
+          bOsc.stop(noteTime + n.dur + 0.28);
+          this.ambientNodes.push(bOsc);
+        }
       });
 
-      // Toque suave de cascabeles al finalizar la frase
+      const lastNote = notes[notes.length - 1];
+      const totalMs = Math.ceil((lastNote.delay + lastNote.dur) * 1000);
+
+      // Toque alegre de cascabeles al finalizar la frase
       setTimeout(() => {
         if (this.enabled && this.ambientPlaying) {
-          this.playJingleBells(0.04);
+          this.playJingleBells(0.06);
         }
-      }, 4200);
+      }, totalMs - 200);
+
+      return totalMs;
     }
 
     /**
@@ -579,14 +662,14 @@
       this.playIncorrect();
     }
 
-    // Métodos de compatibilidad hacia atrás
+    // Métodos de compatibilidad
     playEerieChime() {
       this.playStarReward();
     }
-    playVampireAppear() {
+    playSantaAppear() {
       this.playJingleBells(0.08);
     }
-    playGhostLaugh() {
+    playSleighBells() {
       this.playJingleBells(0.08);
     }
     playDoorCreak() {
@@ -597,6 +680,7 @@
   // Instancia única global para toda la web
   const engine = new MagicAudioEngine();
   global.MagicAudioEngine = engine;
+  global.magicAudioManager = engine;
 
   // Auto-inicialización si el DOM ya está listo
   if (typeof document !== 'undefined') {

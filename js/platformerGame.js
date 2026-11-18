@@ -2298,7 +2298,7 @@ class BityPlatformerGame {
     ctx.arc(17, 2, 4, 0, Math.PI * 2);
     ctx.fill();
 
-    // 2. Cabeza robótica (con balanceo al caminar)
+    // 2. Cabeza robótica (con balanceo al caminar, identidad original intacta)
     const headBob = p.grounded && (this.keys.left || this.keys.right) ? Math.sin(p.walkFrame * 2) * 1.5 : 0;
     ctx.fillStyle = '#0284c7';
     ctx.beginPath();
@@ -2317,17 +2317,43 @@ class BityPlatformerGame {
     ctx.fillRect(11, eyeY, 4, 5);
     ctx.fillRect(19, eyeY, 4, 5);
 
-    // 3. Torso
+    // Gorro rojo de Papá Noel con borde blanco y pompón sobre la cabeza
+    ctx.fillStyle = '#d42426';
+    ctx.beginPath();
+    ctx.moveTo(4, 9 + headBob);
+    ctx.lineTo(30, 9 + headBob);
+    ctx.lineTo(10, -2 + headBob);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(3, 7 + headBob, 28, 3.5);
+    ctx.beginPath();
+    ctx.arc(9, -2 + headBob, 3.2, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 3. Torso con detalles navideños
     ctx.fillStyle = '#e2e8f0';
     ctx.beginPath();
     ctx.roundRect(5, 26, 24, 13, 4);
     ctx.fill();
 
-    // Núcleo energético central
-    ctx.fillStyle = '#0284c7';
-    ctx.fillRect(14, 29, 6, 6);
-    ctx.fillStyle = '#38bdf8';
-    ctx.fillRect(15, 30, 4, 4);
+    // Núcleo energético central con marco verde y dorado
+    ctx.fillStyle = '#165b33';
+    ctx.fillRect(13, 29, 8, 7);
+    ctx.fillStyle = '#ffd700';
+    ctx.fillRect(15, 30, 4, 5);
+
+    // Bufanda navideña roja, verde y dorada en el cuello
+    ctx.fillStyle = '#d42426';
+    ctx.fillRect(4, 24 + headBob * 0.5, 26, 4);
+    ctx.fillStyle = '#165b33';
+    ctx.fillRect(10, 24 + headBob * 0.5, 4, 4);
+    ctx.fillStyle = '#ffd700';
+    ctx.fillRect(18, 24 + headBob * 0.5, 4, 4);
+    ctx.fillStyle = '#d42426';
+    ctx.fillRect(22, 27 + headBob * 0.5, 4, 7);
+    ctx.fillStyle = '#ffd700';
+    ctx.fillRect(22, 32 + headBob * 0.5, 4, 1.5);
 
     // 4. Piernas / Orugas y llamas propulsoras en salto
     if (!p.grounded && p.vy < 0) {
@@ -2951,13 +2977,13 @@ class BityPlatformerGame {
         <div class="plat-victory-card plat-campaign-victory-card plat-reflection-card">
           <!-- Bity celebrando con trofeo y confeti -->
           <div class="plat-celebration-banner">
-            <span class="plat-confetti-particle c1">🎉</span>
+            <span class="plat-confetti-particle c1">🎄</span>
             <span class="plat-confetti-particle c2">⭐</span>
             <div class="plat-bity-celebrating-avatar" title="¡Bity celebra la victoria!">
-              <span class="plat-bity-face">🤖</span>
+              <span class="plat-bity-face" style="width:68px; height:68px; display:inline-flex; align-items:center; justify-content:center;">${typeof getByteAvatarSvg === 'function' ? getByteAvatarSvg('happy') : '🎅🤖'}</span>
               <span class="plat-trophy-badge">🏆</span>
             </div>
-            <span class="plat-confetti-particle c3">✨</span>
+            <span class="plat-confetti-particle c3">🎁</span>
             <span class="plat-confetti-particle c4">🚀</span>
           </div>
 

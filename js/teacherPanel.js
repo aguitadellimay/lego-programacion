@@ -30,7 +30,7 @@
       id: 'play',
       name: 'Jugar y aprender',
       tag: 'Matemática • 5 Desafíos',
-      description: 'Desafíos matemáticos, slimes en movimiento y acertijos de lógica.',
+      description: 'Desafíos matemáticos, aventuras en movimiento y acertijos de lógica.',
       icon: '🎮',
       screens: ['screen-grades', 'screen-game'],
       bannerId: 'banner-play',

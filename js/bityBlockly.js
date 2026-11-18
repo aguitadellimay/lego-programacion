@@ -1,6 +1,6 @@
 /**
  * ========================================================
- * BITTYBLOCKLY: MISIÓN ESPACIAL — EDICIÓN ESPECIAL DE HALLOWEEN
+ * BITTYBLOCKLY: MISIÓN ESPACIAL — EDICIÓN ESPECIAL DE NAVIDAD
  * Módulo interactivo de Pensamiento Computacional y Matemática
  * para 1.º, 2.º, 3.º, 4.º y 5.º Grado.
  * Protagonista: Byte el robot.
@@ -24,49 +24,49 @@
       { id: 'g1_3', story: '¡Chips de propulsión! Bity tiene 8 chips y usa 3. ¿Cuántos le quedan?', operation: '8 − 3 = ?', type: 'subtraction', total: 8, used: 3, options: [4, 5, 6], correctAnswer: 5, explanation: '8 − 3 = 5. ¡A Bity le quedan 5 chips!' },
       { id: 'g1_4', story: '¡Cargas de la estación! Había 12 cargas y se usaron 3. ¿Cuántas quedan?', operation: '12 − 3 = ?', type: 'subtraction', total: 12, used: 3, options: [8, 9, 10], correctAnswer: 9, explanation: '12 − 3 = 9. ¡Quedan 9 cargas disponibles!' },
       { id: 'g1_5', story: '¡Propulsores de la nave! Tenía 12 células y sumó 5. ¿Cuántas tiene en total?', operation: '12 + 5 = ?', type: 'addition', base: 12, added: 5, options: [16, 17, 18], correctAnswer: 17, explanation: '12 + 5 = 17. ¡Los motores tienen 17 células listas!' },
-      { id: 'g1_6', story: '¡Calabazas del espacio! Había 7 calabazas y Byte recogió 3 más. ¿Cuántas hay?', operation: '7 + 3 = ?', type: 'addition', base: 7, added: 3, options: [9, 10, 11], correctAnswer: 10, explanation: '7 + 3 = 10. ¡Juntó 10 calabazas!' },
+      { id: 'g1_6', story: '¡Regalos del espacio! Había 7 regalos y Byte recogió 3 más. ¿Cuántos hay?', operation: '7 + 3 = ?', type: 'addition', base: 7, added: 3, options: [9, 10, 11], correctAnswer: 10, explanation: '7 + 3 = 10. ¡Juntó 10 regalos!' },
       { id: 'g1_7', story: '¡Batería estelar! De 9 estrellas de energía, gastó 4. ¿Cuántas quedan?', operation: '9 − 4 = ?', type: 'subtraction', total: 9, used: 4, options: [4, 5, 6], correctAnswer: 5, explanation: '9 − 4 = 5. ¡Quedan 5 estrellas de energía!' },
-      { id: 'g1_8', story: '¡Faroles mágicos! Se encendieron 4 faroles y luego 4 más. ¿Cuántos son?', operation: '4 + 4 = ?', type: 'addition', base: 4, added: 4, options: [7, 8, 9], correctAnswer: 8, explanation: '4 + 4 = 8. ¡Hay 8 faroles encendidos!' },
-      { id: 'g1_9', story: '¡Cristales cósmicos! Tenía 11 cristales y perdió 2. ¿Cuántos le quedan?', operation: '11 − 2 = ?', type: 'subtraction', total: 11, used: 2, options: [8, 9, 10], correctAnswer: 9, explanation: '11 − 2 = 9. ¡Conserva 9 cristales cósmicos!' },
+      { id: 'g1_8', story: '¡Faroles navideños! Se encendieron 4 faroles y luego 4 más. ¿Cuántos son?', operation: '4 + 4 = ?', type: 'addition', base: 4, added: 4, options: [7, 8, 9], correctAnswer: 8, explanation: '4 + 4 = 8. ¡Hay 8 faroles encendidos!' },
+      { id: 'g1_9', story: '¡Cristales de nieve! Tenía 11 cristales y perdió 2. ¿Cuántos le quedan?', operation: '11 − 2 = ?', type: 'subtraction', total: 11, used: 2, options: [8, 9, 10], correctAnswer: 9, explanation: '11 − 2 = 9. ¡Conserva 9 cristales de nieve!' },
       { id: 'g1_10', story: '¡Radar espacial! Detectó 5 señales y luego 4 más. ¿Cuántas son?', operation: '5 + 4 = ?', type: 'addition', base: 5, added: 4, options: [8, 9, 10], correctAnswer: 9, explanation: '5 + 4 = 9. ¡Son 9 señales detectadas!' },
       { id: 'g1_11', story: '¡Turbinas activas! Había 8 turbinas y se apagaron 6. ¿Cuántas siguen funcionando?', operation: '8 − 6 = ?', type: 'subtraction', total: 8, used: 6, options: [2, 3, 4], correctAnswer: 2, explanation: '8 − 6 = 2. ¡2 turbinas siguen activas!' },
-      { id: 'g1_12', story: '¡Gemas brillantes! Encontró 3 gemas rojas y 6 azules. ¿Cuántas tiene en total?', operation: '3 + 6 = ?', type: 'addition', base: 3, added: 6, options: [8, 9, 10], correctAnswer: 9, explanation: '3 + 6 = 9. ¡Tiene 9 gemas en total!' }
+      { id: 'g1_12', story: '¡Esferas brillantes! Encontró 3 esferas rojas y 6 doradas. ¿Cuántas tiene en total?', operation: '3 + 6 = ?', type: 'addition', base: 3, added: 6, options: [8, 9, 10], correctAnswer: 9, explanation: '3 + 6 = 9. ¡Tiene 9 esferas en total!' }
     ],
     2: [
-      { id: 'g2_1', story: '¡Energía de calabaza! 17 unidades más 6 adicionales:', operation: '17 + 6 = ?', type: 'addition', base: 17, added: 6, options: [21, 23, 25], correctAnswer: 23, explanation: '17 + 6 = 23. ¡Cargó 23 unidades de energía!' },
-      { id: 'g2_2', story: '¡Calabazas perdidas! De 22 calabazas luminosas, 7 desaparecieron:', operation: '22 − 7 = ?', type: 'subtraction', total: 22, used: 7, options: [14, 15, 17], correctAnswer: 15, explanation: '22 − 7 = 15. ¡Quedan 15 calabazas alumbrando!' },
-      { id: 'g2_3', story: '¡Compuerta del templo! Sumá 25 + 8 para abrir el portal:', operation: '25 + 8 = ?', type: 'addition', base: 25, added: 8, options: [31, 33, 35], correctAnswer: 33, explanation: '25 + 8 = 33. ¡El portal se abre!' },
+      { id: 'g2_1', story: '¡Energía navideña! 17 unidades más 6 adicionales:', operation: '17 + 6 = ?', type: 'addition', base: 17, added: 6, options: [21, 23, 25], correctAnswer: 23, explanation: '17 + 6 = 23. ¡Cargó 23 unidades de energía!' },
+      { id: 'g2_2', story: '¡Regalos perdidos! De 22 regalos luminosos, 7 quedaron en la nieve:', operation: '22 − 7 = ?', type: 'subtraction', total: 22, used: 7, options: [14, 15, 17], correctAnswer: 15, explanation: '22 − 7 = 15. ¡Quedan 15 regalos brillando!' },
+      { id: 'g2_3', story: '¡Compuerta del taller! Sumá 25 + 8 para abrir el portal:', operation: '25 + 8 = ?', type: 'addition', base: 25, added: 8, options: [31, 33, 35], correctAnswer: 33, explanation: '25 + 8 = 33. ¡El portal se abre!' },
       { id: 'g2_4', story: '¡Batería de reserva! De 34 unidades se gastaron 8:', operation: '34 − 8 = ?', type: 'subtraction', total: 34, used: 8, options: [24, 26, 28], correctAnswer: 26, explanation: '34 − 8 = 26. ¡Quedan 26 unidades de energía!' },
-      { id: 'g2_5', story: '¡Luces de la nave! 19 luces violetas más 5 anaranjadas:', operation: '19 + 5 = ?', type: 'addition', base: 19, added: 5, options: [23, 24, 25], correctAnswer: 24, explanation: '19 + 5 = 24. ¡Hay 24 luces iluminando la nave!' },
-      { id: 'g2_6', story: '¡Piedras mágicas! Había 28 piedras y se usaron 9 para el hechizo:', operation: '28 − 9 = ?', type: 'subtraction', total: 28, used: 9, options: [18, 19, 21], correctAnswer: 19, explanation: '28 − 9 = 19. ¡Quedan 19 piedras mágicas!' },
+      { id: 'g2_5', story: '¡Luces de la nave! 19 luces rojas más 5 doradas:', operation: '19 + 5 = ?', type: 'addition', base: 19, added: 5, options: [23, 24, 25], correctAnswer: 24, explanation: '19 + 5 = 24. ¡Hay 24 luces iluminando la nave!' },
+      { id: 'g2_6', story: '¡Estrellas mágicas! Había 28 estrellas y se usaron 9 para el árbol:', operation: '28 − 9 = ?', type: 'subtraction', total: 28, used: 9, options: [18, 19, 21], correctAnswer: 19, explanation: '28 − 9 = 19. ¡Quedan 19 estrellas mágicas!' },
       { id: 'g2_7', story: '¡Potencia de despegue! 32 gigavatios más 9 de sobrecarga:', operation: '32 + 9 = ?', type: 'addition', base: 32, added: 9, options: [39, 41, 43], correctAnswer: 41, explanation: '32 + 9 = 41. ¡Alcanzó 41 gigavatios de potencia!' },
       { id: 'g2_8', story: '¡Escudo protector! De 40 puntos de escudo, un asteroide quitó 6:', operation: '40 − 6 = ?', type: 'subtraction', total: 40, used: 6, options: [32, 34, 36], correctAnswer: 34, explanation: '40 − 6 = 34. ¡El escudo resiste con 34 puntos!' },
-      { id: 'g2_9', story: '¡Calabazas cósmicas! Recolectó 15 en el valle y 7 en la colina:', operation: '15 + 7 = ?', type: 'addition', base: 15, added: 7, options: [21, 22, 24], correctAnswer: 22, explanation: '15 + 7 = 22. ¡Tiene 22 calabazas recolectadas!' },
+      { id: 'g2_9', story: '¡Regalos cósmicos! Recolectó 15 en el valle y 7 en la colina:', operation: '15 + 7 = ?', type: 'addition', base: 15, added: 7, options: [21, 22, 24], correctAnswer: 22, explanation: '15 + 7 = 22. ¡Tiene 22 regalos recolectados!' },
       { id: 'g2_10', story: '¡Enfriamiento de motores! El motor estaba a 30 grados y bajó 7:', operation: '30 − 7 = ?', type: 'subtraction', total: 30, used: 7, options: [21, 23, 25], correctAnswer: 23, explanation: '30 − 7 = 23. ¡Quedó a 23 grados de temperatura!' }
     ],
     3: [
-      { id: 'g3_1', story: '¡Energía para el tren fantasma! Calculá la potencia requerida:', operation: '35 + 3 = ?', type: 'addition', base: 35, added: 3, options: [37, 38, 40], correctAnswer: 38, explanation: '35 + 3 = 38. ¡El tren fantasma alcanza 38 GW!' },
-      { id: 'g3_2', story: '¡Cristales espectrales! De 36 cristales se perdieron 7 en la niebla:', operation: '36 − 7 = ?', type: 'subtraction', total: 36, used: 7, options: [27, 29, 31], correctAnswer: 29, explanation: '36 − 7 = 29. ¡Quedan 29 cristales asegurados!' },
+      { id: 'g3_1', story: '¡Energía para el Expreso Polar! Calculá la potencia requerida:', operation: '35 + 3 = ?', type: 'addition', base: 35, added: 3, options: [37, 38, 40], correctAnswer: 38, explanation: '35 + 3 = 38. ¡El Expreso Polar alcanza 38 GW!' },
+      { id: 'g3_2', story: '¡Cristales de nieve! De 36 cristales se perdieron 7 en la ventisca:', operation: '36 − 7 = ?', type: 'subtraction', total: 36, used: 7, options: [27, 29, 31], correctAnswer: 29, explanation: '36 − 7 = 29. ¡Quedan 29 cristales asegurados!' },
       { id: 'g3_3', story: '¡Cambio de vías ferroviario! Resolvé la suma de la compuerta:', operation: '44 + 6 = ?', type: 'addition', base: 44, added: 6, options: [48, 50, 52], correctAnswer: 50, explanation: '44 + 6 = 50. ¡Las vías hacia la meta están libres!' },
       { id: 'g3_4', story: '¡Velocímetro cósmico! 58 km/h más 7 km/h por el propulsor:', operation: '58 + 7 = ?', type: 'addition', base: 58, added: 7, options: [63, 65, 67], correctAnswer: 65, explanation: '58 + 7 = 65. ¡Acelera a 65 km/h!' },
-      { id: 'g3_5', story: '¡Niebla disipada! De 62 metros de niebla se despejaron 8:', operation: '62 − 8 = ?', type: 'subtraction', total: 62, used: 8, options: [52, 54, 56], correctAnswer: 54, explanation: '62 − 8 = 54. ¡Quedan 54 metros por despejar!' },
+      { id: 'g3_5', story: '¡Nieve despejada! De 62 metros de nieve se despejaron 8:', operation: '62 − 8 = ?', type: 'subtraction', total: 62, used: 8, options: [52, 54, 56], correctAnswer: 54, explanation: '62 − 8 = 54. ¡Quedan 54 metros por despejar!' },
       { id: 'g3_6', story: '¡Vagones de energía! 75 baterías más 9 de recarga rápida:', operation: '75 + 9 = ?', type: 'addition', base: 75, added: 9, options: [82, 84, 86], correctAnswer: 84, explanation: '75 + 9 = 84. ¡Cargó 84 baterías en total!' },
-      { id: 'g3_7', story: '¡Pasajeros espectrales! De 80 pasajeros descendieron 15 en la estación:', operation: '80 − 15 = ?', type: 'subtraction', total: 80, used: 15, options: [60, 65, 70], correctAnswer: 65, explanation: '80 − 15 = 65. ¡Continuaron 65 pasajeros!' },
+      { id: 'g3_7', story: '¡Pasajeros del Expreso! De 80 pasajeros descendieron 15 en la estación:', operation: '80 − 15 = ?', type: 'subtraction', total: 80, used: 15, options: [60, 65, 70], correctAnswer: 65, explanation: '80 − 15 = 65. ¡Continuaron 65 pasajeros!' },
       { id: 'g3_8', story: '¡Rieles de plasma! 48 metros de riel azul más 12 de riel verde:', operation: '48 + 12 = ?', type: 'addition', base: 48, added: 12, options: [58, 60, 62], correctAnswer: 60, explanation: '48 + 12 = 60. ¡Completó 60 metros de riel!' },
       { id: 'g3_9', story: '¡Carga de vapor! De 50 unidades de vapor se utilizaron 14:', operation: '50 − 14 = ?', type: 'subtraction', total: 50, used: 14, options: [34, 36, 38], correctAnswer: 36, explanation: '50 − 14 = 36. ¡El tren conserva 36 unidades!' }
     ],
     4: [
-      { id: 'g4_1', story: '¡Tablas de multiplicar en el laboratorio! Calculá:', operation: '4 × 9 = ?', type: 'multiplication', options: [32, 36, 40], correctAnswer: 36, explanation: '4 × 9 = 36. ¡La cerradura cuántica se desbloquea!' },
+      { id: 'g4_1', story: '¡Tablas de multiplicar en el taller! Calculá:', operation: '4 × 9 = ?', type: 'multiplication', options: [32, 36, 40], correctAnswer: 36, explanation: '4 × 9 = 36. ¡La cerradura cuántica se desbloquea!' },
       { id: 'g4_2', story: '¡Número perdido! ¿Qué factor falta para que el producto sea 25?', operation: '5 × ___ = 25', type: 'missing_factor', options: [4, 5, 6], correctAnswer: 5, explanation: '5 × 5 = 25. ¡El número que falta es 5!' },
-      { id: 'g4_3', story: '¡Poción mágica! Calculá el producto de los ingredientes:', operation: '6 × 7 = ?', type: 'multiplication', options: [40, 42, 44], correctAnswer: 42, explanation: '6 × 7 = 42. ¡La poción alcanza su punto óptimo!' },
+      { id: 'g4_3', story: '¡Energía estelar! Calculá el producto de las estrellas:', operation: '6 × 7 = ?', type: 'multiplication', options: [40, 42, 44], correctAnswer: 42, explanation: '6 × 7 = 42. ¡La energía alcanza su punto óptimo!' },
       { id: 'g4_4', story: '¡Número perdido! ¿Qué número multiplicado por 8 da 40?', operation: '8 × ___ = 40', type: 'missing_factor', options: [4, 5, 6], correctAnswer: 5, explanation: '8 × 5 = 40. ¡El factor es 5!' },
       { id: 'g4_5', story: '¡Células de energía! 3 paquetes de 9 células cada uno:', operation: '3 × 9 = ?', type: 'multiplication', options: [24, 27, 30], correctAnswer: 27, explanation: '3 × 9 = 27. ¡Total de 27 células de energía!' },
-      { id: 'g4_6', story: '¡Portal gótico! Resolvé la multiplicación:', operation: '7 × 4 = ?', type: 'multiplication', options: [26, 28, 30], correctAnswer: 28, explanation: '7 × 4 = 28. ¡El portal gótico se abre!' },
+      { id: 'g4_6', story: '¡Portal navideño! Resolvé la multiplicación:', operation: '7 × 4 = ?', type: 'multiplication', options: [26, 28, 30], correctAnswer: 28, explanation: '7 × 4 = 28. ¡El portal navideño se abre!' },
       { id: 'g4_7', story: '¡Número perdido! ¿Qué número multiplicado por 9 da 63?', operation: '9 × ___ = 63', type: 'missing_factor', options: [6, 7, 8], correctAnswer: 7, explanation: '9 × 7 = 63. ¡El factor que falta es 7!' },
       { id: 'g4_8', story: '¡Número perdido! ¿Qué número multiplicado por 6 da 36?', operation: '6 × ___ = 36', type: 'missing_factor', options: [5, 6, 7], correctAnswer: 6, explanation: '6 × 6 = 36. ¡El número perdido es 6!' },
-      { id: 'g4_9', story: '¡Cristales de Halloween! 8 frascos con 6 cristales cada uno:', operation: '8 × 6 = ?', type: 'multiplication', options: [46, 48, 52], correctAnswer: 48, explanation: '8 × 6 = 48. ¡Hay 48 cristales en total!' },
+      { id: 'g4_9', story: '¡Estrellas de Navidad! 8 cajas con 6 estrellas cada una:', operation: '8 × 6 = ?', type: 'multiplication', options: [46, 48, 52], correctAnswer: 48, explanation: '8 × 6 = 48. ¡Hay 48 estrellas en total!' },
       { id: 'g4_10', story: '¡Número perdido! ¿Qué número multiplicado por 7 da 49?', operation: '7 × ___ = 49', type: 'missing_factor', options: [6, 7, 8], correctAnswer: 7, explanation: '7 × 7 = 49. ¡El factor es 7!' },
-      { id: 'g4_11', story: '¡Poder alquímico! 9 esferas con 4 encantamientos cada una:', operation: '9 × 4 = ?', type: 'multiplication', options: [32, 36, 40], correctAnswer: 36, explanation: '9 × 4 = 36. ¡36 encantamientos generados!' },
+      { id: 'g4_11', story: '¡Poder navideño! 9 árboles con 4 luces doradas cada uno:', operation: '9 × 4 = ?', type: 'multiplication', options: [32, 36, 40], correctAnswer: 36, explanation: '9 × 4 = 36. ¡36 luces doradas encendidas!' },
       { id: 'g4_12', story: '¡Número perdido! ¿Qué factor falta para llegar a 32?', operation: '4 × ___ = 32', type: 'missing_factor', options: [7, 8, 9], correctAnswer: 8, explanation: '4 × 8 = 32. ¡El factor que falta es 8!' }
     ],
     5: [
@@ -254,7 +254,7 @@
   ];
 
   // -------------------------------------------------------------
-  // 2. Definición Integral de Misiones de Halloween (1.º a 5.º Grado)
+  // 2. Definición Integral de Misiones de Navidad (1.º a 5.º Grado)
   // -------------------------------------------------------------
   const BITYBLOCKLY_GRADES_DATA = {
     1: {
@@ -270,17 +270,17 @@
       title: '2.º Grado: El Planeta de los Regalos',
       subtitle: 'Energía para la nave, regalos perdidos y compuerta espacial',
       tag: '4 Desafíos • Sumas y Restas (2 cifras)',
-      icon: '🎃',
+      icon: '🎁',
       missions: [
         {
           id: 1,
           name: 'Misión 1: Energía para la nave',
           type: 'math_story',
-          story: 'Byte necesita cargar energía en el planeta de las calabazas luminosas para activar los propulsores de despegue. ¡Resolvé la suma y elegí la respuesta correcta!',
+          story: 'Byte necesita cargar energía en el planeta de los regalos luminosos para activar los propulsores de despegue. ¡Resolvé la suma y elegí la respuesta correcta!',
           equation: '17 + 6 = ?',
           options: [21, 23, 25],
           correctAnswer: 23,
-          explanation: '¡17 + 6 = 23! Byte cargó 23 unidades de energía de calabaza.',
+          explanation: '¡17 + 6 = 23! Byte cargó 23 unidades de energía navideña.',
           visualType: 'pumpkin_batteries',
           base: 17,
           added: 6,
@@ -294,17 +294,17 @@
           id: 2,
           name: 'Misión 2: Los regalos perdidos',
           type: 'math_story',
-          story: 'La nave detectó 22 calabazas luminosas en el valle embrujado, pero 7 desaparecieron dentro de una cueva misteriosa. ¿Cuántas calabazas quedan afuera?',
+          story: 'La nave detectó 22 regalos luminosos en el valle nevado, pero 7 quedaron ocultos detrás de los pinos. ¿Cuántos regalos quedan a la vista?',
           equation: '22 − 7 = ?',
           options: [14, 15, 17],
           correctAnswer: 15,
-          explanation: '¡22 − 7 = 15! Quedan 15 calabazas luminosas alumbrando el valle.',
+          explanation: '¡22 − 7 = 15! Quedan 15 regalos luminosos brillando en el valle.',
           visualType: 'pumpkins_lost',
           total: 22,
           lost: 7,
           hints: [
             '💡 Pista 1: A 22 restale 2 primero para llegar al número redondo 20.',
-            '💡 Pista 2: De las 7 calabazas perdidas, todavía falta restar 5: 20 − 5.',
+            '💡 Pista 2: De los 7 regalos ocultos, todavía falta restar 5: 20 − 5.',
             '💡 Pista 3: 20 menos 5 es igual a 15. ¡Seleccioná 15!'
           ]
         },
@@ -326,7 +326,7 @@
             [1, 1, 1, 1, 1, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Último tramo en el planeta de las calabazas! Programá los movimientos de Byte para esquivar telarañas y rocas, resolver las compuertas y llegar a la plataforma.',
+          story: '¡Último tramo en el planeta de los regalos! Programá los movimientos de Byte para esquivar obstáculos de hielo, resolver las compuertas y llegar a la plataforma.',
           hint: '💡 Programá a Bity con las 4 direcciones (Arriba, Abajo, Izquierda y Derecha). En cada compuerta resolvé el cálculo para abrir la puerta.',
           hints: [
             '💡 Pista 1: Avanzá hacia la primera compuerta en (2, 2).',
@@ -354,7 +354,7 @@
             [1, 1, 1, 1, 1, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Gran Desafío de Instrucciones del Planeta Calabaza! Podés elegir entre tres recorridos independientes hacia la plataforma: Camino Óptimo (8 instrucciones), Alternativa 1 (11 instrucciones) o Alternativa 2 (16 instrucciones). ¡Elegí tu estrategia!',
+          story: '¡Gran Desafío de Instrucciones del Planeta de los Regalos! Podés elegir entre tres recorridos independientes hacia la plataforma: Camino Óptimo (8 instrucciones), Alternativa 1 (11 instrucciones) o Alternativa 2 (16 instrucciones). ¡Elegí tu estrategia!',
           hint: '💡 Analizá las direcciones necesarias para cada camino alternativo.',
           hints: [
             '💡 Pista 1: El camino óptimo baja directo hacia la plataforma final (8 instrucciones).',
@@ -367,15 +367,15 @@
     3: {
       grade: 3,
       title: '3.º Grado: El Expreso Polar Espacial',
-      subtitle: 'Pasajeros de la estación embrujada y rutas cósmicas',
+      subtitle: 'Pasajeros de la estación polar y rutas cósmicas',
       tag: '5 Desafíos • Tren, Pasajeros & Cristales',
-      icon: '🚂👻',
+      icon: '🚂❄️',
       missions: [
         {
           id: 1,
-          name: 'Misión 1: Los pasajeros de la estación embrujada',
+          name: 'Misión 1: Los pasajeros de la estación polar',
           type: 'ghost_train',
-          story: 'La nave espacial funciona como un tren que recorre tres estaciones (A, B y C). Parte vacía (0 pasajeros). En la Estación A suben 5 pasajeros. En la Estación B suben 2 y baja 1. ¿Cuántos pasajeros llegan a la Estación C?',
+          story: 'La nave espacial funciona como un tren festivo que recorre tres estaciones (A, B y C). Parte vacía (0 pasajeros). En la Estación A suben 5 pasajeros. En la Estación B suben 2 y baja 1. ¿Cuántos pasajeros llegan a la Estación C?',
           startPassengers: 0,
           stationA_board: 5,
           stationB_board: 2,
@@ -390,13 +390,13 @@
         },
         {
           id: 2,
-          name: 'Misión 2: Energía para el tren fantasma',
+          name: 'Misión 2: Energía para el Expreso Polar',
           type: 'math_story',
-          story: 'Para que el tren fantasma acelere por el túnel cósmico, Byte necesita recargar los acumuladores de plasma. ¡Resolvé el cálculo mental!',
+          story: 'Para que el Expreso Polar acelere por el túnel cósmico, Byte necesita recargar los acumuladores de energía. ¡Resolvé el cálculo mental!',
           equation: '35 + 3 = ?',
           options: [37, 38, 40],
           correctAnswer: 38,
-          explanation: '¡35 + 3 = 38! El tren fantasma tiene 38 gigavatios de potencia.',
+          explanation: '¡35 + 3 = 38! El Expreso Polar tiene 38 gigavatios de potencia.',
           hints: [
             '💡 Pista 1: A 35 sumale las 3 unidades.',
             '💡 Pista 2: 5 + 3 = 8, por lo que 35 + 3 termina en 8.',
@@ -405,16 +405,16 @@
         },
         {
           id: 3,
-          name: 'Misión 3: Los cristales perdidos',
+          name: 'Misión 3: Los cristales de nieve',
           type: 'math_story',
-          story: 'En el vagón de carga había 36 cristales espectrales, pero al cruzar la niebla cósmica se perdieron 7 cristales. ¿Cuántos cristales quedan a bordo?',
+          story: 'En el vagón de carga había 36 cristales de nieve mágica, pero al cruzar la ventisca cósmica se usaron 7 cristales. ¿Cuántos cristales quedan a bordo?',
           equation: '36 − 7 = ?',
           options: [27, 29, 31],
           correctAnswer: 29,
-          explanation: '¡36 − 7 = 29! Quedan 29 cristales espectrales asegurados en el vagón.',
+          explanation: '¡36 − 7 = 29! Quedan 29 cristales de nieve asegurados en el vagón.',
           hints: [
             '💡 Pista 1: Podés restar 6 primero para llegar a 30: 36 − 6 = 30.',
-            '💡 Pista 2: Como eran 7 cristales perdidos, todavía falta restar 1 más: 30 − 1.',
+            '💡 Pista 2: Como eran 7 cristales usados, todavía falta restar 1 más: 30 − 1.',
             '💡 Pista 3: ¡30 menos 1 es 29! Seleccioná 29.'
           ]
         },
@@ -436,7 +436,7 @@
             [1, 1, 1, 1, 1, 1, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Ayudá a Byte a llegar al andén C! Programá su recorrido esquivando las telarañas y abrí las dos compuertas de las vías ferroviarias.',
+          story: '¡Ayudá a Byte a llegar al andén C! Programá su recorrido esquivando la nieve acumulada y abrí las dos compuertas de las vías ferroviarias.',
           hint: '💡 Organizá tus instrucciones de dirección para llegar al andén final.',
           hints: [
             '💡 Pista 1: Avanzá hasta la primera compuerta en el pasillo superior.',
@@ -465,7 +465,7 @@
             [1, 1, 1, 1, 1, 1, 0, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Desafío Maestro del Tren Fantasma! Existen tres caminos independientes para llegar al andén secreto: Camino Óptimo (10 instrucciones), Alternativa 1 (15 instrucciones) y Alternativa 2 (18 instrucciones). ¡Programá tu ruta favorita!',
+          story: '¡Desafío Maestro del Expreso Polar! Existen tres caminos independientes para llegar al andén central: Camino Óptimo (10 instrucciones), Alternativa 1 (15 instrucciones) y Alternativa 2 (18 instrucciones). ¡Programá tu ruta favorita!',
           hint: '💡 Podés elegir la vía directa norte, la vía central con curvas o la vía perimetral sur.',
           hints: [
             '💡 Pista 1: La Vía Directa va por el norte (10 instrucciones).',
@@ -477,14 +477,14 @@
     },
     4: {
       grade: 4,
-      title: '4.º Grado: El Laboratorio de los Hechizos Matemáticos',
-      subtitle: '4 Laberintos espaciales, cartas que suman 100 y pociones cósmicas',
-      tag: '7 Desafíos • 4 Laberintos & Hechizos',
-      icon: '🧪🧙',
+      title: '4.º Grado: El Taller de Juguetes Mágicos',
+      subtitle: '4 Laberintos espaciales, cartas que suman 100 y energía estelar',
+      tag: '7 Desafíos • 4 Laberintos & Taller',
+      icon: '🎄⭐',
       missions: [
         {
           id: 1,
-          name: 'Laberinto 1: El alquimista cósmico',
+          name: 'Laberinto 1: El creador de juguetes',
           type: 'maze',
           theme: 'magic_lab',
           cols: 9,
@@ -501,12 +501,12 @@
             [1, 1, 1, 1, 1, 1, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Guiá a Byte por el laboratorio embrujado hasta la cápsula mágica! Abrí las dos compuertas resolviendo las tablas y cálculos cuánticos.',
+          story: '¡Guiá a Byte por el taller navideño hasta la cápsula de regalos! Abrí las dos compuertas resolviendo las tablas y cálculos matemáticos.',
           hint: '💡 Programá las direcciones con precisión.',
           hints: [
             '💡 Pista 1: Bajá hacia la primera compuerta en (2, 2).',
             '💡 Pista 2: En la segunda compuerta en (4, 3), resolvé el desafío matemático.',
-            '💡 Pista 3: Luego de abrirla, continuá hacia el sur hasta la cápsula mágica.'
+            '💡 Pista 3: Luego de abrirla, continuá hacia el sur hasta la cápsula navideña.'
           ]
         },
         {
@@ -529,8 +529,8 @@
             [1, 1, 1, 0, 1, 1, 1, 1, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Cruzá el cementerio de las calabazas luminosas! Tenés dos compuertas mágicas y múltiples bifurcaciones en el camino a la nave.',
-          hint: '💡 Podés elegir la ruta superior o las criptas intermedias.',
+          story: '¡Cruzá el valle de los regalos luminosos! Tenés dos compuertas mágicas y múltiples bifurcaciones en el camino a la nave.',
+          hint: '💡 Podés elegir la ruta superior o los senderos nevados intermedios.',
           hints: [
             '💡 Pista 1: La compuerta superior está en (4, 1).',
             '💡 Pista 2: Para abrir las puertas, resolvé las operaciones de multiplicación o suma.',
@@ -539,7 +539,7 @@
         },
         {
           id: 3,
-          name: 'Laberinto 3: La puerta del castillo encantado',
+          name: 'Laberinto 3: La puerta del palacio polar',
           type: 'maze',
           theme: 'haunted_castle',
           cols: 11,
@@ -557,7 +557,7 @@
             [1, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Ingresá al castillo encantado! El patio central tiene compuertas góticas y murallas. ¡Planificá tus direcciones antes de ejecutar!',
+          story: '¡Ingresá al palacio polar! El patio central tiene compuertas de hielo y murallas nevadas. ¡Planificá tus direcciones antes de ejecutar!',
           hint: '💡 Observá los dos caminos principales: el pasaje alto o el cruce del patio.',
           hints: [
             '💡 Pista 1: La primera compuerta se encuentra en el pasaje alto en (4, 1).',
@@ -569,7 +569,7 @@
           id: 4,
           name: 'Misión 4: Encontrá las parejas que suman 100',
           type: 'card_match_100',
-          story: '¡Desafío central del Laboratorio! Encontrá las 6 parejas de cartas espaciales que suman exactamente 100. Tocá dos cartas para emparejarlas.',
+          story: '¡Desafío central del Taller! Encontrá las 6 parejas de cartas espaciales que suman exactamente 100. Tocá dos cartas para emparejarlas.',
           pairs: [
             { a: 42, b: 58 },
             { a: 26, b: 74 },
@@ -586,13 +586,13 @@
         },
         {
           id: 5,
-          name: 'Misión 5: El reactor de pociones',
+          name: 'Misión 5: El generador de estrellas',
           type: 'math_story',
-          story: 'Byte necesita sintetizar la poción mágica sumando 9 esferas de energía a las 45 del reactor. ¿A cuánta potencia llega el reactor?',
+          story: 'Byte necesita activar el generador navideño sumando 9 esferas de energía a las 45 del reactor. ¿A cuánta potencia llega el reactor?',
           equation: '45 + 9 = ?',
           options: [52, 54, 56],
           correctAnswer: 54,
-          explanation: '¡45 + 9 = 54! El reactor de pociones mágicas alcanza 54 de potencia.',
+          explanation: '¡45 + 9 = 54! El generador de estrellas alcanza 54 de potencia.',
           hints: [
             '💡 Pista 1: Para sumar 9 mentalmente, podés sumar 10 y luego restar 1.',
             '💡 Pista 2: 45 + 10 = 55. Ahora 55 − 1 = 54.',
@@ -603,7 +603,7 @@
           id: 6,
           name: 'Misión 6: Estabilizar el escudo magnético',
           type: 'math_story',
-          story: 'El escudo del laboratorio estaba en 53 unidades de radiación y el disipador redujo 8 unidades. ¿En cuánto quedó estabilizado?',
+          story: 'El escudo del taller estaba en 53 unidades de radiación y el disipador redujo 8 unidades. ¿En cuánto quedó estabilizado?',
           equation: '53 − 8 = ?',
           options: [43, 45, 47],
           correctAnswer: 45,
@@ -635,7 +635,7 @@
             [1, 0, 0, 0, 1, 0, 0, 3, 0, 0, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Gran Desafío de Instrucciones del Laboratorio! Tenés tres rutas con diferente cantidad de instrucciones: Camino Óptimo (12 instrucciones), Alternativa 1 (17 instrucciones) y Alternativa 2 (23 instrucciones). ¡Planificá tu estrategia!',
+          story: '¡Gran Desafío de Instrucciones del Taller! Tenés tres rutas con diferente cantidad de instrucciones: Camino Óptimo (12 instrucciones), Alternativa 1 (17 instrucciones) y Alternativa 2 (23 instrucciones). ¡Planificá tu estrategia!',
           hint: '💡 Planificá el recorrido y resolvé las tablas para abrir las compuertas.',
           hints: [
             '💡 Pista 1: La Galería Norte requiere 12 instrucciones en total.',
@@ -647,14 +647,14 @@
     },
     5: {
       grade: 5,
-      title: '5.º Grado: El Núcleo del Planeta Embrujado',
+      title: '5.º Grado: El Taller Cósmico de Santa',
       subtitle: 'Cálculos combinados, incógnitas y 4 grandes laberintos cósmicos',
-      tag: '8 Desafíos • 4 Laberintos & Núcleo',
-      icon: '🔮🌋',
+      tag: '8 Desafíos • 4 Laberintos & Taller',
+      icon: '🎅🌟',
       missions: [
         {
           id: 1,
-          name: 'Laberinto 1: El castillo de los caminos secretos',
+          name: 'Laberinto 1: La aldea de los caminos nevados',
           type: 'maze',
           theme: 'haunted_castle',
           cols: 11,
@@ -673,7 +673,7 @@
             [1, 0, 0, 0, 1, 1, 0, 0, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡Primer gran laberinto de 5.º grado! El castillo posee pasadizos secretos y compuertas mágicas. Analizá cada movimiento cuidadosamente.',
+          story: '¡Primer gran laberinto de 5.º grado! La aldea polar posee senderos secretos y compuertas mágicas. Analizá cada movimiento cuidadosamente.',
           hint: '💡 Compará la galería superior con el pasillo intermedio: ambas rutas evitan los callejones sin salida.',
           hints: [
             '💡 Pista 1: La primera compuerta está en el pasillo superior en (4, 1).',
@@ -683,7 +683,7 @@
         },
         {
           id: 2,
-          name: 'Laberinto 2: El bosque encantado de las rutas alternativas',
+          name: 'Laberinto 2: El bosque de pinos de las rutas alternativas',
           type: 'maze',
           theme: 'enchanted_forest',
           cols: 12,
@@ -702,8 +702,8 @@
             [1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡El bosque encantado está lleno de senderos engañosos! Superá las compuertas con multiplicaciones y divisiones exactas hasta la salida.',
-          hint: '💡 Cuidado con la ruta que va directo hacia el este al final del norte. Bajá por el cruce central o por el río de sombras.',
+          story: '¡El bosque de pinos nevados está lleno de senderos! Superá las compuertas con multiplicaciones y divisiones exactas hasta la salida.',
+          hint: '💡 Cuidado con la ruta que va directo hacia el este al final del norte. Bajá por el cruce central.',
           hints: [
             '💡 Pista 1: La primera compuerta está en (4, 1).',
             '💡 Pista 2: La segunda compuerta se ubica en (9, 5).',
@@ -712,7 +712,7 @@
         },
         {
           id: 3,
-          name: 'Laberinto 3: La misión final de Halloween',
+          name: 'Laberinto 3: La gran misión final de Navidad',
           type: 'maze',
           theme: 'haunted_core',
           cols: 13,
@@ -731,8 +731,8 @@
             [1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 3, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
           ],
-          story: '¡El desafío maestro de Halloween! Este gran laberinto cuenta con dos compuertas arcanas y múltiples bifurcaciones.',
-          hint: '💡 Podés rodear por las almenas altas o avanzar por el gran salón central.',
+          story: '¡El desafío maestro de Navidad! Este gran laberinto cuenta con dos compuertas estelares y múltiples bifurcaciones.',
+          hint: '💡 Podés rodear por las galerías altas o avanzar por el gran salón central.',
           hints: [
             '💡 Pista 1: La primera compuerta está en el cruce central en (5, 5).',
             '💡 Pista 2: La segunda compuerta custodia la salida en (10, 5).',
@@ -743,7 +743,7 @@
           id: 4,
           name: 'Misión 4: Activar los motores',
           type: 'multi_engine_unlock',
-          story: 'Para descender al núcleo del planeta embrujado, Byte debe calibrar las 4 turbinas principales resolviendo operaciones progresivas. Cada acierto enciende una turbina.',
+          story: 'Para llegar al taller cósmico de Santa, Byte debe calibrar las 4 turbinas principales resolviendo operaciones progresivas. Cada acierto enciende una turbina.',
           steps: [
             { equation: '67 + 21 = ?', options: [86, 88, 90], correctAnswer: 88, turbineName: 'Turbina 1 (Propulsión Alfa)' },
             { equation: '72 + 9 = ?', options: [79, 81, 83], correctAnswer: 81, turbineName: 'Turbina 2 (Compresión Beta)' },
@@ -774,7 +774,7 @@
           id: 6,
           name: 'Misión 6: La ruta de energía',
           type: 'energy_route_planner',
-          story: 'Byte necesita reunir energía exacta para llegar al núcleo del planeta. Inicia con 30 unidades y la meta es alcanzar exactamente 75 unidades de energía. Elegí la secuencia de nodos para lograr el objetivo.',
+          story: 'Byte necesita reunir energía exacta para llegar al taller central. Inicia con 30 unidades y la meta es alcanzar exactamente 75 unidades de energía. Elegí la secuencia de nodos para lograr el objetivo.',
           initialEnergy: 30,
           targetEnergy: 75,
           nodes: [
@@ -792,9 +792,9 @@
         },
         {
           id: 7,
-          name: 'Misión 7: El código secreto del planeta',
+          name: 'Misión 7: El código secreto del Polo Norte',
           type: 'secret_code_maze',
-          story: '¡Misión hacia el núcleo embrujado! Descifrá los 4 dígitos del código secreto resolviendo las operaciones en orden lógico. Luego programá a Byte a través del laberinto para activar el núcleo central.',
+          story: '¡Misión hacia el taller central de Santa! Descifrá los 4 dígitos del código secreto resolviendo las operaciones en orden lógico. Luego programá a Byte a través del laberinto para activar la estrella central.',
           codeChallenges: [
             { label: 'Cifra 1 (Suma)', q: '46 + 28 = ?', answer: 74, options: [72, 74, 76] },
             { label: 'Cifra 2 (Resta)', q: '85 − 39 = ?', answer: 46, options: [44, 46, 48] },
@@ -819,7 +819,7 @@
           hints: [
             '💡 Pista 1: En 100 − (25 + 35), resolvé el paréntesis primero: 25 + 35 = 60. Luego 100 − 60 = 40.',
             '💡 Pista 2: Para (15 + ___) − 10 = 35, pensá qué número menos 10 da 35 (es 45). Luego 15 + ___ = 45 (el número es 30).',
-            '💡 Pista 3: Una vez descifrado el código secreto, programá a Byte esquivando las telarañas hasta el núcleo central.'
+            '💡 Pista 3: Una vez descifrado el código secreto, programá a Byte por el corredor nevado hasta la estrella central.'
           ]
         },
         {
@@ -885,16 +885,16 @@
       <defs>
         <linearGradient id="bityBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="#38bdf8"/>
-          <stop offset="50%" stop-color="#2563eb"/>
-          <stop offset="100%" stop-color="#1e1b4b"/>
+          <stop offset="50%" stop-color="#0284c7"/>
+          <stop offset="100%" stop-color="#0d2238"/>
         </linearGradient>
         <linearGradient id="bityFaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#090d16"/>
-          <stop offset="100%" stop-color="#1e293b"/>
+          <stop offset="0%" stop-color="#071524"/>
+          <stop offset="100%" stop-color="#132e4c"/>
         </linearGradient>
         <radialGradient id="antennaGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#fef08a"/>
-          <stop offset="70%" stop-color="#facc15"/>
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="70%" stop-color="#ffd700"/>
           <stop offset="100%" stop-color="transparent"/>
         </radialGradient>
         <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -903,31 +903,33 @@
         </filter>
       </defs>
 
-      <!-- Aura mágica de Halloween espacial -->
-      <ellipse cx="50" cy="54" rx="42" ry="38" fill="rgba(56, 189, 248, 0.12)" filter="url(#neonGlow)"/>
+      <!-- Aura mágica navideña -->
+      <ellipse cx="50" cy="54" rx="42" ry="38" fill="rgba(248, 178, 41, 0.14)" filter="url(#neonGlow)"/>
 
-      <!-- Antena con esfera emisora -->
-      <line x1="50" y1="24" x2="50" y2="10" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
-      <circle class="antenna-wave wave-1" cx="50" cy="9" r="6" fill="none" stroke="#fde047" stroke-width="1.2" opacity="0.8"/>
-      <circle class="antenna-wave wave-2" cx="50" cy="9" r="10" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
-      <circle cx="50" cy="9" r="4.5" fill="url(#antennaGlow)"/>
+      <!-- Antena con estrella navideña -->
+      <line x1="50" y1="24" x2="50" y2="8" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="50" cy="7" r="4" fill="url(#antennaGlow)"/>
 
-      <!-- Orejas / Comunicadores laterales -->
-      <rect x="14" y="38" width="6" height="16" rx="3" fill="#64748b" stroke="#38bdf8" stroke-width="1.5"/>
-      <rect x="80" y="38" width="6" height="16" rx="3" fill="#64748b" stroke="#38bdf8" stroke-width="1.5"/>
-      <circle cx="17" cy="46" r="2" fill="#38bdf8"/>
-      <circle cx="83" cy="46" r="2" fill="#38bdf8"/>
+      <!-- Orejas / Comunicadores laterales con detalle dorado -->
+      <rect x="14" y="38" width="6" height="16" rx="3" fill="#d42426" stroke="#ffd700" stroke-width="1.5"/>
+      <rect x="80" y="38" width="6" height="16" rx="3" fill="#d42426" stroke="#ffd700" stroke-width="1.5"/>
+      <circle cx="17" cy="46" r="1.8" fill="#ffd700"/>
+      <circle cx="83" cy="46" r="1.8" fill="#ffd700"/>
 
-      <!-- Cabeza principal del Robot Bity -->
-      <rect x="18" y="24" width="64" height="46" rx="14" fill="url(#bityBodyGrad)" stroke="#38bdf8" stroke-width="2.5"/>
+      <!-- Cabeza principal del Robot Bity (proporciones originales intactas) -->
+      <rect x="18" y="24" width="64" height="46" rx="14" fill="url(#bityBodyGrad)" stroke="#ffd700" stroke-width="2.2"/>
 
-      <!-- Pequeño sombrero mágico de Halloween (brujito cósmico) -->
-      <path d="M 28 25 Q 50 16 72 25 L 62 8 Q 50 3 44 7 Z" fill="#4c1d95" stroke="#a855f7" stroke-width="1.5"/>
-      <circle cx="44" cy="7" r="2.5" fill="#facc15"/>
-      <polygon points="50,14 52,18 56,18 53,20 54,24 50,21 46,24 47,20 44,18 48,18" fill="#fde047"/>
+      <!-- Gorro rojo de Papá Noel con borde blanco y pompón -->
+      <path d="M 22 25 Q 50 17 78 25 L 68 8 Q 52 2 30 11 Z" fill="#d42426" stroke="#991b1b" stroke-width="1.5"/>
+      <rect x="20" y="21" width="60" height="6" rx="3" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <circle cx="29" cy="11" r="4.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <!-- Pequeño acebo navideño en el gorro -->
+      <circle cx="71" cy="23" r="2" fill="#16a34a"/>
+      <circle cx="74" cy="23" r="2" fill="#16a34a"/>
+      <circle cx="72.5" cy="24" r="1.5" fill="#dc2626"/>
 
       <!-- Pantalla / Visor LED -->
-      <rect x="24" y="32" width="52" height="30" rx="8" fill="url(#bityFaceGrad)" stroke="#1e293b" stroke-width="2"/>
+      <rect x="24" y="32" width="52" height="30" rx="8" fill="url(#bityFaceGrad)" stroke="#38bdf8" stroke-width="1.8"/>
 
       <!-- Ojos LED brillantes y expresivos -->
       ${mood === 'happy' || mood === 'celebrating' ? `
@@ -945,87 +947,83 @@
 
       <!-- Boca digital / LED -->
       ${mood === 'celebrating' || mood === 'happy' ? `
-        <path d="M 44 56 Q 50 60 56 56" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 44 56 Q 50 60 56 56" fill="none" stroke="#ffd700" stroke-width="2.2" stroke-linecap="round"/>
       ` : mood === 'thinking' ? `
         <line x1="46" y1="56" x2="54" y2="56" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
       ` : `
         <path d="M 45 56 Q 50 58 55 56" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
       `}
 
-      <!-- Cuello conector -->
+      <!-- Cuello y Bufanda Navideña Roja y Verde con detalles dorados -->
       <rect x="42" y="70" width="16" height="6" rx="2" fill="#334155"/>
+      <rect x="27" y="69" width="46" height="8" rx="4" fill="#d42426" stroke="#ffd700" stroke-width="1.2"/>
+      <line x1="37" y1="69" x2="37" y2="77" stroke="#165b33" stroke-width="3"/>
+      <line x1="50" y1="69" x2="50" y2="77" stroke="#ffd700" stroke-width="2.5"/>
+      <line x1="63" y1="69" x2="63" y2="77" stroke="#165b33" stroke-width="3"/>
+      <path d="M 60 75 L 66 89 L 58 89 L 56 75 Z" fill="#d42426" stroke="#ffd700" stroke-width="1"/>
 
-      <!-- Cuerpo superior / Pecho robótico -->
-      <path d="M 30 76 L 70 76 L 75 92 Q 75 96 70 96 L 30 96 Q 25 96 25 92 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-      <circle class="bity-core" cx="50" cy="86" r="4.5" fill="#38bdf8" filter="url(#neonGlow)"/>
+      <!-- Cuerpo superior / Pecho robótico navideño -->
+      <path d="M 30 76 L 70 76 L 75 92 Q 75 96 70 96 L 30 96 Q 25 96 25 92 Z" fill="#165b33" stroke="#ffd700" stroke-width="2"/>
+      <circle class="bity-core" cx="50" cy="86" r="4.5" fill="#ffd700" filter="url(#neonGlow)"/>
       <circle cx="50" cy="86" r="2" fill="#ffffff"/>
     </svg>
     `;
   }
 
-  function createGhostGuestSvg() {
+  function createElfGuestSvg() {
     return `
-    <svg class="bity-mascot-svg guest-ghost" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="ghostGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#ffffff"/>
-          <stop offset="70%" stop-color="#e0f2fe"/>
-          <stop offset="100%" stop-color="#93c5fd"/>
-        </linearGradient>
-        <filter id="ghostAura">
-          <feGaussianBlur stdDeviation="3" result="glow"/>
-          <feComposite in="SourceGraphic" in2="glow" operator="over"/>
-        </filter>
-      </defs>
-      <path d="M 28 50 C 28 26 72 26 72 50 C 72 75 66 84 58 79 C 50 84 42 79 38 84 C 32 80 28 75 28 50 Z"
-            fill="rgba(56, 189, 248, 0.25)" filter="url(#ghostAura)"/>
-      <path d="M 30 50 C 30 28 70 28 70 50 C 70 72 65 80 58 75 C 52 80 44 75 40 80 C 34 76 30 72 30 50 Z"
-            fill="url(#ghostGrad)" stroke="#bae6fd" stroke-width="2"/>
-      <ellipse cx="43" cy="46" rx="4" ry="5.5" fill="#0f172a"/>
-      <ellipse cx="57" cy="46" rx="4" ry="5.5" fill="#0f172a"/>
-      <circle cx="44.5" cy="44" r="1.5" fill="#ffffff"/>
-      <circle cx="58.5" cy="44" r="1.5" fill="#ffffff"/>
-      <path d="M 46 56 Q 50 61 54 56" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
-      <ellipse cx="38" cy="53" rx="2.5" ry="1.5" fill="#f472b6" opacity="0.6"/>
-      <ellipse cx="62" cy="53" rx="2.5" ry="1.5" fill="#f472b6" opacity="0.6"/>
+    <svg class="bity-mascot-svg guest-elf" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="52" r="22" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+      <!-- Gorro verde de duende navideño -->
+      <path d="M 28 42 Q 50 32 72 42 L 56 12 Q 46 10 28 42 Z" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+      <rect x="26" y="38" width="48" height="6" rx="3" fill="#dc2626"/>
+      <circle cx="56" cy="12" r="4.5" fill="#ffd700"/>
+      <!-- Ojos alegres y sonrisa -->
+      <circle cx="43" cy="50" r="3" fill="#0f172a"/>
+      <circle cx="57" cy="50" r="3" fill="#0f172a"/>
+      <path d="M 44 60 Q 50 65 56 60" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Cuello festivo -->
+      <path d="M 32 72 L 68 72 L 72 90 L 28 90 Z" fill="#16a34a" stroke="#ffd700" stroke-width="1.5"/>
     </svg>
     `;
   }
 
-  function createVampireGuestSvg() {
+  function createReindeerGuestSvg() {
     return `
-    <svg class="bity-mascot-svg guest-vampire" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 22 45 L 34 35 L 50 44 L 66 35 L 78 45 L 74 88 L 26 88 Z" fill="#581c87" stroke="#7e22ce" stroke-width="1.8"/>
-      <polygon points="34,35 50,52 38,58" fill="#dc2626"/>
-      <polygon points="66,35 50,52 62,58" fill="#dc2626"/>
-      <circle cx="50" cy="48" r="18" fill="#fef08a" stroke="#d97706" stroke-width="1.5"/>
-      <path d="M 32 46 C 32 30 68 30 68 46 C 63 38 56 42 50 48 C 44 42 37 38 32 46 Z" fill="#18181b"/>
-      <circle cx="44" cy="48" r="3.2" fill="#7f1d1d"/>
-      <circle cx="56" cy="48" r="3.2" fill="#7f1d1d"/>
-      <circle cx="45" cy="47" r="1.2" fill="#ffffff"/>
-      <circle cx="57" cy="47" r="1.2" fill="#ffffff"/>
-      <path d="M 44 56 Q 50 61 56 56" fill="none" stroke="#18181b" stroke-width="2"/>
-      <polygon points="46,57 47,60 48,57" fill="#ffffff"/>
-      <polygon points="52,57 53,60 54,57" fill="#ffffff"/>
+    <svg class="bity-mascot-svg guest-reindeer" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+      <!-- Astas doradas -->
+      <path d="M 35 32 Q 25 18 30 10 M 28 20 L 20 16" fill="none" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 65 32 Q 75 18 70 10 M 72 20 L 80 16" fill="none" stroke="#facc15" stroke-width="3" stroke-linecap="round"/>
+      <!-- Rostro de Rodolfo -->
+      <circle cx="50" cy="52" r="22" fill="#a16207" stroke="#713f12" stroke-width="2"/>
+      <circle cx="43" cy="46" r="3" fill="#0f172a"/>
+      <circle cx="57" cy="46" r="3" fill="#0f172a"/>
+      <!-- Nariz roja brillante -->
+      <circle cx="50" cy="55" r="5.5" fill="#ef4444" stroke="#ffffff" stroke-width="1"/>
+      <path d="M 44 64 Q 50 68 56 64" fill="none" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
+      <!-- Collar con cascabel -->
+      <rect x="34" y="72" width="32" height="6" rx="3" fill="#dc2626"/>
+      <circle cx="50" cy="77" r="4" fill="#ffd700"/>
     </svg>
     `;
   }
 
-  function createFrankensteinGuestSvg() {
+  function createSnowmanGuestSvg() {
     return `
-    <svg class="bity-mascot-svg guest-frankie" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
-      <rect x="20" y="58" width="10" height="5" rx="1.5" fill="#94a3b8"/>
-      <rect x="70" y="58" width="10" height="5" rx="1.5" fill="#94a3b8"/>
-      <rect x="28" y="28" width="44" height="46" rx="8" fill="#84cc16" stroke="#4d7c0f" stroke-width="2"/>
-      <path d="M 28 38 L 32 28 L 38 35 L 44 28 L 50 35 L 56 28 L 62 35 L 68 28 L 72 38 Z" fill="#1e293b"/>
-      <line x1="33" y1="42" x2="40" y2="40" stroke="#365314" stroke-width="2"/>
-      <line x1="35" y1="39" x2="35" y2="43" stroke="#365314" stroke-width="1.5"/>
-      <line x1="38" y1="39" x2="38" y2="43" stroke="#365314" stroke-width="1.5"/>
-      <circle cx="41" cy="50" r="4" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="59" cy="50" r="4" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
-      <circle cx="42" cy="50" r="2" fill="#0f172a"/>
-      <circle cx="60" cy="50" r="2" fill="#0f172a"/>
-      <path d="M 43 62 Q 50 66 57 62" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+    <svg class="bity-mascot-svg guest-snowman" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cuerpo y cabeza de nieve -->
+      <circle cx="50" cy="54" r="22" fill="#ffffff" stroke="#93c5fd" stroke-width="2"/>
+      <!-- Sombrero navideño -->
+      <rect x="32" y="30" width="36" height="5" rx="2" fill="#0f172a"/>
+      <rect x="38" y="14" width="24" height="17" rx="2" fill="#0f172a"/>
+      <rect x="38" y="26" width="24" height="4" fill="#dc2626"/>
+      <!-- Ojos y nariz de zanahoria -->
+      <circle cx="43" cy="48" r="2.8" fill="#0f172a"/>
+      <circle cx="57" cy="48" r="2.8" fill="#0f172a"/>
+      <polygon points="50,51 62,54 50,57" fill="#ea580c"/>
+      <path d="M 43 62 Q 50 66 57 62" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
+      <!-- Bufanda roja -->
+      <rect x="33" y="72" width="34" height="7" rx="3.5" fill="#dc2626" stroke="#ffd700" stroke-width="1"/>
     </svg>
     `;
   }
@@ -1476,17 +1474,17 @@
   };
 
   const BITY_GUEST_CHEERS = {
-    ghost: [
-      '¡Buuu! ¡Un saludo desde el espacio! Pensá tranquilo, que el camino está cerca.',
-      '¡Flotando entre las estrellas! Con calma y paciencia vas a resolver la misión.'
+    elf: [
+      '¡Jo Jo Jo! ¡Un saludo desde el taller de Santa! Pensá tranquilo, que el camino está cerca.',
+      '¡Brillando entre las estrellas de Navidad! Con calma y paciencia vas a resolver la misión.'
     ],
-    vampire: [
-      '¡Excelente vuelo cósmico! Mis murciélagos me dicen que vas por buen camino.',
-      '¡Saludos estelares! Revisá bien las direcciones de tus pasos antes de despegar.'
+    reindeer: [
+      '¡Excelente vuelo cósmico! Rodolfo y los renos dicen que vas por muy buen camino.',
+      '¡Saludos desde el Polo Norte! Revisá bien las direcciones de tus pasos antes de despegar.'
     ],
-    frankenstein: [
-      '¡Arrrg! ¡Frankie te alienta! ¡Un paso más y lográs la meta!',
-      '¡Fuerza de robot! Cada bloque que colocás te acerca más a la victoria.'
+    snowman: [
+      '¡Copos de nieve mágicos! ¡Frosty te alienta! ¡Un paso más y lográs la meta!',
+      '¡Magia navideña! Cada bloque que colocás te acerca más a la victoria.'
     ]
   };
 
@@ -1569,24 +1567,23 @@
         gain.gain.linearRampToValueAtTime(0.01, t + 0.45);
         osc.start(t);
         osc.stop(t + 0.45);
-      } else if (type === 'ghostLaugh') {
-        if (typeof window !== 'undefined' && window.MagicAudioEngine && typeof window.MagicAudioEngine.playGhostLaugh === 'function') {
-          window.MagicAudioEngine.playGhostLaugh();
+      } else if (type === 'sleighBells' || type === 'ghostLaugh') {
+        if (typeof window !== 'undefined' && window.MagicAudioEngine && typeof window.MagicAudioEngine.playSleighBells === 'function') {
+          window.MagicAudioEngine.playSleighBells();
         } else {
-          [440, 400, 360, 300].forEach((freq, idx) => {
-            const bt = t + idx * 0.16;
+          [1046.50, 1318.51, 1567.98, 2093.00].forEach((freq, idx) => {
+            const bt = t + idx * 0.11;
             const bOsc = this.ctx.createOscillator();
             const bGain = this.ctx.createGain();
-            bOsc.type = 'sawtooth';
+            bOsc.type = 'triangle';
             bOsc.frequency.setValueAtTime(freq, bt);
-            bOsc.frequency.exponentialRampToValueAtTime(freq - 80, bt + 0.12);
             bGain.gain.setValueAtTime(0.001, bt);
-            bGain.gain.linearRampToValueAtTime(0.12, bt + 0.02);
-            bGain.gain.exponentialRampToValueAtTime(0.001, bt + 0.12);
+            bGain.gain.linearRampToValueAtTime(0.11, bt + 0.02);
+            bGain.gain.exponentialRampToValueAtTime(0.001, bt + 0.18);
             bOsc.connect(bGain);
             bGain.connect(this.ctx.destination);
             bOsc.start(bt);
-            bOsc.stop(bt + 0.13);
+            bOsc.stop(bt + 0.2);
           });
         }
       } else if (type === 'wrong') {
@@ -1623,10 +1620,10 @@
     }
 
     /**
-     * Melodía original de celebración festiva de Halloween
-     * Sintetizada con Web Audio API (timbre celesta / glockenspiel en Re menor + campanas mágicas).
+     * Melodía original de celebración festiva de Navidad
+     * Sintetizada con Web Audio API (timbre celesta / glockenspiel en Do Mayor + cascabeles navideños).
      */
-    playHalloweenCelebration() {
+    playChristmasCelebration() {
       if (typeof window !== 'undefined' && window.MagicAudioEngine && !window.MagicAudioEngine.isEnabled()) {
         return;
       }
@@ -1644,85 +1641,44 @@
       this.activeCelebrationOscs = [];
 
       const celebGain = this.ctx.createGain();
-      celebGain.gain.setValueAtTime(0.18, t0);
-      celebGain.gain.setValueAtTime(0.18, t0 + 2.7);
+      celebGain.gain.setValueAtTime(0.20, t0);
+      celebGain.gain.setValueAtTime(0.20, t0 + 2.8);
       celebGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 3.6);
       celebGain.connect(this.ctx.destination);
       this.celebrationGain = celebGain;
 
-      // 1. Trueno suave y distante al abrir la escena del cementerio (Low-frequency rumble)
-      try {
-        const bufferSize = Math.floor(this.ctx.sampleRate * 1.5);
-        const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        let lastOut = 0.0;
-        for (let i = 0; i < bufferSize; i++) {
-          const white = Math.random() * 2 - 1;
-          output[i] = (lastOut + (0.02 * white)) / 1.02; // Brown noise
-          lastOut = output[i];
-          output[i] *= 2.5;
-        }
+      // 1. Cascabeles cristalinos de apertura
+      const openBells = [1318.51, 1567.98, 2093.00];
+      openBells.forEach((freq, idx) => {
+        const startT = t0 + idx * 0.08;
+        const bOsc = this.ctx.createOscillator();
+        const bGain = this.ctx.createGain();
+        bOsc.type = 'sine';
+        bOsc.frequency.setValueAtTime(freq, startT);
+        bGain.gain.setValueAtTime(0.001, startT);
+        bGain.gain.linearRampToValueAtTime(0.09, startT + 0.015);
+        bGain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.35);
+        bOsc.connect(bGain);
+        bGain.connect(celebGain);
+        bOsc.start(startT);
+        bOsc.stop(startT + 0.38);
+        this.activeCelebrationOscs.push(bOsc);
+      });
 
-        const whiteNoise = this.ctx.createBufferSource();
-        whiteNoise.buffer = noiseBuffer;
-
-        const filter = this.ctx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(140, t0);
-        filter.frequency.exponentialRampToValueAtTime(60, t0 + 1.2);
-
-        const thunderGain = this.ctx.createGain();
-        thunderGain.gain.setValueAtTime(0.001, t0);
-        thunderGain.gain.linearRampToValueAtTime(0.15, t0 + 0.08);
-        thunderGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.4);
-
-        whiteNoise.connect(filter);
-        filter.connect(thunderGain);
-        thunderGain.connect(celebGain);
-
-        whiteNoise.start(t0 + 0.1);
-        whiteNoise.stop(t0 + 1.5);
-        this.activeCelebrationOscs.push(whiteNoise);
-      } catch (e) {}
-
-      // 2. Viento misterioso sutil
-      try {
-        const windOsc = this.ctx.createOscillator();
-        const windGain = this.ctx.createGain();
-        windOsc.type = 'sine';
-        windOsc.frequency.setValueAtTime(220, t0);
-        windOsc.frequency.exponentialRampToValueAtTime(380, t0 + 0.6);
-        windOsc.frequency.exponentialRampToValueAtTime(180, t0 + 1.5);
-
-        windGain.gain.setValueAtTime(0.001, t0);
-        windGain.gain.linearRampToValueAtTime(0.04, t0 + 0.3);
-        windGain.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.5);
-
-        windOsc.connect(windGain);
-        windGain.connect(celebGain);
-
-        windOsc.start(t0);
-        windOsc.stop(t0 + 1.5);
-        this.activeCelebrationOscs.push(windOsc);
-      } catch (e) {}
-
-      // 3. Melodía alegre y misteriosa de Halloween (tipo Celesta / Danza Mágica)
+      // 2. Melodía alegre de Navidad (Jingle Bells fanfarria en Do Mayor)
       const melody = [
-        { freq: 587.33, t: 0.45, dur: 0.14 }, // D5
-        { freq: 698.46, t: 0.61, dur: 0.14 }, // F5
-        { freq: 880.00, t: 0.77, dur: 0.14 }, // A5
-        { freq: 830.61, t: 0.93, dur: 0.14 }, // G#5 (tensión traviesa de Halloween)
-        { freq: 880.00, t: 1.09, dur: 0.20 }, // A5
-        { freq: 698.46, t: 1.33, dur: 0.14 }, // F5
-        { freq: 587.33, t: 1.49, dur: 0.14 }, // D5
-        { freq: 554.37, t: 1.65, dur: 0.14 }, // C#5
-        { freq: 587.33, t: 1.81, dur: 0.24 }, // D5
-        // Arpegio estelar ascendente
-        { freq: 587.33, t: 2.10, dur: 0.12 }, // D5
-        { freq: 698.46, t: 2.22, dur: 0.12 }, // F5
-        { freq: 880.00, t: 2.34, dur: 0.12 }, // A5
-        { freq: 1174.66, t: 2.46, dur: 0.15 }, // D6
-        { freq: 1396.91, t: 2.61, dur: 0.35 }  // F6
+        { freq: 659.25, t: 0.25, dur: 0.16 }, // E5
+        { freq: 659.25, t: 0.43, dur: 0.16 }, // E5
+        { freq: 659.25, t: 0.61, dur: 0.28 }, // E5
+        { freq: 659.25, t: 0.93, dur: 0.16 }, // E5
+        { freq: 659.25, t: 1.11, dur: 0.16 }, // E5
+        { freq: 659.25, t: 1.29, dur: 0.28 }, // E5
+        { freq: 659.25, t: 1.61, dur: 0.16 }, // E5
+        { freq: 783.99, t: 1.79, dur: 0.16 }, // G5
+        { freq: 523.25, t: 1.97, dur: 0.22 }, // C5
+        { freq: 587.33, t: 2.21, dur: 0.12 }, // D5
+        { freq: 659.25, t: 2.35, dur: 0.35 }, // E5
+        { freq: 1046.50, t: 2.72, dur: 0.45 } // C6
       ];
 
       melody.forEach(note => {
@@ -1730,11 +1686,11 @@
         const osc = this.ctx.createOscillator();
         const noteGain = this.ctx.createGain();
 
-        osc.type = 'triangle'; // Timbre celesta / campana mágica
+        osc.type = 'triangle';
         osc.frequency.setValueAtTime(note.freq, startT);
 
         noteGain.gain.setValueAtTime(0.001, startT);
-        noteGain.gain.linearRampToValueAtTime(0.18, startT + 0.015);
+        noteGain.gain.linearRampToValueAtTime(0.20, startT + 0.015);
         noteGain.gain.exponentialRampToValueAtTime(0.001, startT + note.dur + 0.15);
 
         osc.connect(noteGain);
@@ -1745,14 +1701,15 @@
         this.activeCelebrationOscs.push(osc);
       });
 
-      // 4. Bajo staccato juguetón
+      // 3. Bajo armónico cálido en Do Mayor
       const bassNotes = [
-        { freq: 146.83, t: 0.45 }, // D3
-        { freq: 146.83, t: 0.77 }, // D3
-        { freq: 110.00, t: 1.09 }, // A2
-        { freq: 146.83, t: 1.33 }, // D3
-        { freq: 146.83, t: 1.65 }, // D3
-        { freq: 146.83, t: 2.10 }  // D3
+        { freq: 261.63, t: 0.25 }, // C4
+        { freq: 196.00, t: 0.61 }, // G3
+        { freq: 261.63, t: 0.93 }, // C4
+        { freq: 196.00, t: 1.29 }, // G3
+        { freq: 261.63, t: 1.61 }, // C4
+        { freq: 196.00, t: 1.97 }, // G3
+        { freq: 261.63, t: 2.35 }  // C4
       ];
 
       bassNotes.forEach(b => {
@@ -1764,19 +1721,19 @@
         bOsc.frequency.setValueAtTime(b.freq, startT);
 
         bGain.gain.setValueAtTime(0.001, startT);
-        bGain.gain.linearRampToValueAtTime(0.18, startT + 0.02);
-        bGain.gain.exponentialRampToValueAtTime(0.001, startT + 0.16);
+        bGain.gain.linearRampToValueAtTime(0.16, startT + 0.02);
+        bGain.gain.exponentialRampToValueAtTime(0.001, startT + 0.22);
 
         bOsc.connect(bGain);
         bGain.connect(celebGain);
 
         bOsc.start(startT);
-        bOsc.stop(startT + 0.18);
+        bOsc.stop(startT + 0.25);
         this.activeCelebrationOscs.push(bOsc);
       });
 
-      // 5. Campanillas mágicas de cierre
-      const chimes = [1760, 2093, 2637, 3135.96]; // A6, C7, E7, G7
+      // 4. Campanillas mágicas doradas de cierre
+      const chimes = [1046.50, 1318.51, 1567.98, 2093.00]; // C6, E6, G6, C7
       chimes.forEach((freq, idx) => {
         const startT = t0 + 2.65 + idx * 0.1;
         const cOsc = this.ctx.createOscillator();
@@ -1786,7 +1743,7 @@
         cOsc.frequency.setValueAtTime(freq, startT);
 
         cGain.gain.setValueAtTime(0.001, startT);
-        cGain.gain.linearRampToValueAtTime(0.07, startT + 0.02);
+        cGain.gain.linearRampToValueAtTime(0.09, startT + 0.02);
         cGain.gain.exponentialRampToValueAtTime(0.0001, startT + 0.85);
 
         cOsc.connect(cGain);
@@ -1868,7 +1825,7 @@
       this.energyRouteState = null;
       this.secretCodeState = null;
 
-      // Estado del Fantasma de Halloween y Pistas de Orientación en el Laberinto
+      // Estado de destellos navideños en el Laberinto
       this.mazeGhost = {
         active: false,
         x: 0,
@@ -2135,12 +2092,12 @@
       if (!container) return;
 
       let svgHtml = '';
-      if (character === 'ghost') {
-        svgHtml = createGhostGuestSvg();
-      } else if (character === 'vampire') {
-        svgHtml = createVampireGuestSvg();
-      } else if (character === 'frankenstein') {
-        svgHtml = createFrankensteinGuestSvg();
+      if (character === 'elf' || character === 'ghost') {
+        svgHtml = createElfGuestSvg();
+      } else if (character === 'reindeer' || character === 'vampire') {
+        svgHtml = createReindeerGuestSvg();
+      } else if (character === 'snowman') {
+        svgHtml = createSnowmanGuestSvg();
       } else {
         svgHtml = createBityGuideSvg(mood);
       }
@@ -2168,7 +2125,7 @@
       // Botón portada
       const btnHub = document.getElementById('btn-bityblockly-hub');
       if (btnHub) {
-        btnHub.innerHTML = isG1 ? '<span>🎃</span> PORTADA / GRADOS' : '<span>🎃</span> Portada / Grados';
+        btnHub.innerHTML = isG1 ? '<span>🎄</span> PORTADA / GRADOS' : '<span>🎄</span> Portada / Grados';
         btnHub.title = isG1 ? 'VER PORTADA Y CAMBIAR GRADO' : 'Ver Portada y Cambiar Grado';
       }
 
@@ -2266,17 +2223,17 @@
       const msgEl = document.getElementById('bity-guide-message');
 
       let displayName = 'BITY';
-      let badgeText = '🤖 BITY • TU GUÍA ESPACIAL';
+      let badgeText = '🎅 BITY • TU GUÍA NAVIDEÑO';
 
-      if (speaker === 'ghost') {
-        displayName = 'FANTASMITA';
-        badgeText = '👻 FANTASMITA • CONSEJO MÁGICO';
-      } else if (speaker === 'vampire') {
-        displayName = 'VAMPIRITO';
-        badgeText = '🧛 VAMPIRITO • CONSEJO CÓSMICO';
-      } else if (speaker === 'frankenstein') {
-        displayName = 'FRANKIE';
-        badgeText = '🧟 FRANKIE • ÁNIMO ESPACIAL';
+      if (speaker === 'elf' || speaker === 'ghost') {
+        displayName = 'DUENDECITO';
+        badgeText = '🧝 DUENDECITO • CONSEJO NAVIDEÑO';
+      } else if (speaker === 'reindeer' || speaker === 'vampire') {
+        displayName = 'RODOLFO';
+        badgeText = '🦌 RODOLFO • CONSEJO DEL POLO NORTE';
+      } else if (speaker === 'snowman') {
+        displayName = 'COPITO';
+        badgeText = '⛄ COPITO • ÁNIMO INVERNAL';
       }
 
       if (nametagEl) nametagEl.textContent = this.formatForGrade(displayName);
@@ -2311,13 +2268,13 @@
       this.revealedHintsCount = (this.revealedHintsCount || 0) + 1;
       this.audio.play('click');
 
-      // Ocasionalmente (~18% de las veces) un personaje invitado de Halloween saluda o anima
+      // Ocasionalmente (~18% de las veces) un personaje invitado de Navidad saluda o anima
       const randGuest = Math.random();
       if (randGuest < 0.18 && this.currentGuideSpeaker === 'bity') {
-        const guestTypes = ['ghost', 'vampire', 'frankenstein'];
+        const guestTypes = ['elf', 'reindeer', 'snowman'];
         const chosenGuest = guestTypes[Math.floor(Math.random() * guestTypes.length)];
         const cheers = BITY_GUEST_CHEERS[chosenGuest] || [];
-        const msg = cheers[Math.floor(Math.random() * cheers.length)] || '¡Excelente trabajo en tu misión!';
+        const msg = cheers[Math.floor(Math.random() * cheers.length)] || '¡Excelente trabajo en tu misión navideña!';
         this.speakGuide(msg, { speaker: chosenGuest, mood: 'happy', force: true, playAudio: true });
         return;
       }
@@ -2544,13 +2501,13 @@
       if (this.currentGrade === 1) {
         bityCelebrationMsg = '¡LO LOGRASTE! ¡AYUDASTE A BITY A LLEGAR A LA META!';
       } else if (this.currentGrade === 2) {
-        bityCelebrationMsg = '¡Gran trabajo! Byte y las calabazas luminosas festejan tu llegada a la plataforma.';
+        bityCelebrationMsg = '¡Gran trabajo! Bity y los duendes navideños festejan tu llegada a la plataforma.';
       } else if (this.currentGrade === 3) {
-        bityCelebrationMsg = '¡Misión cumplida! El tren fantasma completó su recorrido por las vías cósmicas.';
+        bityCelebrationMsg = '¡Misión cumplida! El Expreso Polar completó su recorrido por las vías nevadas.';
       } else if (this.currentGrade === 4) {
         bityCelebrationMsg = '¡Desafío superado! Resolviste las compuertas mágicas y guiaste a Bity con éxito.';
       } else if (this.currentGrade === 5) {
-        bityCelebrationMsg = '¡Estrategia brillante! Dominaste el laberinto cumbre del planeta embrujado.';
+        bityCelebrationMsg = '¡Estrategia brillante! Dominaste el laberinto cumbre del Taller del Polo Norte.';
       }
       if (speechEl) {
         speechEl.textContent = this.formatForGrade(bityCelebrationMsg);
@@ -2584,9 +2541,9 @@
         else if (total === 23) routeName = 'Alternativa 2 (Galería Sudoeste • 23 instrucciones)';
         else routeName = `Ruta Personalizada (${total} instrucciones)`;
       } else if (this.currentGrade === 5) {
-        if (total === 14) routeName = 'Camino Óptimo (Ruta de las Almenas • 14 instrucciones)';
+        if (total === 14) routeName = 'Camino Óptimo (Ruta de las Estrellas • 14 instrucciones)';
         else if (total === 20) routeName = 'Alternativa 1 (Ruta del Portal Este • 20 instrucciones)';
-        else if (total === 27) routeName = 'Alternativa 2 (Ruta del Laberinto Profundo • 27 instrucciones)';
+        else if (total === 27) routeName = 'Alternativa 2 (Ruta del Taller Profundo • 27 instrucciones)';
         else routeName = `Ruta Personalizada (${total} instrucciones)`;
       }
 
@@ -2632,8 +2589,8 @@
       // Mostrar modal
       modal.classList.add('active');
 
-      // 8. Iniciar Celebración Sonora de Halloween (Original, breve y respetando mute)
-      this.audio.playHalloweenCelebration();
+      // 8. Iniciar Celebración Sonora de Navidad (Original, breve y respetando mute)
+      this.audio.playChristmasCelebration();
     }
 
     renderLevelTabs() {
@@ -2656,19 +2613,19 @@
         if (m.isFinalChallenge) {
           label = '🎯 Desafío Final';
         } else if (this.currentGrade === 4) {
-          const g4Labels = ['🧙 Laberinto 1', '🎃 Laberinto 2', '🏰 Laberinto 3', '🃏 Cartas 100', '🧪 Reactor', '🛡️ Escudo', '🎯 Desafío Final'];
+          const g4Labels = ['🎄 Laberinto 1', '🎁 Laberinto 2', '⭐ Laberinto 3', '🃏 Cartas 100', '⚡ Reactor', '🛡️ Escudo', '🎯 Desafío Final'];
           label = g4Labels[idx] || `Nivel ${lvlNum}`;
         } else if (this.currentGrade === 5) {
-          const g5Labels = ['🏰 Laberinto 1', '🌲 Laberinto 2', '🎃 Laberinto 3', '🔥 Turbinas', '❓ Incógnita', '⚡ Energía', '🗝️ Código', '🎯 Desafío Final'];
+          const g5Labels = ['🎄 Laberinto 1', '❄️ Laberinto 2', '🌟 Laberinto 3', '🔥 Turbinas', '❓ Incógnita', '⚡ Energía', '🗝️ Código', '🎯 Desafío Final'];
           label = g5Labels[idx] || `Nivel ${lvlNum}`;
         } else if (this.currentGrade === 2) {
-          const g2Labels = ['⚡ Baterías', '🎃 Calabazas', '🚪 Compuerta', '🎯 Desafío Final'];
+          const g2Labels = ['⚡ Baterías', '🎁 Regalos', '🚪 Compuerta', '🎯 Desafío Final'];
           label = g2Labels[idx] || `Nivel ${lvlNum}`;
         } else if (this.currentGrade === 3) {
-          const g3Labels = ['🚂 Parada 1', '⚡ Parada 2', '💎 Parada 3', '👻 Laberinto', '🎯 Desafío Final'];
+          const g3Labels = ['🚂 Parada 1', '⚡ Parada 2', '💎 Parada 3', '❄️ Laberinto', '🎯 Desafío Final'];
           label = g3Labels[idx] || `Nivel ${lvlNum}`;
         } else {
-          const g1Icons = ['🪐', '🌙', '🌌', '⚡', '🚀', '🎯'];
+          const g1Icons = ['❄️', '⭐', '🎄', '🎁', '🚀', '🎯'];
           label = idx === 5 ? '🎯 Desafío Final' : `${g1Icons[idx] || '🚀'} Nivel ${lvlNum}`;
         }
 
@@ -2696,7 +2653,7 @@
     }
 
     // -----------------------------------------------------------
-    // Animación de Portada (Nave espacial hacia Planeta Embrujado)
+    // Animación de Portada (Nave espacial hacia Planeta Navideño)
     // -----------------------------------------------------------
     initCoverAnimation() {
       if (!this.coverCanvas || !this.coverCtx) return;
@@ -2708,7 +2665,7 @@
       const w = this.coverCanvas.width;
       const h = this.coverCanvas.height;
 
-      // Generar estrellas fijas
+      // Generar estrellas y copos de nieve
       const stars = [];
       for (let i = 0; i < 70; i++) {
         stars.push({
@@ -2723,14 +2680,14 @@
       let t = 0;
       const animateCover = () => {
         t += 0.03;
-        ctx.fillStyle = '#030712';
+        ctx.fillStyle = '#04101e';
         ctx.fillRect(0, 0, w, h);
 
-        // Nebulosa cósmica de fondo
-        const grad = ctx.createRadialGradient(w * 0.75, h * 0.5, 20, w * 0.75, h * 0.5, 220);
-        grad.addColorStop(0, 'rgba(168, 85, 247, 0.45)');
-        grad.addColorStop(0.5, 'rgba(234, 88, 12, 0.25)');
-        grad.addColorStop(1, 'rgba(3, 7, 18, 0)');
+        // Aurora boreal navideña de fondo
+        const grad = ctx.createRadialGradient(w * 0.75, h * 0.5, 20, w * 0.75, h * 0.5, 230);
+        grad.addColorStop(0, 'rgba(34, 197, 94, 0.35)');
+        grad.addColorStop(0.5, 'rgba(250, 204, 21, 0.22)');
+        grad.addColorStop(1, 'rgba(4, 16, 30, 0)');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
 
@@ -2743,64 +2700,61 @@
           ctx.fill();
         });
 
-        // 1. Dibujar Planeta Embrujado de las Calabazas
+        // 1. Dibujar Planeta Invernal del Polo Norte
         const px = w * 0.8;
         const py = h * 0.5;
         const pr = 65;
 
-        // Aura del planeta
-        const aura = ctx.createRadialGradient(px, py, pr * 0.8, px, py, pr * 1.4);
-        aura.addColorStop(0, 'rgba(251, 146, 60, 0.4)');
-        aura.addColorStop(1, 'rgba(251, 146, 60, 0)');
+        // Aura dorada/esmeralda del planeta
+        const aura = ctx.createRadialGradient(px, py, pr * 0.8, px, py, pr * 1.45);
+        aura.addColorStop(0, 'rgba(250, 204, 21, 0.45)');
+        aura.addColorStop(0.6, 'rgba(34, 197, 94, 0.2)');
+        aura.addColorStop(1, 'rgba(250, 204, 21, 0)');
         ctx.fillStyle = aura;
         ctx.beginPath();
-        ctx.arc(px, py, pr * 1.4, 0, Math.PI * 2);
+        ctx.arc(px, py, pr * 1.45, 0, Math.PI * 2);
         ctx.fill();
 
-        // Cuerpo del planeta (esfera calabaza)
+        // Cuerpo del planeta (esfera invernal azul/esmeralda con polo nevado)
         const planetGrad = ctx.createRadialGradient(px - 15, py - 15, 10, px, py, pr);
-        planetGrad.addColorStop(0, '#f97316');
-        planetGrad.addColorStop(0.7, '#c2410c');
-        planetGrad.addColorStop(1, '#431407');
+        planetGrad.addColorStop(0, '#e0f2fe');
+        planetGrad.addColorStop(0.45, '#38bdf8');
+        planetGrad.addColorStop(0.8, '#166534');
+        planetGrad.addColorStop(1, '#064e3b');
         ctx.fillStyle = planetGrad;
         ctx.beginPath();
         ctx.arc(px, py, pr, 0, Math.PI * 2);
         ctx.fill();
 
-        // Anillo de polvo cósmico / telaraña
+        // Casquete polar de nieve blanca brillante arriba
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.beginPath();
+        ctx.arc(px, py, pr, -Math.PI * 0.82, -Math.PI * 0.18);
+        ctx.quadraticCurveTo(px, py - pr * 0.25, px - pr * 0.82, py - pr * 0.52);
+        ctx.closePath();
+        ctx.fill();
+
+        // Anillo estelar dorado navideño
         ctx.save();
         ctx.translate(px, py);
         ctx.rotate(-0.35);
-        ctx.strokeStyle = 'rgba(216, 180, 254, 0.6)';
+        ctx.strokeStyle = 'rgba(250, 204, 21, 0.75)';
         ctx.lineWidth = 4;
         ctx.beginPath();
         ctx.ellipse(0, 0, pr * 1.6, pr * 0.35, 0, 0, Math.PI * 2);
         ctx.stroke();
         ctx.restore();
 
-        // Ojos y sonrisa luminosa de calabaza en el planeta
-        ctx.fillStyle = 'rgba(254, 240, 138, 0.9)';
-        ctx.beginPath(); // Ojo izq
-        ctx.moveTo(px - 25, py - 15);
-        ctx.lineTo(px - 15, py - 10);
-        ctx.lineTo(px - 22, py - 5);
-        ctx.closePath();
-        ctx.fill();
+        // Estrella de Navidad brillante sobre el Polo Norte del planeta
+        ctx.font = '26px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🎄', px - 12, py + 4);
+        ctx.font = '20px sans-serif';
+        ctx.fillText('⭐', px + 16, py - 14);
+        ctx.fillText('🎁', px + 10, py + 18);
 
-        ctx.beginPath(); // Ojo der
-        ctx.moveTo(px - 5, py - 16);
-        ctx.lineTo(px + 8, py - 12);
-        ctx.lineTo(px - 2, py - 6);
-        ctx.closePath();
-        ctx.fill();
-
-        ctx.beginPath(); // Sonrisa
-        ctx.arc(px - 10, py + 8, 16, 0.2, Math.PI - 0.2, false);
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = 'rgba(254, 240, 138, 0.9)';
-        ctx.stroke();
-
-        // 2. Dibujar Nave Espacial viajando hacia el planeta
+        // 2. Dibujar Nave Espacial Navideña viajando hacia el planeta
         const shipX = w * 0.22 + Math.sin(t * 0.8) * 20;
         const shipY = h * 0.52 + Math.cos(t * 0.9) * 14;
 
@@ -2808,11 +2762,11 @@
         ctx.translate(shipX, shipY);
         ctx.rotate(0.18 + Math.sin(t) * 0.05);
 
-        // Llamas propulsoras animadas
+        // Llamas propulsoras doradas animadas
         const flameLen = 25 + Math.random() * 14;
         const flameGrad = ctx.createLinearGradient(-35, 0, -35 - flameLen, 0);
-        flameGrad.addColorStop(0, '#fde047');
-        flameGrad.addColorStop(0.5, '#f97316');
+        flameGrad.addColorStop(0, '#fef08a');
+        flameGrad.addColorStop(0.5, '#facc15');
         flameGrad.addColorStop(1, 'transparent');
         ctx.fillStyle = flameGrad;
         ctx.beginPath();
@@ -2822,8 +2776,8 @@
         ctx.closePath();
         ctx.fill();
 
-        // Fuselaje
-        ctx.fillStyle = '#f1f5f9';
+        // Fuselaje blanco y rojo navideño
+        ctx.fillStyle = '#f8fafc';
         ctx.beginPath();
         ctx.moveTo(35, 0);
         ctx.quadraticCurveTo(0, -18, -20, -14);
@@ -2832,8 +2786,8 @@
         ctx.closePath();
         ctx.fill();
 
-        // Alerones
-        ctx.fillStyle = '#ea580c';
+        // Alerones rojos y verdes navideños
+        ctx.fillStyle = '#d42426';
         ctx.beginPath();
         ctx.moveTo(-10, -14);
         ctx.lineTo(-25, -24);
@@ -2841,6 +2795,7 @@
         ctx.closePath();
         ctx.fill();
 
+        ctx.fillStyle = '#16a34a';
         ctx.beginPath();
         ctx.moveTo(-10, 14);
         ctx.lineTo(-25, 24);
@@ -3055,7 +3010,7 @@
       stage.innerHTML = `
         <div style="text-align: center; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
           <div style="font-size: 2.2rem; filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.5));">
-            ${config.visualType === 'pumpkin_batteries' ? '🎃 ⚡ 🚀' : '🎃 🦇 🕳️'}
+            ${config.visualType === 'pumpkin_batteries' ? '🎁 ⚡ 🚀' : '🎁 🦌 ❄️'}
           </div>
           <div class="math-operation-box" style="margin: 0 auto;">
             <div class="math-equation-text" style="font-size: 2rem;">${config.equation}</div>
@@ -3080,24 +3035,24 @@
           }
           for (let i = 0; i < config.added; i++) {
             const c = document.createElement('span');
-            c.textContent = '🎃';
-            c.title = 'Calabaza sumada';
-            c.style.cssText = 'font-size: 1.4rem; background: rgba(251, 146, 60, 0.25); padding: 4px 6px; border-radius: 6px; border: 1px solid #fb923c;';
+            c.textContent = '🎁';
+            c.title = 'Batería navideña sumada';
+            c.style.cssText = 'font-size: 1.4rem; background: rgba(250, 204, 21, 0.25); padding: 4px 6px; border-radius: 6px; border: 1px solid #facc15;';
             visualWrap.appendChild(c);
           }
         } else if (config.visualType === 'pumpkins_lost') {
           const rem = config.total - config.lost;
           for (let i = 0; i < rem; i++) {
             const c = document.createElement('span');
-            c.textContent = '🎃';
-            c.title = 'Calabaza luminosa';
+            c.textContent = '🎁';
+            c.title = 'Regalo luminoso';
             c.style.cssText = 'font-size: 1.35rem; background: rgba(34, 197, 94, 0.2); padding: 3px 5px; border-radius: 6px; border: 1px solid #4ade80;';
             visualWrap.appendChild(c);
           }
           for (let i = 0; i < config.lost; i++) {
             const c = document.createElement('span');
             c.textContent = '❌';
-            c.title = 'Calabaza en la cueva';
+            c.title = 'Regalo guardado';
             c.style.cssText = 'font-size: 1.35rem; background: rgba(239, 68, 68, 0.2); padding: 3px 5px; border-radius: 6px; border: 1px solid #f87171; opacity: 0.6;';
             visualWrap.appendChild(c);
           }
@@ -3133,24 +3088,24 @@
       });
     }
 
-    // B. Desafío del Tren Fantasma Espacial (3.º Grado)
+    // B. Desafío del Expreso Polar Espacial (3.º Grado)
     renderGhostTrainStage(stage, config) {
-      this.audio.play('ghostLaugh');
+      this.audio.play('sleighBells');
       stage.innerHTML = `
         <div class="ghost-train-wrapper">
           <div class="train-track-view">
             <div class="train-station-node station-active">
               <span class="station-badge">ESTACIÓN A</span>
               <span class="station-icon">🚉</span>
-              <span class="station-passengers-info">+5 Pasajeros 👻</span>
+              <span class="station-passengers-info">+5 Duendes 🧝</span>
             </div>
             <div class="train-connector-line">
-              <span class="train-locomotive" style="position: absolute; left: 35%; top: -16px;">🚂👻</span>
+              <span class="train-locomotive" style="position: absolute; left: 35%; top: -16px;">🚂🎄</span>
             </div>
             <div class="train-station-node station-active">
               <span class="station-badge">ESTACIÓN B</span>
               <span class="station-icon">🚉</span>
-              <span class="station-passengers-info">+2 👻 / −1 👻</span>
+              <span class="station-passengers-info">+2 🧝 / −1 🧝</span>
             </div>
             <div class="train-connector-line"></div>
             <div class="train-station-node station-active" style="border-color: #facc15;">
@@ -3160,11 +3115,11 @@
             </div>
           </div>
 
-          <div style="background: rgba(30, 41, 59, 0.8); border: 2px solid #38bdf8; border-radius: 14px; padding: 14px 20px; text-align: center; max-width: 620px;">
+          <div style="background: rgba(15, 36, 57, 0.9); border: 2px solid #facc15; border-radius: 14px; padding: 14px 20px; text-align: center; max-width: 620px;">
             <p style="margin: 0 0 10px 0; font-size: 1.05rem; font-weight: 700; color: #f8fafc;">
-              El tren parte <strong>sin pasajeros (0)</strong>.<br>
+              El Expreso Polar parte <strong>sin pasajeros (0)</strong>.<br>
               En la <strong>Estación A</strong> suben <strong>5</strong>. En la <strong>Estación B</strong> suben <strong>2</strong> y baja <strong>1</strong>.<br>
-              ¿Cuántos pasajeros llegan en total a la <strong>Estación C</strong>?
+              ¿Cuántos duendes pasajeros llegan en total a la <strong>Estación C</strong>?
             </p>
             <div class="math-options-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 380px; margin: 0 auto;">
               <button type="button" class="btn-math-option btn-train-opt" data-val="5">5 Pasajeros</button>
@@ -3222,7 +3177,7 @@
       stage.innerHTML = `
         <div class="cards-100-container">
           <div class="cards-100-header">
-            <span style="font-weight: 800; color: #f1f5f9; font-size: 1.1rem;">🧪 LABORATORIO DE HECHIZOS</span>
+            <span style="font-weight: 800; color: #f1f5f9; font-size: 1.1rem;">🎄 TALLER DE JUGUETES MÁGICOS</span>
             <span id="cards-counter-label" class="cards-counter-badge">Parejas: 0 / ${config.pairs.length}</span>
           </div>
           <div class="cards-100-grid" id="cards-grid-wrap"></div>
@@ -4203,7 +4158,7 @@
         if (titleEl) titleEl.textContent = '🎉 ¡MISIÓN CUMPLIDA!';
         if (subtitleEl) subtitleEl.innerHTML = `
           ¡Completaste todos los desafíos de <strong>${gData ? gData.title : 'este grado'}</strong>!<br>
-          <span style="color:#facc15; font-size:1.1rem; display:block; margin-top:6px;">¡Sos un verdadero explorador matemático de Halloween!</span>
+          <span style="color:#facc15; font-size:1.1rem; display:block; margin-top:6px;">¡Sos un verdadero explorador matemático de Navidad!</span>
         `;
 
         if (actionsEl) {
@@ -4211,8 +4166,8 @@
             <button type="button" class="btn-victory-retry" id="btn-victory-replay-grade">
               <span>🔄</span> Volver a jugar
             </button>
-            <button type="button" class="btn-victory-next" id="btn-victory-back-cover" style="background: linear-gradient(180deg, #ea580c, #c2410c);">
-              <span>🎃</span> Elegir otro grado
+            <button type="button" class="btn-victory-next" id="btn-victory-back-cover" style="background: linear-gradient(180deg, #16a34a, #15803d);">
+              <span>🎄</span> Elegir otro grado
             </button>
           `;
 
@@ -4348,9 +4303,17 @@
       ctx.fillStyle = '#475569';
       ctx.fillRect(-12, 14, 24, 6);
 
-      // Cuerpo
+      // Cuerpo con detalle navideño
       ctx.fillStyle = '#0284c7';
       ctx.fillRect(-10, -4, 20, 18);
+
+      // Bufanda navideña roja y dorada
+      ctx.fillStyle = '#d42426';
+      ctx.fillRect(-11, -5, 22, 4);
+      ctx.fillStyle = '#ffd700';
+      ctx.fillRect(-2, -5, 4, 4);
+      ctx.fillStyle = '#d42426';
+      ctx.fillRect(4, -2, 4, 7);
 
       // Cabeza
       ctx.fillStyle = '#38bdf8';
@@ -4361,13 +4324,20 @@
       ctx.fillRect(-5, -14, 3, 3);
       ctx.fillRect(2, -14, 3, 3);
 
-      // Antena
-      ctx.strokeStyle = '#facc15';
-      ctx.lineWidth = 2;
+      // Gorro rojo de Papá Noel con borde blanco y pompón
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(-9, -20, 18, 3);
+      ctx.fillStyle = '#d42426';
       ctx.beginPath();
-      ctx.moveTo(0, -18);
-      ctx.lineTo(0, -25);
-      ctx.stroke();
+      ctx.moveTo(-8, -20);
+      ctx.lineTo(8, -20);
+      ctx.lineTo(-2, -29);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(-2, -29, 2.5, 0, Math.PI * 2);
+      ctx.fill();
 
       ctx.restore();
     }
@@ -4540,7 +4510,7 @@
 
       // Pistas de orientación desactivadas (movimiento por 4 direcciones fijas absolutas)
 
-      // Fantasma tenebroso de Halloween en el laberinto
+      // Destello invernal de Navidad en el laberinto
       this.drawMazeGhost(ctx, offsetX, offsetY, tileSize, cols, rows);
     }
 
@@ -4601,7 +4571,7 @@
       // Colores mágicos de Halloween diferenciados
       const isLeft = (side === 'left');
       // Izquierda: Verde Neón Mágico (#22c55e)
-      // Derecha: Naranja Calabaza Encantado (#f97316)
+      // Derecha: Dorado Navideño (#f97316)
       const bgStyle = isLeft 
         ? `rgba(5, 46, 22, ${alpha * 0.90})` 
         : `rgba(67, 20, 7, ${alpha * 0.90})`;
@@ -4679,9 +4649,9 @@
       this.drawHintPill(ctx, rightX, rightY, cues.right.text, 'right', alpha, tileSize);
     }
 
-    // --- REPRODUCCIÓN Y CONTROL DEL FANTASMA ---
+    // --- REPRODUCCIÓN Y CONTROL DE DESTELLOS NAVIDEÑOS ---
     playGhostLaugh() {
-      this.audio.play('ghostLaugh');
+      this.audio.play('sleighBells');
     }
 
     triggerGhostAppearance(customX = null, customY = null) {
@@ -4709,14 +4679,14 @@
           phase: 'idle',
           timer: 0,
           hasLaughed: false,
-          nextSpawnTime: Date.now() + 14000 + Math.random() * 8000
+          nextSpawnTime: Date.now() + 18000 + Math.random() * 8000
         };
       }
 
       const now = Date.now();
       const ghost = this.mazeGhost;
 
-      // Aparición periódica ambiental
+      // Aparición periódica ambiental de estrella/copo navideño
       if (!ghost.active) {
         if (now >= ghost.nextSpawnTime) {
           ghost.active = true;
@@ -4734,13 +4704,11 @@
       // Ciclo de vida y fases
       const elapsed = now - (ghost.startTime || now);
       if (ghost.phase === 'entering') {
-        ghost.alpha = Math.min(0.88, ghost.alpha + 0.04);
-        // La risa se reproduce UNA SOLA VEZ por aparición
+        ghost.alpha = Math.min(0.85, ghost.alpha + 0.04);
         if (ghost.alpha >= 0.35 && !ghost.hasLaughed) {
           ghost.hasLaughed = true;
-          this.playGhostLaugh();
         }
-        if (ghost.alpha >= 0.88) {
+        if (ghost.alpha >= 0.85) {
           ghost.phase = 'hovering';
         }
       } else if (ghost.phase === 'hovering') {
@@ -4752,7 +4720,7 @@
         if (ghost.alpha <= 0) {
           ghost.active = false;
           ghost.phase = 'idle';
-          ghost.nextSpawnTime = now + 18000 + Math.random() * 12000;
+          ghost.nextSpawnTime = now + 20000 + Math.random() * 12000;
           return;
         }
       }
@@ -4763,10 +4731,10 @@
       const gy = offsetY + ghost.y * tileSize + tileSize / 2 + floatY;
 
       ctx.save();
-      // Halo místico púrpura y cian
+      // Halo dorado y cian invernal
       if (typeof ctx.createRadialGradient === 'function') {
         const haloGrad = ctx.createRadialGradient(gx, gy, 2, gx, gy, tileSize * 0.65);
-        haloGrad.addColorStop(0, `rgba(168, 85, 247, ${ghost.alpha * 0.45})`);
+        haloGrad.addColorStop(0, `rgba(250, 204, 21, ${ghost.alpha * 0.45})`);
         haloGrad.addColorStop(0.6, `rgba(56, 189, 248, ${ghost.alpha * 0.22})`);
         haloGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = haloGrad;
@@ -4775,48 +4743,48 @@
         ctx.fill();
       }
 
-      // Renderizado del fantasma
+      // Renderizado de estrella/copo navideño
       ctx.globalAlpha = ghost.alpha;
-      ctx.font = `${Math.floor(tileSize * 0.65)}px sans-serif`;
+      ctx.font = `${Math.floor(tileSize * 0.58)}px sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('👻', gx, gy);
+      ctx.fillText('❄️', gx, gy);
 
       // Chispas mágicas alrededor
       ctx.font = `${Math.floor(tileSize * 0.22)}px sans-serif`;
-      ctx.fillStyle = '#f0abfc';
+      ctx.fillStyle = '#fde047';
       ctx.fillText('✨', gx - tileSize * 0.35, gy - tileSize * 0.3);
       ctx.fillText('✨', gx + tileSize * 0.35, gy - tileSize * 0.2);
 
       ctx.restore();
     }
 
-    // --- DECORACIÓN TEMÁTICA DEL TABLERO ---
+    // --- DECORACIÓN TEMÁTICA NAVIDEÑA DEL TABLERO ---
     drawWallTile(ctx, x, y, size, theme, r = 0, c = 0) {
       ctx.save();
-      // Base de muro medieval de castillo encantado
+      // Base de muro de pino invernal y piedra nevada del Polo Norte
       if (theme === 'pumpkin_planet') {
-        ctx.fillStyle = '#3f1307';
+        ctx.fillStyle = '#113022';
         ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#65230c';
+        ctx.fillStyle = '#164e35';
         ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
         ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
       } else if (theme === 'mars') {
-        ctx.fillStyle = '#701a35';
+        ctx.fillStyle = '#4c111b';
         ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#881337';
+        ctx.fillStyle = '#6b1826';
         ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
         ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
       } else {
-        ctx.fillStyle = '#1e1430';
+        ctx.fillStyle = '#0f2942';
         ctx.fillRect(x, y, size, size);
-        ctx.fillStyle = '#291b3f';
+        ctx.fillStyle = '#163a5c';
         ctx.fillRect(x + 1, y + 1, size - 2, Math.floor(size * 0.48));
         ctx.fillRect(x + 1, y + Math.floor(size * 0.52), size - 2, Math.floor(size * 0.46));
       }
 
-      // Juntas de mortero oscuro escalonadas
-      ctx.strokeStyle = '#0f0a1a';
+      // Juntas de mortero escalonadas
+      ctx.strokeStyle = '#071524';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x, y + Math.floor(size * 0.5));
@@ -4829,27 +4797,27 @@
       ctx.lineTo(x + Math.floor(size * 0.75), y + size);
       ctx.stroke();
 
-      // Borde con sutil halo violeta/naranja místico
-      ctx.strokeStyle = 'rgba(168, 85, 247, 0.3)';
+      // Borde con sutil halo helado/dorado navideño
+      ctx.strokeStyle = 'rgba(125, 211, 252, 0.32)';
       ctx.strokeRect(x + 0.5, y + 0.5, size - 1, size - 1);
 
-      // Adornos sutiles de Halloween en esquinas muertas y paredes perimetrales
+      // Adornos sutiles de Navidad en paredes perimetrales
       const decorHash = (r * 17 + c * 31) % 9;
       if (decorHash === 1) {
-        // Mini calabaza iluminada en la pared
+        // Mini pino navideño en la pared
         ctx.font = `${Math.floor(size * 0.32)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('🎃', x + size / 2, y + size / 2);
+        ctx.fillText('🎄', x + size / 2, y + size / 2);
       } else if (decorHash === 3) {
-        // Telaraña en la esquina del muro
+        // Copo de nieve cristalino en el muro
         ctx.font = `${Math.floor(size * 0.28)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('🕸️', x + size / 2, y + size / 2);
+        ctx.fillText('❄️', x + size / 2, y + size / 2);
       } else if (decorHash === 5) {
-        // Runa mágica violeta en la pared
-        ctx.fillStyle = '#c084fc';
+        // Estrella dorada navideña en la pared
+        ctx.fillStyle = '#fde047';
         ctx.font = `bold ${Math.floor(size * 0.26)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -4861,26 +4829,26 @@
 
     drawFloorTile(ctx, x, y, size, theme, r = 0, c = 0) {
       ctx.save();
-      // Sendero de cripta / losas de castillo oscuro (alta claridad de tránsito)
+      // Sendero invernal / losas del taller del Polo Norte (alta claridad de tránsito)
       if (theme === 'pumpkin_planet') {
-        ctx.fillStyle = '#140803';
+        ctx.fillStyle = '#061a14';
         ctx.fillRect(x, y, size, size);
-        ctx.strokeStyle = 'rgba(124, 45, 18, 0.35)';
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.22)';
       } else {
-        ctx.fillStyle = '#090d16';
+        ctx.fillStyle = '#071322';
         ctx.fillRect(x, y, size, size);
-        ctx.strokeStyle = 'rgba(99, 102, 241, 0.18)';
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.22)';
       }
       ctx.lineWidth = 1;
       ctx.strokeRect(x + 1, y + 1, size - 2, size - 2);
 
-      // Sutil junta interior de losa de piedra
-      ctx.strokeStyle = 'rgba(147, 51, 234, 0.08)';
+      // Sutil junta interior de losa
+      ctx.strokeStyle = 'rgba(250, 204, 21, 0.08)';
       ctx.strokeRect(x + 3, y + 3, size - 6, size - 6);
       ctx.restore();
     }
 
-    // --- PUERTA TEMÁTICA DE HALLOWEEN ---
+    // --- PUERTA TEMÁTICA DE NAVIDAD ---
     drawDoorTile(ctx, x, y, size, isOpen) {
       ctx.save();
       const p = 3;
@@ -4890,32 +4858,23 @@
       const dy = y + p;
 
       if (!isOpen) {
-        // 1. Marco exterior de piedra gótica
+        // 1. Marco exterior festivo dorado/piedra
         ctx.fillStyle = '#0f172a';
         ctx.fillRect(dx, dy, w, h);
-        ctx.strokeStyle = '#475569';
+        ctx.strokeStyle = '#facc15';
         ctx.lineWidth = 2;
         ctx.strokeRect(dx, dy, w, h);
 
-        // Clave del arco gótico superior
-        ctx.fillStyle = '#334155';
-        ctx.beginPath();
-        ctx.moveTo(dx + w * 0.35, dy);
-        ctx.lineTo(dx + w * 0.5, dy + 5);
-        ctx.lineTo(dx + w * 0.65, dy);
-        ctx.closePath();
-        ctx.fill();
-
-        // 2. Tablas de madera oscura antigua de castillo
+        // 2. Tablas de madera cálida del Taller de Santa
         const doorInnerX = dx + 3;
         const doorInnerY = dy + 4;
         const doorInnerW = w - 6;
         const doorInnerH = h - 6;
-        ctx.fillStyle = '#27170e';
+        ctx.fillStyle = '#7f1d1d';
         ctx.fillRect(doorInnerX, doorInnerY, doorInnerW, doorInnerH);
 
         // Líneas de tablas verticales
-        ctx.strokeStyle = '#180d07';
+        ctx.strokeStyle = '#450a0a';
         ctx.lineWidth = 1.5;
         const plankW = doorInnerW / 3;
         for (let i = 1; i < 3; i++) {
@@ -4925,14 +4884,14 @@
           ctx.stroke();
         }
 
-        // 3. Herrajes de hierro forjado (bandas horizontales)
-        ctx.fillStyle = '#334155';
+        // 3. Bandas horizontales verdes y doradas
+        ctx.fillStyle = '#166534';
         const bandH = Math.max(3, Math.floor(doorInnerH * 0.12));
         ctx.fillRect(doorInnerX, doorInnerY + doorInnerH * 0.22, doorInnerW, bandH);
         ctx.fillRect(doorInnerX, doorInnerY + doorInnerH * 0.72, doorInnerW, bandH);
 
-        // Remaches de bronce
-        ctx.fillStyle = '#94a3b8';
+        // Remaches dorados
+        ctx.fillStyle = '#fde047';
         [0.2, 0.5, 0.8].forEach(pos => {
           ctx.beginPath();
           ctx.arc(doorInnerX + doorInnerW * pos, doorInnerY + doorInnerH * 0.22 + bandH / 2, 1.5, 0, Math.PI * 2);
@@ -4940,7 +4899,7 @@
           ctx.fill();
         });
 
-        // 4. Aldaba / tirador dorado de castillo
+        // 4. Tirador dorado navideño
         ctx.fillStyle = '#eab308';
         ctx.strokeStyle = '#ca8a04';
         ctx.lineWidth = 1;
@@ -4949,29 +4908,17 @@
         ctx.fill();
         ctx.stroke();
 
-        // 5. Telaraña sutil en la esquina superior izquierda
-        ctx.strokeStyle = 'rgba(241, 245, 249, 0.45)';
-        ctx.lineWidth = 0.8;
-        ctx.beginPath();
-        ctx.moveTo(doorInnerX, doorInnerY + 8);
-        ctx.lineTo(doorInnerX + 8, doorInnerY);
-        ctx.moveTo(doorInnerX, doorInnerY + 14);
-        ctx.lineTo(doorInnerX + 14, doorInnerY);
-        ctx.moveTo(doorInnerX, doorInnerY);
-        ctx.lineTo(doorInnerX + 10, doorInnerY + 10);
-        ctx.stroke();
-
-        // 6. Sello mágico / runa de Halloween brillante (Calabaza mágica selladora)
+        // 5. Sello mágico navideño brillante (Corona / Estrella navideña)
         const sealRadius = Math.min(14, Math.floor(doorInnerW * 0.28));
         const cx = doorInnerX + doorInnerW * 0.48;
         const cy = doorInnerY + doorInnerH * 0.48;
 
-        // Halo de resplandor místico pulsante
+        // Halo de resplandor dorado pulsante
         const auraAlpha = 0.45 + 0.3 * Math.sin(Date.now() * 0.004);
         if (typeof ctx.createRadialGradient === 'function') {
           const grad = ctx.createRadialGradient(cx, cy, 2, cx, cy, sealRadius * 1.5);
-          grad.addColorStop(0, `rgba(249, 115, 22, ${auraAlpha})`);
-          grad.addColorStop(0.7, `rgba(168, 85, 247, ${auraAlpha * 0.4})`);
+          grad.addColorStop(0, `rgba(250, 204, 21, ${auraAlpha})`);
+          grad.addColorStop(0.7, `rgba(34, 197, 94, ${auraAlpha * 0.4})`);
           grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
           ctx.fillStyle = grad;
           ctx.beginPath();
@@ -4979,22 +4926,20 @@
           ctx.fill();
         }
 
-        // Runa de sello: icono de calabaza brillante
+        // Icono de corona/árbol navideño sellador
         ctx.font = `${Math.floor(size * 0.36)}px sans-serif`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('🎃', cx, cy);
+        ctx.fillText('🎄', cx, cy);
 
       } else {
-        // --- PUERTA DE HALLOWEEN DESBLOQUEADA (PORTAL DE PASO MÁGICO) ---
-        // Marco de piedra del portal
+        // --- PUERTA DE NAVIDAD DESBLOQUEADA (PORTAL DE PASO MÁGICO) ---
         ctx.fillStyle = '#064e3b';
         ctx.fillRect(dx, dy, w, h);
         ctx.strokeStyle = '#34d399';
         ctx.lineWidth = 2.5;
         ctx.strokeRect(dx, dy, w, h);
 
-        // Interior del portal místico abierto con luz esmeralda y cian
         if (typeof ctx.createRadialGradient === 'function') {
           const portalGrad = ctx.createRadialGradient(dx + w / 2, dy + h / 2, 3, dx + w / 2, dy + h / 2, w * 0.6);
           portalGrad.addColorStop(0, 'rgba(110, 231, 183, 0.9)');
@@ -5006,7 +4951,6 @@
         }
         ctx.fillRect(dx + 2, dy + 2, w - 4, h - 4);
 
-        // Chispas mágicas de paso libre
         ctx.fillStyle = '#ecfdf5';
         ctx.font = `bold ${Math.floor(size * 0.42)}px sans-serif`;
         ctx.textAlign = 'center';
@@ -5018,7 +4962,7 @@
 
     drawGoalTile(ctx, x, y, size, theme) {
       ctx.save();
-      ctx.fillStyle = 'rgba(56, 189, 248, 0.25)';
+      ctx.fillStyle = 'rgba(250, 204, 21, 0.25)';
       ctx.beginPath();
       ctx.arc(x + size / 2, y + size / 2, size * 0.45, 0, Math.PI * 2);
       ctx.fill();
@@ -5026,7 +4970,7 @@
       ctx.font = `${Math.floor(size * 0.65)}px sans-serif`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      const goalIcon = (theme === 'haunted_core') ? '🔮' : (theme === 'pumpkin_planet' ? '🚀' : '🚀');
+      const goalIcon = (theme === 'haunted_core') ? '🌟' : (theme === 'pumpkin_planet' ? '🎄' : '🚀');
       ctx.fillText(goalIcon, x + size / 2, y + size / 2);
       ctx.restore();
     }
@@ -5050,26 +4994,44 @@
       ctx.fillStyle = '#0284c7';
       ctx.fillRect(-12, -4, 24, 20);
 
-      // Pantalla de pecho
-      ctx.fillStyle = '#38bdf8';
-      ctx.fillRect(-4, 2, 8, 8);
+      // Pantalla de pecho con detalle dorado navideño
+      ctx.fillStyle = '#165b33';
+      ctx.fillRect(-5, 2, 10, 9);
+      ctx.fillStyle = '#ffd700';
+      ctx.fillRect(-3, 4, 6, 5);
 
-      // Cabeza
+      // Bufanda navideña roja y verde
+      ctx.fillStyle = '#d42426';
+      ctx.fillRect(-13, -5, 26, 4);
+      ctx.fillStyle = '#165b33';
+      ctx.fillRect(-5, -5, 4, 4);
+      ctx.fillRect(3, -5, 4, 4);
+      ctx.fillStyle = '#d42426';
+      ctx.fillRect(5, -2, 4, 8);
+
+      // Cabeza (Identidad original intacta)
       ctx.fillStyle = '#0ea5e9';
       ctx.fillRect(-10, -18, 20, 14);
 
       // Ojos
       ctx.fillStyle = '#fde047';
-      ctx.fillRect(-6, -14, 4, 4);
-      ctx.fillRect(2, -14, 4, 4);
+      ctx.fillRect(-6, -13, 4, 4);
+      ctx.fillRect(2, -13, 4, 4);
 
-      // Antena
-      ctx.strokeStyle = '#facc15';
-      ctx.lineWidth = 2;
+      // Gorro rojo de Papá Noel con borde blanco y pompón
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(-11, -20, 22, 3.5);
+      ctx.fillStyle = '#d42426';
       ctx.beginPath();
-      ctx.moveTo(0, -18);
-      ctx.lineTo(0, -24);
-      ctx.stroke();
+      ctx.moveTo(-10, -20);
+      ctx.lineTo(10, -20);
+      ctx.lineTo(-3, -29);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(-3, -29, 3, 0, Math.PI * 2);
+      ctx.fill();
 
       ctx.restore();
     }

@@ -33,11 +33,11 @@
 
     <!-- Controles Globales de la Plataforma (Música Navideña y Papá Noel) -->
     <div class="header-global-controls">
-      <button id="btn-global-sound-toggle" class="btn-sound-toggle" type="button" title="Activar o desactivar música navideña y efectos" aria-pressed="false">
-        <span class="sound-icon" id="global-sound-icon">🔇</span>
-        <span class="sound-label" id="global-sound-label">SONIDOS DESACTIVADOS</span>
+      <button id="btn-global-sound-toggle" class="btn-sound-toggle sound-active" type="button" title="Activar o desactivar música navideña y efectos" aria-pressed="true">
+        <span class="sound-icon" id="global-sound-icon">🔔</span>
+        <span class="sound-label" id="global-sound-label">MÚSICA NAVIDEÑA ACTIVADA</span>
       </button>
-      <button id="btn-global-santa-toggle" class="btn-santa-toggle btn-vampire-toggle santa-active vampire-active" type="button" title="Activar o desactivar trineo de Papá Noel" aria-pressed="true">
+      <button id="btn-global-santa-toggle" class="btn-santa-toggle santa-active" type="button" title="Activar o desactivar trineo de Papá Noel" aria-pressed="true">
         <span class="santa-icon" id="global-santa-icon">🎅</span>
         <span class="santa-label" id="global-santa-label">PAPÁ NOEL ACTIVADO</span>
       </button>
@@ -61,7 +61,7 @@
     </div>
   </header>
 
-    <!-- PANTALLA 1: Menú Inicial con Banners de Elección (Fase 3) -->
+  <!-- PANTALLA 1: Menú Inicial con Banners de Elección (Fase 3) -->
   <section id="screen-home" class="screen active">
     <div class="home-screen-wrapper">
       
@@ -164,13 +164,6 @@
             </g>
           </svg>
         </div>
-
-        <!-- Símbolos Navideños e Informáticos Integrados -->
-        <div class="magic-tech-glyph glyph-1">&lt;navidad/&gt;</div>
-        <div class="magic-tech-glyph glyph-2">{ code: ❄️ }</div>
-        <div class="magic-tech-glyph glyph-3">⭐ 2026 ⭐</div>
-        <div class="magic-tech-glyph glyph-4">if (regalo) 🎁</div>
-        <div class="magic-tech-glyph glyph-5">🎄</div>
       </div>
       
       <!-- Encabezado Central de la Portada -->
@@ -187,15 +180,13 @@
         </p>
       </header>
 
-      <!-- BANNER DESTACADO DE HALLOWEEN: BITTYBLOCKLY MISIÓN ESPACIAL -->
-      <section id="hero-halloween-banner" class="hero-halloween-banner" aria-label="Misión Especial de Halloween">
+      <!-- BANNER DESTACADO DE NAVIDAD: BITTYBLOCKLY MISIÓN ESPACIAL -->
+      <section id="hero-halloween-banner" class="hero-halloween-banner hero-christmas-banner" aria-label="Misión Especial de Navidad">
         <div class="h-banner-backdrop-effects" aria-hidden="true">
           <div class="h-banner-star star-b-1">✨</div>
           <div class="h-banner-star star-b-2">⭐</div>
-          <div class="h-banner-star star-b-3">✨</div>
+          <div class="h-banner-star star-b-3">❄️</div>
           <div class="h-banner-star star-b-4">🌟</div>
-          <div class="h-banner-bat bat-b-1">🦇</div>
-          <div class="h-banner-bat bat-b-2">🦇</div>
           <div class="h-banner-glow-orb"></div>
         </div>
 
@@ -224,80 +215,97 @@
             <div class="h-banner-features-row">
               <span class="h-feat-pill">🚀 5 Grados Escolares</span>
               <span class="h-feat-pill">🧩 Programación por Bloques</span>
-              <span class="h-feat-pill">👻 Desafíos &amp; Acertijos</span>
+              <span class="h-feat-pill">🎁 Desafíos &amp; Acertijos</span>
             </div>
           </div>
 
-          <!-- Columna Derecha: Bitty Astronauta en Ambientación Espacial Mágica -->
+          <!-- Columna Derecha: Bitty Astronauta con Indumentaria Navideña -->
           <div class="h-banner-visual" aria-hidden="true">
             <div class="h-bitty-space-pod">
-              <!-- Luna Mágica con Halo -->
+              <!-- Estrella Polar con Halo -->
               <div class="h-banner-moon">
                 <span class="moon-spot spot-1"></span>
                 <span class="moon-spot spot-2"></span>
               </div>
               
-              <!-- Bitty Robot Astronauta con Calabaza Espacial (SVG Nítido) -->
+              <!-- Bitty Robot Astronauta con Traje Navideño, Gorro de Papá Noel y Bufanda (SVG Nítido) -->
               <div class="h-bitty-figure-wrapper">
                 <svg class="h-bitty-svg" viewBox="0 0 200 220" width="180" height="200" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Casco de Astronauta Transparente con Reflejo -->
                   <defs>
                     <radialGradient id="helmGlow" cx="40%" cy="40%" r="60%">
-                      <stop offset="0%" stop-color="#A970FF" stop-opacity="0.6"/>
-                      <stop offset="60%" stop-color="#54258A" stop-opacity="0.3"/>
-                      <stop offset="100%" stop-color="#0B0A16" stop-opacity="0.8"/>
+                      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+                      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#071524" stop-opacity="0.7"/>
                     </radialGradient>
                     <linearGradient id="suitGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#FF7518"/>
-                      <stop offset="100%" stop-color="#B34700"/>
+                      <stop offset="0%" stop-color="#ea3638"/>
+                      <stop offset="100%" stop-color="#b91c1c"/>
                     </linearGradient>
                     <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#E2E8F0"/>
-                      <stop offset="100%" stop-color="#94A3B8"/>
+                      <stop offset="0%" stop-color="#F8FAFC"/>
+                      <stop offset="100%" stop-color="#CBD5E1"/>
                     </linearGradient>
                   </defs>
-                  <!-- Antena con Estrella Mágica -->
-                  <line x1="100" y1="28" x2="100" y2="10" stroke="#FF7518" stroke-width="4" stroke-linecap="round"/>
-                  <polygon points="100,2 103,9 110,10 105,15 106,22 100,18 94,22 95,15 90,10 97,9" fill="#FACC15"/>
-                  <!-- Orejas / Comunicadores -->
-                  <rect x="52" y="52" width="10" height="24" rx="4" fill="#9BE564"/>
-                  <rect x="138" y="52" width="10" height="24" rx="4" fill="#9BE564"/>
-                  <!-- Cabeza Robot Bitty -->
-                  <rect x="60" y="30" width="80" height="68" rx="18" fill="url(#bodyGrad)" stroke="#17102B" stroke-width="3"/>
+                  <!-- Antena con Estrella Navideña Dorada -->
+                  <line x1="100" y1="28" x2="100" y2="10" stroke="#ffd700" stroke-width="4" stroke-linecap="round"/>
+                  <polygon points="100,2 103,9 110,10 105,15 106,22 100,18 94,22 95,15 90,10 97,9" fill="#ffd700"/>
+                  <!-- Orejas / Comunicadores Rojos y Dorados -->
+                  <rect x="52" y="52" width="10" height="24" rx="4" fill="#d42426" stroke="#ffd700" stroke-width="1.5"/>
+                  <rect x="138" y="52" width="10" height="24" rx="4" fill="#d42426" stroke="#ffd700" stroke-width="1.5"/>
+                  <!-- Cabeza Robot Bitty (Identidad original intacta) -->
+                  <rect x="60" y="30" width="80" height="68" rx="18" fill="url(#bodyGrad)" stroke="#071524" stroke-width="3"/>
                   <!-- Pantalla / Visor -->
-                  <rect x="68" y="42" width="64" height="42" rx="10" fill="#0B0A16" stroke="#9BE564" stroke-width="2"/>
-                  <!-- Ojos Brillantes de Bitty (Verde Neón) -->
-                  <circle cx="84" cy="62" r="7" fill="#9BE564">
+                  <rect x="68" y="42" width="64" height="42" rx="10" fill="#071524" stroke="#38bdf8" stroke-width="2"/>
+                  <!-- Ojos Brillantes de Bitty -->
+                  <circle cx="84" cy="62" r="7" fill="#38bdf8">
                     <animate attributeName="r" values="7;7;1;7;7" keyTimes="0;0.45;0.5;0.55;1" dur="4s" repeatCount="indefinite"/>
                   </circle>
-                  <circle cx="116" cy="62" r="7" fill="#9BE564">
+                  <circle cx="116" cy="62" r="7" fill="#38bdf8">
                     <animate attributeName="r" values="7;7;1;7;7" keyTimes="0;0.45;0.5;0.55;1" dur="4s" repeatCount="indefinite"/>
                   </circle>
-                  <!-- Sonrisa Pixelada -->
-                  <path d="M 90 76 Q 100 83 110 76" stroke="#FF7518" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  <!-- Sonrisa Alegre -->
+                  <path d="M 90 76 Q 100 83 110 76" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
+                  <!-- Gorro Rojo de Papá Noel con Borde Blanco y Pompón -->
+                  <path d="M 62 34 Q 100 22 138 34 L 122 10 Q 102 4 74 14 Z" fill="#d42426" stroke="#991b1b" stroke-width="2"/>
+                  <rect x="58" y="27" width="84" height="9" rx="4.5" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                  <circle cx="72" cy="14" r="7" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+                  <!-- Acebo navideño pequeño en el gorro -->
+                  <circle cx="126" cy="31" r="3" fill="#16a34a"/>
+                  <circle cx="131" cy="31" r="3" fill="#16a34a"/>
+                  <circle cx="128.5" cy="32" r="2.2" fill="#dc2626"/>
                   <!-- Casco de Astronauta Exterior -->
-                  <ellipse cx="100" cy="64" rx="55" ry="50" fill="url(#helmGlow)" stroke="#A970FF" stroke-width="2.5" opacity="0.85"/>
-                  <!-- Cuello y Traje Espacial Calabaza -->
-                  <rect x="80" y="100" width="40" height="12" rx="4" fill="#54258A"/>
-                  <path d="M 62 112 Q 100 106 138 112 L 145 165 Q 100 172 55 165 Z" fill="url(#suitGrad)" stroke="#17102B" stroke-width="3"/>
-                  <!-- Insignia Cósmica en el Pecho -->
-                  <circle cx="100" cy="135" r="14" fill="#17102B" stroke="#FACC15" stroke-width="2"/>
-                  <text x="100" y="140" font-size="12" text-anchor="middle" fill="#9BE564" font-weight="bold">&lt;/&gt;</text>
-                  <!-- Cinturón de Herramientas Espaciales -->
-                  <rect x="65" y="154" width="70" height="10" rx="3" fill="#54258A"/>
-                  <rect x="94" y="152" width="12" height="14" rx="2" fill="#FACC15"/>
-                  <!-- Brazos con Guantes -->
+                  <ellipse cx="100" cy="64" rx="55" ry="50" fill="url(#helmGlow)" stroke="#38bdf8" stroke-width="2" opacity="0.55"/>
+                  <!-- Cuello y Traje Espacial Navideño Rojo con Detalles Blancos y Dorados -->
+                  <rect x="80" y="98" width="40" height="12" rx="4" fill="#165b33"/>
+                  <path d="M 62 112 Q 100 106 138 112 L 145 165 Q 100 172 55 165 Z" fill="url(#suitGrad)" stroke="#071524" stroke-width="3"/>
+                  <!-- Ribete blanco vertical del traje de Santa -->
+                  <rect x="95" y="112" width="10" height="54" fill="#ffffff" opacity="0.9"/>
+                  <!-- Bufanda Navideña Verde y Dorada -->
+                  <rect x="68" y="102" width="64" height="13" rx="6" fill="#165b33" stroke="#ffd700" stroke-width="2"/>
+                  <line x1="82" y1="102" x2="82" y2="115" stroke="#d42426" stroke-width="4"/>
+                  <line x1="100" y1="102" x2="100" y2="115" stroke="#ffd700" stroke-width="4"/>
+                  <line x1="118" y1="102" x2="118" y2="115" stroke="#d42426" stroke-width="4"/>
+                  <path d="M 114 112 L 124 138 L 111 138 L 107 112 Z" fill="#165b33" stroke="#ffd700" stroke-width="1.5"/>
+                  <!-- Insignia Cósmica Navideña en el Pecho -->
+                  <circle cx="100" cy="136" r="14" fill="#165b33" stroke="#ffd700" stroke-width="2.5"/>
+                  <text x="100" y="141" font-size="12" text-anchor="middle" fill="#ffffff" font-weight="bold">&lt;/&gt;</text>
+                  <!-- Cinturón Negro con Hebilla Dorada -->
+                  <rect x="62" y="153" width="76" height="10" rx="3" fill="#0f172a"/>
+                  <rect x="93" y="151" width="14" height="14" rx="2" fill="#ffd700"/>
+                  <rect x="96" y="154" width="8" height="8" rx="1" fill="#0f172a"/>
+                  <!-- Brazos con Guantes Verdes y Puños Blancos -->
                   <path d="M 62 116 Q 40 135 48 152" stroke="url(#suitGrad)" stroke-width="12" stroke-linecap="round" fill="none"/>
-                  <circle cx="48" cy="154" r="8" fill="#9BE564"/>
+                  <rect x="41" y="143" width="14" height="5" rx="2.5" fill="#ffffff"/>
+                  <circle cx="48" cy="154" r="8" fill="#228b4d" stroke="#071524" stroke-width="1.5"/>
                   <!-- Brazo derecho sosteniendo regalo navideño -->
                   <path d="M 138 116 Q 160 135 154 150" stroke="url(#suitGrad)" stroke-width="12" stroke-linecap="round" fill="none"/>
+                  <rect x="147" y="141" width="14" height="5" rx="2.5" fill="#ffffff"/>
                   <!-- Regalo Navideño con Moño Dorado que sostiene Bitty -->
                   <g transform="translate(140, 138)">
-                    <rect x="0" y="4" width="26" height="24" rx="4" fill="#dc2626" stroke="#17102B" stroke-width="2"/>
+                    <rect x="0" y="4" width="26" height="24" rx="4" fill="#16a34a" stroke="#ffffff" stroke-width="2"/>
                     <line x1="13" y1="4" x2="13" y2="28" stroke="#ffd700" stroke-width="4"/>
                     <line x1="0" y1="16" x2="26" y2="16" stroke="#ffd700" stroke-width="4"/>
-                    <!-- Moño -->
-                    <circle cx="13" cy="4" r="5" fill="#facc15"/>
+                    <circle cx="13" cy="4" r="5" fill="#ea3638"/>
                   </g>
                   <!-- Propulsor Jetpack en la espalda con llamas -->
                   <g class="h-jet-flame">
@@ -326,7 +334,7 @@
           <span class="banner-badge portal-badge portal-disabled-badge">🔒 NO DISPONIBLE</span>
           <div class="portal-illustration-box">
             <div class="portal-art-scene">
-              <span class="portal-icon-main">🔮</span>
+              <span class="portal-icon-main">🎄</span>
               <span class="portal-sparkle p-spark-1">✨</span>
               <span class="portal-sparkle p-spark-2">📚</span>
               <span class="portal-code-rune">12 + 5</span>
@@ -335,7 +343,7 @@
           <h3 class="banner-title portal-title">JUGAR Y APRENDER — NO DISPONIBLE</h3>
           <h4 class="portal-subtitle">¡RESOLVÉ DESAFÍOS, DESCUBRÍ Y APRENDÉ JUGANDO!</h4>
           <p class="banner-desc portal-desc">
-            Entrá al laboratorio de acertijos: esquivá slimes encantados, resolvé cuentas de matemáticas y descubrí bloques mágicos para superar cada nivel escolar.
+            Entrá al taller de desafíos: esquivá muñecos de nieve traviesos, resolvé cuentas de matemáticas y descubrí bloques mágicos para superar cada nivel escolar.
           </p>
           <button id="btn-home-play" class="btn-banner-action portal-btn btn-disabled" type="button" aria-disabled="true">
             <span>🔒</span> Módulo No Disponible
@@ -425,7 +433,7 @@
           <span class="grade-badge-level">1° Grado</span>
           <div class="grade-icon">🐣</div>
           <h3 class="grade-title">Exploradores</h3>
-          <p class="grade-desc">Sumas y restas hasta 20, números pares e impares y saltos con slimes.</p>
+          <p class="grade-desc">Sumas y restas hasta 20, números pares e impares y saltos divertidos.</p>
           <button class="btn-select-grade" type="button">¡Jugar 1°!</button>
         </article>
 
@@ -459,7 +467,7 @@
         <!-- 5° Grado -->
         <article class="grade-card grade-5" data-grade="5">
           <span class="grade-badge-level">5° Grado</span>
-          <div class="grade-icon">🔮</div>
+          <div class="grade-icon">⭐</div>
           <h3 class="grade-title">Maestros</h3>
           <p class="grade-desc">Introducción a números negativos bajo cero y multiplicación de fracciones.</p>
           <button class="btn-select-grade" type="button">¡Jugar 5°!</button>
@@ -864,25 +872,19 @@
   <!-- ======================================================== -->
   <section id="screen-bityblockly" class="screen">
     <!-- ======================================================== -->
-    <!-- PORTADA DE HALLOWEEN: BITTYBLOCKLY: MISIÓN ESPACIAL       -->
+    <!-- PORTADA NAVIDEÑA: BITTYBLOCKLY: MISIÓN ESPACIAL          -->
     <!-- ======================================================== -->
     <div id="bityblockly-cover-view" class="bityblockly-cover-view">
-      <!-- Telarañas decorativas en las esquinas -->
-      <div class="halloween-web web-top-left" aria-hidden="true">🕸️</div>
-      <div class="halloween-web web-top-right" aria-hidden="true">🕸️</div>
-      <div class="halloween-web web-bottom-left" aria-hidden="true">🕸️</div>
-      <div class="halloween-web web-bottom-right" aria-hidden="true">🕸️</div>
-
-      <!-- Elementos animados flotantes de Halloween -->
+      <!-- Elementos animados flotantes de Navidad -->
       <div class="halloween-floating-decorations" aria-hidden="true">
-        <span class="floating-item float-bat-1">🦇</span>
-        <span class="floating-item float-ghost-1">👻</span>
-        <span class="floating-item float-pumpkin-1">🎃</span>
-        <span class="floating-item float-bat-2">🦇</span>
-        <span class="floating-item float-ghost-2">👻</span>
+        <span class="floating-item float-bat-1">❄️</span>
+        <span class="floating-item float-ghost-1">⭐</span>
+        <span class="floating-item float-pumpkin-1">🎁</span>
+        <span class="floating-item float-bat-2">🎄</span>
+        <span class="floating-item float-ghost-2">🔔</span>
         <span class="floating-item float-star-1">✨</span>
         <span class="floating-item float-star-2">⭐</span>
-        <span class="floating-item float-pumpkin-2">🎃</span>
+        <span class="floating-item float-pumpkin-2">🦌</span>
       </div>
 
       <div class="bityblockly-cover-content">
@@ -906,11 +908,11 @@
           <h2 class="cover-subtitle">¡UNA AVENTURA MATEMÁTICA DE NAVIDAD!</h2>
           <p class="cover-hero-desc">
             Acompañá a <strong>Byte</strong> en su nave interestelar mientras viaja hacia el <strong>Polo Norte Cósmico</strong>.
-            ¡Resolvé misterios matemáticos, programá sus movimientos y descubrí los secretos del cosmos navideño!
+            ¡Resolvé desafíos matemáticos, programá sus movimientos y descubrí los secretos del cosmos navideño!
           </p>
         </header>
 
-        <!-- Escena Ilustrada Animada: Nave viajando hacia el planeta embrujado -->
+        <!-- Escena Ilustrada Animada: Nave viajando hacia el Polo Norte Cósmico -->
         <div class="cover-space-showcase">
           <canvas id="bityblockly-cover-canvas" width="840" height="240"></canvas>
           <div class="cover-showcase-caption">
@@ -930,8 +932,8 @@
               <h4 class="h-grade-name">Exploración Espacial</h4>
               <p class="h-grade-desc">El camino de Marte, la Luna y regreso a la nave. Programación por bloques y sumas y restas simples.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">5 Niveles</span>
-                <span class="h-grade-status" id="cover-status-g1">🟢 Disponible</span>
+                <span class="h-grade-tag">6 Niveles</span>
+                <span class="h-grade-status" id="cover-status-g1">🎄 Disponible</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="1">
                 <span>🚀</span> ¡Jugar 1.er Grado!
@@ -941,60 +943,60 @@
             <!-- 2.º Grado -->
             <article class="h-grade-card h-grade-2" data-hgrade="2">
               <div class="h-grade-badge">2.º Grado</div>
-              <div class="h-grade-icon">🎃</div>
+              <div class="h-grade-icon">🎁</div>
               <h4 class="h-grade-name">El Planeta de los Regalos</h4>
-              <p class="h-grade-desc">Recargá energía (17 + 6 = 23), encontrá las calabazas perdidas (22 − 7 = 15) y abrí la compuerta espacial con Byte.</p>
+              <p class="h-grade-desc">Recargá energía (17 + 6 = 23), encontrá los regalos perdidos (22 − 7 = 15) y abrí la compuerta espacial con Byte.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">3 Misiones</span>
-                <span class="h-grade-status" id="cover-status-g2">🎃 Disponible</span>
+                <span class="h-grade-tag">4 Misiones</span>
+                <span class="h-grade-status" id="cover-status-g2">🎁 Disponible</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="2">
-                <span>🎃</span> ¡Jugar 2.º Grado!
+                <span>🎁</span> ¡Jugar 2.º Grado!
               </button>
             </article>
 
             <!-- 3.er Grado -->
             <article class="h-grade-card h-grade-3" data-hgrade="3">
               <div class="h-grade-badge">3.er Grado</div>
-              <div class="h-grade-icon">🚂👻</div>
+              <div class="h-grade-icon">🚂❄️</div>
               <h4 class="h-grade-name">El Expreso Polar Espacial</h4>
               <p class="h-grade-desc">Desafío interactivo de pasajeros en 3 estaciones (0 + 5 + 2 − 1 = 6), operaciones 35 + 3 = 38, 36 − 7 = 29 y laberinto.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">4 Misiones</span>
-                <span class="h-grade-status" id="cover-status-g3">👻 Disponible</span>
+                <span class="h-grade-tag">5 Misiones</span>
+                <span class="h-grade-status" id="cover-status-g3">🚂 Disponible</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="3">
-                <span>👻</span> ¡Jugar 3.er Grado!
+                <span>🚂</span> ¡Jugar 3.er Grado!
               </button>
             </article>
 
             <!-- 4.º Grado -->
             <article class="h-grade-card h-grade-4" data-hgrade="4">
               <div class="h-grade-badge">4.º Grado</div>
-              <div class="h-grade-icon">🧪🧙</div>
-              <h4 class="h-grade-name">El Laboratorio de Hechizos</h4>
-              <p class="h-grade-desc">Cartas que suman 100, pociones, escudo y 3 laberintos espaciales con rutas alternativas: Alquimista, Cementerio y Castillo.</p>
+              <div class="h-grade-icon">🎄⭐</div>
+              <h4 class="h-grade-name">El Taller de Juguetes Mágicos</h4>
+              <p class="h-grade-desc">Cartas que suman 100, energía estelar, escudo y 4 laberintos espaciales con rutas alternativas: Juguetes, Valle Nevado y Palacio Polar.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">6 Misiones • 3 Laberintos</span>
-                <span class="h-grade-status" id="cover-status-g4">🧪 Disponible</span>
+                <span class="h-grade-tag">7 Misiones • 4 Laberintos</span>
+                <span class="h-grade-status" id="cover-status-g4">🎄 Disponible</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="4">
-                <span>🧪</span> ¡Jugar 4.º Grado!
+                <span>🎄</span> ¡Jugar 4.º Grado!
               </button>
             </article>
 
             <!-- 5.º Grado -->
             <article class="h-grade-card h-grade-5" data-hgrade="5">
               <div class="h-grade-badge">5.º Grado</div>
-              <div class="h-grade-icon">🔮🌋</div>
+              <div class="h-grade-icon">🎅🌟</div>
               <h4 class="h-grade-name">El Taller Cósmico de Santa</h4>
-              <p class="h-grade-desc">Turbinas, incógnitas, energía, código secreto y 3 grandes laberintos cósmicos: Caminos Secretos, Bosque Encantado y Misión Final.</p>
+              <p class="h-grade-desc">Turbinas, incógnitas, energía, código secreto y 4 grandes laberintos cósmicos: Caminos Nevados, Bosque de Pinos y Misión Final.</p>
               <div class="h-grade-meta">
-                <span class="h-grade-tag">7 Misiones • 3 Laberintos</span>
-                <span class="h-grade-status" id="cover-status-g5">🔮 Desafío Maestro</span>
+                <span class="h-grade-tag">8 Misiones • 4 Laberintos</span>
+                <span class="h-grade-status" id="cover-status-g5">🎅 Desafío Maestro</span>
               </div>
               <button type="button" class="btn-h-grade-play" data-hgrade="5">
-                <span>🔮</span> ¡Jugar 5.º Grado!
+                <span>🎅</span> ¡Jugar 5.º Grado!
               </button>
             </article>
           </div>
@@ -1013,7 +1015,7 @@
             <span>⬅</span> Volver al Temario
           </button>
           <button type="button" id="btn-bityblockly-hub" class="btn-bityblockly-hub" title="Ver Portada y Cambiar Grado">
-            <span>🎃</span> Portada / Grados
+            <span>🎄</span> Portada / Grados
           </button>
           <div class="bityblockly-title-wrap">
             <h2 class="bityblockly-main-title">🚀 BityBlockly: Misión espacial</h2>
@@ -1065,7 +1067,7 @@
             <div id="bity-guide-companion-box" class="bity-guide-companion-box">
               <div class="bity-guide-avatar-wrap">
                 <div id="bity-guide-avatar-container" class="bity-guide-avatar-container" title="Bity • Tu guía espacial">
-                  <!-- SVG dinámico de Bity o invitado de Halloween -->
+                  <!-- SVG dinámico de Bity o ayudante de Navidad -->
                 </div>
                 <span id="bity-guide-nametag" class="bity-guide-nametag">BITY</span>
               </div>
@@ -1101,7 +1103,7 @@
             <canvas id="bityblockly-canvas" width="680" height="420"></canvas>
           </div>
 
-          <!-- Escenario Interactivo Especial (Tren Fantasma, Cartas 100, Ruta de Energía, Motores) -->
+          <!-- Escenario Interactivo Especial (Expreso Polar, Cartas 100, Ruta de Energía, Motores) -->
           <div id="bityblockly-interactive-stage" class="bityblockly-interactive-stage" style="display: none;">
             <!-- Contenido dinámico según el tipo de desafío interactivo -->
           </div>
@@ -1261,13 +1263,13 @@
       <!-- Modal Didáctico: Consigna Pedagógica del Desafío Final -->
       <div id="bityblockly-instruction-concept-modal" class="bityblockly-modal-overlay">
         <div class="bityblockly-concept-card">
-          <!-- Encabezado con Avatar de Bity y Badges de Halloween -->
+          <!-- Encabezado con Avatar de Bity y Badges de Navidad -->
           <div class="concept-modal-header">
             <div class="concept-bity-avatar-wrap">
               <div id="bityblockly-concept-avatar" class="concept-bity-avatar">
                 <!-- SVG de Bity animado -->
               </div>
-              <span class="concept-halloween-badge">🎃 DESAFÍO ESPECIAL DE HALLOWEEN 🚀</span>
+              <span class="concept-halloween-badge">🎄 DESAFÍO ESPECIAL DE NAVIDAD 🚀</span>
             </div>
             <h3 id="bityblockly-concept-title" class="concept-modal-title">¡ATENCIÓN, PROGRAMADORES!</h3>
             <h4 id="bityblockly-concept-subtitle" class="concept-modal-subtitle">
@@ -1299,394 +1301,152 @@
         </div>
       </div>
 
-      <!-- Modal de Cierre y Celebración de Halloween: Desafío Especial de Instrucciones -->
+      <!-- Modal de Cierre y Celebración de Navidad: Desafío Especial de Instrucciones -->
       <div id="bityblockly-instruction-summary-modal" class="bityblockly-modal-overlay bityblockly-cemetery-celebration">
-        <!-- ESCENARIO COMPLETO: CEMENTERIO ENCANTADO Y CASTILLO EMBRUJADO -->
+        <!-- ESCENARIO COMPLETO: ALDEA NAVIDEÑA DEL POLO NORTE Y TALLER DE SANTA -->
         <div class="cemetery-diorama-backdrop" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" class="cemetery-vector-scene" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-  <defs>
-    <!-- Gradiente del cielo crepuscular / medianoche -->
-    <linearGradient id="cemSkyGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#05020c"/>
-      <stop offset="35%" stop-color="#140728"/>
-      <stop offset="70%" stop-color="#240c46"/>
-      <stop offset="100%" stop-color="#0e041e"/>
-    </linearGradient>
+            <defs>
+              <linearGradient id="xmasSkyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#051324"/>
+                <stop offset="40%" stop-color="#0d2542"/>
+                <stop offset="75%" stop-color="#15375c"/>
+                <stop offset="100%" stop-color="#091d34"/>
+              </linearGradient>
+              <radialGradient id="northStarGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+                <stop offset="40%" stop-color="#fef08a" stop-opacity="0.9"/>
+                <stop offset="70%" stop-color="#f8b229" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#f8b229" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="workshopGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#991b1b"/>
+                <stop offset="100%" stop-color="#450a0a"/>
+              </linearGradient>
+              <linearGradient id="snowSlopeBack" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#e0f2fe"/>
+                <stop offset="50%" stop-color="#bae6fd"/>
+                <stop offset="100%" stop-color="#1e3a5f"/>
+              </linearGradient>
+              <linearGradient id="snowSlopeFront" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="40%" stop-color="#e2e8f0"/>
+                <stop offset="100%" stop-color="#0f2942"/>
+              </linearGradient>
+              <linearGradient id="pineTreeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#228b4d"/>
+                <stop offset="100%" stop-color="#0f3d22"/>
+              </linearGradient>
+            </defs>
 
-    <!-- Resplandor de la Gran Luna Llena -->
-    <radialGradient id="cemMoonGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#fffbeb" stop-opacity="1"/>
-      <stop offset="40%" stop-color="#fef08a" stop-opacity="0.9"/>
-      <stop offset="65%" stop-color="#fde047" stop-opacity="0.35"/>
-      <stop offset="85%" stop-color="#38bdf8" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
-    </radialGradient>
+            <!-- 1. CIELO NOCTURNO ESTRELLADO Y AURORA BOREAL -->
+            <rect width="1200" height="800" fill="url(#xmasSkyGrad)"/>
 
-    <!-- Silueta del Castillo Embrujado -->
-    <linearGradient id="castleGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#190a36"/>
-      <stop offset="50%" stop-color="#100524"/>
-      <stop offset="100%" stop-color="#080214"/>
-    </linearGradient>
+            <!-- Aurora Boreal Navideña Suave -->
+            <path d="M -50 180 Q 300 90 600 170 T 1250 140 L 1250 260 Q 900 200 600 250 T -50 220 Z" fill="rgba(34, 197, 94, 0.14)"/>
+            <path d="M -50 140 Q 350 60 680 130 T 1250 100 L 1250 200 Q 850 140 550 190 T -50 180 Z" fill="rgba(56, 189, 248, 0.12)"/>
 
-    <!-- Colinas del Cementerio -->
-    <linearGradient id="hillBackGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#15082e"/>
-      <stop offset="100%" stop-color="#0a0318"/>
-    </linearGradient>
-    <linearGradient id="hillFrontGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0d041c"/>
-      <stop offset="100%" stop-color="#030108"/>
-    </linearGradient>
+            <!-- Estrellas titilantes -->
+            <g class="cem-stars">
+              <circle cx="95" cy="85" r="2" fill="#fef08a" class="star-twinkle-1"/>
+              <circle cx="210" cy="55" r="1.5" fill="#ffffff" class="star-twinkle-2"/>
+              <circle cx="340" cy="110" r="2.2" fill="#fde047" class="star-twinkle-3"/>
+              <circle cx="490" cy="65" r="1.6" fill="#ffffff" class="star-twinkle-1"/>
+              <circle cx="620" cy="95" r="2" fill="#fef08a" class="star-twinkle-2"/>
+              <circle cx="750" cy="45" r="1.5" fill="#ffffff" class="star-twinkle-3"/>
+              <circle cx="1020" cy="80" r="1.8" fill="#fde047" class="star-twinkle-1"/>
+              <circle cx="1130" cy="115" r="1.6" fill="#ffffff" class="star-twinkle-2"/>
+              <circle cx="150" cy="180" r="1.4" fill="#ffffff" class="star-twinkle-3"/>
+              <circle cx="280" cy="160" r="1.8" fill="#fef08a" class="star-twinkle-1"/>
+            </g>
 
-    <!-- Piedra de Lápidas y Tumbas -->
-    <linearGradient id="tombStoneGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#475569"/>
-      <stop offset="50%" stop-color="#334155"/>
-      <stop offset="100%" stop-color="#1e293b"/>
-    </linearGradient>
+            <!-- 2. GRAN ESTRELLA DE BELÉN EN EL CIELO -->
+            <g class="cem-moon-group" transform="translate(880, 145)">
+              <circle cx="0" cy="0" r="110" fill="url(#northStarGlow)"/>
+              <circle cx="0" cy="0" r="65" fill="url(#northStarGlow)"/>
+              <polygon points="0,-52 14,-16 52,-16 21,8 32,46 0,24 -32,46 -21,8 -52,-16 -14,-16" fill="#ffd700" stroke="#ffffff" stroke-width="2"/>
+              <circle cx="0" cy="0" r="12" fill="#ffffff"/>
+            </g>
 
-    <!-- Piel de Calabaza Tallada -->
-    <radialGradient id="pumpkinGrad" cx="45%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#fb923c"/>
-      <stop offset="60%" stop-color="#ea580c"/>
-      <stop offset="100%" stop-color="#9a3412"/>
-    </radialGradient>
+            <!-- 3. TALLER DE PAPÁ NOEL EN LA COLINA NEVADA -->
+            <g class="cem-castle">
+              <!-- Cabañas y Taller Central -->
+              <rect x="460" y="250" width="280" height="140" fill="url(#workshopGrad)" rx="8"/>
+              <!-- Techo Nevado Principal -->
+              <polygon points="440,255 600,145 760,255" fill="#ffffff" stroke="#bae6fd" stroke-width="4"/>
+              <!-- Torre del Reloj Navideño -->
+              <rect x="555" y="135" width="90" height="125" fill="#7f1d1d" stroke="#f8b229" stroke-width="2"/>
+              <polygon points="540,140 600,70 660,140" fill="#ffffff" stroke="#bae6fd" stroke-width="3"/>
+              <polygon points="600,48 605,60 618,60 608,68 612,80 600,72 588,80 592,68 582,60 595,60" fill="#ffd700"/>
+              <!-- Ventanas Cálidas Iluminadas -->
+              <rect x="490" y="280" width="44" height="50" rx="10" fill="#fde047" stroke="#f59e0b" stroke-width="3"/>
+              <rect x="666" y="280" width="44" height="50" rx="10" fill="#fde047" stroke="#f59e0b" stroke-width="3"/>
+              <circle cx="600" cy="185" r="20" fill="#fef08a" stroke="#f59e0b" stroke-width="3"/>
+              <!-- Puerta Festiva con Corona Navideña -->
+              <path d="M 572 330 A 28 28 0 0 1 628 330 L 628 390 L 572 390 Z" fill="#165b33" stroke="#ffd700" stroke-width="3"/>
+              <circle cx="600" cy="348" r="11" fill="none" stroke="#22c55e" stroke-width="5"/>
+              <circle cx="600" cy="337" r="3.5" fill="#ef4444"/>
+            </g>
 
-    <!-- Vela encendida en las calabazas -->
-    <radialGradient id="candleFire" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="35%" stop-color="#fef08a"/>
-      <stop offset="70%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#b45309"/>
-    </radialGradient>
+            <!-- 4. COLINAS NEVADAS TRASERAS -->
+            <path d="M -50 540 Q 250 450 550 500 T 1250 460 L 1250 820 L -50 820 Z" fill="url(#snowSlopeBack)"/>
 
-    <!-- Aura fantasmal -->
-    <filter id="ghostGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-    </filter>
+            <!-- 5. PINOS NAVIDEÑOS DECORADOS A LOS LADOS -->
+            <g transform="translate(80, 320)">
+              <polygon points="90,120 20,280 160,280" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="90,65 35,195 145,195" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="90,15 50,120 130,120" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="90,-10 95,5 110,5 98,14 102,28 90,20 78,28 82,14 70,5 85,5" fill="#ffd700"/>
+              <circle cx="75" cy="95" r="6" fill="#ef4444"/>
+              <circle cx="105" cy="110" r="6" fill="#facc15"/>
+              <circle cx="65" cy="165" r="7" fill="#38bdf8"/>
+              <circle cx="115" cy="175" r="7" fill="#ef4444"/>
+              <circle cx="90" cy="230" r="8" fill="#facc15"/>
+            </g>
 
-    <!-- Resplandor mágico de fuego fatuo -->
-    <radialGradient id="wispGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#86efac" stop-opacity="1"/>
-      <stop offset="50%" stop-color="#22c55e" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#15803d" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
+            <g transform="translate(960, 330)">
+              <polygon points="80,110 15,260 145,260" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="80,55 30,180 130,180" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="80,10 45,110 115,110" fill="url(#pineTreeGrad)" stroke="#ffffff" stroke-width="2"/>
+              <polygon points="80,-12 85,2 98,2 88,10 92,24 80,16 68,24 72,10 62,2 75,2" fill="#ffd700"/>
+              <circle cx="70" cy="90" r="6" fill="#facc15"/>
+              <circle cx="95" cy="145" r="7" fill="#ef4444"/>
+              <circle cx="60" cy="210" r="7" fill="#38bdf8"/>
+            </g>
 
-  <!-- 1. CIELO NOCTURNO Y ESTRELLAS -->
-  <rect width="1200" height="800" fill="url(#cemSkyGrad)"/>
+            <!-- 6. COLINA NEVADA DE PRIMER PLANO -->
+            <path d="M -50 630 Q 300 560 620 595 T 1250 580 L 1250 850 L -50 850 Z" fill="url(#snowSlopeFront)"/>
 
-  <!-- Estrellas titilantes dispersas -->
-  <g class="cem-stars">
-    <circle cx="95" cy="85" r="1.5" fill="#fef08a" class="star-twinkle-1"/>
-    <circle cx="210" cy="55" r="1.2" fill="#ffffff" class="star-twinkle-2"/>
-    <circle cx="340" cy="110" r="1.8" fill="#fde047" class="star-twinkle-3"/>
-    <circle cx="490" cy="65" r="1.3" fill="#ffffff" class="star-twinkle-1"/>
-    <circle cx="620" cy="95" r="1.6" fill="#fef08a" class="star-twinkle-2"/>
-    <circle cx="750" cy="45" r="1.2" fill="#ffffff" class="star-twinkle-3"/>
-    <circle cx="1020" cy="80" r="1.5" fill="#fde047" class="star-twinkle-1"/>
-    <circle cx="1130" cy="115" r="1.4" fill="#ffffff" class="star-twinkle-2"/>
-    <circle cx="150" cy="180" r="1.1" fill="#ffffff" class="star-twinkle-3"/>
-    <circle cx="280" cy="160" r="1.6" fill="#fef08a" class="star-twinkle-1"/>
-    <circle cx="1080" cy="170" r="1.3" fill="#ffffff" class="star-twinkle-2"/>
-  </g>
+            <!-- 7. MUÑECOS DE NIEVE Y CAJAS DE REGALO EN PRIMER PLANO -->
+            <!-- Muñeco de Nieve Izquierdo -->
+            <g transform="translate(150, 625)">
+              <circle cx="0" cy="35" r="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+              <circle cx="0" cy="-8" r="23" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+              <circle cx="0" cy="-42" r="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+              <circle cx="-6" cy="-46" r="2.5" fill="#0f172a"/>
+              <circle cx="6" cy="-46" r="2.5" fill="#0f172a"/>
+              <polygon points="0,-42 14,-39 0,-36" fill="#ea580c"/>
+              <rect x="-14" y="-28" width="28" height="8" rx="4" fill="#d42426"/>
+              <rect x="4" y="-24" width="7" height="18" rx="3" fill="#d42426"/>
+              <rect x="-16" y="-58" width="32" height="5" rx="2" fill="#165b33"/>
+              <rect x="-11" y="-74" width="22" height="17" rx="2" fill="#165b33"/>
+            </g>
 
-  <!-- Nubes de tormenta en movimiento lento -->
-  <g class="cem-clouds-layer" fill="#1e1038" opacity="0.45">
-    <path class="cloud-path-1" d="M -100 120 Q 80 80 240 110 Q 380 90 520 125 Q 660 100 820 130 Q 980 95 1120 120 Q 1240 85 1350 120 L 1350 200 L -100 200 Z"/>
-    <path class="cloud-path-2" d="M -50 180 Q 150 145 320 170 Q 500 140 680 175 Q 860 150 1040 180 Q 1200 145 1320 175 L 1320 260 L -50 260 Z" opacity="0.5"/>
-  </g>
-
-  <!-- 2. LA GRAN LUNA LLENA DE HALLOWEEN -->
-  <g class="cem-moon-group" transform="translate(860, 160)">
-    <!-- Auras concéntricas -->
-    <circle cx="0" cy="0" r="120" fill="url(#cemMoonGlow)"/>
-    <circle cx="0" cy="0" r="80" fill="url(#cemMoonGlow)"/>
-    <!-- Cuerpo de la Luna -->
-    <circle cx="0" cy="0" r="68" fill="#fef08a"/>
-    <!-- Cráteres suaves -->
-    <circle cx="-22" cy="-18" r="14" fill="#fde047" opacity="0.45"/>
-    <circle cx="18" cy="24" r="18" fill="#fde047" opacity="0.4"/>
-    <circle cx="28" cy="-14" r="10" fill="#fde047" opacity="0.35"/>
-    <circle cx="-12" cy="32" r="11" fill="#fde047" opacity="0.35"/>
-    <circle cx="-34" cy="8" r="8" fill="#fde047" opacity="0.3"/>
-  </g>
-
-  <!-- 3. SILUETA DEL CASTILLO ENCANTADO EN EL RISCO -->
-  <g class="cem-castle" fill="url(#castleGrad)">
-    <!-- Risco base del castillo -->
-    <path d="M 400 480 L 440 360 L 520 330 L 680 330 L 760 370 L 800 480 Z"/>
-
-    <!-- Murallas almenadas -->
-    <rect x="460" y="270" width="280" height="120"/>
-    <!-- Almenas muralla -->
-    <rect x="460" y="255" width="22" height="18"/><rect x="495" y="255" width="22" height="18"/>
-    <rect x="530" y="255" width="22" height="18"/><rect x="565" y="255" width="22" height="18"/>
-    <rect x="600" y="255" width="22" height="18"/><rect x="635" y="255" width="22" height="18"/>
-    <rect x="670" y="255" width="22" height="18"/><rect x="705" y="255" width="22" height="18"/>
-
-    <!-- Torre Central Principal -->
-    <rect x="545" y="160" width="110" height="150"/>
-    <!-- Almenas torre central -->
-    <rect x="540" y="145" width="24" height="18"/><rect x="572" y="145" width="24" height="18"/>
-    <rect x="604" y="145" width="24" height="18"/><rect x="636" y="145" width="24" height="18"/>
-
-    <!-- Techo cónico aguja central -->
-    <polygon points="600,75 540,148 660,148"/>
-    <!-- Veleta de murciélago en la torre -->
-    <line x1="600" y1="75" x2="600" y2="52" stroke="#080214" stroke-width="2.5"/>
-    <path d="M 590 56 Q 600 50 610 56 Q 600 62 590 56" fill="#080214"/>
-
-    <!-- Torre Izquierda con aguja gótica -->
-    <rect x="430" y="200" width="65" height="160"/>
-    <polygon points="462,115 425,202 500,202"/>
-
-    <!-- Torre Derecha con aguja gótica -->
-    <rect x="705" y="200" width="65" height="160"/>
-    <polygon points="737,115 700,202 775,202"/>
-
-    <!-- Ventanas góticas iluminadas con velas parpadeantes -->
-    <g class="castle-windows-group">
-      <!-- Ventana Torre Central con Vampiro Asomado -->
-      <path d="M 585 195 A 15 15 0 0 1 615 195 L 615 225 L 585 225 Z" fill="#fbbf24" class="window-candle-flicker"/>
-      <!-- Silueta del Vampiro saludando desde la torre -->
-      <g class="castle-vampire-peek" transform="translate(591, 202) scale(0.38)">
-        <path d="M 12 12 Q 25 2 38 12 L 40 35 L 10 35 Z" fill="#180a2b"/>
-        <circle cx="25" cy="16" r="8" fill="#fef08a"/>
-        <!-- Capa con cuellos puntiagudos -->
-        <polygon points="12,12 25,22 8,24" fill="#dc2626"/>
-        <polygon points="38,12 25,22 42,24" fill="#dc2626"/>
-        <!-- Manito saludando -->
-        <circle cx="38" cy="22" r="3" fill="#fef08a" class="vampire-hand-wave"/>
-      </g>
-
-      <!-- Ventanas adicionales iluminadas -->
-      <path d="M 452 235 A 8 8 0 0 1 472 235 L 472 255 L 452 255 Z" fill="#f59e0b" class="window-candle-flicker-2"/>
-      <path d="M 727 235 A 8 8 0 0 1 747 235 L 747 255 L 727 255 Z" fill="#f59e0b" class="window-candle-flicker-3"/>
-      <path d="M 505 300 A 9 9 0 0 1 525 300 L 525 322 L 505 322 Z" fill="#fbbf24" class="window-candle-flicker-1"/>
-      <path d="M 675 300 A 9 9 0 0 1 695 300 L 695 322 L 675 322 Z" fill="#fbbf24" class="window-candle-flicker-2"/>
-    </g>
-
-    <!-- Gran Portón del Castillo -->
-    <path d="M 570 340 A 30 30 0 0 1 630 340 L 630 390 L 570 390 Z" fill="#fde047" opacity="0.85" filter="url(#ghostGlow)"/>
-    <path d="M 575 345 A 25 25 0 0 1 625 345 L 625 390 L 575 390 Z" fill="#451a03"/>
-    <!-- Reja rastrillo del portal -->
-    <line x1="585" y1="345" x2="585" y2="390" stroke="#f59e0b" stroke-width="2"/>
-    <line x1="600" y1="340" x2="600" y2="390" stroke="#f59e0b" stroke-width="2"/>
-    <line x1="615" y1="345" x2="615" y2="390" stroke="#f59e0b" stroke-width="2"/>
-  </g>
-
-  <!-- 4. COLINAS TRASERAS DEL CEMENTERIO -->
-  <path d="M -50 560 Q 250 460 550 510 T 1250 470 L 1250 820 L -50 820 Z" fill="url(#hillBackGrad)"/>
-
-  <!-- Reja de hierro forjado en la colina trasera -->
-  <g class="cem-iron-fence" stroke="#0a0318" stroke-width="3" fill="none">
-    <line x1="120" y1="480" x2="480" y2="495"/>
-    <line x1="720" y1="495" x2="1120" y2="475"/>
-    <!-- Barrotes verticales con puntas de lanza -->
-    <path d="M 140 460 L 140 500 M 170 455 L 170 500 M 200 460 L 200 500 M 230 455 L 230 502 M 260 460 L 260 503 M 290 457 L 290 504 M 320 462 L 320 505"/>
-    <path d="M 750 465 L 750 505 M 780 460 L 780 504 M 810 463 L 810 502 M 840 458 L 840 500 M 870 462 L 870 498 M 900 457 L 900 495"/>
-  </g>
-
-  <!-- 5. ÁRBOLES SECOS Y RETORCIDOS DE HALLOWEEN -->
-  <!-- Árbol Grande Retorcido (Izquierda) -->
-  <g class="cem-tree-left" fill="#070212">
-    <!-- Tronco gnarled -->
-    <path d="M 0 650 Q 80 580 90 460 Q 100 360 60 260 Q 90 280 120 340 Q 150 250 110 160 Q 135 190 145 270 Q 190 200 230 140 Q 215 190 180 280 Q 230 260 300 240 Q 250 280 190 320 Q 210 390 220 480 Q 240 580 320 680 L 0 680 Z"/>
-    <!-- Ramas desnudas retorcidas -->
-    <path d="M 60 260 Q 20 220 -20 200 Q 20 235 55 270 Z"/>
-    <path d="M 110 160 Q 80 90 50 60 Q 80 110 105 170 Z"/>
-    <path d="M 230 140 Q 280 80 340 50 Q 280 110 225 155 Z"/>
-    <!-- Telaraña en la horqueta del árbol -->
-    <g class="cem-spiderweb" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" fill="none">
-      <path d="M 90 280 Q 140 290 170 330"/>
-      <path d="M 100 300 Q 140 310 160 345"/>
-      <line x1="90" y1="280" x2="160" y2="345"/>
-      <line x1="125" y1="260" x2="125" y2="350"/>
-      <!-- Arañita divertida colgando de un hilo -->
-      <line x1="140" y1="310" x2="140" y2="380" stroke="rgba(255,255,255,0.6)" stroke-width="1" class="spider-thread"/>
-      <g class="cem-spider" transform="translate(140, 380)">
-        <ellipse cx="0" cy="0" rx="7" ry="6" fill="#a855f7"/>
-        <circle cx="0" cy="-6" r="4.5" fill="#7e22ce"/>
-        <circle cx="-2" cy="-7" r="1.5" fill="#fde047"/>
-        <circle cx="2" cy="-7" r="1.5" fill="#fde047"/>
-        <!-- Patitas de araña -->
-        <path d="M -6 -2 Q -12 -8 -15 -2 M -6 0 Q -14 0 -16 6 M -5 3 Q -12 8 -13 14" stroke="#a855f7" stroke-width="1.5" fill="none"/>
-        <path d="M 6 -2 Q 12 -8 15 -2 M 6 0 Q 14 0 16 6 M 5 3 Q 12 8 13 14" stroke="#a855f7" stroke-width="1.5" fill="none"/>
-      </g>
-    </g>
-  </g>
-
-  <!-- Árbol Seco Derecho -->
-  <g class="cem-tree-right" fill="#070212">
-    <path d="M 1200 660 Q 1120 570 1110 440 Q 1100 320 1140 220 Q 1110 250 1080 320 Q 1040 210 1070 120 Q 1050 160 1040 240 Q 1000 180 940 130 Q 965 180 990 260 Q 940 240 880 230 Q 930 270 985 305 Q 980 390 990 480 Q 1010 590 1050 670 Z"/>
-    <path d="M 1070 120 Q 1090 60 1130 20 Q 1090 80 1065 130 Z"/>
-    <path d="M 940 130 Q 890 70 820 40 Q 890 100 935 140 Z"/>
-  </g>
-
-  <!-- 6. COLINA DELANTERA Y TERRENO PRINCIPAL -->
-  <path d="M -50 630 Q 300 560 620 590 T 1250 580 L 1250 850 L -50 850 Z" fill="url(#hillFrontGrad)"/>
-
-  <!-- Camino de piedras del cementerio hacia la meta -->
-  <g class="cem-stone-path" fill="#1e1832" stroke="#0a0518" stroke-width="1.5" opacity="0.6">
-    <ellipse cx="600" cy="670" rx="36" ry="12"/>
-    <ellipse cx="540" cy="695" rx="42" ry="14"/>
-    <ellipse cx="665" cy="700" rx="38" ry="13"/>
-    <ellipse cx="590" cy="735" rx="48" ry="16"/>
-    <ellipse cx="510" cy="760" rx="55" ry="18"/>
-    <ellipse cx="680" cy="765" rx="52" ry="17"/>
-    <ellipse cx="600" cy="790" rx="65" ry="20"/>
-  </g>
-
-  <!-- 7. TÚMULOS, LÁPIDAS Y CRIPTAS GÓTICAS -->
-  <!-- Lápida 1: Clásica R.I.P. (Izquierda) -->
-  <g class="tombstone-item tomb-1" transform="translate(180, 520)">
-    <!-- Base de tierra y hierba oscura -->
-    <path d="M -8 85 Q 35 78 80 85 L 75 92 L -5 92 Z" fill="#090214"/>
-    <!-- Lápida de piedra -->
-    <path d="M 0 30 A 35 35 0 0 1 70 30 L 70 85 L 0 85 Z" fill="url(#tombStoneGrad)" stroke="#1e293b" stroke-width="2"/>
-    <text x="35" y="52" font-family="'Cinzel', serif, Georgia" font-size="14" font-weight="900" fill="#94a3b8" text-anchor="middle" letter-spacing="2">R.I.P.</text>
-    <!-- Grieta gótica en la piedra -->
-    <path d="M 18 20 L 25 32 L 20 40" stroke="#0f172a" stroke-width="1.5" fill="none"/>
-  </g>
-
-  <!-- Lápida 2: Cruz Celta de Piedra (Izquierda) -->
-  <g class="tombstone-item tomb-2" transform="translate(290, 500)">
-    <!-- Cruz y anillo celta -->
-    <circle cx="20" cy="28" r="16" fill="none" stroke="url(#tombStoneGrad)" stroke-width="5"/>
-    <rect x="14" y="8" width="12" height="75" fill="url(#tombStoneGrad)" stroke="#1e293b" stroke-width="1.5"/>
-    <rect x="0" y="22" width="40" height="12" fill="url(#tombStoneGrad)" stroke="#1e293b" stroke-width="1.5"/>
-    <rect x="-6" y="80" width="52" height="12" fill="#1e293b"/>
-    <!-- Resplandor mágico de fuego fatuo (Wisp) sobre la tumba -->
-    <circle cx="20" cy="2" r="16" fill="url(#wispGlow)" class="wisp-pulse-green"/>
-  </g>
-
-  <!-- Lápida 3: Cripta Antigua de Piedra con Fantasma Emergente (Centro-Izquierda) -->
-  <g class="tombstone-item tomb-crypt" transform="translate(380, 530)">
-    <!-- Base del sepulcro -->
-    <rect x="0" y="30" width="95" height="50" fill="url(#tombStoneGrad)" stroke="#0f172a" stroke-width="2"/>
-    <!-- Losa de piedra semiabierta -->
-    <polygon points="-8,25 90,15 102,28 4,38" fill="#475569" stroke="#1e293b" stroke-width="2"/>
-    <!-- Brillo fantasmal que sale de la tumba -->
-    <ellipse cx="48" cy="28" rx="35" ry="12" fill="rgba(56, 189, 248, 0.4)" filter="url(#ghostGlow)"/>
-
-    <!-- ¡FANTASMA QUE SUBE Y CELEBRA DESDE LA TUMBA! -->
-    <g class="cem-ghost-rising" transform="translate(48, 0)">
-      <path d="M -18 10 C -18 -18 18 -18 18 10 C 18 28 12 36 6 32 C 0 36 -6 32 -10 36 C -15 32 -18 28 -18 10 Z"
-            fill="rgba(240, 249, 255, 0.95)" stroke="#38bdf8" stroke-width="1.8" filter="url(#ghostGlow)"/>
-      <!-- Ojitos y sonrisa alegre -->
-      <circle cx="-7" cy="6" r="2.8" fill="#0f172a"/>
-      <circle cx="7" cy="6" r="2.8" fill="#0f172a"/>
-      <circle cx="-6" cy="5" r="1" fill="#ffffff"/>
-      <circle cx="8" cy="5" r="1" fill="#ffffff"/>
-      <path d="M -4 14 Q 0 18 4 14" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
-      <!-- Manitas alzadas celebrando -->
-      <path d="M -18 14 Q -26 6 -24 0" stroke="#bae6fd" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M 18 14 Q 26 6 24 0" stroke="#bae6fd" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    </g>
-  </g>
-
-  <!-- Lápida 4: Obelisco / Pirámide de Piedra (Centro-Derecha) -->
-  <g class="tombstone-item tomb-4" transform="translate(730, 520)">
-    <polygon points="20,0 5,65 35,65" fill="url(#tombStoneGrad)" stroke="#1e293b" stroke-width="1.8"/>
-    <rect x="0" y="65" width="40" height="15" fill="#1e293b"/>
-    <circle cx="20" cy="22" r="3" fill="#fde047" opacity="0.6"/>
-  </g>
-
-  <!-- Lápida 5: Lápida con Calavera Tallada (Derecha) -->
-  <g class="tombstone-item tomb-5" transform="translate(840, 510)">
-    <path d="M 0 25 A 30 30 0 0 1 60 25 L 60 80 L 0 80 Z" fill="url(#tombStoneGrad)" stroke="#1e293b" stroke-width="2"/>
-    <!-- Relieve de calavera gótica -->
-    <circle cx="30" cy="38" r="8" fill="#0f172a"/>
-    <ellipse cx="27" cy="37" rx="2" ry="2.5" fill="#fde047"/>
-    <ellipse cx="33" cy="37" rx="2" ry="2.5" fill="#fde047"/>
-    <path d="M 27 48 L 33 48" stroke="#0f172a" stroke-width="2"/>
-    <!-- Grieta angular -->
-    <path d="M 45 15 L 40 30 L 50 42" stroke="#0f172a" stroke-width="1.5" fill="none"/>
-  </g>
-
-  <!-- 8. FANTASMAS FLOTANTES ADICIONALES (VOLANDO POR EL CIELO) -->
-  <!-- Fantasma 2: Volando por el cielo de derecha a izquierda -->
-  <g class="cem-ghost-flying-sky" transform="translate(980, 260)">
-    <path d="M -22 12 C -22 -20 22 -20 22 12 C 22 36 14 45 8 40 C 0 45 -8 40 -12 46 C -18 40 -22 35 -22 12 Z"
-          fill="rgba(224, 242, 254, 0.85)" stroke="#7dd3fc" stroke-width="1.8" filter="url(#ghostGlow)"/>
-    <circle cx="-8" cy="8" r="3" fill="#0f172a"/><circle cx="8" cy="8" r="3" fill="#0f172a"/>
-    <path d="M -5 18 Q 0 23 5 18" fill="none" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round"/>
-  </g>
-
-  <!-- 9. MURCIÉLAGOS EN VUELO DELANTE DE LA LUNA -->
-  <g class="cem-bats-flight">
-    <g class="bat-svg bat-fly-1" transform="translate(820, 140) scale(0.6)">
-      <path d="M 0 0 C 15 -20 40 -25 60 -10 C 50 15 30 25 10 10 C 5 20 -5 20 -10 10 C -30 25 -50 15 -60 -10 C -40 -25 -15 -20 0 0 Z" fill="#0f0728" stroke="#7e22ce" stroke-width="1.2"/>
-      <circle cx="-3" cy="2" r="1.5" fill="#ef4444"/><circle cx="3" cy="2" r="1.5" fill="#ef4444"/>
-    </g>
-    <g class="bat-svg bat-fly-2" transform="translate(760, 185) scale(0.45)">
-      <path d="M 0 0 C 15 -20 40 -25 60 -10 C 50 15 30 25 10 10 C 5 20 -5 20 -10 10 C -30 25 -50 15 -60 -10 C -40 -25 -15 -20 0 0 Z" fill="#0f0728" stroke="#a855f7" stroke-width="1.2"/>
-    </g>
-    <g class="bat-svg bat-fly-3" transform="translate(900, 190) scale(0.5)">
-      <path d="M 0 0 C 15 -20 40 -25 60 -10 C 50 15 30 25 10 10 C 5 20 -5 20 -10 10 C -30 25 -50 15 -60 -10 C -40 -25 -15 -20 0 0 Z" fill="#0f0728" stroke="#7e22ce" stroke-width="1.2"/>
-    </g>
-    <g class="bat-svg bat-fly-4" transform="translate(710, 130) scale(0.35)">
-      <path d="M 0 0 C 15 -20 40 -25 60 -10 C 50 15 30 25 10 10 C 5 20 -5 20 -10 10 C -30 25 -50 15 -60 -10 C -40 -25 -15 -20 0 0 Z" fill="#0f0728"/>
-    </g>
-  </g>
-
-  <!-- 10. CALABAZAS TALLADAS ILUMINADAS (PRIMER PLANO) -->
-  <!-- Calabaza Izquierda Grande y Sonriente -->
-  <g class="cem-pumpkin pumpkin-left" transform="translate(140, 660)">
-    <!-- Aura de luz cálida en el suelo -->
-    <ellipse cx="0" cy="25" rx="55" ry="18" fill="rgba(245, 158, 11, 0.35)" filter="url(#ghostGlow)"/>
-    <!-- Tallo verde -->
-    <path d="M -4 -25 Q 2 -40 12 -38 Q 4 -28 2 -23 Z" fill="#15803d" stroke="#166534" stroke-width="1.5"/>
-    <!-- Costillas de la calabaza -->
-    <ellipse cx="0" cy="0" rx="42" ry="32" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="2"/>
-    <ellipse cx="-22" cy="0" rx="24" ry="30" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="1.5"/>
-    <ellipse cx="22" cy="0" rx="24" ry="30" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="1.5"/>
-    <!-- Rostro tallado con luz de vela brillante -->
-    <!-- Ojos triangulares -->
-    <polygon points="-24,-10 -12,-10 -18,-2" fill="url(#candleFire)" class="pumpkin-eye-glow"/>
-    <polygon points="12,-10 24,-10 18,-2" fill="url(#candleFire)" class="pumpkin-eye-glow"/>
-    <!-- Nariz triangular -->
-    <polygon points="0,-4 -5,4 5,4" fill="url(#candleFire)"/>
-    <!-- Sonrisa con colmillos divertidos -->
-    <path d="M -26 10 Q 0 26 26 10 Q 18 20 12 14 Q 6 22 0 14 Q -6 22 -12 14 Q -18 20 -26 10 Z" fill="url(#candleFire)" class="pumpkin-mouth-glow"/>
-  </g>
-
-  <!-- Calabaza Derecha Risueña -->
-  <g class="cem-pumpkin pumpkin-right" transform="translate(1040, 670)">
-    <ellipse cx="0" cy="25" rx="50" ry="16" fill="rgba(245, 158, 11, 0.35)" filter="url(#ghostGlow)"/>
-    <path d="M 2 -24 Q -6 -38 -14 -35 Q -4 -26 0 -22 Z" fill="#15803d" stroke="#166534" stroke-width="1.5"/>
-    <ellipse cx="0" cy="0" rx="38" ry="28" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="2"/>
-    <ellipse cx="-20" cy="0" rx="20" ry="26" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="1.5"/>
-    <ellipse cx="20" cy="0" rx="20" ry="26" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="1.5"/>
-    <!-- Ojos redondos sorprendidos -->
-    <circle cx="-15" cy="-6" r="6" fill="url(#candleFire)" class="pumpkin-eye-glow"/>
-    <circle cx="15" cy="-6" r="6" fill="url(#candleFire)" class="pumpkin-eye-glow"/>
-    <!-- Sonrisa ancha con dos dientitos -->
-    <path d="M -20 8 Q 0 22 20 8 Q 14 18 8 13 Q 0 20 -8 13 Q -14 18 -20 8 Z" fill="url(#candleFire)" class="pumpkin-mouth-glow"/>
-  </g>
-
-  <!-- Calabaza Pequeña Traviesa (Centro) -->
-  <g class="cem-pumpkin pumpkin-mid" transform="translate(680, 620) scale(0.65)">
-    <ellipse cx="0" cy="22" rx="40" ry="14" fill="rgba(245, 158, 11, 0.3)" filter="url(#ghostGlow)"/>
-    <ellipse cx="0" cy="0" rx="32" ry="24" fill="url(#pumpkinGrad)" stroke="#7c2d12" stroke-width="1.8"/>
-    <polygon points="-16,-6 -6,-6 -11,0" fill="url(#candleFire)"/>
-    <polygon points="6,-6 16,-6 11,0" fill="url(#candleFire)"/>
-    <path d="M -16 8 Q 0 18 16 8 Q 0 14 -16 8 Z" fill="url(#candleFire)"/>
-  </g>
-</svg>
-          <!-- Relámpago atmosférico ocasional -->
-          <div class="cemetery-lightning-overlay"></div>
-          <!-- Capas volumétricas de niebla en el suelo -->
-          <div class="cemetery-fog-stream fog-layer-back"></div>
-          <div class="cemetery-fog-stream fog-layer-front"></div>
+            <!-- Regalos Festivos Derecha -->
+            <g transform="translate(1010, 635)">
+              <rect x="-35" y="0" width="46" height="44" rx="5" fill="#d42426" stroke="#ffffff" stroke-width="2"/>
+              <rect x="-16" y="0" width="8" height="44" fill="#ffd700"/>
+              <rect x="-35" y="18" width="46" height="8" fill="#ffd700"/>
+              <rect x="20" y="10" width="36" height="34" rx="4" fill="#165b33" stroke="#ffffff" stroke-width="2"/>
+              <rect x="35" y="10" width="6" height="34" fill="#facc15"/>
+              <rect x="20" y="24" width="36" height="6" fill="#facc15"/>
+            </g>
+          </svg>
         </div>
 
-        <!-- PANEL DE RESULTADOS: LÁPIDA / PERGAMINO ENCANTADO INTEGRADO AL ESCENARIO -->
+        <!-- PANEL DE RESULTADOS: TARJETA NAVIDEÑA DORADA INTEGRADA AL ESCENARIO -->
         <div class="bityblockly-instruction-summary-card enchanted-tomb-plaque">
-          <!-- Decoración ornamental de esquinas góticas -->
+          <!-- Decoración ornamental de esquinas doradas -->
           <div class="plaque-corner top-left"></div>
           <div class="plaque-corner top-right"></div>
           <div class="plaque-corner bottom-left"></div>
@@ -1695,9 +1455,9 @@
           <!-- Encabezado Temático: Misión Cumplida & Bity Llegó a la Meta -->
           <div class="summary-modal-header">
             <div class="summary-header-badge">
-              <span class="summary-badge-pumpkin">🎃</span>
+              <span class="summary-badge-pumpkin">🎄</span>
               <span class="summary-badge-text">¡MISIÓN CUMPLIDA!</span>
-              <span class="summary-badge-pumpkin">🎃</span>
+              <span class="summary-badge-pumpkin">🎁</span>
             </div>
             <h3 id="bityblockly-summary-title" class="summary-modal-title">¡BITY LLEGÓ A LA META!</h3>
             <h4 id="bityblockly-summary-subtitle" class="summary-modal-subtitle">
@@ -1773,51 +1533,13 @@
             </div>
           </div>
 
-          <!-- Acciones Inferiores Temáticas: Portal Mágico y Puerta del Castillo -->
+          <!-- Acciones Inferiores Temáticas -->
           <div class="summary-modal-actions">
             <button type="button" id="btn-bityblockly-summary-retry" class="btn-summary-action btn-portal-magic">
-              <span class="btn-action-icon">🌀</span> PROBAR OTRO CAMINO
+              <span class="btn-action-icon">🔄</span> PROBAR OTRO CAMINO
             </button>
             <button type="button" id="btn-bityblockly-summary-next" class="btn-summary-action btn-castle-door">
-              <span class="btn-action-icon">🏰</span> FINALIZAR GRADO
-            </button>
-          </div>
-        </div>
-      </div>
-
-            <!-- Columna Derecha: Registro en Classroom y Pregunta de Reflexión -->
-            <div class="summary-col-right">
-              <!-- Registro en Classroom -->
-              <div class="classroom-share-callout">
-                <div class="classroom-callout-header">
-                  <span class="callout-icon">📋🎒</span>
-                  <span class="callout-badge" id="summary-classroom-badge">REGISTRO EN CLASSROOM</span>
-                </div>
-                <div class="callout-msg" id="summary-classroom-callout-msg">
-                  AHORA ANOTÁ TU RESULTADO Y PUBLICALO EN CLASSROOM, EN LA SECCIÓN TAREAS.
-                </div>
-                <div class="callout-submsg" id="summary-classroom-callout-submsg">
-                  Compartí con tu docente y tus compañeros cuántas instrucciones utilizaste y qué camino recorriste.
-                </div>
-              </div>
-
-              <!-- Reflexión Pedagógica -->
-              <div class="classroom-reflection-box">
-                <div class="reflection-tag">💬 PREGUNTA PARA REFLEXIONAR EN EL AULA:</div>
-                <p class="reflection-text" id="bityblockly-summary-reflection-text">
-                  ¿Pudiste haber llegado a la meta con menos instrucciones? ¿Qué camino fue más corto y cuál más largo? ¡Compartí tu estrategia con tus compañeros y tu profe!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Acciones Inferiores: Siempre Visibles y Accesibles sin Scroll en Desktop -->
-          <div class="summary-modal-actions">
-            <button type="button" id="btn-bityblockly-summary-retry" class="btn-summary-action btn-summary-retry">
-              <span>🔄</span> PROBAR OTRO CAMINO
-            </button>
-            <button type="button" id="btn-bityblockly-summary-next" class="btn-summary-action btn-summary-next">
-              <span>🌟</span> FINALIZAR GRADO
+              <span class="btn-action-icon">🎄</span> FINALIZAR GRADO
             </button>
           </div>
         </div>
@@ -1833,7 +1555,7 @@
       <div class="game-header-bar">
         <div class="game-title-group">
           <div id="game-level-title" class="game-title-badge">⛏️ Nivel 1 de 3: ¡Esquiva y Recolecta!</div>
-          <div id="game-mission-desc" class="game-mission-desc">¡Salta sobre las plataformas, esquiva a los slimes y junta las 3 piezas Lego!</div>
+          <div id="game-mission-desc" class="game-mission-desc">¡Salta sobre las plataformas, esquiva los obstáculos y junta las 3 piezas Lego!</div>
         </div>
 
         <div class="game-mission-hud">

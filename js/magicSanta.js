@@ -17,7 +17,6 @@
  * - Totalmente no intrusivo (pointer-events: none; z-index seguro).
  * - Botón de control global en cabecera con persistencia en localStorage.
  * - Respeta prefers-reduced-motion y pausa en segundo plano (visibilitychange).
- * - Compatible hacia atrás con cualquier llamada previa a magicVampireManager.
  */
 
 (function (global) {
@@ -91,14 +90,13 @@
 
     updateHeaderButtonUi() {
       if (typeof document === 'undefined') return;
-      const btn = document.getElementById('btn-global-santa-toggle') || document.getElementById('btn-global-vampire-toggle');
-      const icon = document.getElementById('global-santa-icon') || document.getElementById('global-vampire-icon');
-      const label = document.getElementById('global-santa-label') || document.getElementById('global-vampire-label');
+      const btn = document.getElementById('btn-global-santa-toggle');
+      const icon = document.getElementById('global-santa-icon');
+      const label = document.getElementById('global-santa-label');
 
       if (!btn) return;
 
       btn.classList.toggle('santa-active', this.enabled);
-      btn.classList.toggle('vampire-active', this.enabled);
       btn.setAttribute('aria-pressed', this.enabled ? 'true' : 'false');
 
       if (icon) {
@@ -131,7 +129,7 @@
       this.ensureOverlayContainer();
       this.updateHeaderButtonUi();
 
-      const btn = document.getElementById('btn-global-santa-toggle') || document.getElementById('btn-global-vampire-toggle');
+      const btn = document.getElementById('btn-global-santa-toggle');
       if (btn) {
         btn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -379,8 +377,6 @@
   // Exportar instancia global única
   const santaManagerInstance = new MagicSantaManager();
   global.magicSantaManager = santaManagerInstance;
-  // Alias de compatibilidad hacia atrás
-  global.magicVampireManager = santaManagerInstance;
 
   // Auto-inicializar al cargar el DOM
   if (typeof document !== 'undefined') {

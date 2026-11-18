@@ -60,9 +60,9 @@ const LEVEL_CONFIGS = {
     },
     {
       id: 4,
-      theme: 'halloween',
-      title: 'Desafío 4 (Jefe): Resta de Calabaza',
-      desc: '¿Cuánto es 16 - 7? ¡Esquiva al murciélago y toca la respuesta!',
+      theme: 'christmas',
+      title: 'Desafío 4 (Jefe): Resta de Regalos Navideños',
+      desc: '¿Cuánto es 16 - 7? ¡Esquiva el obstáculo volador y toca la respuesta!',
       type: 'math_choice',
       mathData: {
         question: '¿Cuánto es 16 - 7?',
@@ -75,7 +75,7 @@ const LEVEL_CONFIGS = {
         ]
       },
       obstacles: [
-        { x: 420, y: 190, w: 28, h: 20, minX: 350, maxX: 600, speed: 2.8, dir: 1, type: 'bat' }
+        { x: 420, y: 190, w: 28, h: 20, minX: 350, maxX: 600, speed: 2.8, dir: 1, type: 'snowbird' }
       ]
     },
     {
@@ -160,9 +160,9 @@ const LEVEL_CONFIGS = {
     },
     {
       id: 4,
-      theme: 'halloween',
-      title: 'Desafío 4 (Jefe): Multiplicación de Monstruos',
-      desc: '¿Cuánto es 4 × 5? ¡Cuidado con el murciélago de Halloween!',
+      theme: 'christmas',
+      title: 'Desafío 4 (Jefe): Multiplicación de Navidad',
+      desc: '¿Cuánto es 4 × 5? ¡Cuidado con el obstáculo invernal!',
       type: 'math_choice',
       mathData: {
         question: '¿Cuánto es 4 × 5?',
@@ -175,7 +175,7 @@ const LEVEL_CONFIGS = {
         ]
       },
       obstacles: [
-        { x: 400, y: 180, w: 28, h: 20, minX: 320, maxX: 580, speed: 3, dir: 1, type: 'bat' }
+        { x: 400, y: 180, w: 28, h: 20, minX: 320, maxX: 580, speed: 3, dir: 1, type: 'snowbird' }
       ]
     },
     {
@@ -252,9 +252,9 @@ const LEVEL_CONFIGS = {
     },
     {
       id: 4,
-      theme: 'halloween',
-      title: 'Desafío 4 (Jefe): División de Halloween',
-      desc: '¿Cuánto es 36 ÷ 4? ¡Esquiva a los enemigos y resuelve!',
+      theme: 'christmas',
+      title: 'Desafío 4 (Jefe): División de Navidad',
+      desc: '¿Cuánto es 36 ÷ 4? ¡Esquiva a los obstáculos y resuelve!',
       type: 'math_choice',
       mathData: {
         question: '¿Cuánto es 36 ÷ 4?',
@@ -267,7 +267,7 @@ const LEVEL_CONFIGS = {
         ]
       },
       obstacles: [
-        { x: 380, y: 190, w: 28, h: 20, minX: 300, maxX: 560, speed: 2.8, dir: 1, type: 'bat' }
+        { x: 380, y: 190, w: 28, h: 20, minX: 300, maxX: 560, speed: 2.8, dir: 1, type: 'snowbird' }
       ]
     },
     {
@@ -344,9 +344,9 @@ const LEVEL_CONFIGS = {
     },
     {
       id: 4,
-      theme: 'halloween',
+      theme: 'christmas',
       title: 'Desafío 4 (Jefe): Multiplicación Decimal',
-      desc: '¿Cuánto es 1.5 × 4? ¡Esquiva al murciélago y resuelve!',
+      desc: '¿Cuánto es 1.5 × 4? ¡Esquiva el obstáculo invernal y resuelve!',
       type: 'math_choice',
       mathData: {
         question: '¿Cuánto es 1.5 × 4?',
@@ -359,7 +359,7 @@ const LEVEL_CONFIGS = {
         ]
       },
       obstacles: [
-        { x: 360, y: 190, w: 28, h: 20, minX: 300, maxX: 560, speed: 3.2, dir: 1, type: 'bat' }
+        { x: 360, y: 190, w: 28, h: 20, minX: 300, maxX: 560, speed: 3.2, dir: 1, type: 'snowbird' }
       ]
     },
     {
@@ -424,7 +424,7 @@ const LEVEL_CONFIGS = {
     },
     {
       id: 3,
-      theme: 'halloween',
+      theme: 'christmas',
       title: 'Desafío 3: Dos Negativos se Suman',
       desc: '¿Cuánto es (-3) + (-5)? ¡Toca el bloque correspondiente!',
       type: 'math_choice',
@@ -456,7 +456,7 @@ const LEVEL_CONFIGS = {
         ]
       },
       obstacles: [
-        { x: 380, y: 190, w: 28, h: 20, minX: 320, maxX: 580, speed: 3.2, dir: 1, type: 'bat' }
+        { x: 380, y: 190, w: 28, h: 20, minX: 320, maxX: 580, speed: 3.2, dir: 1, type: 'snowbird' }
       ]
     },
     {
@@ -673,7 +673,7 @@ class MinecraftLegoGame {
     const counterEl = document.getElementById('game-level-counter');
 
     // Emoji de clima
-    const weatherIcons = { day: '☀️ Día', night: '🌙 Noche', rain: '🌧️ Lluvia', halloween: '🎃 Halloween' };
+    const weatherIcons = { day: '☀️ Día', night: '🌙 Noche', rain: '🌧️ Lluvia', christmas: '🎄 Navidad', halloween: '🎄 Navidad' };
     const weatherLabel = weatherIcons[this.theme] || '☀️ Día';
 
     if (titleEl) {
@@ -943,7 +943,7 @@ class MinecraftLegoGame {
 
     // 3. Obstáculos
     for (const obs of this.obstacles) {
-      if (obs.type === 'bat') {
+      if (obs.type === 'bat' || obs.type === 'snowbird') {
         this.renderBat(obs.x, obs.y, obs.w, obs.h);
       } else {
         this.renderSlime(obs.x, obs.y, obs.w, obs.h);
@@ -1071,22 +1071,33 @@ class MinecraftLegoGame {
       }
       ctx.stroke();
 
-    } else if (this.theme === 'halloween') {
-      // 🎃 HALLOWEEN (Cielo espeluznante morado/naranja)
-      const spookySky = ctx.createLinearGradient(0, 0, 0, this.height);
-      spookySky.addColorStop(0, '#2b0938');
-      spookySky.addColorStop(0.65, '#5c1048');
-      spookySky.addColorStop(1, '#bf360c');
-      ctx.fillStyle = spookySky;
+    } else if (this.theme === 'christmas' || this.theme === 'halloween') {
+      // 🎄 NAVIDAD (Cielo invernal azul profundo con aurora esmeralda y estrellas doradas)
+      const winterSky = ctx.createLinearGradient(0, 0, 0, this.height);
+      winterSky.addColorStop(0, '#071524');
+      winterSky.addColorStop(0.6, '#0d2842');
+      winterSky.addColorStop(1, '#144530');
+      ctx.fillStyle = winterSky;
       ctx.fillRect(0, 0, this.width, this.height);
 
-      // Luna de sangre cuadrada
-      ctx.fillStyle = '#ff7043';
+      // Estrellas doradas
+      ctx.fillStyle = '#fef08a';
+      for (const s of this.stars) {
+        const twinkle = Math.sin(Date.now() / 300 + s.twinkleOffset) * 0.35 + 0.65;
+        ctx.globalAlpha = twinkle;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1.0;
+
+      // Luna dorada navideña cuadrada
+      ctx.fillStyle = '#fde047';
       ctx.fillRect(730, 40, 60, 60);
-      ctx.fillStyle = '#ffab91';
+      ctx.fillStyle = '#fef9c3';
       ctx.fillRect(738, 48, 44, 44);
 
-      // Calabazas Jack-o'-lantern en el suelo
+      // Regalos navideños en el suelo
       this.renderPumpkin(140, 404);
       this.renderPumpkin(760, 324);
     }
@@ -1107,42 +1118,41 @@ class MinecraftLegoGame {
   renderPumpkin(x, y) {
     const ctx = this.ctx;
     ctx.save();
-    ctx.fillStyle = '#e65100'; // Naranja calabaza
+    // Caja de regalo navideña roja con cinta dorada
+    ctx.fillStyle = '#d42426';
     ctx.fillRect(x, y, 26, 26);
-    // Tallo
-    ctx.fillStyle = '#2e7d32';
-    ctx.fillRect(x + 11, y - 4, 4, 4);
-    // Ojos triangulares amarillos brillantes
-    ctx.fillStyle = '#ffeb3b';
-    ctx.fillRect(x + 5, y + 7, 4, 5);
-    ctx.fillRect(x + 17, y + 7, 4, 5);
-    // Boca
-    ctx.fillRect(x + 8, y + 17, 10, 4);
+    // Cinta dorada vertical y horizontal
+    ctx.fillStyle = '#ffd700';
+    ctx.fillRect(x + 10, y, 6, 26);
+    ctx.fillRect(x, y + 10, 26, 6);
+    // Moño superior dorado
+    ctx.fillRect(x + 6, y - 4, 14, 4);
     ctx.restore();
   }
 
   renderPlatform(plat) {
     const ctx = this.ctx;
+    const isFestive = (this.theme === 'christmas' || this.theme === 'halloween');
     if (plat.type === 'grass') {
-      ctx.fillStyle = this.theme === 'halloween' ? '#3e2723' : '#795548';
+      ctx.fillStyle = isFestive ? '#4e342e' : '#795548';
       ctx.fillRect(plat.x, plat.y, plat.w, plat.h);
 
-      ctx.fillStyle = this.theme === 'halloween' ? '#558b2f' : '#4caf50';
+      ctx.fillStyle = isFestive ? '#f8fafc' : '#4caf50';
       ctx.fillRect(plat.x, plat.y, plat.w, 14);
 
-      ctx.fillStyle = this.theme === 'halloween' ? '#33691e' : '#388e3c';
+      ctx.fillStyle = isFestive ? '#e2e8f0' : '#388e3c';
       for (let fx = plat.x; fx < plat.x + plat.w; fx += 16) {
         ctx.fillRect(fx, plat.y + 14, 8, 6);
       }
     } else if (plat.type === 'wood') {
       ctx.fillStyle = '#8d6e63';
       ctx.fillRect(plat.x, plat.y, plat.w, plat.h);
-      ctx.fillStyle = '#6d4c41';
+      ctx.fillStyle = isFestive ? '#f8fafc' : '#6d4c41';
       ctx.fillRect(plat.x, plat.y, plat.w, 6);
     } else if (plat.type === 'stone') {
-      ctx.fillStyle = this.theme === 'halloween' ? '#424242' : '#757575';
+      ctx.fillStyle = isFestive ? '#334155' : '#757575';
       ctx.fillRect(plat.x, plat.y, plat.w, plat.h);
-      ctx.fillStyle = '#9e9e9e';
+      ctx.fillStyle = isFestive ? '#f8fafc' : '#9e9e9e';
       ctx.fillRect(plat.x, plat.y, plat.w, 5);
     }
   }
@@ -1150,28 +1160,33 @@ class MinecraftLegoGame {
   renderSlime(x, y, w, h) {
     const ctx = this.ctx;
     ctx.save();
-    ctx.fillStyle = this.theme === 'halloween' ? '#e65100' : '#4caf50';
+    // Cubo de nieve / duende saltarín navideño
+    ctx.fillStyle = '#e2e8f0';
     ctx.fillRect(x, y, w, h);
-    ctx.fillStyle = this.theme === 'halloween' ? '#ffa726' : '#81c784';
+    ctx.fillStyle = '#ffffff';
     ctx.fillRect(x + 3, y + 3, w - 6, h - 6);
-    ctx.fillStyle = '#1b5e20';
+    // Gorrito rojo arriba
+    ctx.fillStyle = '#d42426';
+    ctx.fillRect(x + 2, y - 4, w - 4, 4);
+    ctx.fillStyle = '#0f172a';
     ctx.fillRect(x + 5, y + 7, 5, 5);
     ctx.fillRect(x + 16, y + 7, 5, 5);
-    ctx.fillRect(x + 10, y + 15, 6, 3);
+    ctx.fillStyle = '#f97316';
+    ctx.fillRect(x + 10, y + 14, 6, 4);
     ctx.restore();
   }
 
   renderBat(x, y, w, h) {
     const ctx = this.ctx;
     ctx.save();
-    ctx.fillStyle = '#212121';
+    // Ave invernal / estrella alada dorada y celeste
+    ctx.fillStyle = '#38bdf8';
     ctx.fillRect(x + 8, y + 4, 12, 12);
-    // Alas que aletean
     const wingOffset = Math.sin(Date.now() / 100) * 4;
+    ctx.fillStyle = '#bae6fd';
     ctx.fillRect(x, y + 6 + wingOffset, 8, 8);
     ctx.fillRect(x + 20, y + 6 + wingOffset, 8, 8);
-    // Ojos rojos
-    ctx.fillStyle = '#f44336';
+    ctx.fillStyle = '#fde047';
     ctx.fillRect(x + 10, y + 7, 2, 2);
     ctx.fillRect(x + 16, y + 7, 2, 2);
     ctx.restore();

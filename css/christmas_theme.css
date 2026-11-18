@@ -1,38 +1,41 @@
 /* ========================================================
    INFORMÁTICA MÁGICA — EDICIÓN ESPECIAL DE NAVIDAD 🎄⭐
+   Sistema de Diseño Unificado, Alto Contraste y Responsive
    Paleta Navideña:
-     #071524 (Noche invernal oscura), #0d2238 (Azul noche polar),
-     #d42426 (Rojo Navidad cálido), #ea3638 (Rojo festivo brillante),
-     #165b33 (Verde pino navideño), #228b4d (Verde abeto brillante),
-     #f8b229 (Dorado campana / Champagne), #ffd700 (Oro estrella),
-     #ffffff (Blanco nieve pura), #e0f2fe (Azul hielo escarchado)
+     #071524 (Noche invernal profunda)
+     #0d2238 (Azul noche polar)
+     #143352 (Azul escarcha elevado)
+     #d42426 / #ea3638 (Rojo Navidad cálido y brillante)
+     #165b33 / #228b4d (Verde pino y abeto brillante)
+     #f8b229 / #ffd700 (Dorado campana y oro estrella)
+     #ffffff / #f1f5f9 (Blanco nieve pura y texto nítido)
    ======================================================== */
 
 :root {
   /* Paleta Navideña Principal */
   --xmas-bg-dark: #071524;
-  --xmas-surface-dark: #0d2238;
-  --xmas-surface-elevated: #132e4c;
-  --xmas-surface-card: #0f263e;
+  --xmas-surface-dark: #0e253d;
+  --xmas-surface-elevated: #153556;
+  --xmas-surface-card: #122d4a;
   --xmas-red: #d42426;
-  --xmas-red-bright: #ea3638;
+  --xmas-red-bright: #ef4444;
   --xmas-red-glow: rgba(212, 36, 38, 0.45);
   --xmas-green: #165b33;
-  --xmas-green-bright: #228b4d;
-  --xmas-green-glow: rgba(22, 91, 51, 0.45);
+  --xmas-green-bright: #22c55e;
+  --xmas-green-glow: rgba(34, 197, 94, 0.42);
   --xmas-gold: #f8b229;
   --xmas-gold-bright: #ffd700;
-  --xmas-gold-glow: rgba(248, 178, 41, 0.45);
+  --xmas-gold-glow: rgba(255, 215, 0, 0.45);
   --xmas-snow: #ffffff;
   --xmas-ice: #e0f2fe;
   --xmas-text-light: #ffffff;
-  --xmas-text-muted: #cbd5e1;
-  --xmas-border-subtle: rgba(248, 178, 41, 0.28);
+  --xmas-text-muted: #dbeafe;
+  --xmas-border-subtle: rgba(248, 178, 41, 0.38);
   --xmas-glow-gold: 0 0 25px rgba(248, 178, 41, 0.45);
   --xmas-glow-red: 0 0 25px rgba(212, 36, 38, 0.45);
   --xmas-glow-green: 0 0 24px rgba(34, 139, 77, 0.42);
 
-  /* Compatibilidad con variables previas de tema */
+  /* Compatibilidad con variables previas */
   --hw-bg-dark: var(--xmas-bg-dark);
   --hw-surface-dark: var(--xmas-surface-dark);
   --hw-surface-elevated: var(--xmas-surface-elevated);
@@ -64,6 +67,7 @@ body {
   font-family: 'Fredoka', 'Quicksand', 'Comic Neue', system-ui, sans-serif !important;
   overflow-x: hidden;
   position: relative;
+  margin: 0;
 }
 
 /* Fondos invernales para todas las pantallas */
@@ -73,62 +77,51 @@ body {
 .grades-screen-wrapper,
 .game-screen-wrapper,
 .adventure-screen-wrapper {
-  background: radial-gradient(ellipse at 50% 12%, #143454 0%, #0d2238 50%, #071524 95%) !important;
+  background: radial-gradient(ellipse at 50% 10%, #15385c 0%, #0d2238 52%, #071524 95%) !important;
   color: var(--xmas-text-light) !important;
 }
 
 /* --------------------------------------------------------
-   2. NIEVE CAYENDO SUAVEMENTE (EFECTO AMBIENTAL)
+   2. NIEVE CAYENDO SUAVEMENTE (EFECTO AMBIENTAL SUTIL)
    -------------------------------------------------------- */
 .christmas-snow-layer {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background-image: 
-    radial-gradient(3px 3px at 20px 30px, #ffffff, rgba(255,255,255,0)),
-    radial-gradient(2px 2px at 80px 120px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
-    radial-gradient(3px 3px at 150px 70px, rgba(255,255,255,0.85), rgba(255,255,255,0)),
-    radial-gradient(2.5px 2.5px at 220px 180px, #ffffff, rgba(255,255,255,0)),
-    radial-gradient(3px 3px at 310px 90px, rgba(255,255,255,0.95), rgba(255,255,255,0)),
-    radial-gradient(2px 2px at 400px 150px, #ffffff, rgba(255,255,255,0)),
-    radial-gradient(3.5px 3.5px at 500px 50px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
-    radial-gradient(2px 2px at 600px 190px, #ffffff, rgba(255,255,255,0)),
-    radial-gradient(3px 3px at 720px 110px, rgba(255,255,255,0.85), rgba(255,255,255,0)),
-    radial-gradient(2.5px 2.5px at 850px 160px, #ffffff, rgba(255,255,255,0)),
-    radial-gradient(3px 3px at 980px 80px, rgba(255,255,255,0.9), rgba(255,255,255,0)),
-    radial-gradient(2px 2px at 1120px 140px, #ffffff, rgba(255,255,255,0));
+  pointer-events: none !important;
+  z-index: 9990;
+  background-image:
+    radial-gradient(3px 3px at 20px 30px, #ffffff, rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 80px 120px, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)),
+    radial-gradient(3px 3px at 150px 70px, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0)),
+    radial-gradient(2.5px 2.5px at 220px 180px, #ffffff, rgba(255, 255, 255, 0)),
+    radial-gradient(3px 3px at 310px 90px, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 400px 150px, #ffffff, rgba(255, 255, 255, 0)),
+    radial-gradient(3.5px 3.5px at 500px 50px, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)),
+    radial-gradient(2px 2px at 600px 190px, #ffffff, rgba(255, 255, 255, 0));
   background-size: 650px 650px;
-  animation: snowDrift 18s linear infinite;
-  opacity: 0.55;
+  animation: snowDrift 22s linear infinite;
+  opacity: 0.45;
 }
 
 @keyframes snowDrift {
   0% { transform: translateY(0) translateX(0); }
-  50% { transform: translateY(325px) translateX(15px); }
+  50% { transform: translateY(325px) translateX(12px); }
   100% { transform: translateY(650px) translateX(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .christmas-snow-layer {
-    animation: none !important;
-    opacity: 0.25;
-  }
 }
 
 /* --------------------------------------------------------
    3. CABECERA PRINCIPAL CON GUIRNALDA Y LUCES NAVIDEÑAS
    -------------------------------------------------------- */
 .app-header {
-  background: linear-gradient(135deg, #0d2238 0%, #071524 55%, #163628 100%) !important;
-  border-bottom: 3.5px solid var(--xmas-gold) !important;
-  box-shadow: 0 4px 20px rgba(212, 36, 38, 0.3), 0 0 18px rgba(248, 178, 41, 0.25) !important;
-  padding: 10px 24px !important;
+  background: linear-gradient(135deg, #0d2238 0%, #09192b 55%, #123326 100%) !important;
+  border-bottom: 3.5px solid var(--xmas-gold-bright) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 18px rgba(248, 178, 41, 0.25) !important;
+  padding: 12px 24px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   flex-wrap: wrap !important;
-  gap: 12px !important;
+  gap: 14px !important;
   position: relative !important;
   z-index: 1000 !important;
 }
@@ -141,45 +134,46 @@ body {
   left: 0;
   width: 100%;
   height: 6px;
-  background-image: radial-gradient(circle, #ea3638 35%, transparent 40%),
-                    radial-gradient(circle, #228b4d 35%, transparent 40%),
-                    radial-gradient(circle, #ffd700 35%, transparent 40%),
-                    radial-gradient(circle, #38bdf8 35%, transparent 40%);
-  background-size: 40px 6px;
-  background-position: 0 0, 10px 0, 20px 0, 30px 0;
+  background-image:
+    radial-gradient(circle, #ef4444 38%, transparent 45%),
+    radial-gradient(circle, #22c55e 38%, transparent 45%),
+    radial-gradient(circle, #ffd700 38%, transparent 45%),
+    radial-gradient(circle, #38bdf8 38%, transparent 45%);
+  background-size: 44px 6px;
+  background-position: 0 0, 11px 0, 22px 0, 33px 0;
   animation: fairyLights 2.4s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
 @keyframes fairyLights {
-  0% { opacity: 0.6; filter: drop-shadow(0 0 3px #ea3638); }
-  50% { opacity: 0.95; filter: drop-shadow(0 0 6px #ffd700); }
-  100% { opacity: 0.7; filter: drop-shadow(0 0 4px #228b4d); }
+  0% { opacity: 0.7; filter: drop-shadow(0 0 3px #ef4444); }
+  50% { opacity: 1; filter: drop-shadow(0 0 6px #ffd700); }
+  100% { opacity: 0.8; filter: drop-shadow(0 0 4px #22c55e); }
 }
 
 .school-logo-badge {
-  background: rgba(255, 255, 255, 0.96) !important;
-  border: 2px solid var(--xmas-gold) !important;
-  box-shadow: 0 0 14px rgba(248, 178, 41, 0.45) !important;
+  background: #ffffff !important;
+  border: 2.5px solid var(--xmas-gold-bright) !important;
+  box-shadow: 0 0 14px rgba(248, 178, 41, 0.5) !important;
 }
 
 .brand-title {
-  font-size: 1.85rem !important;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem) !important;
   font-weight: 800 !important;
-  color: var(--xmas-text-light) !important;
-  text-shadow: 0 0 14px rgba(248, 178, 41, 0.75), 0 2px 5px rgba(0, 0, 0, 0.8) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 14px rgba(248, 178, 41, 0.65), 0 2px 5px rgba(0, 0, 0, 0.85) !important;
   letter-spacing: 0.8px !important;
 }
 
 .brand-subtitle {
-  background: rgba(212, 36, 38, 0.25) !important;
-  border: 1px solid var(--xmas-red-bright) !important;
-  color: #ffcdd2 !important;
-  font-weight: 700 !important;
-  font-size: 0.92rem !important;
-  box-shadow: 0 0 10px rgba(212, 36, 38, 0.35) !important;
-  border-radius: 12px !important;
-  padding: 4px 10px !important;
+  background: linear-gradient(90deg, rgba(212, 36, 38, 0.85), rgba(185, 28, 28, 0.85)) !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 2px 10px rgba(212, 36, 38, 0.4) !important;
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
 }
 
 /* --------------------------------------------------------
@@ -188,111 +182,117 @@ body {
 .header-global-controls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Botón Global de Sonido Navideño */
-.btn-sound-toggle {
-  background: rgba(13, 34, 56, 0.88);
-  border: 2px solid rgba(248, 178, 41, 0.5);
-  color: var(--xmas-text-muted);
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-family: inherit;
-  font-size: 0.88rem;
-  font-weight: 800;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  letter-spacing: 0.5px;
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-}
-
-.btn-sound-toggle:hover {
-  transform: translateY(-2px);
-  border-color: var(--xmas-gold);
-  color: #ffffff;
-  box-shadow: 0 0 16px rgba(248, 178, 41, 0.45);
-}
-
-.btn-sound-toggle.sound-active {
-  background: linear-gradient(135deg, rgba(212, 36, 38, 0.95), rgba(22, 91, 51, 0.92));
-  border-color: var(--xmas-gold-bright);
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(248, 178, 41, 0.55), 0 0 10px rgba(212, 36, 38, 0.5);
-}
-
-/* Botón Global de Papá Noel (compatible con selector vampiro previo) */
+.btn-sound-toggle,
 .btn-santa-toggle,
 .btn-vampire-toggle {
-  background: rgba(13, 34, 56, 0.88);
-  border: 2px solid rgba(22, 91, 51, 0.6);
-  color: var(--xmas-text-muted);
+  background: rgba(15, 38, 62, 0.95);
+  border: 2px solid rgba(248, 178, 41, 0.65);
+  color: #f1f5f9;
   padding: 8px 16px;
-  border-radius: 24px;
+  border-radius: 999px;
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  letter-spacing: 0.5px;
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.4px;
+  transition: all 0.22s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
+.btn-sound-toggle:hover,
 .btn-santa-toggle:hover,
 .btn-vampire-toggle:hover {
   transform: translateY(-2px);
-  border-color: var(--xmas-green-bright);
+  border-color: #ffd700;
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(34, 139, 77, 0.45);
+  box-shadow: 0 0 16px rgba(248, 178, 41, 0.55);
+}
+
+.btn-sound-toggle.sound-active {
+  background: linear-gradient(135deg, #d42426 0%, #991b1b 100%);
+  border-color: #ffd700;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(212, 36, 38, 0.55), 0 0 8px rgba(255, 215, 0, 0.4);
 }
 
 .btn-santa-toggle.santa-active,
 .btn-vampire-toggle.vampire-active {
-  background: linear-gradient(135deg, rgba(22, 91, 51, 0.92), rgba(212, 36, 38, 0.95));
-  border-color: var(--xmas-gold-bright);
+  background: linear-gradient(135deg, #165b33 0%, #15803d 100%);
+  border-color: #ffd700;
   color: #ffffff;
-  box-shadow: 0 0 18px rgba(212, 36, 38, 0.55), 0 0 10px rgba(34, 139, 77, 0.45);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.5), 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.sound-icon,
+.vampire-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.sound-label,
+.vampire-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.4px;
+}
+
+#btn-home-from-editor {
+  background: #132e4c !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: 0 0 10px rgba(248, 178, 41, 0.35) !important;
+  border-radius: 20px !important;
+  font-weight: 800 !important;
+  transition: all 0.2s ease !important;
+}
+
+#btn-home-from-editor:hover {
+  transform: translateY(-2px) !important;
+  background: #1e4268 !important;
+  box-shadow: 0 0 16px rgba(248, 178, 41, 0.6) !important;
 }
 
 /* --------------------------------------------------------
-   5. PORTADA Y ESCENARIO PRINCIPAL HERO DE NAVIDAD
+   5. PORTADA Y ESCENARIO PRINCIPAL HERO DE NAVIDAD (#screen-home)
    -------------------------------------------------------- */
 .home-screen-wrapper {
   position: relative;
   overflow: hidden;
-  padding: 30px 20px 60px 20px !important;
+  padding: 28px 20px 64px 20px !important;
   min-height: calc(100vh - 78px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .magic-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: none !important;
   z-index: 1;
   overflow: hidden;
 }
 
-/* Gran Estrella Polar Navideña (reemplaza la luna tenebrosa) */
+/* Gran Estrella Polar Navideña (discreta en esquina superior derecha, sin tapar tarjetas) */
 .magic-moon-wrap {
   position: absolute;
-  top: 25px;
-  right: 8%;
-  width: 150px;
-  height: 150px;
-  z-index: 2;
+  top: 22px;
+  right: 5%;
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  opacity: 0.82;
+  pointer-events: none !important;
   animation: starShimmer 5s ease-in-out infinite alternate;
 }
 
@@ -301,7 +301,7 @@ body {
   height: 100%;
   border-radius: 50%;
   background: radial-gradient(circle at 45% 45%, #ffffff 0%, #fffbeb 40%, #fef08a 70%, #f59e0b 100%) !important;
-  box-shadow: 0 0 50px rgba(254, 240, 138, 0.65), 0 0 100px rgba(248, 178, 41, 0.45) !important;
+  box-shadow: 0 0 45px rgba(254, 240, 138, 0.6), 0 0 90px rgba(248, 178, 41, 0.4) !important;
   position: relative;
 }
 
@@ -311,8 +311,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
-  filter: drop-shadow(0 0 15px #ffd700);
+  font-size: 3.2rem;
+  filter: drop-shadow(0 0 12px #ffd700);
 }
 
 .moon-crater {
@@ -320,393 +320,1182 @@ body {
 }
 
 @keyframes starShimmer {
-  0% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 20px rgba(254, 240, 138, 0.4)); }
-  100% { transform: scale(1.06) translateY(-4px); filter: drop-shadow(0 0 40px rgba(254, 240, 138, 0.8)); }
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.05) translateY(-4px); }
 }
 
-/* Aldea Navideña y Pinos Nevados (reemplaza el castillo encantado) */
+/* Silueta de Aldea Navideña al pie de la pantalla */
 .magic-castle-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 380px;
-  z-index: 2;
-  opacity: 0.85;
+  height: 320px;
+  z-index: 1;
+  opacity: 0.45;
+  pointer-events: none !important;
 }
 
 .magic-castle-svg {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
-/* Quitar telarañas, murciélagos y niebla siniestra */
+/* Ocultar cualquier decoración flotante invasiva o resto de Halloween */
 .magic-corner-web,
 .magic-bat-flying,
+.magic-flying-bat,
+.magic-floating-ghost,
 .magic-ghost-wrap,
+.magic-tech-glyph,
+.magic-peeking-monster,
 .halloween-web,
-.magic-ground-fog {
-  display: none !important;
-}
-
-/* Título de bienvenida de Navidad */
-.magic-hero-subtitle {
-  color: #ffd700 !important;
-  font-size: 1.55rem !important;
-  font-weight: 900 !important;
-  text-shadow: 0 0 14px rgba(248, 178, 41, 0.65), 0 2px 4px rgba(0, 0, 0, 0.8) !important;
-  margin-bottom: 8px !important;
-  text-align: center;
-}
-
-.magic-hero-desc {
-  color: #e2e8f0 !important;
-  font-size: 1.05rem !important;
-  max-width: 680px !important;
-  text-align: center;
-  margin: 0 auto 24px !important;
-}
-
-/* --------------------------------------------------------
-   6. BANNER DESTACADO DE NAVIDAD: BITY EN SU MISIÓN NAVIDEÑA
-   -------------------------------------------------------- */
-.hero-halloween-banner,
-.hero-christmas-banner {
-  background: linear-gradient(135deg, rgba(13, 34, 56, 0.92) 0%, rgba(22, 91, 51, 0.88) 50%, rgba(212, 36, 38, 0.85) 100%) !important;
-  border: 2.5px solid var(--xmas-gold) !important;
-  box-shadow: 0 10px 32px rgba(248, 178, 41, 0.35), 0 0 20px rgba(212, 36, 38, 0.3) !important;
-  border-radius: 24px !important;
-  position: relative;
-  z-index: 5;
-  overflow: hidden;
-}
-
-.hero-halloween-banner::before,
-.hero-christmas-banner::before {
-  content: "❄️ 🎄 ⭐ 🎁 ❄️";
-  position: absolute;
-  top: 8px;
-  right: 18px;
-  font-size: 1.2rem;
-  letter-spacing: 8px;
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.h-banner-tag-badge {
-  background: linear-gradient(90deg, #ea3638, #d42426) !important;
-  border: 1px solid #ffd700 !important;
-  color: #ffffff !important;
-  font-weight: 900 !important;
-  box-shadow: 0 0 12px rgba(212, 36, 38, 0.5) !important;
-}
-
-.h-banner-title {
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 16px rgba(248, 178, 41, 0.5) !important;
-}
-
-.btn-banner-cta {
-  background: linear-gradient(135deg, #f8b229, #ffd700) !important;
-  color: #071524 !important;
-  font-weight: 900 !important;
-  border: 2px solid #ffffff !important;
-  box-shadow: 0 4px 16px rgba(248, 178, 41, 0.6) !important;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-
-.btn-banner-cta:hover {
-  transform: translateY(-3px) scale(1.02) !important;
-  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.8) !important;
-}
-
-/* --------------------------------------------------------
-   7. TARJETAS DE MÓDULOS EN EL HOME (PORTALES FESTIVOS)
-   -------------------------------------------------------- */
-.module-card,
-.choice-card {
-  background: linear-gradient(180deg, rgba(13, 34, 56, 0.94) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
-  border: 2px solid rgba(248, 178, 41, 0.35) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 14px rgba(248, 178, 41, 0.15) !important;
-  border-radius: 22px !important;
-  position: relative !important;
-  transition: all 0.28s ease !important;
-}
-
-.module-card:hover,
-.choice-card:hover {
-  transform: translateY(-6px) !important;
-  border-color: var(--xmas-gold) !important;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 25px rgba(248, 178, 41, 0.45) !important;
-}
-
-/* Gorro / copo de nieve decorativo en la esquina superior */
-.module-card::before,
-.choice-card::before {
-  content: "🎄";
-  position: absolute;
-  top: -12px;
-  right: 14px;
-  font-size: 1.4rem;
-  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
-  z-index: 10;
-}
-
-/* Colores temáticos por tarjeta */
-#btn-choice-coding::before { content: "⭐"; }
-#btn-choice-bity::before { content: "🎅"; }
-#btn-choice-game::before { content: "🎁"; }
-#btn-choice-lego::before { content: "🔔"; }
-
-.module-card-title,
-.choice-card-title {
-  color: #ffd700 !important;
-  font-weight: 900 !important;
-}
-
-.module-card-desc,
-.choice-card-desc {
-  color: #e2e8f0 !important;
-}
-
-/* --------------------------------------------------------
-   8. PANTALLA DE SELECCIÓN DE GRADOS Y TEMARIO (PROGRAMACIÓN)
-   -------------------------------------------------------- */
-.coding-grade-card {
-  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
-  border: 2px solid rgba(34, 139, 77, 0.45) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-  transition: all 0.25s ease !important;
-}
-
-.coding-grade-card:hover {
-  transform: translateY(-5px) !important;
-  border-color: var(--xmas-gold) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(248, 178, 41, 0.4) !important;
-}
-
-.coding-grade-badge {
-  background: linear-gradient(135deg, #165b33, #228b4d) !important;
-  color: #ffffff !important;
-  border: 1px solid #ffd700 !important;
-}
-
-.coding-topic-card,
-.topic-card {
-  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
-  border: 2px solid rgba(248, 178, 41, 0.35) !important;
-  border-radius: 20px !important;
-  transition: all 0.25s ease !important;
-}
-
-.coding-topic-card:hover,
-.topic-card:hover {
-  transform: translateY(-5px) !important;
-  border-color: var(--xmas-gold-bright) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 22px rgba(248, 178, 41, 0.45) !important;
-}
-
-/* Tarjeta especial del módulo Algoritmos */
-.topic-card-algorithms {
-  border-color: #ffd700 !important;
-  background: linear-gradient(180deg, rgba(22, 91, 51, 0.25) 0%, rgba(13, 34, 56, 0.95) 100%) !important;
-  box-shadow: 0 0 22px rgba(248, 178, 41, 0.35) !important;
-}
-
-/* --------------------------------------------------------
-   9. BITTYBLOCKLY: MISIÓN ESPACIAL NAVIDEÑA
-   -------------------------------------------------------- */
-.cover-halloween-badge {
-  background: linear-gradient(90deg, #d42426, #165b33) !important;
-  border: 1px solid #ffd700 !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 14px rgba(248, 178, 41, 0.45) !important;
-}
-
-.concept-halloween-badge {
-  background: linear-gradient(90deg, #165b33, #d42426) !important;
-  border: 1px solid #ffd700 !important;
-  color: #ffffff !important;
-}
-
-.h-grade-card {
-  background: linear-gradient(180deg, rgba(13, 34, 56, 0.92) 0%, rgba(7, 21, 36, 0.98) 100%) !important;
-  border: 2px solid rgba(248, 178, 41, 0.4) !important;
-}
-
-.h-grade-card:hover {
-  border-color: #ffd700 !important;
-  box-shadow: 0 0 20px rgba(248, 178, 41, 0.45) !important;
-}
-
-/* --------------------------------------------------------
-   10. MODALES, CELEBRACIONES Y PREMIOS NAVIDEÑOS
-   -------------------------------------------------------- */
-.final-celebration-card {
-  background: linear-gradient(180deg, rgba(13, 34, 56, 0.96) 0%, rgba(22, 91, 51, 0.92) 50%, rgba(7, 21, 36, 0.98) 100%) !important;
-  border: 3px solid #ffd700 !important;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(248, 178, 41, 0.5) !important;
-  border-radius: 26px !important;
-  color: #ffffff !important;
-}
-
-.celebration-title {
-  color: #ffd700 !important;
-  font-size: 1.85rem !important;
-  font-weight: 900 !important;
-  text-shadow: 0 0 16px rgba(248, 178, 41, 0.7), 0 2px 6px rgba(0,0,0,0.8) !important;
-}
-
-.celebration-confetti {
-  font-size: 1.6rem !important;
-  letter-spacing: 10px !important;
-  margin-bottom: 12px !important;
-  animation: confettiBounce 2s ease-in-out infinite alternate;
-}
-
-@keyframes confettiBounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-6px); }
-}
-
-.celebration-summary-box {
-  background: rgba(13, 34, 56, 0.75) !important;
-  border: 1.5px solid rgba(248, 178, 41, 0.4) !important;
-  border-radius: 18px !important;
-  padding: 18px 22px !important;
-}
-
-.celebration-summary-box h4 {
-  color: #ffd700 !important;
-  margin-top: 0 !important;
-}
-
-.celebration-summary-box li {
-  color: #f1f5f9 !important;
-  margin-bottom: 6px !important;
-}
-
-/* --------------------------------------------------------
-   11. ANIMACIÓN DE PAPÁ NOEL EN SU TRINEO
-   -------------------------------------------------------- */
-.santa-flight-wrapper {
-  position: fixed;
-  top: 15px;
-  left: 0;
-  width: 100vw;
-  height: 180px;
-  pointer-events: none;
-  z-index: 99998;
-  overflow: visible;
-}
-
-.santa-flight-container {
-  position: absolute;
-  top: 10px;
-  left: -480px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-
-.santa-speech-bubble {
-  background: rgba(255, 255, 255, 0.96);
-  border: 2.5px solid var(--xmas-red);
-  color: #071524;
-  font-size: 0.95rem;
-  font-weight: 800;
-  padding: 10px 18px;
-  border-radius: 20px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.35), 0 0 12px rgba(248, 178, 41, 0.5);
-  white-space: nowrap;
-  position: relative;
-  animation: bubbleWobble 2s ease-in-out infinite alternate;
-}
-
-.santa-speech-bubble::after {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-width: 8px 0 8px 10px;
-  border-style: solid;
-  border-color: transparent transparent transparent rgba(255, 255, 255, 0.96);
-}
-
-@keyframes bubbleWobble {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-4px) rotate(1deg); }
-}
-
-.santa-sleigh-svg {
-  width: 320px;
-  height: 110px;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
-}
-
-.rudolph-nose {
-  animation: rudolphGlow 1.2s ease-in-out infinite alternate;
-}
-
-@keyframes rudolphGlow {
-  0% { fill: #ea3638; filter: drop-shadow(0 0 3px #ea3638); }
-  100% { fill: #ff1100; filter: drop-shadow(0 0 12px #ff1100); }
-}
-
-/* --------------------------------------------------------
-   12. BOTONES GLOBALES DE ACCIÓN
-   -------------------------------------------------------- */
-.btn-primary,
-.btn-alg-continue,
-.btn-alg-finish {
-  background: linear-gradient(135deg, #165b33 0%, #228b4d 100%) !important;
-  color: #ffffff !important;
-  border: 2px solid #ffd700 !important;
-  box-shadow: 0 4px 14px rgba(22, 91, 51, 0.45) !important;
-  font-weight: 800 !important;
-  border-radius: 14px !important;
-  transition: all 0.2s ease !important;
-}
-
-.btn-primary:hover,
-.btn-alg-continue:hover,
-.btn-alg-finish:hover {
-  background: linear-gradient(135deg, #228b4d 0%, #165b33 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(248, 178, 41, 0.6) !important;
-}
-
-.btn-secondary,
-.btn-alg-back,
-.btn-block-back,
-.btn-everyday-reset {
-  background: linear-gradient(180deg, #132e4c, #0d2238) !important;
-  border: 1.5px solid rgba(248, 178, 41, 0.45) !important;
-  color: #f8fafc !important;
-  font-weight: 800 !important;
-  border-radius: 14px !important;
-  transition: all 0.2s ease !important;
-}
-
-.btn-secondary:hover,
-.btn-alg-back:hover,
-.btn-block-back:hover,
-.btn-everyday-reset:hover {
-  border-color: #ffd700 !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 0 14px rgba(248, 178, 41, 0.35) !important;
-}
-
-/* Ocultar cualquier elemento remanente de Halloween */
+.magic-ground-fog,
+.h-banner-bat,
 .halloween-pumpkin,
 .halloween-ghost,
 .halloween-bat,
 .halloween-spider {
   display: none !important;
+}
+
+/* Encabezado Hero Central de la Portada */
+.magic-hero-header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto 26px auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.magic-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(22, 91, 51, 0.92), rgba(212, 36, 38, 0.92));
+  border: 2px solid #ffd700;
+  color: #ffffff;
+  padding: 7px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 16px rgba(248, 178, 41, 0.35);
+}
+
+.pill-sparkle {
+  color: #ffd700;
+  display: inline-block;
+}
+
+.magic-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px 0;
+  line-height: 1.12;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.9),
+    0 0 22px rgba(248, 178, 41, 0.65),
+    0 0 40px rgba(212, 36, 38, 0.45);
+}
+
+.magic-hero-subtitle {
+  color: #ffd700 !important;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem) !important;
+  font-weight: 800 !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85) !important;
+  margin: 0 auto 12px auto !important;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.magic-hero-invitation {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.55;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* --------------------------------------------------------
+   6. BANNER DESTACADO DE NAVIDAD: BITYBLOCKLY EN EL HOME
+   -------------------------------------------------------- */
+.hero-halloween-banner,
+.hero-christmas-banner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto 32px auto;
+  padding: 28px 36px;
+  border-radius: 26px !important;
+  background: linear-gradient(135deg, #102a45 0%, #144930 52%, #59161b 100%) !important;
+  border: 3px solid #ffd700 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(248, 178, 41, 0.32) !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.h-banner-backdrop-effects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.h-banner-star {
+  position: absolute;
+  color: #fde047;
+  font-size: 1.1rem;
+  opacity: 0.75;
+}
+
+.star-b-1 { top: 14%; left: 6%; }
+.star-b-2 { top: 18%; right: 28%; }
+.star-b-3 { bottom: 16%; left: 38%; }
+.star-b-4 { top: 68%; right: 8%; }
+
+.h-banner-glow-orb {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(34, 197, 94, 0.12) 50%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.h-banner-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.h-banner-content {
+  flex: 1 1 64%;
+  min-width: 0;
+  text-align: left;
+}
+
+.h-banner-tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.h-banner-tag-badge {
+  background: linear-gradient(90deg, #d42426, #b91c1c) !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffffff !important;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 900 !important;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(212, 36, 38, 0.5) !important;
+}
+
+.h-banner-tag-sub {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid #4ade80;
+  color: #bbf7d0;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.h-banner-title {
+  margin: 0 0 6px 0;
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75) !important;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+}
+
+.h-banner-subtitle {
+  margin: 0 0 12px 0;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 800;
+  color: #ffd700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.4px;
+}
+
+.h-banner-desc {
+  margin: 0 0 20px 0;
+  font-size: 1.04rem;
+  line-height: 1.55;
+  color: #f8fafc;
+  max-width: 650px;
+  font-weight: 500;
+}
+
+.h-banner-action-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.btn-banner-cta {
+  background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%) !important;
+  color: #071524 !important;
+  border: 2.5px solid #ffffff !important;
+  font-family: inherit;
+  font-size: 1.12rem;
+  font-weight: 900 !important;
+  padding: 14px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 215, 0, 0.55) !important;
+  transition: all 0.22s ease !important;
+}
+
+.btn-banner-cta:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 28px rgba(255, 215, 0, 0.85) !important;
+}
+
+.btn-cta-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.btn-cta-arrow {
+  font-size: 1.15rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-banner-cta:hover .btn-cta-arrow {
+  transform: translateX(4px);
+}
+
+.h-banner-features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.h-feat-pill {
+  background: rgba(7, 21, 36, 0.82);
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  color: #f8fafc;
+  font-size: 0.84rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+/* Columna Derecha de Ilustración de Bity en el Banner */
+.h-banner-visual {
+  flex: 0 0 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.h-bitty-space-pod {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-banner-moon {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(224, 242, 254, 0.8) 55%, rgba(56, 189, 248, 0.35) 100%);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.55), 0 0 70px rgba(255, 215, 0, 0.35);
+  z-index: 1;
+}
+
+.moon-spot {
+  display: none;
+}
+
+.h-bitty-figure-wrapper {
+  position: relative;
+  z-index: 3;
+  animation: bittySpaceFloat 3.8s ease-in-out infinite alternate;
+}
+
+.h-bitty-svg {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.55));
+}
+
+@keyframes bittySpaceFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.h-floating-mini-item {
+  position: absolute;
+  z-index: 4;
+  font-size: 1.45rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  animation: miniItemFloat 3.2s ease-in-out infinite alternate;
+}
+
+.item-pumpkin { top: 8px; right: 8px; animation-delay: 0.3s; }
+.item-ghost { bottom: 12px; left: 8px; animation-delay: 1.2s; }
+.item-crystal { top: 55px; left: -6px; animation-delay: 2s; font-size: 1.2rem; }
+
+@keyframes miniItemFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-3px, -7px) scale(1.08); }
+}
+
+/* --------------------------------------------------------
+   7. GRILLA DE LOS 4 MÓDULOS EN EL HOME (ALTO CONTRASTE Y PROPORCIÓN UNIFORME)
+   -------------------------------------------------------- */
+.magic-portals-grid {
+  position: relative;
+  z-index: 10;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 22px !important;
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.magic-portal {
+  background: linear-gradient(180deg, #153556 0%, #0d233a 100%) !important;
+  border-radius: 24px !important;
+  padding: 24px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: center !important;
+  border: 3px solid var(--portal-border, #ffd700) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 390px !important;
+  box-sizing: border-box !important;
+}
+
+.magic-portal:hover:not(.portal-disabled) {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.65), 0 0 26px var(--portal-glow, rgba(255, 215, 0, 0.45)) !important;
+}
+
+/* A. Tarjeta Activa: Módulo de Programación (Verde Abeto Navideño + Dorado) */
+.portal-coding {
+  --portal-border: #4ade80;
+  --portal-glow: rgba(74, 222, 128, 0.45);
+  --portal-accent: #fde047;
+  background: linear-gradient(180deg, #164e35 0%, #0f3524 55%, #0b241a 100%) !important;
+  border-color: #4ade80 !important;
+}
+
+.portal-coding .portal-badge {
+  background: rgba(22, 163, 74, 0.35) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #86efac !important;
+}
+
+.portal-coding .portal-btn {
+  background: linear-gradient(180deg, #22c55e 0%, #15803d 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #fde047 !important;
+  box-shadow: 0 5px 15px rgba(22, 163, 74, 0.5) !important;
+}
+
+.portal-coding .portal-btn:hover {
+  background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%) !important;
+}
+
+/* B. Tarjeta Activa: Desafío Final Instrucciones (Rojo Navidad + Dorado) */
+.portal-adventure {
+  --portal-border: #ffd700;
+  --portal-glow: rgba(248, 178, 41, 0.5);
+  --portal-accent: #fde047;
+  background: linear-gradient(180deg, #6b1823 0%, #471018 55%, #2c0a10 100%) !important;
+  border-color: #ffd700 !important;
+}
+
+.portal-adventure .portal-badge {
+  background: rgba(212, 36, 38, 0.45) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+}
+
+.portal-adventure .portal-subtag {
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  color: #071524 !important;
+  background: #ffd700 !important;
+  padding: 3px 12px !important;
+  border-radius: 999px !important;
+  margin-bottom: 8px !important;
+}
+
+.portal-adventure .portal-btn {
+  background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd700 !important;
+  box-shadow: 0 5px 15px rgba(212, 36, 38, 0.5) !important;
+}
+
+.portal-adventure .portal-btn:hover {
+  background: linear-gradient(180deg, #f87171 0%, #dc2626 100%) !important;
+}
+
+/* C. Tarjetas Jugar y Aprender / Taller de Diseño */
+.portal-play {
+  --portal-border: #38bdf8;
+  --portal-glow: rgba(56, 189, 248, 0.4);
+  --portal-accent: #7dd3fc;
+}
+
+.portal-editor {
+  --portal-border: #f59e0b;
+  --portal-glow: rgba(245, 158, 11, 0.4);
+  --portal-accent: #fde047;
+}
+
+/* D. Estado NO DISPONIBLE (Contraste claro, ordenado y legible) */
+.magic-portal.portal-disabled {
+  background: linear-gradient(180deg, #172d44 0%, #0f1e2e 100%) !important;
+  border: 2.5px solid rgba(148, 163, 184, 0.45) !important;
+  cursor: not-allowed !important;
+  opacity: 0.92 !important;
+  filter: none !important;
+}
+
+.magic-portal.portal-disabled:hover {
+  transform: none !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55) !important;
+}
+
+.portal-disabled-badge {
+  background: rgba(239, 68, 68, 0.25) !important;
+  color: #fecaca !important;
+  border: 1.5px solid rgba(248, 113, 113, 0.65) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.6px !important;
+}
+
+/* Elementos internos de cada tarjeta de módulo */
+.portal-badge {
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 10px !important;
+  display: inline-block !important;
+}
+
+.portal-illustration-box {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 12px 0;
+  position: relative;
+  background: rgba(7, 21, 36, 0.45);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.portal-art-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.portal-icon-main {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  transition: transform 0.25s ease;
+}
+
+.magic-portal:hover:not(.portal-disabled) .portal-icon-main {
+  transform: scale(1.12);
+}
+
+.portal-sparkle {
+  font-size: 1.35rem;
+}
+
+.portal-code-rune {
+  position: absolute;
+  bottom: -6px;
+  right: -12px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #071524;
+  border: 1px solid #ffd700;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.portal-title {
+  font-size: 1.32rem !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  margin: 0 0 6px 0 !important;
+  letter-spacing: 0.4px !important;
+  line-height: 1.22 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.65) !important;
+}
+
+.portal-subtitle {
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  color: var(--portal-accent, #ffd700) !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.portal-desc {
+  font-size: 0.94rem !important;
+  color: #f1f5f9 !important;
+  line-height: 1.5 !important;
+  margin: 0 0 18px 0 !important;
+  flex: 1 !important;
+  font-weight: 500 !important;
+}
+
+.portal-btn {
+  width: 100% !important;
+  padding: 13px 18px !important;
+  font-size: 1.02rem !important;
+  font-weight: 900 !important;
+  border-radius: 16px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: auto !important;
+  box-sizing: border-box !important;
+}
+
+.portal-btn.btn-disabled {
+  background: rgba(30, 41, 59, 0.85) !important;
+  color: #cbd5e1 !important;
+  border: 1.5px solid rgba(148, 163, 184, 0.4) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------
+   8. PANTALLAS DE PROGRAMACIÓN Y TEMARIO (ALTO CONTRASTE NAVIDEÑO)
+   -------------------------------------------------------- */
+.coding-header-box .coding-main-title,
+.grades-main-title {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75), 0 0 18px rgba(248, 178, 41, 0.45) !important;
+}
+
+.coding-header-box .coding-subtitle,
+.grades-subtitle {
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+}
+
+.session-management-bar {
+  background: linear-gradient(135deg, #102a45, #0c1f35) !important;
+  border: 2px dashed #ffd700 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45) !important;
+  color: #ffffff !important;
+}
+
+.session-title {
+  color: #ffd700 !important;
+  font-weight: 800 !important;
+}
+
+.session-desc {
+  color: #e2e8f0 !important;
+}
+
+.btn-session-reset {
+  background: linear-gradient(180deg, #d42426, #991b1b) !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(212, 36, 38, 0.4) !important;
+}
+
+/* Tarjetas de Selección de Grado (.coding-grade-card y .grade-card) */
+.coding-grade-card,
+.grade-card {
+  background: linear-gradient(180deg, #143352 0%, #0c2036 100%) !important;
+  border: 2.5px solid rgba(248, 178, 41, 0.55) !important;
+  border-radius: 22px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.25s ease !important;
+}
+
+.coding-grade-card:hover,
+.grade-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 22px rgba(248, 178, 41, 0.45) !important;
+}
+
+.coding-grade-card .coding-grade-badge,
+.grade-card .grade-badge-level {
+  background: linear-gradient(135deg, #165b33, #228b4d) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+  font-weight: 800 !important;
+}
+
+.coding-grade-card .coding-grade-title,
+.grade-card .grade-title {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+.coding-grade-card .coding-grade-desc,
+.grade-card .grade-desc {
+  color: #e2e8f0 !important;
+}
+
+.coding-grade-card .btn-select-coding-grade,
+.grade-card .btn-select-grade {
+  background: linear-gradient(180deg, #22c55e, #15803d) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4) !important;
+}
+
+.btn-back-to-home,
+#btn-back-to-home-from-grades {
+  background: #132e4c !important;
+  border: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn-back-to-home:hover,
+#btn-back-to-home-from-grades:hover {
+  background: #1c426b !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Temario / Syllabus (#screen-coding-syllabus) */
+.syllabus-container {
+  background: linear-gradient(180deg, #102a45 0%, #091a2c 100%) !important;
+  border: 3px solid #ffd700 !important;
+  border-radius: 26px !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.65) !important;
+  color: #ffffff !important;
+}
+
+.syllabus-top-info {
+  background: #071524 !important;
+  border: 2px solid rgba(248, 178, 41, 0.5) !important;
+  border-radius: 18px !important;
+  padding: 10px 18px !important;
+}
+
+.syllabus-grade-badge {
+  background: rgba(22, 91, 51, 0.55) !important;
+  border: 1.5px solid #4ade80 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.syllabus-score-badge {
+  background: rgba(212, 36, 38, 0.45) !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffd700 !important;
+  font-weight: 900 !important;
+}
+
+.btn-hud-back {
+  background: #132e4c !important;
+  border: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+  font-weight: 800 !important;
+}
+
+.btn-hud-back:hover {
+  background: #1e4570 !important;
+}
+
+.syllabus-container h3 {
+  color: #ffd700 !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7) !important;
+}
+
+.syllabus-container p {
+  color: #e2e8f0 !important;
+}
+
+/* Tarjetas de Temas en el Temario (.topic-card) */
+.coding-topic-card,
+.topic-card {
+  background: linear-gradient(180deg, #163859 0%, #0e253d 100%) !important;
+  border: 2.5px solid rgba(248, 178, 41, 0.55) !important;
+  border-radius: 22px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.25s ease !important;
+}
+
+.topic-card.active {
+  border-color: #4ade80 !important;
+}
+
+.topic-card.active:hover {
+  transform: translateY(-5px) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55), 0 0 22px rgba(248, 178, 41, 0.4) !important;
+}
+
+.topic-card.locked {
+  background: #0b1b2d !important;
+  border-color: rgba(148, 163, 184, 0.3) !important;
+  opacity: 0.65 !important;
+}
+
+.topic-title {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+.topic-desc {
+  color: #e2e8f0 !important;
+}
+
+.topic-status-tag.status-active {
+  background: rgba(34, 197, 94, 0.25) !important;
+  color: #86efac !important;
+  border: 1px solid #4ade80 !important;
+}
+
+.progress-bar-bg {
+  background: #071524 !important;
+  border: 1px solid rgba(248, 178, 41, 0.4) !important;
+  border-radius: 10px !important;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #22c55e, #ffd700) !important;
+  border-radius: 10px !important;
+}
+
+.topic-progress-label {
+  color: #e2e8f0 !important;
+  font-weight: 700 !important;
+}
+
+.btn-start-topic {
+  background: linear-gradient(180deg, #d42426, #b91c1c) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 14px rgba(212, 36, 38, 0.45) !important;
+}
+
+.btn-start-topic:hover {
+  background: linear-gradient(180deg, #ef4444, #d42426) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Pantalla de Actividad Interactiva (#screen-coding-topic) */
+.coding-app-container {
+  background: linear-gradient(180deg, #102a45 0%, #091a2c 100%) !important;
+  border: 3px solid #ffd700 !important;
+  border-radius: 26px !important;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7) !important;
+  color: #ffffff !important;
+}
+
+.coding-hud-bar {
+  background: #071524 !important;
+  border: 2px solid rgba(248, 178, 41, 0.45) !important;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+}
+
+.hud-stage-badge {
+  background: rgba(22, 91, 51, 0.5) !important;
+  border: 1px solid #4ade80 !important;
+  color: #ffffff !important;
+}
+
+.hud-score-pill {
+  background: rgba(212, 36, 38, 0.35) !important;
+  border: 1px solid #ffd700 !important;
+  color: #ffd700 !important;
+}
+
+.byte-guide-box {
+  background: linear-gradient(135deg, #133529 0%, #0e253d 100%) !important;
+  border: 2px solid #ffd700 !important;
+  border-radius: 20px !important;
+}
+
+.byte-bubble {
+  background: #091a2c !important;
+  border: 2px solid #4ade80 !important;
+  color: #ffffff !important;
+}
+
+.byte-name-tag {
+  color: #ffd700 !important;
+}
+
+.byte-speech-text {
+  color: #ffffff !important;
+}
+
+.btn-byte-audio {
+  background: #132e4c !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffd700 !important;
+}
+
+.theory-card {
+  background: #132e4c !important;
+  border: 2px solid rgba(248, 178, 41, 0.5) !important;
+  border-radius: 20px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.theory-card-title {
+  color: #ffd700 !important;
+}
+
+.theory-card-desc {
+  color: #f1f5f9 !important;
+}
+
+.theory-example-box {
+  background: #071524 !important;
+  border: 1.5px solid #4ade80 !important;
+  color: #ffffff !important;
+}
+
+.sequence-slot {
+  background: #071524 !important;
+  border: 2px dashed #ffd700 !important;
+  color: #cbd5e1 !important;
+}
+
+.seq-inst-card,
+.seq-draggable-pill,
+.coding-option-card {
+  background: #153556 !important;
+  border: 2px solid rgba(248, 178, 41, 0.55) !important;
+  color: #ffffff !important;
+}
+
+.seq-inst-card:hover,
+.seq-draggable-pill:hover,
+.coding-option-card:hover {
+  border-color: #ffd700 !important;
+  background: #1c456e !important;
+}
+
+/* --------------------------------------------------------
+   9. AVENTURA DE PLATAFORMAS Y PANEL DOCENTE
+   -------------------------------------------------------- */
+.adventure-top-header,
+.plat-hud-bar {
+  background: #09192b !important;
+  border-bottom: 2.5px solid #ffd700 !important;
+  color: #ffffff !important;
+}
+
+.btn-adventure-back {
+  background: #165b33 !important;
+  border: 2px solid #ffd700 !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+  font-weight: 800 !important;
+}
+
+.app-footer-docente {
+  background: #071524 !important;
+  border-top: 2px solid rgba(248, 178, 41, 0.35) !important;
+  padding: 14px 24px !important;
+}
+
+.footer-docente-brand {
+  color: #cbd5e1 !important;
+  font-weight: 600 !important;
+}
+
+.btn-docente-discrete {
+  background: #102a45 !important;
+  border: 1.5px solid #ffd700 !important;
+  color: #ffd700 !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+}
+
+.teacher-modal-card {
+  background: #0e253d !important;
+  border: 3px solid #ffd700 !important;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7) !important;
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------
+   10. SISTEMA DE VUELO DE PAPÁ NOEL Y SUS RENOS (magicSanta.js)
+   -------------------------------------------------------- */
+.magic-santa-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none !important;
+  z-index: 9995;
+  overflow: hidden;
+}
+
+.santa-flight-wrapper {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 440px;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 9996;
+  user-select: none;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.santa-flight-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.santa-banner-bubble {
+  background: rgba(255, 255, 255, 0.97);
+  border: 2.5px solid #d42426;
+  color: #071524;
+  font-size: 0.92rem;
+  font-weight: 900;
+  padding: 8px 18px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 215, 0, 0.6);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sleigh-svg-figure {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.santa-particle-trail {
+  position: absolute;
+  left: -30px;
+  top: 55%;
+  display: flex;
+  gap: 8px;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.anim-sleigh-left-to-right {
+  animation: santaFlyLtoR 6.8s linear forwards;
+}
+
+.anim-sleigh-right-to-left {
+  animation: santaFlyRtoL 6.8s linear forwards;
+}
+
+@keyframes santaFlyLtoR {
+  0% { transform: translateX(-480px) translateY(10px); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(45vw) translateY(-12px); opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(108vw) translateY(6px); opacity: 0; }
+}
+
+@keyframes santaFlyRtoL {
+  0% { transform: translateX(108vw) translateY(10px) scaleX(-1); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateX(45vw) translateY(-12px) scaleX(-1); opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(-480px) translateY(6px) scaleX(-1); opacity: 0; }
+}
+
+.anim-sleigh-right-to-left .santa-banner-bubble {
+  transform: scaleX(-1);
+}
+
+.santa-exiting {
+  opacity: 0 !important;
+  transition: opacity 0.35s ease !important;
+}
+
+/* --------------------------------------------------------
+   11. RESPONSIVE INTEGRAL (COMPUTADORAS, TABLETS Y CELULARES)
+   -------------------------------------------------------- */
+@media (max-width: 1180px) {
+  .magic-portals-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+    max-width: 920px !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-header {
+    padding: 10px 16px !important;
+    justify-content: center !important;
+  }
+
+  .header-global-controls {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-halloween-banner,
+  .hero-christmas-banner {
+    padding: 22px 20px !important;
+    margin-bottom: 26px !important;
+  }
+
+  .h-banner-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .h-banner-content {
+    text-align: center;
+  }
+
+  .h-banner-tag-group,
+  .h-banner-action-area,
+  .h-banner-features-row {
+    justify-content: center;
+  }
+
+  .h-banner-desc {
+    margin: 0 auto 18px auto;
+  }
+
+  .btn-banner-cta {
+    width: 100%;
+    max-width: 420px;
+    justify-content: center;
+  }
+
+  .magic-moon-wrap {
+    width: 85px;
+    height: 85px;
+    top: 12px;
+    right: 3%;
+  }
+}
+
+@media (max-width: 660px) {
+  .home-screen-wrapper {
+    padding: 20px 14px 48px 14px !important;
+  }
+
+  .magic-portals-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 440px !important;
+    gap: 18px !important;
+  }
+
+  .magic-portal {
+    min-height: auto !important;
+    padding: 22px 18px !important;
+  }
+
+  .magic-hero-title {
+    font-size: 2rem;
+  }
+
+  .h-banner-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-sound-toggle,
+  .btn-santa-toggle {
+    font-size: 0.78rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-snow-layer,
+  .magic-moon-wrap,
+  .h-bitty-figure-wrapper,
+  .h-floating-mini-item,
+  .anim-sleigh-left-to-right,
+  .anim-sleigh-right-to-left {
+    animation: none !important;
+  }
 }

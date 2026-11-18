@@ -1,7 +1,7 @@
 /* ========================================================
    css/algorithms.css - MÓDULO ALGORITMOS: CLASE N.º 1
    Pensamiento Computacional para 1.º a 5.º Grado
-   Informática Mágica — Edición Halloween
+   Informática Mágica — Edición Navidad
    ======================================================== */
 
 /* Contenedor Principal de la Pantalla */
@@ -9,7 +9,7 @@
   display: none;
   width: 100%;
   min-height: 100vh;
-  background: radial-gradient(ellipse at 50% 10%, #1e1145 0%, #0c0721 55%, #05020c 100%);
+  background: radial-gradient(ellipse at 50% 10%, #143454 0%, #0d2238 55%, #071524 100%);
   color: #f8fafc;
   font-family: 'Fredoka', 'Quicksand', system-ui, -apple-system, sans-serif;
   box-sizing: border-box;
@@ -2031,13 +2031,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(22, 12, 46, 0.85);
-  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  background: rgba(13, 34, 56, 0.92);
+  border: 2px solid rgba(248, 178, 41, 0.5);
   backdrop-filter: blur(12px);
   padding: 12px 20px;
   border-radius: 18px;
   margin-bottom: 16px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
 .alg-header-left {
@@ -2047,8 +2047,8 @@
 }
 
 .btn-alg-back {
-  background: linear-gradient(180deg, #4f46e5, #3730a3);
-  border: 1.5px solid #818cf8;
+  background: linear-gradient(180deg, #165b33, #14532d);
+  border: 1.5px solid #ffd700;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 800;
@@ -2058,19 +2058,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 0 #312e81, 0 6px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 0 #052e16, 0 6px 16px rgba(0,0,0,0.3);
   transition: all 0.15s ease;
 }
 
 .btn-alg-back:hover {
   transform: translateY(-2px);
-  background: linear-gradient(180deg, #6366f1, #4338ca);
-  box-shadow: 0 6px 0 #312e81, 0 8px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(180deg, #228b4d, #165b33);
+  box-shadow: 0 6px 0 #052e16, 0 8px 20px rgba(34, 139, 77, 0.4);
 }
 
 .btn-alg-back:active {
   transform: translateY(2px);
-  box-shadow: 0 2px 0 #312e81;
+  box-shadow: 0 2px 0 #052e16;
 }
 
 .alg-header-title-box {
@@ -2078,10 +2078,11 @@
   flex-direction: column;
 }
 
-.alg-header-badge {
+.alg-header-badge,
+.alg-header-sub {
   font-size: 0.78rem;
   font-weight: 800;
-  color: #c084fc;
+  color: #86efac;
   letter-spacing: 0.8px;
 }
 
@@ -2089,19 +2090,20 @@
   font-size: 1.4rem;
   font-weight: 900;
   margin: 2px 0 0;
-  color: #fde047;
+  color: #ffd700;
   text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
 .alg-header-right {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 .alg-grade-pill {
-  background: rgba(168, 85, 247, 0.2);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  color: #e9d5ff;
+  background: rgba(22, 91, 51, 0.35);
+  border: 1px solid rgba(248, 178, 41, 0.5);
+  color: #fef08a;
   font-size: 0.92rem;
   font-weight: 800;
   padding: 6px 14px;
@@ -2124,12 +2126,12 @@
   overflow-x: auto;
   padding-bottom: 6px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(168, 85, 247, 0.4) transparent;
+  scrollbar-color: rgba(248, 178, 41, 0.4) transparent;
 }
 
 .alg-step-tab {
-  background: rgba(30, 20, 60, 0.7);
-  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  background: rgba(13, 34, 56, 0.85);
+  border: 1.5px solid rgba(248, 178, 41, 0.35);
   color: #cbd5e1;
   font-size: 0.88rem;
   font-weight: 700;
@@ -2144,21 +2146,21 @@
 }
 
 .alg-step-tab:hover {
-  background: rgba(139, 92, 246, 0.25);
-  border-color: rgba(168, 85, 247, 0.6);
+  background: rgba(22, 91, 51, 0.45);
+  border-color: #ffd700;
   color: #ffffff;
   transform: translateY(-1px);
 }
 
 .alg-step-tab.active {
-  background: linear-gradient(180deg, #7c3aed, #6d28d9);
-  border-color: #c084fc;
+  background: linear-gradient(180deg, #d42426, #b91c1c);
+  border-color: #ffd700;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45), 0 2px 0 #4c1d95;
+  box-shadow: 0 4px 14px rgba(212, 36, 38, 0.45), 0 2px 0 #7f1d1d;
 }
 
 .alg-step-tab.completed {
-  border-color: rgba(52, 211, 153, 0.6);
+  border-color: rgba(52, 211, 153, 0.7);
 }
 
 .alg-step-tab.completed .tab-indicator {
@@ -2182,21 +2184,21 @@
    TARJETAS COMUNES
    ======================================================== */
 .alg-card {
-  background: linear-gradient(180deg, rgba(26, 17, 56, 0.9) 0%, rgba(15, 9, 36, 0.95) 100%);
-  border: 1.5px solid rgba(168, 85, 247, 0.35);
+  background: linear-gradient(180deg, rgba(16, 42, 68, 0.94) 0%, rgba(10, 27, 46, 0.98) 100%);
+  border: 2px solid rgba(248, 178, 41, 0.42);
   border-radius: 20px;
   padding: 24px;
   margin-bottom: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(168, 85, 247, 0.2);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  color: #e9d5ff;
+  background: rgba(22, 91, 51, 0.35);
+  border: 1px solid rgba(74, 222, 128, 0.5);
+  color: #86efac;
   font-size: 0.8rem;
   font-weight: 800;
   padding: 4px 12px;
@@ -2208,14 +2210,14 @@
 .card-title {
   font-size: 1.6rem;
   font-weight: 900;
-  color: #fef08a;
+  color: #ffd700;
   margin: 0 0 12px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
 .card-subtitle {
   font-size: 1.05rem;
-  color: #cbd5e1;
+  color: #e2e8f0;
   margin: 0 0 18px;
   line-height: 1.5;
 }
@@ -2227,12 +2229,12 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  background: linear-gradient(180deg, rgba(76, 29, 149, 0.4) 0%, rgba(30, 27, 75, 0.6) 100%);
-  border: 2px solid rgba(168, 85, 247, 0.4);
+  background: linear-gradient(135deg, rgba(22, 91, 51, 0.45) 0%, rgba(13, 34, 56, 0.9) 100%);
+  border: 2px solid rgba(248, 178, 41, 0.55);
   border-radius: 20px;
   padding: 18px 24px;
   margin-bottom: 24px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
 .speech-avatar {
@@ -2997,17 +2999,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(30, 27, 75, 0.85);
-  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  background: linear-gradient(135deg, rgba(16, 42, 68, 0.92), rgba(22, 91, 51, 0.45));
+  border: 2px solid rgba(248, 178, 41, 0.5);
   border-radius: 18px;
   padding: 16px 20px;
   margin-bottom: 20px;
 }
 
 .challenge-badge {
-  background: rgba(139, 92, 246, 0.25);
-  border: 1px solid rgba(139, 92, 246, 0.5);
-  color: #c084fc;
+  background: rgba(212, 36, 38, 0.35);
+  border: 1px solid #ffd700;
+  color: #fef08a;
   font-size: 0.8rem;
   font-weight: 900;
   padding: 3px 12px;
@@ -3017,13 +3019,13 @@
 .challenge-title {
   font-size: 1.45rem;
   font-weight: 900;
-  color: #fef08a;
+  color: #ffd700;
   margin: 6px 0 2px;
 }
 
 .challenge-hint {
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: #e2e8f0;
   margin: 0;
 }
 
@@ -3068,7 +3070,7 @@
 .zone-tag {
   font-size: 0.82rem;
   font-weight: 900;
-  color: #38bdf8;
+  color: #ffd700;
   margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
@@ -3076,8 +3078,8 @@
 .maze-zone-board,
 .maze-zone-palette,
 .maze-zone-program {
-  background: rgba(15, 11, 36, 0.85);
-  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  background: rgba(13, 34, 56, 0.92);
+  border: 2px solid rgba(248, 178, 41, 0.38);
   border-radius: 18px;
   padding: 16px;
   display: flex;
@@ -3090,10 +3092,10 @@
   grid-template-columns: repeat(var(--cols, 6), 1fr);
   grid-template-rows: repeat(var(--rows, 5), 1fr);
   gap: 4px;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(7, 21, 36, 0.95);
   padding: 8px;
   border-radius: 14px;
-  border: 2px solid #4c1d95;
+  border: 2px solid #228b4d;
   aspect-ratio: var(--cols, 6) / var(--rows, 5);
   max-height: 380px;
   margin: 0 auto;
@@ -3439,8 +3441,8 @@
    TARJETA DE COMPARACIÓN Y OPTIMIZACIÓN (DESAFÍO 3)
    ======================================================== */
 .comparison-reflection-card {
-  border-color: #f59e0b;
-  background: linear-gradient(180deg, rgba(30, 27, 75, 0.95) 0%, rgba(46, 26, 71, 0.95) 100%);
+  border-color: #ffd700;
+  background: linear-gradient(180deg, rgba(16, 42, 68, 0.95) 0%, rgba(10, 27, 46, 0.98) 100%);
   text-align: center;
 }
 
@@ -3540,10 +3542,10 @@
    CELEBRACIÓN FINAL (DESAFÍO 4)
    ======================================================== */
 .final-celebration-card {
-  border: 2.5px solid #facc15;
-  background: linear-gradient(180deg, rgba(30, 27, 75, 0.95) 0%, rgba(67, 20, 92, 0.98) 100%);
+  border: 2.5px solid #ffd700;
+  background: linear-gradient(180deg, rgba(16, 42, 68, 0.96) 0%, rgba(22, 91, 51, 0.92) 50%, rgba(7, 21, 36, 0.98) 100%);
   text-align: center;
-  box-shadow: 0 0 35px rgba(250, 204, 21, 0.3);
+  box-shadow: 0 0 35px rgba(248, 178, 41, 0.35);
 }
 
 .celebration-confetti {
@@ -3957,11 +3959,12 @@
 }
 
 /* QUESTION MODAL DIALOG */
-.alg-question-modal-backdrop {
+.alg-question-modal-backdrop,
+.alg-transition-modal {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(10, 5, 25, 0.88);
+  background: rgba(4, 16, 30, 0.88);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -3969,18 +3972,54 @@
   padding: 16px;
 }
 
-.alg-question-dialog {
-  background: linear-gradient(165deg, #1e1145, #0c0721);
-  border: 2px solid #8b5cf6;
+.alg-question-dialog,
+.alg-transition-card {
+  background: linear-gradient(165deg, #132e4c, #071524);
+  border: 2.5px solid #ffd700;
   border-radius: 24px;
   padding: 24px 28px;
   width: 100%;
   max-width: 580px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(139, 92, 246, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(248, 178, 41, 0.35);
   color: #f8fafc;
   font-family: inherit;
   position: relative;
   overflow: hidden;
+  text-align: center;
+}
+
+.transition-avatar {
+  width: 86px;
+  height: 86px;
+  margin: 12px auto;
+  animation: bityBob 2.4s ease-in-out infinite;
+}
+
+.transition-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.transition-text {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffd700;
+  margin: 10px 0 18px;
+}
+
+.transition-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(248, 178, 41, 0.45);
+}
+
+.transition-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #228b4d, #ffd700);
+  animation: transitionBarFill 2.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .q-dialog-header {
@@ -3995,12 +4034,12 @@
   align-items: center;
   gap: 6px;
   padding: 4px 12px;
-  background: rgba(139, 92, 246, 0.3);
-  border: 1px solid rgba(139, 92, 246, 0.5);
+  background: rgba(22, 91, 51, 0.45);
+  border: 1px solid #4ade80;
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 800;
-  color: #e9d5ff;
+  color: #bbf7d0;
   letter-spacing: 0.5px;
 }
 
