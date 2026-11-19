@@ -1218,6 +1218,466 @@ function shuffleArray(array) {
 }
 
   // ============================================================
+  // 4.5. NUEVA SECCIÓN: EJERCICIOS DE ALGORITMOS CON BLOQUES
+  //      (15 Desafíos: 3 Mapas por Grado de 1.º a 5.º Grado)
+  // ============================================================
+  const ALGORITMOS_BLOCK_DEFS = {
+    start: {
+      id: 'start',
+      label: 'AL EMPEZAR A EJECUTAR',
+      arrow: '▶',
+      isHeader: true
+    },
+    down: {
+      id: 'down',
+      label: 'MOVER HACIA ABAJO',
+      arrow: '↓',
+      dx: 0,
+      dy: 1,
+      colorClass: 'pblock-down'
+    },
+    up: {
+      id: 'up',
+      label: 'MOVER HACIA ARRIBA',
+      arrow: '↑',
+      dx: 0,
+      dy: -1,
+      colorClass: 'pblock-up'
+    },
+    right: {
+      id: 'right',
+      label: 'MOVER HACIA LA DERECHA',
+      arrow: '→',
+      dx: 1,
+      dy: 0,
+      colorClass: 'pblock-right'
+    },
+    left: {
+      id: 'left',
+      label: 'MOVER HACIA LA IZQUIERDA',
+      arrow: '←',
+      dx: -1,
+      dy: 0,
+      colorClass: 'pblock-left'
+    }
+  };
+
+  const ALGORITMOS_EXERCISES_GRADES_META = {
+    1: {
+      grade: 1,
+      title: '1.º Grado',
+      badge: '1.º Grado',
+      name: 'Primeros Pasos en la Nieve',
+      levelTag: 'Nivel Inicial',
+      icon: '🎁',
+      accent: '#22c55e',
+      desc: 'Recorridos cortos y directos de 2 a 4 movimientos para dar los primeros pasos con Bity.',
+      description: 'Recorridos cortos y directos de 2 a 4 movimientos para dar los primeros pasos con Bity.',
+      movesRange: '2 a 4 movimientos'
+    },
+    2: {
+      grade: 2,
+      title: '2.º Grado',
+      badge: '2.º Grado',
+      name: 'Senderos del Bosque Navideño',
+      levelTag: 'Nivel Básico',
+      icon: '🎄',
+      accent: '#06b6d4',
+      desc: 'Recorridos de 4 a 6 movimientos con obstáculos navideños para comenzar a anticipar el camino.',
+      description: 'Recorridos de 4 a 6 movimientos con obstáculos navideños para comenzar a anticipar el camino.',
+      movesRange: '4 a 6 movimientos'
+    },
+    3: {
+      grade: 3,
+      title: '3.º Grado',
+      badge: '3.º Grado',
+      name: 'Caminos Nevados con Giros',
+      levelTag: 'Nivel Intermedio',
+      icon: '🛷',
+      accent: '#f59e0b',
+      desc: 'Caminos nevados con cambios de dirección, estrellas en ruta y entre 5 y 8 movimientos.',
+      description: 'Caminos nevados con cambios de dirección, estrellas en ruta y entre 5 y 8 movimientos.',
+      movesRange: '5 a 8 movimientos'
+    },
+    4: {
+      grade: 4,
+      title: '4.º Grado',
+      badge: '4.º Grado',
+      name: 'Exploradores del Valle Polar',
+      levelTag: 'Nivel Avanzado',
+      icon: '🏠',
+      accent: '#a855f7',
+      desc: 'Bosques nevados más amplios, caminos alternativos y planificación de 8 a 12 movimientos.',
+      description: 'Bosques nevados más amplios, caminos alternativos y planificación de 8 a 12 movimientos.',
+      movesRange: '8 a 12 movimientos'
+    },
+    5: {
+      grade: 5,
+      title: '5.º Grado',
+      badge: '5.º Grado',
+      name: 'Maestros del Polo Norte',
+      levelTag: 'Nivel Avanzado Superior',
+      icon: '🌟',
+      accent: '#ef4444',
+      desc: 'Grandes desafíos polares de 10 a 15 movimientos para planificar y buscar el recorrido más corto.',
+      description: 'Grandes desafíos polares de 10 a 15 movimientos para planificar y buscar el recorrido más corto.',
+      movesRange: '10 a 15 movimientos'
+    }
+  };
+
+  const ALGORITMOS_BLOCK_EXERCISES = {
+    // ----------------------------------------------------------
+    // 1.º GRADO — NIVEL INICIAL (2 a 4 movimientos)
+    // ----------------------------------------------------------
+    1: [
+      {
+        id: 1,
+        grade: 1,
+        title: 'Desafío 1: El Regalo de Bity',
+        prompt: '¡Bity quiere encontrar su regalo de Navidad! Ayudalo a llegar hasta él.',
+        goalIcon: '🎁',
+        goalName: 'su regalo de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        cols: 4,
+        rows: 3,
+        start: { x: 0, y: 1 },
+        goal: { x: 2, y: 1 },
+        optimalSteps: 2,
+        grid: [
+          [1, 0, 0, 1],
+          [0, 0, 0, 0],
+          [1, 0, 0, 1]
+        ]
+      },
+      {
+        id: 2,
+        grade: 1,
+        title: 'Desafío 2: El Árbol de Navidad',
+        prompt: 'Bity necesita llegar hasta el árbol de Navidad. ¿Qué instrucciones tiene que seguir?',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ AL ÁRBOL DE NAVIDAD!',
+        cols: 4,
+        rows: 4,
+        start: { x: 1, y: 0 },
+        goal: { x: 1, y: 3 },
+        optimalSteps: 3,
+        grid: [
+          [1, 0, 0, 1],
+          [0, 0, 1, 0],
+          [1, 0, 0, 0],
+          [1, 0, 0, 1]
+        ]
+      },
+      {
+        id: 3,
+        grade: 1,
+        title: 'Desafío 3: La Estrella Brillante',
+        prompt: '¡Una estrella mágica brilla en la nieve! Ayudá a Bity a alcanzar la estrella.',
+        goalIcon: '⭐',
+        goalName: 'la estrella de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY ALCANZÓ LA ESTRELLA DE NAVIDAD!',
+        cols: 4,
+        rows: 4,
+        start: { x: 0, y: 2 },
+        goal: { x: 2, y: 0 },
+        optimalSteps: 4,
+        grid: [
+          [1, 0, 0, 1],
+          [0, 0, 0, 0],
+          [0, 0, 1, 0],
+          [1, 0, 0, 1]
+        ]
+      }
+    ],
+
+    // ----------------------------------------------------------
+    // 2.º GRADO — NIVEL BÁSICO (4 a 6 movimientos)
+    // ----------------------------------------------------------
+    2: [
+      {
+        id: 1,
+        grade: 2,
+        title: 'Desafío 1: Regalo detrás de los Obstáculos',
+        prompt: 'Bity encontró un regalo detrás de algunos obstáculos. ¡Ayudalo a llegar sin chocar!',
+        goalIcon: '🎁',
+        goalName: 'su regalo',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        cols: 5,
+        rows: 4,
+        start: { x: 0, y: 1 },
+        goal: { x: 3, y: 1 },
+        optimalSteps: 5,
+        grid: [
+          [1, 0, 1, 0, 1],
+          [0, 0, 1, 0, 0],
+          [0, 0, 0, 0, 1],
+          [1, 1, 0, 1, 1]
+        ]
+      },
+      {
+        id: 2,
+        grade: 2,
+        title: 'Desafío 2: La Casa Navideña',
+        prompt: 'Bity necesita llegar hasta la casa navideña. ¿Qué instrucciones tiene que seguir?',
+        goalIcon: '🏠',
+        goalName: 'la casa navideña',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CASA NAVIDEÑA!',
+        cols: 5,
+        rows: 5,
+        start: { x: 0, y: 0 },
+        goal: { x: 3, y: 3 },
+        optimalSteps: 6,
+        grid: [
+          [0, 1, 0, 0, 1],
+          [0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 0],
+          [1, 0, 1, 0, 1],
+          [1, 0, 0, 0, 1]
+        ]
+      },
+      {
+        id: 3,
+        grade: 2,
+        title: 'Desafío 3: La Estrella y el Árbol',
+        prompt: 'Bity debe recoger la estrella ⭐ en el camino y luego llegar hasta el árbol de Navidad 🎄.',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY RECOGIÓ LA ESTRELLA Y LLEGÓ AL ÁRBOL!',
+        cols: 5,
+        rows: 5,
+        start: { x: 0, y: 3 },
+        collectible: { x: 2, y: 3, icon: '⭐', name: 'la estrella' },
+        goal: { x: 2, y: 0 },
+        optimalSteps: 5,
+        grid: [
+          [1, 0, 0, 0, 1],
+          [0, 1, 0, 1, 0],
+          [0, 0, 0, 1, 0],
+          [0, 0, 0, 0, 1],
+          [1, 1, 0, 1, 1]
+        ]
+      }
+    ],
+
+    // ----------------------------------------------------------
+    // 3.º GRADO — NIVEL INTERMEDIO (5 a 8 movimientos)
+    // ----------------------------------------------------------
+    3: [
+      {
+        id: 1,
+        grade: 3,
+        title: 'Desafío 1: Regalo entre Cajas',
+        prompt: 'Bity encontró una caja de regalo, pero necesita llegar hasta ella sin chocar con los obstáculos.',
+        goalIcon: '🎁',
+        goalName: 'el regalo',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 2 },
+        goal: { x: 4, y: 1 },
+        optimalSteps: 7,
+        grid: [
+          [1, 0, 0, 1, 0, 1],
+          [0, 0, 0, 1, 0, 0],
+          [0, 1, 0, 0, 0, 1],
+          [0, 1, 0, 1, 0, 0],
+          [1, 0, 0, 1, 1, 1]
+        ]
+      },
+      {
+        id: 2,
+        grade: 3,
+        title: 'Desafío 2: El Camino Nevado',
+        prompt: 'Bity debe atravesar el camino nevado doblando en las esquinas hasta llegar al trineo 🛷.',
+        goalIcon: '🛷',
+        goalName: 'el trineo de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY ATRAVESÓ EL CAMINO NEVADO HASTA EL TRINEO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 1 },
+        goal: { x: 5, y: 3 },
+        optimalSteps: 7,
+        grid: [
+          [0, 0, 0, 1, 0, 1],
+          [0, 1, 0, 1, 0, 0],
+          [0, 1, 0, 1, 1, 0],
+          [0, 0, 0, 0, 0, 0],
+          [1, 1, 0, 1, 0, 1]
+        ]
+      },
+      {
+        id: 3,
+        grade: 3,
+        title: 'Desafío 3: Estrella en el Sendero',
+        prompt: 'Bity debe encontrar la estrella dorada ⭐ y luego llegar hasta su destino en el árbol 🎄.',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ LA ESTRELLA Y LLEGÓ A SU DESTINO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 2 },
+        collectible: { x: 2, y: 1, icon: '⭐', name: 'la estrella' },
+        goal: { x: 5, y: 1 },
+        optimalSteps: 8,
+        grid: [
+          [1, 0, 0, 0, 0, 0],
+          [0, 0, 0, 1, 0, 0],
+          [0, 1, 0, 1, 0, 1],
+          [0, 1, 0, 1, 0, 0],
+          [1, 0, 0, 0, 0, 1]
+        ]
+      }
+    ],
+
+    // ----------------------------------------------------------
+    // 4.º GRADO — NIVEL AVANZADO (8 a 12 movimientos)
+    // ----------------------------------------------------------
+    4: [
+      {
+        id: 1,
+        grade: 4,
+        title: 'Desafío 1: El Bosque Nevado',
+        prompt: 'Bity debe atravesar el bosque nevado y encontrar su regalo de Navidad. ¡Analizá qué camino conviene más!',
+        goalIcon: '🎁',
+        goalName: 'su regalo',
+        victoryMsg: '¡MUY BIEN! ¡BITY ATRAVESÓ EL BOSQUE Y ENCONTRÓ SU REGALO!',
+        cols: 7,
+        rows: 6,
+        start: { x: 0, y: 4 },
+        goal: { x: 6, y: 1 },
+        optimalSteps: 9,
+        grid: [
+          [1, 0, 0, 0, 1, 0, 0],
+          [0, 0, 1, 0, 1, 0, 0],
+          [0, 1, 0, 0, 0, 0, 1],
+          [0, 0, 0, 1, 1, 0, 0],
+          [0, 1, 0, 0, 0, 1, 0],
+          [1, 1, 0, 1, 0, 0, 0]
+        ]
+      },
+      {
+        id: 2,
+        grade: 4,
+        title: 'Desafío 2: La Casa del Valle Polar',
+        prompt: 'Bity necesita llegar a la casa navideña 🏠 evitando los diferentes obstáculos del camino.',
+        goalIcon: '🏠',
+        goalName: 'la casa navideña',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CASA NAVIDEÑA!',
+        cols: 7,
+        rows: 6,
+        start: { x: 0, y: 0 },
+        goal: { x: 6, y: 5 },
+        optimalSteps: 11,
+        grid: [
+          [0, 0, 1, 0, 0, 0, 1],
+          [1, 0, 1, 0, 1, 0, 0],
+          [0, 0, 0, 0, 1, 0, 1],
+          [0, 1, 1, 0, 0, 0, 0],
+          [0, 0, 1, 1, 1, 0, 1],
+          [1, 0, 0, 0, 0, 0, 0]
+        ]
+      },
+      {
+        id: 3,
+        grade: 4,
+        title: 'Desafío 3: La Campana y el Taller',
+        prompt: 'Bity debe encontrar la campana mágica 🔔 y llegar al árbol de Navidad 🎄 por un recorrido específico.',
+        goalIcon: '🎄',
+        goalName: 'el árbol del taller',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ LA CAMPANA Y LLEGÓ A SU DESTINO!',
+        cols: 7,
+        rows: 6,
+        start: { x: 0, y: 5 },
+        collectible: { x: 3, y: 2, icon: '🔔', name: 'la campana mágica' },
+        goal: { x: 6, y: 0 },
+        optimalSteps: 11,
+        grid: [
+          [1, 0, 0, 0, 1, 0, 0],
+          [0, 0, 1, 0, 0, 0, 1],
+          [0, 1, 1, 0, 1, 0, 0],
+          [0, 0, 0, 0, 1, 1, 0],
+          [1, 1, 0, 1, 0, 0, 0],
+          [0, 0, 0, 1, 0, 1, 1]
+        ]
+      }
+    ],
+
+    // ----------------------------------------------------------
+    // 5.º GRADO — NIVEL AVANZADO SUPERIOR (10 a 15 movimientos)
+    // ----------------------------------------------------------
+    5: [
+      {
+        id: 1,
+        grade: 5,
+        title: 'Desafío 1: El Gran Laberinto Polar',
+        prompt: 'Bity debe encontrar su regalo 🎁 atravesando un recorrido con varios obstáculos. ¡Planificá todo el algoritmo!',
+        goalIcon: '🎁',
+        goalName: 'su regalo',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        cols: 8,
+        rows: 6,
+        start: { x: 0, y: 5 },
+        goal: { x: 7, y: 0 },
+        optimalSteps: 12,
+        grid: [
+          [1, 0, 0, 0, 1, 0, 0, 0],
+          [0, 0, 1, 0, 0, 0, 1, 0],
+          [0, 1, 1, 0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 1, 0, 0, 0],
+          [1, 1, 0, 1, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+      },
+      {
+        id: 2,
+        grade: 5,
+        title: 'Desafío 2: Alternativas en el Valle Nevado',
+        prompt: 'Bity debe recorrer el camino nevado con diferentes alternativas hasta llegar al trineo 🛷.',
+        goalIcon: '🛷',
+        goalName: 'el trineo de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY RECORRIÓ EL CAMINO NEVADO HASTA EL TRINEO!',
+        cols: 8,
+        rows: 6,
+        start: { x: 0, y: 0 },
+        goal: { x: 7, y: 5 },
+        optimalSteps: 12,
+        grid: [
+          [0, 0, 0, 1, 0, 0, 0, 1],
+          [0, 1, 0, 1, 0, 1, 0, 0],
+          [0, 1, 0, 0, 0, 1, 1, 0],
+          [0, 0, 1, 1, 0, 0, 0, 0],
+          [1, 0, 0, 1, 1, 1, 0, 1],
+          [1, 1, 0, 0, 0, 0, 0, 0]
+        ]
+      },
+      {
+        id: 3,
+        grade: 5,
+        title: 'Desafío 3: Misión Estrella Cumbre',
+        prompt: 'Bity debe recoger la estrella polar ⭐ y llegar al árbol 🎄 utilizando la menor cantidad posible de movimientos.',
+        goalIcon: '🎄',
+        goalName: 'el gran árbol de Navidad',
+        victoryMsg: '¡MUY BIEN! ¡BITY COMPLETÓ EL DESAFÍO CUMBRE DE ALGORITMOS!',
+        cols: 8,
+        rows: 6,
+        start: { x: 0, y: 5 },
+        collectible: { x: 4, y: 2, icon: '⭐', name: 'la estrella polar' },
+        goal: { x: 7, y: 0 },
+        optimalSteps: 12,
+        grid: [
+          [1, 0, 0, 0, 1, 0, 0, 0],
+          [0, 0, 1, 0, 1, 0, 1, 0],
+          [0, 1, 1, 0, 0, 0, 1, 0],
+          [0, 0, 0, 0, 1, 0, 0, 0],
+          [0, 1, 1, 0, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0, 0, 0, 0]
+        ]
+      }
+    ]
+  };
+
+  // ============================================================
   // 5. CLASE PRINCIPAL DEL MÓDULO ALGORITMOS
   // ============================================================
   class AlgorithmsModule {
@@ -1228,6 +1688,27 @@ function shuffleArray(array) {
       this.completedSteps = new Set();
       this.answeredItems = new Set();
       this.starsCount = 0;
+
+      // Sección activa dentro del módulo Algoritmos: 'class1' | 'exercises'
+      this.activeSection = 'class1';
+
+      // Estado de la nueva sección "EJERCICIOS DE ALGORITMOS"
+      this.exViewMode = 'grade_select'; // 'grade_select' | 'workspace'
+      this.exGrade = 1;
+      this.exMapIndex = 0; // 0, 1, 2
+      this.exBlocks = [];
+      this.exInsertIndex = null; // null = insertar al final
+      this.exBityPos = { x: 0, y: 0 };
+      this.exBityFacing = 'right';
+      this.exCollectiblePicked = false;
+      this.exExecMode = 'idle'; // 'idle' | 'running' | 'step' | 'won' | 'error'
+      this.exStepCursor = -1;
+      this.exIsAnimatingStep = false;
+      this.exTimerId = null;
+      this.exFeedback = null;
+      this.exDragPayload = null;
+      this.exCompletedByGrade = { 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set() };
+      this.loadExercisesProgress();
       
       // Estado de actividades cotidianas
       this.selectedEverydayAct = 'cafe';
@@ -1266,6 +1747,15 @@ function shuffleArray(array) {
       return str;
     }
 
+    // Adaptación textual para la sección Ejercicios de Algoritmos según el grado seleccionado
+    exTxt(str) {
+      if (!str) return '';
+      if (this.exGrade === 1) {
+        return str.toUpperCase();
+      }
+      return str;
+    }
+
     playSound(name) {
       try {
         if (typeof window !== 'undefined' && window.MagicAudioEngine) {
@@ -1296,8 +1786,12 @@ function shuffleArray(array) {
     }
 
     startClass(grade = 1, classNum = 1) {
+      this.stopExExecution();
       this.currentGrade = parseInt(grade) || 1;
+      this.exGrade = this.currentGrade;
+      this.activeSection = 'class1';
       this.loadSavedProgress();
+      this.loadExercisesProgress();
       this.resetMazeState();
       this.orderQuestionAnswered = false;
       this.orderQuestionAnswer = null;
@@ -1312,7 +1806,9 @@ function shuffleArray(array) {
       }
 
       this.render();
-      window.scrollTo(0, 0);
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
     }
 
     loadSavedProgress() {
@@ -1364,6 +1860,8 @@ function shuffleArray(array) {
       const oldQModal = document.getElementById('alg-question-modal');
       if (oldQModal) oldQModal.remove();
 
+      this.stopExExecution();
+      this.activeSection = 'class1';
       this.isTransitioning = false;
       this.inputQueue = [];
       this.isMoving = false;
@@ -1384,7 +1882,9 @@ function shuffleArray(array) {
       }
 
       this.render();
-      window.scrollTo(0, 0);
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
     }
 
     nextStep() {
@@ -1427,10 +1927,594 @@ function shuffleArray(array) {
     }
 
     handleBackButton() {
+      if (this.activeSection === 'exercises') {
+        this.stopExExecution();
+        if (this.exViewMode === 'workspace') {
+          this.showExercisesGradeSelect();
+        } else {
+          this.activeSection = 'class1';
+          this.playSound('click');
+          this.render();
+        }
+        return;
+      }
       if (this.currentStep > 1) {
         this.selectStep(1);
       } else {
         this.exitModule();
+      }
+    }
+
+    // ============================================================
+    // NUEVA SECCIÓN INDEPENDIENTE: EJERCICIOS DE ALGORITMOS CON BLOQUES
+    // (Inspirada en Pilas Bloques — 1.º a 5.º Grado • 15 Desafíos)
+    // ============================================================
+    loadExercisesProgress() {
+      this.exCompletedByGrade = { 1: new Set(), 2: new Set(), 3: new Set(), 4: new Set(), 5: new Set() };
+      try {
+        const raw = localStorage.getItem('lego_algorithms_block_exercises_progress');
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          for (let g = 1; g <= 5; g++) {
+            if (parsed && Array.isArray(parsed[g])) {
+              this.exCompletedByGrade[g] = new Set(parsed[g]);
+            }
+          }
+        }
+      } catch (e) {}
+    }
+
+    saveExercisesProgress() {
+      try {
+        const payload = {};
+        for (let g = 1; g <= 5; g++) {
+          payload[g] = Array.from(this.exCompletedByGrade[g] || []);
+        }
+        localStorage.setItem('lego_algorithms_block_exercises_progress', JSON.stringify(payload));
+      } catch (e) {}
+    }
+
+    getTotalCompletedExercisesCount() {
+      let total = 0;
+      for (let g = 1; g <= 5; g++) {
+        total += (this.exCompletedByGrade[g] ? this.exCompletedByGrade[g].size : 0);
+      }
+      return total;
+    }
+
+    getCurrentExMap() {
+      const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
+      return gradeMaps[this.exMapIndex] || gradeMaps[0];
+    }
+
+    stopExExecution() {
+      if (this.exTimerId) {
+        clearTimeout(this.exTimerId);
+        this.exTimerId = null;
+      }
+      this.exIsAnimatingStep = false;
+    }
+
+    openBlockExercises(grade = null, mapIndex = 0) {
+      const oldModal = document.getElementById('alg-transition-modal');
+      if (oldModal) oldModal.remove();
+      const oldQModal = document.getElementById('alg-question-modal');
+      if (oldQModal) oldQModal.remove();
+
+      this.stopExExecution();
+      this.activeSection = 'exercises';
+      this.loadExercisesProgress();
+      this.playSound('pop');
+
+      if (grade && grade >= 1 && grade <= 5) {
+        this.exGrade = parseInt(grade);
+        this.exViewMode = 'workspace';
+        this.loadExerciseMap(mapIndex || 0, false);
+      } else {
+        this.exViewMode = 'grade_select';
+      }
+
+      this.render();
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    closeBlockExercises() {
+      this.stopExExecution();
+      this.activeSection = 'class1';
+      this.playSound('click');
+      this.render();
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    showExercisesGradeSelect() {
+      this.stopExExecution();
+      this.activeSection = 'exercises';
+      this.exViewMode = 'grade_select';
+      this.playSound('click');
+      this.render();
+      if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    selectExerciseGrade(gradeNum, mapIdx = 0) {
+      const g = parseInt(gradeNum);
+      if (!g || g < 1 || g > 5) return;
+      this.stopExExecution();
+      this.activeSection = 'exercises';
+      this.exGrade = g;
+      this.exViewMode = 'workspace';
+      this.playSound('pop');
+      this.loadExerciseMap(mapIdx, true);
+    }
+
+    selectExerciseMap(mapIdx) {
+      const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
+      if (mapIdx < 0 || mapIdx >= gradeMaps.length) return;
+      this.playSound('click');
+      this.loadExerciseMap(mapIdx, true);
+    }
+
+    loadExerciseMap(mapIdx = 0, shouldRender = true) {
+      this.stopExExecution();
+      const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
+      this.exMapIndex = (mapIdx >= 0 && mapIdx < gradeMaps.length) ? mapIdx : 0;
+      const map = this.getCurrentExMap();
+
+      this.exBlocks = [];
+      this.exInsertIndex = null;
+      this.exBityPos = { x: map.start.x, y: map.start.y };
+      this.exBityFacing = map.startFacing || 'right';
+      this.exCollectiblePicked = false;
+      this.exExecMode = 'idle';
+      this.exStepCursor = -1;
+      this.exFeedback = null;
+      this.exDragPayload = null;
+
+      if (shouldRender) {
+        this.render();
+      }
+    }
+
+    // Preparar estado limpio antes de modificar bloques si había una ejecución previa
+    prepareExForCodeEdit() {
+      if (this.exExecMode !== 'idle' || this.exStepCursor !== -1) {
+        this.stopExExecution();
+        const map = this.getCurrentExMap();
+        this.exBityPos = { x: map.start.x, y: map.start.y };
+        this.exBityFacing = map.startFacing || 'right';
+        this.exCollectiblePicked = false;
+        this.exExecMode = 'idle';
+        this.exStepCursor = -1;
+        this.exFeedback = null;
+      }
+    }
+
+    // Agregar bloque de movimiento (NUNCA permite duplicar AL EMPEZAR A EJECUTAR)
+    addExBlock(dir, explicitInsertIndex = null) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+      if (dir === 'start' || !ALGORITMOS_BLOCK_DEFS[dir] || ALGORITMOS_BLOCK_DEFS[dir].isHeader) {
+        // No permitir bloques de inicio duplicados
+        this.playSound('error');
+        return;
+      }
+
+      this.prepareExForCodeEdit();
+
+      let targetIdx = this.exBlocks.length;
+      if (typeof explicitInsertIndex === 'number' && explicitInsertIndex >= 0 && explicitInsertIndex <= this.exBlocks.length) {
+        targetIdx = explicitInsertIndex;
+      } else if (typeof this.exInsertIndex === 'number' && this.exInsertIndex >= 0 && this.exInsertIndex <= this.exBlocks.length) {
+        targetIdx = this.exInsertIndex;
+        // Avanzar el cursor de inserción para facilitar inserciones consecutivas
+        this.exInsertIndex = targetIdx + 1;
+      }
+
+      this.exBlocks.splice(targetIdx, 0, dir);
+      if (this.exInsertIndex !== null && this.exInsertIndex >= this.exBlocks.length) {
+        this.exInsertIndex = null;
+      }
+
+      this.playSound('pop');
+      this.render();
+    }
+
+    removeExBlock(index) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+      if (index < 0 || index >= this.exBlocks.length) return;
+
+      this.prepareExForCodeEdit();
+      this.exBlocks.splice(index, 1);
+
+      if (this.exInsertIndex !== null) {
+        if (this.exInsertIndex > this.exBlocks.length) {
+          this.exInsertIndex = null;
+        } else if (index < this.exInsertIndex) {
+          this.exInsertIndex = Math.max(0, this.exInsertIndex - 1);
+        }
+      }
+
+      this.playSound('trash');
+      this.render();
+    }
+
+    moveExBlock(index, delta) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+      const targetIdx = index + delta;
+      if (index < 0 || index >= this.exBlocks.length || targetIdx < 0 || targetIdx >= this.exBlocks.length) return;
+
+      this.prepareExForCodeEdit();
+      const temp = this.exBlocks[index];
+      this.exBlocks[index] = this.exBlocks[targetIdx];
+      this.exBlocks[targetIdx] = temp;
+
+      this.playSound('click');
+      this.render();
+    }
+
+    setExInsertIndex(index) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+      if (index === null || index >= this.exBlocks.length || this.exInsertIndex === index) {
+        this.exInsertIndex = null;
+      } else {
+        this.exInsertIndex = Math.max(0, index);
+      }
+      this.playSound('click');
+      this.render();
+    }
+
+    // ------------------------------------------------------------
+    // SOPORTE DRAG & DROP PARA BLOQUES (Paleta -> Código y Reordenar)
+    // ------------------------------------------------------------
+    handleExPaletteDragStart(event, dir) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') {
+        if (event && event.preventDefault) event.preventDefault();
+        return;
+      }
+      this.exDragPayload = { source: 'palette', dir: dir };
+      if (event && event.dataTransfer) {
+        event.dataTransfer.effectAllowed = 'copy';
+        try {
+          event.dataTransfer.setData('text/plain', JSON.stringify(this.exDragPayload));
+        } catch (e) {}
+      }
+    }
+
+    handleExBlockDragStart(event, index) {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') {
+        if (event && event.preventDefault) event.preventDefault();
+        return;
+      }
+      this.exDragPayload = { source: 'program', fromIndex: index, dir: this.exBlocks[index] };
+      if (event && event.dataTransfer) {
+        event.dataTransfer.effectAllowed = 'move';
+        try {
+          event.dataTransfer.setData('text/plain', JSON.stringify(this.exDragPayload));
+        } catch (e) {}
+      }
+    }
+
+    handleExDragOver(event, slotEl) {
+      if (event && event.preventDefault) event.preventDefault();
+      if (slotEl && !slotEl.classList.contains('drag-over')) {
+        slotEl.classList.add('drag-over');
+      }
+    }
+
+    handleExDragLeave(event, slotEl) {
+      if (slotEl) {
+        slotEl.classList.remove('drag-over');
+      }
+    }
+
+    handleExDropOnSlot(event, targetIndex) {
+      if (event && event.preventDefault) event.preventDefault();
+      if (event && event.stopPropagation) event.stopPropagation();
+
+      document.querySelectorAll('.ex-drop-slot.drag-over, .ex-program-canvas.drag-over').forEach(el => {
+        el.classList.remove('drag-over');
+      });
+
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+
+      let payload = this.exDragPayload;
+      if (!payload && event && event.dataTransfer) {
+        try {
+          const raw = event.dataTransfer.getData('text/plain');
+          if (raw) payload = JSON.parse(raw);
+        } catch (e) {}
+      }
+      this.exDragPayload = null;
+      if (!payload) return;
+
+      const insertIdx = (typeof targetIndex === 'number' && targetIndex >= 0 && targetIndex <= this.exBlocks.length)
+        ? targetIndex
+        : this.exBlocks.length;
+
+      if (payload.source === 'palette' && payload.dir) {
+        this.addExBlock(payload.dir, insertIdx);
+      } else if (payload.source === 'program' && typeof payload.fromIndex === 'number') {
+        const fromIdx = payload.fromIndex;
+        if (fromIdx < 0 || fromIdx >= this.exBlocks.length) return;
+        this.prepareExForCodeEdit();
+        const [movedDir] = this.exBlocks.splice(fromIdx, 1);
+        const adjustedIdx = (insertIdx > fromIdx) ? insertIdx - 1 : insertIdx;
+        this.exBlocks.splice(Math.max(0, Math.min(this.exBlocks.length, adjustedIdx)), 0, movedDir);
+        this.playSound('pop');
+        this.render();
+      }
+    }
+
+    handleExDragEnd() {
+      this.exDragPayload = null;
+      document.querySelectorAll('.ex-drop-slot.drag-over, .ex-program-canvas.drag-over').forEach(el => {
+        el.classList.remove('drag-over');
+      });
+    }
+
+    // ------------------------------------------------------------
+    // MOTOR DE EJECUCIÓN: EJECUTAR, PASO A PASO, REINICIAR, BORRAR
+    // ------------------------------------------------------------
+    resetExPosition(shouldRender = true) {
+      this.stopExExecution();
+      const map = this.getCurrentExMap();
+      this.exBityPos = { x: map.start.x, y: map.start.y };
+      this.exBityFacing = map.startFacing || 'right';
+      this.exCollectiblePicked = false;
+      this.exExecMode = 'idle';
+      this.exStepCursor = -1;
+      this.exFeedback = null;
+      if (shouldRender) {
+        this.playSound('click');
+        this.render();
+      }
+    }
+
+    clearExCode() {
+      this.stopExExecution();
+      const map = this.getCurrentExMap();
+      this.exBlocks = [];
+      this.exInsertIndex = null;
+      this.exBityPos = { x: map.start.x, y: map.start.y };
+      this.exBityFacing = map.startFacing || 'right';
+      this.exCollectiblePicked = false;
+      this.exExecMode = 'idle';
+      this.exStepCursor = -1;
+      this.exFeedback = null;
+      this.playSound('trash');
+      this.render();
+    }
+
+    // Botón principal: EJECUTAR (ejecuta todas las instrucciones en orden)
+    runExAll() {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+
+      if (this.exBlocks.length === 0) {
+        this.exExecMode = 'error';
+        this.exFeedback = {
+          type: 'error',
+          title: '¡FALTAN INSTRUCCIONES!',
+          message: 'Agregá bloques de movimiento debajo de «AL EMPEZAR A EJECUTAR» antes de presionar EJECUTAR.'
+        };
+        this.playSound('error');
+        this.render();
+        return;
+      }
+
+      // Reiniciar a la posición de partida para recorrer todo el algoritmo desde el principio
+      this.stopExExecution();
+      const map = this.getCurrentExMap();
+      this.exBityPos = { x: map.start.x, y: map.start.y };
+      this.exBityFacing = map.startFacing || 'right';
+      this.exCollectiblePicked = false;
+      this.exExecMode = 'running';
+      this.exStepCursor = -1;
+      this.exFeedback = null;
+      this.render();
+
+      const runNextInstruction = () => {
+        if (this.exExecMode !== 'running') return;
+        const nextIdx = this.exStepCursor + 1;
+        if (nextIdx >= this.exBlocks.length) {
+          this.evaluateExFinalResult();
+          return;
+        }
+        this.executeSingleExStep(nextIdx, (status) => {
+          if (status === 'continue' && this.exExecMode === 'running') {
+            if (nextIdx + 1 < this.exBlocks.length) {
+              this.exTimerId = setTimeout(runNextInstruction, 440);
+            } else {
+              this.exTimerId = setTimeout(() => {
+                if (this.exExecMode === 'running') {
+                  this.evaluateExFinalResult();
+                }
+              }, 260);
+            }
+          }
+        });
+      };
+
+      this.exTimerId = setTimeout(runNextInstruction, 220);
+    }
+
+    // Botón principal: EJECUTAR PASO A PASO (ejecuta 1 instrucción por vez)
+    runExStepByStep() {
+      if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
+
+      if (this.exBlocks.length === 0) {
+        this.exExecMode = 'error';
+        this.exFeedback = {
+          type: 'error',
+          title: '¡FALTAN INSTRUCCIONES!',
+          message: 'Agregá bloques de movimiento debajo de «AL EMPEZAR A EJECUTAR» para ejecutar paso a paso.'
+        };
+        this.playSound('error');
+        this.render();
+        return;
+      }
+
+      // Si no estábamos en modo paso a paso o si el intento anterior ya terminó, comenzar desde el paso 0
+      if (this.exExecMode !== 'step' || this.exStepCursor >= this.exBlocks.length - 1) {
+        this.stopExExecution();
+        const map = this.getCurrentExMap();
+        this.exBityPos = { x: map.start.x, y: map.start.y };
+        this.exBityFacing = map.startFacing || 'right';
+        this.exCollectiblePicked = false;
+        this.exExecMode = 'step';
+        this.exStepCursor = -1;
+        this.exFeedback = null;
+      }
+
+      const nextIdx = this.exStepCursor + 1;
+      this.executeSingleExStep(nextIdx, (status) => {
+        if (status === 'continue' && nextIdx >= this.exBlocks.length - 1) {
+          this.evaluateExFinalResult();
+        }
+      });
+    }
+
+    executeSingleExStep(stepIndex, onDone) {
+      if (stepIndex < 0 || stepIndex >= this.exBlocks.length) {
+        if (typeof onDone === 'function') onDone('done');
+        return;
+      }
+
+      const map = this.getCurrentExMap();
+      const dir = this.exBlocks[stepIndex];
+      const blockDef = ALGORITMOS_BLOCK_DEFS[dir];
+      if (!blockDef) {
+        if (typeof onDone === 'function') onDone('error');
+        return;
+      }
+
+      this.exStepCursor = stepIndex;
+      this.exBityFacing = dir;
+      this.exIsAnimatingStep = true;
+
+      const nx = this.exBityPos.x + blockDef.dx;
+      const ny = this.exBityPos.y + blockDef.dy;
+
+      // Verificar límites del mapa o colisión con obstáculo (grid[ny][nx] === 1)
+      const isOutOfBounds = (nx < 0 || nx >= map.cols || ny < 0 || ny >= map.rows);
+      const isObstacle = (!isOutOfBounds && map.grid[ny] && map.grid[ny][nx] === 1);
+
+      if (isOutOfBounds || isObstacle) {
+        this.exIsAnimatingStep = false;
+        this.stopExExecution();
+        this.exExecMode = 'error';
+        this.exFeedback = {
+          type: 'error',
+          title: '¡CASI LO LOGRÁS! Revisá las instrucciones y probá nuevamente.',
+          detail: isOutOfBounds
+            ? `En el paso ${stepIndex + 1} (${blockDef.label} ${blockDef.arrow}), Bity intentó salir de los límites del mapa.`
+            : `En el paso ${stepIndex + 1} (${blockDef.label} ${blockDef.arrow}), Bity encontró un obstáculo y no puede atravesarlo.`
+        };
+        this.playSound('error');
+        this.render();
+        this.animateExCollisionDOM(dir);
+        if (typeof onDone === 'function') onDone('collision');
+        return;
+      }
+
+      // Movimiento válido
+      this.exBityPos = { x: nx, y: ny };
+      if (map.collectible && nx === map.collectible.x && ny === map.collectible.y) {
+        this.exCollectiblePicked = true;
+      }
+
+      this.playSound('click');
+      this.exIsAnimatingStep = false;
+      this.render();
+
+      // Desplazar suavemente la vista del código al bloque activo si hay muchos bloques
+      const activeBlockEl = document.querySelector(`.ex-placed-block[data-step-idx="${stepIndex}"]`);
+      if (activeBlockEl && typeof activeBlockEl.scrollIntoView === 'function') {
+        try {
+          activeBlockEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        } catch (e) {}
+      }
+
+      if (typeof onDone === 'function') onDone('continue');
+    }
+
+    animateExCollisionDOM(dir) {
+      const cell = document.querySelector(`.ex-grid-cell[data-x="${this.exBityPos.x}"][data-y="${this.exBityPos.y}"]`);
+      const sprite = cell ? cell.querySelector('.ex-bity-sprite') : null;
+      if (sprite) {
+        sprite.classList.add(`bity-bump-${dir}`);
+        if (cell) cell.classList.add('cell-collision-halo');
+        setTimeout(() => {
+          sprite.classList.remove(`bity-bump-${dir}`);
+          if (cell) cell.classList.remove('cell-collision-halo');
+        }, 380);
+      }
+    }
+
+    evaluateExFinalResult() {
+      this.stopExExecution();
+      const map = this.getCurrentExMap();
+      const atGoal = (this.exBityPos.x === map.goal.x && this.exBityPos.y === map.goal.y);
+      const hasRequiredCollectible = (!map.collectible || this.exCollectiblePicked);
+
+      if (atGoal && hasRequiredCollectible) {
+        this.exExecMode = 'won';
+        if (!this.exCompletedByGrade[this.exGrade]) {
+          this.exCompletedByGrade[this.exGrade] = new Set();
+        }
+        this.exCompletedByGrade[this.exGrade].add(map.id);
+        this.saveExercisesProgress();
+        this.playSound('victory');
+        if (typeof window !== 'undefined' && window.magicAudioManager && typeof window.magicAudioManager.playGiftOpen === 'function') {
+          window.magicAudioManager.playGiftOpen();
+        }
+
+        const usedSteps = this.exBlocks.length;
+        const optimal = map.optimalSteps || usedSteps;
+        let efficiencyNote = '';
+        if (this.exGrade >= 4) {
+          efficiencyNote = (usedSteps <= optimal)
+            ? `¡Excelente eficiencia! Lo resolviste en ${usedSteps} instrucciones (el camino más corto).`
+            : `Lo lograste en ${usedSteps} instrucciones. ¿Sabías que existe una ruta alternativa de ${optimal} instrucciones?`;
+        }
+
+        this.exFeedback = {
+          type: 'won',
+          title: map.victoryMsg || '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+          detail: efficiencyNote
+        };
+      } else if (atGoal && !hasRequiredCollectible) {
+        this.exExecMode = 'error';
+        this.playSound('error');
+        this.exFeedback = {
+          type: 'error',
+          title: '¡CASI LO LOGRÁS! Revisá las instrucciones y probá nuevamente.',
+          detail: `Bity llegó a la meta, pero antes debía pasar por ${map.collectible.icon} ${map.collectible.name}.`
+        };
+      } else {
+        this.exExecMode = 'error';
+        this.playSound('error');
+        this.exFeedback = {
+          type: 'error',
+          title: '¡CASI LO LOGRÁS! Revisá las instrucciones y probá nuevamente.',
+          detail: 'Bity ejecutó todas las instrucciones pero todavía no llegó al objetivo. Revisá si faltan bloques, sobran pasos o si el orden debe cambiarse.'
+        };
+      }
+
+      this.render();
+    }
+
+    goToNextExerciseChallenge() {
+      const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
+      if (this.exMapIndex + 1 < gradeMaps.length) {
+        this.selectExerciseMap(this.exMapIndex + 1);
+      } else if (this.exGrade < 5) {
+        this.selectExerciseGrade(this.exGrade + 1, 0);
+      } else {
+        this.showExercisesGradeSelect();
       }
     }
 
@@ -2092,8 +3176,10 @@ function shuffleArray(array) {
       const mount = document.getElementById('algorithms-content-mount');
       if (!mount) return;
 
+      const isG1Upper = this.activeSection === 'exercises' ? (this.exGrade === 1) : (this.currentGrade === 1);
+
       mount.innerHTML = `
-        <div class="alg-fullscreen-layout ${this.currentGrade === 1 ? 'grade-1-uppercase' : ''}">
+        <div class="alg-fullscreen-layout ${isG1Upper ? 'grade-1-uppercase' : ''}">
           ${this.renderTopBar()}
           ${this.renderStepPills()}
           <main class="alg-main-body">
@@ -2104,38 +3190,59 @@ function shuffleArray(array) {
     }
 
     renderTopBar() {
+      const isExercises = this.activeSection === 'exercises';
+      const activeGrade = isExercises ? this.exGrade : this.currentGrade;
+      const totalDoneEx = this.getTotalCompletedExercisesCount();
+
       return `
         <header class="alg-header-bar">
           <div class="alg-header-left">
-            <button class="btn-alg-back" type="button" onclick="window.algorithmsModule.handleBackButton()" title="${this.currentStep > 1 ? this.txt('Volver a la introducción de Algoritmos') : this.txt('Volver a Programación')}">
+            <button class="btn-alg-back" type="button" onclick="window.algorithmsModule.handleBackButton()" title="${isExercises ? this.exTxt('Volver') : (this.currentStep > 1 ? this.txt('Volver a la introducción de Algoritmos') : this.txt('Volver a Programación'))}">
               <span class="btn-icon">⬅️</span>
-              <span class="btn-text">${this.currentStep > 1 ? this.txt('Inicio Algoritmos') : this.txt('Volver')}</span>
+              <span class="btn-text">${isExercises ? (this.exViewMode === 'workspace' ? this.exTxt('Elegir Grado') : this.exTxt('Clase N.º 1')) : (this.currentStep > 1 ? this.txt('Inicio Algoritmos') : this.txt('Volver'))}</span>
             </button>
             <div class="alg-header-title-box">
-              <span class="alg-header-sub">${this.txt('INFORMÁTICA MÁGICA')} • ${this.currentGrade}.º ${this.txt('GRADO')}</span>
-              <h1 class="alg-header-title">${this.txt('Clase N.º 1: ¿Qué es un Algoritmo?')}</h1>
+              <span class="alg-header-sub">${isExercises ? this.exTxt('MÓDULO ALGORITMOS • PROGRAMACIÓN POR BLOQUES') : `${this.txt('INFORMÁTICA MÁGICA')} • ${activeGrade}.º ${this.txt('GRADO')}`}</span>
+              <h1 class="alg-header-title">${isExercises ? `🎄 ${this.exTxt('EJERCICIOS DE ALGORITMOS')}` : this.txt('Clase N.º 1: ¿Qué es un Algoritmo?')}</h1>
             </div>
           </div>
           
           <div class="alg-header-right">
-            <div class="alg-stars-badge animate-fade-in" title="${this.txt('Estrellas Mágicas ganadas')}">
-              <span class="star-icon">⭐</span>
-              <span class="star-count" id="alg-star-count">${this.getStarsCount()}</span>
-              <span class="star-lbl">${this.txt('ESTRELLAS')}</span>
-            </div>
+            <!-- OPCIÓN DE ACCESO DIRECTO: EJERCICIOS DE ALGORITMOS -->
+            <button class="btn-alg-exercises-access ${isExercises ? 'active' : ''}"
+              type="button"
+              onclick="window.algorithmsModule.openBlockExercises()"
+              title="Abrir sección Ejercicios de Algoritmos (1.º a 5.º Grado)">
+              <span class="ex-access-icon">🧩</span>
+              <span class="ex-access-label">EJERCICIOS DE ALGORITMOS</span>
+              <span class="ex-access-badge">${totalDoneEx}/15</span>
+            </button>
 
-            <div class="alg-progress-pill">
-              <span class="prog-label">${this.txt('Paso')} ${this.currentStep} ${this.txt('de')} ${this.totalSteps}</span>
-              <div class="prog-track">
-                <div class="prog-bar" style="width: ${(this.currentStep / this.totalSteps) * 100}%;"></div>
+            ${isExercises ? `
+              <button class="btn-alg-return-class" type="button" onclick="window.algorithmsModule.closeBlockExercises()" title="Volver a las actividades de la Clase N.º 1">
+                <span>📖</span> <span>${this.exTxt('CLASE N.º 1')}</span>
+              </button>
+            ` : `
+              <div class="alg-stars-badge animate-fade-in" title="${this.txt('Estrellas Mágicas ganadas')}">
+                <span class="star-icon">⭐</span>
+                <span class="star-count" id="alg-star-count">${this.getStarsCount()}</span>
+                <span class="star-lbl">${this.txt('ESTRELLAS')}</span>
               </div>
-            </div>
+
+              <div class="alg-progress-pill">
+                <span class="prog-label">${this.txt('Paso')} ${this.currentStep} ${this.txt('de')} ${this.totalSteps}</span>
+                <div class="prog-track">
+                  <div class="prog-bar" style="width: ${(this.currentStep / this.totalSteps) * 100}%;"></div>
+                </div>
+              </div>
+            `}
           </div>
         </header>
       `;
     }
 
     renderStepPills() {
+      const isExercises = this.activeSection === 'exercises';
       const stepNames = [
         { num: 1, label: this.txt('1. ¿Qué es?') },
         { num: 2, label: this.txt('2. Bloques I') },
@@ -2151,19 +3258,30 @@ function shuffleArray(array) {
         <nav class="alg-steps-nav">
           <div class="alg-steps-scroll">
             ${stepNames.map(s => `
-              <button class="alg-step-tab ${this.currentStep === s.num ? 'active' : ''} ${this.completedSteps.has(s.num) ? 'completed' : ''}"
+              <button class="alg-step-tab ${!isExercises && this.currentStep === s.num ? 'active' : ''} ${this.completedSteps.has(s.num) ? 'completed' : ''}"
                 type="button"
                 onclick="window.algorithmsModule.selectStep(${s.num})">
                 <span class="tab-indicator">${this.completedSteps.has(s.num) ? '✓' : s.num}</span>
                 <span class="tab-label">${s.label}</span>
               </button>
             `).join('')}
+
+            <!-- PESTAÑA DESTACADA: EJERCICIOS DE ALGORITMOS -->
+            <button class="alg-step-tab alg-step-tab-exercises ${isExercises ? 'active' : ''}"
+              type="button"
+              onclick="window.algorithmsModule.openBlockExercises()">
+              <span class="tab-indicator">🧩</span>
+              <span class="tab-label">EJERCICIOS DE ALGORITMOS</span>
+            </button>
           </div>
         </nav>
       `;
     }
 
     renderCurrentStepContent() {
+      if (this.activeSection === 'exercises') {
+        return this.renderBlockExercisesSection();
+      }
       if (this.currentStep === 1) return this.renderStep1();
       if (this.currentStep === 2 || this.currentStep === 3) return this.renderStepEveryday();
       if (this.currentStep >= 4 && this.currentStep <= 8) return this.renderStepMaze();
@@ -2312,7 +3430,7 @@ function shuffleArray(array) {
             </div>
           </div>
 
-          <!-- ACCESO DIRECTO A BLOQUE I Y BLOQUE II -->
+          <!-- ACCESO DIRECTO A BLOQUE I, BLOQUE II Y EJERCICIOS DE ALGORITMOS -->
           <div class="everyday-blocks-overview-grid">
             <div class="block-gateway-card card-bloque-1" onclick="window.algorithmsModule.selectStep(2)" role="button" tabindex="0">
               <span class="gateway-badge">⭐ ${this.txt('ACTIVIDAD PRÁCTICA')}</span>
@@ -2328,6 +3446,14 @@ function shuffleArray(array) {
               <h3 class="gateway-title">${this.txt('BLOQUE II: ORDEN Y ORGANIZACIÓN')}</h3>
               <p class="gateway-desc">${this.txt(this.currentGrade >= 3 ? 'Diseñá la secuencia de pasos lógicos para acomodar y dejar impecable una habitación.' : 'Armá el algoritmo para tener la mochila lista con todos los útiles para el colegio.')}</p>
               <button class="btn-gateway" type="button">${this.txt('INGRESAR AL BLOQUE II')} ➔</button>
+            </div>
+
+            <div class="block-gateway-card card-ejercicios-algoritmos" onclick="window.algorithmsModule.openBlockExercises()" role="button" tabindex="0">
+              <span class="gateway-badge gateway-badge-christmas">🎄 ${this.txt('PROGRAMACIÓN CON BLOQUES')}</span>
+              <div class="gateway-icon">🧩 🎁 🎄</div>
+              <h3 class="gateway-title">EJERCICIOS DE ALGORITMOS</h3>
+              <p class="gateway-desc">${this.txt('Elegí tu grado (1.º a 5.º) y ordená bloques de movimiento debajo de «AL EMPEZAR A EJECUTAR» para que Bity supere 15 mapas navideños.')}</p>
+              <button class="btn-gateway btn-gateway-christmas" type="button">${this.txt('ABRIR EJERCICIOS DE ALGORITMOS')} ➔</button>
             </div>
           </div>
 
@@ -2755,9 +3881,524 @@ function shuffleArray(array) {
       `;
     }
 
+    // ============================================================
+    // RENDERIZADORES DE LA SECCIÓN: EJERCICIOS DE ALGORITMOS
+    // ============================================================
+    renderBlockExercisesSection() {
+      if (this.exViewMode === 'grade_select') {
+        return this.renderExercisesGradeSelect();
+      }
+      return this.renderExercisesWorkspace();
+    }
+
+    renderExercisesGradeSelect() {
+      const totalDone = this.getTotalCompletedExercisesCount();
+
+      return `
+        <section class="alg-section alg-exercises-hub-section animate-fade-in">
+          <!-- ENCABEZADO DEL HUB DE EJERCICIOS DE ALGORITMOS -->
+          <div class="alg-card ex-hub-hero-card">
+            <div class="ex-hub-hero-left">
+              <div class="ex-hub-avatar">${getBitySvg('happy')}</div>
+              <div class="ex-hub-hero-text">
+                <span class="ex-hub-kicker">🎄 PROGRAMACIÓN VISUAL CON BLOQUES • NAVIDAD CON BITY</span>
+                <h2 class="ex-hub-title">EJERCICIOS DE ALGORITMOS</h2>
+                <p class="ex-hub-desc">
+                  Construí algoritmos ordenando bloques de movimiento debajo de <strong>AL EMPEZAR A EJECUTAR</strong> para ayudar a Bity a cumplir su objetivo en cada mapa navideño.
+                </p>
+              </div>
+            </div>
+            <div class="ex-hub-hero-right">
+              <div class="ex-hub-total-progress">
+                <span class="ex-hub-prog-num">${totalDone} / 15</span>
+                <span class="ex-hub-prog-lbl">DESAFÍOS RESUELTOS</span>
+              </div>
+              <button class="btn-ex-back-class1" type="button" onclick="window.algorithmsModule.closeBlockExercises()">
+                <span>📖</span> Volver a Clase N.º 1
+              </button>
+            </div>
+          </div>
+
+          <!-- TÍTULO SELECTOR DE GRADO -->
+          <div class="ex-grade-selector-heading">
+            <h3>🎒 SELECCIONÁ TU GRADO (1.º A 5.º GRADO):</h3>
+            <p>Cada grado incluye <strong>3 mapas o desafíos navideños</strong> con dificultad progresiva.</p>
+          </div>
+
+          <!-- GRILLA DE LOS 5 GRADOS -->
+          <div class="ex-grades-cards-grid">
+            ${[1, 2, 3, 4, 5].map(g => {
+              const meta = ALGORITMOS_EXERCISES_GRADES_META[g];
+              const maps = ALGORITMOS_BLOCK_EXERCISES[g] || [];
+              const doneSet = this.exCompletedByGrade[g] || new Set();
+              const doneCount = doneSet.size;
+              const isAllDone = doneCount >= maps.length;
+
+              return `
+                <article class="ex-grade-select-card ${isAllDone ? 'grade-completed' : ''}"
+                  data-ex-grade="${g}"
+                  style="--grade-accent: ${meta.accent};">
+                  <div class="ex-grade-card-top">
+                    <span class="ex-grade-pill">${meta.badge}</span>
+                    <span class="ex-grade-level-tag">${meta.levelTag}</span>
+                  </div>
+
+                  <div class="ex-grade-icon-row">
+                    <span class="ex-grade-main-icon">${meta.icon}</span>
+                    <span class="ex-grade-moves-badge">📏 ${meta.movesRange}</span>
+                  </div>
+
+                  <h4 class="ex-grade-card-title">${meta.name}</h4>
+                  <p class="ex-grade-card-desc">${meta.description}</p>
+
+                  <!-- Lista rápida de los 3 mapas del grado -->
+                  <div class="ex-grade-maps-preview">
+                    ${maps.map((m, idx) => {
+                      const isMapDone = doneSet.has(m.id);
+                      return `
+                        <button type="button"
+                          class="ex-grade-map-chip ${isMapDone ? 'chip-done' : ''}"
+                          onclick="event.stopPropagation(); window.algorithmsModule.selectExerciseGrade(${g}, ${idx})"
+                          title="Ir directamente al ${m.title}">
+                          <span>${isMapDone ? '✅' : m.goalIcon}</span>
+                          <span>Mapa ${idx + 1}</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+
+                  <div class="ex-grade-card-footer">
+                    <span class="ex-grade-done-counter">⭐ ${doneCount} / ${maps.length} completados</span>
+                    <button type="button"
+                      class="btn-ex-enter-grade"
+                      onclick="window.algorithmsModule.selectExerciseGrade(${g}, 0)">
+                      <span>🚀</span> Ingresar a ${meta.badge}
+                    </button>
+                  </div>
+                </article>
+              `;
+            }).join('')}
+          </div>
+        </section>
+      `;
+    }
+
+    renderExercisesWorkspace() {
+      const map = this.getCurrentExMap();
+      const gradeMeta = ALGORITMOS_EXERCISES_GRADES_META[this.exGrade] || ALGORITMOS_EXERCISES_GRADES_META[1];
+      const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
+      const doneSet = this.exCompletedByGrade[this.exGrade] || new Set();
+
+      const totalInstructions = this.exBlocks.length;
+      const executedCount = (this.exStepCursor >= 0) ? Math.min(totalInstructions, this.exStepCursor + 1) : 0;
+      const pendingCount = Math.max(0, totalInstructions - executedCount);
+      const isStepModeActive = (this.exExecMode === 'step' && this.exStepCursor < totalInstructions - 1);
+      const isBusy = (this.exIsAnimatingStep || this.exExecMode === 'running');
+
+      const movementKeys = ['down', 'up', 'right', 'left'];
+
+      return `
+        <section class="alg-section alg-exercises-workspace-section animate-fade-in">
+          <!-- BARRA SUPERIOR DE SELECCIÓN DE GRADO Y MAPA (1.º a 5.º Grado • 3 Desafíos por grado) -->
+          <div class="ex-workspace-nav-bar">
+            <div class="ex-nav-grades-group">
+              <button type="button"
+                class="btn-ex-hub-grid"
+                onclick="window.algorithmsModule.showExercisesGradeSelect()"
+                title="Ver todos los grados (1.º a 5.º)">
+                <span>🎒</span> <span>${this.exTxt('Grados')}</span>
+              </button>
+              <div class="ex-grade-QuickPills" role="tablist" aria-label="Seleccionar grado">
+                ${[1, 2, 3, 4, 5].map(g => `
+                  <button type="button"
+                    class="btn-ex-grade-pill ${this.exGrade === g ? 'active' : ''}"
+                    onclick="window.algorithmsModule.selectExerciseGrade(${g}, 0)">
+                    ${g}.º ${this.exTxt('Grado')}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="ex-nav-maps-group" role="tablist" aria-label="Desafíos del grado">
+              ${gradeMaps.map((m, idx) => {
+                const isMapDone = doneSet.has(m.id);
+                const isCurrent = (this.exMapIndex === idx);
+                return `
+                  <button type="button"
+                    class="btn-ex-map-tab ${isCurrent ? 'active' : ''} ${isMapDone ? 'completed' : ''}"
+                    onclick="window.algorithmsModule.selectExerciseMap(${idx})">
+                    <span class="map-tab-icon">${isMapDone ? '✅' : m.goalIcon}</span>
+                    <span class="map-tab-label">${this.exTxt(`Desafío ${idx + 1}`)}</span>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- ========================================================== -->
+          <!-- SECTOR A: ENUNCIADO DEL DESAFÍO (Parte Superior)           -->
+          <!-- ========================================================== -->
+          <div class="ex-sector-prompt alg-card">
+            <div class="ex-prompt-bity-box">
+              <div class="ex-prompt-bity-svg">
+                ${getBitySvg(this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy'))}
+              </div>
+            </div>
+
+            <div class="ex-prompt-text-box">
+              <div class="ex-prompt-badges-row">
+                <span class="ex-badge-grade">${this.exTxt(gradeMeta.badge)} • ${this.exTxt(gradeMeta.levelTag)}</span>
+                <span class="ex-badge-challenge">🎄 ${this.exTxt(map.title)}</span>
+                ${doneSet.has(map.id) ? `<span class="ex-badge-solved">✅ ${this.exTxt('¡DESAFÍO SUPERADO!')}</span>` : ''}
+              </div>
+              <p class="ex-prompt-statement">${this.exTxt(map.prompt)}</p>
+            </div>
+
+            <div class="ex-prompt-goal-card">
+              <div class="ex-goal-icon-preview">${map.goalIcon}</div>
+              <div class="ex-goal-meta">
+                <span class="ex-goal-kicker">${this.exTxt('OBJETIVO')}</span>
+                <strong class="ex-goal-name">${this.exTxt(map.goalLabel || map.goalName || '')}</strong>
+                ${map.collectible ? `
+                  <span class="ex-goal-collectible-tag ${this.exCollectiblePicked ? 'picked' : ''}">
+                    ${this.exCollectiblePicked ? '✅' : map.collectible.icon} ${this.exTxt(`Pasar por ${map.collectible.name}`)}
+                  </span>
+                ` : ''}
+              </div>
+            </div>
+          </div>
+
+          <!-- ========================================================== -->
+          <!-- CONTENEDOR PRINCIPAL DE DOS COLUMNAS: SECTOR B Y SECTOR C  -->
+          <!-- ========================================================== -->
+          <div class="ex-main-two-sectors">
+
+            <!-- ======================================================== -->
+            <!-- SECTOR B: SECTOR DE CÓDIGO: BLOQUES DE INSTRUCCIONES     -->
+            <!-- ======================================================== -->
+            <div class="ex-sector-code alg-card">
+              <div class="ex-sector-header">
+                <span class="ex-sector-tag">🧩 ${this.exTxt('SECTOR DE CÓDIGO: BLOQUES DE INSTRUCCIONES')}</span>
+                <span class="ex-sector-subhint">${this.exTxt('Arrastrá o hacé clic en un bloque para agregarlo a tu algoritmo')}</span>
+              </div>
+
+              <div class="ex-code-panels-split">
+                <!-- SUB-PANEL 1: PALETA DE LOS 5 BLOQUES -->
+                <div class="ex-palette-column">
+                  <h4 class="ex-column-title">📦 ${this.exTxt('BLOQUES DISPONIBLES')}</h4>
+
+                  <!-- 1. Bloque de Inicio: AL EMPEZAR A EJECUTAR (Encabezado único, no duplicable) -->
+                  <div class="ex-palette-start-info" title="${this.exTxt('El bloque AL EMPEZAR A EJECUTAR ya está colocado al inicio de tu algoritmo y no se puede duplicar.')}">
+                    <div class="ex-block-piece ex-block-start-header-preview">
+                      <span class="ex-block-start-icon">🚩</span>
+                      <span class="ex-block-start-text">AL EMPEZAR A EJECUTAR</span>
+                    </div>
+                    <span class="ex-start-unique-note">✓ ${this.exTxt('Encabezado fijo al comienzo del algoritmo')}</span>
+                  </div>
+
+                  <!-- 2 a 5. Los 4 Bloques de Movimiento con Flechas Visibles (↓, ↑, →, ←) -->
+                  <div class="ex-palette-movements-list">
+                    ${movementKeys.map(dir => {
+                      const def = ALGORITMOS_BLOCK_DEFS[dir];
+                      return `
+                        <button type="button"
+                          class="ex-palette-block-btn ex-block-dir-${dir}"
+                          data-block-dir="${dir}"
+                          draggable="${!isBusy}"
+                          ${isBusy ? 'disabled' : ''}
+                          ondragstart="window.algorithmsModule.handleExPaletteDragStart(event, '${dir}')"
+                          ondragend="window.algorithmsModule.handleExDragEnd()"
+                          onclick="window.algorithmsModule.addExBlock('${dir}')"
+                          title="${this.exTxt(`Agregar bloque ${def.label} (${def.arrow})`)}">
+                          <span class="ex-block-arrow-badge" aria-hidden="true">${def.arrow}</span>
+                          <span class="ex-block-label-text">${def.label}</span>
+                          <span class="ex-block-add-plus">＋</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+
+                  <div class="ex-palette-helper-card">
+                    <span>💡</span>
+                    <p>${this.exTxt('Podés arrastrar cada bloque hacia el área de código o tocarlo con un clic para sumarlo.')}</p>
+                  </div>
+                </div>
+
+                <!-- SUB-PANEL 2: ÁREA DE CÓDIGO (ALGORITMO ORDENADO VERTICALMENTE) -->
+                <div class="ex-program-column">
+                  <div class="ex-program-header-row">
+                    <h4 class="ex-column-title">📜 ${this.exTxt('TU ALGORITMO')}</h4>
+                    <span class="ex-program-count-badge">${totalInstructions} ${this.exTxt(totalInstructions === 1 ? 'instrucción' : 'instrucciones')}</span>
+                  </div>
+
+                  <div class="ex-program-canvas"
+                    ondragover="window.algorithmsModule.handleExDragOver(event, this)"
+                    ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
+                    ondrop="window.algorithmsModule.handleExDropOnSlot(event, ${totalInstructions})">
+
+                    <!-- BLOQUE 1 (ENCABEZADO FIJO): AL EMPEZAR A EJECUTAR -->
+                    <div class="ex-header-cap-block" data-block-type="start">
+                      <div class="ex-cap-top-bar"></div>
+                      <div class="ex-cap-content">
+                        <span class="ex-cap-flag">🚩</span>
+                        <span class="ex-cap-title">AL EMPEZAR A EJECUTAR</span>
+                      </div>
+                      <div class="ex-cap-notch"></div>
+                    </div>
+
+                    <!-- LISTA VERTICAL DE INSTRUCCIONES ENCASTRADAS -->
+                    <div class="ex-vertical-blocks-stack">
+                      <!-- Ranura de inserción superior (posición 0) -->
+                      <div class="ex-drop-slot ${this.exInsertIndex === 0 ? 'insert-target-active' : ''}"
+                        data-slot-idx="0"
+                        ondragover="window.algorithmsModule.handleExDragOver(event, this)"
+                        ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
+                        ondrop="window.algorithmsModule.handleExDropOnSlot(event, 0)"
+                        onclick="window.algorithmsModule.setExInsertIndex(0)"
+                        title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertarlo al inicio')}">
+                        <span class="ex-drop-slot-line"></span>
+                        ${this.exInsertIndex === 0 ? `<span class="ex-insert-here-pill">➔ ${this.exTxt('Nueva instrucción se insertará aquí (Posición 1)')}</span>` : ''}
+                      </div>
+
+                      ${this.exBlocks.length === 0 ? `
+                        <div class="ex-empty-algorithm-dropzone">
+                          <div class="ex-empty-arrow">⬇️</div>
+                          <p class="ex-empty-title">${this.exTxt('Aquí se insertará tu primera instrucción')}</p>
+                          <p class="ex-empty-sub">${this.exTxt('Arrastrá o hacé clic en los bloques de movimiento para encastrarlos debajo de AL EMPEZAR A EJECUTAR.')}</p>
+                        </div>
+                      ` : this.exBlocks.map((dir, idx) => {
+                        const def = ALGORITMOS_BLOCK_DEFS[dir];
+                        const isExecutingNow = (this.exStepCursor === idx && (this.exExecMode === 'running' || this.exExecMode === 'step' || this.exExecMode === 'error'));
+                        const isAlreadyExecuted = (this.exStepCursor > idx && this.exExecMode !== 'idle');
+                        const isNextInsertHere = (this.exInsertIndex === idx + 1);
+
+                        return `
+                          <div class="ex-placed-block-wrapper">
+                            <div class="ex-placed-block ex-block-dir-${dir} ${isExecutingNow ? 'ex-block-executing' : ''} ${isAlreadyExecuted ? 'ex-block-executed' : ''}"
+                              data-step-idx="${idx}"
+                              data-block-dir="${dir}"
+                              draggable="${!isBusy}"
+                              ondragstart="window.algorithmsModule.handleExBlockDragStart(event, ${idx})"
+                              ondragend="window.algorithmsModule.handleExDragEnd()">
+                              <span class="ex-placed-step-num">${idx + 1}</span>
+                              <span class="ex-placed-arrow-badge" aria-hidden="true">${def.arrow}</span>
+                              <span class="ex-placed-label">${def.label}</span>
+                              ${isExecutingNow ? `<span class="ex-executing-tag">▶ ${this.exTxt('EJECUTANDO')}</span>` : ''}
+
+                              <div class="ex-placed-controls">
+                                <button type="button"
+                                  class="btn-ex-block-ctrl"
+                                  ${idx === 0 || isBusy ? 'disabled' : ''}
+                                  onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, -1)"
+                                  title="${this.exTxt('Mover instrucción hacia arriba')}">▲</button>
+                                <button type="button"
+                                  class="btn-ex-block-ctrl"
+                                  ${idx === this.exBlocks.length - 1 || isBusy ? 'disabled' : ''}
+                                  onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, 1)"
+                                  title="${this.exTxt('Mover instrucción hacia abajo')}">▼</button>
+                                <button type="button"
+                                  class="btn-ex-block-remove"
+                                  ${isBusy ? 'disabled' : ''}
+                                  onclick="event.stopPropagation(); window.algorithmsModule.removeExBlock(${idx})"
+                                  title="${this.exTxt('Quitar esta instrucción')}">✕</button>
+                              </div>
+                            </div>
+
+                            <!-- Ranura de inserción debajo del bloque idx -->
+                            <div class="ex-drop-slot ${isNextInsertHere ? 'insert-target-active' : ''}"
+                              data-slot-idx="${idx + 1}"
+                              ondragover="window.algorithmsModule.handleExDragOver(event, this)"
+                              ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
+                              ondrop="window.algorithmsModule.handleExDropOnSlot(event, ${idx + 1})"
+                              onclick="window.algorithmsModule.setExInsertIndex(${idx + 1})"
+                              title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertar en esta posición')}">
+                              <span class="ex-drop-slot-line"></span>
+                              ${isNextInsertHere ? `<span class="ex-insert-here-pill">➔ ${this.exTxt(`Nueva instrucción se insertará aquí (Posición ${idx + 2})`)}</span>` : ''}
+                            </div>
+                          </div>
+                        `;
+                      }).join('')}
+
+                      <!-- Indicador visual permanente de dónde se insertará el próximo bloque cuando el cursor está al final -->
+                      ${this.exBlocks.length > 0 && this.exInsertIndex === null ? `
+                        <div class="ex-next-insertion-footer">
+                          <span class="ex-insert-dot">➕</span>
+                          <span>${this.exTxt(`La próxima instrucción se insertará aquí al final (Posición ${this.exBlocks.length + 1})`)}</span>
+                        </div>
+                      ` : ''}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ======================================================== -->
+            <!-- SECTOR C: SECTOR DEL MAPA Y BOTONES DE EJECUCIÓN         -->
+            <!-- ======================================================== -->
+            <div class="ex-sector-map alg-card">
+              <div class="ex-sector-header">
+                <span class="ex-sector-tag">🗺️ ${this.exTxt('SECTOR DEL MAPA NAVIDEÑO')}</span>
+                <span class="ex-map-dimensions-badge">${map.cols} × ${map.rows} ${this.exTxt('casillas')}</span>
+              </div>
+
+              <!-- TABLERO DEL MAPA -->
+              <div class="ex-map-board-frame">
+                <div class="ex-grid-board" style="--ex-cols: ${map.cols}; --ex-rows: ${map.rows};">
+                  ${this.renderExMapBoard(map)}
+                </div>
+              </div>
+
+              <!-- LEYENDA DEL MAPA -->
+              <div class="ex-map-legend">
+                <span class="ex-legend-item">🤖 ${this.exTxt('Bity')}</span>
+                <span class="ex-legend-item">🚩 ${this.exTxt('Partida')}</span>
+                <span class="ex-legend-item">${map.goalIcon} ${this.exTxt('Objetivo')}</span>
+                ${map.collectible ? `<span class="ex-legend-item">${map.collectible.icon} ${this.exTxt('Paso previo')}</span>` : ''}
+                <span class="ex-legend-item">🌲⛄ ${this.exTxt('Obstáculos')}</span>
+              </div>
+
+              <!-- PANEL DE ESTADO DE EJECUCIÓN PASO A PASO (Ejecutadas y Pendientes) -->
+              <div class="ex-execution-status-bar ${this.exExecMode !== 'idle' ? 'status-active' : ''}">
+                <div class="ex-status-counters">
+                  <span class="ex-counter-pill counter-executed">
+                    ✅ ${this.exTxt('Ejecutadas')}: <strong id="ex-executed-count">${executedCount}</strong>
+                  </span>
+                  <span class="ex-counter-pill counter-pending">
+                    ⏳ ${this.exTxt('Pendientes')}: <strong id="ex-pending-count">${pendingCount}</strong>
+                  </span>
+                  <span class="ex-counter-pill counter-total">
+                    📋 ${this.exTxt('Total')}: <strong>${totalInstructions}</strong>
+                  </span>
+                </div>
+                ${isStepModeActive ? `
+                  <button type="button"
+                    class="btn-ex-next-step-inline animate-pulse"
+                    ${isBusy ? 'disabled' : ''}
+                    onclick="window.algorithmsModule.runExStepByStep()">
+                    <span>⏭️</span> <span>${this.exTxt('AVANZAR AL SIGUIENTE PASO')} (${executedCount + 1}/${totalInstructions})</span>
+                  </button>
+                ` : ''}
+              </div>
+
+              <!-- BOTONES PRINCIPALES DE EJECUCIÓN Y CONTROL -->
+              <div class="ex-controls-area">
+                <div class="ex-primary-exec-buttons">
+                  <button type="button"
+                    id="btn-ex-run-all"
+                    class="btn-ex-exec btn-ex-run-all"
+                    ${isBusy ? 'disabled' : ''}
+                    onclick="window.algorithmsModule.runExAll()">
+                    <span class="btn-ex-icon">▶️</span>
+                    <span class="btn-ex-text">EJECUTAR</span>
+                  </button>
+
+                  <button type="button"
+                    id="btn-ex-run-step"
+                    class="btn-ex-exec btn-ex-run-step ${isStepModeActive ? 'step-mode-active' : ''}"
+                    ${isBusy ? 'disabled' : ''}
+                    onclick="window.algorithmsModule.runExStepByStep()">
+                    <span class="btn-ex-icon">👣</span>
+                    <span class="btn-ex-text">EJECUTAR PASO A PASO</span>
+                  </button>
+                </div>
+
+                <div class="ex-secondary-exec-buttons">
+                  <button type="button"
+                    id="btn-ex-reset-pos"
+                    class="btn-ex-secondary btn-ex-reset"
+                    onclick="window.algorithmsModule.resetExPosition()">
+                    <span>🔄</span> <span>REINICIAR</span>
+                  </button>
+
+                  <button type="button"
+                    id="btn-ex-clear-code"
+                    class="btn-ex-secondary btn-ex-clear"
+                    onclick="window.algorithmsModule.clearExCode()">
+                    <span>🗑️</span> <span>BORRAR CÓDIGO</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- RETROALIMENTACIÓN / VALIDACIÓN DEL RESULTADO -->
+              ${this.exFeedback ? `
+                <div class="ex-feedback-card ${this.exFeedback.type === 'won' ? 'ex-feedback-won' : 'ex-feedback-error'} animate-scale-up" role="status">
+                  <div class="ex-feedback-icon">
+                    ${this.exFeedback.type === 'won' ? '🎉 🎄 🎁' : '💡 🤖'}
+                  </div>
+                  <div class="ex-feedback-body">
+                    <h4 class="ex-feedback-title">${this.exTxt(this.exFeedback.title)}</h4>
+                    ${this.exFeedback.detail ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.detail)}</p>` : ''}
+                    ${this.exFeedback.message ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.message)}</p>` : ''}
+
+                    ${this.exFeedback.type === 'won' ? `
+                      <div class="ex-feedback-actions">
+                        <button type="button" class="btn-ex-victory-next" onclick="window.algorithmsModule.goToNextExerciseChallenge()">
+                          <span>🚀</span> <span>${this.exMapIndex < 2 ? this.exTxt('SIGUIENTE DESAFÍO') : (this.exGrade < 5 ? this.exTxt(`PASAR A ${this.exGrade + 1}.º GRADO`) : this.exTxt('VER TODOS LOS GRADOS'))} ➔</span>
+                        </button>
+                      </div>
+                    ` : ''}
+                  </div>
+                </div>
+              ` : ''}
+            </div>
+
+          </div>
+        </section>
+      `;
+    }
+
+    renderExMapBoard(map) {
+      const obstacleIcons = ['🌲', '⛄', '🎄', '📦', '🧊'];
+      let html = '';
+
+      for (let r = 0; r < map.rows; r++) {
+        for (let c = 0; c < map.cols; c++) {
+          const isObstacle = (map.grid[r] && map.grid[r][c] === 1);
+          const isStart = (map.start.x === c && map.start.y === r);
+          const isGoal = (map.goal.x === c && map.goal.y === r);
+          const isBityHere = (this.exBityPos.x === c && this.exBityPos.y === r);
+          const hasCollectible = (map.collectible && map.collectible.x === c && map.collectible.y === r);
+
+          let cellClasses = 'ex-grid-cell';
+          cellClasses += isObstacle ? ' ex-cell-obstacle' : ' ex-cell-path';
+          if (isStart) cellClasses += ' ex-cell-start';
+          if (isGoal) cellClasses += ' ex-cell-goal';
+          if (hasCollectible) cellClasses += ' ex-cell-collectible';
+          if (isBityHere) cellClasses += ' ex-cell-has-bity';
+
+          const obsIcon = obstacleIcons[(r * 7 + c * 3) % obstacleIcons.length];
+
+          html += `
+            <div class="${cellClasses}" data-x="${c}" data-y="${r}">
+              ${isStart ? `<span class="ex-cell-start-badge" title="${this.exTxt('Punto de partida')}">🚩</span>` : ''}
+              ${isObstacle ? `<span class="ex-cell-obstacle-icon" aria-hidden="true">${obsIcon}</span>` : ''}
+              ${hasCollectible && !this.exCollectiblePicked ? `
+                <span class="ex-cell-collectible-icon item-pulse" title="${this.exTxt(map.collectible.name)}">${map.collectible.icon}</span>
+              ` : ''}
+              ${hasCollectible && this.exCollectiblePicked ? `
+                <span class="ex-cell-collectible-picked" title="${this.exTxt('¡Recolectado!')}">✨</span>
+              ` : ''}
+              ${isGoal ? `
+                <span class="ex-cell-goal-icon ${isBityHere && this.exExecMode === 'won' ? 'goal-reached-bounce' : 'item-pulse'}" title="${this.exTxt(map.goalLabel || map.goalName || '')}">${map.goalIcon}</span>
+              ` : ''}
+              ${isBityHere ? `
+                <div class="ex-bity-sprite facing-${this.exBityFacing} ${this.exExecMode === 'won' ? 'bity-spin-celebration' : ''}">
+                  ${getBitySvg(this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy'))}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }
+      }
+
+      return html;
+    }
+
     exitModule() {
+      this.stopExExecution();
       this.playSound('click');
       this.saveProgress();
+      this.saveExercisesProgress();
       if (typeof window !== 'undefined') {
         if (window.MagicApp && typeof window.MagicApp.navigate === 'function') {
           window.MagicApp.navigate('coding');
@@ -2774,6 +4415,9 @@ function shuffleArray(array) {
   algorithmsModuleInstance.ALL_MAZES = ALL_MAZES;
   algorithmsModuleInstance.ALGORITHM_QUESTIONS = ALGORITHM_QUESTIONS;
   algorithmsModuleInstance.ALGORITHM_SVGS = ALGORITHM_SVGS;
+  algorithmsModuleInstance.ALGORITMOS_BLOCK_DEFS = ALGORITMOS_BLOCK_DEFS;
+  algorithmsModuleInstance.ALGORITMOS_EXERCISES_GRADES_META = ALGORITMOS_EXERCISES_GRADES_META;
+  algorithmsModuleInstance.ALGORITMOS_BLOCK_EXERCISES = ALGORITMOS_BLOCK_EXERCISES;
   global.algorithmsModule = algorithmsModuleInstance;
 
 })(typeof window !== 'undefined' ? window : global);

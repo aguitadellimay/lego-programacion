@@ -7733,6 +7733,33 @@ class CodingModuleManager {
     }
   }
 
+  /**
+   * Inicia directamente la nueva sección independiente "EJERCICIOS DE ALGORITMOS" dentro del módulo Algoritmos
+   */
+  startAlgorithmsExercises(targetGrade = null) {
+    this.cleanupCurrentActivity();
+    if (typeof window !== 'undefined' && window.teacherManager && !window.teacherManager.canAccessScreen('screen-coding-algorithms')) {
+      window.teacherManager.showBlockedNoticeForScreen('screen-coding-algorithms');
+      return;
+    }
+    const grade = this.currentGrade || parseInt(localStorage.getItem('lego_current_grade')) || 1;
+    this.currentGrade = grade;
+    try {
+      localStorage.setItem('lego_current_grade', String(this.currentGrade));
+      sessionStorage.setItem('lego_active_screen', 'screen-coding-algorithms');
+      sessionStorage.setItem('lego_active_grade', String(this.currentGrade));
+    } catch (e) {}
+    this.hideGiftButtons();
+    if (this.onShowScreen) {
+      this.onShowScreen('screen-coding-algorithms');
+    }
+    if (typeof window !== 'undefined' && window.algorithmsModule) {
+      window.algorithmsModule.currentGrade = this.currentGrade;
+      window.algorithmsModule.exGrade = targetGrade || this.currentGrade;
+      window.algorithmsModule.openBlockExercises(targetGrade);
+    }
+  }
+
   startInstructionsTopic() {
     this.cleanupCurrentActivity();
     this.currentTopic = 'instructions';
@@ -8281,6 +8308,16 @@ class CodingModuleManager {
         if (e) e.stopPropagation();
         this.onPlaySound('pop');
         this.startAlgorithmsTopic();
+      };
+    }
+
+    const btnStartAlgEx = document.getElementById('btn-start-algorithms-exercises');
+    if (btnStartAlgEx) {
+      btnStartAlgEx.innerHTML = '<span>🎄</span> EJERCICIOS DE ALGORITMOS';
+      btnStartAlgEx.onclick = (e) => {
+        if (e) e.stopPropagation();
+        this.onPlaySound('pop');
+        this.startAlgorithmsExercises();
       };
     }
 

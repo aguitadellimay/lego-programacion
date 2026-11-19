@@ -719,9 +719,14 @@
                 <div id="syllabus-algorithms-progress" class="progress-bar-fill" style="width: 0%; background: linear-gradient(90deg, #8b5cf6, #3b82f6);"></div>
               </div>
             </div>
-            <button id="btn-start-algorithms-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 0 #5b21b6;" onclick="event.stopPropagation();if(window.codingManager){window.codingManager.startAlgorithmsTopic();}else if(window.algorithmsModule){window.algorithmsModule.startClass(1,1);}">
-              <span>🧩</span> ¡Comenzar Algoritmos!
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
+              <button id="btn-start-algorithms-topic" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #8b5cf6, #7c3aed); box-shadow: 0 4px 0 #5b21b6;" onclick="event.stopPropagation();if(window.codingManager){window.codingManager.startAlgorithmsTopic();}else if(window.algorithmsModule){window.algorithmsModule.startClass(1,1);}">
+                <span>🧩</span> ¡Comenzar Algoritmos!
+              </button>
+              <button id="btn-start-algorithms-exercises" class="btn-start-topic" type="button" style="background: linear-gradient(180deg, #16a34a, #15803d); box-shadow: 0 4px 0 #14532d; border: 1.5px solid #ffd700;" onclick="event.stopPropagation();if(window.codingManager && typeof window.codingManager.startAlgorithmsExercises === 'function'){window.codingManager.startAlgorithmsExercises();}else if(window.algorithmsModule){window.algorithmsModule.openBlockExercises();}">
+                <span>🎄</span> EJERCICIOS DE ALGORITMOS
+              </button>
+            </div>
           </article>
 
           <!-- Tema 3: Secuencias (Futuro) -->
