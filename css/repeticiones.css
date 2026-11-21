@@ -1,0 +1,1249 @@
+/**
+ * repeticiones.css
+ * Estilos del Módulo Independiente: REPETICIONES – Programación con Bloques (1.º a 5.º Grado)
+ * Ambientación Navideña de Alto Contraste + Bloque C "REPETIR [N] VECES" inspirado en img/repeticiones.jfif
+ */
+
+#screen-coding-repeticiones {
+  min-height: calc(100vh - 78px);
+  background:
+    radial-gradient(circle at 15% 18%, rgba(22, 163, 74, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 22%, rgba(212, 36, 38, 0.2) 0%, transparent 45%),
+    linear-gradient(180deg, #071524 0%, #0b2138 50%, #071524 100%);
+  color: #f8fafc;
+  padding: 18px 20px 56px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.rep-app-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.rep-grade-1-uppercase {
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   1. BARRA SUPERIOR DEL MÓDULO REPETICIONES
+   ======================================================== */
+.rep-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(15, 38, 62, 0.96) 0%, rgba(10, 26, 44, 0.98) 100%);
+  border: 2.5px solid #ffd700;
+  border-radius: 20px;
+  padding: 14px 20px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.48);
+  margin-bottom: 14px;
+}
+
+.rep-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-rep-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: rgba(7, 21, 36, 0.9);
+  border: 2px solid #ffd700;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.btn-rep-back:hover {
+  transform: translateY(-2px);
+  background: rgba(212, 36, 38, 0.85);
+}
+
+.rep-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.rep-kicker {
+  font-size: 0.76rem;
+  font-weight: 900;
+  color: #fde047;
+  letter-spacing: 0.6px;
+}
+
+.rep-main-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+}
+
+.rep-topbar-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-rep-stage-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.btn-rep-stage-nav:hover {
+  border-color: #fde047;
+  color: #ffffff;
+}
+
+.btn-rep-stage-nav.active {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  border: 2px solid #ffd700;
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 0 14px rgba(22, 163, 74, 0.55);
+}
+
+.rep-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rep-grade-pills-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(7, 21, 36, 0.8);
+  padding: 5px 8px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+}
+
+.rep-grade-lbl {
+  font-size: 0.76rem;
+  font-weight: 900;
+  color: #fde047;
+  margin-right: 4px;
+}
+
+.btn-rep-grade-pill {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 34, 56, 0.9);
+  color: #cbd5e1;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-rep-grade-pill:hover {
+  border-color: #fde047;
+  color: #ffffff;
+}
+
+.btn-rep-grade-pill.active {
+  background: linear-gradient(135deg, #d42426, #991b1b);
+  border-color: #ffd700;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.rep-progress-badge {
+  background: rgba(7, 21, 36, 0.9);
+  border: 2px solid #ffd700;
+  color: #fde047;
+  padding: 7px 13px;
+  border-radius: 12px;
+  font-size: 0.84rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ========================================================
+   2. PANTALLA DE BIENVENIDA (WELCOME)
+   ======================================================== */
+.rep-welcome-card {
+  max-width: 920px;
+  margin: 18px auto;
+  background: linear-gradient(145deg, rgba(22, 91, 51, 0.94) 0%, rgba(12, 35, 58, 0.97) 100%);
+  border: 3px solid #ffd700;
+  border-radius: 26px;
+  padding: 34px 32px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55), 0 0 28px rgba(255, 215, 0, 0.22);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rep-welcome-decor {
+  font-size: 1.7rem;
+  letter-spacing: 8px;
+  margin-bottom: 10px;
+}
+
+.rep-welcome-bity-stage {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 16px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.28) 0%, rgba(7, 21, 36, 0.9) 75%);
+  border: 3px solid #ffd700;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.rep-welcome-bity-stage svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rep-welcome-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #d42426, #991b1b);
+  border: 1.5px solid #ffd700;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.rep-welcome-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 16px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.rep-welcome-speech-bubble {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  background: rgba(7, 21, 36, 0.88);
+  border: 2.5px solid #fde047;
+  border-radius: 22px;
+  padding: 20px 26px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+.rep-welcome-speech-text {
+  font-size: 1.24rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rep-welcome-grade-box {
+  margin: 0 auto 26px;
+  max-width: 680px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  padding: 14px 18px;
+}
+
+.rep-welcome-grade-label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #fde047;
+  margin-bottom: 10px;
+}
+
+.rep-welcome-grade-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-rep-welcome-grade {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(15, 38, 62, 0.95);
+  color: #f8fafc;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.btn-rep-welcome-grade:hover {
+  transform: translateY(-2px);
+  border-color: #fde047;
+}
+
+.btn-rep-welcome-grade.active {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  border-color: #ffd700;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(22, 163, 74, 0.65);
+}
+
+.rep-welcome-grade-note {
+  margin: 10px 0 0;
+  font-size: 0.86rem;
+  color: #bae6fd;
+  font-weight: 700;
+}
+
+.btn-rep-start-main {
+  background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%);
+  border: 3px solid #ffffff;
+  color: #071524;
+  font-family: inherit;
+  font-size: 1.22rem;
+  font-weight: 900;
+  padding: 15px 36px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 215, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-rep-start-main:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 32px rgba(255, 215, 0, 0.9);
+}
+
+/* ========================================================
+   3. PRIMERA PARTE: ¿QUÉ SIGNIFICA REPETIR? (CONCEPT)
+   ======================================================== */
+.rep-concept-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rep-concept-hero-card {
+  background: linear-gradient(145deg, rgba(15, 38, 62, 0.96) 0%, rgba(9, 23, 40, 0.98) 100%);
+  border: 2.5px solid #ffd700;
+  border-radius: 22px;
+  padding: 26px 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.rep-concept-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.rep-concept-bity {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.25), rgba(7, 21, 36, 0.9));
+  border: 2.5px solid #ffd700;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.rep-concept-bity svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rep-concept-tag {
+  display: inline-block;
+  background: #16a34a;
+  border: 1px solid #ffd700;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.rep-concept-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 900;
+  color: #fde047;
+  margin: 0;
+}
+
+.rep-concept-quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.rep-quote-box {
+  background: rgba(7, 21, 36, 0.85);
+  border: 2px solid rgba(56, 189, 248, 0.45);
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rep-quote-box.quote-highlight {
+  border-color: #ffd700;
+  background: linear-gradient(135deg, rgba(22, 91, 51, 0.55), rgba(7, 21, 36, 0.9));
+}
+
+.rep-quote-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.rep-quote-text {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Ilustración interactiva de los 4 pasos de Bity */
+.rep-illustration-strip {
+  background: rgba(7, 21, 36, 0.9);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 18px;
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.rep-strip-caption {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #fde047;
+  margin: 0 0 12px;
+}
+
+.rep-strip-tiles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rep-demo-tile {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  background: rgba(224, 242, 254, 0.14);
+  border: 2px solid rgba(186, 230, 253, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: 900;
+}
+
+.rep-demo-tile.tile-start {
+  border-color: #4ade80;
+  background: rgba(22, 163, 74, 0.28);
+}
+
+.rep-demo-tile.tile-goal {
+  border-color: #ffd700;
+  background: rgba(250, 204, 21, 0.25);
+}
+
+.rep-demo-tile .tile-step-num {
+  font-size: 0.72rem;
+  color: #fde047;
+}
+
+.rep-demo-arrow {
+  font-size: 1.3rem;
+  color: #fde047;
+  font-weight: 900;
+}
+
+/* Comparación Visual: Sin Repetición vs Con Bloque REPETIR */
+.rep-comparison-card {
+  background: linear-gradient(145deg, rgba(12, 28, 48, 0.96) 0%, rgba(7, 19, 34, 0.98) 100%);
+  border: 2.5px solid #38bdf8;
+  border-radius: 22px;
+  padding: 24px 26px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.rep-comparison-heading {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.rep-comparison-heading h3 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.rep-comparison-heading p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.rep-comparison-columns {
+  display: grid;
+  grid-template-columns: 1fr auto 1.1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.rep-comp-col {
+  background: rgba(7, 21, 36, 0.88);
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.rep-comp-col.col-without-repeat {
+  border-color: rgba(248, 113, 113, 0.55);
+}
+
+.rep-comp-col.col-with-repeat {
+  border-color: #4ade80;
+  background: linear-gradient(160deg, rgba(22, 91, 51, 0.35), rgba(7, 21, 36, 0.92));
+  box-shadow: 0 0 22px rgba(74, 222, 128, 0.2);
+}
+
+.rep-comp-col-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.col-without-repeat .rep-comp-col-badge {
+  background: rgba(239, 68, 68, 0.25);
+  border: 1px solid #f87171;
+  color: #fecaca;
+}
+
+.col-with-repeat .rep-comp-col-badge {
+  background: rgba(22, 163, 74, 0.35);
+  border: 1px solid #4ade80;
+  color: #bbf7d0;
+}
+
+.rep-comp-blocks-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rep-static-move-block {
+  background: linear-gradient(135deg, #ea580c, #d97706);
+  border: 2px solid #fde047;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 3px 0 #9a3412;
+}
+
+.rep-comp-transition-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 10px;
+}
+
+.rep-comp-arrow-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd700, #f59e0b);
+  border: 2.5px solid #ffffff;
+  color: #071524;
+  font-size: 1.7rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.55);
+}
+
+.rep-comp-arrow-label {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #fde047;
+  max-width: 120px;
+}
+
+.rep-concept-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* ========================================================
+   4. BLOQUE "REPETIR [N] VECES" (Modelo visual img/repeticiones.jfif)
+   ======================================================== */
+.rep-c-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+  transition: transform 0.16s ease;
+}
+
+/* Pestaña superior tipo rompecabezas de bloques */
+.rep-c-block::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 22px;
+  width: 28px;
+  height: 7px;
+  background: #2f9e66;
+  border-top: 2px solid #86efac;
+  border-left: 2px solid #86efac;
+  border-right: 2px solid #86efac;
+  border-radius: 5px 5px 0 0;
+  z-index: 2;
+}
+
+/* Barra superior del bloque C: REPETIR ( 4 ) VECES: */
+.rep-c-header {
+  background: linear-gradient(180deg, #38a169 0%, #2f855a 100%);
+  border: 2.5px solid #86efac;
+  border-bottom: none;
+  border-radius: 14px 14px 10px 0;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.rep-c-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.96rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+/* Círculo central con el número de repeticiones (como en img/repeticiones.jfif) */
+.rep-c-count-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #1e6b45;
+  border: 2px solid #fde047;
+  border-radius: 999px;
+  padding: 2px 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.btn-rep-count-step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(7, 21, 36, 0.55);
+  color: #fde047;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.14s ease, transform 0.14s ease;
+}
+
+.btn-rep-count-step:hover:not(:disabled) {
+  background: #fde047;
+  color: #071524;
+  transform: scale(1.08);
+}
+
+.rep-c-count-badge {
+  min-width: 30px;
+  height: 28px;
+  border-radius: 50%;
+  background: #144d31;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* Cuerpo medio del bloque C (Columna izquierda verde + Cavidad con llave naranja { + Bloque interno) */
+.rep-c-body {
+  display: flex;
+  align-items: stretch;
+}
+
+.rep-c-spine {
+  width: 22px;
+  background: linear-gradient(90deg, #38a169 0%, #2f855a 100%);
+  border-left: 2.5px solid #86efac;
+  border-right: 2px solid #1e6b45;
+  flex-shrink: 0;
+}
+
+.rep-c-mouth {
+  flex: 1;
+  background: rgba(7, 21, 36, 0.82);
+  border-top: 2px solid #1e6b45;
+  border-bottom: 2px solid #1e6b45;
+  border-right: 2px dashed rgba(134, 239, 172, 0.45);
+  border-radius: 0 12px 12px 0;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 54px;
+  transition: background 0.16s ease, border-color 0.16s ease;
+}
+
+.rep-c-mouth.mouth-selected,
+.rep-c-mouth.drag-over {
+  background: rgba(250, 204, 21, 0.16);
+  border-color: #fde047;
+  box-shadow: inset 0 0 12px rgba(253, 224, 71, 0.35);
+}
+
+/* Llave naranja { inspirada directamente en img/repeticiones.jfif */
+.rep-c-curly-brace {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #f97316;
+  line-height: 1;
+  user-select: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
+}
+
+.rep-c-inner-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Bloque de movimiento contenido dentro de REPETIR (Naranja cálido como en img/repeticiones.jfif) */
+.rep-inner-move-block {
+  background: linear-gradient(180deg, #f59e0b 0%, #ea580c 100%);
+  border: 2px solid #fef08a;
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.86rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: 0 3px 0 #9a3412;
+}
+
+.rep-inner-move-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rep-inner-arrow-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: rgba(7, 21, 36, 0.35);
+  border: 1.5px solid #ffffff;
+  color: #fde047;
+  font-size: 1.15rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rep-empty-mouth-btn {
+  width: 100%;
+  background: rgba(249, 115, 22, 0.14);
+  border: 2px dashed #fb923c;
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: #fed7aa;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.rep-empty-mouth-btn:hover {
+  background: rgba(249, 115, 22, 0.25);
+  border-color: #fde047;
+  color: #ffffff;
+}
+
+.rep-quick-dirs-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.rep-quick-dirs-lbl {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #cbd5e1;
+}
+
+.btn-rep-quick-dir {
+  padding: 3px 8px;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.85);
+  color: #fde047;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.btn-rep-quick-dir:hover:not(:disabled) {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #fde047;
+}
+
+.btn-rep-quick-dir.active-dir {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #fde047;
+}
+
+/* Base inferior del bloque C */
+.rep-c-footer {
+  background: linear-gradient(180deg, #38a169 0%, #276749 100%);
+  border: 2.5px solid #86efac;
+  border-top: none;
+  border-radius: 0 10px 14px 14px;
+  min-height: 18px;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Muesca inferior de encastre */
+.rep-c-footer::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 22px;
+  width: 28px;
+  height: 7px;
+  background: #276749;
+  border-bottom: 2px solid #86efac;
+  border-left: 2px solid #86efac;
+  border-right: 2px solid #86efac;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Indicador en vivo de progreso de la repetición: 1 de 4 → 2 de 4 → 3 de 4 → 4 de 4 */
+.rep-c-iter-progress {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px 0 2px;
+}
+
+.rep-iter-step-pill {
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(7, 21, 36, 0.65);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.rep-iter-step-pill.iter-done {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #bbf7d0;
+}
+
+.rep-iter-step-pill.iter-current {
+  background: #fde047;
+  color: #071524;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(253, 224, 71, 0.9);
+  transform: scale(1.06);
+}
+
+.rep-iter-arrow {
+  font-size: 0.72rem;
+  color: #fde047;
+  font-weight: 900;
+}
+
+/* Estado activo cuando el bloque REPETIR se está ejecutando */
+.rep-c-block.rep-block-executing .rep-c-header,
+.rep-c-block.rep-block-executing .rep-c-spine,
+.rep-c-block.rep-block-executing .rep-c-footer {
+  border-color: #fde047 !important;
+  box-shadow: 0 0 18px rgba(253, 224, 71, 0.75);
+}
+
+/* ========================================================
+   5. SEGUNDA PARTE: LOS 5 EJERCICIOS GUIADOS
+   ======================================================== */
+.rep-exercises-selector-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: rgba(10, 25, 44, 0.92);
+  border: 2px solid rgba(255, 215, 0, 0.45);
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.rep-ex-tabs-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-rep-ex-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-rep-ex-tab:hover {
+  border-color: #fde047;
+  color: #ffffff;
+}
+
+.btn-rep-ex-tab.active {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-color: #ffffff;
+  color: #071524;
+  font-weight: 900;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.55);
+}
+
+.btn-rep-ex-tab.completed:not(.active) {
+  border-color: #4ade80;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.22);
+}
+
+/* Insignias de nivel de dificultad */
+.rep-diff-badge {
+  font-size: 0.74rem;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.rep-diff-success {
+  background: rgba(22, 163, 74, 0.35);
+  border: 1.5px solid #4ade80;
+  color: #bbf7d0;
+}
+
+.rep-diff-warning {
+  background: rgba(245, 158, 11, 0.3);
+  border: 1.5px solid #fbbf24;
+  color: #fef08a;
+}
+
+.rep-diff-danger {
+  background: rgba(220, 38, 38, 0.35);
+  border: 1.5px solid #f87171;
+  color: #fecaca;
+}
+
+/* Panel de Pistas Guiadas Progresivas */
+.rep-hints-card {
+  margin-top: 12px;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.55), rgba(15, 23, 42, 0.92));
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  padding: 12px 16px;
+}
+
+.rep-hints-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rep-hints-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 900;
+  color: #bae6fd;
+}
+
+.btn-rep-show-hint {
+  background: linear-gradient(180deg, #facc15, #eab308);
+  border: 2px solid #ffffff;
+  color: #071524;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 900;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+  transition: transform 0.14s ease;
+}
+
+.btn-rep-show-hint:hover {
+  transform: translateY(-1px);
+}
+
+.rep-hints-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rep-hint-item {
+  background: rgba(7, 21, 36, 0.82);
+  border-left: 4px solid #fde047;
+  border-radius: 0 10px 10px 0;
+  padding: 9px 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.4;
+}
+
+.rep-hint-step-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #fde047;
+  margin-right: 6px;
+}
+
+/* Botón de paleta para agregar el bloque REPETIR */
+.btn-palette-add-repeat {
+  width: 100%;
+  background: linear-gradient(180deg, #38a169 0%, #276749 100%);
+  border: 2.5px solid #fde047;
+  border-radius: 14px;
+  padding: 11px 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: 0 4px 0 #1e4e38, 0 6px 14px rgba(22, 163, 74, 0.35);
+  margin-bottom: 12px;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-palette-add-repeat:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.rep-palette-count-pill {
+  background: #144d31;
+  border: 1.5px solid #fde047;
+  color: #fde047;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+/* Selector de modo de inserción en la paleta (Adentro de REPETIR vs Bloque individual) */
+.rep-target-mode-box {
+  background: rgba(22, 163, 74, 0.16);
+  border: 1.5px solid rgba(74, 222, 128, 0.45);
+  border-radius: 10px;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.btn-rep-unfocus-slot {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #fde047;
+  color: #fde047;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Tamaños adaptados para 1.º Grado (bloques e ilustraciones más grandes) */
+.rep-grade-1-uppercase .rep-c-header-title {
+  font-size: 1.05rem;
+}
+
+.rep-grade-1-uppercase .rep-inner-move-block {
+  font-size: 0.94rem;
+  padding: 11px 14px;
+}
+
+.rep-grade-1-uppercase .ex-prompt-statement {
+  font-size: 1.22rem;
+}
+
+/* Tarjeta de Felicitación Especial al completar los 5 ejercicios */
+.rep-final-celebration-card {
+  margin-top: 16px;
+  background: linear-gradient(145deg, rgba(22, 91, 51, 0.96) 0%, rgba(153, 27, 27, 0.92) 100%);
+  border: 3px solid #ffd700;
+  border-radius: 22px;
+  padding: 24px 22px;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55), 0 0 28px rgba(255, 215, 0, 0.45);
+}
+
+.rep-final-bity-wrap {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 12px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.35), rgba(7, 21, 36, 0.9));
+  border: 2.5px solid #ffd700;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.rep-final-bity-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.rep-final-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #fde047;
+  margin: 0 0 8px;
+}
+
+.rep-final-desc {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.45;
+}
+
+@media (max-width: 960px) {
+  .rep-concept-quotes-grid,
+  .rep-comparison-columns {
+    grid-template-columns: 1fr;
+  }
+}

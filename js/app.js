@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenCodingAdventure = document.getElementById('screen-coding-adventure');
     const screenBityBlockly = document.getElementById('screen-bityblockly');
     const screenCodingAlgorithms = document.getElementById('screen-coding-algorithms');
+    const screenCodingRepeticiones = document.getElementById('screen-coding-repeticiones');
 
     const btnHomePlay = document.getElementById('btn-home-play');
     const bannerPlay = document.getElementById('banner-play');
@@ -75,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const bannerCoding = document.getElementById('banner-coding');
     const btnHomeAdventure = document.getElementById('btn-home-adventure');
     const bannerAdventure = document.getElementById('banner-adventure');
+    const btnHomeRepeticiones = document.getElementById('btn-home-repeticiones');
+    const bannerRepeticiones = document.getElementById('banner-repeticiones');
 
     const btnBackToHomeFromGrades = document.getElementById('btn-back-to-home-from-grades');
     const gradeCards = document.querySelectorAll('.grade-card');
@@ -99,7 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const allScreens = [
       screenHome, screenGrades, screenGame, screenEditor,
       screenCodingGrades, screenCodingSyllabus, screenCodingTopic,
-      screenCodingAdventure, screenBityBlockly, screenCodingAlgorithms
+      screenCodingAdventure, screenBityBlockly, screenCodingAlgorithms,
+      screenCodingRepeticiones
     ];
 
     const showScreen = (targetScreen) => {
@@ -206,6 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
           window.algorithmsModule.startClass(savedG, 1);
           sessionRestored = true;
         }
+      } else if (activeSc === 'screen-coding-repeticiones' && window.repeticionesModule) {
+        window.repeticionesModule.openModule(savedG, 'welcome');
+        sessionRestored = true;
       }
     } catch (e) {}
 
@@ -348,6 +355,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnHomeAdventure) btnHomeAdventure.addEventListener('click', (e) => { e.stopPropagation(); openAdventureMode(); });
     if (bannerAdventure) bannerAdventure.addEventListener('click', openAdventureMode);
+
+    // 4. Opción: NUEVO MÓDULO INDEPENDIENTE - REPETICIONES (1.º a 5.º Grado)
+    const openRepeticionesMode = (e) => {
+      if (e) e.stopPropagation();
+      if (window.MagicAudioEngine) window.MagicAudioEngine.playDoorSequence();
+      if (typeof game !== 'undefined' && game.stop) game.stop();
+      if (window.repeticionesModule) {
+        const curG = parseInt(localStorage.getItem('lego_current_grade'), 10) || 1;
+        window.repeticionesModule.openModule(curG, 'welcome');
+      }
+      playClickSound();
+    };
+    if (btnHomeRepeticiones) btnHomeRepeticiones.addEventListener('click', openRepeticionesMode);
+    if (bannerRepeticiones) bannerRepeticiones.addEventListener('click', openRepeticionesMode);
 
     const fallbackBtnAdventure = document.querySelector('.banner-adventure .btn-banner-action');
     if (fallbackBtnAdventure && !btnHomeAdventure) {

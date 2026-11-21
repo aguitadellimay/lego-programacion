@@ -42,7 +42,7 @@
       tag: 'Pensamiento Computacional • 1° a 5°',
       description: 'Aprende instrucciones, algoritmos cotidianos y desafíos interactivos con Byte.',
       icon: '💻',
-      screens: ['screen-coding-grades', 'screen-coding-syllabus', 'screen-coding-topic', 'screen-bityblockly', 'screen-coding-algorithms'],
+      screens: ['screen-coding-grades', 'screen-coding-syllabus', 'screen-coding-topic', 'screen-bityblockly', 'screen-coding-algorithms', 'screen-coding-repeticiones'],
       bannerId: 'banner-coding',
       buttonId: 'btn-home-coding'
     },

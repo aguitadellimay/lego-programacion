@@ -679,17 +679,17 @@ body {
 }
 
 /* --------------------------------------------------------
-   7. GRILLA DE LOS 4 MÓDULOS EN EL HOME (ALTO CONTRASTE Y PROPORCIÓN UNIFORME)
+   7. GRILLA DE LOS MÓDULOS EN EL HOME (ALTO CONTRASTE Y PROPORCIÓN UNIFORME)
    -------------------------------------------------------- */
 .magic-portals-grid {
   position: relative;
   z-index: 10;
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   align-items: stretch !important;
-  gap: 22px !important;
+  gap: 18px !important;
   width: 100% !important;
-  max-width: 1240px !important;
+  max-width: 1320px !important;
   margin: 0 auto !important;
   padding: 0 !important;
   box-sizing: border-box !important;
@@ -780,6 +780,33 @@ body {
 
 .portal-adventure .portal-btn:hover {
   background: linear-gradient(180deg, #f87171 0%, #dc2626 100%) !important;
+}
+
+/* B2. Tarjeta Activa: Módulo Independiente REPETICIONES (Dorado Navideño + Esmeralda) */
+.portal-repeticiones {
+  --portal-border: #fde047;
+  --portal-glow: rgba(250, 204, 21, 0.5);
+  --portal-accent: #86efac;
+  background: linear-gradient(180deg, #1b4d3e 0%, #11382d 55%, #0a241d 100%) !important;
+  border-color: #fde047 !important;
+}
+
+.portal-repeticiones .portal-badge {
+  background: rgba(212, 36, 38, 0.55) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+}
+
+.portal-repeticiones .portal-btn {
+  background: linear-gradient(180deg, #facc15 0%, #eab308 100%) !important;
+  color: #071524 !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 900 !important;
+  box-shadow: 0 5px 15px rgba(250, 204, 21, 0.45) !important;
+}
+
+.portal-repeticiones .portal-btn:hover {
+  background: linear-gradient(180deg, #fde047 0%, #facc15 100%) !important;
 }
 
 /* C. Tarjetas Jugar y Aprender / Taller de Diseño */
