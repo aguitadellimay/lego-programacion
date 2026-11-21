@@ -7760,6 +7760,27 @@ class CodingModuleManager {
     }
   }
 
+  /**
+   * Inicia el nuevo módulo independiente "REPETICIONES" para el grado seleccionado
+   */
+  startRepeticionesTopic(targetGrade = null) {
+    this.cleanupCurrentActivity();
+    const grade = targetGrade || this.currentGrade || parseInt(localStorage.getItem('lego_current_grade'), 10) || 1;
+    this.currentGrade = grade;
+    try {
+      localStorage.setItem('lego_current_grade', String(this.currentGrade));
+      sessionStorage.setItem('lego_active_screen', 'screen-coding-repeticiones');
+      sessionStorage.setItem('lego_active_grade', String(this.currentGrade));
+    } catch (e) {}
+    this.hideGiftButtons();
+    if (this.onShowScreen) {
+      this.onShowScreen('screen-coding-repeticiones');
+    }
+    if (typeof window !== 'undefined' && window.repeticionesModule) {
+      window.repeticionesModule.openModule(this.currentGrade, 'welcome');
+    }
+  }
+
   startInstructionsTopic() {
     this.cleanupCurrentActivity();
     this.currentTopic = 'instructions';
@@ -7825,7 +7846,9 @@ class CodingModuleManager {
         document.getElementById('screen-editor'),
         document.getElementById('screen-coding-grades'),
         document.getElementById('screen-coding-syllabus'),
-        document.getElementById('screen-coding-topic')
+        document.getElementById('screen-coding-topic'),
+        document.getElementById('screen-coding-algorithms'),
+        document.getElementById('screen-coding-repeticiones')
       ];
       screens.forEach(s => { if (s) s.classList.remove('active'); });
 
@@ -7846,7 +7869,9 @@ class CodingModuleManager {
         document.getElementById('screen-editor'),
         document.getElementById('screen-coding-grades'),
         document.getElementById('screen-coding-syllabus'),
-        document.getElementById('screen-coding-topic')
+        document.getElementById('screen-coding-topic'),
+        document.getElementById('screen-coding-algorithms'),
+        document.getElementById('screen-coding-repeticiones')
       ];
       screens.forEach(s => { if (s) s.classList.remove('active'); });
 
@@ -8318,6 +8343,76 @@ class CodingModuleManager {
         if (e) e.stopPropagation();
         this.onPlaySound('pop');
         this.startAlgorithmsExercises();
+      };
+    }
+
+    // ========================================================
+    // TEMA 5: REPETICIONES (MÓDULO INDEPENDIENTE ACTIVO 1.º A 5.º GRADO)
+    // ========================================================
+    const repCard = document.getElementById('topic-card-repeticiones');
+    const btnStartRep = document.getElementById('btn-start-repeticiones-topic');
+    const repFillEl = document.getElementById('syllabus-repeticiones-progress');
+    const repTextEl = document.getElementById('syllabus-repeticiones-pct');
+    const repLabelEl = document.getElementById('syllabus-repeticiones-label');
+    const repTitleEl = document.getElementById('syllabus-repeticiones-title');
+    const repDescEl = document.getElementById('syllabus-repeticiones-desc');
+    const repStatusEl = document.getElementById('syllabus-repeticiones-status');
+
+    if (repCard) {
+      repCard.style.display = 'flex';
+      repCard.className = 'topic-card active';
+      repCard.style.borderColor = '#16a34a';
+      repCard.style.cursor = 'pointer';
+      repCard.onclick = () => {
+        this.onPlaySound('pop');
+        this.startRepeticionesTopic();
+      };
+    }
+
+    let repCompletedCount = 0;
+    try {
+      const rawRep = localStorage.getItem('lego_repeticiones_module_progress');
+      if (rawRep) {
+        const repData = JSON.parse(rawRep);
+        if (repData && Array.isArray(repData[this.currentGrade])) {
+          repCompletedCount = repData[this.currentGrade].length;
+        }
+      }
+    } catch (e) {}
+
+    const isRepCompleted = repCompletedCount >= 5;
+    const repPct = isRepCompleted ? 100 : Math.min(100, Math.round((repCompletedCount / 5) * 100));
+
+    if (repFillEl) repFillEl.style.width = `${repPct}%`;
+    if (repTextEl) {
+      repTextEl.textContent = isRepCompleted ? (isGradeOne ? '🎉 ¡100% COMPLETADO!' : '🎉 ¡100% Completado!') : `${repPct}%`;
+    }
+    if (repStatusEl) {
+      repStatusEl.className = 'topic-status-tag status-active';
+      repStatusEl.textContent = isGradeOne ? '🟢 DISPONIBLE' : '🟢 Disponible';
+    }
+    if (repTitleEl) {
+      repTitleEl.textContent = isGradeOne ? '5. REPETICIONES' : '5. Repeticiones';
+    }
+    if (repLabelEl) {
+      repLabelEl.textContent = isGradeOne ? '5 EJERCICIOS GUIADOS' : '5 Ejercicios Guiados';
+    }
+    if (repDescEl) {
+      repDescEl.textContent = isGradeOne
+        ? 'APRENDÉ A REPETIR INSTRUCCIONES VARIAS VECES USANDO EL BLOQUE REPETIR JUNTO A BITY EN 5 DESAFÍOS NAVIDEÑOS.'
+        : 'Aprendé a repetir instrucciones varias veces usando el bloque REPETIR junto a Bity en 5 desafíos navideños.';
+    }
+    if (btnStartRep) {
+      btnStartRep.style.display = 'inline-flex';
+      btnStartRep.innerHTML = isRepCompleted
+        ? (isGradeOne ? '<span>🔄</span> ¡REPASAR REPETICIONES!' : '<span>🔄</span> ¡Repasar Repeticiones!')
+        : (repCompletedCount > 0
+            ? (isGradeOne ? '<span>▶️</span> ¡CONTINUAR REPETICIONES!' : '<span>▶️</span> ¡Continuar Repeticiones!')
+            : (isGradeOne ? '<span>🔁</span> ¡COMENZAR REPETICIONES!' : '<span>🔁</span> ¡Comenzar Repeticiones!'));
+      btnStartRep.onclick = (e) => {
+        if (e) e.stopPropagation();
+        this.onPlaySound('pop');
+        this.startRepeticionesTopic();
       };
     }
 

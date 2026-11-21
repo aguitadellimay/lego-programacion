@@ -779,6 +779,7 @@
     }
 
     canAccessScreen(screenId) {
+      if (screenId === 'screen-coding-repeticiones') return true;
       const mod = this.getModuleForScreen(screenId);
       if (!mod) return true; // Pantallas no pertenecientes a un módulo (ej: screen-home)
       return this.isModuleEnabled(mod.id);
