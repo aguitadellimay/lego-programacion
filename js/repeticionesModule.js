@@ -58,35 +58,35 @@
       badge: '1.º Grado',
       levelNote: 'Textos breves en MAYÚSCULAS, bloques grandes, cantidades pequeñas y pista inicial visible.',
       autoShowFirstHint: true,
-      defaultRepeatCount: 3
+      defaultRepeatCount: 0
     },
     2: {
       grade: 2,
       badge: '2.º Grado',
       levelNote: 'Enunciados sencillos, pistas para contar casilleros y combinación de dos bloques REPETIR.',
       autoShowFirstHint: false,
-      defaultRepeatCount: 3
+      defaultRepeatCount: 0
     },
     3: {
       grade: 3,
       badge: '3.º Grado',
       levelNote: 'Recorridos con cambios de dirección combinando bloques REPETIR e instrucciones individuales.',
       autoShowFirstHint: false,
-      defaultRepeatCount: 3
+      defaultRepeatCount: 0
     },
     4: {
       grade: 4,
       badge: '4.º Grado',
-      levelNote: 'Mapas más amplios, varios bloques REPETIR, obstáculos y pistas orientadoras.',
+      levelNote: 'Mapas más amplios, recolección de objetos, desafíos con 1 solo REPETIR y repeticiones dentro de repeticiones.',
       autoShowFirstHint: false,
-      defaultRepeatCount: 4
+      defaultRepeatCount: 0
     },
     5: {
       grade: 5,
       badge: '5.º Grado',
-      levelNote: 'Desafíos con múltiples tramos, distintas cantidades de repetición y búsqueda del programa más corto.',
+      levelNote: 'Desafíos con múltiples tramos, laberintos navideños, condiciones especiales y repeticiones dentro de repeticiones.',
       autoShowFirstHint: false,
-      defaultRepeatCount: 4
+      defaultRepeatCount: 0
     }
   };
 
@@ -456,12 +456,693 @@
         hints: [
           '¡Pensá antes de programar! Observá qué movimientos se repiten y cuántas veces tenés que realizarlos. Organizá tus bloques para que Bity llegue al regalo.',
           'Observá las alternativas del mapa: buscá el camino más directo hacia la columna central, subí hasta la fila libre y continuá hacia el regalo 🎁.',
-          'intentá resolver todo el recorrido utilizando la menor cantidad de bloques posible combinando bloques REPETIR con un paso final.'
+          'Intentá resolver todo el recorrido utilizando la menor cantidad de bloques posible combinando bloques REPETIR con un paso final.'
         ]
       };
     }
 
-    return [ex1, ex2, ex3, ex4, ex5];
+    // ----------------------------------------------------------
+    // EJERCICIOS NUEVOS 6, 7, 8 Y 9 (Adaptados por grado 1.º a 5.º)
+    // ----------------------------------------------------------
+    let ex6, ex7, ex8, ex9;
+
+    if (g === 1) {
+      // 1.º GRADO (Nivel iniciación)
+      ex6 = {
+        id: 6,
+        number: 6,
+        title: 'EJERCICIO 6 – JUNTAMOS LAS ESTRELLAS',
+        difficultyLabel: 'Iniciación',
+        difficultyColor: 'success',
+        prompt: '¡HAY TRES ESTRELLAS EN EL CAMINO! AYUDÁ A BITY A AVANZAR PARA JUNTAR TODAS LAS ESTRELLAS.',
+        goalIcon: '⭐',
+        goalName: 'las estrellas del camino',
+        victoryMsg: '¡MUY BIEN! ¡BITY AVANZÓ 3 VECES Y JUNTÓ TODAS LAS ESTRELLAS!',
+        cols: 5,
+        rows: 3,
+        start: { x: 0, y: 1 },
+        goal: { x: 3, y: 1 },
+        collectibles: [
+          { x: 1, y: 1, icon: '⭐', name: 'estrella' },
+          { x: 2, y: 1, icon: '⭐', name: 'estrella' }
+        ],
+        recommendedBlocks: 1,
+        grid: [
+          [1, 1, 0, 1, 1],
+          [0, 0, 0, 0, 1],
+          [1, 0, 1, 1, 1]
+        ],
+        hints: [
+          'MIRÁ LAS ESTRELLAS ⭐ EN EL SENDERO. BITY TIENE QUE DAR VARIOS PASOS IGUALES HACIA LA DERECHA.',
+          'CONTÁ CUÁNTOS PASOS HAY DESDE BITY HASTA LA ÚLTIMA ESTRELLA: SON 3 PASOS.',
+          'PONÉ EL NÚMERO 3 EN EL BLOQUE REPETIR Y ELEGÍ MOVER HACIA LA DERECHA →.'
+        ]
+      };
+
+      ex7 = {
+        id: 7,
+        number: 7,
+        title: 'EJERCICIO 7 – LLEGAMOS AL ÁRBOL',
+        difficultyLabel: 'Iniciación',
+        difficultyColor: 'success',
+        prompt: '¡EL ÁRBOL DE NAVIDAD ESTÁ ESPERANDO A BITY! AYUDALO A BAJAR POR EL CAMINO NEVADO HASTA LLEGAR AL ÁRBOL.',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡EXCELENTE! ¡BITY REPITIÓ EL MOVIMIENTO HACIA ABAJO Y LLEGÓ AL ÁRBOL!',
+        cols: 4,
+        rows: 5,
+        start: { x: 1, y: 0 },
+        goal: { x: 1, y: 3 },
+        recommendedBlocks: 1,
+        grid: [
+          [1, 0, 1, 1],
+          [0, 0, 1, 0],
+          [1, 0, 0, 1],
+          [1, 0, 1, 1],
+          [1, 1, 1, 1]
+        ],
+        hints: [
+          'OBSERVÁ HACIA DÓNDE ESTÁ EL ÁRBOL DE NAVIDAD 🎄. BITY TIENE QUE MOVERSE HACIA ABAJO VARIAS VECES.',
+          'CONTÁ LOS CASILLEROS HACIA ABAJO HASTA EL ÁRBOL: SON 3 CASILLEROS.',
+          'USÁ UN BLOQUE REPETIR CON EL NÚMERO 3 Y PONÉ ADENTRO MOVER HACIA ABAJO ↓.'
+        ]
+      };
+
+      ex8 = {
+        id: 8,
+        number: 8,
+        title: 'EJERCICIO 8 – BUSCAMOS LOS REGALOS',
+        difficultyLabel: 'Fácil',
+        difficultyColor: 'warning',
+        prompt: '¡BITY QUIERE RECOGER LOS REGALOS DE NAVIDAD! PRIMERO AVANZÁ POR EL CAMINO Y DESPUÉS DOBLÁ PARA LLEGAR AL SEGUNDO REGALO.',
+        goalIcon: '🎁',
+        goalName: 'los regalos de Navidad',
+        victoryMsg: '¡GENIAL! ¡BITY RECOGIÓ LOS REGALOS USANDO REPETICIONES!',
+        cols: 5,
+        rows: 4,
+        start: { x: 0, y: 1 },
+        goal: { x: 2, y: 2 },
+        collectibles: [
+          { x: 2, y: 1, icon: '🎁', name: 'regalo' }
+        ],
+        recommendedBlocks: 2,
+        grid: [
+          [1, 1, 0, 1, 1],
+          [0, 0, 0, 1, 1],
+          [1, 1, 0, 0, 1],
+          [1, 1, 1, 1, 1]
+        ],
+        hints: [
+          'PRIMERO BITY TIENE QUE AVANZAR HACIA LA DERECHA HASTA EL PRIMER REGALO 🎁 Y DESPUÉS BAJAR.',
+          'SON 2 PASOS HACIA LA DERECHA Y LUEGO 1 PASO HACIA ABAJO.',
+          'USÁ UN BLOQUE REPETIR 2 VECES CON MOVER HACIA LA DERECHA → Y DEBAJO AGREGÁ MOVER HACIA ABAJO ↓.'
+        ]
+      };
+
+      ex9 = {
+        id: 9,
+        number: 9,
+        title: 'EJERCICIO 9 – DECORAMOS LA NAVIDAD',
+        difficultyLabel: 'Desafío final',
+        difficultyColor: 'danger',
+        prompt: '¡VAMOS A DECORAR LA NAVIDAD! AYUDÁ A BITY A PASAR POR LA CAMPANA DORADA Y LLEGAR HASTA EL ÁRBOL DE NAVIDAD.',
+        goalIcon: '🎄',
+        goalName: 'el árbol decorado',
+        victoryMsg: '¡FELICITACIONES! ¡DECORASTE LA NAVIDAD Y COMPLETASTE TODOS LOS EJERCICIOS DE 1.º GRADO!',
+        cols: 5,
+        rows: 4,
+        start: { x: 0, y: 0 },
+        goal: { x: 2, y: 2 },
+        collectibles: [
+          { x: 2, y: 0, icon: '🔔', name: 'campana navideña' }
+        ],
+        recommendedBlocks: 2,
+        grid: [
+          [0, 0, 0, 1, 1],
+          [1, 1, 0, 1, 0],
+          [1, 0, 0, 1, 1],
+          [1, 1, 1, 1, 1]
+        ],
+        hints: [
+          'BITY TIENE QUE BUSCAR PRIMERO LA CAMPANA 🔔 A LA DERECHA Y LUEGO BAJAR HASTA EL ÁRBOL 🎄.',
+          'CONTÁ LOS PASOS: 2 PASOS A LA DERECHA Y 2 PASOS HACIA ABAJO.',
+          'USÁ UN BLOQUE REPETIR 2 VECES HACIA LA DERECHA → Y OTRO BLOQUE REPETIR 2 VECES HACIA ABAJO ↓.'
+        ]
+      };
+    } else if (g === 2) {
+      // 2.º GRADO (Nivel básico)
+      ex6 = {
+        id: 6,
+        number: 6,
+        title: 'EJERCICIO 6 – RECOLECTAMOS ESTRELLAS',
+        difficultyLabel: 'Básico',
+        difficultyColor: 'success',
+        prompt: 'Bity quiere recolectar todas las estrellas luminosas del sendero. Recorré los dos tramos del camino usando bloques de repetición.',
+        goalIcon: '⭐',
+        goalName: 'todas las estrellas del sendero',
+        victoryMsg: '¡MUY BIEN! ¡BITY RECOLECTÓ TODAS LAS ESTRELLAS DEL SENDERO!',
+        cols: 5,
+        rows: 4,
+        start: { x: 0, y: 0 },
+        goal: { x: 3, y: 2 },
+        collectibles: [
+          { x: 2, y: 0, icon: '⭐', name: 'estrella' },
+          { x: 3, y: 0, icon: '⭐', name: 'estrella' },
+          { x: 3, y: 1, icon: '⭐', name: 'estrella' }
+        ],
+        recommendedBlocks: 2,
+        grid: [
+          [0, 0, 0, 0, 1],
+          [1, 1, 1, 0, 1],
+          [1, 0, 1, 0, 1],
+          [1, 1, 1, 1, 1]
+        ],
+        hints: [
+          'Para juntar todas las estrellas ⭐, Bity debe recorrer primero la fila de arriba y después bajar por la columna de la derecha.',
+          'Contá cuántos pasos hay hacia la derecha hasta la esquina (3) y cuántos pasos hay hacia abajo (2).',
+          'Usá un bloque REPETIR 3 VECES hacia la derecha y un segundo bloque REPETIR 2 VECES hacia abajo.'
+        ]
+      };
+
+      ex7 = {
+        id: 7,
+        number: 7,
+        title: 'EJERCICIO 7 – EL CAMINO DE LOS REGALOS',
+        difficultyLabel: 'Intermedio',
+        difficultyColor: 'warning',
+        prompt: 'Hay regalos preparados a lo largo del camino. Ayudá a Bity a avanzar por los diferentes tramos para recogerlos todos.',
+        goalIcon: '🎁',
+        goalName: 'los regalos del camino',
+        victoryMsg: '¡EXCELENTE! ¡COMBINASTE REPETICIONES Y MOVIMIENTOS PARA RECOGER LOS REGALOS!',
+        cols: 6,
+        rows: 4,
+        start: { x: 0, y: 2 },
+        goal: { x: 4, y: 0 },
+        collectibles: [
+          { x: 3, y: 2, icon: '🎁', name: 'regalo' },
+          { x: 3, y: 0, icon: '🎁', name: 'regalo' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [1, 1, 1, 0, 0, 1],
+          [1, 0, 1, 0, 1, 1],
+          [0, 0, 0, 0, 1, 0],
+          [1, 1, 1, 1, 1, 1]
+        ],
+        hints: [
+          'Observá por dónde están los regalos 🎁: primero hay un tramo hacia la derecha, luego hay que subir y al final dar un paso más a la derecha.',
+          'Son 3 pasos hacia la derecha, 2 pasos hacia arriba y 1 paso final hacia la derecha.',
+          'Usá REPETIR 3 VECES hacia la derecha, REPETIR 2 VECES hacia arriba y agregá un bloque MOVER HACIA LA DERECHA → al final.'
+        ]
+      };
+
+      ex8 = {
+        id: 8,
+        number: 8,
+        title: 'EJERCICIO 8 – DECORAMOS EL ÁRBOL',
+        difficultyLabel: 'Intermedio',
+        difficultyColor: 'warning',
+        prompt: 'Antes de llegar al árbol de Navidad, Bity tiene que pasar por la campana y la estrella para llevar todos los adornos.',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡FANTÁSTICO! ¡BITY JUNTÓ LOS ADORNOS Y DECORÓ EL ÁRBOL DE NAVIDAD!',
+        cols: 6,
+        rows: 4,
+        start: { x: 0, y: 0 },
+        goal: { x: 4, y: 2 },
+        collectibles: [
+          { x: 0, y: 2, icon: '🔔', name: 'adorno campana' },
+          { x: 2, y: 2, icon: '⭐', name: 'adorno estrella' }
+        ],
+        recommendedBlocks: 2,
+        grid: [
+          [0, 1, 1, 0, 1, 1],
+          [0, 1, 1, 1, 1, 0],
+          [0, 0, 0, 0, 0, 1],
+          [1, 1, 0, 1, 1, 1]
+        ],
+        hints: [
+          'Mirá dónde están la campana 🔔 y la estrella ⭐: primero Bity tiene que bajar y después avanzar en línea recta hacia la derecha.',
+          'Contá los casilleros: son 2 pasos hacia abajo hasta la campana y luego 4 pasos hacia la derecha pasando por la estrella hasta el árbol 🎄.',
+          'Colocá un bloque REPETIR 2 VECES con MOVER HACIA ABAJO ↓ y un bloque REPETIR 4 VECES con MOVER HACIA LA DERECHA →.'
+        ]
+      };
+
+      ex9 = {
+        id: 9,
+        number: 9,
+        title: 'EJERCICIO 9 – EL TREN NAVIDEÑO',
+        difficultyLabel: 'Desafío final',
+        difficultyColor: 'danger',
+        prompt: '¡El tren navideño está por salir! Ayudá a Bity a recorrer el camino con varios cambios de dirección usando bloques de repetición.',
+        goalIcon: '🚂',
+        goalName: 'el Tren Navideño',
+        victoryMsg: '¡FELICITACIONES! ¡BITY LLEGÓ AL TREN NAVIDEÑO Y COMPLETASTE TODOS LOS DESAFÍOS DE 2.º GRADO!',
+        cols: 6,
+        rows: 4,
+        start: { x: 0, y: 3 },
+        goal: { x: 5, y: 1 },
+        collectibles: [
+          { x: 2, y: 3, icon: '🎁', name: 'boleto navideño' },
+          { x: 2, y: 1, icon: '⭐', name: 'estrella guía' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [1, 0, 1, 1, 0, 1],
+          [1, 1, 0, 0, 0, 0],
+          [1, 1, 0, 1, 1, 1],
+          [0, 0, 0, 1, 0, 1]
+        ],
+        hints: [
+          'El camino hasta el tren 🚂 tiene tres tramos rectos. Observá en qué esquina está cada adorno para saber dónde doblar.',
+          'Primero avanzá 2 pasos a la derecha, después subí 2 pasos hasta la estrella ⭐ y finalmente avanzá 3 pasos a la derecha.',
+          'Resolvé el recorrido con tres bloques REPETIR: uno de 2 pasos a la derecha, uno de 2 pasos hacia arriba y uno de 3 pasos a la derecha.'
+        ]
+      };
+    } else if (g === 3) {
+      // 3.º GRADO (Nivel intermedio)
+      ex6 = {
+        id: 6,
+        number: 6,
+        title: 'EJERCICIO 6 – LOS ELEMENTOS DEL ÁRBOL',
+        difficultyLabel: 'Intermedio',
+        difficultyColor: 'warning',
+        prompt: 'Bity necesita juntar las luces, la campana y la estrella para armar el árbol de Navidad. Recorré el mapa recolectando todos los elementos.',
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad',
+        victoryMsg: '¡GENIAL! ¡JUNTOS TODOS LOS ELEMENTOS Y ARMASTE EL ÁRBOL DE NAVIDAD!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 1 },
+        goal: { x: 4, y: 4 },
+        collectibles: [
+          { x: 3, y: 1, icon: '🔔', name: 'campana' },
+          { x: 3, y: 4, icon: '⭐', name: 'estrella' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [1, 0, 1, 1, 0, 1],
+          [0, 0, 0, 0, 1, 1],
+          [1, 1, 1, 0, 1, 0],
+          [0, 1, 1, 0, 1, 1],
+          [1, 0, 1, 0, 0, 1]
+        ],
+        hints: [
+          'Para juntar la campana 🔔 y la estrella ⭐ antes de llegar al árbol 🎄, combiná bloques REPETIR en los tramos largos y un movimiento individual al final.',
+          'Avanzá 3 casilleros a la derecha hasta la campana, bajá 3 casilleros hasta la estrella y hacé 1 paso final a la derecha.',
+          'Usá REPETIR 3 VECES hacia la derecha, REPETIR 3 VECES hacia abajo y agregá MOVER HACIA LA DERECHA → al final.'
+        ]
+      };
+
+      ex7 = {
+        id: 7,
+        number: 7,
+        title: 'EJERCICIO 7 – EL BOSQUE NEVADO',
+        difficultyLabel: 'Intermedio',
+        difficultyColor: 'warning',
+        prompt: 'Bity tiene que atravesar el bosque nevado esquivando los pinos y muñecos de nieve para llegar a la cabaña iluminada.',
+        goalIcon: '🏠',
+        goalName: 'la cabaña del bosque',
+        victoryMsg: '¡EXCELENTE! ¡BITY ATRAVESÓ EL BOSQUE NEVADO Y LLEGÓ A LA CABAÑA!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 4 },
+        goal: { x: 5, y: 1 },
+        recommendedBlocks: 3,
+        grid: [
+          [1, 0, 1, 1, 0, 1],
+          [1, 1, 0, 0, 0, 0],
+          [0, 1, 0, 1, 1, 1],
+          [1, 1, 0, 1, 0, 1],
+          [0, 0, 0, 1, 1, 1]
+        ],
+        hints: [
+          'Observá el camino libre entre los obstáculos del bosque: primero va hacia la derecha, luego sube por el corredor central y después dobla hacia la cabaña 🏠.',
+          'Contá cuántos pasos tiene cada tramo: 2 pasos a la derecha, 3 pasos hacia arriba y 3 pasos a la derecha.',
+          'Construí tu programa con tres bloques REPETIR: 2 veces a la derecha, 3 veces hacia arriba y 3 veces a la derecha.'
+        ]
+      };
+
+      ex8 = {
+        id: 8,
+        number: 8,
+        title: 'EJERCICIO 8 – PREPARAMOS LOS REGALOS',
+        difficultyLabel: 'Intermedio avanzado',
+        difficultyColor: 'warning',
+        prompt: 'Hay regalos distribuidos en el taller. Ayudá a Bity a recogerlos todos en su recorrido y llevarlos hasta el trineo.',
+        goalIcon: '🛷',
+        goalName: 'el trineo de Navidad',
+        victoryMsg: '¡FANTÁSTICO! ¡RECOLECTASTE TODOS LOS REGALOS Y LOS LLEVASTE AL TRINEO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 0 },
+        goal: { x: 5, y: 3 },
+        collectibles: [
+          { x: 2, y: 0, icon: '🎁', name: 'regalo rojo' },
+          { x: 2, y: 3, icon: '🎁', name: 'regalo dorado' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [0, 0, 0, 1, 0, 1],
+          [1, 1, 0, 1, 1, 0],
+          [0, 1, 0, 1, 1, 1],
+          [1, 1, 0, 0, 0, 0],
+          [1, 0, 1, 1, 0, 1]
+        ],
+        hints: [
+          'Bity tiene que pasar por los dos regalos 🎁 antes de llegar al trineo 🛷. Fijate en qué casilleros están ubicados.',
+          'Avanzá 2 pasos a la derecha hasta el primer regalo, bajá 3 pasos hasta el segundo regalo y avanzá 3 pasos a la derecha hasta el trineo.',
+          'Usá tres bloques REPETIR seguidos: 2 veces a la derecha, 3 veces hacia abajo y 3 veces a la derecha.'
+        ]
+      };
+
+      ex9 = {
+        id: 9,
+        number: 9,
+        title: 'EJERCICIO 9 – EL CAMINO DE LAS LUCES',
+        difficultyLabel: 'Desafío final',
+        difficultyColor: 'danger',
+        prompt: '¡Encendamos las luces de Navidad! Recorré el sendero con varios cambios de dirección, pasando por todas las estrellas hasta llegar al gran árbol.',
+        goalIcon: '🎄',
+        goalName: 'el Gran Árbol Iluminado',
+        victoryMsg: '¡FELICITACIONES! ¡ENCENDISTE EL CAMINO DE LAS LUCES Y COMPLETASTE 3.º GRADO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 4 },
+        goal: { x: 5, y: 0 },
+        collectibles: [
+          { x: 3, y: 4, icon: '⭐', name: 'luz navideña 1' },
+          { x: 3, y: 1, icon: '⭐', name: 'luz navideña 2' },
+          { x: 5, y: 1, icon: '⭐', name: 'luz navideña 3' }
+        ],
+        recommendedBlocks: 4,
+        grid: [
+          [1, 0, 1, 1, 1, 0],
+          [1, 0, 1, 0, 0, 0],
+          [1, 1, 1, 0, 1, 1],
+          [0, 1, 1, 0, 1, 0],
+          [0, 0, 0, 0, 1, 1]
+        ],
+        hints: [
+          'Seguí las tres estrellas ⭐ como guía del recorrido: cada estrella marca una esquina donde Bity cambia de dirección.',
+          'Los primeros tres tramos se pueden hacer con bloques REPETIR (3 a la derecha, 3 hacia arriba y 2 a la derecha), y al final solo falta 1 paso hacia arriba.',
+          'Combiná tres bloques REPETIR con un bloque individual MOVER HACIA ARRIBA ↑ al final para llegar al árbol 🎄.'
+        ]
+      };
+    } else if (g === 4) {
+      // 4.º GRADO (Nivel avanzado)
+      // Ejercicio 6 con CONDICIÓN ESPECIAL OBLIGATORIA: UN SOLO BLOQUE REPETIR
+      ex6 = {
+        id: 6,
+        number: 6,
+        title: 'EJERCICIO 6 – ARMAMOS EL ÁRBOL DE NAVIDAD',
+        difficultyLabel: 'Condición especial',
+        difficultyColor: 'warning',
+        prompt: 'Bity debe recolectar las estrellas con los adornos en distintos puntos del mapa para armar su árbol de Navidad. ¡Atención! En este desafío solo podés usar UN bloque REPETIR en todo tu algoritmo.',
+        specialRuleBanner: '⚠️ CONDICIÓN ESPECIAL: Usá UN SOLO bloque REPETIR para el tramo más largo y completá el resto del recorrido con instrucciones individuales.',
+        maxRepeatBlocks: 1,
+        goalIcon: '🎄',
+        goalName: 'el árbol de Navidad completo',
+        victoryMsg: '¡BRILLANTE! ¡ARMASTE EL ÁRBOL USANDO UN SOLO BLOQUE REPETIR EN EL TRAMO MÁS LARGO!',
+        cols: 7,
+        rows: 5,
+        start: { x: 0, y: 1 },
+        goal: { x: 5, y: 2 },
+        collectibles: [
+          { x: 2, y: 1, icon: '⭐', name: 'estrella decorativa 1' },
+          { x: 4, y: 1, icon: '⭐', name: 'estrella decorativa 2' },
+          { x: 4, y: 2, icon: '⭐', name: 'base del árbol' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [1, 0, 1, 1, 0, 1, 1],
+          [0, 0, 0, 0, 0, 1, 0],
+          [1, 1, 1, 1, 0, 0, 1],
+          [0, 1, 0, 1, 1, 1, 1],
+          [1, 1, 1, 0, 1, 0, 1]
+        ],
+        hints: [
+          'En este desafío no podés poner dos bloques REPETIR. Observá cuál es el tramo más largo del recorrido para aprovechar ahí tu único bloque REPETIR.',
+          'El tramo más largo es avanzar 4 casilleros hacia la derecha por la fila superior (juntando las dos primeras estrellas ⭐). Después solo queda 1 paso hacia abajo y 1 paso hacia la derecha.',
+          'Usá 1 bloque REPETIR 4 VECES con MOVER HACIA LA DERECHA →, y luego agregá afuera un bloque MOVER HACIA ABAJO ↓ y un bloque MOVER HACIA LA DERECHA →.'
+        ]
+      };
+
+      ex7 = {
+        id: 7,
+        number: 7,
+        title: 'EJERCICIO 7 – EL RECORRIDO DEL TALLER NAVIDEÑO',
+        difficultyLabel: 'Avanzado',
+        difficultyColor: 'warning',
+        prompt: 'Bity debe atravesar los distintos sectores del taller navideño esquivando las cajas y bloques de hielo hasta llegar al sector de empaque.',
+        goalIcon: '🎁',
+        goalName: 'el sector de empaque del taller',
+        victoryMsg: '¡EXCELENTE! ¡RECORRISTE TODO EL TALLER NAVIDEÑO COMBINANDO TRES BLOQUES REPETIR!',
+        cols: 7,
+        rows: 5,
+        start: { x: 0, y: 0 },
+        goal: { x: 6, y: 3 },
+        collectibles: [
+          { x: 3, y: 0, icon: '🔔', name: 'campana del taller' },
+          { x: 3, y: 3, icon: '⭐', name: 'sello mágico' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [0, 0, 0, 0, 1, 0, 1],
+          [1, 1, 1, 0, 1, 1, 0],
+          [0, 1, 1, 0, 1, 1, 1],
+          [1, 0, 1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0, 1, 1]
+        ],
+        hints: [
+          'Dividí el recorrido por el taller en tres tramos rectos pasando por la campana 🔔 y la estrella ⭐.',
+          'Contá los casilleros de cada tramo: 3 pasos hacia la derecha, 3 pasos hacia abajo y 3 pasos hacia la derecha.',
+          'Combiná tres bloques REPETIR de 3 repeticiones cada uno (Derecha →, Abajo ↓ y Derecha →).'
+        ]
+      };
+
+      ex8 = {
+        id: 8,
+        number: 8,
+        title: 'EJERCICIO 8 – ENTREGAMOS LOS REGALOS',
+        difficultyLabel: 'Avanzado',
+        difficultyColor: 'danger',
+        prompt: 'Bity tiene que pasar por las paradas de entrega para dejar los regalos en cada sector antes de llegar a la casa navideña.',
+        goalIcon: '🏠',
+        goalName: 'la casa navideña',
+        victoryMsg: '¡FANTÁSTICO! ¡BITY ENTREGÓ TODOS LOS REGALOS Y LLEGÓ A LA CASA NAVIDEÑA!',
+        cols: 7,
+        rows: 5,
+        start: { x: 0, y: 4 },
+        goal: { x: 6, y: 0 },
+        collectibles: [
+          { x: 2, y: 4, icon: '🎁', name: 'primera parada de regalos' },
+          { x: 2, y: 1, icon: '🎁', name: 'segunda parada de regalos' },
+          { x: 6, y: 1, icon: '🎁', name: 'tercera parada de regalos' }
+        ],
+        recommendedBlocks: 4,
+        grid: [
+          [1, 0, 1, 1, 1, 1, 0],
+          [1, 0, 0, 0, 0, 0, 0],
+          [0, 1, 0, 1, 1, 1, 1],
+          [1, 1, 0, 1, 0, 1, 0],
+          [0, 0, 0, 1, 1, 1, 1]
+        ],
+        hints: [
+          'Asegurate de que Bity pase por los tres puntos con regalos 🎁 antes de subir a la casa 🏠.',
+          'Analizá los cuatro tramos: 2 pasos a la derecha, 3 pasos hacia arriba, 4 pasos a la derecha y 1 último paso hacia arriba.',
+          'Usá tres bloques REPETIR para los primeros tres tramos (2, 3 y 4) y agregá una instrucción individual MOVER HACIA ARRIBA ↑ al final.'
+        ]
+      };
+
+      // Ejercicio 9 de 4.º Grado: REPETICIONES DENTRO DE REPETICIONES (Anidadas)
+      ex9 = {
+        id: 9,
+        number: 9,
+        title: 'EJERCICIO 9 – REPETICIONES DENTRO DE REPETICIONES',
+        difficultyLabel: 'Desafío experto',
+        difficultyColor: 'danger',
+        prompt: '¡Desafío especial! Para llegar al árbol bajando por la escalera nevada, Bity repite 3 veces el mismo patrón: dar 1 paso a la derecha y bajar 1 paso. ¡Colocá un bloque REPETIR dentro de otro bloque REPETIR para resolverlo!',
+        specialRuleBanner: '🔁 DESAFÍO DE REPETICIÓN ANIDADA: Colocá un bloque REPETIR adentro de otro bloque REPETIR para repetir todo un patrón de movimientos.',
+        requireNestedRepeat: true,
+        allowNestedRepeat: true,
+        nestedGuideExample: 'REPETIR 3 VECES {\n   MOVER HACIA LA DERECHA →\n   REPETIR 1 VEZ {\n      MOVER HACIA ABAJO ↓\n   }\n}',
+        goalIcon: '🎄',
+        goalName: 'el Árbol de la Escalera Nevada',
+        victoryMsg: '¡INCREÍBLE! ¡USASTE UN BLOQUE REPETIR DENTRO DE OTRO BLOQUE REPETIR Y COMPLETASTE 4.º GRADO!',
+        cols: 6,
+        rows: 5,
+        start: { x: 0, y: 0 },
+        goal: { x: 3, y: 3 },
+        collectibles: [
+          { x: 1, y: 1, icon: '⭐', name: 'escalón 1' },
+          { x: 2, y: 2, icon: '⭐', name: 'escalón 2' }
+        ],
+        recommendedBlocks: 1,
+        grid: [
+          [0, 0, 1, 1, 0, 1],
+          [1, 0, 0, 1, 1, 0],
+          [0, 1, 0, 0, 1, 1],
+          [1, 1, 1, 0, 1, 0],
+          [1, 0, 1, 1, 1, 1]
+        ],
+        hints: [
+          'En algunas situaciones necesitamos repetir un conjunto de acciones que ya tiene una repetición adentro. Podés colocar un bloque REPETIR dentro de otro bloque REPETIR.',
+          'Observá la escalera: Bity hace 3 veces el mismo escalón (1 paso a la derecha → y 1 paso hacia abajo ↓).',
+          'Creá un bloque REPETIR 3 VECES externo. Adentro colocá MOVER HACIA LA DERECHA → y tocá el botón «+ REPETIR INTERNO» para poner REPETIR 1 VEZ con MOVER HACIA ABAJO ↓.'
+        ]
+      };
+    } else {
+      // 5.º GRADO (Nivel avanzado superior)
+      // Ejercicio 6 con CONDICIÓN ESPECIAL OBLIGATORIA: UN SOLO BLOQUE REPETIR
+      ex6 = {
+        id: 6,
+        number: 6,
+        title: 'EJERCICIO 6 – LA GRAN RECOLECCIÓN NAVIDEÑA',
+        difficultyLabel: 'Condición especial',
+        difficultyColor: 'warning',
+        prompt: 'Bity tiene que juntar todas las estrellas mágicas distribuidas por el mapa y llevarlas al trineo. ¡Desafío de ingenio! Debés resolver todo el recorrido utilizando EXACTAMENTE UN bloque REPETIR y completando el resto con instrucciones individuales.',
+        specialRuleBanner: '⚠️ CONDICIÓN ESPECIAL: Solo podés utilizar 1 bloque REPETIR en todo tu algoritmo. Elegí el tramo largo para usarlo y resolvé los demás pasos con bloques individuales.',
+        maxRepeatBlocks: 1,
+        goalIcon: '🛷',
+        goalName: 'el trineo de la Gran Recolección',
+        victoryMsg: '¡MAESTRO DE LA PROGRAMACIÓN! ¡RESOLVISTE LA GRAN RECOLECCIÓN USANDO UN SOLO BLOQUE REPETIR!',
+        cols: 8,
+        rows: 5,
+        start: { x: 0, y: 2 },
+        goal: { x: 6, y: 3 },
+        collectibles: [
+          { x: 0, y: 1, icon: '⭐', name: 'estrella norte' },
+          { x: 3, y: 1, icon: '⭐', name: 'estrella central' },
+          { x: 5, y: 1, icon: '⭐', name: 'estrella este' },
+          { x: 5, y: 3, icon: '⭐', name: 'estrella sur' }
+        ],
+        recommendedBlocks: 5,
+        grid: [
+          [1, 1, 0, 1, 1, 0, 1, 1],
+          [0, 0, 0, 0, 0, 0, 1, 0],
+          [0, 1, 1, 1, 1, 0, 1, 1],
+          [1, 0, 1, 0, 1, 0, 0, 1],
+          [1, 1, 1, 1, 1, 1, 1, 1]
+        ],
+        hints: [
+          'Recordá la regla especial: solo podés usar 1 bloque REPETIR en todo el programa. ¿Cuál es el tramo recto más largo del mapa?',
+          'Primero subí 1 paso (instrucción individual) hasta la primera estrella ⭐. Luego tenés un tramo largo de 5 pasos hacia la derecha que conviene hacer con tu único bloque REPETIR.',
+          'Armá la secuencia: 1) MOVER HACIA ARRIBA ↑, 2) REPETIR 5 VECES { MOVER HACIA LA DERECHA → }, 3) MOVER HACIA ABAJO ↓, 4) MOVER HACIA ABAJO ↓ y 5) MOVER HACIA LA DERECHA →.'
+        ]
+      };
+
+      ex7 = {
+        id: 7,
+        number: 7,
+        title: 'EJERCICIO 7 – EL LABERINTO DE NAVIDAD',
+        difficultyLabel: 'Avanzado superior',
+        difficultyColor: 'danger',
+        prompt: 'Atravesá el laberinto navideño de hielo y pinos combinando diferentes bloques REPETIR hasta encontrar la campana dorada.',
+        goalIcon: '🔔',
+        goalName: 'la Campana Dorada del Laberinto',
+        victoryMsg: '¡IMPRESIONANTE! ¡SUPERASTE EL LABERINTO DE NAVIDAD CON UN ALGORITMO PRECISO!',
+        cols: 8,
+        rows: 6,
+        start: { x: 0, y: 0 },
+        goal: { x: 7, y: 4 },
+        collectibles: [
+          { x: 4, y: 0, icon: '⭐', name: 'llave luminosa 1' },
+          { x: 4, y: 4, icon: '⭐', name: 'llave luminosa 2' }
+        ],
+        recommendedBlocks: 3,
+        grid: [
+          [0, 0, 0, 0, 0, 1, 0, 1],
+          [1, 1, 1, 1, 0, 1, 0, 1],
+          [0, 0, 0, 1, 0, 1, 1, 1],
+          [0, 1, 1, 1, 0, 1, 0, 0],
+          [0, 0, 0, 1, 0, 0, 0, 0],
+          [1, 1, 0, 1, 1, 1, 0, 1]
+        ],
+        hints: [
+          'Observá los dos caminos del laberinto: el camino que pasa por las estrellas ⭐ es mucho más directo y limpio para usar bloques REPETIR.',
+          'Por el corredor de las estrellas tenés: 4 pasos hacia la derecha, 4 pasos hacia abajo y 3 pasos hacia la derecha.',
+          'Usá tres bloques REPETIR: 4 veces a la derecha, 4 veces hacia abajo y 3 veces a la derecha.'
+        ]
+      };
+
+      ex8 = {
+        id: 8,
+        number: 8,
+        title: 'EJERCICIO 8 – EL TALLER DE PAPÁ NOEL',
+        difficultyLabel: 'Avanzado superior',
+        difficultyColor: 'danger',
+        prompt: 'En el taller de Papá Noel hay que recorrer tres sectores para recoger el regalo, la campana y la estrella antes de cargar todo en el trineo.',
+        goalIcon: '🛷',
+        goalName: 'el Trineo de Papá Noel',
+        victoryMsg: '¡EXCELENTE TRABAJO! ¡COMPLETASTE EL RECORRIDO POR EL TALLER DE PAPÁ NOEL!',
+        cols: 8,
+        rows: 6,
+        start: { x: 0, y: 5 },
+        goal: { x: 7, y: 0 },
+        collectibles: [
+          { x: 3, y: 5, icon: '🎁', name: 'regalo del taller' },
+          { x: 3, y: 2, icon: '🔔', name: 'campana mágica' },
+          { x: 7, y: 2, icon: '⭐', name: 'estrella polar' }
+        ],
+        recommendedBlocks: 4,
+        grid: [
+          [1, 0, 1, 1, 1, 0, 1, 0],
+          [1, 0, 1, 0, 1, 1, 1, 0],
+          [0, 0, 1, 0, 0, 0, 0, 0],
+          [1, 1, 1, 0, 1, 1, 1, 1],
+          [0, 1, 1, 0, 1, 0, 1, 0],
+          [0, 0, 0, 0, 1, 1, 1, 1]
+        ],
+        hints: [
+          'Planificá las cuatro etapas del recorrido siguiendo el orden de los objetos: regalo 🎁 → campana 🔔 → estrella ⭐ → trineo 🛷.',
+          'Contá los pasos de cada tramo: 3 a la derecha, 3 hacia arriba, 4 a la derecha y 2 hacia arriba.',
+          'Construí el algoritmo con cuatro bloques REPETIR: 3 veces Derecha →, 3 veces Arriba ↑, 4 veces Derecha → y 2 veces Arriba ↑.'
+        ]
+      };
+
+      // Ejercicio 9 de 5.º Grado: EL GRAN DESAFÍO DE LAS REPETICIONES (Repeticiones anidadas)
+      ex9 = {
+        id: 9,
+        number: 9,
+        title: 'EJERCICIO 9 – EL GRAN DESAFÍO DE LAS REPETICIONES',
+        difficultyLabel: 'Gran desafío final',
+        difficultyColor: 'danger',
+        prompt: '¡Llegaste al gran desafío final de 5.º Grado! Para atravesar las tres terrazas nevadas y recoger todos los regalos, Bity repite 3 veces un patrón compuesto: avanzar 1 paso a la derecha y bajar 2 casilleros. ¡Resolvé el desafío usando un bloque REPETIR dentro de otro bloque REPETIR!',
+        specialRuleBanner: '🔁 GRAN DESAFÍO DE REPETICIONES ANIDADAS: Usá un bloque REPETIR externo que contenga una instrucción de movimiento y un bloque REPETIR interno.',
+        requireNestedRepeat: true,
+        allowNestedRepeat: true,
+        nestedGuideExample: 'REPETIR 3 VECES {\n   MOVER HACIA LA DERECHA →\n   REPETIR 2 VECES {\n      MOVER HACIA ABAJO ↓\n   }\n}',
+        goalIcon: '🎄',
+        goalName: 'la Estrella Mayor de la Navidad',
+        victoryMsg: '¡FELICITACIONES CAMPEÓN/A! ¡DOMINASTE LAS REPETICIONES ANIDADAS Y COMPLETASTE TODO 5.º GRADO!',
+        cols: 6,
+        rows: 7,
+        start: { x: 0, y: 0 },
+        goal: { x: 3, y: 6 },
+        collectibles: [
+          { x: 1, y: 2, icon: '🎁', name: 'regalo terraza 1' },
+          { x: 2, y: 4, icon: '🎁', name: 'regalo terraza 2' }
+        ],
+        recommendedBlocks: 1,
+        grid: [
+          [0, 0, 1, 1, 0, 1],
+          [1, 0, 1, 0, 1, 1],
+          [1, 0, 0, 1, 1, 0],
+          [0, 1, 0, 1, 0, 1],
+          [1, 1, 0, 0, 1, 1],
+          [1, 0, 1, 0, 1, 0],
+          [1, 1, 1, 0, 1, 1]
+        ],
+        hints: [
+          'En algunas situaciones necesitamos repetir un conjunto de acciones que ya tiene una repetición adentro. Para eso, podemos colocar un bloque REPETIR dentro de otro bloque REPETIR.',
+          'Mirá cómo se repite el dibujo del camino 3 veces seguidas: en cada tramo Bity hace 1 paso hacia la derecha → y después baja 2 pasos ↓.',
+          'Colocá un bloque REPETIR 3 VECES externo. Adentro agregá MOVER HACIA LA DERECHA → y luego un bloque REPETIR 2 VECES interno con MOVER HACIA ABAJO ↓.'
+        ]
+      };
+    }
+
+    return [ex1, ex2, ex3, ex4, ex5, ex6, ex7, ex8, ex9];
   }
 
   // ============================================================
@@ -762,7 +1443,7 @@
     }
 
     // ------------------------------------------------------------
-    // GESTIÓN DE LOS 5 EJERCICIOS Y CONSTRUCCIÓN DE BLOQUES
+    // GESTIÓN DE LOS 9 EJERCICIOS Y CONSTRUCCIÓN DE BLOQUES (INCLUYE REPETICIONES ANIDADAS)
     // ------------------------------------------------------------
     resetRuntimeState(ex) {
       const currEx = ex || this.getCurrentExercise();
@@ -773,6 +1454,7 @@
       this.stepCursor = -1;
       this.isAnimatingStep = false;
       this.feedback = null;
+      this.collectedKeys = new Set();
     }
 
     loadExercise(idx, shouldRender = true) {
@@ -806,29 +1488,172 @@
       }
     }
 
-    // Agregar bloque REPETIR [N] VECES al algoritmo
-    addRepeatBlock(initialTimes = null, initialAction = null) {
+    // Normaliza un bloque REPETIR para mantener sincronizados `children` y `action`
+    normalizeRepeatBlock(repBlk) {
+      if (!repBlk || repBlk.type !== 'repeat') return repBlk;
+      if (!Array.isArray(repBlk.children)) {
+        repBlk.children = [];
+        if (repBlk.action && REP_MOVE_DEFS[repBlk.action]) {
+          repBlk.children.push({
+            id: `rep_blk_${this.blockIdCounter++}`,
+            type: 'move',
+            dir: repBlk.action
+          });
+        }
+      } else if (repBlk.children.length === 0 && repBlk.action && REP_MOVE_DEFS[repBlk.action]) {
+        repBlk.children.push({
+          id: `rep_blk_${this.blockIdCounter++}`,
+          type: 'move',
+          dir: repBlk.action
+        });
+      }
+      const firstMove = repBlk.children.find(c => c.type === 'move');
+      repBlk.action = firstMove ? firstMove.dir : null;
+      repBlk.children.forEach(c => {
+        if (c && c.type === 'repeat') {
+          this.normalizeRepeatBlock(c);
+        }
+      });
+      return repBlk;
+    }
+
+    // Busca un bloque REPETIR (externo o interno) por su ID
+    findRepeatBlockById(blockId) {
+      if (!blockId) return null;
+      for (let i = 0; i < this.blocks.length; i++) {
+        const b = this.blocks[i];
+        if (b && b.type === 'repeat') {
+          this.normalizeRepeatBlock(b);
+          if (b.id === blockId) {
+            return { block: b, parent: null, depth: 0, topIndex: i };
+          }
+          for (let j = 0; j < b.children.length; j++) {
+            const child = b.children[j];
+            if (child && child.type === 'repeat') {
+              this.normalizeRepeatBlock(child);
+              if (child.id === blockId) {
+                return { block: child, parent: b, depth: 1, topIndex: i, childIndex: j };
+              }
+            }
+          }
+        }
+      }
+      return null;
+    }
+
+    // Cuenta cuántos bloques REPETIR hay en total (incluyendo anidados)
+    countAllRepeatBlocks() {
+      let total = 0;
+      for (let i = 0; i < this.blocks.length; i++) {
+        const b = this.blocks[i];
+        if (b && b.type === 'repeat') {
+          total++;
+          this.normalizeRepeatBlock(b);
+          for (let j = 0; j < b.children.length; j++) {
+            if (b.children[j] && b.children[j].type === 'repeat') {
+              total++;
+            }
+          }
+        }
+      }
+      return total;
+    }
+
+    // Verifica si el algoritmo utiliza un bloque REPETIR dentro de otro bloque REPETIR
+    hasNestedRepeatBlock() {
+      for (let i = 0; i < this.blocks.length; i++) {
+        const b = this.blocks[i];
+        if (b && b.type === 'repeat') {
+          this.normalizeRepeatBlock(b);
+          if (b.children.some(c => c && c.type === 'repeat')) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+
+    // Agregar bloque REPETIR [N] VECES al algoritmo (Valor inicial = 0 por defecto)
+    addRepeatBlock(initialTimes = null, initialAction = null, parentRepeatId = null) {
       if (this.isAnimatingStep || this.execMode === 'running') return;
       this.prepareForCodeEdit();
 
-      const gradeMeta = REP_GRADE_ADAPTATION[this.currentGrade] || REP_GRADE_ADAPTATION[1];
-      const times = initialTimes || gradeMeta.defaultRepeatCount || 3;
-      const newId = `rep_blk_${this.blockIdCounter++}`;
+      if (parentRepeatId) {
+        return this.addNestedRepeatBlock(parentRepeatId, initialTimes, initialAction);
+      }
 
-      this.blocks.push({
+      const gradeMeta = REP_GRADE_ADAPTATION[this.currentGrade] || REP_GRADE_ADAPTATION[1];
+      let parsedTimes = 0;
+      if (initialTimes !== null && initialTimes !== undefined) {
+        const p = parseInt(initialTimes, 10);
+        parsedTimes = Number.isNaN(p) ? 0 : p;
+      } else if (typeof gradeMeta.defaultRepeatCount === 'number') {
+        parsedTimes = gradeMeta.defaultRepeatCount;
+      }
+
+      const newId = `rep_blk_${this.blockIdCounter++}`;
+      const validDir = (initialAction && REP_MOVE_DEFS[initialAction]) ? initialAction : null;
+      const children = validDir
+        ? [{ id: `rep_blk_${this.blockIdCounter++}`, type: 'move', dir: validDir }]
+        : [];
+
+      const newBlk = {
         id: newId,
         type: 'repeat',
-        times: Math.max(2, Math.min(10, parseInt(times, 10) || 3)),
-        action: initialAction && REP_MOVE_DEFS[initialAction] ? initialAction : null
-      });
+        times: Math.max(0, Math.min(10, parsedTimes)),
+        action: validDir,
+        children: children
+      };
 
-      // Seleccionar automáticamente la cavidad interna si está vacía para que el próximo clic en un movimiento entre directo
-      if (!initialAction) {
+      this.blocks.push(newBlk);
+
+      if (!validDir) {
         this.focusedRepeatId = newId;
       }
 
       this.playSound('pop');
       this.refreshProgramStackDOM();
+      return newId;
+    }
+
+    // Agregar un bloque REPETIR interno dentro de otro bloque REPETIR externo (Repetición anidada)
+    addNestedRepeatBlock(parentRepeatId, initialTimes = null, initialAction = null) {
+      if (this.isAnimatingStep || this.execMode === 'running') return null;
+      this.prepareForCodeEdit();
+
+      const foundParent = this.findRepeatBlockById(parentRepeatId);
+      if (!foundParent || foundParent.depth !== 0) return null;
+
+      let parsedTimes = 0;
+      if (initialTimes !== null && initialTimes !== undefined) {
+        const p = parseInt(initialTimes, 10);
+        parsedTimes = Number.isNaN(p) ? 0 : p;
+      }
+
+      const nestedId = `rep_nested_${this.blockIdCounter++}`;
+      const validDir = (initialAction && REP_MOVE_DEFS[initialAction]) ? initialAction : null;
+      const children = validDir
+        ? [{ id: `rep_blk_${this.blockIdCounter++}`, type: 'move', dir: validDir }]
+        : [];
+
+      const nestedBlk = {
+        id: nestedId,
+        type: 'repeat',
+        times: Math.max(0, Math.min(10, parsedTimes)),
+        action: validDir,
+        children: children
+      };
+
+      foundParent.block.children.push(nestedBlk);
+      this.normalizeRepeatBlock(foundParent.block);
+
+      if (!validDir) {
+        this.focusedRepeatId = nestedId;
+      }
+
+      this.playSound('pop');
+      this.refreshProgramStackDOM();
+      return nestedId;
     }
 
     // Agregar o asignar un bloque de movimiento (adentro del REPETIR seleccionado o como instrucción individual)
@@ -840,12 +1665,31 @@
       const repeatIdToFill = targetRepeatId || (!forceStandalone ? this.focusedRepeatId : null);
 
       if (repeatIdToFill) {
-        const repBlock = this.blocks.find(b => b.id === repeatIdToFill && b.type === 'repeat');
-        if (repBlock) {
-          repBlock.action = dir;
-          // Si hay otro bloque REPETIR vacío, enfocar el siguiente; si no, liberar el foco
-          const nextEmpty = this.blocks.find(b => b.type === 'repeat' && !b.action);
-          this.focusedRepeatId = nextEmpty ? nextEmpty.id : null;
+        const found = this.findRepeatBlockById(repeatIdToFill);
+        if (found && found.block) {
+          const repBlock = found.block;
+          this.normalizeRepeatBlock(repBlock);
+          const hasNestedChild = repBlock.children.some(c => c.type === 'repeat');
+          const ex = this.getCurrentExercise();
+          const isMultiChildContext = hasNestedChild || !!(ex && (ex.allowNestedRepeat || ex.requireNestedRepeat));
+
+          if (!isMultiChildContext && repBlock.children.length <= 1) {
+            repBlock.children = [{
+              id: `rep_blk_${this.blockIdCounter++}`,
+              type: 'move',
+              dir: dir
+            }];
+            repBlock.action = dir;
+            this.focusedRepeatId = null;
+          } else {
+            repBlock.children.push({
+              id: `rep_blk_${this.blockIdCounter++}`,
+              type: 'move',
+              dir: dir
+            });
+            this.normalizeRepeatBlock(repBlock);
+          }
+
           this.playSound('pop');
           this.refreshProgramStackDOM();
           return;
@@ -855,16 +1699,24 @@
       // Si no había un REPETIR enfocado, pero el último bloque es un REPETIR vacío y no se forzó individual, colocarlo adentro
       if (!forceStandalone && this.blocks.length > 0) {
         const lastBlock = this.blocks[this.blocks.length - 1];
-        if (lastBlock.type === 'repeat' && !lastBlock.action) {
-          lastBlock.action = dir;
-          this.focusedRepeatId = null;
-          this.playSound('pop');
-          this.refreshProgramStackDOM();
-          return;
+        if (lastBlock.type === 'repeat') {
+          this.normalizeRepeatBlock(lastBlock);
+          if (lastBlock.children.length === 0) {
+            lastBlock.children.push({
+              id: `rep_blk_${this.blockIdCounter++}`,
+              type: 'move',
+              dir: dir
+            });
+            lastBlock.action = dir;
+            this.focusedRepeatId = null;
+            this.playSound('pop');
+            this.refreshProgramStackDOM();
+            return;
+          }
         }
       }
 
-      // Agregar como instrucción de movimiento individual en la secuencia
+      // Agregar como instrucción de movimiento individual en la secuencia principal
       this.blocks.push({
         id: `rep_blk_${this.blockIdCounter++}`,
         type: 'move',
@@ -875,48 +1727,88 @@
       this.refreshProgramStackDOM();
     }
 
-    // Cambiar la cantidad de repeticiones [N] de un bloque REPETIR
+    // Cambiar la cantidad de repeticiones [N] de un bloque REPETIR (externo o interno, de 0 a 10)
     changeRepeatCount(blockId, delta) {
       if (this.isAnimatingStep || this.execMode === 'running') return;
-      const blk = this.blocks.find(b => b.id === blockId && b.type === 'repeat');
-      if (!blk) return;
+      const found = this.findRepeatBlockById(blockId);
+      if (!found || !found.block) return;
       this.prepareForCodeEdit();
-      blk.times = Math.max(2, Math.min(10, (blk.times || 2) + delta));
+      const curr = (typeof found.block.times === 'number' && !Number.isNaN(found.block.times)) ? found.block.times : 0;
+      found.block.times = Math.max(0, Math.min(10, curr + delta));
       this.playSound('click');
       this.refreshProgramStackDOM();
     }
 
     setRepeatCountDirect(blockId, countVal) {
       if (this.isAnimatingStep || this.execMode === 'running') return;
-      const blk = this.blocks.find(b => b.id === blockId && b.type === 'repeat');
-      if (!blk) return;
+      const found = this.findRepeatBlockById(blockId);
+      if (!found || !found.block) return;
       this.prepareForCodeEdit();
       const parsed = parseInt(countVal, 10);
-      if (parsed >= 2 && parsed <= 10) {
-        blk.times = parsed;
+      if (!Number.isNaN(parsed) && parsed >= 0 && parsed <= 10) {
+        found.block.times = parsed;
         this.playSound('click');
         this.refreshProgramStackDOM();
       }
     }
 
-    // Cambiar o quitar la instrucción interna de un bloque REPETIR
-    setRepeatInnerAction(blockId, dirOrNull) {
+    // Cambiar o quitar la instrucción interna de un bloque REPETIR (externo o interno)
+    setRepeatInnerAction(blockId, dirOrNull, childId = null) {
       if (this.isAnimatingStep || this.execMode === 'running') return;
-      const blk = this.blocks.find(b => b.id === blockId && b.type === 'repeat');
-      if (!blk) return;
+      const found = this.findRepeatBlockById(blockId);
+      if (!found || !found.block) return;
+      const blk = found.block;
+      this.normalizeRepeatBlock(blk);
       this.prepareForCodeEdit();
 
       if (dirOrNull && REP_MOVE_DEFS[dirOrNull]) {
-        blk.action = dirOrNull;
+        if (childId) {
+          const targetChild = blk.children.find(c => c.id === childId && c.type === 'move');
+          if (targetChild) targetChild.dir = dirOrNull;
+        } else {
+          const existingMove = blk.children.find(c => c.type === 'move');
+          if (existingMove && blk.children.length === 1) {
+            existingMove.dir = dirOrNull;
+          } else if (!existingMove) {
+            blk.children.unshift({
+              id: `rep_blk_${this.blockIdCounter++}`,
+              type: 'move',
+              dir: dirOrNull
+            });
+          } else {
+            existingMove.dir = dirOrNull;
+          }
+        }
+        this.normalizeRepeatBlock(blk);
         if (this.focusedRepeatId === blockId) {
           this.focusedRepeatId = null;
         }
         this.playSound('pop');
       } else {
-        blk.action = null;
+        if (childId) {
+          blk.children = blk.children.filter(c => c.id !== childId);
+        } else {
+          blk.children = blk.children.filter(c => c.type !== 'move');
+        }
+        this.normalizeRepeatBlock(blk);
         this.focusedRepeatId = blockId;
         this.playSound('trash');
       }
+      this.refreshProgramStackDOM();
+    }
+
+    removeChildFromRepeat(parentRepeatId, childId) {
+      if (this.isAnimatingStep || this.execMode === 'running') return;
+      const found = this.findRepeatBlockById(parentRepeatId);
+      if (!found || !found.block) return;
+      this.prepareForCodeEdit();
+      this.normalizeRepeatBlock(found.block);
+      found.block.children = found.block.children.filter(c => c.id !== childId);
+      this.normalizeRepeatBlock(found.block);
+      if (this.focusedRepeatId === childId) {
+        this.focusedRepeatId = parentRepeatId;
+      }
+      this.playSound('trash');
       this.refreshProgramStackDOM();
     }
 
@@ -933,8 +1825,13 @@
       this.prepareForCodeEdit();
 
       const [removed] = this.blocks.splice(index, 1);
-      if (removed && removed.id === this.focusedRepeatId) {
-        this.focusedRepeatId = null;
+      if (removed) {
+        if (removed.id === this.focusedRepeatId) {
+          this.focusedRepeatId = null;
+        }
+        if (Array.isArray(removed.children) && removed.children.some(c => c.id === this.focusedRepeatId)) {
+          this.focusedRepeatId = null;
+        }
       }
       this.playSound('trash');
       this.refreshProgramStackDOM();
@@ -999,7 +1896,12 @@
       if (!payload) return;
 
       if (payload.kind === 'move' && payload.dir) {
-        this.setRepeatInnerAction(repeatBlockId, payload.dir);
+        this.addMovementBlock(payload.dir, repeatBlockId, false);
+      } else if (payload.kind === 'repeat') {
+        const found = this.findRepeatBlockById(repeatBlockId);
+        if (found && found.depth === 0) {
+          this.addNestedRepeatBlock(repeatBlockId, 0, null);
+        }
       }
     }
 
@@ -1045,7 +1947,7 @@
     }
 
     // ------------------------------------------------------------
-    // COMPILACIÓN Y EJECUCIÓN REAL (EJECUTAR Y PASO A PASO SIN PARPADEO)
+    // COMPILACIÓN Y EJECUCIÓN REAL (SOPORTA times === 0 Y REPETICIONES ANIDADAS)
     // ------------------------------------------------------------
     compileBlocksToSteps() {
       if (this.blocks.length === 0) {
@@ -1060,7 +1962,16 @@
       for (let i = 0; i < this.blocks.length; i++) {
         const blk = this.blocks[i];
         if (blk.type === 'repeat') {
-          if (!blk.action || !REP_MOVE_DEFS[blk.action]) {
+          this.normalizeRepeatBlock(blk);
+          const rawTimes = parseInt(blk.times, 10);
+          const times = Number.isNaN(rawTimes) ? 0 : Math.max(0, Math.min(15, rawTimes));
+
+          // Si el valor del bloque REPETIR es 0, no ejecuta ningún movimiento ni genera error
+          if (times === 0) {
+            continue;
+          }
+
+          if (blk.children.length === 0) {
             return {
               ok: false,
               emptyRepeatId: blk.id,
@@ -1068,16 +1979,70 @@
               detail: 'Elegí qué movimiento querés colocar dentro del bloque REPETIR antes de ejecutar.'
             };
           }
-          const times = Math.max(1, Math.min(15, parseInt(blk.times, 10) || 1));
-          for (let iter = 1; iter <= times; iter++) {
-            steps.push({
-              blockIndex: i,
-              blockId: blk.id,
-              blockType: 'repeat',
-              dir: blk.action,
-              currentIter: iter,
-              totalIter: times
-            });
+
+          // Validar hijos internos antes de expandir
+          for (let cIdx = 0; cIdx < blk.children.length; cIdx++) {
+            const child = blk.children[cIdx];
+            if (child.type === 'repeat') {
+              this.normalizeRepeatBlock(child);
+              const rawInnerTimes = parseInt(child.times, 10);
+              const innerTimes = Number.isNaN(rawInnerTimes) ? 0 : Math.max(0, Math.min(15, rawInnerTimes));
+              if (innerTimes > 0 && child.children.length === 0) {
+                return {
+                  ok: false,
+                  emptyRepeatId: child.id,
+                  title: '¡Al bloque REPETIR interno le falta una instrucción adentro!',
+                  detail: 'Elegí qué movimiento querés colocar dentro del bloque REPETIR interno antes de ejecutar.'
+                };
+              }
+            }
+          }
+
+          // Expandir repetición externa y posibles repeticiones internas anidadas
+          for (let outerIter = 1; outerIter <= times; outerIter++) {
+            for (let cIdx = 0; cIdx < blk.children.length; cIdx++) {
+              const child = blk.children[cIdx];
+              if (child.type === 'move' && REP_MOVE_DEFS[child.dir]) {
+                steps.push({
+                  blockIndex: i,
+                  blockId: blk.id,
+                  childId: child.id,
+                  blockType: 'repeat',
+                  dir: child.dir,
+                  currentIter: outerIter,
+                  totalIter: times,
+                  innerRepeatId: null,
+                  innerCurrentIter: 0,
+                  innerTotalIter: 0
+                });
+              } else if (child.type === 'repeat') {
+                this.normalizeRepeatBlock(child);
+                const rawInnerTimes = parseInt(child.times, 10);
+                const innerTimes = Number.isNaN(rawInnerTimes) ? 0 : Math.max(0, Math.min(15, rawInnerTimes));
+                if (innerTimes === 0) {
+                  continue;
+                }
+                for (let innerIter = 1; innerIter <= innerTimes; innerIter++) {
+                  for (let gcIdx = 0; gcIdx < child.children.length; gcIdx++) {
+                    const gc = child.children[gcIdx];
+                    if (gc.type === 'move' && REP_MOVE_DEFS[gc.dir]) {
+                      steps.push({
+                        blockIndex: i,
+                        blockId: blk.id,
+                        childId: gc.id,
+                        blockType: 'repeat',
+                        dir: gc.dir,
+                        currentIter: outerIter,
+                        totalIter: times,
+                        innerRepeatId: child.id,
+                        innerCurrentIter: innerIter,
+                        innerTotalIter: innerTimes
+                      });
+                    }
+                  }
+                }
+              }
+            }
           }
         } else if (blk.type === 'move' && REP_MOVE_DEFS[blk.dir]) {
           steps.push({
@@ -1086,7 +2051,10 @@
             blockType: 'move',
             dir: blk.dir,
             currentIter: 1,
-            totalIter: 1
+            totalIter: 1,
+            innerRepeatId: null,
+            innerCurrentIter: 0,
+            innerTotalIter: 0
           });
         }
       }
@@ -1138,6 +2106,12 @@
       this.execMode = 'running';
       this.refreshMapBoardDOM();
 
+      // Si todos los bloques REPETIR están en 0 veces (0 movimientos), evaluar sin error de ejecución
+      if (this.expandedSteps.length === 0) {
+        this.evaluateFinalResult();
+        return;
+      }
+
       const runNext = () => {
         if (this.execMode !== 'running') return;
         const nextIdx = this.stepCursor + 1;
@@ -1184,6 +2158,14 @@
         return;
       }
 
+      if (compiled.steps.length === 0) {
+        this.stopExecution();
+        this.resetRuntimeState();
+        this.expandedSteps = [];
+        this.evaluateFinalResult();
+        return;
+      }
+
       if (this.execMode !== 'step' || this.stepCursor >= compiled.steps.length - 1) {
         this.stopExecution();
         this.resetRuntimeState();
@@ -1220,7 +2202,7 @@
       this.bityFacing = stepObj.dir;
       this.isAnimatingStep = true;
 
-      // Actualizar resaltado del bloque y progreso "1 de 4 → 2 de 4..." en el DOM sin refrescar la página
+      // Actualizar resaltado del bloque y progreso "1 de N → 2 de N..." en el DOM sin refrescar la página
       this.updateCodeHighlightDOM();
       this.updateStatusAndFeedbackDOM();
 
@@ -1250,6 +2232,19 @@
 
       const oldPos = { x: this.bityPos.x, y: this.bityPos.y };
       this.bityPos = { x: nx, y: ny };
+
+      // Verificar si hay un objeto recolectable en (nx, ny)
+      if (Array.isArray(ex.collectibles)) {
+        const cItem = ex.collectibles.find(item => item.x === nx && item.y === ny);
+        if (cItem) {
+          const key = `${nx},${ny}`;
+          if (!this.collectedKeys.has(key)) {
+            this.collectedKeys.add(key);
+            this.markCollectiblePickedDOM(nx, ny);
+          }
+        }
+      }
+
       this.playSound('click');
 
       this.animateBityMoveDOM(oldPos, this.bityPos, stepObj.dir, () => {
@@ -1259,13 +2254,95 @@
       });
     }
 
+    markCollectiblePickedDOM(x, y) {
+      const cell = document.querySelector(`#rep-grid-board-mount .ex-grid-cell[data-x="${x}"][data-y="${y}"]`);
+      if (!cell) return;
+      const colEl = cell.querySelector('.ex-cell-collectible-icon');
+      if (colEl) {
+        colEl.classList.add('collectible-picked');
+        colEl.textContent = '✨';
+      }
+    }
+
     evaluateFinalResult() {
       this.stopExecution();
       const ex = this.getCurrentExercise();
       const atGoal = (this.bityPos.x === ex.goal.x && this.bityPos.y === ex.goal.y);
-      const usedRepeatBlock = this.blocks.some(b => b.type === 'repeat');
+      const totalRepeatBlocks = this.countAllRepeatBlocks();
+      const usedActiveRepeatBlock = this.blocks.some(b => b.type === 'repeat' && (parseInt(b.times, 10) || 0) > 0);
+      const hasZeroRepeatBlock = this.blocks.some(b => b.type === 'repeat' && (parseInt(b.times, 10) || 0) === 0);
 
-      if (atGoal && usedRepeatBlock) {
+      // Verificar si faltó recolectar algún elemento intermedio del mapa
+      const totalCollectibles = Array.isArray(ex.collectibles) ? ex.collectibles.length : 0;
+      const collectedCount = this.collectedKeys ? this.collectedKeys.size : 0;
+      const allCollectiblesPicked = (collectedCount >= totalCollectibles);
+
+      if (this.expandedSteps.length === 0 && hasZeroRepeatBlock) {
+        this.execMode = 'idle';
+        this.playSound('click');
+        this.feedback = {
+          type: 'error',
+          title: 'El bloque REPETIR tiene el valor 0 (0 movimientos).',
+          detail: 'Usá el botón «＋» dentro del bloque REPETIR para elegir cuántas veces querés que Bity repita la instrucción.'
+        };
+        this.updateCodeHighlightDOM();
+        this.updateStatusAndFeedbackDOM();
+        return;
+      }
+
+      if (atGoal && !usedActiveRepeatBlock) {
+        this.execMode = 'error';
+        this.playSound('error');
+        this.feedback = {
+          type: 'error',
+          title: '¡Llegaste al objetivo, pero sin usar el bloque REPETIR!',
+          detail: 'En este módulo aprendemos a ahorrar instrucciones iguales. Reemplazá los movimientos repetidos por un bloque REPETIR con un número mayor a 0.'
+        };
+        this.updateCodeHighlightDOM();
+        this.updateStatusAndFeedbackDOM();
+        return;
+      }
+
+      if (atGoal && !allCollectiblesPicked) {
+        this.execMode = 'error';
+        this.playSound('error');
+        this.feedback = {
+          type: 'error',
+          title: `¡Bity llegó al final, pero faltaron recolectar elementos (${collectedCount}/${totalCollectibles})!`,
+          detail: 'Revisá el mapa: Bity tiene que pasar por todos los objetos del camino antes de llegar al objetivo.'
+        };
+        this.updateCodeHighlightDOM();
+        this.updateStatusAndFeedbackDOM();
+        return;
+      }
+
+      if (atGoal && typeof ex.maxRepeatBlocks === 'number' && totalRepeatBlocks > ex.maxRepeatBlocks) {
+        this.execMode = 'error';
+        this.playSound('error');
+        this.feedback = {
+          type: 'error',
+          title: `¡Atención a la condición especial! Usaste ${totalRepeatBlocks} bloques REPETIR y solo se permite ${ex.maxRepeatBlocks}.`,
+          detail: 'En este desafío debés utilizar UN SOLO bloque REPETIR para el tramo más largo y completar los demás pasos con instrucciones individuales.'
+        };
+        this.updateCodeHighlightDOM();
+        this.updateStatusAndFeedbackDOM();
+        return;
+      }
+
+      if (atGoal && ex.requireNestedRepeat && !this.hasNestedRepeatBlock()) {
+        this.execMode = 'error';
+        this.playSound('error');
+        this.feedback = {
+          type: 'error',
+          title: '¡Llegaste al objetivo, pero falta usar una repetición dentro de otra!',
+          detail: 'En este desafío especial debés colocar un bloque REPETIR adentro de otro bloque REPETIR para repetir todo el patrón.'
+        };
+        this.updateCodeHighlightDOM();
+        this.updateStatusAndFeedbackDOM();
+        return;
+      }
+
+      if (atGoal && usedActiveRepeatBlock && allCollectiblesPicked) {
         this.execMode = 'won';
         if (!this.completedByGrade[this.currentGrade]) {
           this.completedByGrade[this.currentGrade] = new Set();
@@ -1280,7 +2357,7 @@
         this.feedback = {
           type: 'won',
           title: ex.victoryMsg,
-          detail: `¡Con solo ${usedBlocksCount} ${usedBlocksCount === 1 ? 'bloque' : 'bloques'} en tu programa lograste que Bity realizara ${totalMovesCount} movimientos!`
+          detail: `¡Con solo ${usedBlocksCount} ${usedBlocksCount === 1 ? 'bloque principal' : 'bloques principales'} en tu programa lograste que Bity realizara ${totalMovesCount} movimientos!`
         };
 
         const goalCell = document.querySelector(`#rep-grid-board-mount .ex-grid-cell[data-x="${this.bityPos.x}"][data-y="${this.bityPos.y}"]`);
@@ -1290,14 +2367,6 @@
           sprite.classList.add('bity-spin-celebration');
         }
         this.updateSolvedTabsDOM();
-      } else if (atGoal && !usedRepeatBlock) {
-        this.execMode = 'error';
-        this.playSound('error');
-        this.feedback = {
-          type: 'error',
-          title: '¡Llegaste al objetivo, pero sin usar el bloque REPETIR!',
-          detail: 'En este módulo aprendemos a ahorrar instrucciones iguales. Reemplazá los movimientos repetidos por un bloque REPETIR para superar el desafío.'
-        };
       } else {
         this.execMode = 'error';
         this.playSound('error');
@@ -1369,7 +2438,7 @@
         el.classList.toggle('rep-block-executing', isCurrent);
         el.classList.toggle('ex-block-executing', isCurrent);
 
-        const iterContainer = el.querySelector('.rep-c-iter-progress');
+        const iterContainer = el.querySelector(':scope > .rep-c-footer > .rep-c-iter-progress') || el.querySelector('.rep-c-iter-progress');
         if (iterContainer) {
           const blk = this.blocks[idx];
           if (blk && blk.type === 'repeat') {
@@ -1385,15 +2454,39 @@
           }
         }
       });
+
+      // Actualizar bloques REPETIR anidados internos si existen
+      const nestedEls = document.querySelectorAll('#rep-program-stack-mount .rep-c-block-nested[data-rep-block-id]');
+      nestedEls.forEach(nEl => {
+        const nestedId = nEl.getAttribute('data-rep-block-id');
+        const isCurrentNested = !!(currentStep && currentStep.innerRepeatId === nestedId && (this.execMode === 'running' || this.execMode === 'step' || this.execMode === 'error'));
+        nEl.classList.toggle('rep-block-executing', isCurrentNested);
+
+        const found = this.findRepeatBlockById(nestedId);
+        const nIterContainer = nEl.querySelector('.rep-c-iter-progress');
+        if (found && found.block && nIterContainer) {
+          let activeInnerIter = 0;
+          if (currentStep && currentStep.innerRepeatId === nestedId) {
+            activeInnerIter = currentStep.innerCurrentIter;
+          } else if (this.execMode === 'won') {
+            activeInnerIter = found.block.times + 1;
+          }
+          nIterContainer.innerHTML = this.renderRepeatIterPillsInner(found.block.times, activeInnerIter);
+        }
+      });
     }
 
     renderRepeatIterPillsInner(times, activeIter) {
+      const n = Math.max(0, parseInt(times, 10) || 0);
+      if (n === 0) {
+        return `<span class="rep-iter-step-pill">${this.txt('0 repeticiones (Elegí un número con ＋)')}</span>`;
+      }
       const pills = [];
-      for (let k = 1; k <= times; k++) {
+      for (let k = 1; k <= n; k++) {
         let cls = 'rep-iter-step-pill';
         if (activeIter > k) cls += ' iter-done';
         else if (activeIter === k) cls += ' iter-current';
-        pills.push(`<span class="${cls}">${k} ${this.txt('de')} ${times}</span>`);
+        pills.push(`<span class="${cls}">${k} ${this.txt('de')} ${n}</span>`);
       }
       return pills.join('<span class="rep-iter-arrow">→</span>');
     }
@@ -1419,6 +2512,7 @@
 
     updateSolvedTabsDOM() {
       const doneSet = this.completedByGrade[this.currentGrade] || new Set();
+      const totalExCount = this.getExercisesForCurrentGrade().length;
       const ex = this.getCurrentExercise();
       const tabBtn = document.querySelector(`.btn-rep-ex-tab[data-ex-idx="${this.currentExerciseIdx}"]`);
       if (tabBtn && doneSet.has(ex.id)) {
@@ -1428,7 +2522,7 @@
       }
       const progBadge = document.getElementById('rep-top-progress-count');
       if (progBadge) {
-        progBadge.textContent = `${doneSet.size} / 5`;
+        progBadge.textContent = `${doneSet.size} / ${totalExCount}`;
       }
     }
 
@@ -1511,6 +2605,7 @@
 
     renderTopBar() {
       const doneSet = this.completedByGrade[this.currentGrade] || new Set();
+      const totalExCount = this.getExercisesForCurrentGrade().length;
 
       return `
         <header class="rep-topbar">
@@ -1539,7 +2634,7 @@
             <button type="button"
               class="btn-rep-stage-nav ${this.currentView === 'exercises' ? 'active' : ''}"
               onclick="window.repeticionesModule.goToView('exercises')">
-              <span>🧩</span> <span>${this.txt('2. Cinco Ejercicios Guiados')}</span>
+              <span>🧩</span> <span>${this.txt('2. Ejercicios Guiados (9)')}</span>
             </button>
           </div>
 
@@ -1557,7 +2652,7 @@
 
             <div class="rep-progress-badge" title="${this.txt('Ejercicios completados en este grado')}">
               <span>⭐</span>
-              <span id="rep-top-progress-count">${doneSet.size} / 5</span>
+              <span id="rep-top-progress-count">${doneSet.size} / ${totalExCount}</span>
             </div>
           </div>
         </header>
@@ -1762,7 +2857,7 @@
               class="btn-rep-start-main"
               onclick="window.repeticionesModule.goToView('exercises')">
               <span>🧩</span>
-              <span>${this.txt('¡PRACTICAR EN LOS 5 EJERCICIOS GUIADOS!')} ➔</span>
+              <span>${this.txt('¡PRACTICAR EN LOS 9 EJERCICIOS GUIADOS!')} ➔</span>
             </button>
           </div>
         </section>
@@ -1770,7 +2865,7 @@
     }
 
     // ------------------------------------------------------------
-    // VISTA 3: SEGUNDA PARTE — LOS 5 EJERCICIOS GUIADOS
+    // VISTA 3: SEGUNDA PARTE — LOS 9 EJERCICIOS GUIADOS (POR GRADO)
     // ------------------------------------------------------------
     renderExercisesView() {
       const exList = this.getExercisesForCurrentGrade();
@@ -1778,12 +2873,14 @@
       const doneSet = this.completedByGrade[this.currentGrade] || new Set();
       const isBusy = (this.isAnimatingStep || this.execMode === 'running');
       const moveKeys = ['right', 'left', 'down', 'up'];
+      const topLevelRepeatBlocks = this.blocks.filter(b => b.type === 'repeat');
+      const canAddNestedHere = !!(ex.allowNestedRepeat || ex.requireNestedRepeat || this.currentGrade >= 4);
 
       return `
         <section class="rep-exercises-workspace">
-          <!-- Barra de Selección de los 5 Ejercicios Guiados -->
+          <!-- Barra de Selección de los 9 Ejercicios Guiados -->
           <div class="rep-exercises-selector-bar">
-            <div class="rep-ex-tabs-group" role="tablist" aria-label="Cinco ejercicios guiados de repeticiones">
+            <div class="rep-ex-tabs-group" role="tablist" aria-label="Nueve ejercicios guiados de repeticiones">
               ${exList.map((item, idx) => {
                 const isDone = doneSet.has(item.id);
                 const isCurrent = (this.currentExerciseIdx === idx);
@@ -1824,6 +2921,19 @@
               </div>
               <p class="ex-prompt-statement">“${this.txt(ex.prompt)}”</p>
 
+              ${ex.specialRuleBanner ? `
+                <div class="rep-special-rule-banner">
+                  <span>${this.txt(ex.specialRuleBanner)}</span>
+                </div>
+              ` : ''}
+
+              ${ex.nestedGuideExample ? `
+                <div class="rep-visual-nested-guide">
+                  <strong>💡 ${this.txt('Ejemplo visual de un bloque REPETIR dentro de otro bloque REPETIR:')}</strong>
+                  <pre>${this.txt(ex.nestedGuideExample)}</pre>
+                </div>
+              ` : ''}
+
               <!-- Sección de Pistas Guiadas Progresivas -->
               <div class="rep-hints-card" id="rep-hints-card-mount">
                 ${this.renderHintsCardInner(ex)}
@@ -1835,7 +2945,7 @@
               <div class="ex-goal-meta">
                 <span class="ex-goal-kicker">${this.txt('OBJETIVO')}</span>
                 <strong class="ex-goal-name">${this.txt(ex.goalName)}</strong>
-                <span class="ex-goal-collectible-tag">🔁 ${this.txt('Usá el bloque REPETIR')}</span>
+                <span class="ex-goal-collectible-tag">🔁 ${this.txt(ex.requireNestedRepeat ? 'Repetición dentro de otra' : (ex.maxRepeatBlocks === 1 ? 'Usá 1 solo REPETIR' : 'Usá el bloque REPETIR'))}</span>
               </div>
             </div>
           </div>
@@ -1847,7 +2957,7 @@
             <div class="ex-sector-code alg-card">
               <div class="ex-sector-header">
                 <span class="ex-sector-tag">🧩 ${this.txt('CONSTRUÍ TU PROGRAMA CON REPETICIONES')}</span>
-                <span class="ex-sector-subhint">${this.txt('Agregá el bloque REPETIR, elegí cuántas veces y colocá el movimiento adentro')}</span>
+                <span class="ex-sector-subhint">${this.txt('Agregá el bloque REPETIR (inicia en 0), elegí cuántas veces y colocá el movimiento adentro')}</span>
               </div>
 
               <div class="ex-code-panels-split">
@@ -1864,7 +2974,7 @@
                     <span class="ex-start-unique-note">✓ ${this.txt('Inicio del programa')}</span>
                   </div>
 
-                  <!-- Bloque REPETIR [N] VECES (Inspirado en img/repeticiones.jfif) -->
+                  <!-- Bloque REPETIR [0] VECES (Inspirado en img/repeticiones.jfif, valor inicial = 0) -->
                   <div class="ex-palette-group-label" style="color:#86efac;">🔁 ${this.txt('BLOQUE DE REPETICIÓN')}</div>
                   <button type="button"
                     id="btn-rep-add-repeat"
@@ -1874,9 +2984,22 @@
                     ondragstart="window.repeticionesModule.handlePaletteDragStart(event, 'repeat')"
                     onclick="window.repeticionesModule.addRepeatBlock()">
                     <span>🔁 REPETIR</span>
-                    <span class="rep-palette-count-pill">${(REP_GRADE_ADAPTATION[this.currentGrade] || REP_GRADE_ADAPTATION[1]).defaultRepeatCount}</span>
+                    <span class="rep-palette-count-pill">0</span>
                     <span>VECES { } ＋</span>
                   </button>
+
+                  ${canAddNestedHere && topLevelRepeatBlocks.length > 0 ? `
+                    <button type="button"
+                      id="btn-rep-add-nested-palette"
+                      class="btn-palette-add-repeat"
+                      style="background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%); border-color: #7dd3fc; margin-top: -4px;"
+                      ${isBusy ? 'disabled' : ''}
+                      onclick="window.repeticionesModule.addNestedRepeatBlock('${topLevelRepeatBlocks[topLevelRepeatBlocks.length - 1].id}')">
+                      <span>🔁 + REPETIR INTERNO</span>
+                      <span class="rep-palette-count-pill" style="background:#0c4a6e;">0</span>
+                      <span>{ }</span>
+                    </button>
+                  ` : ''}
 
                   <!-- Aviso de dónde se colocará el próximo movimiento -->
                   <div id="rep-palette-mode-mount">
@@ -2048,14 +3171,15 @@
     }
 
     renderPaletteTargetNoticeInner() {
-      const focusedBlk = this.focusedRepeatId
-        ? this.blocks.find(b => b.id === this.focusedRepeatId && b.type === 'repeat')
-        : null;
+      const found = this.focusedRepeatId ? this.findRepeatBlockById(this.focusedRepeatId) : null;
 
-      if (focusedBlk) {
+      if (found && found.block) {
+        const isNested = found.depth > 0;
         return `
           <div class="rep-target-mode-box">
-            <span>🎯 ${this.txt('El próximo movimiento irá ADENTRO del bloque REPETIR seleccionado')}</span>
+            <span>🎯 ${this.txt(isNested
+              ? 'El próximo movimiento irá ADENTRO del bloque REPETIR INTERNO seleccionado'
+              : 'El próximo movimiento irá ADENTRO del bloque REPETIR seleccionado')}</span>
             <button type="button"
               class="btn-rep-unfocus-slot"
               onclick="window.repeticionesModule.focusRepeatMouth(null)"
@@ -2068,6 +3192,116 @@
       return '';
     }
 
+    renderNestedRepeatBlockInner(nestedBlk, parentBlk, isBusy, currentStep) {
+      this.normalizeRepeatBlock(nestedBlk);
+      const isMouthFocused = (this.focusedRepeatId === nestedBlk.id);
+      const isExecutingNested = !!(currentStep && currentStep.innerRepeatId === nestedBlk.id && (this.execMode === 'running' || this.execMode === 'step' || this.execMode === 'error'));
+      const moveChildren = nestedBlk.children.filter(c => c.type === 'move');
+
+      let activeInnerIter = 0;
+      if (currentStep && currentStep.innerRepeatId === nestedBlk.id) {
+        activeInnerIter = currentStep.innerCurrentIter;
+      } else if (this.execMode === 'won') {
+        activeInnerIter = nestedBlk.times + 1;
+      }
+
+      return `
+        <div class="rep-c-block rep-c-block-nested ${isExecutingNested ? 'rep-block-executing' : ''}"
+          data-rep-block-id="${nestedBlk.id}">
+          <div class="rep-c-header">
+            <div class="rep-c-header-title">
+              <span class="rep-nested-badge-tag">🔁 ${this.txt('INTERNO')}</span>
+              <span>REPETIR</span>
+              <span class="rep-c-count-control">
+                <button type="button"
+                  class="btn-rep-count-step"
+                  ${isBusy || nestedBlk.times <= 0 ? 'disabled' : ''}
+                  onclick="event.stopPropagation(); window.repeticionesModule.changeRepeatCount('${nestedBlk.id}', -1)"
+                  title="${this.txt('Disminuir repeticiones internas')}">−</button>
+                <span class="rep-c-count-badge" data-rep-times="${nestedBlk.times}">${nestedBlk.times}</span>
+                <button type="button"
+                  class="btn-rep-count-step"
+                  ${isBusy || nestedBlk.times >= 10 ? 'disabled' : ''}
+                  onclick="event.stopPropagation(); window.repeticionesModule.changeRepeatCount('${nestedBlk.id}', 1)"
+                  title="${this.txt('Aumentar repeticiones internas')}">＋</button>
+              </span>
+              <span>VECES:</span>
+            </div>
+
+            <div class="ex-placed-controls">
+              <button type="button"
+                class="btn-ex-block-remove"
+                ${isBusy ? 'disabled' : ''}
+                onclick="event.stopPropagation(); window.repeticionesModule.removeChildFromRepeat('${parentBlk.id}', '${nestedBlk.id}')"
+                title="${this.txt('Eliminar bloque REPETIR interno')}">✕</button>
+            </div>
+          </div>
+
+          <div class="rep-c-body">
+            <div class="rep-c-spine"></div>
+            <div class="rep-c-mouth ${isMouthFocused ? 'mouth-selected' : ''}"
+              ondragover="window.repeticionesModule.handleDragOver(event, this)"
+              ondragleave="window.repeticionesModule.handleDragLeave(event, this)"
+              ondrop="window.repeticionesModule.handleDropOnRepeatMouth(event, '${nestedBlk.id}')"
+              onclick="event.stopPropagation(); window.repeticionesModule.focusRepeatMouth('${nestedBlk.id}')">
+              <span class="rep-c-curly-brace" aria-hidden="true">{</span>
+
+              <div class="rep-c-inner-slot">
+                ${moveChildren.length > 0 ? `
+                  <div class="rep-c-children-list">
+                    ${moveChildren.map(mc => {
+                      const mDef = REP_MOVE_DEFS[mc.dir] || REP_MOVE_DEFS.right;
+                      return `
+                        <div class="rep-inner-move-block">
+                          <div class="rep-inner-move-left">
+                            <span class="rep-inner-arrow-badge">${mDef.arrow}</span>
+                            <span>${mDef.label}</span>
+                          </div>
+                          <button type="button"
+                            class="btn-ex-block-remove"
+                            ${isBusy ? 'disabled' : ''}
+                            onclick="event.stopPropagation(); window.repeticionesModule.removeChildFromRepeat('${nestedBlk.id}', '${mc.id}')"
+                            title="${this.txt('Quitar instrucción interna')}">✕</button>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                ` : `
+                  <button type="button"
+                    class="rep-empty-mouth-btn"
+                    onclick="event.stopPropagation(); window.repeticionesModule.focusRepeatMouth('${nestedBlk.id}')">
+                    ➕ ${this.txt('Elegí aquí el movimiento del REPETIR interno')}
+                  </button>
+                `}
+
+                <div class="rep-quick-dirs-row" onclick="event.stopPropagation();">
+                  <span class="rep-quick-dirs-lbl">${this.txt('Movimiento interno:')}</span>
+                  ${['right', 'left', 'down', 'up'].map(d => {
+                    const mDef = REP_MOVE_DEFS[d];
+                    return `
+                      <button type="button"
+                        class="btn-rep-quick-dir ${nestedBlk.action === d ? 'active-dir' : ''}"
+                        ${isBusy ? 'disabled' : ''}
+                        onclick="window.repeticionesModule.setRepeatInnerAction('${nestedBlk.id}', '${d}')"
+                        title="${this.txt(mDef.label)}">
+                        ${mDef.arrow} ${this.txt(mDef.shortLabel)}
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rep-c-footer">
+            <div class="rep-c-iter-progress">
+              ${this.renderRepeatIterPillsInner(nestedBlk.times, activeInnerIter)}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     renderProgramStackInner() {
       const isBusy = (this.isAnimatingStep || this.execMode === 'running');
       if (this.blocks.length === 0) {
@@ -2075,11 +3309,13 @@
           <div class="ex-empty-algorithm-dropzone">
             <div class="ex-empty-arrow">🔁</div>
             <p class="ex-empty-title">${this.txt('Tu algoritmo está vacío')}</p>
-            <p class="ex-empty-sub">${this.txt('Tocá o arrastrá el bloque verde REPETIR y colocá adentro la instrucción de movimiento que Bity debe repetir.')}</p>
+            <p class="ex-empty-sub">${this.txt('Tocá o arrastrá el bloque verde REPETIR (comienza en 0), elegí la cantidad con ＋ y colocá adentro la instrucción de movimiento.')}</p>
           </div>
         `;
       }
 
+      const ex = this.getCurrentExercise();
+      const showNestedControls = !!(ex.allowNestedRepeat || ex.requireNestedRepeat || this.currentGrade >= 4);
       const currentStep = (this.stepCursor >= 0 && this.stepCursor < this.expandedSteps.length)
         ? this.expandedSteps[this.stepCursor]
         : null;
@@ -2088,8 +3324,8 @@
         const isExecutingNow = !!(currentStep && currentStep.blockIndex === idx && (this.execMode === 'running' || this.execMode === 'step' || this.execMode === 'error'));
 
         if (blk.type === 'repeat') {
+          this.normalizeRepeatBlock(blk);
           const isMouthFocused = (this.focusedRepeatId === blk.id);
-          const innerDef = blk.action ? REP_MOVE_DEFS[blk.action] : null;
           let activeIter = 0;
           if (currentStep && currentStep.blockIndex === idx) {
             activeIter = currentStep.currentIter;
@@ -2111,7 +3347,7 @@
                   <span class="rep-c-count-control">
                     <button type="button"
                       class="btn-rep-count-step"
-                      ${isBusy || blk.times <= 2 ? 'disabled' : ''}
+                      ${isBusy || blk.times <= 0 ? 'disabled' : ''}
                       onclick="event.stopPropagation(); window.repeticionesModule.changeRepeatCount('${blk.id}', -1)"
                       title="${this.txt('Disminuir repeticiones')}">−</button>
                     <span class="rep-c-count-badge" data-rep-times="${blk.times}">${blk.times}</span>
@@ -2143,7 +3379,7 @@
                 </div>
               </div>
 
-              <!-- Cuerpo en C con llave naranja { y movimiento interno -->
+              <!-- Cuerpo en C con llave naranja { y lista de instrucciones o REPETIR interno -->
               <div class="rep-c-body">
                 <div class="rep-c-spine"></div>
                 <div class="rep-c-mouth ${isMouthFocused ? 'mouth-selected' : ''}"
@@ -2154,17 +3390,27 @@
                   <span class="rep-c-curly-brace" aria-hidden="true">{</span>
 
                   <div class="rep-c-inner-slot">
-                    ${innerDef ? `
-                      <div class="rep-inner-move-block">
-                        <div class="rep-inner-move-left">
-                          <span class="rep-inner-arrow-badge">${innerDef.arrow}</span>
-                          <span>${innerDef.label}</span>
-                        </div>
-                        <button type="button"
-                          class="btn-ex-block-remove"
-                          ${isBusy ? 'disabled' : ''}
-                          onclick="event.stopPropagation(); window.repeticionesModule.setRepeatInnerAction('${blk.id}', null)"
-                          title="${this.txt('Quitar o cambiar instrucción interna')}">✕</button>
+                    ${blk.children.length > 0 ? `
+                      <div class="rep-c-children-list">
+                        ${blk.children.map(child => {
+                          if (child.type === 'repeat') {
+                            return this.renderNestedRepeatBlockInner(child, blk, isBusy, currentStep);
+                          }
+                          const innerDef = REP_MOVE_DEFS[child.dir] || REP_MOVE_DEFS.right;
+                          return `
+                            <div class="rep-inner-move-block">
+                              <div class="rep-inner-move-left">
+                                <span class="rep-inner-arrow-badge">${innerDef.arrow}</span>
+                                <span>${innerDef.label}</span>
+                              </div>
+                              <button type="button"
+                                class="btn-ex-block-remove"
+                                ${isBusy ? 'disabled' : ''}
+                                onclick="event.stopPropagation(); window.repeticionesModule.removeChildFromRepeat('${blk.id}', '${child.id}')"
+                                title="${this.txt('Quitar o cambiar instrucción interna')}">✕</button>
+                            </div>
+                          `;
+                        }).join('')}
                       </div>
                     ` : `
                       <button type="button"
@@ -2174,7 +3420,7 @@
                       </button>
                     `}
 
-                    <!-- Selector rápido de dirección para niños y pantallas táctiles -->
+                    <!-- Selector rápido de dirección y botón para agregar REPETIR interno anidado -->
                     <div class="rep-quick-dirs-row" onclick="event.stopPropagation();">
                       <span class="rep-quick-dirs-lbl">${this.txt('Movimiento interno:')}</span>
                       ${['right', 'left', 'down', 'up'].map(d => {
@@ -2189,12 +3435,21 @@
                           </button>
                         `;
                       }).join('')}
+                      ${showNestedControls ? `
+                        <button type="button"
+                          class="btn-rep-add-nested-inline"
+                          ${isBusy ? 'disabled' : ''}
+                          onclick="window.repeticionesModule.addNestedRepeatBlock('${blk.id}')"
+                          title="${this.txt('Colocar un bloque REPETIR dentro de este bloque REPETIR')}">
+                          🔁 + ${this.txt('REPETIR INTERNO')}
+                        </button>
+                      ` : ''}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Base del bloque C con progreso de repeticiones: 1 de 4 → 2 de 4... -->
+              <!-- Base del bloque C con progreso de repeticiones: 1 de N → 2 de N... -->
               <div class="rep-c-footer">
                 <div class="rep-c-iter-progress">
                   ${this.renderRepeatIterPillsInner(blk.times, activeIter)}
@@ -2238,6 +3493,7 @@
 
     renderMapBoardInner(ex) {
       const obstacleIcons = ['🌲', '⛄', '🎄', '📦', '🧊'];
+      const collectibles = Array.isArray(ex.collectibles) ? ex.collectibles : [];
       let html = '';
 
       for (let r = 0; r < ex.rows; r++) {
@@ -2246,6 +3502,8 @@
           const isStart = (ex.start.x === c && ex.start.y === r);
           const isGoal = (ex.goal.x === c && ex.goal.y === r);
           const isBityHere = (this.bityPos.x === c && this.bityPos.y === r);
+          const cItem = collectibles.find(item => item.x === c && item.y === r);
+          const isCollected = !!(cItem && this.collectedKeys && this.collectedKeys.has(`${c},${r}`));
 
           let cellClasses = 'ex-grid-cell';
           cellClasses += isObstacle ? ' ex-cell-obstacle' : ' ex-cell-path';
@@ -2259,6 +3517,12 @@
             <div class="${cellClasses}" data-x="${c}" data-y="${r}">
               ${isStart ? `<span class="ex-cell-start-badge" title="${this.txt('Salida')}">🚩</span>` : ''}
               ${isObstacle ? `<span class="ex-cell-obstacle-icon" aria-hidden="true">${obsIcon}</span>` : ''}
+              ${cItem && !isGoal ? `
+                <span class="ex-cell-collectible-icon ${isCollected ? 'collectible-picked' : 'item-pulse'}"
+                  title="${this.txt(cItem.name || 'Elemento a recolectar')}">
+                  ${isCollected ? '✨' : cItem.icon}
+                </span>
+              ` : ''}
               ${isGoal ? `<span class="ex-cell-goal-icon ${isBityHere && this.execMode === 'won' ? 'goal-reached-bounce' : 'item-pulse'}" title="${this.txt(ex.goalName)}">${ex.goalIcon}</span>` : ''}
               ${isBityHere ? `
                 <div class="ex-bity-sprite facing-${this.bityFacing} ${this.execMode === 'won' ? 'bity-spin-celebration' : ''}">
@@ -2291,7 +3555,12 @@
           </span>
           ${currentStep && currentStep.blockType === 'repeat' ? `
             <span class="ex-counter-pill" style="border-color:#fde047; color:#fde047;">
-              🔁 ${this.txt('Repetición actual')}: <strong>${currentStep.currentIter} ${this.txt('de')} ${currentStep.totalIter}</strong>
+              🔁 ${this.txt('Repetición externa')}: <strong>${currentStep.currentIter} ${this.txt('de')} ${currentStep.totalIter}</strong>
+            </span>
+          ` : ''}
+          ${currentStep && currentStep.innerRepeatId ? `
+            <span class="ex-counter-pill" style="border-color:#7dd3fc; color:#7dd3fc;">
+              🔁 ${this.txt('Repetición interna')}: <strong>${currentStep.innerCurrentIter} ${this.txt('de')} ${currentStep.innerTotalIter}</strong>
             </span>
           ` : ''}
         </div>
@@ -2308,9 +3577,11 @@
 
     renderFeedbackInner() {
       if (!this.feedback) return '';
+      const exList = this.getExercisesForCurrentGrade();
+      const totalExCount = exList.length;
       const ex = this.getCurrentExercise();
       const doneSet = this.completedByGrade[this.currentGrade] || new Set();
-      const isFinalExerciseWon = (this.feedback.type === 'won' && ex.number === 5);
+      const isFinalExerciseWon = (this.feedback.type === 'won' && ex.number === totalExCount);
 
       return `
         <div class="ex-feedback-card ${this.feedback.type === 'won' ? 'ex-feedback-won' : 'ex-feedback-error'}" role="status">
@@ -2340,7 +3611,7 @@
             </div>
             <h3 class="rep-final-title">🏆 ${this.txt('¡FELICITACIONES ESPECIALES DE BITY!')} 🏆</h3>
             <p class="rep-final-desc">
-              “${this.txt(`¡Completaste los 5 ejercicios de REPETICIONES de ${this.currentGrade}.º Grado (${doneSet.size}/5)! Ya sabés cómo usar el bloque REPETIR para crear programas cortos, claros e inteligentes.`)}”
+              “${this.txt(`¡Completaste los ${totalExCount} ejercicios de REPETICIONES de ${this.currentGrade}.º Grado (${doneSet.size}/${totalExCount})! Ya sabés cómo usar el bloque REPETIR para crear programas cortos, claros e inteligentes.`)}”
             </p>
             <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
               <button type="button" class="btn-ex-victory-next" onclick="window.repeticionesModule.selectExercise(0)">

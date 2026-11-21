@@ -8308,7 +8308,7 @@ class CodingModuleManager {
       algStatusEl.textContent = isGradeOne ? '🟢 DISPONIBLE' : '🟢 Disponible';
     }
     if (algTitleEl) {
-      algTitleEl.textContent = isGradeOne ? '2. ALGORITMOS' : '2. Algoritmos';
+      algTitleEl.textContent = isGradeOne ? '3. ALGORITMOS' : '3. Algoritmos';
     }
     if (algLabelEl) {
       algLabelEl.textContent = isGradeOne ? 'CLASE N.º 1' : 'Clase N.º 1';
@@ -8380,8 +8380,8 @@ class CodingModuleManager {
       }
     } catch (e) {}
 
-    const isRepCompleted = repCompletedCount >= 5;
-    const repPct = isRepCompleted ? 100 : Math.min(100, Math.round((repCompletedCount / 5) * 100));
+    const isRepCompleted = repCompletedCount >= 9;
+    const repPct = isRepCompleted ? 100 : Math.min(100, Math.round((repCompletedCount / 9) * 100));
 
     if (repFillEl) repFillEl.style.width = `${repPct}%`;
     if (repTextEl) {
@@ -8392,15 +8392,15 @@ class CodingModuleManager {
       repStatusEl.textContent = isGradeOne ? '🟢 DISPONIBLE' : '🟢 Disponible';
     }
     if (repTitleEl) {
-      repTitleEl.textContent = isGradeOne ? '5. REPETICIONES' : '5. Repeticiones';
+      repTitleEl.textContent = isGradeOne ? '4. REPETICIONES' : '4. Repeticiones';
     }
     if (repLabelEl) {
-      repLabelEl.textContent = isGradeOne ? '5 EJERCICIOS GUIADOS' : '5 Ejercicios Guiados';
+      repLabelEl.textContent = isGradeOne ? '9 EJERCICIOS GUIADOS' : '9 Ejercicios Guiados';
     }
     if (repDescEl) {
       repDescEl.textContent = isGradeOne
-        ? 'APRENDÉ A REPETIR INSTRUCCIONES VARIAS VECES USANDO EL BLOQUE REPETIR JUNTO A BITY EN 5 DESAFÍOS NAVIDEÑOS.'
-        : 'Aprendé a repetir instrucciones varias veces usando el bloque REPETIR junto a Bity en 5 desafíos navideños.';
+        ? 'APRENDÉ A REPETIR INSTRUCCIONES VARIAS VECES USANDO EL BLOQUE REPETIR JUNTO A BITY EN 9 DESAFÍOS NAVIDEÑOS.'
+        : 'Aprendé a repetir instrucciones varias veces usando el bloque REPETIR junto a Bity en 9 desafíos navideños.';
     }
     if (btnStartRep) {
       btnStartRep.style.display = 'inline-flex';

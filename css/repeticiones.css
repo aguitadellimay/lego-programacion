@@ -5,22 +5,86 @@
  */
 
 #screen-coding-repeticiones {
+  width: 100%;
   min-height: calc(100vh - 78px);
   background:
     radial-gradient(circle at 15% 18%, rgba(22, 163, 74, 0.22) 0%, transparent 45%),
     radial-gradient(circle at 85% 22%, rgba(212, 36, 38, 0.2) 0%, transparent 45%),
     linear-gradient(180deg, #071524 0%, #0b2138 50%, #071524 100%);
   color: #f8fafc;
-  padding: 18px 20px 56px;
+  padding: 20px 24px 56px;
   box-sizing: border-box;
   position: relative;
 }
 
+#screen-coding-repeticiones.active {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+}
+
+#repeticiones-content-mount {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .rep-app-container {
-  max-width: 1340px;
+  width: 100%;
+  max-width: 1320px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.rep-main-body,
+.rep-welcome-section,
+.rep-concept-wrapper,
+.rep-exercises-workspace {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.rep-topbar {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#screen-coding-repeticiones .ex-sector-prompt,
+#screen-coding-repeticiones .ex-main-two-sectors,
+#screen-coding-repeticiones .rep-exercises-selector-bar {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+#screen-coding-repeticiones .ex-main-two-sectors {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 20px;
+  align-items: start;
+  justify-content: center;
+}
+
+#screen-coding-repeticiones .ex-map-board-frame,
+#screen-coding-repeticiones .ex-controls-area,
+#screen-coding-repeticiones .ex-primary-exec-buttons,
+#screen-coding-repeticiones .ex-secondary-exec-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 .rep-grade-1-uppercase {
@@ -1246,4 +1310,162 @@
   .rep-comparison-columns {
     grid-template-columns: 1fr;
   }
+
+  #screen-coding-repeticiones .ex-main-two-sectors {
+    grid-template-columns: 1fr;
+  }
 }
+
+@media (max-width: 640px) {
+  #screen-coding-repeticiones {
+    padding: 12px 10px 44px;
+  }
+}
+
+/* ========================================================
+   6. REPETICIONES ANIDADAS, MULTI-HIJOS Y OBJETOS RECOLECTABLES
+   ======================================================== */
+.rep-c-children-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Bloque REPETIR anidado (interior) con identidad visual propia (Azul Turquesa Real) */
+.rep-c-block.rep-c-block-nested {
+  margin-top: 2px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+}
+
+.rep-c-block.rep-c-block-nested::before {
+  background: #0284c7;
+  border-color: #7dd3fc;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-header {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+  border-color: #7dd3fc;
+  padding: 8px 11px;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-header .rep-c-count-control {
+  background: #075985;
+  border-color: #fde047;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-header .rep-c-count-badge {
+  background: #0c4a6e;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-body > .rep-c-spine {
+  background: linear-gradient(90deg, #0284c7 0%, #0369a1 100%);
+  border-left-color: #7dd3fc;
+  border-right-color: #075985;
+  width: 18px;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-body > .rep-c-mouth {
+  border-top-color: #075985;
+  border-bottom-color: #075985;
+  border-right-color: rgba(125, 211, 252, 0.45);
+  background: rgba(8, 28, 48, 0.9);
+  padding: 8px 10px;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-footer {
+  background: linear-gradient(180deg, #0284c7 0%, #075985 100%);
+  border-color: #7dd3fc;
+}
+
+.rep-c-block.rep-c-block-nested > .rep-c-footer::after {
+  background: #075985;
+  border-color: #7dd3fc;
+}
+
+.rep-nested-badge-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(12, 74, 110, 0.85);
+  border: 1px solid #7dd3fc;
+  color: #e0f2fe;
+}
+
+.btn-rep-add-nested-inline {
+  padding: 3px 9px;
+  border-radius: 7px;
+  border: 1.5px solid #7dd3fc;
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.74rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.14s ease, filter 0.14s ease;
+}
+
+.btn-rep-add-nested-inline:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  border-color: #fde047;
+}
+
+/* Banner de condición especial del ejercicio (Ej. 1 solo bloque REPETIR o Repetición dentro de otra) */
+.rep-special-rule-banner {
+  margin-top: 10px;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.28), rgba(15, 23, 42, 0.92));
+  border: 2px solid #fbbf24;
+  border-radius: 14px;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #fef08a;
+}
+
+/* Guía visual para repeticiones anidadas (sin tecnicismos) */
+.rep-visual-nested-guide {
+  margin-top: 10px;
+  background: rgba(7, 21, 36, 0.9);
+  border: 2px dashed #7dd3fc;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.84rem;
+  color: #e0f2fe;
+}
+
+.rep-visual-nested-guide pre {
+  margin: 6px 0 0;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 0.82rem;
+  color: #fde047;
+  background: rgba(12, 74, 110, 0.45);
+  border-radius: 10px;
+  padding: 8px 12px;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+/* Objetos recolectables intermedios en los casilleros del mapa */
+.ex-cell-collectible-icon {
+  font-size: 1.45rem;
+  z-index: 2;
+  filter: drop-shadow(0 2px 5px rgba(255, 215, 0, 0.55));
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.ex-cell-collectible-icon.collectible-picked {
+  font-size: 1.05rem;
+  opacity: 0.72;
+  filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.8));
+}
+
