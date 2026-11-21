@@ -1234,6 +1234,7 @@ function shuffleArray(array) {
       arrow: '↓',
       dx: 0,
       dy: 1,
+      isMovement: true,
       colorClass: 'pblock-down'
     },
     up: {
@@ -1242,6 +1243,7 @@ function shuffleArray(array) {
       arrow: '↑',
       dx: 0,
       dy: -1,
+      isMovement: true,
       colorClass: 'pblock-up'
     },
     right: {
@@ -1250,6 +1252,7 @@ function shuffleArray(array) {
       arrow: '→',
       dx: 1,
       dy: 0,
+      isMovement: true,
       colorClass: 'pblock-right'
     },
     left: {
@@ -1258,7 +1261,57 @@ function shuffleArray(array) {
       arrow: '←',
       dx: -1,
       dy: 0,
+      isMovement: true,
       colorClass: 'pblock-left'
+    },
+    // Bloques de Acción para completar las misiones
+    grab_gift: {
+      id: 'grab_gift',
+      label: 'AGARRAR REGALO',
+      arrow: '🎁',
+      icon: '🎁',
+      isAction: true,
+      colorClass: 'pblock-action-gift'
+    },
+    buy_gift: {
+      id: 'buy_gift',
+      label: 'COMPRAR REGALO',
+      arrow: '🛍️',
+      icon: '🛍️',
+      isAction: true,
+      colorClass: 'pblock-action-buy'
+    },
+    grab_star: {
+      id: 'grab_star',
+      label: 'AGARRAR ESTRELLA',
+      arrow: '⭐',
+      icon: '⭐',
+      isAction: true,
+      colorClass: 'pblock-action-star'
+    },
+    deliver_gift: {
+      id: 'deliver_gift',
+      label: 'ENTREGAR REGALO',
+      arrow: '🎁',
+      icon: '🏠',
+      isAction: true,
+      colorClass: 'pblock-action-deliver'
+    },
+    open_gift: {
+      id: 'open_gift',
+      label: 'ABRIR REGALO',
+      arrow: '🎀',
+      icon: '🎀',
+      isAction: true,
+      colorClass: 'pblock-action-open'
+    },
+    enter_shop: {
+      id: 'enter_shop',
+      label: 'ENTRAR A LA TIENDA',
+      arrow: '🏪',
+      icon: '🏪',
+      isAction: true,
+      colorClass: 'pblock-action-shop'
     }
   };
 
@@ -1327,22 +1380,24 @@ function shuffleArray(array) {
 
   const ALGORITMOS_BLOCK_EXERCISES = {
     // ----------------------------------------------------------
-    // 1.º GRADO — NIVEL INICIAL (2 a 4 movimientos)
+    // 1.º GRADO — NIVEL INICIAL (2 a 4 movimientos + acción)
     // ----------------------------------------------------------
     1: [
       {
         id: 1,
         grade: 1,
         title: 'Desafío 1: El Regalo de Bity',
-        prompt: '¡Bity quiere encontrar su regalo de Navidad! Ayudalo a llegar hasta él.',
+        prompt: '¡Bity quiere encontrar su regalo de Navidad! Ayudalo a llegar hasta él y usar AGARRAR REGALO.',
         goalIcon: '🎁',
         goalName: 'su regalo de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ Y AGARRÓ SU REGALO!',
         cols: 4,
         rows: 3,
         start: { x: 0, y: 1 },
         goal: { x: 2, y: 1 },
-        optimalSteps: 2,
+        availableActions: ['grab_gift'],
+        goalActions: ['grab_gift'],
+        optimalSteps: 3,
         grid: [
           [1, 0, 0, 1],
           [0, 0, 0, 0],
@@ -1353,7 +1408,7 @@ function shuffleArray(array) {
         id: 2,
         grade: 1,
         title: 'Desafío 2: El Árbol de Navidad',
-        prompt: 'Bity necesita llegar hasta el árbol de Navidad. ¿Qué instrucciones tiene que seguir?',
+        prompt: 'Bity necesita llegar hasta el árbol de Navidad. ¿Qué instrucciones de movimiento tiene que seguir?',
         goalIcon: '🎄',
         goalName: 'el árbol de Navidad',
         victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ AL ÁRBOL DE NAVIDAD!',
@@ -1361,6 +1416,8 @@ function shuffleArray(array) {
         rows: 4,
         start: { x: 1, y: 0 },
         goal: { x: 1, y: 3 },
+        availableActions: [],
+        goalActions: [],
         optimalSteps: 3,
         grid: [
           [1, 0, 0, 1],
@@ -1373,15 +1430,17 @@ function shuffleArray(array) {
         id: 3,
         grade: 1,
         title: 'Desafío 3: La Estrella Brillante',
-        prompt: '¡Una estrella mágica brilla en la nieve! Ayudá a Bity a alcanzar la estrella.',
+        prompt: '¡Una estrella mágica brilla en la nieve! Ayudá a Bity a llegar hasta la estrella y usar AGARRAR ESTRELLA.',
         goalIcon: '⭐',
         goalName: 'la estrella de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY ALCANZÓ LA ESTRELLA DE NAVIDAD!',
+        victoryMsg: '¡MUY BIEN! ¡BITY AGARRÓ LA ESTRELLA DE NAVIDAD!',
         cols: 4,
         rows: 4,
         start: { x: 0, y: 2 },
         goal: { x: 2, y: 0 },
-        optimalSteps: 4,
+        availableActions: ['grab_star'],
+        goalActions: ['grab_star'],
+        optimalSteps: 5,
         grid: [
           [1, 0, 0, 1],
           [0, 0, 0, 0],
@@ -1392,22 +1451,24 @@ function shuffleArray(array) {
     ],
 
     // ----------------------------------------------------------
-    // 2.º GRADO — NIVEL BÁSICO (4 a 6 movimientos)
+    // 2.º GRADO — NIVEL BÁSICO (4 a 6 movimientos + acción)
     // ----------------------------------------------------------
     2: [
       {
         id: 1,
         grade: 2,
         title: 'Desafío 1: Regalo detrás de los Obstáculos',
-        prompt: 'Bity encontró un regalo detrás de algunos obstáculos. ¡Ayudalo a llegar sin chocar!',
+        prompt: 'Bity encontró un regalo detrás de algunos obstáculos. ¡Ayudalo a llegar sin chocar y agarrar el regalo!',
         goalIcon: '🎁',
         goalName: 'su regalo',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        victoryMsg: '¡LO CONSIGUIÓ! ¡AHORA BITY TIENE SU REGALO!',
         cols: 5,
         rows: 4,
         start: { x: 0, y: 1 },
         goal: { x: 3, y: 1 },
-        optimalSteps: 5,
+        availableActions: ['grab_gift'],
+        goalActions: ['grab_gift'],
+        optimalSteps: 6,
         grid: [
           [1, 0, 1, 0, 1],
           [0, 0, 1, 0, 0],
@@ -1418,16 +1479,19 @@ function shuffleArray(array) {
       {
         id: 2,
         grade: 2,
-        title: 'Desafío 2: La Casa Navideña',
-        prompt: 'Bity necesita llegar hasta la casa navideña. ¿Qué instrucciones tiene que seguir?',
+        title: 'Desafío 2: Entrega en la Casa Navideña',
+        prompt: 'Bity lleva un regalo especial hasta la casa navideña 🏠. ¡Ayudalo a llegar y entregar el regalo!',
         goalIcon: '🏠',
         goalName: 'la casa navideña',
-        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CASA NAVIDEÑA!',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CASA NAVIDEÑA Y ENTREGÓ EL REGALO!',
         cols: 5,
         rows: 5,
         start: { x: 0, y: 0 },
         goal: { x: 3, y: 3 },
-        optimalSteps: 6,
+        startsWithGift: true,
+        availableActions: ['deliver_gift'],
+        goalActions: ['deliver_gift'],
+        optimalSteps: 7,
         grid: [
           [0, 1, 0, 0, 1],
           [0, 1, 0, 1, 0],
@@ -1440,16 +1504,18 @@ function shuffleArray(array) {
         id: 3,
         grade: 2,
         title: 'Desafío 3: La Estrella y el Árbol',
-        prompt: 'Bity debe recoger la estrella ⭐ en el camino y luego llegar hasta el árbol de Navidad 🎄.',
+        prompt: 'Bity debe llegar hasta la estrella ⭐, usar AGARRAR ESTRELLA en esa casilla y luego continuar hasta el árbol de Navidad 🎄.',
         goalIcon: '🎄',
         goalName: 'el árbol de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY RECOGIÓ LA ESTRELLA Y LLEGÓ AL ÁRBOL!',
+        victoryMsg: '¡MUY BIEN! ¡BITY AGARRÓ LA ESTRELLA Y LLEGÓ AL ÁRBOL!',
         cols: 5,
         rows: 5,
         start: { x: 0, y: 3 },
-        collectible: { x: 2, y: 3, icon: '⭐', name: 'la estrella' },
+        collectible: { x: 2, y: 3, icon: '⭐', name: 'la estrella', requiredAction: 'grab_star' },
         goal: { x: 2, y: 0 },
-        optimalSteps: 5,
+        availableActions: ['grab_star'],
+        goalActions: [],
+        optimalSteps: 6,
         grid: [
           [1, 0, 0, 0, 1],
           [0, 1, 0, 1, 0],
@@ -1461,22 +1527,24 @@ function shuffleArray(array) {
     ],
 
     // ----------------------------------------------------------
-    // 3.º GRADO — NIVEL INTERMEDIO (5 a 8 movimientos)
+    // 3.º GRADO — NIVEL INTERMEDIO (5 a 8 movimientos + acción)
     // ----------------------------------------------------------
     3: [
       {
         id: 1,
         grade: 3,
-        title: 'Desafío 1: Regalo entre Cajas',
-        prompt: 'Bity encontró una caja de regalo, pero necesita llegar hasta ella sin chocar con los obstáculos.',
+        title: 'Desafío 1: La Caja de Regalo',
+        prompt: 'Bity encontró una caja de regalo, pero necesita llegar hasta ella sin chocar con los obstáculos y abrir el regalo.',
         goalIcon: '🎁',
-        goalName: 'el regalo',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        goalName: 'la caja de regalo',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CAJA Y ABRIÓ SU REGALO!',
         cols: 6,
         rows: 5,
         start: { x: 0, y: 2 },
         goal: { x: 4, y: 1 },
-        optimalSteps: 7,
+        availableActions: ['open_gift'],
+        goalActions: ['open_gift'],
+        optimalSteps: 8,
         grid: [
           [1, 0, 0, 1, 0, 1],
           [0, 0, 0, 1, 0, 0],
@@ -1488,16 +1556,18 @@ function shuffleArray(array) {
       {
         id: 2,
         grade: 3,
-        title: 'Desafío 2: El Camino Nevado',
-        prompt: 'Bity debe atravesar el camino nevado doblando en las esquinas hasta llegar al trineo 🛷.',
-        goalIcon: '🛷',
-        goalName: 'el trineo de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY ATRAVESÓ EL CAMINO NEVADO HASTA EL TRINEO!',
+        title: 'Desafío 2: La Tienda Navideña',
+        prompt: 'Bity debe atravesar el camino nevado hasta llegar a la tienda navideña 🏪 y comprar un regalo.',
+        goalIcon: '🏪',
+        goalName: 'la tienda navideña',
+        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA TIENDA Y COMPRÓ EL REGALO!',
         cols: 6,
         rows: 5,
         start: { x: 0, y: 1 },
         goal: { x: 5, y: 3 },
-        optimalSteps: 7,
+        availableActions: ['buy_gift'],
+        goalActions: ['buy_gift'],
+        optimalSteps: 8,
         grid: [
           [0, 0, 0, 1, 0, 1],
           [0, 1, 0, 1, 0, 0],
@@ -1510,16 +1580,18 @@ function shuffleArray(array) {
         id: 3,
         grade: 3,
         title: 'Desafío 3: Estrella en el Sendero',
-        prompt: 'Bity debe encontrar la estrella dorada ⭐ y luego llegar hasta su destino en el árbol 🎄.',
+        prompt: 'Bity debe llegar hasta la estrella dorada ⭐, usar AGARRAR ESTRELLA y luego llegar hasta su destino en el árbol 🎄.',
         goalIcon: '🎄',
         goalName: 'el árbol de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ LA ESTRELLA Y LLEGÓ A SU DESTINO!',
+        victoryMsg: '¡MUY BIEN! ¡BITY AGARRÓ LA ESTRELLA Y LLEGÓ A SU DESTINO!',
         cols: 6,
         rows: 5,
         start: { x: 0, y: 2 },
-        collectible: { x: 2, y: 1, icon: '⭐', name: 'la estrella' },
+        collectible: { x: 2, y: 1, icon: '⭐', name: 'la estrella', requiredAction: 'grab_star' },
         goal: { x: 5, y: 1 },
-        optimalSteps: 8,
+        availableActions: ['grab_star'],
+        goalActions: [],
+        optimalSteps: 9,
         grid: [
           [1, 0, 0, 0, 0, 0],
           [0, 0, 0, 1, 0, 0],
@@ -1531,22 +1603,24 @@ function shuffleArray(array) {
     ],
 
     // ----------------------------------------------------------
-    // 4.º GRADO — NIVEL AVANZADO (8 a 12 movimientos)
+    // 4.º GRADO — NIVEL AVANZADO (8 a 12 movimientos + acciones)
     // ----------------------------------------------------------
     4: [
       {
         id: 1,
         grade: 4,
         title: 'Desafío 1: El Bosque Nevado',
-        prompt: 'Bity debe atravesar el bosque nevado y encontrar su regalo de Navidad. ¡Analizá qué camino conviene más!',
+        prompt: 'Bity debe atravesar el bosque nevado, llegar hasta su regalo de Navidad 🎁 y agarrarlo. ¡Analizá qué camino conviene más!',
         goalIcon: '🎁',
         goalName: 'su regalo',
-        victoryMsg: '¡MUY BIEN! ¡BITY ATRAVESÓ EL BOSQUE Y ENCONTRÓ SU REGALO!',
+        victoryMsg: '¡MUY BIEN! ¡BITY ATRAVESÓ EL BOSQUE Y AGARRÓ SU REGALO!',
         cols: 7,
         rows: 6,
         start: { x: 0, y: 4 },
         goal: { x: 6, y: 1 },
-        optimalSteps: 9,
+        availableActions: ['grab_gift'],
+        goalActions: ['grab_gift'],
+        optimalSteps: 10,
         grid: [
           [1, 0, 0, 0, 1, 0, 0],
           [0, 0, 1, 0, 1, 0, 0],
@@ -1559,16 +1633,18 @@ function shuffleArray(array) {
       {
         id: 2,
         grade: 4,
-        title: 'Desafío 2: La Casa del Valle Polar',
-        prompt: 'Bity necesita llegar a la casa navideña 🏠 evitando los diferentes obstáculos del camino.',
-        goalIcon: '🏠',
-        goalName: 'la casa navideña',
-        victoryMsg: '¡MUY BIEN! ¡BITY LLEGÓ A LA CASA NAVIDEÑA!',
+        title: 'Desafío 2: La Tienda del Valle Polar',
+        prompt: 'Bity necesita llegar a la tienda del valle polar 🏪 evitando los obstáculos, entrar a la tienda y comprar el regalo.',
+        goalIcon: '🏪',
+        goalName: 'la tienda navideña',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENTRÓ A LA TIENDA Y COMPRÓ EL REGALO DE NAVIDAD!',
         cols: 7,
         rows: 6,
         start: { x: 0, y: 0 },
         goal: { x: 6, y: 5 },
-        optimalSteps: 11,
+        availableActions: ['enter_shop', 'buy_gift'],
+        goalActions: ['enter_shop', 'buy_gift'],
+        optimalSteps: 13,
         grid: [
           [0, 0, 1, 0, 0, 0, 1],
           [1, 0, 1, 0, 1, 0, 0],
@@ -1581,17 +1657,19 @@ function shuffleArray(array) {
       {
         id: 3,
         grade: 4,
-        title: 'Desafío 3: La Campana y el Taller',
-        prompt: 'Bity debe encontrar la campana mágica 🔔 y llegar al árbol de Navidad 🎄 por un recorrido específico.',
-        goalIcon: '🎄',
-        goalName: 'el árbol del taller',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ LA CAMPANA Y LLEGÓ A SU DESTINO!',
+        title: 'Desafío 3: Un Regalo para la Casa Navideña',
+        prompt: 'Bity debe llegar hasta el regalo 🎁 en el camino, agarrarlo y luego llevarlo hasta la casa navideña 🏠 para entregarlo.',
+        goalIcon: '🏠',
+        goalName: 'la casa navideña',
+        victoryMsg: '¡EXCELENTE! ¡BITY AGARRÓ EL REGALO Y LO ENTREGÓ EN LA CASA NAVIDEÑA!',
         cols: 7,
         rows: 6,
         start: { x: 0, y: 5 },
-        collectible: { x: 3, y: 2, icon: '🔔', name: 'la campana mágica' },
+        collectible: { x: 3, y: 2, icon: '🎁', name: 'el regalo', requiredAction: 'grab_gift' },
         goal: { x: 6, y: 0 },
-        optimalSteps: 11,
+        availableActions: ['grab_gift', 'deliver_gift'],
+        goalActions: ['deliver_gift'],
+        optimalSteps: 13,
         grid: [
           [1, 0, 0, 0, 1, 0, 0],
           [0, 0, 1, 0, 0, 0, 1],
@@ -1604,22 +1682,24 @@ function shuffleArray(array) {
     ],
 
     // ----------------------------------------------------------
-    // 5.º GRADO — NIVEL AVANZADO SUPERIOR (10 a 15 movimientos)
+    // 5.º GRADO — NIVEL AVANZADO SUPERIOR (10 a 15 movimientos + acciones)
     // ----------------------------------------------------------
     5: [
       {
         id: 1,
         grade: 5,
         title: 'Desafío 1: El Gran Laberinto Polar',
-        prompt: 'Bity debe encontrar su regalo 🎁 atravesando un recorrido con varios obstáculos. ¡Planificá todo el algoritmo!',
+        prompt: 'Bity debe encontrar su regalo 🎁 atravesando el gran laberinto polar, agarrarlo y luego abrirlo. ¡Planificá todo el algoritmo!',
         goalIcon: '🎁',
         goalName: 'su regalo',
-        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
+        victoryMsg: '¡MUY BIEN! ¡BITY ENCONTRÓ, AGARRÓ Y ABRIÓ SU REGALO!',
         cols: 8,
         rows: 6,
         start: { x: 0, y: 5 },
         goal: { x: 7, y: 0 },
-        optimalSteps: 12,
+        availableActions: ['grab_gift', 'open_gift'],
+        goalActions: ['grab_gift', 'open_gift'],
+        optimalSteps: 14,
         grid: [
           [1, 0, 0, 0, 1, 0, 0, 0],
           [0, 0, 1, 0, 0, 0, 1, 0],
@@ -1641,6 +1721,8 @@ function shuffleArray(array) {
         rows: 6,
         start: { x: 0, y: 0 },
         goal: { x: 7, y: 5 },
+        availableActions: [],
+        goalActions: [],
         optimalSteps: 12,
         grid: [
           [0, 0, 0, 1, 0, 0, 0, 1],
@@ -1654,17 +1736,19 @@ function shuffleArray(array) {
       {
         id: 3,
         grade: 5,
-        title: 'Desafío 3: Misión Estrella Cumbre',
-        prompt: 'Bity debe recoger la estrella polar ⭐ y llegar al árbol 🎄 utilizando la menor cantidad posible de movimientos.',
-        goalIcon: '🎄',
-        goalName: 'el gran árbol de Navidad',
-        victoryMsg: '¡MUY BIEN! ¡BITY COMPLETÓ EL DESAFÍO CUMBRE DE ALGORITMOS!',
+        title: 'Desafío 3: Misión Estrella y Regalo Cumbre',
+        prompt: 'Bity debe llegar hasta la estrella polar ⭐ y agarrarla, y luego continuar hasta el regalo cumbre 🎁 y agarrarlo utilizando la menor cantidad posible de movimientos.',
+        goalIcon: '🎁',
+        goalName: 'el regalo cumbre',
+        victoryMsg: '¡MUY BIEN! ¡BITY AGARRÓ LA ESTRELLA Y SU REGALO EN EL DESAFÍO CUMBRE!',
         cols: 8,
         rows: 6,
         start: { x: 0, y: 5 },
-        collectible: { x: 4, y: 2, icon: '⭐', name: 'la estrella polar' },
+        collectible: { x: 4, y: 2, icon: '⭐', name: 'la estrella polar', requiredAction: 'grab_star' },
         goal: { x: 7, y: 0 },
-        optimalSteps: 12,
+        availableActions: ['grab_star', 'grab_gift'],
+        goalActions: ['grab_gift'],
+        optimalSteps: 14,
         grid: [
           [1, 0, 0, 0, 1, 0, 0, 0],
           [0, 0, 1, 0, 1, 0, 1, 0],
@@ -1701,6 +1785,13 @@ function shuffleArray(array) {
       this.exBityPos = { x: 0, y: 0 };
       this.exBityFacing = 'right';
       this.exCollectiblePicked = false;
+      this.exCompletedGoalActions = [];
+      this.exHasGift = false;
+      this.exHasStar = false;
+      this.exGiftOpened = false;
+      this.exGiftDelivered = false;
+      this.exEnteredShop = false;
+      this.exCarryingBadge = null;
       this.exExecMode = 'idle'; // 'idle' | 'running' | 'step' | 'won' | 'error'
       this.exStepCursor = -1;
       this.exIsAnimatingStep = false;
@@ -2059,6 +2150,24 @@ function shuffleArray(array) {
       this.loadExerciseMap(mapIdx, true);
     }
 
+    resetExRuntimeState(map) {
+      const m = map || this.getCurrentExMap();
+      this.exBityPos = { x: m.start.x, y: m.start.y };
+      this.exBityFacing = m.startFacing || 'right';
+      this.exCollectiblePicked = false;
+      this.exCompletedGoalActions = [];
+      this.exHasGift = !!m.startsWithGift;
+      this.exHasStar = false;
+      this.exGiftOpened = false;
+      this.exGiftDelivered = false;
+      this.exEnteredShop = false;
+      this.exCarryingBadge = m.startsWithGift ? '🎁' : null;
+      this.exExecMode = 'idle';
+      this.exStepCursor = -1;
+      this.exIsAnimatingStep = false;
+      this.exFeedback = null;
+    }
+
     loadExerciseMap(mapIdx = 0, shouldRender = true) {
       this.stopExExecution();
       const gradeMaps = ALGORITMOS_BLOCK_EXERCISES[this.exGrade] || ALGORITMOS_BLOCK_EXERCISES[1];
@@ -2067,13 +2176,8 @@ function shuffleArray(array) {
 
       this.exBlocks = [];
       this.exInsertIndex = null;
-      this.exBityPos = { x: map.start.x, y: map.start.y };
-      this.exBityFacing = map.startFacing || 'right';
-      this.exCollectiblePicked = false;
-      this.exExecMode = 'idle';
-      this.exStepCursor = -1;
-      this.exFeedback = null;
       this.exDragPayload = null;
+      this.resetExRuntimeState(map);
 
       if (shouldRender) {
         this.render();
@@ -2085,19 +2189,15 @@ function shuffleArray(array) {
       if (this.exExecMode !== 'idle' || this.exStepCursor !== -1) {
         this.stopExExecution();
         const map = this.getCurrentExMap();
-        this.exBityPos = { x: map.start.x, y: map.start.y };
-        this.exBityFacing = map.startFacing || 'right';
-        this.exCollectiblePicked = false;
-        this.exExecMode = 'idle';
-        this.exStepCursor = -1;
-        this.exFeedback = null;
+        this.resetExRuntimeState(map);
+        this.refreshExMapBoardDOM();
       }
     }
 
-    // Agregar bloque de movimiento (NUNCA permite duplicar AL EMPEZAR A EJECUTAR)
-    addExBlock(dir, explicitInsertIndex = null) {
+    // Agregar bloque de movimiento o de acción (NUNCA permite duplicar AL EMPEZAR A EJECUTAR)
+    addExBlock(blockKey, explicitInsertIndex = null) {
       if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
-      if (dir === 'start' || !ALGORITMOS_BLOCK_DEFS[dir] || ALGORITMOS_BLOCK_DEFS[dir].isHeader) {
+      if (blockKey === 'start' || !ALGORITMOS_BLOCK_DEFS[blockKey] || ALGORITMOS_BLOCK_DEFS[blockKey].isHeader) {
         // No permitir bloques de inicio duplicados
         this.playSound('error');
         return;
@@ -2114,13 +2214,13 @@ function shuffleArray(array) {
         this.exInsertIndex = targetIdx + 1;
       }
 
-      this.exBlocks.splice(targetIdx, 0, dir);
+      this.exBlocks.splice(targetIdx, 0, blockKey);
       if (this.exInsertIndex !== null && this.exInsertIndex >= this.exBlocks.length) {
         this.exInsertIndex = null;
       }
 
       this.playSound('pop');
-      this.render();
+      this.refreshExProgramStackDOM();
     }
 
     removeExBlock(index) {
@@ -2139,7 +2239,7 @@ function shuffleArray(array) {
       }
 
       this.playSound('trash');
-      this.render();
+      this.refreshExProgramStackDOM();
     }
 
     moveExBlock(index, delta) {
@@ -2153,7 +2253,7 @@ function shuffleArray(array) {
       this.exBlocks[targetIdx] = temp;
 
       this.playSound('click');
-      this.render();
+      this.refreshExProgramStackDOM();
     }
 
     setExInsertIndex(index) {
@@ -2164,18 +2264,18 @@ function shuffleArray(array) {
         this.exInsertIndex = Math.max(0, index);
       }
       this.playSound('click');
-      this.render();
+      this.refreshExProgramStackDOM();
     }
 
     // ------------------------------------------------------------
     // SOPORTE DRAG & DROP PARA BLOQUES (Paleta -> Código y Reordenar)
     // ------------------------------------------------------------
-    handleExPaletteDragStart(event, dir) {
+    handleExPaletteDragStart(event, blockKey) {
       if (this.exIsAnimatingStep || this.exExecMode === 'running') {
         if (event && event.preventDefault) event.preventDefault();
         return;
       }
-      this.exDragPayload = { source: 'palette', dir: dir };
+      this.exDragPayload = { source: 'palette', dir: blockKey };
       if (event && event.dataTransfer) {
         event.dataTransfer.effectAllowed = 'copy';
         try {
@@ -2241,11 +2341,11 @@ function shuffleArray(array) {
         const fromIdx = payload.fromIndex;
         if (fromIdx < 0 || fromIdx >= this.exBlocks.length) return;
         this.prepareExForCodeEdit();
-        const [movedDir] = this.exBlocks.splice(fromIdx, 1);
+        const [movedBlock] = this.exBlocks.splice(fromIdx, 1);
         const adjustedIdx = (insertIdx > fromIdx) ? insertIdx - 1 : insertIdx;
-        this.exBlocks.splice(Math.max(0, Math.min(this.exBlocks.length, adjustedIdx)), 0, movedDir);
+        this.exBlocks.splice(Math.max(0, Math.min(this.exBlocks.length, adjustedIdx)), 0, movedBlock);
         this.playSound('pop');
-        this.render();
+        this.refreshExProgramStackDOM();
       }
     }
 
@@ -2257,20 +2357,187 @@ function shuffleArray(array) {
     }
 
     // ------------------------------------------------------------
+    // ACTUALIZADORES PARCIALES DEL DOM (SIN PARPADEO DE PÁGINA)
+    // ------------------------------------------------------------
+    refreshExProgramStackDOM() {
+      const stackMount = document.getElementById('ex-program-stack-mount');
+      if (!stackMount) {
+        this.render();
+        return;
+      }
+      stackMount.innerHTML = this.renderExProgramStackInner();
+      const countBadge = document.getElementById('ex-program-count-badge');
+      if (countBadge) {
+        const total = this.exBlocks.length;
+        countBadge.textContent = `${total} ${this.exTxt(total === 1 ? 'instrucción' : 'instrucciones')}`;
+      }
+      const canvasEl = document.getElementById('ex-program-canvas');
+      if (canvasEl) {
+        canvasEl.setAttribute('ondrop', `window.algorithmsModule.handleExDropOnSlot(event, ${this.exBlocks.length})`);
+      }
+      this.updateExStatusAndControlsDOM();
+    }
+
+    refreshExMapBoardDOM() {
+      const boardMount = document.getElementById('ex-grid-board-mount');
+      const map = this.getCurrentExMap();
+      if (!boardMount) {
+        this.render();
+        return;
+      }
+      boardMount.innerHTML = this.renderExMapBoard(map);
+      this.updateExPromptStatusDOM();
+      this.updateExCodeHighlightDOM();
+      this.updateExStatusAndControlsDOM();
+    }
+
+    updateExPromptStatusDOM() {
+      const map = this.getCurrentExMap();
+      const bityMount = document.getElementById('ex-prompt-bity-svg-mount');
+      if (bityMount) {
+        bityMount.innerHTML = getBitySvg(
+          this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy')
+        );
+      }
+      const goalStatusMount = document.getElementById('ex-prompt-goal-status-mount');
+      if (goalStatusMount) {
+        goalStatusMount.innerHTML = this.renderExPromptGoalStatusInner(map);
+      }
+    }
+
+    updateExCodeHighlightDOM() {
+      const blocks = document.querySelectorAll('.ex-placed-block[data-step-idx]');
+      if (!blocks || !blocks.length) return;
+      blocks.forEach(blockEl => {
+        const idx = parseInt(blockEl.getAttribute('data-step-idx'), 10);
+        const isExecutingNow = (
+          this.exStepCursor === idx &&
+          (this.exExecMode === 'running' || this.exExecMode === 'step' || this.exExecMode === 'error')
+        );
+        const isAlreadyExecuted = (this.exStepCursor > idx && this.exExecMode !== 'idle');
+
+        if (isExecutingNow) {
+          blockEl.classList.add('ex-block-executing');
+        } else {
+          blockEl.classList.remove('ex-block-executing');
+        }
+
+        if (isAlreadyExecuted) {
+          blockEl.classList.add('ex-block-executed');
+        } else {
+          blockEl.classList.remove('ex-block-executed');
+        }
+
+        let tagEl = blockEl.querySelector('.ex-executing-tag');
+        if (isExecutingNow) {
+          if (!tagEl) {
+            tagEl = document.createElement('span');
+            tagEl.className = 'ex-executing-tag';
+            const ctrls = blockEl.querySelector('.ex-placed-controls');
+            if (ctrls) {
+              blockEl.insertBefore(tagEl, ctrls);
+            } else {
+              blockEl.appendChild(tagEl);
+            }
+          }
+          tagEl.textContent = `▶ ${this.exTxt('EJECUTANDO')}`;
+        } else if (tagEl) {
+          tagEl.remove();
+        }
+      });
+
+      if (this.exStepCursor >= 0) {
+        const activeBlockEl = document.querySelector(`.ex-placed-block[data-step-idx="${this.exStepCursor}"]`);
+        if (activeBlockEl && typeof activeBlockEl.scrollIntoView === 'function') {
+          try {
+            activeBlockEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          } catch (e) {}
+        }
+      }
+    }
+
+    updateExStatusAndControlsDOM() {
+      const statusMount = document.getElementById('ex-status-bar-mount');
+      if (statusMount) {
+        statusMount.innerHTML = this.renderExStatusInner();
+        if (this.exExecMode !== 'idle') {
+          statusMount.classList.add('status-active');
+        } else {
+          statusMount.classList.remove('status-active');
+        }
+      }
+
+      const isBusy = (this.exIsAnimatingStep || this.exExecMode === 'running');
+      const totalInstructions = this.exBlocks.length;
+      const isStepModeActive = (this.exExecMode === 'step' && this.exStepCursor < totalInstructions - 1);
+
+      const btnRunAll = document.getElementById('btn-ex-run-all');
+      if (btnRunAll) btnRunAll.disabled = isBusy;
+
+      const btnRunStep = document.getElementById('btn-ex-run-step');
+      if (btnRunStep) {
+        btnRunStep.disabled = isBusy;
+        if (isStepModeActive) {
+          btnRunStep.classList.add('step-mode-active');
+        } else {
+          btnRunStep.classList.remove('step-mode-active');
+        }
+      }
+
+      document.querySelectorAll('.ex-palette-block-btn, .btn-ex-block-ctrl, .btn-ex-block-remove').forEach(btn => {
+        if (btn.classList.contains('btn-ex-block-ctrl')) {
+          const stepIdx = parseInt(btn.getAttribute('data-ctrl-idx'), 10);
+          const dirDelta = parseInt(btn.getAttribute('data-ctrl-delta'), 10);
+          const atEdge = (dirDelta === -1 && stepIdx === 0) || (dirDelta === 1 && stepIdx === this.exBlocks.length - 1);
+          btn.disabled = isBusy || atEdge;
+        } else {
+          btn.disabled = isBusy;
+        }
+      });
+
+      const feedbackMount = document.getElementById('ex-feedback-mount');
+      if (feedbackMount) {
+        feedbackMount.innerHTML = this.renderExFeedbackInner();
+      }
+    }
+
+    updateExSolvedBadgesDOM() {
+      const map = this.getCurrentExMap();
+      const doneSet = this.exCompletedByGrade[this.exGrade] || new Set();
+      const isSolved = doneSet.has(map.id);
+
+      const totalDoneEx = this.getTotalCompletedExercisesCount();
+      const topAccessBadge = document.querySelector('.btn-alg-exercises-access .ex-access-badge');
+      if (topAccessBadge) {
+        topAccessBadge.textContent = `${totalDoneEx}/15`;
+      }
+
+      const activeMapTab = document.querySelector(`.btn-ex-map-tab[data-map-idx="${this.exMapIndex}"]`);
+      if (activeMapTab && isSolved) {
+        activeMapTab.classList.add('completed');
+        const iconSpan = activeMapTab.querySelector('.map-tab-icon');
+        if (iconSpan) iconSpan.textContent = '✅';
+      }
+
+      const badgesRow = document.getElementById('ex-prompt-badges-row');
+      if (badgesRow && isSolved && !badgesRow.querySelector('.ex-badge-solved')) {
+        const solvedSpan = document.createElement('span');
+        solvedSpan.className = 'ex-badge-solved';
+        solvedSpan.textContent = `✅ ${this.exTxt('¡DESAFÍO SUPERADO!')}`;
+        badgesRow.appendChild(solvedSpan);
+      }
+    }
+
+    // ------------------------------------------------------------
     // MOTOR DE EJECUCIÓN: EJECUTAR, PASO A PASO, REINICIAR, BORRAR
     // ------------------------------------------------------------
     resetExPosition(shouldRender = true) {
       this.stopExExecution();
       const map = this.getCurrentExMap();
-      this.exBityPos = { x: map.start.x, y: map.start.y };
-      this.exBityFacing = map.startFacing || 'right';
-      this.exCollectiblePicked = false;
-      this.exExecMode = 'idle';
-      this.exStepCursor = -1;
-      this.exFeedback = null;
+      this.resetExRuntimeState(map);
       if (shouldRender) {
         this.playSound('click');
-        this.render();
+        this.refreshExMapBoardDOM();
       }
     }
 
@@ -2279,17 +2546,13 @@ function shuffleArray(array) {
       const map = this.getCurrentExMap();
       this.exBlocks = [];
       this.exInsertIndex = null;
-      this.exBityPos = { x: map.start.x, y: map.start.y };
-      this.exBityFacing = map.startFacing || 'right';
-      this.exCollectiblePicked = false;
-      this.exExecMode = 'idle';
-      this.exStepCursor = -1;
-      this.exFeedback = null;
+      this.resetExRuntimeState(map);
       this.playSound('trash');
-      this.render();
+      this.refreshExMapBoardDOM();
+      this.refreshExProgramStackDOM();
     }
 
-    // Botón principal: EJECUTAR (ejecuta todas las instrucciones en orden)
+    // Botón principal: EJECUTAR (ejecuta todas las instrucciones en orden sin parpadear la página)
     runExAll() {
       if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
 
@@ -2297,24 +2560,21 @@ function shuffleArray(array) {
         this.exExecMode = 'error';
         this.exFeedback = {
           type: 'error',
-          title: '¡FALTAN INSTRUCCIONES!',
-          message: 'Agregá bloques de movimiento debajo de «AL EMPEZAR A EJECUTAR» antes de presionar EJECUTAR.'
+          title: '¡Cuidado! Te falta agregar instrucciones.',
+          message: 'Agregá bloques debajo de «AL EMPEZAR A EJECUTAR» antes de presionar EJECUTAR.'
         };
         this.playSound('error');
-        this.render();
+        this.updateExPromptStatusDOM();
+        this.updateExStatusAndControlsDOM();
         return;
       }
 
-      // Reiniciar a la posición de partida para recorrer todo el algoritmo desde el principio
+      // Reiniciar a la posición de partida en el tablero sin re-renderizar toda la pantalla
       this.stopExExecution();
       const map = this.getCurrentExMap();
-      this.exBityPos = { x: map.start.x, y: map.start.y };
-      this.exBityFacing = map.startFacing || 'right';
-      this.exCollectiblePicked = false;
+      this.resetExRuntimeState(map);
       this.exExecMode = 'running';
-      this.exStepCursor = -1;
-      this.exFeedback = null;
-      this.render();
+      this.refreshExMapBoardDOM();
 
       const runNextInstruction = () => {
         if (this.exExecMode !== 'running') return;
@@ -2326,22 +2586,22 @@ function shuffleArray(array) {
         this.executeSingleExStep(nextIdx, (status) => {
           if (status === 'continue' && this.exExecMode === 'running') {
             if (nextIdx + 1 < this.exBlocks.length) {
-              this.exTimerId = setTimeout(runNextInstruction, 440);
+              this.exTimerId = setTimeout(runNextInstruction, 320);
             } else {
               this.exTimerId = setTimeout(() => {
                 if (this.exExecMode === 'running') {
                   this.evaluateExFinalResult();
                 }
-              }, 260);
+              }, 200);
             }
           }
         });
       };
 
-      this.exTimerId = setTimeout(runNextInstruction, 220);
+      this.exTimerId = setTimeout(runNextInstruction, 140);
     }
 
-    // Botón principal: EJECUTAR PASO A PASO (ejecuta 1 instrucción por vez)
+    // Botón principal: EJECUTAR PASO A PASO (ejecuta 1 instrucción por vez sin parpadear la página)
     runExStepByStep() {
       if (this.exIsAnimatingStep || this.exExecMode === 'running') return;
 
@@ -2349,11 +2609,12 @@ function shuffleArray(array) {
         this.exExecMode = 'error';
         this.exFeedback = {
           type: 'error',
-          title: '¡FALTAN INSTRUCCIONES!',
-          message: 'Agregá bloques de movimiento debajo de «AL EMPEZAR A EJECUTAR» para ejecutar paso a paso.'
+          title: '¡Cuidado! Te falta agregar instrucciones.',
+          message: 'Agregá bloques debajo de «AL EMPEZAR A EJECUTAR» para ejecutar paso a paso.'
         };
         this.playSound('error');
-        this.render();
+        this.updateExPromptStatusDOM();
+        this.updateExStatusAndControlsDOM();
         return;
       }
 
@@ -2361,12 +2622,9 @@ function shuffleArray(array) {
       if (this.exExecMode !== 'step' || this.exStepCursor >= this.exBlocks.length - 1) {
         this.stopExExecution();
         const map = this.getCurrentExMap();
-        this.exBityPos = { x: map.start.x, y: map.start.y };
-        this.exBityFacing = map.startFacing || 'right';
-        this.exCollectiblePicked = false;
+        this.resetExRuntimeState(map);
         this.exExecMode = 'step';
-        this.exStepCursor = -1;
-        this.exFeedback = null;
+        this.refreshExMapBoardDOM();
       }
 
       const nextIdx = this.exStepCursor + 1;
@@ -2377,6 +2635,150 @@ function shuffleArray(array) {
       });
     }
 
+    // Validación lógica de los bloques de acción en el mapa
+    validateAndApplyExAction(actionId, map) {
+      const def = ALGORITMOS_BLOCK_DEFS[actionId];
+      if (!def || !def.isAction) {
+        return { ok: false, title: 'Instrucción desconocida', detail: 'Revisá tu algoritmo.' };
+      }
+
+      const bx = this.exBityPos.x;
+      const by = this.exBityPos.y;
+      const atCollectible = !!(map.collectible && bx === map.collectible.x && by === map.collectible.y);
+      const atGoal = (bx === map.goal.x && by === map.goal.y);
+      const goalActions = Array.isArray(map.goalActions) ? map.goalActions : [];
+
+      // 1. ¿Corresponde al objeto intermedio del mapa (ej. estrella o regalo en camino)?
+      if (map.collectible && map.collectible.requiredAction === actionId && atCollectible) {
+        if (this.exCollectiblePicked) {
+          return {
+            ok: false,
+            title: '¡Bity ya lo agarró!',
+            detail: `Ya ejecutaste ${def.label} en esta casilla. Quitá el bloque repetido.`
+          };
+        }
+        this.exCollectiblePicked = true;
+        if (actionId === 'grab_gift') {
+          this.exHasGift = true;
+          this.exCarryingBadge = '🎁';
+        } else if (actionId === 'grab_star') {
+          this.exHasStar = true;
+          this.exCarryingBadge = '⭐';
+        }
+        return { ok: true, targetType: 'collectible', actionId: actionId, badge: this.exCarryingBadge };
+      }
+
+      // 2. ¿Corresponde a una acción en el objetivo final (goal)?
+      if (goalActions.includes(actionId) && atGoal) {
+        if (this.exCompletedGoalActions.includes(actionId)) {
+          return {
+            ok: false,
+            title: '¡Acción repetida!',
+            detail: `Bity ya realizó ${def.label}. Quitá el bloque de acción que está repetido.`
+          };
+        }
+
+        // Verificar precondiciones de secuencia de acciones
+        if (actionId === 'deliver_gift' && !this.exHasGift) {
+          return {
+            ok: false,
+            title: 'Todavía no podés entregar el regalo.',
+            detail: 'Primero Bity tiene que llegar hasta el regalo 🎁 y usar el bloque AGARRAR REGALO.'
+          };
+        }
+        if (actionId === 'buy_gift' && goalActions.includes('enter_shop') && !this.exCompletedGoalActions.includes('enter_shop')) {
+          return {
+            ok: false,
+            title: '¡Bity llegó a la tienda!',
+            detail: 'Primero tiene que usar el bloque ENTRAR A LA TIENDA antes de comprar el regalo.'
+          };
+        }
+        if (actionId === 'open_gift' && goalActions.includes('grab_gift') && !this.exCompletedGoalActions.includes('grab_gift')) {
+          return {
+            ok: false,
+            title: '¡Bity llegó hasta el regalo!',
+            detail: 'Primero tiene que usar el bloque AGARRAR REGALO antes de abrirlo.'
+          };
+        }
+
+        this.exCompletedGoalActions.push(actionId);
+        if (actionId === 'grab_gift' || actionId === 'buy_gift') {
+          this.exHasGift = true;
+          this.exCarryingBadge = '🎁';
+        } else if (actionId === 'grab_star') {
+          this.exHasStar = true;
+          this.exCarryingBadge = '⭐';
+        } else if (actionId === 'open_gift') {
+          this.exGiftOpened = true;
+          this.exCarryingBadge = '🎊';
+        } else if (actionId === 'deliver_gift') {
+          this.exGiftDelivered = true;
+          this.exCarryingBadge = '✨';
+        } else if (actionId === 'enter_shop') {
+          this.exEnteredShop = true;
+          this.exCarryingBadge = '🏪';
+        }
+        return { ok: true, targetType: 'goal', actionId: actionId, badge: this.exCarryingBadge };
+      }
+
+      // 3. Si Bity NO está en la casilla del objeto o lugar correspondiente, explicar con claridad
+      if (actionId === 'grab_gift') {
+        return {
+          ok: false,
+          title: 'Todavía no podés agarrarlo. Primero tenés que llegar hasta el regalo.',
+          detail: 'Mové a Bity hasta la casilla donde está el regalo 🎁 antes de usar AGARRAR REGALO.'
+        };
+      }
+      if (actionId === 'grab_star') {
+        return {
+          ok: false,
+          title: 'Todavía no podés agarrarla. Primero tenés que llegar hasta la estrella.',
+          detail: 'Mové a Bity hasta la casilla donde brilla la estrella ⭐ antes de usar AGARRAR ESTRELLA.'
+        };
+      }
+      if (actionId === 'buy_gift') {
+        return {
+          ok: false,
+          title: 'Todavía no podés comprar el regalo. Primero tenés que llegar hasta la tienda.',
+          detail: 'Mové a Bity hasta la tienda navideña 🏪 antes de usar COMPRAR REGALO.'
+        };
+      }
+      if (actionId === 'enter_shop') {
+        return {
+          ok: false,
+          title: 'Todavía no podés entrar a la tienda. Primero tenés que llegar hasta ella.',
+          detail: 'Mové a Bity hasta la tienda navideña 🏪 antes de usar ENTRAR A LA TIENDA.'
+        };
+      }
+      if (actionId === 'deliver_gift') {
+        if (!this.exHasGift) {
+          return {
+            ok: false,
+            title: 'Todavía no podés entregar el regalo. Primero tenés que agarrarlo.',
+            detail: 'Bity primero debe llegar al regalo 🎁 y usar AGARRAR REGALO antes de llevarlo a la casa.'
+          };
+        }
+        return {
+          ok: false,
+          title: 'Todavía no podés entregar el regalo. Primero tenés que llegar hasta la casa navideña.',
+          detail: 'Mové a Bity hasta la casa navideña 🏠 antes de usar ENTREGAR REGALO.'
+        };
+      }
+      if (actionId === 'open_gift') {
+        return {
+          ok: false,
+          title: 'Todavía no podés abrirlo. Primero tenés que llegar hasta el regalo.',
+          detail: 'Mové a Bity hasta la caja de regalo 🎁 antes de usar ABRIR REGALO.'
+        };
+      }
+
+      return {
+        ok: false,
+        title: 'Todavía no podés realizar esa acción aquí.',
+        detail: 'Primero tenés que llegar hasta el objetivo correspondiente.'
+      };
+    }
+
     executeSingleExStep(stepIndex, onDone) {
       if (stepIndex < 0 || stepIndex >= this.exBlocks.length) {
         if (typeof onDone === 'function') onDone('done');
@@ -2384,17 +2786,57 @@ function shuffleArray(array) {
       }
 
       const map = this.getCurrentExMap();
-      const dir = this.exBlocks[stepIndex];
-      const blockDef = ALGORITMOS_BLOCK_DEFS[dir];
+      const blockKey = this.exBlocks[stepIndex];
+      const blockDef = ALGORITMOS_BLOCK_DEFS[blockKey];
       if (!blockDef) {
         if (typeof onDone === 'function') onDone('error');
         return;
       }
 
       this.exStepCursor = stepIndex;
-      this.exBityFacing = dir;
       this.exIsAnimatingStep = true;
 
+      // Resaltar visualmente el bloque actual sin re-renderizar toda la página
+      this.updateExCodeHighlightDOM();
+      this.updateExStatusAndControlsDOM();
+
+      // ----------------------------------------------------------
+      // CASO A: BLOQUE DE ACCIÓN (AGARRAR REGALO, COMPRAR, ETC.)
+      // ----------------------------------------------------------
+      if (blockDef.isAction) {
+        const check = this.validateAndApplyExAction(blockKey, map);
+        if (!check.ok) {
+          this.exIsAnimatingStep = false;
+          this.stopExExecution();
+          this.exExecMode = 'error';
+          this.exFeedback = {
+            type: 'error',
+            title: check.title,
+            detail: check.detail
+          };
+          this.playSound('error');
+          this.updateExPromptStatusDOM();
+          this.updateExStatusAndControlsDOM();
+          this.animateExActionFailDOM();
+          if (typeof onDone === 'function') onDone('action_error');
+          return;
+        }
+
+        // Acción ejecutada con éxito
+        this.playSound('pop');
+        this.animateExBityActionDOM(blockKey, check, () => {
+          this.exIsAnimatingStep = false;
+          this.updateExPromptStatusDOM();
+          this.updateExStatusAndControlsDOM();
+          if (typeof onDone === 'function') onDone('continue');
+        });
+        return;
+      }
+
+      // ----------------------------------------------------------
+      // CASO B: BLOQUE DE MOVIMIENTO (↓, ↑, →, ←)
+      // ----------------------------------------------------------
+      this.exBityFacing = blockKey;
       const nx = this.exBityPos.x + blockDef.dx;
       const ny = this.exBityPos.y + blockDef.dy;
 
@@ -2414,37 +2856,147 @@ function shuffleArray(array) {
             : `En el paso ${stepIndex + 1} (${blockDef.label} ${blockDef.arrow}), Bity encontró un obstáculo y no puede atravesarlo.`
         };
         this.playSound('error');
-        this.render();
-        this.animateExCollisionDOM(dir);
+        this.updateExPromptStatusDOM();
+        this.updateExStatusAndControlsDOM();
+        this.animateExCollisionDOM(blockKey);
         if (typeof onDone === 'function') onDone('collision');
         return;
       }
 
-      // Movimiento válido
+      // Movimiento válido: desplazar a Bity suavemente entre casillas sin refrescar la página
+      const oldPos = { x: this.exBityPos.x, y: this.exBityPos.y };
       this.exBityPos = { x: nx, y: ny };
-      if (map.collectible && nx === map.collectible.x && ny === map.collectible.y) {
+      if (map.collectible && !map.collectible.requiredAction && nx === map.collectible.x && ny === map.collectible.y) {
         this.exCollectiblePicked = true;
       }
 
       this.playSound('click');
-      this.exIsAnimatingStep = false;
-      this.render();
+      this.animateExBityMoveDOM(oldPos, this.exBityPos, blockKey, () => {
+        this.exIsAnimatingStep = false;
+        this.updateExPromptStatusDOM();
+        this.updateExStatusAndControlsDOM();
+        if (typeof onDone === 'function') onDone('continue');
+      });
+    }
 
-      // Desplazar suavemente la vista del código al bloque activo si hay muchos bloques
-      const activeBlockEl = document.querySelector(`.ex-placed-block[data-step-idx="${stepIndex}"]`);
-      if (activeBlockEl && typeof activeBlockEl.scrollIntoView === 'function') {
-        try {
-          activeBlockEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-        } catch (e) {}
+    // Animación fluida del movimiento de Bity en el mapa SIN reconstruir la página
+    animateExBityMoveDOM(oldPos, newPos, dir, callback) {
+      const oldCell = document.querySelector(`.ex-grid-cell[data-x="${oldPos.x}"][data-y="${oldPos.y}"]`);
+      const newCell = document.querySelector(`.ex-grid-cell[data-x="${newPos.x}"][data-y="${newPos.y}"]`);
+
+      if (!oldCell || !newCell) {
+        if (typeof callback === 'function') callback();
+        return;
       }
 
-      if (typeof onDone === 'function') onDone('continue');
+      oldCell.classList.remove('ex-cell-has-bity');
+      newCell.classList.add('ex-cell-has-bity');
+
+      let sprite = oldCell.querySelector('.ex-bity-sprite');
+      if (!sprite) {
+        sprite = document.createElement('div');
+        sprite.className = `ex-bity-sprite facing-${dir}`;
+        sprite.innerHTML = this.renderExBitySpriteInner('happy');
+      }
+
+      let startTransform = '';
+      if (dir === 'right') startTransform = 'translateX(-100%)';
+      else if (dir === 'left') startTransform = 'translateX(100%)';
+      else if (dir === 'down') startTransform = 'translateY(-100%)';
+      else if (dir === 'up') startTransform = 'translateY(100%)';
+
+      sprite.className = `ex-bity-sprite facing-${dir}`;
+      sprite.style.transition = 'none';
+      sprite.style.transform = startTransform;
+
+      newCell.appendChild(sprite);
+      void sprite.offsetHeight; // Forzar reflow para transición suave
+
+      sprite.style.transition = 'transform 0.22s cubic-bezier(0.25, 1, 0.5, 1)';
+      sprite.style.transform = 'translate(0, 0)';
+
+      setTimeout(() => {
+        if (sprite) {
+          sprite.style.transition = '';
+          sprite.style.transform = '';
+        }
+        if (typeof callback === 'function') callback();
+      }, 225);
+    }
+
+    // Animación de acción ejecutada por Bity en la casilla actual SIN reconstruir la página
+    animateExBityActionDOM(actionId, checkInfo, callback) {
+      const cell = document.querySelector(`.ex-grid-cell[data-x="${this.exBityPos.x}"][data-y="${this.exBityPos.y}"]`);
+      if (!cell) {
+        if (typeof callback === 'function') callback();
+        return;
+      }
+
+      // Actualizar visualmente el objeto del mapa en esa casilla
+      if (checkInfo.targetType === 'collectible') {
+        const colIcon = cell.querySelector('.ex-cell-collectible-icon');
+        if (colIcon) {
+          colIcon.className = 'ex-cell-collectible-picked animate-scale-up';
+          colIcon.textContent = '✨';
+          colIcon.title = this.exTxt('¡Agarrado por Bity!');
+        }
+      } else if (checkInfo.targetType === 'goal') {
+        const goalIconEl = cell.querySelector('.ex-cell-goal-icon');
+        if (goalIconEl) {
+          if (actionId === 'grab_gift' || actionId === 'grab_star') {
+            // El objeto desaparece de la casilla y pasa a Bity
+            goalIconEl.className = 'ex-cell-goal-icon ex-goal-picked-sparkle';
+            goalIconEl.textContent = '✨';
+          } else if (actionId === 'open_gift') {
+            goalIconEl.className = 'ex-cell-goal-icon goal-reached-bounce';
+            goalIconEl.textContent = '🎊';
+          } else if (actionId === 'buy_gift') {
+            goalIconEl.className = 'ex-cell-goal-icon goal-reached-bounce';
+            goalIconEl.textContent = '🛍️';
+          } else if (actionId === 'deliver_gift') {
+            goalIconEl.className = 'ex-cell-goal-icon goal-reached-bounce';
+            goalIconEl.textContent = '🏠🎁';
+          } else if (actionId === 'enter_shop') {
+            goalIconEl.classList.add('goal-reached-bounce');
+          }
+        }
+      }
+
+      // Actualizar insignia asociada a Bity y animar salto de acción
+      const sprite = cell.querySelector('.ex-bity-sprite');
+      if (sprite) {
+        sprite.innerHTML = this.renderExBitySpriteInner('celebrating');
+        sprite.classList.add('bity-action-pop');
+        cell.classList.add('cell-action-success-halo');
+        setTimeout(() => {
+          sprite.classList.remove('bity-action-pop');
+          cell.classList.remove('cell-action-success-halo');
+          if (typeof callback === 'function') callback();
+        }, 280);
+      } else {
+        if (typeof callback === 'function') callback();
+      }
+    }
+
+    animateExActionFailDOM() {
+      const cell = document.querySelector(`.ex-grid-cell[data-x="${this.exBityPos.x}"][data-y="${this.exBityPos.y}"]`);
+      const sprite = cell ? cell.querySelector('.ex-bity-sprite') : null;
+      if (sprite) {
+        sprite.innerHTML = this.renderExBitySpriteInner('alert');
+        sprite.classList.add('bity-bump-left');
+        if (cell) cell.classList.add('cell-collision-halo');
+        setTimeout(() => {
+          sprite.classList.remove('bity-bump-left');
+          if (cell) cell.classList.remove('cell-collision-halo');
+        }, 360);
+      }
     }
 
     animateExCollisionDOM(dir) {
       const cell = document.querySelector(`.ex-grid-cell[data-x="${this.exBityPos.x}"][data-y="${this.exBityPos.y}"]`);
       const sprite = cell ? cell.querySelector('.ex-bity-sprite') : null;
       if (sprite) {
+        sprite.innerHTML = this.renderExBitySpriteInner('alert');
         sprite.classList.add(`bity-bump-${dir}`);
         if (cell) cell.classList.add('cell-collision-halo');
         setTimeout(() => {
@@ -2459,8 +3011,10 @@ function shuffleArray(array) {
       const map = this.getCurrentExMap();
       const atGoal = (this.exBityPos.x === map.goal.x && this.exBityPos.y === map.goal.y);
       const hasRequiredCollectible = (!map.collectible || this.exCollectiblePicked);
+      const requiredGoalActions = Array.isArray(map.goalActions) ? map.goalActions : [];
+      const missingGoalAction = requiredGoalActions.find(actId => !this.exCompletedGoalActions.includes(actId));
 
-      if (atGoal && hasRequiredCollectible) {
+      if (atGoal && hasRequiredCollectible && !missingGoalAction) {
         this.exExecMode = 'won';
         if (!this.exCompletedByGrade[this.exGrade]) {
           this.exCompletedByGrade[this.exGrade] = new Set();
@@ -2486,13 +3040,58 @@ function shuffleArray(array) {
           title: map.victoryMsg || '¡MUY BIEN! ¡BITY ENCONTRÓ SU REGALO!',
           detail: efficiencyNote
         };
-      } else if (atGoal && !hasRequiredCollectible) {
+
+        // Celebración en el sprite de Bity en el mapa sin re-renderizar toda la página
+        const goalCell = document.querySelector(`.ex-grid-cell[data-x="${this.exBityPos.x}"][data-y="${this.exBityPos.y}"]`);
+        const sprite = goalCell ? goalCell.querySelector('.ex-bity-sprite') : null;
+        if (sprite) {
+          sprite.innerHTML = this.renderExBitySpriteInner('celebrating');
+          sprite.classList.add('bity-spin-celebration');
+        }
+        this.updateExSolvedBadgesDOM();
+      } else if (map.collectible && !this.exCollectiblePicked) {
         this.exExecMode = 'error';
         this.playSound('error');
+        const reqActDef = ALGORITMOS_BLOCK_DEFS[map.collectible.requiredAction];
+        const atColNow = (this.exBityPos.x === map.collectible.x && this.exBityPos.y === map.collectible.y);
         this.exFeedback = {
           type: 'error',
-          title: '¡CASI LO LOGRÁS! Revisá las instrucciones y probá nuevamente.',
-          detail: `Bity llegó a la meta, pero antes debía pasar por ${map.collectible.icon} ${map.collectible.name}.`
+          title: '¡Cuidado! Te falta una instrucción para completar la misión.',
+          detail: atColNow && reqActDef
+            ? `¡Bity llegó hasta ${map.collectible.name} ${map.collectible.icon}! Agregá el bloque ${reqActDef.label} y luego continuá hacia ${map.goalIcon} ${map.goalName}.`
+            : `En el camino, Bity debe llegar hasta ${map.collectible.icon} ${map.collectible.name}${reqActDef ? ` y usar el bloque ${reqActDef.label}` : ''} antes de finalizar.`
+        };
+      } else if (atGoal && missingGoalAction) {
+        this.exExecMode = 'error';
+        this.playSound('error');
+        const missingDef = ALGORITMOS_BLOCK_DEFS[missingGoalAction];
+        let customTitle = '¡Cuidado! Te falta una instrucción para completar la misión.';
+        let customDetail = `¡Bity llegó al objetivo! Agregá el bloque ${missingDef ? missingDef.label : ''} al final de tu algoritmo.`;
+
+        if (missingGoalAction === 'grab_gift') {
+          customTitle = '¡Cuidado! Te falta una instrucción para completar la misión.';
+          customDetail = '¡Bity llegó hasta el regalo 🎁! Ahora tenés que agregar el bloque AGARRAR REGALO para que pueda llevárselo.';
+        } else if (missingGoalAction === 'grab_star') {
+          customTitle = '¡Cuidado! Te falta una instrucción para completar la misión.';
+          customDetail = '¡Bity llegó hasta la estrella ⭐! Ahora tenés que agregar el bloque AGARRAR ESTRELLA para completarla.';
+        } else if (missingGoalAction === 'buy_gift') {
+          customTitle = '¡Bity llegó a la tienda! Ahora tiene que comprar el regalo.';
+          customDetail = 'Agregá el bloque COMPRAR REGALO al final de tu algoritmo para completar la compra.';
+        } else if (missingGoalAction === 'enter_shop') {
+          customTitle = '¡Bity llegó a la tienda! Ahora tiene que entrar y comprar el regalo.';
+          customDetail = 'Agregá los bloques ENTRAR A LA TIENDA y COMPRAR REGALO al llegar a la tienda 🏪.';
+        } else if (missingGoalAction === 'deliver_gift') {
+          customTitle = '¡Cuidado! Te falta una instrucción para completar la misión.';
+          customDetail = '¡Bity llegó a la casa navideña 🏠! Ahora agregá el bloque ENTREGAR REGALO para entregarlo.';
+        } else if (missingGoalAction === 'open_gift') {
+          customTitle = '¡Cuidado! Te falta una instrucción para completar la misión.';
+          customDetail = '¡Bity llegó hasta el regalo 🎁! Ahora agregá el bloque ABRIR REGALO para descubrir la sorpresa.';
+        }
+
+        this.exFeedback = {
+          type: 'error',
+          title: customTitle,
+          detail: customDetail
         };
       } else {
         this.exExecMode = 'error';
@@ -2500,11 +3099,13 @@ function shuffleArray(array) {
         this.exFeedback = {
           type: 'error',
           title: '¡CASI LO LOGRÁS! Revisá las instrucciones y probá nuevamente.',
-          detail: 'Bity ejecutó todas las instrucciones pero todavía no llegó al objetivo. Revisá si faltan bloques, sobran pasos o si el orden debe cambiarse.'
+          detail: 'Bity ejecutó las instrucciones pero todavía no llegó al objetivo. Revisá si faltan bloques, sobran pasos o si el orden debe cambiarse.'
         };
       }
 
-      this.render();
+      this.updateExPromptStatusDOM();
+      this.updateExCodeHighlightDOM();
+      this.updateExStatusAndControlsDOM();
     }
 
     goToNextExerciseChallenge() {
@@ -3983,6 +4584,184 @@ function shuffleArray(array) {
       `;
     }
 
+    renderExBitySpriteInner(mood = 'happy') {
+      return `
+        ${getBitySvg(mood)}
+        ${this.exCarryingBadge ? `<span class="ex-bity-carrying-badge animate-scale-up" title="${this.exTxt('Objeto en manos de Bity')}">${this.exCarryingBadge}</span>` : ''}
+      `;
+    }
+
+    renderExPromptGoalStatusInner(map) {
+      const goalActions = Array.isArray(map.goalActions) ? map.goalActions : [];
+      return `
+        ${map.collectible ? `
+          <span class="ex-goal-collectible-tag ${this.exCollectiblePicked ? 'picked' : ''}">
+            ${this.exCollectiblePicked ? '✅' : map.collectible.icon} ${this.exTxt(
+              map.collectible.requiredAction && ALGORITMOS_BLOCK_DEFS[map.collectible.requiredAction]
+                ? `${ALGORITMOS_BLOCK_DEFS[map.collectible.requiredAction].label}`
+                : `Pasar por ${map.collectible.name}`
+            )}
+          </span>
+        ` : ''}
+        ${goalActions.map(actId => {
+          const def = ALGORITMOS_BLOCK_DEFS[actId];
+          if (!def) return '';
+          const isDone = this.exCompletedGoalActions.includes(actId);
+          return `
+            <span class="ex-goal-action-tag ${isDone ? 'picked' : ''}">
+              ${isDone ? '✅' : def.icon} ${this.exTxt(def.label)}
+            </span>
+          `;
+        }).join('')}
+      `;
+    }
+
+    renderExProgramStackInner() {
+      const isBusy = (this.exIsAnimatingStep || this.exExecMode === 'running');
+
+      return `
+        <!-- Ranura de inserción superior (posición 0) -->
+        <div class="ex-drop-slot ${this.exInsertIndex === 0 ? 'insert-target-active' : ''}"
+          data-slot-idx="0"
+          ondragover="window.algorithmsModule.handleExDragOver(event, this)"
+          ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
+          ondrop="window.algorithmsModule.handleExDropOnSlot(event, 0)"
+          onclick="window.algorithmsModule.setExInsertIndex(0)"
+          title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertarlo al inicio')}">
+          <span class="ex-drop-slot-line"></span>
+          ${this.exInsertIndex === 0 ? `<span class="ex-insert-here-pill">➔ ${this.exTxt('Nueva instrucción se insertará aquí (Posición 1)')}</span>` : ''}
+        </div>
+
+        ${this.exBlocks.length === 0 ? `
+          <div class="ex-empty-algorithm-dropzone">
+            <div class="ex-empty-arrow">⬇️</div>
+            <p class="ex-empty-title">${this.exTxt('Aquí se insertará tu primera instrucción')}</p>
+            <p class="ex-empty-sub">${this.exTxt('Arrastrá o hacé clic en los bloques de movimiento y de acción para encastrarlos debajo de AL EMPEZAR A EJECUTAR.')}</p>
+          </div>
+        ` : this.exBlocks.map((blockKey, idx) => {
+          const def = ALGORITMOS_BLOCK_DEFS[blockKey];
+          if (!def) return '';
+          const isExecutingNow = (this.exStepCursor === idx && (this.exExecMode === 'running' || this.exExecMode === 'step' || this.exExecMode === 'error'));
+          const isAlreadyExecuted = (this.exStepCursor > idx && this.exExecMode !== 'idle');
+          const isNextInsertHere = (this.exInsertIndex === idx + 1);
+          const blockTypeClass = def.isAction ? `ex-block-action ex-block-action-${blockKey}` : `ex-block-dir-${blockKey}`;
+
+          return `
+            <div class="ex-placed-block-wrapper">
+              <div class="ex-placed-block ${blockTypeClass} ${isExecutingNow ? 'ex-block-executing' : ''} ${isAlreadyExecuted ? 'ex-block-executed' : ''}"
+                data-step-idx="${idx}"
+                data-block-dir="${blockKey}"
+                draggable="${!isBusy}"
+                ondragstart="window.algorithmsModule.handleExBlockDragStart(event, ${idx})"
+                ondragend="window.algorithmsModule.handleExDragEnd()">
+                <span class="ex-placed-step-num">${idx + 1}</span>
+                <span class="ex-placed-arrow-badge ${def.isAction ? 'ex-action-icon-badge' : ''}" aria-hidden="true">${def.arrow}</span>
+                <span class="ex-placed-label">${def.label}</span>
+                ${def.isAction ? `<span class="ex-block-kind-pill">${this.exTxt('ACCIÓN')}</span>` : ''}
+                ${isExecutingNow ? `<span class="ex-executing-tag">▶ ${this.exTxt('EJECUTANDO')}</span>` : ''}
+
+                <div class="ex-placed-controls">
+                  <button type="button"
+                    class="btn-ex-block-ctrl"
+                    data-ctrl-idx="${idx}"
+                    data-ctrl-delta="-1"
+                    ${idx === 0 || isBusy ? 'disabled' : ''}
+                    onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, -1)"
+                    title="${this.exTxt('Mover instrucción hacia arriba')}">▲</button>
+                  <button type="button"
+                    class="btn-ex-block-ctrl"
+                    data-ctrl-idx="${idx}"
+                    data-ctrl-delta="1"
+                    ${idx === this.exBlocks.length - 1 || isBusy ? 'disabled' : ''}
+                    onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, 1)"
+                    title="${this.exTxt('Mover instrucción hacia abajo')}">▼</button>
+                  <button type="button"
+                    class="btn-ex-block-remove"
+                    ${isBusy ? 'disabled' : ''}
+                    onclick="event.stopPropagation(); window.algorithmsModule.removeExBlock(${idx})"
+                    title="${this.exTxt('Quitar esta instrucción')}">✕</button>
+                </div>
+              </div>
+
+              <!-- Ranura de inserción debajo del bloque idx -->
+              <div class="ex-drop-slot ${isNextInsertHere ? 'insert-target-active' : ''}"
+                data-slot-idx="${idx + 1}"
+                ondragover="window.algorithmsModule.handleExDragOver(event, this)"
+                ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
+                ondrop="window.algorithmsModule.handleExDropOnSlot(event, ${idx + 1})"
+                onclick="window.algorithmsModule.setExInsertIndex(${idx + 1})"
+                title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertar en esta posición')}">
+                <span class="ex-drop-slot-line"></span>
+                ${isNextInsertHere ? `<span class="ex-insert-here-pill">➔ ${this.exTxt(`Nueva instrucción se insertará aquí (Posición ${idx + 2})`)}</span>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('')}
+
+        <!-- Indicador visual permanente de dónde se insertará el próximo bloque cuando el cursor está al final -->
+        ${this.exBlocks.length > 0 && this.exInsertIndex === null ? `
+          <div class="ex-next-insertion-footer">
+            <span class="ex-insert-dot">➕</span>
+            <span>${this.exTxt(`La próxima instrucción se insertará aquí al final (Posición ${this.exBlocks.length + 1})`)}</span>
+          </div>
+        ` : ''}
+      `;
+    }
+
+    renderExStatusInner() {
+      const totalInstructions = this.exBlocks.length;
+      const executedCount = (this.exStepCursor >= 0) ? Math.min(totalInstructions, this.exStepCursor + 1) : 0;
+      const pendingCount = Math.max(0, totalInstructions - executedCount);
+      const isStepModeActive = (this.exExecMode === 'step' && this.exStepCursor < totalInstructions - 1);
+      const isBusy = (this.exIsAnimatingStep || this.exExecMode === 'running');
+
+      return `
+        <div class="ex-status-counters">
+          <span class="ex-counter-pill counter-executed">
+            ✅ ${this.exTxt('Ejecutadas')}: <strong id="ex-executed-count">${executedCount}</strong>
+          </span>
+          <span class="ex-counter-pill counter-pending">
+            ⏳ ${this.exTxt('Pendientes')}: <strong id="ex-pending-count">${pendingCount}</strong>
+          </span>
+          <span class="ex-counter-pill counter-total">
+            📋 ${this.exTxt('Total')}: <strong id="ex-total-count">${totalInstructions}</strong>
+          </span>
+        </div>
+        ${isStepModeActive ? `
+          <button type="button"
+            class="btn-ex-next-step-inline"
+            ${isBusy ? 'disabled' : ''}
+            onclick="window.algorithmsModule.runExStepByStep()">
+            <span>⏭️</span> <span>${this.exTxt('AVANZAR AL SIGUIENTE PASO')} (${executedCount + 1}/${totalInstructions})</span>
+          </button>
+        ` : ''}
+      `;
+    }
+
+    renderExFeedbackInner() {
+      if (!this.exFeedback) return '';
+      return `
+        <div class="ex-feedback-card ${this.exFeedback.type === 'won' ? 'ex-feedback-won' : 'ex-feedback-error'}" role="status">
+          <div class="ex-feedback-icon">
+            ${this.exFeedback.type === 'won' ? '🎉 🎄 🎁' : '💡 🤖'}
+          </div>
+          <div class="ex-feedback-body">
+            <h4 class="ex-feedback-title">${this.exTxt(this.exFeedback.title)}</h4>
+            ${this.exFeedback.detail ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.detail)}</p>` : ''}
+            ${this.exFeedback.message ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.message)}</p>` : ''}
+
+            ${this.exFeedback.type === 'won' ? `
+              <div class="ex-feedback-actions">
+                <button type="button" class="btn-ex-victory-next" onclick="window.algorithmsModule.goToNextExerciseChallenge()">
+                  <span>🚀</span> <span>${this.exMapIndex < 2 ? this.exTxt('SIGUIENTE DESAFÍO') : (this.exGrade < 5 ? this.exTxt(`PASAR A ${this.exGrade + 1}.º GRADO`) : this.exTxt('VER TODOS LOS GRADOS'))} ➔</span>
+                </button>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    }
+
     renderExercisesWorkspace() {
       const map = this.getCurrentExMap();
       const gradeMeta = ALGORITMOS_EXERCISES_GRADES_META[this.exGrade] || ALGORITMOS_EXERCISES_GRADES_META[1];
@@ -3990,15 +4769,14 @@ function shuffleArray(array) {
       const doneSet = this.exCompletedByGrade[this.exGrade] || new Set();
 
       const totalInstructions = this.exBlocks.length;
-      const executedCount = (this.exStepCursor >= 0) ? Math.min(totalInstructions, this.exStepCursor + 1) : 0;
-      const pendingCount = Math.max(0, totalInstructions - executedCount);
       const isStepModeActive = (this.exExecMode === 'step' && this.exStepCursor < totalInstructions - 1);
       const isBusy = (this.exIsAnimatingStep || this.exExecMode === 'running');
 
       const movementKeys = ['down', 'up', 'right', 'left'];
+      const actionKeys = Array.isArray(map.availableActions) ? map.availableActions : [];
 
       return `
-        <section class="alg-section alg-exercises-workspace-section animate-fade-in">
+        <section class="alg-section alg-exercises-workspace-section">
           <!-- BARRA SUPERIOR DE SELECCIÓN DE GRADO Y MAPA (1.º a 5.º Grado • 3 Desafíos por grado) -->
           <div class="ex-workspace-nav-bar">
             <div class="ex-nav-grades-group">
@@ -4025,6 +4803,7 @@ function shuffleArray(array) {
                 const isCurrent = (this.exMapIndex === idx);
                 return `
                   <button type="button"
+                    data-map-idx="${idx}"
                     class="btn-ex-map-tab ${isCurrent ? 'active' : ''} ${isMapDone ? 'completed' : ''}"
                     onclick="window.algorithmsModule.selectExerciseMap(${idx})">
                     <span class="map-tab-icon">${isMapDone ? '✅' : m.goalIcon}</span>
@@ -4040,13 +4819,13 @@ function shuffleArray(array) {
           <!-- ========================================================== -->
           <div class="ex-sector-prompt alg-card">
             <div class="ex-prompt-bity-box">
-              <div class="ex-prompt-bity-svg">
+              <div class="ex-prompt-bity-svg" id="ex-prompt-bity-svg-mount">
                 ${getBitySvg(this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy'))}
               </div>
             </div>
 
             <div class="ex-prompt-text-box">
-              <div class="ex-prompt-badges-row">
+              <div class="ex-prompt-badges-row" id="ex-prompt-badges-row">
                 <span class="ex-badge-grade">${this.exTxt(gradeMeta.badge)} • ${this.exTxt(gradeMeta.levelTag)}</span>
                 <span class="ex-badge-challenge">🎄 ${this.exTxt(map.title)}</span>
                 ${doneSet.has(map.id) ? `<span class="ex-badge-solved">✅ ${this.exTxt('¡DESAFÍO SUPERADO!')}</span>` : ''}
@@ -4059,11 +4838,9 @@ function shuffleArray(array) {
               <div class="ex-goal-meta">
                 <span class="ex-goal-kicker">${this.exTxt('OBJETIVO')}</span>
                 <strong class="ex-goal-name">${this.exTxt(map.goalLabel || map.goalName || '')}</strong>
-                ${map.collectible ? `
-                  <span class="ex-goal-collectible-tag ${this.exCollectiblePicked ? 'picked' : ''}">
-                    ${this.exCollectiblePicked ? '✅' : map.collectible.icon} ${this.exTxt(`Pasar por ${map.collectible.name}`)}
-                  </span>
-                ` : ''}
+                <div class="ex-goal-status-tags-wrap" id="ex-prompt-goal-status-mount">
+                  ${this.renderExPromptGoalStatusInner(map)}
+                </div>
               </div>
             </div>
           </div>
@@ -4083,7 +4860,7 @@ function shuffleArray(array) {
               </div>
 
               <div class="ex-code-panels-split">
-                <!-- SUB-PANEL 1: PALETA DE LOS 5 BLOQUES -->
+                <!-- SUB-PANEL 1: PALETA DE BLOQUES (MOVIMIENTOS Y ACCIONES) -->
                 <div class="ex-palette-column">
                   <h4 class="ex-column-title">📦 ${this.exTxt('BLOQUES DISPONIBLES')}</h4>
 
@@ -4097,6 +4874,7 @@ function shuffleArray(array) {
                   </div>
 
                   <!-- 2 a 5. Los 4 Bloques de Movimiento con Flechas Visibles (↓, ↑, →, ←) -->
+                  <div class="ex-palette-group-label">🧭 ${this.exTxt('MOVIMIENTOS')}</div>
                   <div class="ex-palette-movements-list">
                     ${movementKeys.map(dir => {
                       const def = ALGORITMOS_BLOCK_DEFS[dir];
@@ -4118,9 +4896,39 @@ function shuffleArray(array) {
                     }).join('')}
                   </div>
 
+                  <!-- 6. Bloques de Acción específicos del desafío (cuando la misión lo requiere) -->
+                  ${actionKeys.length > 0 ? `
+                    <div class="ex-palette-group-label ex-palette-actions-label">⭐ ${this.exTxt('ACCIONES DE LA MISIÓN')}</div>
+                    <div class="ex-palette-actions-list">
+                      ${actionKeys.map(actKey => {
+                        const def = ALGORITMOS_BLOCK_DEFS[actKey];
+                        if (!def) return '';
+                        return `
+                          <button type="button"
+                            class="ex-palette-block-btn ex-block-action ex-block-action-${actKey}"
+                            data-block-dir="${actKey}"
+                            draggable="${!isBusy}"
+                            ${isBusy ? 'disabled' : ''}
+                            ondragstart="window.algorithmsModule.handleExPaletteDragStart(event, '${actKey}')"
+                            ondragend="window.algorithmsModule.handleExDragEnd()"
+                            onclick="window.algorithmsModule.addExBlock('${actKey}')"
+                            title="${this.exTxt(`Agregar bloque de acción ${def.label} (${def.arrow})`)}">
+                            <span class="ex-block-arrow-badge ex-action-icon-badge" aria-hidden="true">${def.arrow}</span>
+                            <span class="ex-block-label-text">${def.label}</span>
+                            <span class="ex-block-add-plus">＋</span>
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+                  ` : ''}
+
                   <div class="ex-palette-helper-card">
                     <span>💡</span>
-                    <p>${this.exTxt('Podés arrastrar cada bloque hacia el área de código o tocarlo con un clic para sumarlo.')}</p>
+                    <p>${this.exTxt(
+                      actionKeys.length > 0
+                        ? 'Usá los bloques de movimiento para llegar al objetivo y luego agregá el bloque de acción para completar la misión.'
+                        : 'En este desafío tu misión es llegar al destino usando los bloques de movimiento.'
+                    )}</p>
                   </div>
                 </div>
 
@@ -4128,10 +4936,11 @@ function shuffleArray(array) {
                 <div class="ex-program-column">
                   <div class="ex-program-header-row">
                     <h4 class="ex-column-title">📜 ${this.exTxt('TU ALGORITMO')}</h4>
-                    <span class="ex-program-count-badge">${totalInstructions} ${this.exTxt(totalInstructions === 1 ? 'instrucción' : 'instrucciones')}</span>
+                    <span class="ex-program-count-badge" id="ex-program-count-badge">${totalInstructions} ${this.exTxt(totalInstructions === 1 ? 'instrucción' : 'instrucciones')}</span>
                   </div>
 
                   <div class="ex-program-canvas"
+                    id="ex-program-canvas"
                     ondragover="window.algorithmsModule.handleExDragOver(event, this)"
                     ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
                     ondrop="window.algorithmsModule.handleExDropOnSlot(event, ${totalInstructions})">
@@ -4147,85 +4956,8 @@ function shuffleArray(array) {
                     </div>
 
                     <!-- LISTA VERTICAL DE INSTRUCCIONES ENCASTRADAS -->
-                    <div class="ex-vertical-blocks-stack">
-                      <!-- Ranura de inserción superior (posición 0) -->
-                      <div class="ex-drop-slot ${this.exInsertIndex === 0 ? 'insert-target-active' : ''}"
-                        data-slot-idx="0"
-                        ondragover="window.algorithmsModule.handleExDragOver(event, this)"
-                        ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
-                        ondrop="window.algorithmsModule.handleExDropOnSlot(event, 0)"
-                        onclick="window.algorithmsModule.setExInsertIndex(0)"
-                        title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertarlo al inicio')}">
-                        <span class="ex-drop-slot-line"></span>
-                        ${this.exInsertIndex === 0 ? `<span class="ex-insert-here-pill">➔ ${this.exTxt('Nueva instrucción se insertará aquí (Posición 1)')}</span>` : ''}
-                      </div>
-
-                      ${this.exBlocks.length === 0 ? `
-                        <div class="ex-empty-algorithm-dropzone">
-                          <div class="ex-empty-arrow">⬇️</div>
-                          <p class="ex-empty-title">${this.exTxt('Aquí se insertará tu primera instrucción')}</p>
-                          <p class="ex-empty-sub">${this.exTxt('Arrastrá o hacé clic en los bloques de movimiento para encastrarlos debajo de AL EMPEZAR A EJECUTAR.')}</p>
-                        </div>
-                      ` : this.exBlocks.map((dir, idx) => {
-                        const def = ALGORITMOS_BLOCK_DEFS[dir];
-                        const isExecutingNow = (this.exStepCursor === idx && (this.exExecMode === 'running' || this.exExecMode === 'step' || this.exExecMode === 'error'));
-                        const isAlreadyExecuted = (this.exStepCursor > idx && this.exExecMode !== 'idle');
-                        const isNextInsertHere = (this.exInsertIndex === idx + 1);
-
-                        return `
-                          <div class="ex-placed-block-wrapper">
-                            <div class="ex-placed-block ex-block-dir-${dir} ${isExecutingNow ? 'ex-block-executing' : ''} ${isAlreadyExecuted ? 'ex-block-executed' : ''}"
-                              data-step-idx="${idx}"
-                              data-block-dir="${dir}"
-                              draggable="${!isBusy}"
-                              ondragstart="window.algorithmsModule.handleExBlockDragStart(event, ${idx})"
-                              ondragend="window.algorithmsModule.handleExDragEnd()">
-                              <span class="ex-placed-step-num">${idx + 1}</span>
-                              <span class="ex-placed-arrow-badge" aria-hidden="true">${def.arrow}</span>
-                              <span class="ex-placed-label">${def.label}</span>
-                              ${isExecutingNow ? `<span class="ex-executing-tag">▶ ${this.exTxt('EJECUTANDO')}</span>` : ''}
-
-                              <div class="ex-placed-controls">
-                                <button type="button"
-                                  class="btn-ex-block-ctrl"
-                                  ${idx === 0 || isBusy ? 'disabled' : ''}
-                                  onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, -1)"
-                                  title="${this.exTxt('Mover instrucción hacia arriba')}">▲</button>
-                                <button type="button"
-                                  class="btn-ex-block-ctrl"
-                                  ${idx === this.exBlocks.length - 1 || isBusy ? 'disabled' : ''}
-                                  onclick="event.stopPropagation(); window.algorithmsModule.moveExBlock(${idx}, 1)"
-                                  title="${this.exTxt('Mover instrucción hacia abajo')}">▼</button>
-                                <button type="button"
-                                  class="btn-ex-block-remove"
-                                  ${isBusy ? 'disabled' : ''}
-                                  onclick="event.stopPropagation(); window.algorithmsModule.removeExBlock(${idx})"
-                                  title="${this.exTxt('Quitar esta instrucción')}">✕</button>
-                              </div>
-                            </div>
-
-                            <!-- Ranura de inserción debajo del bloque idx -->
-                            <div class="ex-drop-slot ${isNextInsertHere ? 'insert-target-active' : ''}"
-                              data-slot-idx="${idx + 1}"
-                              ondragover="window.algorithmsModule.handleExDragOver(event, this)"
-                              ondragleave="window.algorithmsModule.handleExDragLeave(event, this)"
-                              ondrop="window.algorithmsModule.handleExDropOnSlot(event, ${idx + 1})"
-                              onclick="window.algorithmsModule.setExInsertIndex(${idx + 1})"
-                              title="${this.exTxt('Hacé clic o soltá un bloque aquí para insertar en esta posición')}">
-                              <span class="ex-drop-slot-line"></span>
-                              ${isNextInsertHere ? `<span class="ex-insert-here-pill">➔ ${this.exTxt(`Nueva instrucción se insertará aquí (Posición ${idx + 2})`)}</span>` : ''}
-                            </div>
-                          </div>
-                        `;
-                      }).join('')}
-
-                      <!-- Indicador visual permanente de dónde se insertará el próximo bloque cuando el cursor está al final -->
-                      ${this.exBlocks.length > 0 && this.exInsertIndex === null ? `
-                        <div class="ex-next-insertion-footer">
-                          <span class="ex-insert-dot">➕</span>
-                          <span>${this.exTxt(`La próxima instrucción se insertará aquí al final (Posición ${this.exBlocks.length + 1})`)}</span>
-                        </div>
-                      ` : ''}
+                    <div class="ex-vertical-blocks-stack" id="ex-program-stack-mount">
+                      ${this.renderExProgramStackInner()}
                     </div>
                   </div>
                 </div>
@@ -4243,7 +4975,7 @@ function shuffleArray(array) {
 
               <!-- TABLERO DEL MAPA -->
               <div class="ex-map-board-frame">
-                <div class="ex-grid-board" style="--ex-cols: ${map.cols}; --ex-rows: ${map.rows};">
+                <div class="ex-grid-board" id="ex-grid-board-mount" style="--ex-cols: ${map.cols}; --ex-rows: ${map.rows};">
                   ${this.renderExMapBoard(map)}
                 </div>
               </div>
@@ -4253,31 +4985,13 @@ function shuffleArray(array) {
                 <span class="ex-legend-item">🤖 ${this.exTxt('Bity')}</span>
                 <span class="ex-legend-item">🚩 ${this.exTxt('Partida')}</span>
                 <span class="ex-legend-item">${map.goalIcon} ${this.exTxt('Objetivo')}</span>
-                ${map.collectible ? `<span class="ex-legend-item">${map.collectible.icon} ${this.exTxt('Paso previo')}</span>` : ''}
+                ${map.collectible ? `<span class="ex-legend-item">${map.collectible.icon} ${this.exTxt('En camino')}</span>` : ''}
                 <span class="ex-legend-item">🌲⛄ ${this.exTxt('Obstáculos')}</span>
               </div>
 
               <!-- PANEL DE ESTADO DE EJECUCIÓN PASO A PASO (Ejecutadas y Pendientes) -->
-              <div class="ex-execution-status-bar ${this.exExecMode !== 'idle' ? 'status-active' : ''}">
-                <div class="ex-status-counters">
-                  <span class="ex-counter-pill counter-executed">
-                    ✅ ${this.exTxt('Ejecutadas')}: <strong id="ex-executed-count">${executedCount}</strong>
-                  </span>
-                  <span class="ex-counter-pill counter-pending">
-                    ⏳ ${this.exTxt('Pendientes')}: <strong id="ex-pending-count">${pendingCount}</strong>
-                  </span>
-                  <span class="ex-counter-pill counter-total">
-                    📋 ${this.exTxt('Total')}: <strong>${totalInstructions}</strong>
-                  </span>
-                </div>
-                ${isStepModeActive ? `
-                  <button type="button"
-                    class="btn-ex-next-step-inline animate-pulse"
-                    ${isBusy ? 'disabled' : ''}
-                    onclick="window.algorithmsModule.runExStepByStep()">
-                    <span>⏭️</span> <span>${this.exTxt('AVANZAR AL SIGUIENTE PASO')} (${executedCount + 1}/${totalInstructions})</span>
-                  </button>
-                ` : ''}
+              <div class="ex-execution-status-bar ${this.exExecMode !== 'idle' ? 'status-active' : ''}" id="ex-status-bar-mount">
+                ${this.renderExStatusInner()}
               </div>
 
               <!-- BOTONES PRINCIPALES DE EJECUCIÓN Y CONTROL -->
@@ -4320,26 +5034,9 @@ function shuffleArray(array) {
               </div>
 
               <!-- RETROALIMENTACIÓN / VALIDACIÓN DEL RESULTADO -->
-              ${this.exFeedback ? `
-                <div class="ex-feedback-card ${this.exFeedback.type === 'won' ? 'ex-feedback-won' : 'ex-feedback-error'} animate-scale-up" role="status">
-                  <div class="ex-feedback-icon">
-                    ${this.exFeedback.type === 'won' ? '🎉 🎄 🎁' : '💡 🤖'}
-                  </div>
-                  <div class="ex-feedback-body">
-                    <h4 class="ex-feedback-title">${this.exTxt(this.exFeedback.title)}</h4>
-                    ${this.exFeedback.detail ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.detail)}</p>` : ''}
-                    ${this.exFeedback.message ? `<p class="ex-feedback-detail">${this.exTxt(this.exFeedback.message)}</p>` : ''}
-
-                    ${this.exFeedback.type === 'won' ? `
-                      <div class="ex-feedback-actions">
-                        <button type="button" class="btn-ex-victory-next" onclick="window.algorithmsModule.goToNextExerciseChallenge()">
-                          <span>🚀</span> <span>${this.exMapIndex < 2 ? this.exTxt('SIGUIENTE DESAFÍO') : (this.exGrade < 5 ? this.exTxt(`PASAR A ${this.exGrade + 1}.º GRADO`) : this.exTxt('VER TODOS LOS GRADOS'))} ➔</span>
-                        </button>
-                      </div>
-                    ` : ''}
-                  </div>
-                </div>
-              ` : ''}
+              <div id="ex-feedback-mount">
+                ${this.renderExFeedbackInner()}
+              </div>
             </div>
 
           </div>
@@ -4350,6 +5047,21 @@ function shuffleArray(array) {
     renderExMapBoard(map) {
       const obstacleIcons = ['🌲', '⛄', '🎄', '📦', '🧊'];
       let html = '';
+
+      const isGoalPickedUp = (
+        this.exCompletedGoalActions.includes('grab_gift') && !this.exCompletedGoalActions.includes('open_gift')
+      ) || this.exCompletedGoalActions.includes('grab_star');
+
+      let currentGoalIcon = map.goalIcon;
+      if (this.exCompletedGoalActions.includes('open_gift')) {
+        currentGoalIcon = '🎊';
+      } else if (this.exCompletedGoalActions.includes('buy_gift')) {
+        currentGoalIcon = '🛍️';
+      } else if (this.exCompletedGoalActions.includes('deliver_gift')) {
+        currentGoalIcon = '🏠🎁';
+      } else if (isGoalPickedUp) {
+        currentGoalIcon = '✨';
+      }
 
       for (let r = 0; r < map.rows; r++) {
         for (let c = 0; c < map.cols; c++) {
@@ -4376,14 +5088,14 @@ function shuffleArray(array) {
                 <span class="ex-cell-collectible-icon item-pulse" title="${this.exTxt(map.collectible.name)}">${map.collectible.icon}</span>
               ` : ''}
               ${hasCollectible && this.exCollectiblePicked ? `
-                <span class="ex-cell-collectible-picked" title="${this.exTxt('¡Recolectado!')}">✨</span>
+                <span class="ex-cell-collectible-picked" title="${this.exTxt('¡Agarrado por Bity!')}">✨</span>
               ` : ''}
               ${isGoal ? `
-                <span class="ex-cell-goal-icon ${isBityHere && this.exExecMode === 'won' ? 'goal-reached-bounce' : 'item-pulse'}" title="${this.exTxt(map.goalLabel || map.goalName || '')}">${map.goalIcon}</span>
+                <span class="ex-cell-goal-icon ${isBityHere && this.exExecMode === 'won' ? 'goal-reached-bounce' : 'item-pulse'}" title="${this.exTxt(map.goalLabel || map.goalName || '')}">${currentGoalIcon}</span>
               ` : ''}
               ${isBityHere ? `
                 <div class="ex-bity-sprite facing-${this.exBityFacing} ${this.exExecMode === 'won' ? 'bity-spin-celebration' : ''}">
-                  ${getBitySvg(this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy'))}
+                  ${this.renderExBitySpriteInner(this.exExecMode === 'won' ? 'celebrating' : (this.exExecMode === 'error' ? 'alert' : 'happy'))}
                 </div>
               ` : ''}
             </div>
