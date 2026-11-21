@@ -1340,15 +1340,14 @@ body {
 
 .santa-flight-wrapper {
   position: absolute;
-  top: 72px;
+  top: 56px;
   left: 0;
-  width: 440px;
-  pointer-events: auto;
-  cursor: pointer;
+  width: 450px;
+  pointer-events: none !important;
   z-index: 9996;
   user-select: none;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.55));
+  will-change: transform, opacity;
 }
 
 .santa-flight-track {
@@ -1356,62 +1355,137 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
+  pointer-events: none !important;
 }
 
 .santa-banner-bubble {
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255, 255, 255, 0.96);
   border: 2.5px solid #d42426;
   color: #071524;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-weight: 900;
-  padding: 8px 18px;
+  padding: 6px 16px;
   border-radius: 999px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 215, 0, 0.6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 215, 0, 0.65);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  pointer-events: none !important;
 }
 
-.sleigh-svg-figure {
-  display: block;
-  max-width: 100%;
+.santa-sleigh-vehicle {
+  width: 390px;
   height: auto;
+  pointer-events: none !important;
+  animation: santaGentleBob 1.8s ease-in-out infinite alternate;
+}
+
+.santa-sleigh-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+@keyframes santaGentleBob {
+  0% { transform: translateY(0) rotate(-1deg); }
+  100% { transform: translateY(-6px) rotate(1.2deg); }
+}
+
+.rudolph-nose-glow {
+  filter: drop-shadow(0 0 8px #ef4444) drop-shadow(0 0 14px #f87171);
+  animation: rudolphNosePulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes rudolphNosePulse {
+  0% { r: 3.5px; opacity: 0.85; }
+  100% { r: 4.6px; opacity: 1; }
+}
+
+.reindeer-group {
+  animation: reindeerGallop 0.55s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.reindeer-second { animation-delay: 0.18s; }
+.reindeer-third { animation-delay: 0.34s; }
+
+@keyframes reindeerGallop {
+  0% { transform: translate(var(--tx, 0), 0) rotate(-1.5deg); }
+  100% { transform: translate(var(--tx, 0), -3px) rotate(1.5deg); }
+}
+
+.reindeer-rudolph { --tx: 336px; animation: rudolphGallop 0.52s ease-in-out infinite alternate; }
+.reindeer-second { --tx: 266px; animation: secondReindeerGallop 0.54s ease-in-out infinite alternate 0.16s; }
+.reindeer-third { --tx: 198px; animation: thirdReindeerGallop 0.56s ease-in-out infinite alternate 0.32s; }
+
+@keyframes rudolphGallop {
+  0% { transform: translate(336px, 26px) rotate(-2deg); }
+  100% { transform: translate(336px, 22px) rotate(2deg); }
+}
+
+@keyframes secondReindeerGallop {
+  0% { transform: translate(266px, 32px) rotate(-1.8deg); }
+  100% { transform: translate(266px, 28px) rotate(1.8deg); }
+}
+
+@keyframes thirdReindeerGallop {
+  0% { transform: translate(198px, 30px) rotate(-1.8deg); }
+  100% { transform: translate(198px, 26px) rotate(1.8deg); }
 }
 
 .santa-particle-trail {
   position: absolute;
-  left: -30px;
-  top: 55%;
+  left: -42px;
+  top: 52%;
   display: flex;
+  align-items: center;
   gap: 8px;
-  font-size: 1.1rem;
-  pointer-events: none;
+  font-size: 1.05rem;
+  pointer-events: none !important;
+}
+
+.santa-particle-trail span {
+  display: inline-block;
+  animation: santaTrailTwinkle 1.1s ease-in-out infinite alternate;
+}
+
+.santa-particle-trail span:nth-child(2) { animation-delay: 0.2s; }
+.santa-particle-trail span:nth-child(3) { animation-delay: 0.4s; }
+.santa-particle-trail span:nth-child(4) { animation-delay: 0.6s; }
+.santa-particle-trail span:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes santaTrailTwinkle {
+  0% { opacity: 0.45; transform: scale(0.85) translateY(2px); }
+  100% { opacity: 1; transform: scale(1.18) translateY(-3px); }
 }
 
 .anim-sleigh-left-to-right {
-  animation: santaFlyLtoR 6.8s linear forwards;
+  animation: santaFlyLtoR 11.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 .anim-sleigh-right-to-left {
-  animation: santaFlyRtoL 6.8s linear forwards;
+  animation: santaFlyRtoL 11.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
 @keyframes santaFlyLtoR {
-  0% { transform: translateX(-480px) translateY(10px); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateX(45vw) translateY(-12px); opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateX(108vw) translateY(6px); opacity: 0; }
+  0% { transform: translateX(-500px) translateY(12px); opacity: 0; }
+  8% { opacity: 0.96; }
+  35% { transform: translateX(28vw) translateY(-8px); opacity: 0.96; }
+  68% { transform: translateX(66vw) translateY(4px); opacity: 0.96; }
+  92% { opacity: 0.96; }
+  100% { transform: translateX(110vw) translateY(-6px); opacity: 0; }
 }
 
 @keyframes santaFlyRtoL {
-  0% { transform: translateX(108vw) translateY(10px) scaleX(-1); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translateX(45vw) translateY(-12px) scaleX(-1); opacity: 1; }
-  90% { opacity: 1; }
-  100% { transform: translateX(-480px) translateY(6px) scaleX(-1); opacity: 0; }
+  0% { transform: translateX(110vw) translateY(12px) scaleX(-1); opacity: 0; }
+  8% { opacity: 0.96; }
+  35% { transform: translateX(66vw) translateY(-8px) scaleX(-1); opacity: 0.96; }
+  68% { transform: translateX(28vw) translateY(4px) scaleX(-1); opacity: 0.96; }
+  92% { opacity: 0.96; }
+  100% { transform: translateX(-500px) translateY(-6px) scaleX(-1); opacity: 0; }
 }
 
 .anim-sleigh-right-to-left .santa-banner-bubble {
@@ -1424,6 +1498,321 @@ body {
 }
 
 /* --------------------------------------------------------
+   10B. CAPA GLOBAL COMPARTIDA DE AMBIENTACIÓN NAVIDEÑA
+   (Árbol permanente, Guirnaldas superiores, Nieve y Detalles)
+   -------------------------------------------------------- */
+.xmas-global-ambience-root {
+  position: fixed;
+  inset: 0;
+  pointer-events: none !important;
+  z-index: 940;
+  overflow: hidden;
+}
+
+.xmas-global-ambience-root * {
+  pointer-events: none !important;
+}
+
+/* Nieve ambiental multicapa de baja densidad */
+.xmas-global-snow-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none !important;
+}
+
+.xmas-snow-sheet {
+  position: absolute;
+  inset: -650px 0 0 0;
+  background-repeat: repeat;
+  will-change: transform;
+}
+
+.snow-sheet-far {
+  background-image:
+    radial-gradient(2px 2px at 45px 60px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(2.5px 2.5px at 180px 150px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.8px 1.8px at 320px 80px, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(2.2px 2.2px at 470px 220px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 590px 130px, rgba(255, 255, 255, 0.75), transparent);
+  background-size: 640px 640px;
+  animation: xmasSnowFallFar 28s linear infinite;
+  opacity: 0.42;
+}
+
+.snow-sheet-mid {
+  background-image:
+    radial-gradient(3.2px 3.2px at 90px 110px, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(2.8px 2.8px at 260px 240px, rgba(224, 242, 254, 0.8), transparent),
+    radial-gradient(3.5px 3.5px at 420px 95px, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(2.8px 2.8px at 550px 290px, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 620px 620px;
+  animation: xmasSnowFallMid 21s linear infinite;
+  opacity: 0.38;
+}
+
+@keyframes xmasSnowFallFar {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-14px, 320px, 0); }
+  100% { transform: translate3d(0, 640px, 0); }
+}
+
+@keyframes xmasSnowFallMid {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(16px, 310px, 0); }
+  100% { transform: translate3d(0, 620px, 0); }
+}
+
+.xmas-snow-flakes-floating {
+  position: absolute;
+  inset: 0;
+}
+
+.xmas-flake {
+  position: absolute;
+  top: -28px;
+  color: rgba(255, 255, 255, 0.52);
+  text-shadow: 0 0 6px rgba(186, 230, 253, 0.55);
+  user-select: none;
+  animation: xmasFlakeGentleDrift 19s linear infinite;
+}
+
+.xmas-flake.f-1 { left: 4%; font-size: 0.85rem; animation-duration: 21s; animation-delay: 0s; }
+.xmas-flake.f-2 { left: 12%; font-size: 0.7rem; animation-duration: 24s; animation-delay: -4s; }
+.xmas-flake.f-3 { left: 22%; font-size: 0.92rem; animation-duration: 19s; animation-delay: -9s; }
+.xmas-flake.f-4 { left: 31%; font-size: 0.68rem; animation-duration: 26s; animation-delay: -2s; }
+.xmas-flake.f-5 { left: 42%; font-size: 0.8rem; animation-duration: 22s; animation-delay: -12s; }
+.xmas-flake.f-6 { left: 53%; font-size: 0.74rem; animation-duration: 25s; animation-delay: -6s; }
+.xmas-flake.f-7 { left: 64%; font-size: 0.9rem; animation-duration: 20s; animation-delay: -15s; }
+.xmas-flake.f-8 { left: 73%; font-size: 0.68rem; animation-duration: 27s; animation-delay: -3s; }
+.xmas-flake.f-9 { left: 82%; font-size: 0.82rem; animation-duration: 23s; animation-delay: -11s; }
+.xmas-flake.f-10 { left: 90%; font-size: 0.75rem; animation-duration: 21s; animation-delay: -7s; }
+.xmas-flake.f-11 { left: 95%; font-size: 0.88rem; animation-duration: 24s; animation-delay: -14s; }
+.xmas-flake.f-12 { left: 17%; font-size: 0.72rem; animation-duration: 28s; animation-delay: -17s; }
+
+@keyframes xmasFlakeGentleDrift {
+  0% { transform: translate3d(0, -30px, 0) rotate(0deg); opacity: 0; }
+  12% { opacity: 0.55; }
+  50% { transform: translate3d(18px, 50vh, 0) rotate(180deg); opacity: 0.5; }
+  88% { opacity: 0.45; }
+  100% { transform: translate3d(-12px, 104vh, 0) rotate(360deg); opacity: 0; }
+}
+
+/* 3. Guirnalda superior con luces navideñas que titilan de forma natural y desfasada */
+.xmas-top-garland-bar {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  z-index: 945;
+  opacity: 0.92;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.xmas-garland-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.garland-bulb-anim-1 { animation: bulbTwinkleA 2.2s ease-in-out infinite alternate; }
+.garland-bulb-anim-2 { animation: bulbTwinkleB 2.9s ease-in-out infinite alternate; }
+.garland-bulb-anim-3 { animation: bulbTwinkleC 1.85s ease-in-out infinite alternate; }
+.garland-bulb-anim-4 { animation: bulbTwinkleA 3.3s ease-in-out infinite alternate; }
+.garland-bulb-anim-5 { animation: bulbTwinkleB 2.55s ease-in-out infinite alternate; }
+
+@keyframes bulbTwinkleA {
+  0%, 15% { opacity: 0.48; filter: brightness(0.85); }
+  100% { opacity: 1; filter: brightness(1.35) drop-shadow(0 0 6px currentColor); }
+}
+
+@keyframes bulbTwinkleB {
+  0% { opacity: 1; filter: brightness(1.3); }
+  55% { opacity: 0.42; filter: brightness(0.8); }
+  100% { opacity: 0.95; filter: brightness(1.25); }
+}
+
+@keyframes bulbTwinkleC {
+  0% { opacity: 0.55; }
+  40% { opacity: 1; filter: brightness(1.4); }
+  100% { opacity: 0.65; }
+}
+
+/* 5. Adornos de esquinas superiores (Campanitas, Ramas de Pino, Corona y Bastón de Caramelo) */
+.xmas-corner-ornament {
+  position: fixed;
+  top: 64px;
+  width: 112px;
+  height: 94px;
+  z-index: 946;
+  opacity: 0.92;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.corner-top-left { left: 0; }
+.corner-top-right { right: 0; }
+
+.xmas-corner-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.xmas-swinging-bells {
+  transform-origin: 30px 10px;
+  animation: bellsGentleSwing 3.4s ease-in-out infinite alternate;
+}
+
+@keyframes bellsGentleSwing {
+  0% { transform: translate(26px, 24px) rotate(-6deg); }
+  100% { transform: translate(26px, 24px) rotate(6deg); }
+}
+
+.xmas-twinkle-star {
+  animation: starTwinklePulse 2.1s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes starTwinklePulse {
+  0% { opacity: 0.5; transform: scale(0.86); }
+  100% { opacity: 1; transform: scale(1.18); filter: drop-shadow(0 0 6px #fde047); }
+}
+
+/* 2. Árbol de Navidad decorativo permanente y escena complementaria */
+.xmas-permanent-tree-dock {
+  position: fixed;
+  bottom: 8px;
+  z-index: 942;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55));
+}
+
+.tree-dock-left {
+  left: 10px;
+  width: 148px;
+  height: 194px;
+}
+
+.tree-dock-right {
+  right: 12px;
+  width: 168px;
+  height: 152px;
+}
+
+.xmas-permanent-tree-svg,
+.xmas-secondary-scene-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Luces del árbol de Navidad que se encienden y apagan con ritmos independientes */
+.tree-light-1 { animation: treeLightGlow1 1.7s ease-in-out infinite alternate; }
+.tree-light-2 { animation: treeLightGlow2 2.3s ease-in-out infinite alternate 0.4s; }
+.tree-light-3 { animation: treeLightGlow1 2.7s ease-in-out infinite alternate 0.9s; }
+.tree-light-4 { animation: treeLightGlow2 1.95s ease-in-out infinite alternate 1.3s; }
+.tree-light-5 { animation: treeLightGlow1 2.5s ease-in-out infinite alternate 0.65s; }
+
+@keyframes treeLightGlow1 {
+  0%, 15% { opacity: 0.32; transform: scale(0.88); }
+  100% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 6px currentColor); }
+}
+
+@keyframes treeLightGlow2 {
+  0% { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+  60% { opacity: 0.35; }
+  100% { opacity: 0.92; }
+}
+
+.xmas-tree-top-star {
+  animation: treeTopStarSparkle 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes treeTopStarSparkle {
+  0% { filter: drop-shadow(0 0 6px #fde047); }
+  100% { filter: drop-shadow(0 0 15px #ffffff) drop-shadow(0 0 22px #ffd700); }
+}
+
+.house-window-glow {
+  animation: windowWarmFlicker 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes windowWarmFlicker {
+  0% { opacity: 0.78; filter: drop-shadow(0 0 4px #fde047); }
+  100% { opacity: 1; filter: drop-shadow(0 0 10px #ffd700); }
+}
+
+/* Adaptación en pantallas de actividades/ejercicios para mantener despejada el área de trabajo */
+.xmas-global-ambience-root.context-workspace .tree-dock-left {
+  width: 104px;
+  height: 136px;
+  bottom: 6px;
+  left: 6px;
+  opacity: 0.86;
+}
+
+.xmas-global-ambience-root.context-workspace .tree-dock-right {
+  width: 112px;
+  height: 102px;
+  bottom: 6px;
+  right: 6px;
+  opacity: 0.78;
+}
+
+.xmas-global-ambience-root.context-workspace .xmas-corner-ornament {
+  width: 78px;
+  height: 66px;
+  opacity: 0.75;
+}
+
+.xmas-global-ambience-root.context-workspace .xmas-top-garland-bar {
+  height: 24px;
+  opacity: 0.75;
+}
+
+/* 6. Animaciones festivas de Bity (Saludar, pequeño salto, mirar al árbol, reaccionar a Papá Noel) */
+.bity-xmas-wave {
+  animation: bityFestiveWave 0.65s ease-in-out 3 !important;
+}
+
+.bity-xmas-hop {
+  animation: bityFestiveHop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2 !important;
+}
+
+.bity-xmas-look-tree {
+  animation: bityLookAtTree 1.8s ease-in-out 1 !important;
+}
+
+.bity-xmas-react-santa {
+  animation: bityReactToSanta 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 4 !important;
+  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.85)) !important;
+}
+
+@keyframes bityFestiveWave {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-6deg) translateY(-4px); }
+  75% { transform: rotate(6deg) translateY(-4px); }
+}
+
+@keyframes bityFestiveHop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.05); }
+}
+
+@keyframes bityLookAtTree {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  35%, 65% { transform: translateX(-5px) rotate(-4deg); }
+}
+
+@keyframes bityReactToSanta {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  40% { transform: translateY(-14px) scale(1.07) rotate(-5deg); }
+  75% { transform: translateY(-8px) scale(1.04) rotate(5deg); }
+}
+
+/* --------------------------------------------------------
    11. RESPONSIVE INTEGRAL (COMPUTADORAS, TABLETS Y CELULARES)
    -------------------------------------------------------- */
 @media (max-width: 1180px) {
@@ -1431,6 +1820,16 @@ body {
     grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
     max-width: 920px !important;
     gap: 20px !important;
+  }
+
+  .tree-dock-left {
+    width: 118px;
+    height: 154px;
+  }
+
+  .tree-dock-right {
+    width: 132px;
+    height: 120px;
   }
 }
 
@@ -1483,6 +1882,39 @@ body {
     top: 12px;
     right: 3%;
   }
+
+  /* En tablets reducimos el árbol y escondemos la escena derecha en pantallas de ejercicios */
+  .tree-dock-left {
+    width: 92px;
+    height: 122px;
+    bottom: 4px;
+    left: 4px;
+    opacity: 0.85;
+  }
+
+  .tree-dock-right {
+    display: none !important;
+  }
+
+  .xmas-corner-ornament {
+    width: 68px;
+    height: 58px;
+    top: 86px;
+  }
+
+  .xmas-top-garland-bar {
+    top: 88px;
+    height: 22px;
+  }
+
+  .santa-flight-wrapper {
+    width: 320px;
+    top: 80px;
+  }
+
+  .santa-sleigh-vehicle {
+    width: 280px;
+  }
 }
 
 @media (max-width: 660px) {
@@ -1514,15 +1946,57 @@ body {
     font-size: 0.78rem;
     padding: 7px 12px;
   }
+
+  /* En celulares, el árbol queda compacto en el Home y se oculta en pantallas de ejercicios para no restar espacio */
+  .tree-dock-left {
+    width: 72px;
+    height: 94px;
+    opacity: 0.75;
+  }
+
+  .xmas-global-ambience-root.context-workspace .tree-dock-left,
+  .xmas-global-ambience-root.context-workspace .xmas-corner-ornament {
+    display: none !important;
+  }
+
+  .santa-flight-wrapper {
+    width: 260px;
+  }
+
+  .santa-sleigh-vehicle {
+    width: 230px;
+  }
+
+  .santa-banner-bubble {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .christmas-snow-layer,
+  .xmas-snow-sheet,
+  .xmas-flake,
   .magic-moon-wrap,
   .h-bitty-figure-wrapper,
   .h-floating-mini-item,
   .anim-sleigh-left-to-right,
-  .anim-sleigh-right-to-left {
+  .anim-sleigh-right-to-left,
+  .santa-sleigh-vehicle,
+  .reindeer-group,
+  .rudolph-nose-glow,
+  .santa-particle-trail span,
+  .garland-bulb-group,
+  .xmas-swinging-bells,
+  .xmas-twinkle-star,
+  .xmas-tree-lights circle,
+  .xmas-tree-top-star,
+  .house-window-glow,
+  .bity-xmas-wave,
+  .bity-xmas-hop,
+  .bity-xmas-look-tree,
+  .bity-xmas-react-santa {
     animation: none !important;
+    transition: none !important;
   }
 }
